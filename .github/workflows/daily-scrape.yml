@@ -58,7 +58,7 @@ jobs:
         env:
           FIRECRAWL_API_KEY: ${{ secrets.FIRECRAWL_API_KEY }}
         run: |
-          for source in wikidata app_store; do
+          for source in app_store; do
             aiscrape scrape --source "$source" --limit 20 || echo "[WARN] $source failed"
           done
           if [ -n "$FIRECRAWL_API_KEY" ]; then

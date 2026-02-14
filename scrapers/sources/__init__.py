@@ -21,12 +21,10 @@ from scrapers.sources.producthunt import ProductHuntScraper
 from scrapers.sources.techcrunch import TechCrunchScraper
 from scrapers.sources.theresanai import TAAScraper
 from scrapers.sources.toolify import ToolifyScraper
-from scrapers.sources.wikidata import WikidataScraper
 from scrapers.sources.ycombinator import YCombinatorScraper
 
 ALL_SCRAPERS = {
     # T1 Authoritative (EnrichmentScraper role)
-    "wikidata": WikidataScraper,
     "crunchbase": CrunchbaseScraper,
     # T2 Open Web — Discovery role
     "producthunt": ProductHuntScraper,
@@ -65,6 +63,5 @@ __all__ = [
     "TAAScraper",
     "TechCrunchScraper",
     "ToolifyScraper",
-    "WikidataScraper",
     "YCombinatorScraper",
 ]

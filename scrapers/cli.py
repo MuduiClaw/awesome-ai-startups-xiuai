@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 import sys
+from typing import Any
 
 import click
 from dotenv import load_dotenv
@@ -26,10 +27,10 @@ def cli() -> None:
     default="all",
     help=(
         "Source to scrape (comma-separated or 'all'): "
-        "wikidata, crunchbase, huggingface, ycombinator, producthunt, "
+        "crunchbase, huggingface, ycombinator, producthunt, "
         "techcrunch, lmsys, openrouter, theresanaiforthat, "
         "toolify, aibot, ainav, google_play, app_store, papers_with_code, "
-        "artificial_analysis, pypi, npm, dockerhub, github"
+        "artificial_analysis, github"
     ),
 )
 @click.option("--limit", default=50, help="Maximum products to fetch per source")
@@ -276,10 +277,21 @@ def quality() -> None:
 @click.option(
     "--model", default=None, help="Anthropic model to use (default: claude-sonnet-4-5)"
 )
+@click.option(
+    "--no-web-search",
+    is_flag=True,
+    default=False,
+    help="Disable web search (use LLM reasoning only)",
+)
 def enrich(
-    slug: str | None, max_score: float, limit: int, dry_run: bool, model: str | None
+    slug: str | None,
+    max_score: float,
+    limit: int,
+    dry_run: bool,
+    model: str | None,
+    no_web_search: bool,
 ) -> None:
-    """Enrich products with missing fields using LLM (requires ANTHROPIC_API_KEY)."""
+    """Enrich products with missing fields using LLM + web search (requires ANTHROPIC_API_KEY)."""
     from scrapers.enrichment import LLMEnricher, QualityScorer
     from scrapers.enrichment.merger import TieredMerger
 
@@ -321,7 +333,10 @@ def enrich(
 
     click.echo(f"Found {len(candidates)} product(s) to enrich")
 
-    enricher_kwargs: dict[str, str] = {}
+    web_search_enabled = not no_web_search
+    click.echo(f"Web search: {'enabled' if web_search_enabled else 'disabled'}")
+
+    enricher_kwargs: dict[str, Any] = {"web_search": web_search_enabled}
     if model:
         enricher_kwargs["model"] = model
 
@@ -386,10 +401,10 @@ def enrich(
 @cli.command()
 @click.option(
     "--source",
-    default="producthunt,github,toolify",
+    default="toolify,techcrunch,theresanaiforthat",
     help=(
         "Discovery sources (comma-separated): "
-        "producthunt, github, toolify, aibot, ainav, ycombinator, techcrunch"
+        "toolify, techcrunch, theresanaiforthat, producthunt, github, aibot, ainav, ycombinator"
     ),
 )
 @click.option("--limit", default=200, help="Maximum products to discover per source")
