@@ -44,7 +44,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           FIRECRAWL_API_KEY: ${{ secrets.FIRECRAWL_API_KEY }}
         run: |
-          for source in huggingface lmsys openrouter; do
+          for source in lmsys openrouter; do
             echo "--- Scraping $source ---"
             aiscrape scrape --source "$source" --limit 50 || echo "[WARN] $source failed, continuing..."
           done
@@ -58,7 +58,7 @@ jobs:
         env:
           FIRECRAWL_API_KEY: ${{ secrets.FIRECRAWL_API_KEY }}
         run: |
-          for source in wikidata app_store pypi npm dockerhub; do
+          for source in wikidata app_store; do
             aiscrape scrape --source "$source" --limit 20 || echo "[WARN] $source failed"
           done
           if [ -n "$FIRECRAWL_API_KEY" ]; then

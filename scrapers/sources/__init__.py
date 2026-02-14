@@ -12,14 +12,10 @@ from scrapers.sources.app_stores import AppStoreScraper, GooglePlayScraper
 from scrapers.sources.artificial_analysis import ArtificialAnalysisScraper
 from scrapers.sources.crunchbase import CrunchbaseScraper
 from scrapers.sources.github_trending import GitHubTrendingScraper
-from scrapers.sources.huggingface import HuggingFaceScraper
+
+# from scrapers.sources.huggingface import HuggingFaceScraper  # disabled
 from scrapers.sources.lmsys import LMSYSScraper
 from scrapers.sources.openrouter import OpenRouterScraper
-from scrapers.sources.package_registries import (
-    DockerHubScraper,
-    NpmScraper,
-    PyPIScraper,
-)
 from scrapers.sources.papers_with_code import PapersWithCodeScraper
 from scrapers.sources.producthunt import ProductHuntScraper
 from scrapers.sources.techcrunch import TechCrunchScraper
@@ -41,16 +37,12 @@ ALL_SCRAPERS = {
     "ycombinator": YCombinatorScraper,
     "techcrunch": TechCrunchScraper,
     # T2 Open Web — Unified role (discover + enrich)
-    "huggingface": HuggingFaceScraper,
+    # "huggingface": HuggingFaceScraper,  # disabled
     "lmsys": LMSYSScraper,
     "openrouter": OpenRouterScraper,
     "theresanaiforthat": TAAScraper,
     "artificial_analysis": ArtificialAnalysisScraper,
     "papers_with_code": PapersWithCodeScraper,
-    # T2 Open Web — Enrichment role (package registries)
-    "pypi": PyPIScraper,
-    "npm": NpmScraper,
-    "dockerhub": DockerHubScraper,
     # T2 Open Web — Enrichment role (app stores)
     "google_play": GooglePlayScraper,
     "app_store": AppStoreScraper,
@@ -63,16 +55,13 @@ __all__ = [
     "AppStoreScraper",
     "ArtificialAnalysisScraper",
     "CrunchbaseScraper",
-    "DockerHubScraper",
     "GitHubTrendingScraper",
     "GooglePlayScraper",
-    "HuggingFaceScraper",
+    # "HuggingFaceScraper",  # disabled
     "LMSYSScraper",
-    "NpmScraper",
     "OpenRouterScraper",
     "PapersWithCodeScraper",
     "ProductHuntScraper",
-    "PyPIScraper",
     "TAAScraper",
     "TechCrunchScraper",
     "ToolifyScraper",
