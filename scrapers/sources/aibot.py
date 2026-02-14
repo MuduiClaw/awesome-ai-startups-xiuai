@@ -1,12 +1,13 @@
 """AI工具集 (ai-bot.cn) scraper for Chinese AI product discovery.
 
-T2 Open Web — Chinese AI tool directory with 1000+ tools. Uses httpx
-to scrape the public category listing pages for Chinese-market AI tools.
-No API key required.
+T2 Open Web — Chinese AI tool directory with 1000+ tools.
+Dynamically discovers all /favorites/ category pages from sitemap.xml,
+then scrapes each page for product cards. No API key required.
 """
 
 from __future__ import annotations
 
+import html as html_mod
 import logging
 import re
 import time
@@ -20,63 +21,61 @@ from scrapers.utils import create_http_client
 logger = logging.getLogger(__name__)
 
 _BASE_URL = "https://ai-bot.cn"
+_SITEMAP_URL = f"{_BASE_URL}/sitemap.xml"
 
-# Category paths on ai-bot.cn (under /favorites/)
-_CATEGORY_PATHS = [
-    "ai-chatbots",
-    "ai-writing-tools",
-    "ai-image-tools",
-    "ai-video-tools",
-    "ai-audio-tools",
-    "ai-coding-tools",
-    "ai-design-tools",
-    "ai-office-tools",
-    "ai-search-engine",
-    "ai-model-training",
-]
+# Aggregation / "best-of" pages that duplicate content from real categories.
+_SKIP_SLUGS = frozenset(
+    {
+        "best-ai-tools",
+        "best-ai-image-tools",
+        "popular-ai-office-tools",
+    }
+)
 
-# Map ai-bot.cn categories to our schema (product_type, category, sub_category)
-_CATEGORY_MAP: dict[str, tuple[str, str, str | None]] = {
-    "ai-chatbots": ("app", "ai-app", "voice-assistant"),
-    "ai-writing-tools": ("app", "ai-app", "writing-copywriting"),
-    "ai-image-tools": ("app", "ai-app", "design-creative"),
-    "ai-video-tools": ("app", "ai-app", "video-editing"),
-    "ai-audio-tools": ("app", "ai-app", "audio-speech"),
-    "ai-coding-tools": ("dev-tool", "ai-dev-tool", "coding-assistant"),
-    "ai-design-tools": ("app", "ai-app", "design-creative"),
-    "ai-office-tools": ("app", "ai-app", "workflow-automation"),
-    "ai-search-engine": ("app", "ai-search", None),
-    "ai-model-training": ("framework", "ai-infrastructure", None),
-}
-
-# Regex: extract tool cards — ai-bot.cn uses <a href="URL" title="desc"><img><strong>Name</strong>
-_TOOL_LINK_PATTERN = re.compile(
-    r'<a[^>]*href=["\']([^"\']+)["\'][^>]*title=["\']([^"\']*)["\'][^>]*>'
+# Card regex — matches the url-card structure used by ai-bot.cn (OneNav theme):
+#   <a ... data-url="PRODUCT_URL" ... title="DESCRIPTION" ...>
+#     <img ... data-src="ICON_URL" ... alt="NAME">
+#     <strong>NAME</strong>
+#     <p ...>DESCRIPTION</p>
+#   </a>
+_CARD_PATTERN = re.compile(
+    r"<a[^>]*"
+    r'data-url="([^"]+)"[^>]*'  # group 1: product URL (data-url)
+    r'title="([^"]*)"[^>]*>'  # group 2: description (title attr)
     r".*?"
-    r"<strong[^>]*>\s*([^<]{2,80})\s*</strong>",
-    re.IGNORECASE | re.DOTALL,
+    r'data-src="([^"]+)"'  # group 3: icon URL (lazy-loaded img)
+    r".*?"
+    r"<strong>([^<]+)</strong>"  # group 4: product name
+    r".*?"
+    r"<p[^>]*>([^<]*)</p>",  # group 5: short description (p tag)
+    re.DOTALL,
 )
 
-# Fallback: simpler pattern for links with inner text
-_SIMPLE_LINK_PATTERN = re.compile(
-    r'<a[^>]*href=["\'](/sites/\d+\.html)["\'][^>]*>'
-    r"\s*(?:<[^>]*>)*\s*([^<]{2,80})\s*(?:</[^>]*>)*\s*</a>",
-    re.IGNORECASE | re.DOTALL,
+# Domains to skip when resolving official URL from internal detail pages.
+_FOOTER_DOMAINS = frozenset(
+    {
+        "beian.miit.gov.cn",
+        "beian.gov.cn",
+        "ghxi.com",
+        "aisharenet.com",
+        "gongke.net",
+        "yjpoo.com",
+    }
 )
 
-# Icon extraction from <img> inside tool cards
-_ICON_PATTERN = re.compile(
-    r'<img[^>]*src=["\']([^"\']+)["\'][^>]*/?>',
-    re.IGNORECASE,
-)
+# Pattern to detect ai-bot.cn internal detail pages.
+_INTERNAL_URL_RE = re.compile(r"^https?://ai-bot\.cn/sites/\d+\.html$")
 
 
 class AiBotScraper(BaseScraper):
     """Scrape ai-bot.cn for Chinese AI product discovery.
 
-    Uses direct HTTP requests since ai-bot.cn is a server-rendered
-    site. Extracts tool names, URLs, descriptions, and icons from
-    category listing pages.
+    Workflow:
+    1. Fetch sitemap.xml to discover all /favorites/ category URLs.
+    2. Iterate each category page, extract product cards via regex.
+    3. For cards with internal URLs, follow the detail page to resolve
+       the real official product URL.
+    4. Emit ScrapedProduct for each unique product found.
     """
 
     @property
@@ -94,23 +93,29 @@ class AiBotScraper(BaseScraper):
         seen_names: set[str] = set()
 
         try:
-            for cat_slug in _CATEGORY_PATHS:
+            category_urls = self._discover_categories(client)
+            if not category_urls:
+                logger.warning("aibot: no category URLs found in sitemap")
+                return products
+
+            logger.info("aibot: found %d categories in sitemap", len(category_urls))
+
+            for page_url, cat_slug in category_urls:
                 if len(products) >= limit:
                     break
 
-                url = f"{_BASE_URL}/favorites/{cat_slug}/"
                 logger.debug("aibot: scraping %s", cat_slug)
 
                 try:
-                    response = client.get(url)
+                    response = client.get(page_url)
                     response.raise_for_status()
                 except (httpx.HTTPError, httpx.TimeoutException, OSError) as exc:
                     logger.debug("aibot %s failed: %s", cat_slug, exc)
                     time.sleep(DEFAULT_REQUEST_DELAY)
                     continue
 
-                html = response.text
-                parsed = self._parse_listing(html, cat_slug, url)
+                html = response.content.decode("utf-8", errors="replace")
+                parsed = self._parse_listing(client, html, cat_slug, page_url)
 
                 for product in parsed:
                     name_lower = product.name.lower()
@@ -130,35 +135,61 @@ class AiBotScraper(BaseScraper):
         logger.info("aibot: discovered %d products", len(products))
         return products
 
+    def _discover_categories(self, client: httpx.Client) -> list[tuple[str, str]]:
+        """Fetch sitemap.xml and extract all /favorites/ category URLs.
+
+        Returns list of (full_url, slug) tuples, excluding aggregation pages.
+        """
+        try:
+            response = client.get(_SITEMAP_URL)
+            response.raise_for_status()
+        except (httpx.HTTPError, httpx.TimeoutException, OSError) as exc:
+            logger.warning("aibot: sitemap fetch failed: %s", exc)
+            return []
+
+        text = response.text
+        urls: list[tuple[str, str]] = []
+        seen: set[str] = set()
+
+        for match in re.finditer(
+            r"<loc>\s*(https?://ai-bot\.cn/favorites/([a-z0-9\-]+)/?)\s*</loc>",
+            text,
+        ):
+            full_url = match.group(1)
+            slug = match.group(2)
+
+            if slug in seen or slug in _SKIP_SLUGS:
+                continue
+            seen.add(slug)
+
+            # Ensure URL has trailing slash for consistency
+            if not full_url.endswith("/"):
+                full_url += "/"
+
+            urls.append((full_url, slug))
+
+        return urls
+
     def _parse_listing(
-        self, html: str, cat_slug: str, page_url: str
+        self, client: httpx.Client, html: str, cat_slug: str, page_url: str
     ) -> list[ScrapedProduct]:
-        """Parse an ai-bot.cn category listing page."""
+        """Parse an ai-bot.cn category listing page into ScrapedProduct list."""
         if not html or len(html) < 200:
             return []
 
-        type_cat = _CATEGORY_MAP.get(cat_slug, ("app", "ai-app", None))
-        product_type, category, sub_category = type_cat
-
-        entries = self._extract_tools(html)
+        entries = _extract_cards(html)
         products: list[ScrapedProduct] = []
 
-        for name, tool_url, description, icon_url in entries:
+        for name, product_url, description, icon_url in entries:
             name = name.strip()
             if not name or len(name) < 2 or len(name) > 80:
                 continue
 
-            # Resolve relative URLs
-            if tool_url and not tool_url.startswith("http"):
-                tool_url = (
-                    f"{_BASE_URL}{tool_url}"
-                    if tool_url.startswith("/")
-                    else f"{_BASE_URL}/{tool_url}"
-                )
-            if icon_url and not icon_url.startswith("http"):
-                icon_url = (
-                    f"{_BASE_URL}{icon_url}" if icon_url.startswith("/") else None
-                )
+            # Resolve internal URLs by following the detail page
+            if product_url and _INTERNAL_URL_RE.match(product_url):
+                resolved = _resolve_internal_url(client, product_url)
+                if resolved:
+                    product_url = resolved
 
             name_zh = name if _has_chinese(name) else None
             desc_zh = description if description and _has_chinese(description) else None
@@ -170,13 +201,10 @@ class AiBotScraper(BaseScraper):
                     source_url=page_url,
                     source_tier=SourceTier.T2_OPEN_WEB,
                     name_zh=name_zh,
-                    product_url=tool_url or None,
+                    product_url=product_url or None,
                     description=description or None,
                     description_zh=desc_zh,
                     icon_url=icon_url or None,
-                    product_type=product_type,
-                    category=category,
-                    sub_category=sub_category,
                     tags=(cat_slug,),
                     status="active",
                 )
@@ -184,51 +212,94 @@ class AiBotScraper(BaseScraper):
 
         return products
 
-    def _extract_tools(self, html: str) -> list[tuple[str, str, str, str]]:
-        """Extract (name, url, description, icon_url) tuples from HTML."""
-        entries: list[tuple[str, str, str, str]] = []
-        seen_urls: set[str] = set()
 
-        # Strategy 1: structured tool cards with title attribute
-        for match in _TOOL_LINK_PATTERN.finditer(html):
-            url = match.group(1).strip()
-            description = match.group(2).strip()
-            name = _strip_html(match.group(3)).strip()
+# ---------------------------------------------------------------------------
+# Helpers
+# ---------------------------------------------------------------------------
 
-            if not name or url in seen_urls:
-                continue
-            seen_urls.add(url)
 
-            # Try to find icon nearby
-            icon = ""
-            card_html = match.group(0)
-            icon_match = _ICON_PATTERN.search(card_html)
-            if icon_match:
-                icon = icon_match.group(1).strip()
+def _extract_cards(html: str) -> list[tuple[str, str, str, str]]:
+    """Extract (name, product_url, description, icon_url) from card HTML."""
+    entries: list[tuple[str, str, str, str]] = []
+    seen_urls: set[str] = set()
 
-            entries.append((name, url, description, icon))
+    for match in _CARD_PATTERN.finditer(html):
+        raw_url = html_mod.unescape(match.group(1)).strip()
+        title_desc = html_mod.unescape(match.group(2)).strip()
+        icon_url = match.group(3).strip()
+        name = html_mod.unescape(match.group(4)).strip()
+        p_desc = html_mod.unescape(match.group(5)).strip()
 
-        if entries:
-            return entries
+        if not name or raw_url in seen_urls:
+            continue
+        seen_urls.add(raw_url)
 
-        # Strategy 2: fallback — simpler link pattern
-        for match in _SIMPLE_LINK_PATTERN.finditer(html):
-            url = match.group(1).strip()
-            name = _strip_html(match.group(2)).strip()
+        # Prefer the <p> description; fall back to title attribute
+        description = p_desc if p_desc else title_desc
 
-            if not name or url in seen_urls:
-                continue
-            seen_urls.add(url)
-            entries.append((name, url, "", ""))
+        # Strip tracking params from URLs
+        product_url = _clean_url(raw_url)
 
-        return entries
+        entries.append((name, product_url, description, icon_url))
+
+    return entries
+
+
+def _resolve_internal_url(client: httpx.Client, internal_url: str) -> str | None:
+    """Follow an ai-bot.cn /sites/ detail page to find the official product URL.
+
+    The detail page contains outbound links; the first non-footer external
+    href is typically the product's official website.
+    """
+    try:
+        response = client.get(internal_url)
+        response.raise_for_status()
+    except (httpx.HTTPError, httpx.TimeoutException, OSError) as exc:
+        logger.debug("aibot: failed to resolve %s: %s", internal_url, exc)
+        return None
+
+    html = response.content.decode("utf-8", errors="replace")
+
+    # Find all external hrefs (non ai-bot.cn)
+    externals = re.findall(r'href="(https?://(?!ai-bot\.cn)[^"]+)"', html)
+
+    for url in externals:
+        url = html_mod.unescape(url).strip()
+        # Skip footer/utility domains
+        if any(domain in url for domain in _FOOTER_DOMAINS):
+            continue
+        return _clean_url(url)
+
+    return None
+
+
+def _clean_url(url: str) -> str:
+    """Remove common tracking query params (channel, source, utm_*, etc.).
+
+    Also handles malformed URLs with multiple ``?`` characters.
+    """
+    # Fix double-? URLs: keep only the first ?, turn subsequent ? into &
+    parts = url.split("?")
+    if len(parts) > 2:
+        url = parts[0] + "?" + "&".join(parts[1:])
+
+    if "?" not in url:
+        return url
+
+    base, _, query = url.partition("?")
+    params = query.split("&")
+    clean = [
+        p
+        for p in params
+        if not re.match(
+            r"(channel|source|source_id|utm_\w+|type|theme|ref|from)=",
+            p,
+            re.IGNORECASE,
+        )
+    ]
+    return f"{base}?{'&'.join(clean)}" if clean else base
 
 
 def _has_chinese(text: str) -> bool:
     """Check if text contains Chinese characters."""
     return bool(re.search(r"[\u4e00-\u9fff]", text))
-
-
-def _strip_html(text: str) -> str:
-    """Remove HTML tags from text."""
-    return re.sub(r"<[^>]+>", "", text).strip()
