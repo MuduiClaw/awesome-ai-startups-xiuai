@@ -29,7 +29,7 @@ def cli() -> None:
         "Source to scrape (comma-separated or 'all'): "
         "crunchbase, ycombinator, producthunt, "
         "techcrunch, lmsys, openrouter, theresanaiforthat, "
-        "toolify, aibot, ainav, google_play, app_store, papers_with_code, "
+        "toolify, aibot, ainav, google_play, app_store, "
         "github"
     ),
 )

@@ -17,7 +17,8 @@ from scrapers.sources.github_trending import GitHubTrendingScraper
 # from scrapers.sources.huggingface import HuggingFaceScraper  # disabled
 from scrapers.sources.lmsys import LMSYSScraper
 from scrapers.sources.openrouter import OpenRouterScraper
-from scrapers.sources.papers_with_code import PapersWithCodeScraper
+
+# from scrapers.sources.papers_with_code import PapersWithCodeScraper  # disabled
 from scrapers.sources.producthunt import ProductHuntScraper
 from scrapers.sources.techcrunch import TechCrunchScraper
 from scrapers.sources.theresanai import TAAScraper
@@ -41,7 +42,7 @@ ALL_SCRAPERS = {
     "openrouter": OpenRouterScraper,
     "theresanaiforthat": TAAScraper,
     # "artificial_analysis": ArtificialAnalysisScraper,  # disabled
-    "papers_with_code": PapersWithCodeScraper,
+    # "papers_with_code": PapersWithCodeScraper,  # disabled
     # T2 Open Web — Enrichment role (app stores)
     "google_play": GooglePlayScraper,
     "app_store": AppStoreScraper,
@@ -59,7 +60,7 @@ __all__ = [
     # "HuggingFaceScraper",  # disabled
     "LMSYSScraper",
     "OpenRouterScraper",
-    "PapersWithCodeScraper",
+    # "PapersWithCodeScraper",  # disabled
     "ProductHuntScraper",
     "TAAScraper",
     "TechCrunchScraper",
