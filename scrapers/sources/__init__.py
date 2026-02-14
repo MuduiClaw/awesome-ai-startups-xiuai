@@ -9,7 +9,8 @@ Scrapers are organized by role:
 from scrapers.sources.aibot import AiBotScraper
 from scrapers.sources.ainav import AiNavScraper
 from scrapers.sources.app_stores import AppStoreScraper, GooglePlayScraper
-from scrapers.sources.artificial_analysis import ArtificialAnalysisScraper
+
+# from scrapers.sources.artificial_analysis import ArtificialAnalysisScraper  # disabled
 from scrapers.sources.crunchbase import CrunchbaseScraper
 from scrapers.sources.github_trending import GitHubTrendingScraper
 
@@ -39,7 +40,7 @@ ALL_SCRAPERS = {
     "lmsys": LMSYSScraper,
     "openrouter": OpenRouterScraper,
     "theresanaiforthat": TAAScraper,
-    "artificial_analysis": ArtificialAnalysisScraper,
+    # "artificial_analysis": ArtificialAnalysisScraper,  # disabled
     "papers_with_code": PapersWithCodeScraper,
     # T2 Open Web — Enrichment role (app stores)
     "google_play": GooglePlayScraper,
@@ -51,7 +52,7 @@ __all__ = [
     "AiBotScraper",
     "AiNavScraper",
     "AppStoreScraper",
-    "ArtificialAnalysisScraper",
+    # "ArtificialAnalysisScraper",  # disabled
     "CrunchbaseScraper",
     "GitHubTrendingScraper",
     "GooglePlayScraper",

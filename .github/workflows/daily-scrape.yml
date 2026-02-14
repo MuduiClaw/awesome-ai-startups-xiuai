@@ -49,7 +49,7 @@ jobs:
             aiscrape scrape --source "$source" --limit 50 || echo "[WARN] $source failed, continuing..."
           done
           if [ -n "$FIRECRAWL_API_KEY" ]; then
-            for source in theresanaiforthat toolify artificial_analysis papers_with_code; do
+            for source in theresanaiforthat toolify papers_with_code; do
               aiscrape scrape --source "$source" --limit 20 || echo "[WARN] $source failed"
             done
           fi

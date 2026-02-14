@@ -27,10 +27,10 @@ def cli() -> None:
     default="all",
     help=(
         "Source to scrape (comma-separated or 'all'): "
-        "crunchbase, huggingface, ycombinator, producthunt, "
+        "crunchbase, ycombinator, producthunt, "
         "techcrunch, lmsys, openrouter, theresanaiforthat, "
         "toolify, aibot, ainav, google_play, app_store, papers_with_code, "
-        "artificial_analysis, github"
+        "github"
     ),
 )
 @click.option("--limit", default=50, help="Maximum products to fetch per source")
