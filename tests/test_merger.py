@@ -484,14 +484,15 @@ class TestBuildCompanyUrl:
         url = TieredMerger._build_company_url(sp)
         assert url == "https://myproduct.com"
 
-    def test_returns_empty_for_aggregator_product_url(self) -> None:
+    def test_falls_back_to_product_url_for_aggregator_domain(self) -> None:
         sp = _make_product(
             company_website=None,
             company_wikipedia_url=None,
             product_url="https://play.google.com/store/apps/details?id=com.test",
         )
         url = TieredMerger._build_company_url(sp)
-        assert url == ""
+        # App store link is used as-is (last resort, better than nothing)
+        assert url == "https://play.google.com/store/apps/details?id=com.test"
 
     def test_returns_empty_when_no_urls(self) -> None:
         sp = _make_product(

@@ -298,10 +298,10 @@ class TieredMerger:
         # -- company block --------------------------------------------------
         company_name = scraped.company_name or scraped.name
         company_url = self._build_company_url(scraped)
-        company_block: dict[str, Any] = {"name": company_name}
-        if company_url:
-            company_block["url"] = company_url
-        product["company"] = company_block
+        product["company"] = {
+            "name": company_name,
+            "url": company_url or scraped.source_url,
+        }
         if scraped.company_name_zh:
             product["company"]["name_zh"] = scraped.company_name_zh
         if scraped.company_website:
@@ -626,10 +626,12 @@ class TieredMerger:
 
     @staticmethod
     def _build_company_url(scraped: ScrapedProduct) -> str:
-        """Build ``company.url``: website > wikipedia > product_url domain > empty.
+        """Build ``company.url``: website > wikipedia > product domain > product_url.
 
-        Never falls back to search engine links; an empty string is
-        preferable to polluting the data with Bing/Google URLs.
+        Fallback chain prefers real company sites but will use the
+        product_url itself (even app store links) as a last resort,
+        since the schema requires ``company.url``.  Never falls back
+        to search engine links.
         """
         if scraped.company_website:
             return scraped.company_website
@@ -642,6 +644,8 @@ class TieredMerger:
             domain = extract_domain(scraped.product_url)
             if domain and not _is_aggregator_domain(domain):
                 return f"https://{domain}"
+            # Last resort: use product_url itself (e.g. app store page).
+            return scraped.product_url
         return ""
 
     # -- app_store nested object --------------------------------------------
