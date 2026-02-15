@@ -247,6 +247,9 @@ def _gp_app_to_product(
     icon = str(app.get("icon", ""))
     description = str(app.get("summary") or app.get("description", ""))
     url = f"https://play.google.com/store/apps/details?id={app_id}"
+    is_free = app.get("free")
+    price_raw = app.get("price")
+    genre = str(app.get("genre") or "")
 
     if description and len(description) > 500:
         description = description[:497] + "..."
@@ -260,6 +263,31 @@ def _gp_app_to_product(
         extra["google_play_rating"] = f"{score:.1f}"
     if installs:
         extra["google_play_installs"] = str(installs)
+
+    # -- free/price: derive pricing_model and has_free_tier --
+    pricing_model: str | None = None
+    has_free_tier: bool | None = None
+    if is_free is True:
+        pricing_model = "free"
+        has_free_tier = True
+    elif is_free is False:
+        pricing_model = "paid"
+        has_free_tier = False
+    elif price_raw is not None:
+        try:
+            if float(str(price_raw)) == 0:
+                pricing_model = "free"
+                has_free_tier = True
+            else:
+                pricing_model = "paid"
+                has_free_tier = False
+        except (ValueError, TypeError):
+            pass
+
+    # -- genre: add to tags --
+    tags: list[str] = []
+    if genre:
+        tags.append(genre)
 
     return ScrapedProduct(
         name=title,
@@ -277,6 +305,9 @@ def _gp_app_to_product(
         company_name_zh=company_name_zh,
         platforms=("android",),
         status="active",
+        pricing_model=pricing_model,
+        has_free_tier=has_free_tier,
+        tags=tuple(tags),
         extra=extra,
     )
 
@@ -393,6 +424,11 @@ def _appstore_app_to_product(
     icon = str(app.get("artworkUrl512") or app.get("artworkUrl100", ""))
     description = str(app.get("description", ""))
     store_url = str(app.get("trackViewUrl", ""))
+    seller_url = str(app.get("sellerUrl") or "")
+    release_date_raw = str(app.get("releaseDate") or "")
+    languages_raw = app.get("languageCodesISO2A")
+    price_raw = app.get("price")
+    genre = str(app.get("primaryGenreName") or "")
 
     if description and len(description) > 500:
         description = description[:497] + "..."
@@ -407,13 +443,62 @@ def _appstore_app_to_product(
     if rating_count is not None:
         extra["app_store_rating_count"] = str(rating_count)
 
+    # -- sellerUrl: real company website (e.g. https://openai.com/chatgpt) --
+    company_website: str | None = None
+    if (
+        seller_url
+        and seller_url.startswith(("http://", "https://"))
+        and "apple.com" not in seller_url
+    ):
+        company_website = seller_url
+
+    # -- releaseDate: parse ISO timestamp to date string --
+    release_date: str | None = None
+    if release_date_raw and "T" in release_date_raw:
+        release_date = release_date_raw.split("T")[0]
+
+    # -- languageCodesISO2A: tuple of ISO 2-letter codes --
+    supported_languages: tuple[str, ...] = ()
+    if isinstance(languages_raw, list) and languages_raw:
+        valid_codes = [
+            str(code).upper()
+            for code in languages_raw
+            if isinstance(code, str) and len(code) == 2 and code.isalpha()
+        ]
+        if valid_codes:
+            supported_languages = tuple(valid_codes)
+
+    # -- price: derive pricing_model and has_free_tier --
+    pricing_model: str | None = None
+    has_free_tier: bool | None = None
+    if price_raw is not None:
+        try:
+            if float(str(price_raw)) == 0:
+                pricing_model = "free"
+                has_free_tier = True
+            else:
+                pricing_model = "paid"
+                has_free_tier = False
+        except (ValueError, TypeError):
+            pass
+
+    # -- primaryGenreName: add to tags --
+    tags: list[str] = []
+    if genre:
+        tags.append(genre)
+
+    # -- product_url: prefer sellerUrl over trackViewUrl when it's a real site --
+    product_url = store_url if store_url else None
+    if company_website:
+        product_url = company_website
+
     return ScrapedProduct(
         name=name,
         name_zh=name_zh,
         source=source_name,
         source_url=store_url or f"https://apps.apple.com/app/id{track_id}",
         source_tier=SourceTier.T2_OPEN_WEB,
-        product_url=store_url if store_url else None,
+        product_url=product_url,
         icon_url=icon if icon else None,
         description=description if description else None,
         description_zh=description_zh,
@@ -421,7 +506,13 @@ def _appstore_app_to_product(
         category="ai-app",
         company_name=developer if developer else None,
         company_name_zh=company_name_zh,
+        company_website=company_website,
         platforms=("ios",),
         status="active",
+        release_date=release_date,
+        supported_languages=supported_languages,
+        pricing_model=pricing_model,
+        has_free_tier=has_free_tier,
+        tags=tuple(tags),
         extra=extra,
     )

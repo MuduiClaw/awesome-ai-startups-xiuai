@@ -513,6 +513,11 @@ def _li_to_product(li: Any, cat_slug: str) -> ScrapedProduct | None:
 
     source_url = f"{_BASE_URL}{tool_path}" if tool_path else _BASE_URL
 
+    # -- use_cases from task_name --
+    use_cases: tuple[str, ...] = ()
+    if task_name:
+        use_cases = (task_name,)
+
     return ScrapedProduct(
         name=name,
         source="theresanaiforthat",
@@ -525,6 +530,7 @@ def _li_to_product(li: Any, cat_slug: str) -> ScrapedProduct | None:
         category=category,
         sub_category=sub_category,
         tags=tuple(tags),
+        use_cases=use_cases,
         company_website=website or None,
         status="active",
         extra=extra,
@@ -574,6 +580,11 @@ def _raw_featured_to_product(item: dict[str, object]) -> ScrapedProduct | None:
     if tool_id:
         extra["taaft_id"] = tool_id
 
+    # -- use_cases from task_name --
+    use_cases: tuple[str, ...] = ()
+    if task_name:
+        use_cases = (task_name,)
+
     source_url = f"{_BASE_URL}{tool_path}" if tool_path else _BASE_URL
 
     return ScrapedProduct(
@@ -588,6 +599,7 @@ def _raw_featured_to_product(item: dict[str, object]) -> ScrapedProduct | None:
         category=category,
         sub_category=sub_category,
         tags=tuple(tags),
+        use_cases=use_cases,
         company_website=website or None,
         status="active",
         extra=extra,

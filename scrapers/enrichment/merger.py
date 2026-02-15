@@ -14,7 +14,6 @@ import json
 import logging
 from datetime import date
 from typing import Any
-from urllib.parse import quote_plus
 
 from scrapers.base import ScrapedProduct, SourceTier
 from scrapers.config import PRODUCTS_DIR
@@ -57,6 +56,54 @@ _ARRAY_FIELDS: frozenset[str] = frozenset(
         "company.funding.investors",
     }
 )
+
+# Domains that are app-store pages, not real product sites.
+_APP_STORE_DOMAINS: frozenset[str] = frozenset(
+    {"play.google.com", "apps.apple.com", "itunes.apple.com"}
+)
+
+# Aggregator / search domains -- never a real product homepage.
+_AGGREGATOR_DOMAINS: frozenset[str] = frozenset(
+    {
+        "producthunt.com",
+        "toolify.ai",
+        "theresanaiforthat.com",
+        "ai-bot.cn",
+        "ainav.cn",
+        "bing.com",
+        "google.com",
+        "www.bing.com",
+        "www.google.com",
+    }
+)
+
+
+def _is_aggregator_domain(domain: str) -> bool:
+    """Return True if *domain* belongs to an aggregator or search engine."""
+    return domain in _AGGREGATOR_DOMAINS or domain in _APP_STORE_DOMAINS
+
+
+def _url_quality_score(url: str) -> int:
+    """Rate URL quality: higher = better.  Direct product URLs > app stores > aggregators."""
+    from scrapers.utils import extract_domain
+
+    domain = extract_domain(url)
+    if not domain:
+        return -1
+    if domain in _AGGREGATOR_DOMAINS:
+        return 0
+    if domain in _APP_STORE_DOMAINS:
+        return 1
+    return 2  # Direct product URL
+
+
+# Social link mapping from extra keys to product JSON paths.
+_SOCIAL_LINK_MAP: dict[str, str] = {
+    "linkedin_url": "company.social.linkedin",
+    "twitter": "company.social.twitter",
+    "github_url": "company.social.github",
+    "crunchbase_url": "company.social.crunchbase",
+}
 
 # ---------------------------------------------------------------------------
 # Field mapping: ScrapedProduct attribute -> product JSON path
@@ -177,9 +224,11 @@ class TieredMerger:
             self._extend_array_field(product, json_path, value, scraped)
 
         # -- company.url fallback -------------------------------------------
-        if _get_nested(product, "company.url") is None:
-            _set_nested(product, "company.url", self._build_company_url(scraped))
-            self._record_provenance(product, "company.url", scraped)
+        if not _get_nested(product, "company.url"):
+            url = self._build_company_url(scraped)
+            if url:
+                _set_nested(product, "company.url", url)
+                self._record_provenance(product, "company.url", scraped)
 
         # -- T4 hiring convenience: set is_hiring flag if positions present --
         if new_tier == SourceTier.T4_AUXILIARY and scraped.hiring_positions:
@@ -190,6 +239,16 @@ class TieredMerger:
                 date.today().isoformat(),
                 scraped,
             )
+
+        # -- social links from extra (mirrors create_new logic) --------------
+        for extra_key, json_path in _SOCIAL_LINK_MAP.items():
+            val = scraped.extra.get(extra_key)
+            if val and _get_nested(product, json_path) is None:
+                _set_nested(product, json_path, val)
+                self._record_provenance(product, json_path, scraped)
+
+        # -- app_store nested object from extra -----------------------------
+        self._populate_app_store(product, scraped)
 
         # -- sources array (always append) ----------------------------------
         self._append_source(product, scraped)
@@ -239,10 +298,10 @@ class TieredMerger:
         # -- company block --------------------------------------------------
         company_name = scraped.company_name or scraped.name
         company_url = self._build_company_url(scraped)
-        product["company"] = {
-            "name": company_name,
-            "url": company_url,
-        }
+        company_block: dict[str, Any] = {"name": company_name}
+        if company_url:
+            company_block["url"] = company_url
+        product["company"] = company_block
         if scraped.company_name_zh:
             product["company"]["name_zh"] = scraped.company_name_zh
         if scraped.company_website:
@@ -368,6 +427,9 @@ class TieredMerger:
         if social:
             product["company"]["social"] = social
 
+        # -- app_store nested object from extra -----------------------------
+        self._populate_app_store(product, scraped)
+
         # -- provenance for all set fields ----------------------------------
         provenance_entry = self._build_provenance(scraped)
         provenance: dict[str, Any] = {}
@@ -448,7 +510,18 @@ class TieredMerger:
             return False
 
         if not self._should_overwrite(existing_tier, new_tier):
-            return False
+            # Special case: for product_url at same tier, allow overwrite
+            # if new URL has higher quality (direct site > app store > aggregator).
+            if (
+                field_path == "product_url"
+                and existing_tier == new_tier
+                and isinstance(existing_value, str)
+                and isinstance(value, str)
+                and _url_quality_score(value) > _url_quality_score(existing_value)
+            ):
+                pass  # Fall through to write the better URL
+            else:
+                return False
 
         # Cross-validation gate for fields prone to contamination.
         if (
@@ -553,13 +626,60 @@ class TieredMerger:
 
     @staticmethod
     def _build_company_url(scraped: ScrapedProduct) -> str:
-        """Build ``company.url`` with fallback: website > wikipedia > bing search."""
+        """Build ``company.url``: website > wikipedia > product_url domain > empty.
+
+        Never falls back to search engine links; an empty string is
+        preferable to polluting the data with Bing/Google URLs.
+        """
         if scraped.company_website:
             return scraped.company_website
         if scraped.company_wikipedia_url:
             return scraped.company_wikipedia_url
-        company_name = scraped.company_name or scraped.name
-        return f"https://www.bing.com/search?q={quote_plus(company_name)}+AI"
+        # Derive homepage from product URL domain.
+        if scraped.product_url:
+            from scrapers.utils import extract_domain
+
+            domain = extract_domain(scraped.product_url)
+            if domain and not _is_aggregator_domain(domain):
+                return f"https://{domain}"
+        return ""
+
+    # -- app_store nested object --------------------------------------------
+
+    def _populate_app_store(
+        self,
+        product: dict[str, Any],
+        scraped: ScrapedProduct,
+    ) -> None:
+        """Build/merge the ``app_store`` nested object from extra fields."""
+        app_store_data: dict[str, Any] = {}
+        gp_app_id = scraped.extra.get("google_play_app_id")
+        gp_rating = scraped.extra.get("google_play_rating")
+        gp_installs = scraped.extra.get("google_play_installs")
+        as_track_id = scraped.extra.get("app_store_track_id")
+        as_rating = scraped.extra.get("app_store_rating")
+
+        if gp_app_id:
+            app_store_data["google_play_url"] = (
+                f"https://play.google.com/store/apps/details?id={gp_app_id}"
+            )
+        if as_track_id:
+            app_store_data["apple_store_url"] = (
+                f"https://apps.apple.com/app/id{as_track_id}"
+            )
+        rating_raw = as_rating or gp_rating
+        if rating_raw:
+            try:
+                app_store_data["rating"] = round(float(rating_raw), 1)
+            except (ValueError, TypeError):
+                logger.debug("Invalid app store rating: %s", rating_raw)
+        if gp_installs:
+            app_store_data["downloads"] = gp_installs
+
+        if app_store_data:
+            existing: dict[str, Any] = product.get("app_store", {})
+            existing.update(app_store_data)
+            product["app_store"] = existing
 
     # -- sources array ------------------------------------------------------
 

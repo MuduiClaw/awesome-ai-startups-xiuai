@@ -475,8 +475,29 @@ class TestBuildCompanyUrl:
         )
         assert "wikipedia.org" in TieredMerger._build_company_url(sp)
 
-    def test_falls_back_to_bing_search(self) -> None:
-        sp = _make_product(company_website=None, company_wikipedia_url=None)
+    def test_falls_back_to_product_url_domain(self) -> None:
+        sp = _make_product(
+            company_website=None,
+            company_wikipedia_url=None,
+            product_url="https://myproduct.com/app",
+        )
         url = TieredMerger._build_company_url(sp)
-        assert "bing.com/search" in url
-        assert "TestCo" in url
+        assert url == "https://myproduct.com"
+
+    def test_returns_empty_for_aggregator_product_url(self) -> None:
+        sp = _make_product(
+            company_website=None,
+            company_wikipedia_url=None,
+            product_url="https://play.google.com/store/apps/details?id=com.test",
+        )
+        url = TieredMerger._build_company_url(sp)
+        assert url == ""
+
+    def test_returns_empty_when_no_urls(self) -> None:
+        sp = _make_product(
+            company_website=None,
+            company_wikipedia_url=None,
+            product_url=None,
+        )
+        url = TieredMerger._build_company_url(sp)
+        assert url == ""
