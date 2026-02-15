@@ -52,10 +52,22 @@ class RawDataWriter:
 
         now = datetime.now(UTC).isoformat(timespec="seconds")
         written = 0
+        used_paths: set[str] = set()
 
         for i, item in enumerate(items):
             filename = _make_filename(item, i)
             filepath = out_dir / f"{filename}.json"
+
+            # Dedup: append -001, -002, ... on collision
+            if str(filepath) in used_paths:
+                suffix = 1
+                while True:
+                    candidate = out_dir / f"{filename}-{suffix:03d}.json"
+                    if str(candidate) not in used_paths:
+                        filepath = candidate
+                        break
+                    suffix += 1
+            used_paths.add(str(filepath))
 
             doc = {
                 "_meta": {

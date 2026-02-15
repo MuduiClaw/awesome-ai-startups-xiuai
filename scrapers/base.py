@@ -207,9 +207,20 @@ class BaseScraper(ABC):
         Returns:
             List of source-native dictionaries.
         """
-        from dataclasses import asdict
+        from dataclasses import fields
 
-        return [asdict(p) for p in self.scrape(limit)]
+        results: list[dict[str, object]] = []
+        for p in self.scrape(limit):
+            d: dict[str, object] = {}
+            for f in fields(p):
+                val = getattr(p, f.name)
+                # MappingProxyType (from extra) isn't deepcopy-safe;
+                # convert to plain dict for serialization.
+                if isinstance(val, Mapping):
+                    val = dict(val)
+                d[f.name] = val
+            results.append(d)
+        return results
 
     def discover(self, limit: int = 100) -> list[DiscoveredProduct]:
         """Discover product names without performing a full scrape.

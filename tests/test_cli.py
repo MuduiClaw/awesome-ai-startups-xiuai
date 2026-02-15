@@ -33,5 +33,6 @@ class TestCLI:
 
     def test_scrape_dry_run(self) -> None:
         runner = CliRunner()
-        result = runner.invoke(cli, ["scrape", "--source", "crunchbase", "--dry-run"])
+        # Use an active scraper; crunchbase was disabled in d203bf1.
+        result = runner.invoke(cli, ["scrape", "--source", "ainav", "--dry-run"])
         assert result.exit_code == 0

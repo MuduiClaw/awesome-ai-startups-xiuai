@@ -371,47 +371,24 @@ class TAAScraper(BaseScraper):
         client: BrowserClient,
         limit: int,
     ) -> list[ScrapedProduct]:
-        """Grab the site-wide featured tool list in a single API call."""
-        from scrapers.utils.browser_client import BrowserClientError
+        """Grab the site-wide featured tool list in a single API call.
 
-        try:
-            from bs4 import BeautifulSoup
-        except ImportError:
-            logger.info("BeautifulSoup not available; skipping featured API.")
-            return []
-
-        api_path = _FEATURED_API.format(limit=_MAX_FEATURED_PER_CATEGORY)
-        try:
-            html = client.fetch_text(api_path)
-        except BrowserClientError as exc:
-            logger.warning("TAAFT featured API failed: %s", exc)
-            return []
-
-        if not html or len(html) < 100:
-            logger.debug("TAAFT: empty featured response")
-            return []
-
-        soup = BeautifulSoup(html, "html.parser")
-        items = soup.select("li[data-id][data-name]")
-        logger.info("TAAFT featured: %d items returned", len(items))
-
+        Delegates to ``_fetch_featured_raw()`` for HTML parsing, then
+        converts each raw dict to a ``ScrapedProduct``.
+        """
+        raw_items = self._fetch_featured_raw(client, limit)
         products: list[ScrapedProduct] = []
-        seen_ids: set[str] = set()
 
-        for li in items:
-            tool_id = str(li.get("data-id") or "")
-            if not tool_id or tool_id in seen_ids:
-                continue
-            seen_ids.add(tool_id)
-
-            task_slug = str(li.get("data-task_slug") or "")
-            product = _li_to_product(li, task_slug)
+        for item in raw_items:
+            product = _raw_featured_to_product(item)
             if product is not None:
                 products.append(product)
-                if len(products) >= limit:
-                    break
 
-        logger.info("TAAFT featured: %d unique products", len(products))
+        logger.info(
+            "TAAFT featured: %d products from %d raw items",
+            len(products),
+            len(raw_items),
+        )
         return products
 
     # ------------------------------------------------------------------
@@ -533,6 +510,69 @@ def _li_to_product(li: Any, cat_slug: str) -> ScrapedProduct | None:
     extra: dict[str, str] = {}
     if tool_id:
         extra["taaft_id"] = str(tool_id)
+
+    source_url = f"{_BASE_URL}{tool_path}" if tool_path else _BASE_URL
+
+    return ScrapedProduct(
+        name=name,
+        source="theresanaiforthat",
+        source_url=source_url,
+        source_tier=SourceTier.T2_OPEN_WEB,
+        product_url=website or None,
+        icon_url=icon_url,
+        description=description or None,
+        product_type=product_type,
+        category=category,
+        sub_category=sub_category,
+        tags=tuple(tags),
+        company_website=website or None,
+        status="active",
+        extra=extra,
+    )
+
+
+def _raw_featured_to_product(item: dict[str, object]) -> ScrapedProduct | None:
+    """Convert a raw featured dict (from ``_fetch_featured_raw``) to a ScrapedProduct."""
+    name = str(item.get("name", "")).strip()
+    if not name or len(name) < 2 or len(name) > 200:
+        return None
+
+    tool_id = str(item.get("tool_id", ""))
+    website = str(item.get("website", ""))
+    task_name = str(item.get("task_name", ""))
+    task_slug = str(item.get("task_slug", ""))
+    description = str(item.get("description", ""))
+    icon_url = str(item.get("icon_url", "")) or None
+    tool_path = str(item.get("tool_path", ""))
+
+    if description and len(description) > 500:
+        description = description[:497] + "..."
+
+    # Category resolution — same logic as _li_to_product
+    cat_slug = task_slug
+    category = _map_category(cat_slug)
+    if task_slug:
+        refined = _map_category(task_slug)
+        if refined != "ai-application":
+            category = refined
+
+    sub_category = _SUB_CATEGORY_MAP.get(cat_slug)
+    product_type = _infer_product_type(cat_slug)
+    if task_slug:
+        refined_type = _infer_product_type(task_slug)
+        if refined_type != "app":
+            product_type = refined_type
+
+    tags: list[str] = []
+    if task_name:
+        tags.append(task_name)
+    cat_label = cat_slug.replace("-", " ")
+    if cat_label and cat_label != task_name:
+        tags.append(cat_label)
+
+    extra: dict[str, str] = {}
+    if tool_id:
+        extra["taaft_id"] = tool_id
 
     source_url = f"{_BASE_URL}{tool_path}" if tool_path else _BASE_URL
 
