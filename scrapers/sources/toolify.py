@@ -148,21 +148,21 @@ class ToolifyScraper(BaseScraper):
     def source_tier(self) -> SourceTier:
         return SourceTier.T2_OPEN_WEB
 
-    def scrape(self, limit: int = 100) -> list[ScrapedProduct]:
-        """Full crawl: paginate all products without category filter."""
+    def scrape_raw(self, limit: int = 100) -> list[dict[str, object]]:
+        """Return raw tool dicts from Toolify's REST API."""
         try:
             from scrapers.utils.browser_client import BrowserClient, BrowserClientError
         except ImportError:
             logger.info("BrowserClient not available, skipping Toolify scraper.")
             return []
 
-        products: list[ScrapedProduct] = []
+        raw_items: list[dict[str, object]] = []
         seen_handles: set[str] = set()
 
         try:
             with BrowserClient(_SEED_URL) as client:
                 page_num = 1
-                while len(products) < limit:
+                while len(raw_items) < limit:
                     path = f"{_API_TOOLS}?page={page_num}&per_page={_PER_PAGE}"
                     try:
                         resp = client.fetch_json(path)
@@ -196,18 +196,18 @@ class ToolifyScraper(BaseScraper):
                             continue
                         seen_handles.add(handle)
 
-                        product = _tool_to_product(tool)
-                        if product is not None:
-                            products.append(product)
-                            if len(products) >= limit:
+                        name = (tool.get("name") or "").strip()
+                        if name and 2 <= len(name) <= 200:
+                            raw_items.append(dict(tool))
+                            if len(raw_items) >= limit:
                                 break
 
                     if page_num % 10 == 0:
                         logger.info(
-                            "Toolify: page %d/%d (%d products)",
+                            "Toolify: page %d/%d (%d items)",
                             page_num,
                             last_page,
-                            len(products),
+                            len(raw_items),
                         )
 
                     if page_num >= last_page:
@@ -218,10 +218,22 @@ class ToolifyScraper(BaseScraper):
 
         except Exception as exc:
             logger.warning("Toolify scraper error: %s", exc)
-            # Return whatever we collected so far.
+
+        logger.info("Toolify: collected %d raw items", len(raw_items))
+        return raw_items[:limit]
+
+    def scrape(self, limit: int = 100) -> list[ScrapedProduct]:
+        """Full crawl: paginate all products without category filter."""
+        raw_items = self.scrape_raw(limit=limit)
+        products: list[ScrapedProduct] = []
+
+        for tool in raw_items:
+            product = _tool_to_product(tool)  # type: ignore[arg-type]
+            if product is not None:
+                products.append(product)
 
         logger.info("Toolify: scraped %d products", len(products))
-        return products[:limit]
+        return products
 
     def discover(self, limit: int = 100) -> list[DiscoveredProduct]:
         """Lightweight discovery — names and URLs only."""

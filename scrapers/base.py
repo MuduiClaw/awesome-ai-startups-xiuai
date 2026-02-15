@@ -194,6 +194,23 @@ class BaseScraper(ABC):
         """
         ...
 
+    def scrape_raw(self, limit: int = 100) -> list[dict[str, object]]:
+        """Return source-native dicts without converting to ScrapedProduct.
+
+        Subclasses should override this to return raw API/HTML data.
+        The default implementation converts ScrapedProduct instances back
+        to dicts as a fallback for scrapers that haven't been refactored.
+
+        Args:
+            limit: Maximum number of items to return.
+
+        Returns:
+            List of source-native dictionaries.
+        """
+        from dataclasses import asdict
+
+        return [asdict(p) for p in self.scrape(limit)]
+
     def discover(self, limit: int = 100) -> list[DiscoveredProduct]:
         """Discover product names without performing a full scrape.
 

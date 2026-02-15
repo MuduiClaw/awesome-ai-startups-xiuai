@@ -96,7 +96,8 @@ class ProductHuntScraper(BaseScraper):
 
     # -- Public API ----------------------------------------------------------
 
-    def scrape(self, limit: int = 100) -> list[ScrapedProduct]:
+    def scrape_raw(self, limit: int = 100) -> list[dict[str, object]]:
+        """Return raw GraphQL node dicts, filtered for AI relevance."""
         token = os.environ.get("PRODUCTHUNT_TOKEN", "")
         if not token:
             logger.warning("PRODUCTHUNT_TOKEN not set, skipping.")
@@ -105,31 +106,42 @@ class ProductHuntScraper(BaseScraper):
         client = create_http_client()
         client.headers["Authorization"] = f"Bearer {token}"
 
-        products: list[ScrapedProduct] = []
+        raw_nodes: list[dict[str, object]] = []
         seen_names: set[str] = set()
 
         try:
-            self._paginate(client, products, seen_names, limit)
+            self._paginate_raw(client, raw_nodes, seen_names, limit)
         finally:
             client.close()
+
+        return raw_nodes[:limit]
+
+    def scrape(self, limit: int = 100) -> list[ScrapedProduct]:
+        raw_nodes = self.scrape_raw(limit=limit)
+        products: list[ScrapedProduct] = []
+
+        for node in raw_nodes:
+            product = _node_to_product(node)
+            if product is not None:
+                products.append(product)
 
         return products[:limit]
 
     # -- Pagination core -----------------------------------------------------
 
-    def _paginate(
+    def _paginate_raw(
         self,
         client: httpx.Client,
-        products: list[ScrapedProduct],
+        raw_nodes: list[dict[str, object]],
         seen_names: set[str],
         limit: int,
     ) -> None:
-        """Paginate through all PH posts (newest first), collecting AI products."""
+        """Paginate through all PH posts, collecting AI-relevant node dicts."""
         after_cursor: str | None = None
         page = 0
         skipped = 0
 
-        while len(products) < limit and page < _MAX_PAGES:
+        while len(raw_nodes) < limit and page < _MAX_PAGES:
             page += 1
 
             variables: dict[str, Any] = {
@@ -142,7 +154,7 @@ class ProductHuntScraper(BaseScraper):
             logger.info(
                 "Fetching page %d (%d AI products so far, %d skipped)",
                 page,
-                len(products),
+                len(raw_nodes),
                 skipped,
             )
 
@@ -177,13 +189,25 @@ class ProductHuntScraper(BaseScraper):
                 break
 
             for edge in edges:
-                if len(products) >= limit:
+                if len(raw_nodes) >= limit:
                     break
-                product = self._edge_to_product(edge, seen_names)
-                if product is not None:
-                    products.append(product)
-                else:
+                node = edge.get("node", {})
+                name = node.get("name", "")
+
+                if not name or name.lower() in seen_names:
                     skipped += 1
+                    continue
+
+                # AI-relevance gate
+                tagline = node.get("tagline") or ""
+                description = node.get("description") or ""
+                text = f"{name} {tagline} {description}"
+                if not _AI_SIGNALS.search(text):
+                    skipped += 1
+                    continue
+
+                seen_names.add(name.lower())
+                raw_nodes.append(dict(node))
 
             if not page_info.get("hasNextPage"):
                 logger.info("Reached end of posts archive at page %d", page)
@@ -196,7 +220,7 @@ class ProductHuntScraper(BaseScraper):
 
         logger.info(
             "Done: %d AI products collected, %d non-AI skipped across %d pages",
-            len(products),
+            len(raw_nodes),
             skipped,
             page,
         )
@@ -229,47 +253,36 @@ class ProductHuntScraper(BaseScraper):
             )
             time.sleep(wait_secs)
 
-    # -- Product construction ------------------------------------------------
 
-    @staticmethod
-    def _edge_to_product(
-        edge: dict[str, Any], seen_names: set[str]
-    ) -> ScrapedProduct | None:
-        """Convert a GraphQL edge to a ScrapedProduct, or None if filtered."""
-        node = edge.get("node", {})
-        name = node.get("name", "")
+def _node_to_product(node: dict[str, object]) -> ScrapedProduct | None:
+    """Convert a raw GraphQL node dict to a ScrapedProduct."""
+    name = str(node.get("name", "")).strip()
+    if not name:
+        return None
 
-        if not name or name.lower() in seen_names:
-            return None
+    raw_makers = node.get("makers")
+    maker_list: list[object] = list(raw_makers) if isinstance(raw_makers, list) else []
+    makers = tuple(
+        {"name": m["name"], "title": "Maker", "is_founder": False}
+        for m in maker_list
+        if isinstance(m, dict) and m.get("name")
+    )
 
-        # AI-relevance gate
-        tagline = node.get("tagline") or ""
-        description = node.get("description") or ""
-        text = f"{name} {tagline} {description}"
-        if not _AI_SIGNALS.search(text):
-            return None
+    website = node.get("website")
+    votes = node.get("votesCount", 0)
+    tagline = str(node.get("tagline") or "")
+    description = str(node.get("description") or "")
 
-        seen_names.add(name.lower())
-
-        makers = tuple(
-            {"name": m["name"], "title": "Maker", "is_founder": False}
-            for m in node.get("makers", [])
-            if m.get("name")
-        )
-
-        website = node.get("website")
-        votes = node.get("votesCount", 0)
-
-        return ScrapedProduct(
-            name=name,
-            source="producthunt",
-            source_url=node.get("url", ""),
-            source_tier=SourceTier.T2_OPEN_WEB,
-            product_url=website,
-            company_website=website,
-            description=tagline or description,
-            key_people=makers,
-            tags=("generative-ai",),
-            status="active",
-            extra={"producthunt_votes": str(votes)},
-        )
+    return ScrapedProduct(
+        name=name,
+        source="producthunt",
+        source_url=str(node.get("url", "")),
+        source_tier=SourceTier.T2_OPEN_WEB,
+        product_url=str(website) if website else None,
+        company_website=str(website) if website else None,
+        description=tagline or description,
+        key_people=makers,
+        tags=("generative-ai",),
+        status="active",
+        extra={"producthunt_votes": str(votes)},
+    )

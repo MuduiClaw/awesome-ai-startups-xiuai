@@ -14,6 +14,7 @@ SCHEMA_DIR = DATA_DIR / "schema"
 # Product-centric directory
 PRODUCTS_DIR = DATA_DIR / "products"
 ARCHIVE_DIR = DATA_DIR / "archive"
+RAW_DIR = DATA_DIR / "raw"
 
 # Data files
 PRODUCT_SCHEMA_FILE = SCHEMA_DIR / "product.schema.json"

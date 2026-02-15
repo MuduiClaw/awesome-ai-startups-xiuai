@@ -215,6 +215,27 @@ class TAAScraper(BaseScraper):
     def source_tier(self) -> SourceTier:
         return SourceTier.T2_OPEN_WEB
 
+    def scrape_raw(self, limit: int = 100) -> list[dict[str, object]]:
+        """Return raw tool dicts from TAAFT's featured API."""
+        try:
+            from scrapers.utils.browser_client import BrowserClient, BrowserClientError
+        except ImportError:
+            logger.info("BrowserClient not available, skipping TAAFT scraper.")
+            return []
+
+        raw_items: list[dict[str, object]] = []
+
+        try:
+            with BrowserClient(_SEED_URL) as client:
+                raw_items = self._fetch_featured_raw(client, limit)
+        except BrowserClientError as exc:
+            logger.warning("TAAFT BrowserClient error: %s", exc)
+        except Exception as exc:
+            logger.warning("TAAFT scraper error: %s", exc)
+
+        logger.info("TAAFT: collected %d raw items", len(raw_items))
+        return raw_items[:limit]
+
     def scrape(self, limit: int = 100) -> list[ScrapedProduct]:
         """Scrape TAAFT for AI tool listings."""
         try:
@@ -227,13 +248,11 @@ class TAAScraper(BaseScraper):
 
         try:
             with BrowserClient(_SEED_URL) as client:
-                # Phase 1: Grab the site-wide featured list (fast, up to ~955 items).
-                # Category assignment uses task_slug keyword matching.
+                # Phase 1: featured API
                 featured = self._scrape_featured(client, limit)
                 products.extend(featured)
 
-                # Phase 2: If we need more items, scrape category pages
-                # via scroll-and-collect for category-specific listings.
+                # Phase 2: HTML fallback for more items
                 if len(products) < limit:
                     remaining = limit - len(products)
                     seen = {p.name.lower() for p in products}
@@ -262,6 +281,88 @@ class TAAScraper(BaseScraper):
         ]
 
     # ------------------------------------------------------------------
+    # Raw data fetching (featured API)
+    # ------------------------------------------------------------------
+
+    def _fetch_featured_raw(
+        self,
+        client: BrowserClient,
+        limit: int,
+    ) -> list[dict[str, object]]:
+        """Fetch featured tools and return raw dicts with data-* attributes."""
+        from scrapers.utils.browser_client import BrowserClientError
+
+        try:
+            from bs4 import BeautifulSoup
+        except ImportError:
+            logger.info("BeautifulSoup not available; skipping featured API.")
+            return []
+
+        api_path = _FEATURED_API.format(limit=_MAX_FEATURED_PER_CATEGORY)
+        try:
+            html = client.fetch_text(api_path)
+        except BrowserClientError as exc:
+            logger.warning("TAAFT featured API failed: %s", exc)
+            return []
+
+        if not html or len(html) < 100:
+            logger.debug("TAAFT: empty featured response")
+            return []
+
+        soup = BeautifulSoup(html, "html.parser")
+        li_items = soup.select("li[data-id][data-name]")
+        logger.info("TAAFT featured: %d items returned", len(li_items))
+
+        raw_items: list[dict[str, object]] = []
+        seen_ids: set[str] = set()
+
+        for li in li_items:
+            tool_id = str(li.get("data-id") or "")
+            if not tool_id or tool_id in seen_ids:
+                continue
+            seen_ids.add(tool_id)
+
+            name = (str(li.get("data-name") or "")).strip()
+            if not name or len(name) < 2 or len(name) > 200:
+                continue
+
+            website = _clean_url(str(li.get("data-url") or ""))
+            task_name = str(li.get("data-task") or "")
+            task_slug = str(li.get("data-task_slug") or "")
+
+            desc_el = li.select_one(".short_desc")
+            description = desc_el.get_text(strip=True) if desc_el else ""
+
+            icon_el = li.select_one("img.taaft_icon")
+            icon_url = str(icon_el.get("src")) if icon_el else ""
+
+            link_el = li.select_one("a.ai_link")
+            tool_path = ""
+            if link_el:
+                href = link_el.get("href", "")
+                if isinstance(href, str):
+                    tool_path = href.split("?")[0]
+
+            raw_items.append(
+                {
+                    "tool_id": tool_id,
+                    "name": name,
+                    "website": website,
+                    "task_name": task_name,
+                    "task_slug": task_slug,
+                    "description": description,
+                    "icon_url": icon_url,
+                    "tool_path": tool_path,
+                }
+            )
+
+            if len(raw_items) >= limit:
+                break
+
+        logger.info("TAAFT featured: %d unique items", len(raw_items))
+        return raw_items
+
+    # ------------------------------------------------------------------
     # Phase 1: Site-wide featured list via /api/featured/
     # ------------------------------------------------------------------
 
@@ -270,15 +371,7 @@ class TAAScraper(BaseScraper):
         client: BrowserClient,
         limit: int,
     ) -> list[ScrapedProduct]:
-        """Grab the site-wide featured tool list in a single API call.
-
-        TAAFT's ``/api/featured/`` returns the same ~955 featured tools
-        regardless of which page is loaded. A single call from the seed
-        page is enough — no category iteration needed.
-
-        Category assignment relies on each tool's ``data-task_slug``
-        attribute and keyword-based fallback.
-        """
+        """Grab the site-wide featured tool list in a single API call."""
         from scrapers.utils.browser_client import BrowserClientError
 
         try:
@@ -311,8 +404,6 @@ class TAAScraper(BaseScraper):
                 continue
             seen_ids.add(tool_id)
 
-            # Use the tool's own task_slug for category (no page-level cat_slug
-            # since this is a global featured list, not category-specific).
             task_slug = str(li.get("data-task_slug") or "")
             product = _li_to_product(li, task_slug)
             if product is not None:

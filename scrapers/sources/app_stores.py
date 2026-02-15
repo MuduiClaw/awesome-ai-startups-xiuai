@@ -155,8 +155,8 @@ class GooglePlayScraper(BaseScraper):
     def source_tier(self) -> SourceTier:
         return SourceTier.T2_OPEN_WEB
 
-    def scrape(self, limit: int = 100) -> list[ScrapedProduct]:
-        """Search Google Play for AI apps (EN + ZH queries)."""
+    def scrape_raw(self, limit: int = 100) -> list[dict[str, object]]:
+        """Return raw app dicts from google-play-scraper, filtered for AI relevance."""
         try:
             from google_play_scraper import search as gp_search
         except ImportError:
@@ -166,10 +166,9 @@ class GooglePlayScraper(BaseScraper):
             )
             return []
 
-        products: list[ScrapedProduct] = []
+        raw_items: list[dict[str, object]] = []
         seen_ids: set[str] = set()
 
-        # Build (query, lang) pairs: EN queries first, then ZH
         query_pairs: list[tuple[str, str]] = [
             (q, "en") for q in _SEARCH_QUERIES_EN
         ] + [
@@ -177,7 +176,7 @@ class GooglePlayScraper(BaseScraper):
         ]
 
         for query, lang in query_pairs:
-            if len(products) >= limit:
+            if len(raw_items) >= limit:
                 break
 
             logger.debug("Google Play: searching '%s' (lang=%s)", query, lang)
@@ -203,72 +202,83 @@ class GooglePlayScraper(BaseScraper):
                 seen_ids.add(app_id)
 
                 title = app.get("title", "").strip()
+                description = app.get("summary") or app.get("description", "")
                 if not title:
                     continue
-
-                developer = app.get("developer", "")
-                score = app.get("score")
-                installs = app.get("realInstalls") or app.get("installs", "")
-                icon = app.get("icon", "")
-                description = app.get("summary") or app.get("description", "")
-                url = f"https://play.google.com/store/apps/details?id={app_id}"
-
-                # AI-relevance gate: skip non-AI apps
                 if not _is_ai_relevant(title, description):
                     logger.debug("Skipping non-AI app: %s", title)
                     continue
 
-                # Truncate description
-                if description and len(description) > 500:
-                    description = description[:497] + "..."
-
-                # Auto-detect Chinese fields
-                name_zh = title if title and _has_chinese(title) else None
-                description_zh = (
-                    description
-                    if description and _has_chinese(description)
-                    else None
-                )
-                company_name_zh = (
-                    developer
-                    if developer and _has_chinese(developer)
-                    else None
-                )
-
-                extra: dict[str, str] = {"google_play_app_id": app_id}
-                if score is not None:
-                    extra["google_play_rating"] = f"{score:.1f}"
-                if installs:
-                    extra["google_play_installs"] = str(installs)
-
-                products.append(
-                    ScrapedProduct(
-                        name=title,
-                        name_zh=name_zh,
-                        source=self.source_name,
-                        source_url=url,
-                        source_tier=SourceTier.T2_OPEN_WEB,
-                        product_url=url,
-                        icon_url=icon if icon else None,
-                        description=description if description else None,
-                        description_zh=description_zh,
-                        product_type="app",
-                        category="ai-app",
-                        company_name=developer if developer else None,
-                        company_name_zh=company_name_zh,
-                        platforms=("android",),
-                        status="active",
-                        extra=extra,
-                    )
-                )
-
-                if len(products) >= limit:
+                raw_items.append(dict(app))
+                if len(raw_items) >= limit:
                     break
 
             time.sleep(DEFAULT_REQUEST_DELAY)
 
+        logger.info("Google Play: collected %d raw items", len(raw_items))
+        return raw_items
+
+    def scrape(self, limit: int = 100) -> list[ScrapedProduct]:
+        """Search Google Play for AI apps (EN + ZH queries)."""
+        raw_items = self.scrape_raw(limit=limit)
+        products: list[ScrapedProduct] = []
+
+        for app in raw_items:
+            product = _gp_app_to_product(app, self.source_name)
+            if product is not None:
+                products.append(product)
+
         logger.info("Google Play: discovered %d apps", len(products))
         return products
+
+
+def _gp_app_to_product(
+    app: dict[str, object], source_name: str
+) -> ScrapedProduct | None:
+    """Convert a raw Google Play app dict to a ScrapedProduct."""
+    title = str(app.get("title", "")).strip()
+    if not title:
+        return None
+
+    app_id = str(app.get("appId", ""))
+    developer = str(app.get("developer", ""))
+    score = app.get("score")
+    installs = app.get("realInstalls") or app.get("installs", "")
+    icon = str(app.get("icon", ""))
+    description = str(app.get("summary") or app.get("description", ""))
+    url = f"https://play.google.com/store/apps/details?id={app_id}"
+
+    if description and len(description) > 500:
+        description = description[:497] + "..."
+
+    name_zh = title if title and _has_chinese(title) else None
+    description_zh = description if description and _has_chinese(description) else None
+    company_name_zh = developer if developer and _has_chinese(developer) else None
+
+    extra: dict[str, str] = {"google_play_app_id": app_id}
+    if score is not None:
+        extra["google_play_rating"] = f"{score:.1f}"
+    if installs:
+        extra["google_play_installs"] = str(installs)
+
+    return ScrapedProduct(
+        name=title,
+        name_zh=name_zh,
+        source=source_name,
+        source_url=url,
+        source_tier=SourceTier.T2_OPEN_WEB,
+        product_url=url,
+        icon_url=icon if icon else None,
+        description=description if description else None,
+        description_zh=description_zh,
+        product_type="app",
+        category="ai-app",
+        company_name=developer if developer else None,
+        company_name_zh=company_name_zh,
+        platforms=("android",),
+        status="active",
+        extra=extra,
+    )
 
 
 class AppStoreScraper(BaseScraper):
@@ -288,16 +298,14 @@ class AppStoreScraper(BaseScraper):
     def source_tier(self) -> SourceTier:
         return SourceTier.T2_OPEN_WEB
 
-    def scrape(self, limit: int = 100) -> list[ScrapedProduct]:
-        """Search Apple App Store for AI apps via iTunes Search API (US + CN)."""
+    def scrape_raw(self, limit: int = 100) -> list[dict[str, object]]:
+        """Return raw app dicts from iTunes Search API, filtered for AI relevance."""
         from scrapers.utils import create_http_client
 
         client = create_http_client()
-        products: list[ScrapedProduct] = []
+        raw_items: list[dict[str, object]] = []
         seen_ids: set[str] = set()
 
-        # Build (query, country) pairs:
-        # EN queries search US only; ZH queries search both US and CN
         query_region_pairs: list[tuple[str, str]] = [
             (q, "us") for q in _SEARCH_QUERIES_EN
         ] + [
@@ -308,7 +316,7 @@ class AppStoreScraper(BaseScraper):
 
         try:
             for query, country in query_region_pairs:
-                if len(products) >= limit:
+                if len(raw_items) >= limit:
                     break
 
                 logger.debug("App Store: searching '%s' (country=%s)", query, country)
@@ -337,66 +345,15 @@ class AppStoreScraper(BaseScraper):
                     seen_ids.add(track_id)
 
                     name = app.get("trackName", "").strip()
+                    description = app.get("description", "")
                     if not name:
                         continue
-
-                    developer = app.get("artistName", "")
-                    rating = app.get("averageUserRating")
-                    rating_count = app.get("userRatingCount")
-                    icon = app.get("artworkUrl512") or app.get("artworkUrl100", "")
-                    description = app.get("description", "")
-                    store_url = app.get("trackViewUrl", "")
-
-                    # AI-relevance gate: skip non-AI apps
                     if not _is_ai_relevant(name, description):
                         logger.debug("Skipping non-AI app: %s", name)
                         continue
 
-                    if description and len(description) > 500:
-                        description = description[:497] + "..."
-
-                    # Auto-detect Chinese fields
-                    name_zh = name if name and _has_chinese(name) else None
-                    description_zh = (
-                        description
-                        if description and _has_chinese(description)
-                        else None
-                    )
-                    company_name_zh = (
-                        developer
-                        if developer and _has_chinese(developer)
-                        else None
-                    )
-
-                    extra: dict[str, str] = {"app_store_track_id": track_id}
-                    if rating is not None:
-                        extra["app_store_rating"] = f"{rating:.1f}"
-                    if rating_count is not None:
-                        extra["app_store_rating_count"] = str(rating_count)
-
-                    products.append(
-                        ScrapedProduct(
-                            name=name,
-                            name_zh=name_zh,
-                            source=self.source_name,
-                            source_url=store_url
-                            or f"https://apps.apple.com/app/id{track_id}",
-                            source_tier=SourceTier.T2_OPEN_WEB,
-                            product_url=store_url if store_url else None,
-                            icon_url=icon if icon else None,
-                            description=description if description else None,
-                            description_zh=description_zh,
-                            product_type="app",
-                            category="ai-app",
-                            company_name=developer if developer else None,
-                            company_name_zh=company_name_zh,
-                            platforms=("ios",),
-                            status="active",
-                            extra=extra,
-                        )
-                    )
-
-                    if len(products) >= limit:
+                    raw_items.append(dict(app))
+                    if len(raw_items) >= limit:
                         break
 
                 time.sleep(DEFAULT_REQUEST_DELAY)
@@ -404,5 +361,67 @@ class AppStoreScraper(BaseScraper):
         finally:
             client.close()
 
+        logger.info("App Store: collected %d raw items", len(raw_items))
+        return raw_items
+
+    def scrape(self, limit: int = 100) -> list[ScrapedProduct]:
+        """Search Apple App Store for AI apps via iTunes Search API (US + CN)."""
+        raw_items = self.scrape_raw(limit=limit)
+        products: list[ScrapedProduct] = []
+
+        for app in raw_items:
+            product = _appstore_app_to_product(app, self.source_name)
+            if product is not None:
+                products.append(product)
+
         logger.info("App Store: discovered %d apps", len(products))
         return products
+
+
+def _appstore_app_to_product(
+    app: dict[str, object], source_name: str
+) -> ScrapedProduct | None:
+    """Convert a raw iTunes Search API result dict to a ScrapedProduct."""
+    name = str(app.get("trackName", "")).strip()
+    if not name:
+        return None
+
+    track_id = str(app.get("trackId", ""))
+    developer = str(app.get("artistName", ""))
+    rating = app.get("averageUserRating")
+    rating_count = app.get("userRatingCount")
+    icon = str(app.get("artworkUrl512") or app.get("artworkUrl100", ""))
+    description = str(app.get("description", ""))
+    store_url = str(app.get("trackViewUrl", ""))
+
+    if description and len(description) > 500:
+        description = description[:497] + "..."
+
+    name_zh = name if name and _has_chinese(name) else None
+    description_zh = description if description and _has_chinese(description) else None
+    company_name_zh = developer if developer and _has_chinese(developer) else None
+
+    extra: dict[str, str] = {"app_store_track_id": track_id}
+    if rating is not None:
+        extra["app_store_rating"] = f"{rating:.1f}"
+    if rating_count is not None:
+        extra["app_store_rating_count"] = str(rating_count)
+
+    return ScrapedProduct(
+        name=name,
+        name_zh=name_zh,
+        source=source_name,
+        source_url=store_url or f"https://apps.apple.com/app/id{track_id}",
+        source_tier=SourceTier.T2_OPEN_WEB,
+        product_url=store_url if store_url else None,
+        icon_url=icon if icon else None,
+        description=description if description else None,
+        description_zh=description_zh,
+        product_type="app",
+        category="ai-app",
+        company_name=developer if developer else None,
+        company_name_zh=company_name_zh,
+        platforms=("ios",),
+        status="active",
+        extra=extra,
+    )

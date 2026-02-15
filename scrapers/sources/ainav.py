@@ -66,10 +66,10 @@ class AiNavScraper(BaseScraper):
     def source_tier(self) -> SourceTier:
         return SourceTier.T2_OPEN_WEB
 
-    def scrape(self, limit: int = 100) -> list[ScrapedProduct]:
-        """Scrape ainav.cn homepage for AI tool listings."""
+    def scrape_raw(self, limit: int = 100) -> list[dict[str, object]]:
+        """Return raw card dicts from ainav.cn homepage."""
         client = create_http_client()
-        products: list[ScrapedProduct] = []
+        raw_items: list[dict[str, object]] = []
         seen_names: set[str] = set()
 
         try:
@@ -78,14 +78,14 @@ class AiNavScraper(BaseScraper):
                 response.raise_for_status()
             except Exception as exc:
                 logger.warning("ainav: homepage fetch failed: %s", exc)
-                return products
+                return raw_items
 
             html = response.content.decode("utf-8", errors="replace")
             sections = _split_sections(html)
 
             if not sections:
                 logger.warning("ainav: no category sections found on homepage")
-                return products
+                return raw_items
 
             logger.info("ainav: found %d categories on homepage", len(sections))
 
@@ -93,7 +93,7 @@ class AiNavScraper(BaseScraper):
                 if term_id in _SKIP_TERMS:
                     continue
 
-                if len(products) >= limit:
+                if len(raw_items) >= limit:
                     break
 
                 parsed = _extract_cards(section_html)
@@ -110,42 +110,66 @@ class AiNavScraper(BaseScraper):
                     seen_names.add(name_lower)
 
                     # Resolve redirect/tracking URLs to real product URLs
-                    product_url = _resolve_url(product_url) if product_url else None
+                    resolved_url = _resolve_url(product_url) if product_url else None
 
                     # Skip placeholder icons
-                    if icon_url and (
-                        "favicon.png" in icon_url or "default" in icon_url
+                    clean_icon = icon_url
+                    if clean_icon and (
+                        "favicon.png" in clean_icon or "default" in clean_icon
                     ):
-                        icon_url = None
+                        clean_icon = None
 
-                    name_zh = name if _has_chinese(name) else None
-                    desc_zh = (
-                        description
-                        if description and _has_chinese(description)
-                        else None
+                    raw_items.append(
+                        {
+                            "name": name,
+                            "product_url": resolved_url,
+                            "description": description,
+                            "icon_url": clean_icon,
+                            "term_id": term_id,
+                            "category_name": cat_name,
+                        }
                     )
 
-                    products.append(
-                        ScrapedProduct(
-                            name=name,
-                            source=self.source_name,
-                            source_url=_BASE_URL,
-                            source_tier=SourceTier.T2_OPEN_WEB,
-                            name_zh=name_zh,
-                            product_url=product_url or None,
-                            description=description or None,
-                            description_zh=desc_zh,
-                            icon_url=icon_url or None,
-                            tags=(cat_name,),
-                            status="active",
-                        )
-                    )
-
-                    if len(products) >= limit:
+                    if len(raw_items) >= limit:
                         break
 
         finally:
             client.close()
+
+        logger.info("ainav: collected %d raw items", len(raw_items))
+        return raw_items
+
+    def scrape(self, limit: int = 100) -> list[ScrapedProduct]:
+        """Scrape ainav.cn homepage for AI tool listings."""
+        raw_items = self.scrape_raw(limit=limit)
+        products: list[ScrapedProduct] = []
+
+        for item in raw_items:
+            name = str(item.get("name", ""))
+            product_url = item.get("product_url")
+            description = item.get("description")
+            icon_url = item.get("icon_url")
+            cat_name = str(item.get("category_name", ""))
+
+            name_zh = name if _has_chinese(name) else None
+            desc_str = str(description) if description else None
+            desc_zh = desc_str if desc_str and _has_chinese(desc_str) else None
+
+            products.append(
+                ScrapedProduct(
+                    name=name,
+                    source=self.source_name,
+                    source_url=_BASE_URL,
+                    source_tier=SourceTier.T2_OPEN_WEB,
+                    name_zh=name_zh,
+                    product_url=str(product_url) if product_url else None,
+                    description=desc_str,
+                    description_zh=desc_zh,
+                    icon_url=str(icon_url) if icon_url else None,
+                    tags=(cat_name,),
+                    status="active",
+                )
+            )
 
         logger.info("ainav: discovered %d products", len(products))
         return products

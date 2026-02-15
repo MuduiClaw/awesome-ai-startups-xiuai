@@ -11,8 +11,7 @@ from scrapers.sources.ainav import AiNavScraper
 from scrapers.sources.app_stores import AppStoreScraper, GooglePlayScraper
 
 # from scrapers.sources.artificial_analysis import ArtificialAnalysisScraper  # disabled
-from scrapers.sources.crunchbase import CrunchbaseScraper
-
+# from scrapers.sources.crunchbase import CrunchbaseScraper  # disabled
 # from scrapers.sources.github_trending import GitHubTrendingScraper  # disabled
 # from scrapers.sources.huggingface import HuggingFaceScraper  # disabled
 # from scrapers.sources.lmsys import LMSYSScraper  # disabled
@@ -28,7 +27,7 @@ from scrapers.sources.toolify import ToolifyScraper
 
 ALL_SCRAPERS = {
     # T1 Authoritative (EnrichmentScraper role)
-    "crunchbase": CrunchbaseScraper,
+    # "crunchbase": CrunchbaseScraper,  # disabled
     # T2 Open Web — Discovery role
     "producthunt": ProductHuntScraper,
     # "github": GitHubTrendingScraper,  # disabled
@@ -55,7 +54,7 @@ __all__ = [
     "AiNavScraper",
     "AppStoreScraper",
     # "ArtificialAnalysisScraper",  # disabled
-    "CrunchbaseScraper",
+    # "CrunchbaseScraper",  # disabled
     # "GitHubTrendingScraper",  # disabled
     "GooglePlayScraper",
     # "HuggingFaceScraper",  # disabled

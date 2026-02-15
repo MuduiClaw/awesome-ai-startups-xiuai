@@ -139,6 +139,64 @@ def scrape(source: str, limit: int, dry_run: bool) -> None:
     click.echo("\nDone! Run 'aiscrape generate-stats' to update index and stats.")
 
 
+@cli.command("scrape-raw")
+@click.option(
+    "--source",
+    required=True,
+    help="Source to scrape (comma-separated, no 'all')",
+)
+@click.option("--limit", default=50, help="Maximum items per source")
+@click.option("--dry-run", is_flag=True, help="Preview first item without writing")
+def scrape_raw(source: str, limit: int, dry_run: bool) -> None:
+    """Save source raw data to data/raw/<source>/ (no normalize/dedup)."""
+    from scrapers.raw_writer import RawDataWriter
+    from scrapers.sources import ALL_SCRAPERS
+
+    names = [s.strip() for s in source.split(",")]
+    unknown = [n for n in names if n not in ALL_SCRAPERS]
+    if unknown:
+        click.echo(
+            f"Unknown source(s): {', '.join(unknown)}. "
+            f"Available: {', '.join(ALL_SCRAPERS)}"
+        )
+        sys.exit(1)
+
+    writer = RawDataWriter()
+
+    for name in names:
+        scraper_cls = ALL_SCRAPERS[name]
+        scraper = scraper_cls()
+        click.echo(f"\n[{scraper.source_name}] Fetching raw data (limit={limit})...")
+
+        try:
+            items = scraper.scrape_raw(limit=limit)
+        except Exception:
+            import traceback
+
+            click.echo(
+                f"[{scraper.source_name}] Error:\n{traceback.format_exc()}",
+                err=True,
+            )
+            continue
+
+        click.echo(f"[{scraper.source_name}] Got {len(items)} raw items")
+
+        if not items:
+            continue
+
+        if dry_run:
+            click.echo(f"\n[DRY RUN] Preview ({scraper.source_name}):")
+            click.echo(writer.preview(items, max_items=1))
+            click.echo(f"\nTotal: {len(items)} items (not written)")
+        else:
+            written = writer.write(scraper.source_name, items)
+            click.echo(
+                f"[{scraper.source_name}] Wrote {written} files to data/raw/{scraper.source_name}/"
+            )
+
+    click.echo("\nDone!")
+
+
 @cli.command()
 def validate() -> None:
     """Validate all product JSON files against the schema."""

@@ -86,22 +86,22 @@ class AiBotScraper(BaseScraper):
     def source_tier(self) -> SourceTier:
         return SourceTier.T2_OPEN_WEB
 
-    def scrape(self, limit: int = 100) -> list[ScrapedProduct]:
-        """Scrape ai-bot.cn category pages for AI tool listings."""
+    def scrape_raw(self, limit: int = 100) -> list[dict[str, object]]:
+        """Return raw card dicts from ai-bot.cn category pages."""
         client = create_http_client()
-        products: list[ScrapedProduct] = []
+        raw_items: list[dict[str, object]] = []
         seen_names: set[str] = set()
 
         try:
             category_urls = self._discover_categories(client)
             if not category_urls:
                 logger.warning("aibot: no category URLs found in sitemap")
-                return products
+                return raw_items
 
             logger.info("aibot: found %d categories in sitemap", len(category_urls))
 
             for page_url, cat_slug in category_urls:
-                if len(products) >= limit:
+                if len(raw_items) >= limit:
                     break
 
                 logger.debug("aibot: scraping %s", cat_slug)
@@ -114,23 +114,79 @@ class AiBotScraper(BaseScraper):
                     time.sleep(DEFAULT_REQUEST_DELAY)
                     continue
 
-                html = response.content.decode("utf-8", errors="replace")
-                parsed = self._parse_listing(client, html, cat_slug, page_url)
+                html_text = response.content.decode("utf-8", errors="replace")
+                entries = _extract_cards(html_text)
 
-                for product in parsed:
-                    name_lower = product.name.lower()
+                for name, product_url, description, icon_url in entries:
+                    name = name.strip()
+                    if not name or len(name) < 2 or len(name) > 80:
+                        continue
+
+                    name_lower = name.lower()
                     if name_lower in seen_names:
                         continue
                     seen_names.add(name_lower)
-                    products.append(product)
 
-                    if len(products) >= limit:
+                    # Resolve internal URLs
+                    if product_url and _INTERNAL_URL_RE.match(product_url):
+                        resolved = _resolve_internal_url(client, product_url)
+                        if resolved:
+                            product_url = resolved
+
+                    raw_items.append(
+                        {
+                            "name": name,
+                            "product_url": product_url,
+                            "description": description,
+                            "icon_url": icon_url,
+                            "category_slug": cat_slug,
+                            "source_page": page_url,
+                        }
+                    )
+
+                    if len(raw_items) >= limit:
                         break
 
                 time.sleep(DEFAULT_REQUEST_DELAY)
 
         finally:
             client.close()
+
+        logger.info("aibot: collected %d raw items", len(raw_items))
+        return raw_items
+
+    def scrape(self, limit: int = 100) -> list[ScrapedProduct]:
+        """Scrape ai-bot.cn category pages for AI tool listings."""
+        raw_items = self.scrape_raw(limit=limit)
+        products: list[ScrapedProduct] = []
+
+        for item in raw_items:
+            name = str(item.get("name", ""))
+            product_url = item.get("product_url")
+            description = item.get("description")
+            icon_url = item.get("icon_url")
+            cat_slug = str(item.get("category_slug", ""))
+            page_url = str(item.get("source_page", ""))
+
+            name_zh = name if _has_chinese(name) else None
+            desc_str = str(description) if description else None
+            desc_zh = desc_str if desc_str and _has_chinese(desc_str) else None
+
+            products.append(
+                ScrapedProduct(
+                    name=name,
+                    source=self.source_name,
+                    source_url=page_url,
+                    source_tier=SourceTier.T2_OPEN_WEB,
+                    name_zh=name_zh,
+                    product_url=str(product_url) if product_url else None,
+                    description=desc_str,
+                    description_zh=desc_zh,
+                    icon_url=str(icon_url) if icon_url else None,
+                    tags=(cat_slug,),
+                    status="active",
+                )
+            )
 
         logger.info("aibot: discovered %d products", len(products))
         return products
@@ -169,48 +225,6 @@ class AiBotScraper(BaseScraper):
             urls.append((full_url, slug))
 
         return urls
-
-    def _parse_listing(
-        self, client: httpx.Client, html: str, cat_slug: str, page_url: str
-    ) -> list[ScrapedProduct]:
-        """Parse an ai-bot.cn category listing page into ScrapedProduct list."""
-        if not html or len(html) < 200:
-            return []
-
-        entries = _extract_cards(html)
-        products: list[ScrapedProduct] = []
-
-        for name, product_url, description, icon_url in entries:
-            name = name.strip()
-            if not name or len(name) < 2 or len(name) > 80:
-                continue
-
-            # Resolve internal URLs by following the detail page
-            if product_url and _INTERNAL_URL_RE.match(product_url):
-                resolved = _resolve_internal_url(client, product_url)
-                if resolved:
-                    product_url = resolved
-
-            name_zh = name if _has_chinese(name) else None
-            desc_zh = description if description and _has_chinese(description) else None
-
-            products.append(
-                ScrapedProduct(
-                    name=name,
-                    source=self.source_name,
-                    source_url=page_url,
-                    source_tier=SourceTier.T2_OPEN_WEB,
-                    name_zh=name_zh,
-                    product_url=product_url or None,
-                    description=description or None,
-                    description_zh=desc_zh,
-                    icon_url=icon_url or None,
-                    tags=(cat_slug,),
-                    status="active",
-                )
-            )
-
-        return products
 
 
 # ---------------------------------------------------------------------------
