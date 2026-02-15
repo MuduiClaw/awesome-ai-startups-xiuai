@@ -32,11 +32,105 @@ _UTM_RE = re.compile(r"[?&]utm_source=toolify.*$", re.IGNORECASE)
 # Category mapping: Toolify handle → our schema category
 # ---------------------------------------------------------------------------
 
-# Direct map for the top categories (covers ~80 % of products).
-# Values use normalizer aliases where convenient — the downstream
-# Normalizer._CATEGORY_ALIASES automatically maps e.g. "ai-app" → "ai-application".
+# Direct map for the top categories.
+# Values must be one of the 11 schema-valid category enum values.
+# The downstream Normalizer._CATEGORY_ALIASES automatically maps
+# e.g. "ai-app" → "ai-application" if needed.
 _CATEGORY_MAP: dict[str, str] = {
-    # Applications
+    # -----------------------------------------------------------------
+    # ai-creative-media — image/video/audio/3D/design
+    # -----------------------------------------------------------------
+    "ai-image-generator": "ai-creative-media",
+    "ai-video-generator": "ai-creative-media",
+    "ai-art-generator": "ai-creative-media",
+    "ai-design-generator": "ai-creative-media",
+    "ai-music-generator": "ai-creative-media",
+    "ai-audio": "ai-creative-media",
+    "ai-3d-model-generator": "ai-creative-media",
+    "ai-photo-editor": "ai-creative-media",
+    "ai-voice-cloning": "ai-creative-media",
+    "text-to-speech": "ai-creative-media",
+    # Image generation & editing
+    "image-to-video": "ai-creative-media",
+    "text-to-video": "ai-creative-media",
+    "text-to-image": "ai-creative-media",
+    "image-to-image": "ai-creative-media",
+    "video-to-video": "ai-creative-media",
+    "ai-image-upscaler": "ai-creative-media",
+    "ai-photo-restoration": "ai-creative-media",
+    "ai-image-enhancer": "ai-creative-media",
+    "ai-photo-enhancer": "ai-creative-media",
+    "ai-image-sharpening": "ai-creative-media",
+    "ai-unblur-image": "ai-creative-media",
+    "ai-inpainting": "ai-creative-media",
+    "ai-outpainting": "ai-creative-media",
+    "ai-expand-image": "ai-creative-media",
+    "ai-image-combiner": "ai-creative-media",
+    "ai-style-transfer": "ai-creative-media",
+    "ai-background-remover": "ai-creative-media",
+    "ai-background-generator": "ai-creative-media",
+    "ai-watermark-remover": "ai-creative-media",
+    "ai-eraser": "ai-creative-media",
+    "object-remover-ai": "ai-creative-media",
+    "ai-illustration-generator": "ai-creative-media",
+    "ai-anime-generator": "ai-creative-media",
+    "ai-realistic-image-generator": "ai-creative-media",
+    "ai-product-photography": "ai-creative-media",
+    "ai-clothing-generator": "ai-creative-media",
+    # Video generation & editing
+    "ai-short-video-generator": "ai-creative-media",
+    "ai-video-editor": "ai-creative-media",
+    "ai-video-enhancer": "ai-creative-media",
+    "ai-animation-generator": "ai-creative-media",
+    "ai-animated-video": "ai-creative-media",
+    "ai-cartoon-video-generator": "ai-creative-media",
+    "ai-lip-sync-generator": "ai-creative-media",
+    "ai-face-swap-generator": "ai-creative-media",
+    "ai-face-swap-video": "ai-creative-media",
+    "ai-commercial-generator": "ai-creative-media",
+    "ai-tiktok-video-generator": "ai-creative-media",
+    "ai-ugc-video-generator": "ai-creative-media",
+    "ai-youtube-video-maker": "ai-creative-media",
+    "ai-music-video-generator": "ai-creative-media",
+    "ai-movie-generator": "ai-creative-media",
+    "ai-video-translator": "ai-creative-media",
+    "ai-subtitle-generator": "ai-creative-media",
+    "ai-dubbing": "ai-creative-media",
+    "script-to-video-ai-generator": "ai-creative-media",
+    "ai-avatar-video-generator": "ai-creative-media",
+    # Audio & speech
+    "ai-song-generator": "ai-creative-media",
+    "ai-voice-generator": "ai-creative-media",
+    "ai-voice-over": "ai-creative-media",
+    "ai-text-to-speech": "ai-creative-media",
+    "ai-text-to-music": "ai-creative-media",
+    "ai-speech-to-text": "ai-creative-media",
+    "ai-lyrics-generator": "ai-creative-media",
+    "ai-vocal-remover": "ai-creative-media",
+    "ai-transcriber": "ai-creative-media",
+    "ai-transcription": "ai-creative-media",
+    "ai-cover-generator": "ai-creative-media",
+    # Avatar & profile
+    "ai-avatar-generator": "ai-creative-media",
+    "ai-headshot-generator": "ai-creative-media",
+    "ai-profile-picture-generator": "ai-creative-media",
+    # Design & presentation
+    "ai-graphic-design": "ai-creative-media",
+    "ai-design-assistant": "ai-creative-media",
+    "ai-poster-generator": "ai-creative-media",
+    "ai-infographic-generator": "ai-creative-media",
+    "ai-ppt-maker": "ai-creative-media",
+    "ai-presentation-generator": "ai-creative-media",
+    "ai-interior-design": "ai-creative-media",
+    # 3D & gaming
+    "text-to-3d": "ai-creative-media",
+    "image-to-3d-model": "ai-creative-media",
+    "ai-game-generator": "ai-creative-media",
+    # YouTube
+    "ai-youtube": "ai-creative-media",
+    # -----------------------------------------------------------------
+    # ai-application — writing/productivity/social/character/chatbot
+    # -----------------------------------------------------------------
     "ai-chatbot": "ai-application",
     "ai-assistant": "ai-application",
     "ai-productivity-tools": "ai-application",
@@ -49,38 +143,96 @@ _CATEGORY_MAP: dict[str, str] = {
     "ai-social-media-assistant": "ai-application",
     "ai-scheduling": "ai-application",
     "ai-translation": "ai-application",
-    "ai-finance": "ai-enterprise-vertical",
-    "ai-healthcare": "ai-science-research",
-    "ai-legal-assistant": "ai-enterprise-vertical",
-    # Creative & media
-    "ai-image-generator": "ai-creative-media",
-    "ai-video-generator": "ai-creative-media",
-    "ai-art-generator": "ai-creative-media",
-    "ai-design-generator": "ai-creative-media",
-    "ai-music-generator": "ai-creative-media",
-    "ai-audio": "ai-creative-media",
-    "ai-3d-model-generator": "ai-creative-media",
-    "ai-photo-editor": "ai-creative-media",
-    "ai-voice-cloning": "ai-creative-media",
-    "text-to-speech": "ai-creative-media",
-    # Developer & platform
+    # Writing & content
+    "ai-writing": "ai-application",
+    "ai-rewriter": "ai-application",
+    "ai-copywriting": "ai-application",
+    "ai-blog-generator": "ai-application",
+    "ai-documents-generator": "ai-application",
+    "ai-paraphraser": "ai-application",
+    "ai-report-generator": "ai-application",
+    "seo-writing-ai": "ai-application",
+    "ai-pdf": "ai-application",
+    "humanizer-ai": "ai-application",
+    # Productivity & workflow
+    "ai-knowledge-management": "ai-application",
+    "ai-copilot": "ai-application",
+    "ai-workflow": "ai-application",
+    "ai-task-management": "ai-application",
+    "ai-meeting-assistant": "ai-application",
+    "ai-coaching": "ai-application",
+    "ai-interview-assistant": "ai-application",
+    # Social & character
+    "ai-character": "ai-application",
+    "ai-roleplay": "ai-application",
+    "ai-social-media": "ai-application",
+    "ai-social-media-post-generator": "ai-application",
+    # Prompts
+    "ai-prompt-generator": "ai-application",
+    "prompt-engineering": "ai-application",
+    # -----------------------------------------------------------------
+    # ai-dev-platform — developer tools, coding, no-code, web
+    # -----------------------------------------------------------------
     "ai-developer-tools": "ai-dev-platform",
     "ai-api": "ai-dev-platform",
     "ai-code-assistant": "ai-dev-platform",
     "ai-code-generator": "ai-dev-platform",
     "no-code-low-code": "ai-dev-platform",
-    # Models
-    "large-language-models-llms": "ai-foundation-model",
-    # Data & analytics
+    "ai-web-scraping": "ai-dev-platform",
+    "ai-website-builder": "ai-dev-platform",
+    "ai-app-builder": "ai-dev-platform",
+    # -----------------------------------------------------------------
+    # ai-enterprise-vertical — marketing/sales/finance/legal/HR
+    # -----------------------------------------------------------------
+    "ai-finance": "ai-enterprise-vertical",
+    "ai-legal-assistant": "ai-enterprise-vertical",
+    "ai-seo-tools": "ai-enterprise-vertical",
+    "ai-ad-generator": "ai-enterprise-vertical",
+    "ai-advertising": "ai-enterprise-vertical",
+    "ai-digital-marketing": "ai-enterprise-vertical",
+    "ai-ad-creative": "ai-enterprise-vertical",
+    "ai-lead-generation": "ai-enterprise-vertical",
+    "ai-sales-assistant": "ai-enterprise-vertical",
+    "ai-sales": "ai-enterprise-vertical",
+    "ai-marketing-plan-generator": "ai-enterprise-vertical",
+    "ai-email-marketing": "ai-enterprise-vertical",
+    "ai-for-finance": "ai-enterprise-vertical",
+    # -----------------------------------------------------------------
+    # ai-data-platform — analytics & data
+    # -----------------------------------------------------------------
     "ai-data-analysis": "ai-data-platform",
     "ai-analytics": "ai-data-platform",
-    # Search
+    "ai-for-data-analytics": "ai-data-platform",
+    "ai-data-mining": "ai-data-platform",
+    "ai-diagram-generator": "ai-data-platform",
+    # -----------------------------------------------------------------
+    # ai-search-retrieval
+    # -----------------------------------------------------------------
     "ai-search-engine": "ai-search-retrieval",
     "ai-summarizer": "ai-search-retrieval",
-    # Security
+    "ai-research-tool": "ai-search-retrieval",
+    # -----------------------------------------------------------------
+    # ai-security-governance
+    # -----------------------------------------------------------------
     "ai-security": "ai-security-governance",
     "ai-detector": "ai-security-governance",
-    # Infrastructure
+    "ai-content-detector": "ai-security-governance",
+    "ai-checker": "ai-security-governance",
+    # -----------------------------------------------------------------
+    # ai-foundation-model
+    # -----------------------------------------------------------------
+    "large-language-models-llms": "ai-foundation-model",
+    "open-source-ai-models": "ai-foundation-model",
+    "ai-models": "ai-foundation-model",
+    # -----------------------------------------------------------------
+    # ai-science-research
+    # -----------------------------------------------------------------
+    "ai-healthcare": "ai-science-research",
+    "ai-teachers": "ai-science-research",
+    "ai-math": "ai-science-research",
+    # -----------------------------------------------------------------
+    # ai-infrastructure
+    # -----------------------------------------------------------------
     "ai-infrastructure": "ai-infrastructure",
 }
 

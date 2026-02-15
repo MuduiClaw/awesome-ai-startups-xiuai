@@ -9,9 +9,11 @@ No API key required.
 
 from __future__ import annotations
 
+import base64
 import html as html_mod
 import logging
 import re
+from urllib.parse import unquote
 
 from scrapers.base import BaseScraper, ScrapedProduct, SourceTier
 from scrapers.utils import create_http_client
@@ -46,6 +48,26 @@ _CARD_PATTERN = re.compile(
     r"<p[^>]*>([^<]*)</p>",  # group 5: short description (p tag)
     re.DOTALL,
 )
+
+
+# ---------------------------------------------------------------------------
+# Category mapping: AiNav Chinese category_name → (schema category, sub_category)
+# ---------------------------------------------------------------------------
+_AINAV_CATEGORY_MAP: dict[str, tuple[str, str]] = {
+    "AI绘画工具": ("ai-creative-media", "image-generation"),
+    "AI图片处理": ("ai-creative-media", "image-editing"),
+    "AI文本工具": ("ai-application", "text-generation"),
+    "AI对话聊天": ("ai-application", "chatbot"),
+    "AI开发者社区": ("ai-dev-platform", "developer-community"),
+    "AI编程工具": ("ai-dev-platform", "coding-assistant"),
+    "AI视频工具": ("ai-creative-media", "video-generation"),
+    "AI智能体平台": ("ai-application", "ai-agent"),
+    "AI搜索引擎": ("ai-search-retrieval", "ai-search"),
+    "AI音频工具": ("ai-creative-media", "audio-speech"),
+    "AI办公工具": ("ai-application", "productivity"),
+    "AI提示词": ("ai-application", "prompt-engineering"),
+    "AI内容检测": ("ai-security-governance", "ai-content-detection"),
+}
 
 
 class AiNavScraper(BaseScraper):
@@ -155,6 +177,10 @@ class AiNavScraper(BaseScraper):
             desc_str = str(description) if description else None
             desc_zh = desc_str if desc_str and _has_chinese(desc_str) else None
 
+            cat, sub = _AINAV_CATEGORY_MAP.get(
+                cat_name, ("ai-application", None)
+            )
+
             products.append(
                 ScrapedProduct(
                     name=name,
@@ -166,6 +192,8 @@ class AiNavScraper(BaseScraper):
                     description=desc_str,
                     description_zh=desc_zh,
                     icon_url=str(icon_url) if icon_url else None,
+                    category=cat,
+                    sub_category=sub,
                     tags=(cat_name,),
                     status="active",
                 )

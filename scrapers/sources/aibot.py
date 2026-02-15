@@ -67,6 +67,29 @@ _FOOTER_DOMAINS = frozenset(
 _INTERNAL_URL_RE = re.compile(r"^https?://ai-bot\.cn/sites/\d+\.html$")
 
 
+# ---------------------------------------------------------------------------
+# Category mapping: AiBot category_slug → (schema category, sub_category)
+# ---------------------------------------------------------------------------
+_AIBOT_CATEGORY_MAP: dict[str, tuple[str, str]] = {
+    "ai-agent": ("ai-application", "ai-agent"),
+    "ai-search-engines": ("ai-search-retrieval", "ai-search"),
+    "ai-productivity-tools": ("ai-application", "productivity"),
+    "ai-content-detection-and-optimization-tools": (
+        "ai-security-governance",
+        "ai-content-detection",
+    ),
+    "ai-product-photo-generators": ("ai-creative-media", "image-generation"),
+    "ai-recruitment-and-job-search-tools": ("ai-enterprise-vertical", "recruitment"),
+    "ai-translation-tools": ("ai-application", "translation"),
+    "ai-mindmap-tools": ("ai-application", "mind-mapping"),
+    "ai-meeting-tools": ("ai-application", "meeting-assistant"),
+    "ai-3d-model-generation": ("ai-creative-media", "3d-generation"),
+    "ai-legal-assistants": ("ai-enterprise-vertical", "legal"),
+    "ai-finance-tools": ("ai-enterprise-vertical", "finance-accounting"),
+    "ai-document-tools": ("ai-application", "document-processing"),
+}
+
+
 class AiBotScraper(BaseScraper):
     """Scrape ai-bot.cn for Chinese AI product discovery.
 
@@ -172,6 +195,8 @@ class AiBotScraper(BaseScraper):
             desc_str = str(description) if description else None
             desc_zh = desc_str if desc_str and _has_chinese(desc_str) else None
 
+            cat, sub = _AIBOT_CATEGORY_MAP.get(cat_slug, ("ai-application", None))
+
             products.append(
                 ScrapedProduct(
                     name=name,
@@ -183,6 +208,8 @@ class AiBotScraper(BaseScraper):
                     description=desc_str,
                     description_zh=desc_zh,
                     icon_url=str(icon_url) if icon_url else None,
+                    category=cat,
+                    sub_category=sub,
                     tags=(cat_slug,),
                     status="active",
                 )
