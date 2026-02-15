@@ -40,6 +40,10 @@ SCRAPY_REQUEST_DELAY = 7.0  # seconds, slower for Chinese job sites
 MAX_RETRIES_BEFORE_SKIP = 3
 RETRY_MAX_WAIT = 300  # 5 minutes max wait on retry
 
+# Job scraper settings (used by base_job_scraper.py)
+JOB_SCRAPER_RATE_LIMIT = 5.0  # seconds between requests
+JOB_SCRAPER_MAX_JOBS_PER_KEYWORD = 50
+
 # LLM enrichment settings
 LLM_DAILY_BUDGET = 55  # max LLM calls per day
 LLM_DEFAULT_MODEL = "claude-haiku-4-5-20251001"

@@ -10,7 +10,10 @@ from __future__ import annotations
 import json
 import re
 from pathlib import Path
-from typing import Any
+from typing import TYPE_CHECKING, Any
+
+if TYPE_CHECKING:
+    from collections.abc import Callable
 
 _REPO_ROOT = Path(__file__).resolve().parent.parent.parent
 _TAGS_FILE = _REPO_ROOT / "data" / "tags.json"
@@ -245,7 +248,9 @@ class TagInferenceEngine:
 
     def infer(self, product: dict[str, Any]) -> list[str]:
         """Infer tags for a product. Returns deduplicated, validated tag list."""
-        existing = set(product.get("tags", []))
+        raw_existing = product.get("tags", [])
+        # Validate existing tags against vocabulary (filter out deprecated/invalid)
+        existing = {t for t in raw_existing if t in self._valid_tags}
         inferred: list[str] = list(existing)
         seen = set(existing)
 
@@ -312,7 +317,9 @@ class TagInferenceEngine:
         return " ".join(p for p in parts if p)
 
     @staticmethod
-    def _infer_from_structured(product: dict[str, Any], add: Any) -> None:
+    def _infer_from_structured(
+        product: dict[str, Any], add: Callable[[str], None]
+    ) -> None:
         """Infer tags from structured fields (non-text)."""
         # open_source
         if product.get("open_source") is True:

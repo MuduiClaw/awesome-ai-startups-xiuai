@@ -12,34 +12,35 @@ from scrapers.sources.app_stores import AppStoreScraper, GooglePlayScraper
 
 # from scrapers.sources.artificial_analysis import ArtificialAnalysisScraper  # disabled
 from scrapers.sources.crunchbase import CrunchbaseScraper
-from scrapers.sources.github_trending import GitHubTrendingScraper
 
+# from scrapers.sources.github_trending import GitHubTrendingScraper  # disabled
 # from scrapers.sources.huggingface import HuggingFaceScraper  # disabled
-from scrapers.sources.lmsys import LMSYSScraper
-from scrapers.sources.openrouter import OpenRouterScraper
-
+# from scrapers.sources.lmsys import LMSYSScraper  # disabled
+# from scrapers.sources.openrouter import OpenRouterScraper  # disabled
 # from scrapers.sources.papers_with_code import PapersWithCodeScraper  # disabled
 from scrapers.sources.producthunt import ProductHuntScraper
-from scrapers.sources.techcrunch import TechCrunchScraper
+
+# from scrapers.sources.techcrunch import TechCrunchScraper  # disabled
 from scrapers.sources.theresanai import TAAScraper
 from scrapers.sources.toolify import ToolifyScraper
-from scrapers.sources.ycombinator import YCombinatorScraper
+
+# from scrapers.sources.ycombinator import YCombinatorScraper  # disabled
 
 ALL_SCRAPERS = {
     # T1 Authoritative (EnrichmentScraper role)
     "crunchbase": CrunchbaseScraper,
     # T2 Open Web — Discovery role
     "producthunt": ProductHuntScraper,
-    "github": GitHubTrendingScraper,
+    # "github": GitHubTrendingScraper,  # disabled
     "toolify": ToolifyScraper,
     "aibot": AiBotScraper,
     "ainav": AiNavScraper,
-    "ycombinator": YCombinatorScraper,
-    "techcrunch": TechCrunchScraper,
+    # "ycombinator": YCombinatorScraper,  # disabled
+    # "techcrunch": TechCrunchScraper,  # disabled
     # T2 Open Web — Unified role (discover + enrich)
     # "huggingface": HuggingFaceScraper,  # disabled
-    "lmsys": LMSYSScraper,
-    "openrouter": OpenRouterScraper,
+    # "lmsys": LMSYSScraper,  # disabled
+    # "openrouter": OpenRouterScraper,  # disabled
     "theresanaiforthat": TAAScraper,
     # "artificial_analysis": ArtificialAnalysisScraper,  # disabled
     # "papers_with_code": PapersWithCodeScraper,  # disabled
@@ -55,15 +56,15 @@ __all__ = [
     "AppStoreScraper",
     # "ArtificialAnalysisScraper",  # disabled
     "CrunchbaseScraper",
-    "GitHubTrendingScraper",
+    # "GitHubTrendingScraper",  # disabled
     "GooglePlayScraper",
     # "HuggingFaceScraper",  # disabled
-    "LMSYSScraper",
-    "OpenRouterScraper",
+    # "LMSYSScraper",  # disabled
+    # "OpenRouterScraper",  # disabled
     # "PapersWithCodeScraper",  # disabled
     "ProductHuntScraper",
     "TAAScraper",
-    "TechCrunchScraper",
+    # "TechCrunchScraper",  # disabled
     "ToolifyScraper",
-    "YCombinatorScraper",
+    # "YCombinatorScraper",  # disabled
 ]

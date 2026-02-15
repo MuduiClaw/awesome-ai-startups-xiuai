@@ -27,7 +27,9 @@ jobs:
           cache: "pip"
 
       - name: Install dependencies
-        run: pip install -e .
+        run: |
+          pip install -e ".[browser]"
+          playwright install chromium --with-deps
 
       - name: Discovery phase
         env:
@@ -39,20 +41,21 @@ jobs:
             aiscrape discover --source producthunt --limit 200 || echo "[WARN] producthunt discover failed"
           fi
 
-      - name: Unified scrape
+      - name: Scrape (API-based sources)
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          FIRECRAWL_API_KEY: ${{ secrets.FIRECRAWL_API_KEY }}
         run: |
           for source in lmsys openrouter; do
             echo "--- Scraping $source ---"
             aiscrape scrape --source "$source" --limit 50 || echo "[WARN] $source failed, continuing..."
           done
-          if [ -n "$FIRECRAWL_API_KEY" ]; then
-            for source in theresanaiforthat toolify; do
-              aiscrape scrape --source "$source" --limit 20 || echo "[WARN] $source failed"
-            done
-          fi
+
+      - name: Scrape (browser-based sources)
+        run: |
+          for source in theresanaiforthat toolify; do
+            echo "--- Scraping $source ---"
+            aiscrape scrape --source "$source" --limit 20 || echo "[WARN] $source failed, continuing..."
+          done
 
       - name: Enrichment phase
         env:

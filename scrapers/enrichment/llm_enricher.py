@@ -1,5 +1,10 @@
 """LLM-based enrichment for AI product data using Anthropic Claude.
 
+Supports optional **web search** via Anthropic's built-in
+``web_search_20250305`` server tool.  When enabled, Claude will
+autonomously search the web to find factual product information
+before filling missing fields.
+
 All LLM-generated data is tagged as :attr:`SourceTier.T3_AI_GENERATED`
 (trust_score=0.50), meaning :class:`TieredMerger` will only use it to
 fill empty fields — existing human-curated or web-scraped data is never
@@ -100,8 +105,13 @@ class LLMEnricher:
             # Feed scraped into TieredMerger
     """
 
-    def __init__(self, model: str = DEFAULT_MODEL) -> None:
+    def __init__(
+        self,
+        model: str = DEFAULT_MODEL,
+        web_search: bool = True,
+    ) -> None:
         self.model = model
+        self.web_search = web_search
         self._client: Any = None  # Lazy init to avoid import if not needed
 
     @property
@@ -213,15 +223,27 @@ class LLMEnricher:
 
         fields_block = ",\n".join(field_instructions)
 
+        # When web search is enabled, instruct the LLM to search first
+        search_instruction = ""
+        if self.web_search:
+            search_instruction = """
+SEARCH STRATEGY:
+- Search the web for this product's official website, Wikipedia page, or
+  reputable tech news articles to gather accurate, up-to-date information.
+- Prioritize facts from official sources over speculation.
+- If search results contradict each other, prefer the most authoritative source.
+"""
+
         return f"""You are a data analyst enriching an AI product database.
 Given the product information below, fill in the missing fields.
-
+{search_instruction}
 PRODUCT CONTEXT:
 {context}
 
 INSTRUCTIONS:
-- Only fill fields you are confident about based on the product context.
-- Use null for fields you are uncertain about.
+- Search the web for factual information about this product before answering.
+- Only fill fields you are confident about based on verified information.
+- Use null for fields you cannot verify even after searching.
 - For array fields, provide relevant items as JSON arrays.
 - Keep descriptions concise and factual.
 - For description_zh, translate or write a Chinese description.
@@ -268,14 +290,47 @@ IMPORTANT: Output ONLY the JSON object, no markdown fencing, no explanation."""
         return instructions.get(field_name, "appropriate value")
 
     def _call_llm(self, prompt: str) -> str:
-        """Call the Anthropic API and return the text response."""
-        message = self.client.messages.create(
-            model=self.model,
-            max_tokens=1024,
-            messages=[{"role": "user", "content": prompt}],
-        )
-        # Extract text from the response
-        return message.content[0].text
+        """Call the Anthropic API and return the text response.
+
+        When ``self.web_search`` is enabled, the built-in
+        ``web_search_20250305`` tool is attached so Claude can
+        autonomously search the web before answering.
+        """
+        kwargs: dict[str, Any] = {
+            "model": self.model,
+            "max_tokens": 4096,
+            "messages": [{"role": "user", "content": prompt}],
+        }
+
+        if self.web_search:
+            kwargs["tools"] = [
+                {
+                    "name": "web_search",
+                    "type": "web_search_20250305",
+                },
+            ]
+
+        message = self.client.messages.create(**kwargs)
+
+        # Log web search usage when available
+        if hasattr(message.usage, "server_tool_use") and message.usage.server_tool_use:
+            stu = message.usage.server_tool_use
+            search_count = getattr(stu, "web_search_requests", 0)
+            if search_count:
+                logger.info("Web search: %d request(s) made", search_count)
+
+        # With web search enabled, response contains multiple content
+        # blocks (search_result, text, etc.).  Extract the last text block.
+        text_parts: list[str] = []
+        for block in message.content:
+            if hasattr(block, "text"):
+                text_parts.append(block.text)
+
+        if not text_parts:
+            logger.warning("LLM response contained no text blocks")
+            return "{}"
+
+        return text_parts[-1]
 
     def _parse_response(self, response: str, gaps: list[str]) -> dict[str, Any] | None:
         """Parse the LLM JSON response and validate fields."""

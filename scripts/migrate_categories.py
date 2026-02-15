@@ -188,8 +188,8 @@ _NEW_CATEGORIES: set[str] = {
 
 def _map_category(product: dict[str, Any]) -> str:
     """Map old category to new category using sub_category and tags heuristics."""
-    old_cat = product.get("category", "")
-    sub_cat = product.get("sub_category", "")
+    old_cat: str = product.get("category", "")
+    sub_cat: str = product.get("sub_category", "")
     tags = set(product.get("tags", []))
 
     # Already in new category system — pass through (idempotent)
@@ -252,15 +252,18 @@ def _infer_tags(product: dict[str, Any], existing_tags: set[str]) -> list[str]:
     if product.get("open_source") is True and "open-source" not in existing_tags:
         inferred.append("open-source")
 
-    # pricing.model → business model tags
-    pricing_model = product.get("pricing", {}).get("model", "")
+    # pricing.model → business model tags (defensive: pricing may be None or non-dict)
+    pricing = product.get("pricing") or {}
+    pricing_model = pricing.get("model", "") if isinstance(pricing, dict) else ""
     if pricing_model == "freemium" and "freemium" not in existing_tags:
         inferred.append("freemium")
     elif pricing_model == "open-source" and "open-source" not in existing_tags:
         inferred.append("open-source")
 
-    # Country → special tags
-    country = product.get("company", {}).get("headquarters", {}).get("country", "")
+    # Country → special tags (defensive: company/headquarters may be None or non-dict)
+    company = product.get("company") or {}
+    hq = company.get("headquarters", {}) if isinstance(company, dict) else {}
+    country = hq.get("country", "") if isinstance(hq, dict) else ""
     country_map = {
         "China": "china",
         "United States": "us",
@@ -299,10 +302,11 @@ def _infer_tags(product: dict[str, Any], existing_tags: set[str]) -> list[str]:
     if country in european and "europe" not in existing_tags:
         inferred.append("europe")
 
-    # Funding valuation → unicorn/decacorn
+    # Funding valuation → unicorn/decacorn (defensive: funding may be None or non-dict)
+    funding = company.get("funding", {}) if isinstance(company, dict) else {}
     valuation = (
-        product.get("company", {}).get("funding", {}).get("valuation_usd", 0) or 0
-    )
+        funding.get("valuation_usd", 0) if isinstance(funding, dict) else 0
+    ) or 0
     if valuation >= 10_000_000_000 and "decacorn" not in existing_tags:
         inferred.append("decacorn")
     elif valuation >= 1_000_000_000 and "unicorn" not in existing_tags:
