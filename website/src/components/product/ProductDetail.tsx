@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
 import { FundingBadge } from "./FundingBadge";
+import { ProductIcon } from "./ProductIcon";
 import { formatCurrency, localized } from "@/lib/utils";
 import type { ProductDetail as ProductDetailType, Locale } from "@/lib/types";
 import type { Dictionary } from "@/lib/dict";
@@ -30,14 +31,17 @@ export function ProductDetail({ product, locale, dict, categoryLabel }: ProductD
 
       {/* Header */}
       <div className="flex items-start justify-between gap-4 mb-8">
-        <div>
-          <h1 className="text-3xl font-bold">{name}</h1>
-          {company?.name && (
-            <p className="text-muted-foreground mt-1">
-              {t.company_name}: {company.name}
-            </p>
-          )}
-          <p className="text-muted-foreground mt-2 text-lg">{description}</p>
+        <div className="flex items-start gap-4">
+          <ProductIcon iconUrl={product.icon_url} name={name} size="lg" />
+          <div>
+            <h1 className="text-3xl font-bold">{name}</h1>
+            {company?.name && (
+              <p className="text-muted-foreground mt-1">
+                {t.company_name}: {company.name}
+              </p>
+            )}
+            <p className="text-muted-foreground mt-2 text-lg">{description}</p>
+          </div>
         </div>
         <a
           href={product.product_url}

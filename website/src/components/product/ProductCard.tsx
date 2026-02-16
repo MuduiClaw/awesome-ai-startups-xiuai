@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
 import { FundingBadge } from "./FundingBadge";
+import { ProductIcon } from "./ProductIcon";
 import { formatCurrency, localized } from "@/lib/utils";
 import type { ProductIndexEntry, Locale } from "@/lib/types";
 
@@ -18,16 +19,19 @@ export function ProductCard({ product, locale, categoryLabel }: ProductCardProps
   return (
     <Link href={`/${locale}/products/${product.slug}`}>
       <Card hover className="h-full flex flex-col">
-        <div className="flex items-start justify-between gap-2">
-          <div>
-            <h3 className="font-semibold text-lg">{name}</h3>
+        <div className="flex items-start gap-3">
+          <ProductIcon iconUrl={product.icon_url} name={name} size="sm" />
+          <div className="flex-1 min-w-0">
+            <div className="flex items-start justify-between gap-2">
+              <h3 className="font-semibold text-lg truncate">{name}</h3>
+              {product.open_source && (
+                <Badge variant="success">OSS</Badge>
+              )}
+            </div>
             {product.company_name && (
               <p className="text-xs text-muted-foreground">{product.company_name}</p>
             )}
           </div>
-          {product.open_source && (
-            <Badge variant="success">OSS</Badge>
-          )}
         </div>
 
         <p className="text-sm text-muted-foreground mt-2 line-clamp-2 flex-grow">
