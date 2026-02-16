@@ -39,7 +39,7 @@ def slugify(text: str) -> str:
     # Transliterate non-ASCII (Chinese, etc.) to ASCII before stripping
     text = unidecode(text)
     text = text.lower().strip()
-    text = re.sub(r"[^\w\s-]", "", text)
+    text = re.sub(r"[^a-z0-9\s-]", "", text)
     text = re.sub(r"[-\s]+", "-", text)
     text = text.strip("-")
     return text
@@ -149,7 +149,10 @@ def extract_domain(url: str) -> str:
     """
     from urllib.parse import urlparse
 
-    parsed = urlparse(url)
+    try:
+        parsed = urlparse(url)
+    except ValueError:
+        return ""
     domain = parsed.netloc or parsed.path
     if domain.startswith("www."):
         domain = domain[4:]

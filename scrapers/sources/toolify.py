@@ -310,25 +310,54 @@ class ToolifyScraper(BaseScraper):
 
         raw_items: list[dict[str, object]] = []
         seen_handles: set[str] = set()
+        max_consecutive_failures = 3
 
         try:
             with BrowserClient(_SEED_URL) as client:
                 page_num = 1
+                consecutive_failures = 0
+                last_page = 1  # updated from first successful response
                 while len(raw_items) < limit:
                     path = f"{_API_TOOLS}?page={page_num}&per_page={_PER_PAGE}"
                     try:
                         resp = client.fetch_json(path)
                     except BrowserClientError as exc:
-                        logger.warning("Toolify API page %d failed: %s", page_num, exc)
-                        break
+                        consecutive_failures += 1
+                        logger.warning(
+                            "Toolify API page %d failed (%d/%d): %s",
+                            page_num,
+                            consecutive_failures,
+                            max_consecutive_failures,
+                            exc,
+                        )
+                        if consecutive_failures >= max_consecutive_failures:
+                            logger.warning(
+                                "Toolify: %d consecutive failures, stopping",
+                                consecutive_failures,
+                            )
+                            break
+                        # Skip this page and try the next one
+                        page_num += 1
+                        time.sleep(DEFAULT_REQUEST_DELAY * 2)
+                        continue
 
                     data = resp.get("data", {})
                     if not isinstance(data, dict):
+                        consecutive_failures += 1
                         logger.warning(
-                            "Toolify: unexpected response structure on page %d",
+                            "Toolify: unexpected response on page %d (%d/%d)",
                             page_num,
+                            consecutive_failures,
+                            max_consecutive_failures,
                         )
-                        break
+                        if consecutive_failures >= max_consecutive_failures:
+                            break
+                        page_num += 1
+                        time.sleep(DEFAULT_REQUEST_DELAY * 2)
+                        continue
+
+                    # Reset on success
+                    consecutive_failures = 0
 
                     items: list[dict[str, Any]] = data.get("data", [])
                     total = data.get("total", 0)

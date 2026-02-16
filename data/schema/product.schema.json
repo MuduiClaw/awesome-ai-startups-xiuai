@@ -263,7 +263,7 @@
       "properties": {
         "model": {
           "type": "string",
-          "enum": ["free", "freemium", "paid", "enterprise", "open-source", "usage-based"]
+          "enum": ["free", "freemium", "free-trial", "paid", "enterprise", "open-source", "usage-based"]
         },
         "has_free_tier": { "type": "boolean" },
         "input_price_per_1m_tokens": { "type": "number", "minimum": 0 },
