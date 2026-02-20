@@ -1,4 +1,10 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
+  "builds": [
+    {
+      "src": "website/package.json",
+      "use": "@vercel/next"
+    }
+  ],
   "regions": ["hnd1"]
 }
