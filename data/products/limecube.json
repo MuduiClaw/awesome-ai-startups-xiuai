@@ -4,11 +4,11 @@
   "product_url": "https://limecube.co",
   "description": "Transforming the way websites are created with AI.",
   "product_type": "app",
-  "category": "ai-application",
+  "category": "ai-image-design",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "theresanaiforthat",
@@ -77,10 +77,10 @@
         "updated_at": "2026-02-16"
       },
       "use_cases": {
-        "source": "theresanaiforthat",
-        "tier": 2,
-        "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       },
       "sub_category": {
         "source": "toolify",
@@ -105,6 +105,84 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "platforms": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "theresanaiforthat",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-18"
+      },
+      "name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "description_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -123,7 +201,10 @@
   "company": {
     "name": "Limecube",
     "url": "https://limecube.co",
-    "website": "https://limecube.co"
+    "website": "https://limecube.co",
+    "name_zh": "Limecube",
+    "description": "Limecube provides AI-powered website building and design tools for small businesses and entrepreneurs.",
+    "employee_count_range": "1-10"
   },
   "icon_url": "https://media.theresanaiforthat.com/icons/limecube.svg?height=207",
   "tags": [
@@ -136,7 +217,10 @@
     "No-Code&Low-Code"
   ],
   "use_cases": [
-    "Websites"
+    "Websites",
+    "website-creation",
+    "design-generation",
+    "landing-page-building"
   ],
   "sub_category": "ai website builder",
   "pricing": {
@@ -151,5 +235,35 @@
     "Small business website builder",
     "AI content writing",
     "Website hosting"
+  ],
+  "platforms": [
+    "web"
+  ],
+  "target_audience": [
+    "developers",
+    "designers",
+    "content-creators",
+    "marketers",
+    "small-business-owners",
+    "entrepreneurs"
+  ],
+  "hiring": {
+    "careers_url": "",
+    "is_hiring": true,
+    "tech_stack": [
+      "React",
+      "Node.js",
+      "AWS",
+      "PostgreSQL"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "name_zh": "Limecube",
+  "description_zh": "AI驱动的网站建设平台，使用生成式AI技术快速创建和设计网站。",
+  "open_source": false,
+  "api_available": false,
+  "modalities": [
+    "text",
+    "image"
   ]
 }

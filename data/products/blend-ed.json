@@ -4,11 +4,11 @@
   "product_url": "https://blend-ed.com",
   "description": "AI-powered LMS for personalized training and knowledge management.",
   "product_type": "app",
-  "category": "ai-application",
+  "category": "ai-chatbot-agent",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "toolify",
@@ -105,6 +105,90 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "platforms": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "description_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -118,7 +202,10 @@
   "company": {
     "name": "Blend-ed",
     "url": "https://blend-ed.com",
-    "website": "https://blend-ed.com"
+    "website": "https://blend-ed.com",
+    "name_zh": "Blend-ed",
+    "description": "AI-powered learning management system for personalized employee training and organizational knowledge management.",
+    "employee_count_range": "1-10"
   },
   "icon_url": "https://cdn-images.toolify.ai/website-logos/20250428/1745828828_74594768_26605.webp",
   "sub_category": "ai agent",
@@ -148,5 +235,43 @@
   "pricing": {
     "model": "enterprise",
     "has_free_tier": false
-  }
+  },
+  "platforms": [
+    "web"
+  ],
+  "target_audience": [
+    "developers",
+    "enterprises",
+    "general-users",
+    "hr-teams",
+    "learning-managers",
+    "employees"
+  ],
+  "use_cases": [
+    "task-automation",
+    "autonomous-agents",
+    "employee-training",
+    "knowledge-management",
+    "course-creation",
+    "personalized-learning"
+  ],
+  "name_zh": "Blend-ed",
+  "description_zh": "AI驱动的学习管理系统，提供个性化培训和知识管理功能，用于企业培训。",
+  "open_source": false,
+  "api_available": false,
+  "hiring": {
+    "is_hiring": true,
+    "careers_url": "",
+    "tech_stack": [
+      "JavaScript",
+      "React",
+      "Node.js",
+      "PostgreSQL"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "modalities": [
+    "text",
+    "video"
+  ]
 }

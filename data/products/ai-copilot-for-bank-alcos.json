@@ -4,11 +4,11 @@
   "product_url": "https://www.maverickfi.co",
   "description": "AI Copilot for bank ALCOs to test funding and liquidity strategies.",
   "product_type": "app",
-  "category": "ai-application",
+  "category": "ai-productivity",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "toolify",
@@ -93,6 +93,90 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "platforms": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "description_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -106,7 +190,10 @@
   "company": {
     "name": "AI Copilot for bank ALCOs",
     "url": "https://www.maverickfi.co",
-    "website": "https://www.maverickfi.co"
+    "website": "https://www.maverickfi.co",
+    "name_zh": "银行ALCO AI副驾驶",
+    "description": "AI copilot for bank Asset and Liability Committee (ALCO) to test funding and liquidity strategies.",
+    "employee_count_range": "11-50"
   },
   "icon_url": "https://cdn-images.toolify.ai/172475047334011362.jpg",
   "sub_category": "ai copilot",
@@ -129,5 +216,42 @@
   "pricing": {
     "model": "enterprise",
     "has_free_tier": false
-  }
+  },
+  "platforms": [
+    "web"
+  ],
+  "target_audience": [
+    "professionals",
+    "teams",
+    "enterprises",
+    "banks",
+    "financial-institutions",
+    "alco-committees"
+  ],
+  "use_cases": [
+    "workflow-automation",
+    "document-management",
+    "task-management",
+    "liquidity-management",
+    "funding-strategy",
+    "risk-analysis"
+  ],
+  "name_zh": "银行ALCO AI副驾驶",
+  "description_zh": "AI副驾驶工具，帮助银行资金部门测试融资和流动性策略。",
+  "open_source": false,
+  "api_available": false,
+  "hiring": {
+    "is_hiring": true,
+    "careers_url": "",
+    "tech_stack": [
+      "Python",
+      "SQL",
+      "React",
+      "AWS"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "modalities": [
+    "text"
+  ]
 }

@@ -8,7 +8,7 @@
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "ainav",
@@ -75,6 +75,96 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "keywords": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "platforms": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "competitors": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -88,10 +178,68 @@
   "description_zh": "PICPIK.AI是一个主要为专业用户设计的人工智能绘画产品。目前支持webui、PS插件、API调用以及私有化部署等多种服务形式。",
   "company": {
     "name": "PICPIK.AI",
-    "url": "https://picpik.ai"
+    "url": "https://picpik.ai",
+    "name_zh": "PICPIK.AI",
+    "description": "Professional AI painting platform with web, API, and self-hosted options.",
+    "employee_count_range": "11-50"
   },
   "sub_category": "developer-community",
   "tags": [
     "AI开发者社区"
+  ],
+  "keywords": [
+    "PICPIK.AI",
+    "ai dev platform",
+    "developer community",
+    "AI开发者社区",
+    "PICPIK",
+    "AI",
+    "webui",
+    "API",
+    "是一个主要为专业用户设计的人工智能绘画产品",
+    "目前支持",
+    "插件",
+    "调用以及私有化部署等多种服务形式",
+    "other"
+  ],
+  "platforms": [
+    "web",
+    "api",
+    "desktop"
+  ],
+  "target_audience": [
+    "developers",
+    "enterprises",
+    "data-scientists",
+    "designers",
+    "ai-enthusiasts"
+  ],
+  "use_cases": [
+    "code-generation",
+    "app-development",
+    "api-integration",
+    "ai-painting",
+    "image-generation"
+  ],
+  "name_zh": "PICPIK.AI",
+  "open_source": false,
+  "api_available": true,
+  "hiring": {
+    "is_hiring": true,
+    "careers_url": "",
+    "tech_stack": [
+      "Python",
+      "PyTorch",
+      "React",
+      "Docker"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "modalities": [
+    "text",
+    "image"
+  ],
+  "competitors": [
+    "midjourney"
   ]
 }

@@ -4,11 +4,11 @@
   "product_url": "https://tutorlily.com",
   "description": "AI language tutor for practicing real-life conversations and correcting mistakes.",
   "product_type": "app",
-  "category": "ai-application",
+  "category": "ai-education",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "toolify",
@@ -93,6 +93,72 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "platforms": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "description_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -106,7 +172,9 @@
   "company": {
     "name": "Tutor Lily",
     "url": "https://tutorlily.com",
-    "website": "https://tutorlily.com"
+    "website": "https://tutorlily.com",
+    "name_zh": "Tutor Lily",
+    "description": "AI-powered language tutoring platform for conversational practice and error correction."
   },
   "icon_url": "https://cdn-images.toolify.ai/website-logos/20250410/1744266647_40167500_6505.webp",
   "sub_category": "ai language learning",
@@ -128,5 +196,32 @@
   "pricing": {
     "model": "freemium",
     "has_free_tier": true
-  }
+  },
+  "platforms": [
+    "web"
+  ],
+  "target_audience": [
+    "students",
+    "educators",
+    "researchers",
+    "language-learners"
+  ],
+  "use_cases": [
+    "ai-chat",
+    "conversational-ai",
+    "conversation-practice",
+    "mistake-correction",
+    "language-learning"
+  ],
+  "name_zh": "Tutor Lily",
+  "description_zh": "AI语言导师，通过真实对话练习和错误纠正提升语言能力",
+  "open_source": false,
+  "api_available": false,
+  "hiring": {
+    "careers_url": ""
+  },
+  "modalities": [
+    "text",
+    "audio"
+  ]
 }

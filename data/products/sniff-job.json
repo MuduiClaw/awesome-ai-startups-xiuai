@@ -4,11 +4,11 @@
   "product_url": "https://sniffjob.com",
   "description": "Sniff Job is an AI-powered job search assistant that helps users detect fake job ads, generate ATS-optimized CVs and cover letters tailored to specific roles, and get hired faster. Its real-time AI Job Agent scans over 10,000 company websites and global job boards to find new listings within minutes of being posted. Sniff Job protects job seekers from scams, saves time, and boosts interview chances with precision-matched application documents.",
   "product_type": "app",
-  "category": "ai-application",
+  "category": "ai-audio-music",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "toolify",
@@ -87,6 +87,90 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "platforms": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "description_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -100,7 +184,10 @@
   "company": {
     "name": "Sniff Job",
     "url": "https://sniffjob.com",
-    "website": "https://sniffjob.com"
+    "website": "https://sniffjob.com",
+    "name_zh": "Sniff Job",
+    "description": "AI job search assistant for detecting fraudulent listings, creating ATS-optimized resumes, and career guidance.",
+    "employee_count_range": "1-10"
   },
   "icon_url": "https://cdn-images.toolify.ai/website-logos/20250731/1753941002_46991270_27521.webp",
   "sub_category": "resume ai",
@@ -127,5 +214,38 @@
     "Glassdoor job analysis",
     "voice assistant CV",
     "fast job application"
+  ],
+  "platforms": [
+    "web"
+  ],
+  "target_audience": [
+    "musicians",
+    "content-creators",
+    "podcasters",
+    "job-seekers",
+    "job-applicants"
+  ],
+  "use_cases": [
+    "ai-content-detection",
+    "plagiarism-checking",
+    "job-search",
+    "resume-writing",
+    "job-application"
+  ],
+  "name_zh": "Sniff Job",
+  "description_zh": "AI求职助手，检测虚假工作广告，生成ATS优化简历和求职信",
+  "open_source": false,
+  "api_available": false,
+  "hiring": {
+    "is_hiring": false,
+    "careers_url": "",
+    "tech_stack": [
+      "React",
+      "Python"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "modalities": [
+    "text"
   ]
 }

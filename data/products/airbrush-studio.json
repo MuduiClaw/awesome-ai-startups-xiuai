@@ -4,11 +4,11 @@
   "product_url": "https://studio.airbrush.com",
   "description": "AI-powered virtual photo studio for professional headshots from selfies.",
   "product_type": "app",
-  "category": "ai-creative-media",
+  "category": "ai-image-design",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "toolify",
@@ -93,6 +93,96 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "platforms": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "description_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "competitors": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -106,7 +196,10 @@
   "company": {
     "name": "AirBrush Studio",
     "url": "https://studio.airbrush.com",
-    "website": "https://studio.airbrush.com"
+    "website": "https://studio.airbrush.com",
+    "name_zh": "AirBrush Studio",
+    "description": "AI-powered virtual photo studio generating professional headshots from selfies.",
+    "employee_count_range": "11-50"
   },
   "icon_url": "https://cdn-images.toolify.ai/website-logos/20250410/1744257273_99731199_10224.webp",
   "sub_category": "ai headshot generator",
@@ -128,5 +221,47 @@
   "pricing": {
     "model": "freemium",
     "has_free_tier": true
-  }
+  },
+  "platforms": [
+    "web"
+  ],
+  "target_audience": [
+    "designers",
+    "content-creators",
+    "marketers",
+    "photographers",
+    "professionals",
+    "job-seekers",
+    "linkedin-users"
+  ],
+  "use_cases": [
+    "photo-enhancement",
+    "image-upscaling",
+    "photo-editing",
+    "image-manipulation",
+    "professional-headshots",
+    "linkedin-profile",
+    "portrait-generation"
+  ],
+  "name_zh": "AirBrush虚拟照相馆",
+  "description_zh": "AI虚拟照相馆,从自拍照生成专业级LinkedIn头像和证件照。",
+  "open_source": false,
+  "api_available": true,
+  "hiring": {
+    "is_hiring": true,
+    "careers_url": "",
+    "tech_stack": [
+      "Python",
+      "PyTorch",
+      "React",
+      "AWS"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "modalities": [
+    "image"
+  ],
+  "competitors": [
+    "photoai"
+  ]
 }

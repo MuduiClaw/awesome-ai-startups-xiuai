@@ -8,7 +8,7 @@
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "toolify",
@@ -93,6 +93,90 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "platforms": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "description_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -106,7 +190,10 @@
   "company": {
     "name": "AdminForth",
     "url": "https://adminforth.dev",
-    "website": "https://adminforth.dev"
+    "website": "https://adminforth.dev",
+    "name_zh": "AdminForth",
+    "description": "Open-source Tailwind CSS admin panel framework with Vue3 and Node.js TypeScript support.",
+    "employee_count_range": "1-10"
   },
   "icon_url": "https://cdn-images.toolify.ai/website-logos/20250410/1744259942_27607343_19954.webp",
   "sub_category": "ai developer tools",
@@ -137,5 +224,44 @@
   "pricing": {
     "model": "free",
     "has_free_tier": true
-  }
+  },
+  "platforms": [
+    "web",
+    "self-hosted"
+  ],
+  "target_audience": [
+    "developers",
+    "enterprises",
+    "data-scientists",
+    "full-stack-developers",
+    "startups"
+  ],
+  "use_cases": [
+    "code-generation",
+    "app-development",
+    "api-integration",
+    "admin-panel-building",
+    "dashboard-creation",
+    "backend-management",
+    "rapid-development"
+  ],
+  "name_zh": "AdminForth",
+  "description_zh": "开源Tailwind管理面板框架，支持Vue3和Node.js TypeScript。",
+  "open_source": true,
+  "api_available": true,
+  "hiring": {
+    "is_hiring": false,
+    "careers_url": "",
+    "tech_stack": [
+      "Vue3",
+      "Node.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "JavaScript"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "modalities": [
+    "code"
+  ]
 }

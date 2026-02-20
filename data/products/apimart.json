@@ -4,11 +4,11 @@
   "product_url": "https://apimart.ai/",
   "description": "一站式 AI API 平台，多主流模型统一访问",
   "product_type": "other",
-  "category": "ai-application",
+  "category": "ai-video-animation",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "aibot",
@@ -83,10 +83,10 @@
         "updated_at": "2026-02-16"
       },
       "use_cases": {
-        "source": "theresanaiforthat",
-        "tier": 2,
-        "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       },
       "sub_category": {
         "source": "toolify",
@@ -111,6 +111,84 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "api_available": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "platforms": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "competitors": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -135,7 +213,10 @@
   "company": {
     "name": "APIMart",
     "url": "https://apimart.ai",
-    "website": "https://apimart.ai"
+    "website": "https://apimart.ai",
+    "name_zh": "APIMart",
+    "description": "APIMart是一个AI模型API聚合平台，提供统一的接口访问多个主流AI模型和服务。",
+    "employee_count_range": "11-50"
   },
   "icon_url": "https://ai-bot.cn/wp-content/uploads/2025/11/APIMart-icon.png",
   "tags": [
@@ -149,7 +230,10 @@
     "AI Image Generator"
   ],
   "use_cases": [
-    "APIs"
+    "APIs",
+    "api-access",
+    "model-integration",
+    "ai-development"
   ],
   "sub_category": "ai api",
   "pricing": {
@@ -172,5 +256,38 @@
     "Cost-effective AI",
     "Developer tools",
     "AI platform"
+  ],
+  "api_available": true,
+  "platforms": [
+    "api"
+  ],
+  "target_audience": [
+    "developers",
+    "content-creators",
+    "video-editors",
+    "marketers",
+    "enterprises",
+    "startups"
+  ],
+  "name_zh": "APIMart",
+  "open_source": false,
+  "hiring": {
+    "is_hiring": false,
+    "careers_url": "",
+    "tech_stack": [
+      "Python",
+      "Node.js",
+      "API Gateway"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "modalities": [
+    "text",
+    "multimodal"
+  ],
+  "competitors": [
+    "openrouter",
+    "api2d",
+    "apipod"
   ]
 }

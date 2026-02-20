@@ -4,11 +4,11 @@
   "product_url": "https://truly.co",
   "description": "AI-enabled hyperautomation platform for revenue processes, improving CRM data quality.",
   "product_type": "app",
-  "category": "ai-enterprise-vertical",
+  "category": "ai-sales-crm",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "toolify",
@@ -93,6 +93,84 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "platforms": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "description_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -106,7 +184,10 @@
   "company": {
     "name": "truly.",
     "url": "https://truly.co",
-    "website": "https://truly.co"
+    "website": "https://truly.co",
+    "name_zh": "Truly",
+    "description": "Hyperautomation platform for revenue operations using AI to optimize sales processes.",
+    "employee_count_range": "11-50"
   },
   "icon_url": "https://cdn-images.toolify.ai/171277173773603733.webp",
   "sub_category": "ai sales",
@@ -132,5 +213,37 @@
   "pricing": {
     "model": "enterprise",
     "has_free_tier": false
-  }
+  },
+  "platforms": [
+    "web"
+  ],
+  "target_audience": [
+    "sales-professionals",
+    "enterprises",
+    "marketers",
+    "sales-teams",
+    "revenue-operations"
+  ],
+  "use_cases": [
+    "crm-management",
+    "customer-tracking",
+    "task-automation",
+    "autonomous-agents",
+    "workflow-automation",
+    "crm-automation",
+    "sales-process-optimization",
+    "data-quality"
+  ],
+  "name_zh": "Truly",
+  "description_zh": "AI驱动的超自动化平台，改进销售流程和CRM数据质量",
+  "open_source": false,
+  "api_available": true,
+  "hiring": {
+    "is_hiring": true,
+    "careers_url": "",
+    "last_checked": "2026-02-20"
+  },
+  "modalities": [
+    "text"
+  ]
 }

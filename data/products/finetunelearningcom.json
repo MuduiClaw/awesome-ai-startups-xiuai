@@ -4,11 +4,11 @@
   "product_url": "https://finetunelearning.com",
   "description": "AI-Human hybrid solutions for assessment and learning content creation and classification.",
   "product_type": "app",
-  "category": "ai-application",
+  "category": "ai-writing-content",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "toolify",
@@ -93,6 +93,90 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "platforms": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "description_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -106,7 +190,10 @@
   "company": {
     "name": "finetunelearning.com",
     "url": "https://finetunelearning.com",
-    "website": "https://finetunelearning.com"
+    "website": "https://finetunelearning.com",
+    "name_zh": "Fine Tune Learning",
+    "description": "Hybrid AI-human platform for educational assessment and learning content creation.",
+    "employee_count_range": "1-10"
   },
   "icon_url": "https://cdn-images.toolify.ai/website-logos/20250410/1744258338_52775438_12487.webp",
   "sub_category": "ai text generator",
@@ -129,5 +216,41 @@
   "pricing": {
     "model": "enterprise",
     "has_free_tier": false
-  }
+  },
+  "platforms": [
+    "web"
+  ],
+  "target_audience": [
+    "content-creators",
+    "marketers",
+    "writers",
+    "educators",
+    "enterprises"
+  ],
+  "use_cases": [
+    "content-writing",
+    "copywriting",
+    "text-generation",
+    "content-creation",
+    "assessment",
+    "text-classification"
+  ],
+  "name_zh": "Fine Tune Learning",
+  "description_zh": "AI与人工混合解决方案，用于评估和学习内容创建和分类。",
+  "open_source": false,
+  "api_available": false,
+  "hiring": {
+    "is_hiring": false,
+    "careers_url": "",
+    "tech_stack": [
+      "React",
+      "Python",
+      "NLP",
+      "PostgreSQL"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "modalities": [
+    "text"
+  ]
 }

@@ -4,11 +4,11 @@
   "product_url": "https://gitmind.com/ai-chat",
   "description": "AI-powered platform for mind mapping, brainstorming, note-taking, and presentations.",
   "product_type": "app",
-  "category": "ai-application",
+  "category": "ai-chatbot-agent",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "toolify",
@@ -93,6 +93,90 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "platforms": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "description_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -106,7 +190,10 @@
   "company": {
     "name": "GitMind Chat",
     "url": "https://gitmind.com/ai-chat",
-    "website": "https://gitmind.com/ai-chat"
+    "website": "https://gitmind.com/ai-chat",
+    "name_zh": "GitMind Chat",
+    "description": "GitMind Chat is an AI-powered platform for creating mind maps, brainstorming, and collaborative presentations.",
+    "employee_count_range": "11-50"
   },
   "icon_url": "https://cdn-images.toolify.ai/website-logos/20250411/1744351947_87948785_10875.webp",
   "sub_category": "ai assistant",
@@ -137,5 +224,44 @@
   "pricing": {
     "model": "freemium",
     "has_free_tier": true
-  }
+  },
+  "platforms": [
+    "web"
+  ],
+  "target_audience": [
+    "developers",
+    "enterprises",
+    "general-users",
+    "students",
+    "professionals",
+    "teams",
+    "educators"
+  ],
+  "use_cases": [
+    "ai-chat",
+    "conversational-ai",
+    "task-automation",
+    "autonomous-agents",
+    "mind-mapping",
+    "brainstorming",
+    "note-taking",
+    "presentation-creation"
+  ],
+  "name_zh": "GitMind Chat",
+  "description_zh": "AI驱动的思维导图、头脑风暴、笔记和演示文稿平台。",
+  "open_source": false,
+  "api_available": false,
+  "hiring": {
+    "is_hiring": false,
+    "careers_url": "https://gitmind.cn/careers",
+    "tech_stack": [
+      "React",
+      "Node.js",
+      "Canvas API"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "modalities": [
+    "text"
+  ]
 }

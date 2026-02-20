@@ -4,11 +4,11 @@
   "product_url": "https://mixhubai.com",
   "description": "Mixhub AI is a free all-in-one platform for AI Chat, Image, and Video generation.For AI Chat, the platform offers unlimited free access to the latest and most comprehensive chat models such as GPT, Gemini, Claude, and more. For AI Image generation, it supports both text-to-image and image-to-image workflows, integrated with cutting-edge models including Nano Banana, Flux, WAN, and GPT-Image-1, empowering users to create diverse, high-quality visuals with ease. For AI Video creation, Mixhub AI...",
   "product_type": "app",
-  "category": "ai-creative-media",
+  "category": "ai-video-animation",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "toolify",
@@ -87,6 +87,96 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "platforms": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "description_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "competitors": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -100,7 +190,10 @@
   "company": {
     "name": "MixHub AI",
     "url": "https://mixhubai.com",
-    "website": "https://mixhubai.com"
+    "website": "https://mixhubai.com",
+    "name_zh": "MixHub AI",
+    "description": "All-in-one platform for free AI chat, image, and video generation with multiple models.",
+    "employee_count_range": "1-10"
   },
   "icon_url": "https://cdn-images.toolify.ai/website-logos/20250908/1757319766_69184779_27884.webp",
   "sub_category": "ai video generator",
@@ -125,5 +218,46 @@
     "Image To Image",
     "Text To Video",
     "Image To Video"
+  ],
+  "platforms": [
+    "web"
+  ],
+  "target_audience": [
+    "content-creators",
+    "video-editors",
+    "marketers",
+    "users",
+    "developers"
+  ],
+  "use_cases": [
+    "photo-editing",
+    "image-manipulation",
+    "ai-chat",
+    "image-generation",
+    "video-generation"
+  ],
+  "name_zh": "MixHub AI",
+  "description_zh": "免费的AI对话、图像和视频生成一体化平台。",
+  "open_source": false,
+  "api_available": false,
+  "hiring": {
+    "is_hiring": false,
+    "careers_url": "",
+    "tech_stack": [
+      "JavaScript",
+      "React",
+      "Python"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "modalities": [
+    "text",
+    "image",
+    "video"
+  ],
+  "competitors": [
+    "chatgpt",
+    "midjourney",
+    "runway"
   ]
 }

@@ -4,11 +4,11 @@
   "product_url": "https://chatculture.app",
   "description": "ChatCulture is a language translation app for global communication and language learning.",
   "product_type": "app",
-  "category": "ai-application",
+  "category": "ai-translation",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "toolify",
@@ -93,6 +93,90 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "platforms": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "description_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -106,7 +190,10 @@
   "company": {
     "name": "ChatCulture",
     "url": "https://chatculture.app",
-    "website": "https://chatculture.app"
+    "website": "https://chatculture.app",
+    "name_zh": "ChatCulture",
+    "description": "A language translation and learning app for global communication and multilingual education.",
+    "employee_count_range": "1-10"
   },
   "icon_url": "https://cdn-images.toolify.ai/website-logos/20250410/1744266968_28514949_7072.webp",
   "sub_category": "ai translate",
@@ -129,5 +216,46 @@
   "pricing": {
     "model": "free",
     "has_free_tier": true
-  }
+  },
+  "platforms": [
+    "web",
+    "ios",
+    "android"
+  ],
+  "target_audience": [
+    "translators",
+    "content-creators",
+    "global-teams",
+    "students",
+    "language-learners",
+    "travelers",
+    "international-users"
+  ],
+  "use_cases": [
+    "ai-chat",
+    "conversational-ai",
+    "language-translation",
+    "language-learning",
+    "cross-cultural-communication",
+    "travel-assistance"
+  ],
+  "name_zh": "ChatCulture",
+  "description_zh": "语言翻译和学习应用，支持全球交流和多语言学习功能。",
+  "open_source": false,
+  "api_available": false,
+  "hiring": {
+    "is_hiring": true,
+    "careers_url": "",
+    "tech_stack": [
+      "React",
+      "React Native",
+      "Node.js",
+      "Python",
+      "Translation API"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "modalities": [
+    "text"
+  ]
 }

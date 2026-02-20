@@ -4,11 +4,11 @@
   "product_url": "https://www.browseract.com",
   "description": "BrowserAct is an AI-powered cloud browser automation tool that enables effortless data extraction and task automation from any website without coding - providing high-quality data for your AI Agents!",
   "product_type": "app",
-  "category": "ai-application",
+  "category": "ai-productivity",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "toolify",
@@ -87,6 +87,96 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "api_available": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "platforms": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "description_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "competitors": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -100,7 +190,10 @@
   "company": {
     "name": "BrowserAct",
     "url": "https://www.browseract.com",
-    "website": "https://www.browseract.com"
+    "website": "https://www.browseract.com",
+    "name_zh": "BrowserAct",
+    "description": "Cloud browser automation platform for AI agents with no-code data extraction.",
+    "employee_count_range": "1-10"
   },
   "icon_url": "https://cdn-images.toolify.ai/website-logos/20250610/1749549373_25252075_27031.webp",
   "sub_category": "ai browsers",
@@ -117,5 +210,49 @@
     "Freemium",
     "AI Developer tools",
     "AI Assistant"
+  ],
+  "api_available": true,
+  "platforms": [
+    "api",
+    "web"
+  ],
+  "target_audience": [
+    "professionals",
+    "teams",
+    "enterprises",
+    "ai-developers",
+    "data-engineers",
+    "automation-specialists"
+  ],
+  "use_cases": [
+    "task-automation",
+    "autonomous-agents",
+    "workflow-automation",
+    "process-optimization",
+    "api-integration",
+    "data-extraction",
+    "web-scraping"
+  ],
+  "name_zh": "BrowserAct",
+  "description_zh": "AI云浏览器自动化工具，无需编码即可提取数据和自动化任务",
+  "open_source": false,
+  "hiring": {
+    "is_hiring": true,
+    "careers_url": "",
+    "tech_stack": [
+      "Node.js",
+      "Python",
+      "AWS",
+      "Docker"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "modalities": [
+    "text"
+  ],
+  "competitors": [
+    "browserbase",
+    "bright-data",
+    "octoparse"
   ]
 }

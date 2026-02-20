@@ -4,11 +4,11 @@
   "product_url": "https://seedanceai.net",
   "description": "AI video generation platform for professional-grade content.",
   "product_type": "app",
-  "category": "ai-creative-media",
+  "category": "ai-video-animation",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "toolify",
@@ -105,6 +105,96 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "platforms": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "description_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "competitors": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -118,7 +208,10 @@
   "company": {
     "name": "Seedance AI Video Generator - Professional Videos",
     "url": "https://seedanceai.net",
-    "website": "https://seedanceai.net"
+    "website": "https://seedanceai.net",
+    "name_zh": "字节跳动",
+    "description": "ByteDance's AI video generation platform for professional-grade content.",
+    "employee_count_range": "1001-5000"
   },
   "icon_url": "https://cdn-images.toolify.ai/website-logos/20250711/1752223962_85020919_27336.webp",
   "sub_category": "ai video generator",
@@ -144,5 +237,47 @@
   "pricing": {
     "model": "paid",
     "has_free_tier": false
-  }
+  },
+  "platforms": [
+    "web",
+    "api"
+  ],
+  "target_audience": [
+    "content-creators",
+    "video-editors",
+    "marketers",
+    "video-producers"
+  ],
+  "use_cases": [
+    "video-generation",
+    "video-editing",
+    "animation",
+    "text-to-video",
+    "professional-content",
+    "short-form-content"
+  ],
+  "name_zh": "秒舞AI视频生成器-专业视频",
+  "description_zh": "专业级内容的AI视频生成平台",
+  "open_source": false,
+  "api_available": true,
+  "hiring": {
+    "is_hiring": true,
+    "careers_url": "https://www.bytedance.com/en/careers/",
+    "tech_stack": [
+      "Python",
+      "CUDA",
+      "TensorFlow",
+      "PyTorch"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "modalities": [
+    "text",
+    "image",
+    "video"
+  ],
+  "competitors": [
+    "runway",
+    "pika"
+  ]
 }

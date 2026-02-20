@@ -4,11 +4,11 @@
   "product_url": "https://www.devzery.com",
   "description": "AI-powered API regression testing solution for streamlined QA and faster releases.",
   "product_type": "app",
-  "category": "ai-application",
+  "category": "ai-productivity",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "toolify",
@@ -93,6 +93,84 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "api_available": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "platforms": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "description_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -106,7 +184,10 @@
   "company": {
     "name": "Devzery",
     "url": "https://www.devzery.com",
-    "website": "https://www.devzery.com"
+    "website": "https://www.devzery.com",
+    "name_zh": "Devzery",
+    "description": "Devzery provides AI-powered API regression testing solutions for streamlined QA and faster software releases.",
+    "employee_count_range": "1-10"
   },
   "icon_url": "https://cdn-images.toolify.ai/website-logos/20250410/1744267572_64313776_8073.webp",
   "sub_category": "ai testing",
@@ -131,5 +212,45 @@
   "pricing": {
     "model": "enterprise",
     "has_free_tier": false
-  }
+  },
+  "api_available": true,
+  "platforms": [
+    "api",
+    "web",
+    "cli"
+  ],
+  "target_audience": [
+    "developers",
+    "professionals",
+    "teams",
+    "enterprises",
+    "qa-engineers",
+    "devops"
+  ],
+  "use_cases": [
+    "code-generation",
+    "app-development",
+    "task-automation",
+    "autonomous-agents",
+    "api-integration",
+    "api-testing",
+    "regression-testing",
+    "quality-assurance"
+  ],
+  "name_zh": "Devzery",
+  "description_zh": "AI驱动的API回归测试解决方案，加速QA流程并提高发布效率。",
+  "open_source": false,
+  "hiring": {
+    "careers_url": "",
+    "tech_stack": [
+      "Python",
+      "Node.js",
+      "PostgreSQL",
+      "Docker"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "modalities": [
+    "code"
+  ]
 }

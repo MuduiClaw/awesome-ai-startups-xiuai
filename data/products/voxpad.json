@@ -4,11 +4,11 @@
   "product_url": "https://voxpad.net",
   "description": "AI notetaker converting video and audio into customizable notes with AI editing.",
   "product_type": "app",
-  "category": "ai-application",
+  "category": "ai-productivity",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "toolify",
@@ -93,6 +93,84 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "platforms": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "description_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -106,7 +184,10 @@
   "company": {
     "name": "Voxpad",
     "url": "https://voxpad.net",
-    "website": "https://voxpad.net"
+    "website": "https://voxpad.net",
+    "name_zh": "Voxpad",
+    "description": "AI-powered transcription and note-taking application for audio and video content.",
+    "employee_count_range": "1-10"
   },
   "icon_url": "https://cdn-images.toolify.ai/website-logos/20250410/1744258973_59576896_15569.webp",
   "sub_category": "ai note taker",
@@ -137,5 +218,39 @@
   "pricing": {
     "model": "freemium",
     "has_free_tier": true
-  }
+  },
+  "platforms": [
+    "web",
+    "ios",
+    "android"
+  ],
+  "target_audience": [
+    "professionals",
+    "teams",
+    "enterprises",
+    "students",
+    "researchers",
+    "creators"
+  ],
+  "use_cases": [
+    "text-summarization",
+    "document-analysis",
+    "transcription",
+    "note-taking",
+    "video-summarization"
+  ],
+  "name_zh": "Voxpad",
+  "description_zh": "视频音频笔记工具，AI自动转录和智能编辑",
+  "open_source": false,
+  "api_available": true,
+  "hiring": {
+    "is_hiring": true,
+    "careers_url": "",
+    "last_checked": "2026-02-20"
+  },
+  "modalities": [
+    "audio",
+    "video",
+    "text"
+  ]
 }

@@ -4,11 +4,11 @@
   "product_url": "https://www.deepread.tech",
   "description": "AI-native OCR platform, 95%+ accuracy, zero prompt engineering, flags uncertain fields.",
   "product_type": "app",
-  "category": "ai-application",
+  "category": "ai-chatbot-agent",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "theresanaiforthat",
@@ -77,10 +77,100 @@
         "updated_at": "2026-02-16"
       },
       "use_cases": {
-        "source": "theresanaiforthat",
-        "tier": 2,
-        "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "keywords": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "platforms": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "description_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "sub_category": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -94,7 +184,10 @@
   "company": {
     "name": "DeepRead.Tech",
     "url": "https://www.deepread.tech",
-    "website": "https://www.deepread.tech"
+    "website": "https://www.deepread.tech",
+    "name_zh": "DeepRead.Tech",
+    "description": "高精度AI OCR和文档识别平台，面向企业数字化。",
+    "employee_count_range": "1-10"
   },
   "icon_url": "https://media.theresanaiforthat.com/icons/deepread-tech.svg?height=207",
   "tags": [
@@ -102,6 +195,53 @@
     "ocr"
   ],
   "use_cases": [
-    "OCR"
+    "OCR",
+    "document-extraction",
+    "ocr",
+    "data-extraction"
+  ],
+  "keywords": [
+    "DeepRead.Tech",
+    "ai chatbot agent",
+    "OCR",
+    "AI-native",
+    "platform",
+    "accuracy",
+    "zero",
+    "prompt",
+    "engineering",
+    "flags",
+    "uncertain",
+    "fields",
+    "app"
+  ],
+  "platforms": [
+    "web",
+    "api"
+  ],
+  "target_audience": [
+    "developers",
+    "enterprises",
+    "general-users",
+    "document-processors"
+  ],
+  "name_zh": "DeepRead.Tech",
+  "description_zh": "AI原生OCR平台，识别准确率95%以上，无需prompt工程，自动标记不确定字段。",
+  "sub_category": "ocr-platform",
+  "open_source": false,
+  "api_available": true,
+  "hiring": {
+    "is_hiring": true,
+    "careers_url": "",
+    "tech_stack": [
+      "Python",
+      "TensorFlow",
+      "FastAPI"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "modalities": [
+    "image",
+    "text"
   ]
 }

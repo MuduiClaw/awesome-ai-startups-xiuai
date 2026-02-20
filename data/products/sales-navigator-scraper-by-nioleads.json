@@ -4,11 +4,11 @@
   "product_url": "https://nioleads.com/?ref=toolify",
   "description": "LinkedIn Sales Navigator Scraper with AI for lead generation and email finding.",
   "product_type": "app",
-  "category": "ai-enterprise-vertical",
+  "category": "ai-sales-crm",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "toolify",
@@ -93,6 +93,72 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "api_available": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "platforms": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "description_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -106,7 +172,9 @@
   "company": {
     "name": "Sales Navigator Scraper by NioLeads",
     "url": "https://nioleads.com/?ref=toolify",
-    "website": "https://nioleads.com/?ref=toolify"
+    "website": "https://nioleads.com/?ref=toolify",
+    "name_zh": "NioLeads",
+    "description": "LinkedIn scraper with AI for lead generation and email discovery."
   },
   "icon_url": "https://cdn-images.toolify.ai/website-logos/20250410/1744259997_13598457_20111.webp",
   "sub_category": "ai lead generation",
@@ -128,5 +196,35 @@
   "pricing": {
     "model": "freemium",
     "has_free_tier": true
-  }
+  },
+  "api_available": true,
+  "platforms": [
+    "api",
+    "web"
+  ],
+  "target_audience": [
+    "sales-professionals",
+    "enterprises",
+    "marketers",
+    "sales-teams",
+    "recruiters",
+    "businesses"
+  ],
+  "use_cases": [
+    "lead-generation",
+    "sales-automation",
+    "crm-management",
+    "lead-scraping",
+    "email-finding",
+    "lead-enrichment"
+  ],
+  "name_zh": "NioLeads销售导航爬虫",
+  "description_zh": "LinkedIn Sales Navigator爬虫工具，集成AI功能用于潜在客户生成和邮箱查找。",
+  "open_source": false,
+  "hiring": {
+    "careers_url": ""
+  },
+  "modalities": [
+    "text"
+  ]
 }

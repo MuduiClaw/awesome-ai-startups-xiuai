@@ -4,11 +4,11 @@
   "product_url": "https://groas.ai/?via=0d2aa5",
   "description": "AI platform for optimizing Google Search Ads and funnels.",
   "product_type": "app",
-  "category": "ai-enterprise-vertical",
+  "category": "ai-marketing-commerce",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "toolify",
@@ -105,6 +105,90 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "platforms": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "description_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -118,7 +202,10 @@
   "company": {
     "name": "groas",
     "url": "https://groas.ai/?via=0d2aa5",
-    "website": "https://groas.ai/?via=0d2aa5"
+    "website": "https://groas.ai/?via=0d2aa5",
+    "name_zh": "groas",
+    "description": "AI platform for Google Ads optimization and marketing funnel improvement.",
+    "employee_count_range": "11-50"
   },
   "icon_url": "https://cdn-images.toolify.ai/website-logos/20250531/1748697153_10233819_26974.webp",
   "sub_category": "ai advertising",
@@ -145,5 +232,42 @@
   "pricing": {
     "model": "paid",
     "has_free_tier": false
-  }
+  },
+  "platforms": [
+    "web"
+  ],
+  "target_audience": [
+    "marketers",
+    "enterprises",
+    "e-commerce-sellers",
+    "businesses",
+    "ppc-agencies"
+  ],
+  "use_cases": [
+    "ad-creation",
+    "marketing-automation",
+    "e-commerce-optimization",
+    "ad-optimization",
+    "campaign-management",
+    "funnel-optimization",
+    "budget-allocation"
+  ],
+  "name_zh": "groas",
+  "description_zh": "用于优化Google搜索广告和营销漏斗的AI平台。",
+  "open_source": false,
+  "api_available": true,
+  "hiring": {
+    "is_hiring": true,
+    "careers_url": "https://groas.com/careers",
+    "tech_stack": [
+      "Python",
+      "JavaScript",
+      "Machine Learning",
+      "Google Ads API"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "modalities": [
+    "text"
+  ]
 }

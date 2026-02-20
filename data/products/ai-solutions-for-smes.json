@@ -4,11 +4,11 @@
   "product_url": "https://tekhub.ai",
   "description": "TEKHUB AI offers AI solutions and services for SMBs to leverage technology and upgrade capabilities.",
   "product_type": "app",
-  "category": "ai-application",
+  "category": "ai-productivity",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "toolify",
@@ -93,6 +93,90 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "platforms": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "description_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -106,7 +190,10 @@
   "company": {
     "name": "AI Solutions for SMEs",
     "url": "https://tekhub.ai",
-    "website": "https://tekhub.ai"
+    "website": "https://tekhub.ai",
+    "name_zh": "TEKHUB AI",
+    "description": "TEKHUB AI provides AI solutions and consulting services to help SMBs leverage technology and upgrade digital capabilities.",
+    "employee_count_range": "11-50"
   },
   "icon_url": "https://cdn-images.toolify.ai/website-logos/20250411/1744351913_30129822_9521.webp",
   "sub_category": "ai consulting",
@@ -133,5 +220,42 @@
   "pricing": {
     "model": "enterprise",
     "has_free_tier": false
-  }
+  },
+  "platforms": [
+    "web"
+  ],
+  "target_audience": [
+    "professionals",
+    "teams",
+    "enterprises",
+    "smb",
+    "startups",
+    "small-businesses"
+  ],
+  "use_cases": [
+    "workflow-automation",
+    "document-management",
+    "task-management",
+    "business-automation",
+    "digital-transformation",
+    "ai-consulting",
+    "process-optimization"
+  ],
+  "name_zh": "中小企业AI解决方案",
+  "description_zh": "TEKHUB AI为中小企业提供AI解决方案和服务，帮助升级技术能力",
+  "open_source": false,
+  "api_available": false,
+  "hiring": {
+    "is_hiring": true,
+    "careers_url": "https://tekhub.ai/careers",
+    "tech_stack": [
+      "Python",
+      "Machine Learning",
+      "Cloud Infrastructure"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "modalities": [
+    "text"
+  ]
 }

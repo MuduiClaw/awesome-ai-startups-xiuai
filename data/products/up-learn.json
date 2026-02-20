@@ -4,11 +4,11 @@
   "product_url": "https://uplearn.co.uk",
   "description": "AI-powered A Level courses with A*/A guarantee or money back.",
   "product_type": "app",
-  "category": "ai-application",
+  "category": "ai-education",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "toolify",
@@ -93,6 +93,90 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "platforms": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "description_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -106,7 +190,10 @@
   "company": {
     "name": "Up Learn",
     "url": "https://uplearn.co.uk",
-    "website": "https://uplearn.co.uk"
+    "website": "https://uplearn.co.uk",
+    "name_zh": "Up Learn",
+    "description": "AI-powered A Level courses with guaranteed A*/A grades or money back.",
+    "employee_count_range": "11-50"
   },
   "icon_url": "https://cdn-images.toolify.ai/website-logos/20250410/1744268075_86142473_8809.webp",
   "sub_category": "ai course",
@@ -133,5 +220,39 @@
   "pricing": {
     "model": "free-trial",
     "has_free_tier": true
-  }
+  },
+  "platforms": [
+    "web"
+  ],
+  "target_audience": [
+    "students",
+    "educators",
+    "researchers",
+    "teachers"
+  ],
+  "use_cases": [
+    "online-learning",
+    "tutoring",
+    "study-assistance",
+    "exam-preparation"
+  ],
+  "name_zh": "Up Learn",
+  "description_zh": "AI驱动的A级课程，提供A*/A保证或退款。",
+  "open_source": false,
+  "api_available": false,
+  "hiring": {
+    "is_hiring": true,
+    "careers_url": "",
+    "tech_stack": [
+      "React",
+      "Node.js",
+      "Video Platform",
+      "PostgreSQL"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "modalities": [
+    "video",
+    "text"
+  ]
 }

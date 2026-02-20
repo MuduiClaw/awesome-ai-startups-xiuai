@@ -4,11 +4,11 @@
   "product_url": "https://www.daywithgod.com",
   "description": "AI-powered spiritual growth platform with personalized devotions and guided journaling.",
   "product_type": "app",
-  "category": "ai-application",
+  "category": "ai-social-entertainment",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "toolify",
@@ -93,6 +93,90 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "api_available": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "platforms": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "description_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -106,7 +190,10 @@
   "company": {
     "name": "Day With GOD",
     "url": "https://www.daywithgod.com",
-    "website": "https://www.daywithgod.com"
+    "website": "https://www.daywithgod.com",
+    "name_zh": "与上帝的一天",
+    "description": "AI-powered spiritual wellness application providing personalized devotional content and reflective journaling tools.",
+    "employee_count_range": "1-10"
   },
   "icon_url": "https://cdn-images.toolify.ai/website-logos/20250410/1744259505_59846829_18847.webp",
   "sub_category": "ai god",
@@ -127,5 +214,43 @@
   "pricing": {
     "model": "freemium",
     "has_free_tier": true
-  }
+  },
+  "api_available": true,
+  "platforms": [
+    "api",
+    "web",
+    "ios",
+    "android"
+  ],
+  "target_audience": [
+    "general-users",
+    "content-creators",
+    "influencers",
+    "spiritual-seekers",
+    "individuals",
+    "faith-communities"
+  ],
+  "use_cases": [
+    "ai-chat",
+    "conversational-ai",
+    "spiritual-growth",
+    "daily-devotions",
+    "journaling"
+  ],
+  "name_zh": "与上帝的一天",
+  "description_zh": "AI驱动的灵性成长平台，提供个性化灵修和引导式日志记录。",
+  "open_source": false,
+  "hiring": {
+    "is_hiring": false,
+    "careers_url": "",
+    "tech_stack": [
+      "React",
+      "Node.js",
+      "Firebase"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "modalities": [
+    "text"
+  ]
 }

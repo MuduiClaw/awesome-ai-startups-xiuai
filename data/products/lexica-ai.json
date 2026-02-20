@@ -4,11 +4,11 @@
   "product_url": "https://lexicaai.net",
   "description": "Free AI image generator transforming text into stunning visuals.",
   "product_type": "app",
-  "category": "ai-creative-media",
+  "category": "ai-image-design",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "toolify",
@@ -105,6 +105,96 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "platforms": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "description_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "competitors": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -123,7 +213,10 @@
   "company": {
     "name": "Lexica AI",
     "url": "https://lexicaai.net",
-    "website": "https://lexicaai.net"
+    "website": "https://lexicaai.net",
+    "name_zh": "Lexica AI",
+    "description": "Free AI image generation platform using Stable Diffusion to create visuals from text descriptions.",
+    "employee_count_range": "1-10"
   },
   "icon_url": "https://cdn-images.toolify.ai/website-logos/20251106/1762417403_11289034_28405.webp",
   "sub_category": "ai image generator",
@@ -160,5 +253,49 @@
   "pricing": {
     "model": "freemium",
     "has_free_tier": true
-  }
+  },
+  "platforms": [
+    "web",
+    "api"
+  ],
+  "target_audience": [
+    "designers",
+    "content-creators",
+    "marketers",
+    "creators",
+    "artists",
+    "content-producers"
+  ],
+  "use_cases": [
+    "image-generation",
+    "image-editing",
+    "graphic-design",
+    "visual-design",
+    "illustration",
+    "artwork-creation"
+  ],
+  "name_zh": "Lexica AI",
+  "description_zh": "免费AI图像生成器将文本转换为令人惊艳的视觉效果。",
+  "open_source": false,
+  "api_available": true,
+  "hiring": {
+    "is_hiring": false,
+    "careers_url": "",
+    "tech_stack": [
+      "Python",
+      "Stable Diffusion",
+      "React",
+      "FastAPI",
+      "CUDA"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "modalities": [
+    "image",
+    "text"
+  ],
+  "competitors": [
+    "midjourney",
+    "dreamstudio"
+  ]
 }

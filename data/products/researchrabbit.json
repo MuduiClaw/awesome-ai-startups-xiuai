@@ -8,7 +8,7 @@
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "toolify",
@@ -93,6 +93,72 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "platforms": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "description_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "competitors": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -106,7 +172,9 @@
   "company": {
     "name": "ResearchRabbit",
     "url": "https://www.researchrabbit.ai",
-    "website": "https://www.researchrabbit.ai"
+    "website": "https://www.researchrabbit.ai",
+    "name_zh": "ResearchRabbit",
+    "description": "Research discovery platform for visualizing and organizing academic papers."
   },
   "icon_url": "https://cdn-images.toolify.ai/website-logos/20250410/1744256274_50424408_317.webp",
   "sub_category": "ai research tool",
@@ -129,5 +197,40 @@
   "pricing": {
     "model": "free",
     "has_free_tier": true
-  }
+  },
+  "platforms": [
+    "web"
+  ],
+  "target_audience": [
+    "developers",
+    "researchers",
+    "enterprises",
+    "academics",
+    "students",
+    "scientists"
+  ],
+  "use_cases": [
+    "semantic-search",
+    "information-retrieval",
+    "data-extraction",
+    "paper-discovery",
+    "knowledge-mapping",
+    "research-organization",
+    "literature-tracking"
+  ],
+  "name_zh": "ResearchRabbit",
+  "description_zh": "用于发现、可视化和组织研究论文的AI研究平台。",
+  "open_source": false,
+  "hiring": {
+    "careers_url": ""
+  },
+  "modalities": [
+    "text"
+  ],
+  "competitors": [
+    "researchpal",
+    "researchgoat",
+    "scholar-ai",
+    "connected-papers"
+  ]
 }

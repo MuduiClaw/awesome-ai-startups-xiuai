@@ -4,11 +4,11 @@
   "product_url": "https://clawbot.ai",
   "description": "Open-source, self-hosted personal AI infrastructure for autonomous task execution and privacy.",
   "product_type": "app",
-  "category": "ai-application",
+  "category": "ai-chatbot-agent",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "toolify",
@@ -105,6 +105,96 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "platforms": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "description_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "competitors": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -118,7 +208,10 @@
   "company": {
     "name": "Clawbot-1",
     "url": "https://clawbot.ai",
-    "website": "https://clawbot.ai"
+    "website": "https://clawbot.ai",
+    "name_zh": "Clawbot-1",
+    "description": "Open-source, self-hosted personal AI infrastructure for autonomous task execution with privacy.",
+    "employee_count_range": "1-10"
   },
   "icon_url": "https://cdn-images.toolify.ai/website-logos/20260208/1770556151_88407073_29290.webp",
   "sub_category": "ai assistant",
@@ -144,5 +237,44 @@
   "pricing": {
     "model": "free",
     "has_free_tier": true
-  }
+  },
+  "platforms": [
+    "web",
+    "self-hosted",
+    "desktop"
+  ],
+  "target_audience": [
+    "developers",
+    "enterprises",
+    "general-users",
+    "privacy-conscious-users"
+  ],
+  "use_cases": [
+    "task-automation",
+    "autonomous-agents",
+    "personal-ai",
+    "privacy-protection",
+    "self-hosting"
+  ],
+  "name_zh": "Clawbot-1",
+  "description_zh": "开源自托管个人AI基础设施，自动执行任务并保证隐私。",
+  "open_source": true,
+  "api_available": true,
+  "hiring": {
+    "is_hiring": false,
+    "careers_url": "",
+    "tech_stack": [
+      "Python",
+      "Docker",
+      "FastAPI"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "modalities": [
+    "text"
+  ],
+  "competitors": [
+    "ollama",
+    "llamaindex"
+  ]
 }

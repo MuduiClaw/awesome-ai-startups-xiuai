@@ -4,11 +4,11 @@
   "product_url": "https://302.ai",
   "description": "302.AI是一个汇集全球顶级AI的自助平台，按需付费，零月费，零门槛使用各种类型AI。",
   "product_type": "other",
-  "category": "ai-application",
+  "category": "ai-chatbot-agent",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "ainav",
@@ -105,6 +105,90 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "platforms": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "competitors": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -124,7 +208,10 @@
   "company": {
     "name": "302.AI",
     "url": "https://302.ai",
-    "website": "https://302.ai"
+    "website": "https://302.ai",
+    "name_zh": "302.AI",
+    "description": "Chinese AI platform aggregating various global AI models with pay-as-you-go pricing.",
+    "employee_count_range": "11-50"
   },
   "icon_url": "https://www.ainav.cn/wp-content/uploads/2024/04/c2750-302.ai.png",
   "tags": [
@@ -154,5 +241,43 @@
     "Audio processing",
     "Text processing",
     "AI applications"
+  ],
+  "platforms": [
+    "web",
+    "api"
+  ],
+  "target_audience": [
+    "developers",
+    "enterprises",
+    "general-users",
+    "ai-researchers",
+    "business-professionals"
+  ],
+  "use_cases": [
+    "ai-chat",
+    "conversational-ai",
+    "ai-api-aggregation",
+    "model-testing",
+    "ai-exploration"
+  ],
+  "name_zh": "302.AI",
+  "open_source": false,
+  "api_available": true,
+  "hiring": {
+    "is_hiring": true,
+    "careers_url": "",
+    "tech_stack": [
+      "Python",
+      "Node.js",
+      "PostgreSQL"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "modalities": [
+    "multimodal"
+  ],
+  "competitors": [
+    "openrouter",
+    "together-ai"
   ]
 }

@@ -4,11 +4,11 @@
   "product_url": "https://storyboardhero.ai/?via=toolify",
   "description": "AI storyboard generator for video creators, reducing time and cost with AI-powered concepts and visuals.",
   "product_type": "app",
-  "category": "ai-application",
+  "category": "ai-writing-content",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "toolify",
@@ -87,6 +87,96 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "platforms": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "description_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "competitors": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -100,7 +190,10 @@
   "company": {
     "name": "StoryboardHero AI Storyboard Generator",
     "url": "https://storyboardhero.ai/?via=toolify",
-    "website": "https://storyboardhero.ai/?via=toolify"
+    "website": "https://storyboardhero.ai/?via=toolify",
+    "name_zh": "故事板英雄",
+    "description": "AI storyboard generator reducing production time and cost through automated visual concept creation.",
+    "employee_count_range": "11-50"
   },
   "icon_url": "https://cdn-images.toolify.ai/website-logos/20250410/1744266311_60578955_5733.webp",
   "sub_category": "storyboard ai",
@@ -118,5 +211,48 @@
     "Video agency tools",
     "Concept development",
     "Script-to-storyboard"
+  ],
+  "platforms": [
+    "web"
+  ],
+  "target_audience": [
+    "content-creators",
+    "marketers",
+    "writers",
+    "video-creators",
+    "filmmakers"
+  ],
+  "use_cases": [
+    "content-writing",
+    "copywriting",
+    "text-generation",
+    "storyboard-generation",
+    "video-planning",
+    "concept-development",
+    "visual-communication"
+  ],
+  "name_zh": "故事板英雄 AI故事板生成器",
+  "description_zh": "为视频创作者提供AI故事板生成器，减少时间和成本。",
+  "open_source": false,
+  "api_available": true,
+  "hiring": {
+    "is_hiring": true,
+    "careers_url": "https://storyboardhero.com/careers",
+    "tech_stack": [
+      "Python",
+      "React",
+      "FastAPI",
+      "Stable-Diffusion",
+      "AWS"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "modalities": [
+    "text",
+    "image"
+  ],
+  "competitors": [
+    "storyboarderai",
+    "boords"
   ]
 }

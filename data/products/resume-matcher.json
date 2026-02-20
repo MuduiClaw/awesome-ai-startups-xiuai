@@ -4,11 +4,11 @@
   "product_url": "https://www.resumematcher.fyi",
   "description": "Free, open-source tool to tailor resumes using NLP and data insights.",
   "product_type": "app",
-  "category": "ai-application",
+  "category": "ai-hr-recruiting",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "toolify",
@@ -93,6 +93,96 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "platforms": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "description_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "competitors": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -106,7 +196,10 @@
   "company": {
     "name": "Resume Matcher",
     "url": "https://www.resumematcher.fyi",
-    "website": "https://www.resumematcher.fyi"
+    "website": "https://www.resumematcher.fyi",
+    "name_zh": "Resume Matcher",
+    "description": "Open-source resume tailoring tool using NLP.",
+    "employee_count_range": "1-10"
   },
   "icon_url": "https://cdn-images.toolify.ai/website-logos/20250410/1744265964_78070702_5049.webp",
   "sub_category": "ai resume builder",
@@ -129,5 +222,47 @@
   "pricing": {
     "model": "free",
     "has_free_tier": true
-  }
+  },
+  "platforms": [
+    "web",
+    "cli"
+  ],
+  "target_audience": [
+    "developers",
+    "hr-professionals",
+    "recruiters",
+    "enterprises",
+    "job-seekers",
+    "professionals",
+    "open-source-users"
+  ],
+  "use_cases": [
+    "resume-creation",
+    "career-assistance",
+    "resume-tailoring",
+    "job-matching",
+    "nlp-analysis",
+    "data-insights"
+  ],
+  "name_zh": "Resume Matcher",
+  "description_zh": "免费开源工具，使用NLP和数据洞察来定制简历。",
+  "open_source": true,
+  "api_available": true,
+  "hiring": {
+    "is_hiring": false,
+    "careers_url": "",
+    "tech_stack": [
+      "Python",
+      "NLP",
+      "GitHub"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "modalities": [
+    "text"
+  ],
+  "competitors": [
+    "jobscan",
+    "kickresume"
+  ]
 }

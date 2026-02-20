@@ -4,11 +4,11 @@
   "product_url": "https://lyihub.com",
   "description": "让用户出题，安排AI模型回答，由用户选择评判，从而对大模型进行评分排名和产品介绍，帮助用户筛选合适模型",
   "product_type": "other",
-  "category": "ai-application",
+  "category": "ai-chatbot-agent",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "ainav",
@@ -81,6 +81,90 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "keywords": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "platforms": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "sub_category": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -95,10 +179,59 @@
   "description_zh": "让用户出题，安排AI模型回答，由用户选择评判，从而对大模型进行评分排名和产品介绍，帮助用户筛选合适模型",
   "company": {
     "name": "LYi 林哥的大模型野榜",
-    "url": "https://lyihub.com"
+    "url": "https://lyihub.com",
+    "name_zh": "LYi 林哥的大模型野榜",
+    "description": "Crowdsourced AI model evaluation and ranking platform for comparing large language models",
+    "employee_count_range": "1-10"
   },
   "icon_url": "https://www.ainav.cn/wp-content/uploads/2024/07/c0577-lyihub.com.png",
   "tags": [
     "AI模型评测"
+  ],
+  "keywords": [
+    "LYi 林哥的大模型野榜",
+    "ai chatbot agent",
+    "AI模型评测",
+    "AI",
+    "让用户出题",
+    "安排",
+    "模型回答",
+    "由用户选择评判",
+    "从而对大模型进行评分排名和产品介绍",
+    "帮助用户筛选合适模型",
+    "other"
+  ],
+  "platforms": [
+    "web"
+  ],
+  "target_audience": [
+    "developers",
+    "enterprises",
+    "general-users",
+    "ai-enthusiasts",
+    "researchers"
+  ],
+  "use_cases": [
+    "ai-chat",
+    "virtual-assistant",
+    "task-automation",
+    "model-evaluation",
+    "ai-comparison"
+  ],
+  "sub_category": "ai-benchmark",
+  "open_source": false,
+  "api_available": false,
+  "hiring": {
+    "is_hiring": false,
+    "careers_url": "",
+    "tech_stack": [
+      "React",
+      "Node.js",
+      "Python"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "modalities": [
+    "text"
   ]
 }

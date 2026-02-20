@@ -3,12 +3,12 @@
   "name": "TripoSR",
   "product_url": "https://triposr.org",
   "description": "AI platform for rapidly converting text or images into high-quality 3D models.",
-  "product_type": "llm",
-  "category": "ai-creative-media",
+  "product_type": "app",
+  "category": "ai-image-design",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "toolify",
@@ -105,6 +105,72 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "api_available": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "platforms": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "description_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "competitors": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -118,7 +184,9 @@
   "company": {
     "name": "TripoSR",
     "url": "https://triposr.org",
-    "website": "https://triposr.org"
+    "website": "https://triposr.org",
+    "name_zh": "TripoSR",
+    "description": "Rapid AI-powered 3D model generation from text and images."
   },
   "icon_url": "https://cdn-images.toolify.ai/website-logos/20260215/1771118721_70315112_29368.webp",
   "sub_category": "ai 3d model generator",
@@ -141,5 +209,39 @@
   "pricing": {
     "model": "freemium",
     "has_free_tier": true
-  }
+  },
+  "api_available": true,
+  "platforms": [
+    "api",
+    "web"
+  ],
+  "target_audience": [
+    "designers",
+    "content-creators",
+    "marketers",
+    "developers",
+    "creators"
+  ],
+  "use_cases": [
+    "api-integration",
+    "model-access",
+    "3d-modeling",
+    "text-to-3d",
+    "image-to-3d"
+  ],
+  "name_zh": "TripoSR",
+  "description_zh": "AI平台,用于快速将文本或图像转换为高质量3D模型",
+  "hiring": {
+    "careers_url": ""
+  },
+  "modalities": [
+    "text",
+    "image",
+    "3d"
+  ],
+  "competitors": [
+    "tripo-ai",
+    "meshy",
+    "alpha3d"
+  ]
 }

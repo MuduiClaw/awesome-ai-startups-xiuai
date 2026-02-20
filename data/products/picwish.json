@@ -4,11 +4,11 @@
   "product_url": "https://picwish.com",
   "description": "AI图片编辑和背景移除",
   "product_type": "other",
-  "category": "ai-application",
+  "category": "ai-translation",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "aibot",
@@ -105,6 +105,84 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "platforms": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -124,7 +202,10 @@
   "company": {
     "name": "PicWish",
     "url": "https://picwish.com",
-    "website": "https://picwish.com/referral?invite_people=82237069&invite_name=affiliate"
+    "website": "https://picwish.com/referral?invite_people=82237069&invite_name=affiliate",
+    "name_zh": "PicWish",
+    "description": "AI-powered image editing platform specializing in background removal and enhancement.",
+    "employee_count_range": "11-50"
   },
   "icon_url": "https://ai-bot.cn/wp-content/uploads/2023/03/picwish-icon.png",
   "tags": [
@@ -150,5 +231,40 @@
     "Online photo editor",
     "Batch processing",
     "AI image generator"
+  ],
+  "platforms": [
+    "web"
+  ],
+  "target_audience": [
+    "translators",
+    "content-creators",
+    "global-teams",
+    "photographers",
+    "ecommerce-sellers"
+  ],
+  "use_cases": [
+    "photo-enhancement",
+    "image-upscaling",
+    "photo-editing",
+    "image-manipulation",
+    "background-removal",
+    "image-enhancement"
+  ],
+  "name_zh": "PicWish",
+  "open_source": false,
+  "api_available": true,
+  "hiring": {
+    "is_hiring": true,
+    "careers_url": "https://picwish.com/careers",
+    "tech_stack": [
+      "Python",
+      "TensorFlow",
+      "React",
+      "Node.js"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "modalities": [
+    "image"
   ]
 }

@@ -4,11 +4,11 @@
   "product_url": "https://grok.x.ai",
   "description": "Witty, rebellious AI with real-time knowledge, inspired by Hitchhiker's Guide.",
   "product_type": "app",
-  "category": "ai-application",
+  "category": "ai-chatbot-agent",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "toolify",
@@ -77,16 +77,106 @@
         "updated_at": "2026-02-16"
       },
       "tags": {
-        "source": "toolify",
+        "source": "ainav",
         "tier": 2,
         "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "updated_at": "2026-02-18"
       },
       "keywords": {
         "source": "toolify",
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "platforms": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "ainav",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-18"
+      },
+      "name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "description_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "competitors": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -95,19 +185,28 @@
       "url": "https://www.toolify.ai/tool/grok-ai-assistant",
       "source_name": "toolify",
       "scraped_at": "2026-02-16"
+    },
+    {
+      "url": "https://www.ainav.cn",
+      "source_name": "ainav",
+      "scraped_at": "2026-02-18"
     }
   ],
   "company": {
     "name": "Grok AI assistant",
     "url": "https://grok.x.ai",
-    "website": "https://grok.x.ai"
+    "website": "https://grok.x.ai",
+    "name_zh": "Grok",
+    "description": "AI chatbot with real-time knowledge and unique personality by xAI.",
+    "employee_count_range": "51-200"
   },
   "icon_url": "https://cdn-images.toolify.ai/website-logos/20250411/1744351873_93496557_7788.webp",
   "sub_category": "ai chatbot",
   "tags": [
     "AI Chatbot",
     "Large Language Models (LLMs)",
-    "AI Assistant"
+    "AI Assistant",
+    "AI对话聊天"
   ],
   "keywords": [
     "AI assistant",
@@ -117,5 +216,45 @@
     "xAI",
     "Hitchhiker's Guide to the Galaxy",
     "LLM"
+  ],
+  "platforms": [
+    "web",
+    "api"
+  ],
+  "target_audience": [
+    "developers",
+    "enterprises",
+    "general-users",
+    "individuals"
+  ],
+  "use_cases": [
+    "ai-chat",
+    "conversational-ai",
+    "question-answering",
+    "information-retrieval",
+    "conversation",
+    "real-time-knowledge"
+  ],
+  "hiring": {
+    "careers_url": "",
+    "is_hiring": true,
+    "tech_stack": [
+      "Python",
+      "PyTorch",
+      "API Infrastructure"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "name_zh": "Grok AI助手",
+  "description_zh": "具有实时知识的诙谐、叛逆型AI，灵感来自《银河系漫游指南》。",
+  "open_source": false,
+  "api_available": true,
+  "modalities": [
+    "text"
+  ],
+  "competitors": [
+    "chatgpt",
+    "gemini",
+    "copilot"
   ]
 }

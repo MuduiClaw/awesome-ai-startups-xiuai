@@ -4,11 +4,11 @@
   "product_url": "https://www.deepvideo.io",
   "description": "DeepVideo transforms websites into personalized videos at scale using AI.",
   "product_type": "app",
-  "category": "ai-creative-media",
+  "category": "ai-video-animation",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "toolify",
@@ -93,6 +93,96 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "platforms": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "description_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "competitors": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -106,7 +196,10 @@
   "company": {
     "name": "DeepVideo",
     "url": "https://www.deepvideo.io",
-    "website": "https://www.deepvideo.io"
+    "website": "https://www.deepvideo.io",
+    "name_zh": "DeepVideo",
+    "description": "DeepVideo is an AI platform that transforms websites and content into personalized videos at scale for marketing and engagement.",
+    "employee_count_range": "1-10"
   },
   "icon_url": "https://cdn-images.toolify.ai/website-logos/20250411/1744350494_99964691_22114.webp",
   "sub_category": "text to video",
@@ -129,5 +222,49 @@
   "pricing": {
     "model": "paid",
     "has_free_tier": false
-  }
+  },
+  "platforms": [
+    "web",
+    "api"
+  ],
+  "target_audience": [
+    "content-creators",
+    "video-editors",
+    "marketers",
+    "ecommerce-businesses",
+    "enterprises"
+  ],
+  "use_cases": [
+    "avatar-generation",
+    "character-creation",
+    "video-generation",
+    "product-demos",
+    "marketing-videos",
+    "customer-engagement"
+  ],
+  "name_zh": "DeepVideo",
+  "description_zh": "AI视频生成平台，可将网站内容转换为个性化视频，支持大规模应用。",
+  "open_source": false,
+  "api_available": true,
+  "hiring": {
+    "is_hiring": true,
+    "careers_url": "",
+    "tech_stack": [
+      "Python",
+      "PyTorch",
+      "React",
+      "AWS",
+      "FFmpeg"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "modalities": [
+    "text",
+    "image",
+    "video"
+  ],
+  "competitors": [
+    "synthesia",
+    "d-id"
+  ]
 }

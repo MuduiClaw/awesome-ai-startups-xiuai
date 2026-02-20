@@ -20,8 +20,53 @@ class StatsGenerator:
     - Recently added products
     """
 
+    def __init__(self, db: Any = None) -> None:
+        self._db = db
+
     def generate(self) -> dict[str, Any]:
         """Generate stats.json and return the data."""
+        # Load tags data for dimensional stats (always file-based, small static file)
+        tags_data: dict[str, Any] = {}
+        if TAGS_FILE.exists():
+            import contextlib
+
+            with contextlib.suppress(json.JSONDecodeError, OSError):
+                tags_data = json.loads(TAGS_FILE.read_text(encoding="utf-8"))
+
+        if self._db is not None:
+            stats = self._generate_from_db(tags_data)
+        else:
+            stats = self._generate_from_files(tags_data)
+
+        STATS_FILE.write_text(
+            json.dumps(stats, indent=2, ensure_ascii=False) + "\n",
+            encoding="utf-8",
+        )
+
+        return stats
+
+    def _generate_from_db(self, tags_data: dict[str, Any]) -> dict[str, Any]:
+        """Generate stats from SQLite (SQL aggregation)."""
+        db_stats = self._db.get_stats_data()
+
+        # For tag dimension stats, we still need per-product tag lists
+        all_products = self._db.get_all_dicts() if tags_data else []
+
+        return {
+            "generated_at": date.today().isoformat(),
+            "total_products": db_stats["total"],
+            "by_category": db_stats["by_category"],
+            "by_country": db_stats["by_country"],
+            "by_status": db_stats["by_status"],
+            "by_tag_dimension": self._count_by_tag_dimension(all_products, tags_data),
+            "funding_leaderboard": db_stats["funding_leaderboard"],
+            "total_funding_usd": db_stats["total_funding_usd"],
+            "open_source_count": db_stats["open_source_count"],
+            "recently_added": db_stats["recently_added"],
+        }
+
+    def _generate_from_files(self, tags_data: dict[str, Any]) -> dict[str, Any]:
+        """Generate stats from JSON files (legacy path)."""
         all_products: list[dict[str, Any]] = []
 
         for filepath in sorted(PRODUCTS_DIR.glob("*.json")):
@@ -31,15 +76,7 @@ class StatsGenerator:
             except (json.JSONDecodeError, OSError):
                 continue
 
-        # Load tags data for dimensional stats
-        tags_data = {}
-        if TAGS_FILE.exists():
-            import contextlib
-
-            with contextlib.suppress(json.JSONDecodeError, OSError):
-                tags_data = json.loads(TAGS_FILE.read_text(encoding="utf-8"))
-
-        stats: dict[str, Any] = {
+        return {
             "generated_at": date.today().isoformat(),
             "total_products": len(all_products),
             "by_category": self._count_by_field(all_products, "category"),
@@ -51,13 +88,6 @@ class StatsGenerator:
             "open_source_count": sum(1 for p in all_products if p.get("open_source")),
             "recently_added": self._recently_added(all_products, top_n=5),
         }
-
-        STATS_FILE.write_text(
-            json.dumps(stats, indent=2, ensure_ascii=False) + "\n",
-            encoding="utf-8",
-        )
-
-        return stats
 
     @staticmethod
     def _count_by_field(

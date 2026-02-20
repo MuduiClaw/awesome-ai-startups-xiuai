@@ -8,7 +8,7 @@
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "ainav",
@@ -81,6 +81,96 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "keywords": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "platforms": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "ainav",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-18"
+      },
+      "name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "competitors": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -94,11 +184,64 @@
   "description_zh": "Lepton Search是由贾扬清创办的Lepton AI应用构建平台开源的一个对话式AI搜素引擎",
   "company": {
     "name": "Lepton Search",
-    "url": "https://search.lepton.run"
+    "url": "https://search.lepton.run",
+    "name_zh": "Lepton AI",
+    "description": "Open-source conversational AI search engine platform built on Lepton AI, enabling natural language search capabilities.",
+    "employee_count_range": "1-10"
   },
   "icon_url": "https://www.ainav.cn/wp-content/uploads/2024/02/06004220228.png",
   "sub_category": "ai-search",
   "tags": [
     "AI搜索引擎"
+  ],
+  "keywords": [
+    "Lepton Search",
+    "ai search retrieval",
+    "ai search",
+    "AI搜索引擎",
+    "Lepton",
+    "Search",
+    "AI",
+    "是由贾扬清创办的",
+    "应用构建平台开源的一个对话式",
+    "搜素引擎",
+    "other"
+  ],
+  "platforms": [
+    "web",
+    "api"
+  ],
+  "target_audience": [
+    "developers",
+    "researchers",
+    "enterprises",
+    "ai-builders"
+  ],
+  "use_cases": [
+    "semantic-search",
+    "information-retrieval",
+    "data-extraction",
+    "conversational-search",
+    "ai-search"
+  ],
+  "hiring": {
+    "careers_url": "",
+    "is_hiring": true,
+    "tech_stack": [
+      "Python",
+      "React",
+      "OpenAI API",
+      "LLM"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "name_zh": "Lepton Search对话搜索",
+  "open_source": true,
+  "api_available": true,
+  "modalities": [
+    "text"
+  ],
+  "competitors": [
+    "google-ai"
   ]
 }

@@ -4,11 +4,11 @@
   "product_url": "https://dreamikai.com",
   "description": "DreamikAI: Generative AI tool for creating marketing videos and images.",
   "product_type": "app",
-  "category": "ai-creative-media",
+  "category": "ai-video-animation",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "toolify",
@@ -93,6 +93,84 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "platforms": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "description_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "competitors": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -106,7 +184,10 @@
   "company": {
     "name": "Media generation using GenerativeAI",
     "url": "https://dreamikai.com",
-    "website": "https://dreamikai.com"
+    "website": "https://dreamikai.com",
+    "name_zh": "DreamikAI",
+    "description": "Generative AI platform for creating marketing videos, images, and avatar content",
+    "employee_count_range": "1-10"
   },
   "icon_url": "https://cdn-images.toolify.ai/website-logos/20250414/1744599928_68787286_3147.webp",
   "sub_category": "text to video",
@@ -129,5 +210,38 @@
   "pricing": {
     "model": "freemium",
     "has_free_tier": true
-  }
+  },
+  "platforms": [
+    "web"
+  ],
+  "target_audience": [
+    "content-creators",
+    "video-editors",
+    "marketers",
+    "small-business"
+  ],
+  "use_cases": [
+    "video-generation",
+    "video-editing",
+    "animation",
+    "marketing-video-creation",
+    "image-generation",
+    "avatar-video"
+  ],
+  "name_zh": "使用生成AI进行媒体生成",
+  "description_zh": "生成AI营销视频和图像的工具",
+  "open_source": false,
+  "api_available": false,
+  "hiring": {
+    "careers_url": ""
+  },
+  "modalities": [
+    "text",
+    "image",
+    "video"
+  ],
+  "competitors": [
+    "synthesia",
+    "descript"
+  ]
 }

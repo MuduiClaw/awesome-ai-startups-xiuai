@@ -4,11 +4,11 @@
   "product_url": "https://008agent.ai",
   "description": "Open-source VoIP phone with AI for call transcription, summarization, and CRM integration.",
   "product_type": "app",
-  "category": "ai-creative-media",
+  "category": "ai-audio-music",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-18",
     "provenance": {
       "name": {
         "source": "toolify",
@@ -93,6 +93,90 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "open_source": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "platforms": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-18"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-18"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-18"
+      },
+      "name_zh": {
+        "source": "llm-batch-translation",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-18"
+      },
+      "description_zh": {
+        "source": "llm-batch-translation",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-18"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-translation",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-18"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-18"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-18"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-18"
+      },
+      "competitors": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-18"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-hiring",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-18"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-hiring",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-18"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-hiring",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-18"
       }
     }
   },
@@ -106,7 +190,10 @@
   "company": {
     "name": "008",
     "url": "https://008agent.ai",
-    "website": "https://008agent.ai"
+    "website": "https://008agent.ai",
+    "name_zh": "008",
+    "description": "008 is an open-source project building AI-powered VoIP softphone software with event-driven architecture and CRM integration capabilities.",
+    "employee_count_range": "1-10"
   },
   "icon_url": "https://cdn-images.toolify.ai/website-logos/20250410/1744267563_15178286_8052.webp",
   "sub_category": "ai voice assistants",
@@ -131,5 +218,53 @@
   "pricing": {
     "model": "enterprise",
     "has_free_tier": false
+  },
+  "open_source": true,
+  "platforms": [
+    "web",
+    "desktop"
+  ],
+  "target_audience": [
+    "musicians",
+    "content-creators",
+    "podcasters",
+    "sales-teams",
+    "call-centers",
+    "enterprises",
+    "developers"
+  ],
+  "use_cases": [
+    "voice-assistant",
+    "voice-synthesis",
+    "speech-recognition",
+    "speech-to-text",
+    "transcription",
+    "call-transcription",
+    "call-summarization",
+    "crm-integration",
+    "sentiment-analysis"
+  ],
+  "name_zh": "008",
+  "description_zh": "开源VoIP电话，支持AI通话转录、摘要生成及CRM集成。",
+  "api_available": true,
+  "modalities": [
+    "audio",
+    "text"
+  ],
+  "competitors": [
+    "dialpad"
+  ],
+  "hiring": {
+    "is_hiring": false,
+    "tech_stack": [
+      "Python",
+      "WebRTC",
+      "Twilio",
+      "React",
+      "PostgreSQL",
+      "Whisper",
+      "Docker"
+    ],
+    "last_checked": "2026-02-18"
   }
 }

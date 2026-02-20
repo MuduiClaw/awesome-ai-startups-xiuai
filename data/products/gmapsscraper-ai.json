@@ -8,7 +8,7 @@
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "theresanaiforthat",
@@ -77,10 +77,100 @@
         "updated_at": "2026-02-16"
       },
       "use_cases": {
-        "source": "theresanaiforthat",
-        "tier": 2,
-        "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "keywords": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "platforms": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "description_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "sub_category": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -94,7 +184,10 @@
   "company": {
     "name": "GMapsScraper AI",
     "url": "https://gmapsscraper.io",
-    "website": "https://gmapsscraper.io"
+    "website": "https://gmapsscraper.io",
+    "name_zh": "GMapsScraper AI",
+    "description": "AI-powered lead extraction platform pulling business data from Google Maps.",
+    "employee_count_range": "1-10"
   },
   "icon_url": "https://media.theresanaiforthat.com/icons/gmapsscraper-ai.svg?height=207",
   "tags": [
@@ -102,6 +195,49 @@
     "data extraction"
   ],
   "use_cases": [
-    "Data extraction"
+    "Data extraction",
+    "lead-generation",
+    "data-extraction",
+    "market-research"
+  ],
+  "keywords": [
+    "GMapsScraper AI",
+    "ai data platform",
+    "Data extraction",
+    "Extract",
+    "verified",
+    "leads",
+    "Google",
+    "Maps",
+    "instantly",
+    "app"
+  ],
+  "platforms": [
+    "web"
+  ],
+  "target_audience": [
+    "data-scientists",
+    "developers",
+    "enterprises",
+    "marketers",
+    "sales-teams",
+    "businesses"
+  ],
+  "name_zh": "GMapsScraper AI",
+  "description_zh": "从Google Maps中快速提取1000+认证潜在客户。",
+  "sub_category": "lead-generation",
+  "open_source": false,
+  "api_available": true,
+  "hiring": {
+    "is_hiring": false,
+    "careers_url": "",
+    "tech_stack": [
+      "Python",
+      "web-scraping"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "modalities": [
+    "text"
   ]
 }

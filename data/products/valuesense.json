@@ -4,11 +4,11 @@
   "product_url": "https://valuesense.io",
   "description": "Invest like Hedge Funds | Insights & Visuals",
   "product_type": "app",
-  "category": "ai-application",
+  "category": "ai-finance-legal",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "toolify",
@@ -87,6 +87,84 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "platforms": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "description_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -100,7 +178,10 @@
   "company": {
     "name": "ValueSense",
     "url": "https://valuesense.io",
-    "website": "https://valuesense.io"
+    "website": "https://valuesense.io",
+    "name_zh": "ValueSense",
+    "description": "Investment platform providing hedge fund-grade insights and visual market analysis.",
+    "employee_count_range": "1-10"
   },
   "icon_url": "https://cdn-images.toolify.ai/website-logos/20250819/1755568704_36026685_27724.webp",
   "sub_category": "ai investing",
@@ -115,5 +196,41 @@
     "Stock market",
     "AI for stocks",
     "Quantitative research"
+  ],
+  "platforms": [
+    "web"
+  ],
+  "target_audience": [
+    "finance-professionals",
+    "lawyers",
+    "enterprises",
+    "investors",
+    "traders",
+    "financial-professionals"
+  ],
+  "use_cases": [
+    "financial-analysis",
+    "legal-research",
+    "compliance",
+    "stock-trading",
+    "investment-analysis",
+    "market-insights"
+  ],
+  "name_zh": "ValueSense",
+  "description_zh": "像对冲基金一样投资 | 数据见解和可视化",
+  "open_source": false,
+  "api_available": false,
+  "hiring": {
+    "careers_url": "",
+    "tech_stack": [
+      "React",
+      "Python",
+      "D3.js"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "modalities": [
+    "text",
+    "image"
   ]
 }

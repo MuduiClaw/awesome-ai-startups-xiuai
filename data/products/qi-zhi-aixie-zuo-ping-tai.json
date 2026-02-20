@@ -4,11 +4,11 @@
   "product_url": "https://openi.pcl.ac.cn",
   "description": "OpenI启智开源社区旗下的一站式AI开发协作平台，汇聚人工智能开源项目；提供代码托管、数据共享、模型训练等AI开发流水线功能；用户可在线使用鹏城实验室搭建的鹏城云脑、中国算力网的普惠算力，包含GPU、NPU等多样化加速资源。",
   "product_type": "other",
-  "category": "ai-application",
+  "category": "ai-chatbot-agent",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "ainav",
@@ -81,6 +81,96 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "keywords": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "platforms": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "sub_category": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "competitors": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -95,10 +185,75 @@
   "description_zh": "OpenI启智开源社区旗下的一站式AI开发协作平台，汇聚人工智能开源项目；提供代码托管、数据共享、模型训练等AI开发流水线功能；用户可在线使用鹏城实验室搭建的鹏城云脑、中国算力网的普惠算力，包含GPU、NPU等多样化加速资源。",
   "company": {
     "name": "启智AI协作平台",
-    "url": "https://openi.pcl.ac.cn"
+    "url": "https://openi.pcl.ac.cn",
+    "name_zh": "启智AI协作平台",
+    "description": "Qizhi AI is an open-source AI development collaboration platform with model training and cloud computing resources.",
+    "employee_count_range": "11-50"
   },
   "icon_url": "https://www.ainav.cn/wp-content/uploads/2023/06/9c267-openi.pcl.ac.cn.png",
   "tags": [
     "AI算力平台"
+  ],
+  "keywords": [
+    "启智AI协作平台",
+    "ai chatbot agent",
+    "AI算力平台",
+    "OpenI",
+    "AI",
+    "GPU",
+    "NPU",
+    "启智开源社区旗下的一站式",
+    "开发协作平台",
+    "汇聚人工智能开源项目",
+    "提供代码托管",
+    "数据共享",
+    "模型训练等",
+    "开发流水线功能",
+    "用户可在线使用鹏城实验室搭建的鹏城云脑",
+    "中国算力网的普惠算力",
+    "包含",
+    "等多样化加速资源",
+    "other"
+  ],
+  "platforms": [
+    "web",
+    "api",
+    "cli"
+  ],
+  "target_audience": [
+    "developers",
+    "enterprises",
+    "general-users",
+    "ml-engineers",
+    "researchers"
+  ],
+  "use_cases": [
+    "ai-chat",
+    "virtual-assistant",
+    "task-automation",
+    "model-training",
+    "code-collaboration",
+    "gpu-computing"
+  ],
+  "sub_category": "ml-platform",
+  "open_source": true,
+  "api_available": true,
+  "hiring": {
+    "is_hiring": true,
+    "careers_url": "",
+    "tech_stack": [
+      "Python",
+      "Docker",
+      "Kubernetes",
+      "GPU"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "modalities": [
+    "code",
+    "multimodal"
+  ],
+  "competitors": [
+    "kaggle"
   ]
 }

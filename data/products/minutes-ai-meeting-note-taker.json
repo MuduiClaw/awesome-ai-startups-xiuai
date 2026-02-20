@@ -4,11 +4,11 @@
   "product_url": "https://myminutes.ai",
   "description": "Minutes AI automatically does your meeting notes and transcriptions with AI. Minutes records audio and provides word for word transcripts with speakers labels. Then, it gives you formatted notes, summaries, and the ability to search for key terms/topics. You can ask questions like “What stats did Laura reference on her slide?.”\n \nMinutes takes care of your notes so you can stay focused on what’s important. It's build with privacy in mind, meaning Minutes will never sell or provide third-party...",
   "product_type": "app",
-  "category": "ai-application",
+  "category": "ai-productivity",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "app_store",
@@ -83,10 +83,10 @@
         "updated_at": "2026-02-16"
       },
       "platforms": {
-        "source": "app_store",
-        "tier": 2,
-        "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       },
       "pricing": {
         "source": "app_store",
@@ -135,6 +135,90 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "target_audience": {
+        "source": "rule-based-seo",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-18"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "description_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "competitors": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -153,7 +237,10 @@
   "company": {
     "name": "Minutes AI",
     "url": "https://myminutes.ai",
-    "website": "https://myminutes.ai"
+    "website": "https://myminutes.ai",
+    "name_zh": "Minutes AI",
+    "description": "AI-powered meeting transcription and note-taking platform with summarization and search.",
+    "employee_count_range": "11-50"
   },
   "icon_url": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/65/bb/88/65bb887e-7314-1a09-9ef3-aa97a5874e73/AppIcon-0-0-1x_U007epad-0-1-85-220.jpeg/512x512bb.jpg",
   "tags": [
@@ -168,7 +255,8 @@
     "EN"
   ],
   "platforms": [
-    "ios"
+    "ios",
+    "web"
   ],
   "pricing": {
     "model": "free",
@@ -189,5 +277,38 @@
     "Automation",
     "Voice-to-text",
     "AI assistant"
+  ],
+  "target_audience": [
+    "professionals",
+    "teams",
+    "enterprises"
+  ],
+  "use_cases": [
+    "speech-to-text",
+    "transcription",
+    "meeting-summarization",
+    "note-taking",
+    "meeting-transcription"
+  ],
+  "name_zh": "Minutes: AI会议记录工具",
+  "description_zh": "Minutes AI自动生成会议笔记、逐字稿本和摘要，支持搜索和提问。",
+  "open_source": false,
+  "api_available": true,
+  "hiring": {
+    "is_hiring": true,
+    "careers_url": "",
+    "tech_stack": [
+      "Python",
+      "JavaScript",
+      "Cloud Storage"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "modalities": [
+    "audio",
+    "text"
+  ],
+  "competitors": [
+    "fireflies"
   ]
 }

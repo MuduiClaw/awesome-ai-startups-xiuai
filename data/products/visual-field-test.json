@@ -4,11 +4,11 @@
   "product_url": "https://visualfieldtest.com",
   "description": "Detect blind spots online instantly.",
   "product_type": "app",
-  "category": "ai-application",
+  "category": "ai-chatbot-agent",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "theresanaiforthat",
@@ -77,10 +77,10 @@
         "updated_at": "2026-02-16"
       },
       "use_cases": {
-        "source": "theresanaiforthat",
-        "tier": 2,
-        "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       },
       "sub_category": {
         "source": "toolify",
@@ -105,6 +105,84 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "platforms": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "description_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -123,7 +201,10 @@
   "company": {
     "name": "Visual Field Test",
     "url": "https://visualfieldtest.com",
-    "website": "https://visualfieldtest.com"
+    "website": "https://visualfieldtest.com",
+    "name_zh": "Visual Field Test",
+    "description": "AI-powered tool for detecting vision issues and blind spots online.",
+    "employee_count_range": "1-10"
   },
   "icon_url": "https://media.theresanaiforthat.com/icons/visual-field-test.svg?height=207",
   "tags": [
@@ -135,7 +216,11 @@
     "AI Monitor"
   ],
   "use_cases": [
-    "Vision testing"
+    "Vision testing",
+    "vision-screening",
+    "blind-spot-detection",
+    "eye-health-testing",
+    "symptom-checking"
   ],
   "sub_category": "ai symptom checker",
   "pricing": {
@@ -154,5 +239,35 @@
     "Eye health",
     "AI analysis",
     "Home eye test"
+  ],
+  "platforms": [
+    "web"
+  ],
+  "target_audience": [
+    "developers",
+    "enterprises",
+    "general-users",
+    "individuals",
+    "patients",
+    "eye-care-professionals",
+    "healthcare"
+  ],
+  "name_zh": "Visual Field Test",
+  "description_zh": "在线视觉盲点检测工具，即时诊断视力问题。",
+  "open_source": false,
+  "api_available": false,
+  "hiring": {
+    "is_hiring": false,
+    "careers_url": "",
+    "tech_stack": [
+      "JavaScript",
+      "React",
+      "WebGL"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "modalities": [
+    "text",
+    "image"
   ]
 }

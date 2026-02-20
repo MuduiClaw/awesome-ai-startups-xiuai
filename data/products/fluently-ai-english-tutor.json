@@ -4,11 +4,11 @@
   "product_url": "https://getfluently.app/",
   "description": "Fluently: Speak English with AI Tutor\n\nStop memorizing boring rules. With Fluently, you practice speaking English in real conversations and get instant AI corrections — anytime, anywhere.\n\nHOW IT WORKS\n1. Install Fluently\n2. Talk with your AI tutor on any topic you like\n3. Get real-time corrections and a personalized plan to improve faster\n\nWHY FLUENTLY?\n- Practice speaking, not just grammar drills\n- Real-time corrections: grammar, vocabulary, pronunciation\n- Personalized program based on you...",
   "product_type": "app",
-  "category": "ai-application",
+  "category": "ai-productivity",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "app_store",
@@ -83,10 +83,10 @@
         "updated_at": "2026-02-16"
       },
       "platforms": {
-        "source": "app_store",
-        "tier": 2,
-        "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       },
       "pricing": {
         "source": "app_store",
@@ -135,6 +135,84 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "description_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -153,7 +231,10 @@
   "company": {
     "name": "Fluently, Inc.",
     "url": "https://getfluently.app",
-    "website": "https://getfluently.app"
+    "website": "https://getfluently.app",
+    "name_zh": "Fluently Inc.",
+    "description": "Fluently develops AI-powered language learning tools focused on conversational English practice with real-time feedback.",
+    "employee_count_range": "1-10"
   },
   "icon_url": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/79/22/69/792269d9-1a9a-41d0-0c4f-559be0019ba0/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg",
   "tags": [
@@ -168,7 +249,9 @@
     "EN"
   ],
   "platforms": [
-    "ios"
+    "ios",
+    "web",
+    "android"
   ],
   "pricing": {
     "model": "freemium",
@@ -188,5 +271,43 @@
     "Vocabulary building",
     "Personalized learning",
     "Accent reduction"
+  ],
+  "target_audience": [
+    "professionals",
+    "teams",
+    "enterprises",
+    "students",
+    "language-learners",
+    "non-native-speakers"
+  ],
+  "use_cases": [
+    "meeting-summarization",
+    "note-taking",
+    "grammar-checking",
+    "writing-assistance",
+    "english-conversation-practice",
+    "pronunciation-correction",
+    "grammar-improvement",
+    "speaking-confidence"
+  ],
+  "name_zh": "Fluently AI英语家教",
+  "description_zh": "与AI家教进行真实英语对话，获得即时语法纠正和发音反馈。随时随地练习口语，告别死记硬背。",
+  "open_source": false,
+  "api_available": false,
+  "hiring": {
+    "is_hiring": true,
+    "careers_url": "",
+    "tech_stack": [
+      "React",
+      "Node.js",
+      "Python",
+      "TensorFlow",
+      "WebRTC"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "modalities": [
+    "text",
+    "audio"
   ]
 }

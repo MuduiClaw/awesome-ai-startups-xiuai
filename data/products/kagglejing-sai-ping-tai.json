@@ -4,11 +4,11 @@
   "product_url": "https://www.kaggle.com",
   "description": "Kaggle是一个数据建模和数据分析竞赛平台。企业和研究者可在其上发布数据，统计学者和数据挖掘专家可在其上进行竞赛以产生最好的模型。",
   "product_type": "other",
-  "category": "ai-application",
+  "category": "ai-chatbot-agent",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "ainav",
@@ -81,6 +81,90 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "keywords": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "platforms": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "sub_category": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -95,10 +179,60 @@
   "description_zh": "Kaggle是一个数据建模和数据分析竞赛平台。企业和研究者可在其上发布数据，统计学者和数据挖掘专家可在其上进行竞赛以产生最好的模型。",
   "company": {
     "name": "Kaggle竞赛平台",
-    "url": "https://kaggle.com"
+    "url": "https://kaggle.com",
+    "name_zh": "Kaggle",
+    "description": "Kaggle competition platform connecting data scientists with enterprises.",
+    "employee_count_range": "51-200"
   },
   "icon_url": "https://www.kaggle.com/static/images/favicon.ico",
   "tags": [
     "AI竞赛"
+  ],
+  "keywords": [
+    "Kaggle竞赛平台",
+    "ai chatbot agent",
+    "AI竞赛",
+    "Kaggle",
+    "是一个数据建模和数据分析竞赛平台",
+    "企业和研究者可在其上发布数据",
+    "统计学者和数据挖掘专家可在其上进行竞赛以产生最好的模型",
+    "other"
+  ],
+  "platforms": [
+    "web"
+  ],
+  "target_audience": [
+    "developers",
+    "enterprises",
+    "general-users",
+    "data-scientists",
+    "researchers",
+    "competitors"
+  ],
+  "use_cases": [
+    "ai-chat",
+    "virtual-assistant",
+    "task-automation",
+    "data-science-competitions",
+    "model-development",
+    "skill-validation",
+    "prize-competitions"
+  ],
+  "sub_category": "ml-community",
+  "open_source": false,
+  "api_available": true,
+  "hiring": {
+    "is_hiring": true,
+    "careers_url": "https://www.kaggle.com/careers",
+    "tech_stack": [
+      "Python",
+      "R",
+      "SQL",
+      "Docker"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "modalities": [
+    "code"
   ]
 }

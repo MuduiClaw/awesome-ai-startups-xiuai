@@ -8,7 +8,7 @@
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "ainav",
@@ -113,16 +113,88 @@
         "updated_at": "2026-02-16"
       },
       "platforms": {
-        "source": "app_store",
-        "tier": 2,
-        "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       },
       "keywords": {
         "source": "toolify",
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "ainav",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-18"
+      },
+      "name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -147,7 +219,10 @@
   "company": {
     "name": "you.com",
     "url": "https://you.com",
-    "website": "https://you.com/about"
+    "website": "https://you.com/about",
+    "name_zh": "you.com",
+    "description": "you.com is an AI search engine offering internet-connected results and conversational AI search.",
+    "employee_count_range": "11-50"
   },
   "icon_url": "https://www.ainav.cn/wp-content/uploads/2024/02/4fb23-you.com.png",
   "sub_category": "ai-search",
@@ -169,7 +244,8 @@
     "EN"
   ],
   "platforms": [
-    "ios"
+    "ios",
+    "web"
   ],
   "app_store": {
     "apple_store_url": "https://apps.apple.com/app/id1600782099",
@@ -184,5 +260,39 @@
     "AI image generation",
     "Chatbot",
     "Productivity tool"
+  ],
+  "target_audience": [
+    "developers",
+    "researchers",
+    "enterprises",
+    "knowledge-seekers",
+    "students",
+    "professionals"
+  ],
+  "use_cases": [
+    "ai-chat",
+    "conversational-ai",
+    "web-search",
+    "research",
+    "information-retrieval"
+  ],
+  "hiring": {
+    "careers_url": "",
+    "is_hiring": true,
+    "tech_stack": [
+      "Python",
+      "Go",
+      "React",
+      "Elasticsearch",
+      "OpenAI API"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "name_zh": "you.com",
+  "open_source": false,
+  "api_available": true,
+  "modalities": [
+    "text",
+    "multimodal"
   ]
 }

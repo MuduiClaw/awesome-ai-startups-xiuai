@@ -8,7 +8,7 @@
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "ainav",
@@ -87,6 +87,90 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "keywords": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "platforms": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "target_audience": {
+        "source": "rule-based-seo",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-18"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "competitors": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -101,11 +185,66 @@
   "description_zh": "CodeBuddy 腾讯云代码助手是由腾讯云自研的一款开发编程提效辅助工具，开发者可以通过插件的方式将 AI 代码助手安装到编辑器中辅助编程工作（VSCode 或者 JetBrian 系列 IDE）",
   "company": {
     "name": "CodeBuddy 腾讯云代码助手",
-    "url": "https://cloud.tencent.com"
+    "url": "https://cloud.tencent.com",
+    "name_zh": "腾讯云",
+    "description": "Tencent Cloud's native AI coding assistant supporting major IDEs.",
+    "employee_count_range": "51-200"
   },
   "icon_url": "https://www.ainav.cn/wp-content/uploads/2025/07/1753215941-CodeBuddy-logo.png",
   "sub_category": "coding-assistant",
   "tags": [
     "AI编程工具"
+  ],
+  "keywords": [
+    "CodeBuddy 腾讯云代码助手",
+    "ai dev platform",
+    "coding assistant",
+    "AI编程工具",
+    "CodeBuddy",
+    "AI",
+    "VSCode",
+    "JetBrian",
+    "腾讯云代码助手是由腾讯云自研的一款开发编程提效辅助工具",
+    "开发者可以通过插件的方式将",
+    "代码助手安装到编辑器中辅助编程工作",
+    "或者",
+    "系列",
+    "other"
+  ],
+  "platforms": [
+    "web",
+    "desktop"
+  ],
+  "target_audience": [
+    "developers",
+    "enterprises",
+    "data-scientists"
+  ],
+  "use_cases": [
+    "code-generation",
+    "app-development",
+    "api-integration",
+    "coding-assistance"
+  ],
+  "open_source": false,
+  "api_available": true,
+  "hiring": {
+    "is_hiring": true,
+    "careers_url": "https://tencent.com/careers",
+    "tech_stack": [
+      "Python",
+      "JavaScript",
+      "Java"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "modalities": [
+    "text",
+    "code"
+  ],
+  "competitors": [
+    "github-copilot",
+    "codeium",
+    "tabnine"
   ]
 }

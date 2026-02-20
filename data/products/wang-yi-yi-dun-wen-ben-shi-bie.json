@@ -8,7 +8,7 @@
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "ainav",
@@ -87,6 +87,84 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "keywords": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "platforms": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -101,11 +179,66 @@
   "description_zh": "基于海量数据，定制智能策略，高效过滤色情、广告、敏感、暴恐等违规内容及各种文字变种。支持广告法、商标法等垂直领域，以及20余种海外语言",
   "company": {
     "name": "网易易盾·文本识别",
-    "url": "https://dun.163.com"
+    "url": "https://dun.163.com",
+    "name_zh": "网易",
+    "description": "NetEase's AI content moderation service for filtering violations and inappropriate content",
+    "employee_count_range": "51-200"
   },
   "icon_url": "https://www.ainav.cn/wp-content/uploads/2023/07/1b356-dun.163.com.png",
   "sub_category": "ai-content-detection",
   "tags": [
     "AI内容检测"
+  ],
+  "keywords": [
+    "网易易盾·文本识别",
+    "ai security governance",
+    "ai content detection",
+    "AI内容检测",
+    "基于海量数据",
+    "定制智能策略",
+    "高效过滤色情",
+    "广告",
+    "敏感",
+    "暴恐等违规内容及各种文字变种",
+    "支持广告法",
+    "商标法等垂直领域",
+    "以及",
+    "余种海外语言",
+    "other"
+  ],
+  "platforms": [
+    "web",
+    "api"
+  ],
+  "target_audience": [
+    "security-professionals",
+    "enterprises",
+    "compliance-teams",
+    "platforms",
+    "content-moderators"
+  ],
+  "use_cases": [
+    "threat-detection",
+    "compliance-monitoring",
+    "data-protection",
+    "content-moderation",
+    "text-classification",
+    "policy-enforcement"
+  ],
+  "open_source": false,
+  "api_available": true,
+  "hiring": {
+    "is_hiring": true,
+    "careers_url": "https://hr.163.com",
+    "tech_stack": [
+      "Python",
+      "TensorFlow",
+      "Java",
+      "Redis"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "modalities": [
+    "text"
   ]
 }

@@ -4,11 +4,11 @@
   "product_url": "https://remusic.ai",
   "description": "Remusic - 免费的AI音乐、歌曲生成工具",
   "product_type": "other",
-  "category": "ai-creative-media",
+  "category": "ai-audio-music",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "ainav",
@@ -81,6 +81,96 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "keywords": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "platforms": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "ainav",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-18"
+      },
+      "name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "competitors": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -94,11 +184,61 @@
   "description_zh": "Remusic - 免费的AI音乐、歌曲生成工具",
   "company": {
     "name": "Remusic",
-    "url": "https://remusic.ai"
+    "url": "https://remusic.ai",
+    "name_zh": "Remusic",
+    "description": "Remusic is a free AI tool for generating music and songs.",
+    "employee_count_range": "1-10"
   },
   "icon_url": "https://www.ainav.cn/wp-content/uploads/2024/06/5971d-remusic.ai.png",
   "sub_category": "audio-speech",
   "tags": [
     "AI音频工具"
+  ],
+  "keywords": [
+    "Remusic",
+    "ai audio music",
+    "audio speech",
+    "AI音频工具",
+    "AI",
+    "免费的",
+    "音乐",
+    "歌曲生成工具",
+    "other"
+  ],
+  "platforms": [
+    "web"
+  ],
+  "target_audience": [
+    "musicians",
+    "content-creators",
+    "podcasters",
+    "producers"
+  ],
+  "use_cases": [
+    "music-generation",
+    "audio-editing",
+    "voice-synthesis",
+    "background-music",
+    "sound-design"
+  ],
+  "hiring": {
+    "careers_url": "",
+    "is_hiring": false,
+    "tech_stack": [
+      "Python",
+      "TensorFlow",
+      "React"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "name_zh": "Remusic",
+  "open_source": false,
+  "api_available": false,
+  "modalities": [
+    "audio"
+  ],
+  "competitors": [
+    "soundraw",
+    "musicfy"
   ]
 }

@@ -4,11 +4,11 @@
   "product_url": "https://apps.apple.com/us/app/microsoft-copilot-ai-assistant/id6472538445?uo=4",
   "description": "Microsoft Copilot: Your Personal AI Assistant for Every Task\n\nCopilot is your personal AI companion, ready to help with any task - from work projects to creative ideas to everyday questions. Powered by cutting-edge OpenAI and Microsoft AI technology, Copilot makes getting things done easier, faster, and more intuitive.\n\nWHY CHOOSE COPILOT?\n\nMore Than Just an AI Chatbot\nExperience AI conversations that feel natural and intuitive. Copilot understands context, adapts to your needs, and provides ...",
   "product_type": "app",
-  "category": "ai-application",
+  "category": "ai-social-entertainment",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "app_store",
@@ -77,10 +77,10 @@
         "updated_at": "2026-02-16"
       },
       "platforms": {
-        "source": "app_store",
-        "tier": 2,
-        "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       },
       "pricing": {
         "source": "app_store",
@@ -113,10 +113,10 @@
         "updated_at": "2026-02-16"
       },
       "use_cases": {
-        "source": "theresanaiforthat",
-        "tier": 2,
-        "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       },
       "pricing.model": {
         "source": "app_store",
@@ -159,6 +159,60 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "theresanaiforthat",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-18"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -5643,7 +5697,9 @@
     "name": "Microsoft Corporation",
     "url": "https://apps.apple.com/us/app/microsoft-copilot-ai-assistant/id6472538445?uo=4",
     "website": "https://apps.apple.com/us/app/christmas-pictures-app-pixmas/id6755126821",
-    "name_zh": "杭州深度求索人工智能基础技术研究有限公司"
+    "name_zh": "杭州深度求索人工智能基础技术研究有限公司",
+    "description": "Personal AI companion by Microsoft for work and creative tasks",
+    "employee_count_range": "51-200"
   },
   "icon_url": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/ab/23/d7/ab23d77f-517b-1bad-859f-f80e1fe33eb6/AppIcon_Production-0-0-1x_U007epad-0-4-85-220.png/512x512bb.jpg",
   "tags": [
@@ -5742,7 +5798,10 @@
     "ZU"
   ],
   "platforms": [
-    "ios"
+    "ios",
+    "web",
+    "android",
+    "desktop"
   ],
   "pricing": {
     "model": "free",
@@ -5764,7 +5823,10 @@
     "Interview preparation",
     "Transcription",
     "Children's learning",
-    "Tarot card readings"
+    "Tarot card readings",
+    "task-automation",
+    "content-creation",
+    "information-retrieval"
   ],
   "description_zh": "AI Office，是一款专业的录音笔管理及音频转写应用，支持配合录音笔硬件产品，实现多语种识别、高清多模式录音、实时转写文字、同声传译等功能。",
   "name_zh": "星幻-AI聊天攻略角色",
@@ -8956,5 +9018,29 @@
     "Data Analysis",
     "Instagram engagement",
     "Email templates"
+  ],
+  "target_audience": [
+    "general-users",
+    "content-creators",
+    "influencers",
+    "students",
+    "professionals",
+    "creative-users"
+  ],
+  "hiring": {
+    "careers_url": "",
+    "is_hiring": true,
+    "tech_stack": [
+      "C#",
+      "Python",
+      "Azure",
+      "OpenAI"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "open_source": false,
+  "api_available": true,
+  "modalities": [
+    "text"
   ]
 }

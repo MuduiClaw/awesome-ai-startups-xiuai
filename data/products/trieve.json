@@ -8,7 +8,7 @@
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "toolify",
@@ -93,6 +93,72 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "api_available": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "platforms": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "target_audience": {
+        "source": "rule-based-seo",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-18"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "description_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "competitors": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -106,7 +172,9 @@
   "company": {
     "name": "Trieve",
     "url": "https://trieve.ai",
-    "website": "https://trieve.ai"
+    "website": "https://trieve.ai",
+    "name_zh": "Trieve",
+    "description": "AI search and RAG platform with quality tuning and discovery tools."
   },
   "icon_url": "https://cdn-images.toolify.ai/website-logos/20250410/1744260483_19275715_21552.webp",
   "sub_category": "ai search engine",
@@ -133,5 +201,36 @@
   "pricing": {
     "model": "enterprise",
     "has_free_tier": false
-  }
+  },
+  "api_available": true,
+  "platforms": [
+    "api",
+    "web",
+    "self-hosted"
+  ],
+  "target_audience": [
+    "developers",
+    "researchers",
+    "enterprises"
+  ],
+  "use_cases": [
+    "ai-chat",
+    "conversational-ai",
+    "api-integration",
+    "model-access",
+    "semantic-search",
+    "rag-applications",
+    "ai-search"
+  ],
+  "name_zh": "Trieve",
+  "description_zh": "用于搜索、发现和RAG应用的AI平台,具有质量调优工具",
+  "hiring": {
+    "careers_url": ""
+  },
+  "modalities": [
+    "text"
+  ],
+  "competitors": [
+    "pinecone"
+  ]
 }

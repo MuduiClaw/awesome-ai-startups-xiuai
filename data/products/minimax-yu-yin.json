@@ -4,11 +4,11 @@
   "product_url": "https://www.minimaxi.com/audio",
   "description": "Minimax Audio是一个AI音频工具，可以将文字转换为富有情感的语音，或根据文本提示创作音乐。它还提供自定义音色设计、人声提取和多种模型参数调节功能，满足多样化的音频创作需求。",
   "product_type": "other",
-  "category": "ai-creative-media",
+  "category": "ai-audio-music",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "ainav",
@@ -87,6 +87,90 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "keywords": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "platforms": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "competitors": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -101,11 +185,66 @@
   "description_zh": "Minimax Audio是一个AI音频工具，可以将文字转换为富有情感的语音，或根据文本提示创作音乐。它还提供自定义音色设计、人声提取和多种模型参数调节功能，满足多样化的音频创作需求。",
   "company": {
     "name": "MiniMax 语音",
-    "url": "https://minimaxi.com"
+    "url": "https://minimaxi.com",
+    "name_zh": "MiniMax",
+    "description": "MiniMax is a Chinese AI company developing multimodal foundation models and AI services.",
+    "employee_count_range": "11-50"
   },
   "icon_url": "https://www.ainav.cn/wp-content/uploads/2025/11/1762142472-favicon.ico",
   "sub_category": "audio-speech",
   "tags": [
     "AI音频工具"
+  ],
+  "keywords": [
+    "MiniMax 语音",
+    "ai audio music",
+    "audio speech",
+    "AI音频工具",
+    "Minimax",
+    "Audio",
+    "AI",
+    "是一个",
+    "音频工具",
+    "可以将文字转换为富有情感的语音",
+    "或根据文本提示创作音乐",
+    "它还提供自定义音色设计",
+    "人声提取和多种模型参数调节功能",
+    "满足多样化的音频创作需求",
+    "other"
+  ],
+  "platforms": [
+    "web",
+    "api"
+  ],
+  "target_audience": [
+    "musicians",
+    "content-creators",
+    "podcasters",
+    "developers"
+  ],
+  "use_cases": [
+    "music-generation",
+    "audio-editing",
+    "voice-synthesis",
+    "audio-processing"
+  ],
+  "open_source": false,
+  "api_available": true,
+  "hiring": {
+    "is_hiring": true,
+    "careers_url": "",
+    "tech_stack": [
+      "Python",
+      "PyTorch"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "modalities": [
+    "text",
+    "audio"
+  ],
+  "competitors": [
+    "elevenlabs",
+    "soundraw"
   ]
 }

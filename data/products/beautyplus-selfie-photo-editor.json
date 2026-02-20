@@ -4,11 +4,11 @@
   "product_url": "https://www.beautyplus.com",
   "description": "• AI avatar, face app, makeup tool, cartoon filter, remove BG…50+ easy-to-use editing tools for fast & powerful results. Download for free!\n• Selfie camera and photo editing app used by 800 million users worldwide\n• Get the perfect selfie with our amazing AI Auto-Beautification tool\n• Featured by Apple in 30+ countries\n\nBeautyPlus is here to help you take great-looking selfies or edit high quality photos using thousands of AI effects, filters, stickers, and much more!\n\n► Unlock the Power of A...",
   "product_type": "app",
-  "category": "ai-application",
+  "category": "ai-video-animation",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "app_store",
@@ -83,10 +83,10 @@
         "updated_at": "2026-02-16"
       },
       "platforms": {
-        "source": "app_store",
-        "tier": 2,
-        "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       },
       "pricing": {
         "source": "app_store",
@@ -135,6 +135,84 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "description_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -158,7 +236,10 @@
   "company": {
     "name": "PIXOCIAL TECHNOLOGY (SINGAPORE) PTE. LTD.",
     "url": "https://www.beautyplus.com",
-    "website": "https://www.beautyplus.com"
+    "website": "https://www.beautyplus.com",
+    "name_zh": "PIXOCIAL TECHNOLOGY (SINGAPORE) PTE. LTD.",
+    "description": "Popular photo editing app with AI beautification, filters, and effects used by 800 million users worldwide.",
+    "employee_count_range": "51-200"
   },
   "icon_url": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/2f/76/ef/2f76ef50-00c5-7031-480d-bdc9de57c178/AppIcon-0-0-1x_U007emarketing-0-6-0-0-85-220.png/512x512bb.jpg",
   "tags": [
@@ -191,7 +272,9 @@
     "VI"
   ],
   "platforms": [
-    "ios"
+    "ios",
+    "android",
+    "web"
   ],
   "pricing": {
     "model": "free",
@@ -231,5 +314,41 @@
     "Image Upscaling",
     "Photo to Anime",
     "AI Avatar Generator"
+  ],
+  "target_audience": [
+    "content-creators",
+    "video-editors",
+    "marketers",
+    "photographers",
+    "photo-enthusiasts",
+    "social-media-users"
+  ],
+  "use_cases": [
+    "photo-enhancement",
+    "image-upscaling",
+    "photo-editing",
+    "image-manipulation",
+    "background-removal",
+    "selfie-enhancement",
+    "beauty-filters",
+    "image-effects"
+  ],
+  "name_zh": "BeautyPlus-自拍照片编辑器",
+  "description_zh": "拥有50多个易用工具的自拍相机和照片编辑应用，全球8亿用户使用。",
+  "open_source": false,
+  "api_available": false,
+  "hiring": {
+    "is_hiring": true,
+    "careers_url": "https://pixocial.com/careers",
+    "tech_stack": [
+      "Swift",
+      "Kotlin",
+      "Python",
+      "Computer Vision"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "modalities": [
+    "image"
   ]
 }

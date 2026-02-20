@@ -8,7 +8,7 @@
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "toolify",
@@ -93,6 +93,72 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "platforms": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "description_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -106,7 +172,9 @@
   "company": {
     "name": "Seek",
     "url": "https://www.seek.ai",
-    "website": "https://www.seek.ai"
+    "website": "https://www.seek.ai",
+    "name_zh": "Seek",
+    "description": "AI-powered data analytics platform enabling natural language queries for insights"
   },
   "icon_url": "https://cdn-images.toolify.ai/website-logos/20250410/1744256520_81200678_935.webp",
   "sub_category": "ai for data analytics",
@@ -133,5 +201,36 @@
   "pricing": {
     "model": "enterprise",
     "has_free_tier": false
-  }
+  },
+  "platforms": [
+    "web",
+    "api"
+  ],
+  "target_audience": [
+    "data-scientists",
+    "developers",
+    "enterprises",
+    "data-analysts",
+    "businesses"
+  ],
+  "use_cases": [
+    "code-generation",
+    "app-development",
+    "task-automation",
+    "autonomous-agents",
+    "workflow-automation",
+    "data-analytics",
+    "natural-language-queries",
+    "business-intelligence"
+  ],
+  "name_zh": "Seek数据分析",
+  "description_zh": "具有自然语言界面的AI驱动数据分析平台，提供实时洞察",
+  "open_source": false,
+  "api_available": true,
+  "hiring": {
+    "careers_url": ""
+  },
+  "modalities": [
+    "text"
+  ]
 }

@@ -8,7 +8,7 @@
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "ainav",
@@ -87,6 +87,90 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "keywords": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "platforms": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "competitors": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -101,11 +185,72 @@
   "description_zh": "LM Studio是一个本地大语言模型（LLM）应用软件，用户可以在本地计算机上下载、运行和实验开源的大型语言模型。提供了一个用户友好的图形界面，使得安装和使用这些模型变得简单快捷。LM Studio支持多种开源模型，如Llama、MPT、Gemma等，并且可以与open-webui等工具配合使用",
   "company": {
     "name": "LM Studio – 本地运行大型语言模型",
-    "url": "https://lmstudio.ai"
+    "url": "https://lmstudio.ai",
+    "name_zh": "LM Studio",
+    "description": "Desktop application for running open-source LLMs locally without GPU requirements",
+    "employee_count_range": "1-10"
   },
   "icon_url": "https://www.ainav.cn/wp-content/uploads/2024/10/1728400820-android-chrome-192x192.3a60873f.png",
   "sub_category": "developer-community",
   "tags": [
     "AI开发者社区"
+  ],
+  "keywords": [
+    "LM Studio – 本地运行大型语言模型",
+    "ai dev platform",
+    "developer community",
+    "AI开发者社区",
+    "Studio",
+    "LLM",
+    "Llama",
+    "Gemma",
+    "open-webui",
+    "是一个本地大语言模型",
+    "应用软件",
+    "用户可以在本地计算机上下载",
+    "运行和实验开源的大型语言模型",
+    "提供了一个用户友好的图形界面",
+    "使得安装和使用这些模型变得简单快捷",
+    "支持多种开源模型",
+    "并且可以与",
+    "等工具配合使用",
+    "other"
+  ],
+  "platforms": [
+    "web",
+    "desktop"
+  ],
+  "target_audience": [
+    "developers",
+    "enterprises",
+    "data-scientists",
+    "researchers"
+  ],
+  "use_cases": [
+    "code-generation",
+    "app-development",
+    "api-integration",
+    "local-model-running",
+    "experimentation",
+    "offline-inference"
+  ],
+  "open_source": false,
+  "api_available": true,
+  "hiring": {
+    "is_hiring": false,
+    "careers_url": "",
+    "tech_stack": [
+      "Electron",
+      "Python",
+      "Node.js"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "modalities": [
+    "text"
+  ],
+  "competitors": [
+    "ollama",
+    "jan"
   ]
 }

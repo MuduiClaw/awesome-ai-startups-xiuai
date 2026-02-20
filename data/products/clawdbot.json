@@ -4,11 +4,11 @@
   "product_url": "https://openclaw.ai",
   "description": "Open-source, self-hosted AI assistant providing full system access via common chat apps like WhatsApp.",
   "product_type": "app",
-  "category": "ai-application",
+  "category": "ai-chatbot-agent",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "toolify",
@@ -77,10 +77,10 @@
         "updated_at": "2026-02-16"
       },
       "tags": {
-        "source": "toolify",
+        "source": "ainav",
         "tier": 2,
         "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "updated_at": "2026-02-18"
       },
       "keywords": {
         "source": "toolify",
@@ -105,6 +105,90 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "open_source": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "platforms": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "description_zh": {
+        "source": "ainav",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-18"
+      },
+      "hiring.careers_url": {
+        "source": "ainav",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-18"
+      },
+      "name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -113,12 +197,20 @@
       "url": "https://www.toolify.ai/tool/clawdbot",
       "source_name": "toolify",
       "scraped_at": "2026-02-16"
+    },
+    {
+      "url": "https://www.ainav.cn",
+      "source_name": "ainav",
+      "scraped_at": "2026-02-18"
     }
   ],
   "company": {
     "name": "Clawdbot",
     "url": "https://openclaw.ai",
-    "website": "https://openclaw.ai"
+    "website": "https://openclaw.ai",
+    "name_zh": "Clawdbot",
+    "description": "Open-source, self-hosted AI assistant providing full system access via chat apps like WhatsApp.",
+    "employee_count_range": "1-10"
   },
   "icon_url": "https://cdn-images.toolify.ai/website-logos/20260125/1769356204_73790271_29169.webp",
   "sub_category": "ai assistant",
@@ -126,7 +218,8 @@
     "AI Assistant",
     "AI Agent",
     "Open Source AI Models",
-    "AI Productivity Tools"
+    "AI Productivity Tools",
+    "AI智能体平台"
   ],
   "keywords": [
     "Personal AI Assistant",
@@ -145,5 +238,41 @@
   "pricing": {
     "model": "paid",
     "has_free_tier": false
-  }
+  },
+  "open_source": true,
+  "platforms": [
+    "web",
+    "self-hosted",
+    "api"
+  ],
+  "target_audience": [
+    "developers",
+    "enterprises",
+    "general-users",
+    "automation-enthusiasts"
+  ],
+  "use_cases": [
+    "task-automation",
+    "autonomous-agents",
+    "ai-assistant",
+    "chat-integration",
+    "automation",
+    "personal-ai"
+  ],
+  "description_zh": "OpenClaw 是一款运行在你自有设备（Mac, Windows, Linux）上的个人 AI 助手，开源免费的个人 AI 助手",
+  "hiring": {
+    "careers_url": "",
+    "is_hiring": false,
+    "tech_stack": [
+      "Python",
+      "FastAPI",
+      "Twilio"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "name_zh": "Clawdbot",
+  "api_available": true,
+  "modalities": [
+    "text"
+  ]
 }

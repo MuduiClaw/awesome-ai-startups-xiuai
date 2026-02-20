@@ -4,11 +4,11 @@
   "product_url": "https://www.adobe.com/products/photoshop-lightroom.html",
   "description": "Ever wish your photos could really show what makes a moment special? Adobe Lightroom is a free photo and video editor that helps you do just that. From your dog’s goofy grin to that sunset that took your breath away, Adobe Lightroom makes it simple to bring those moments to life, just the way you see them.\n\nWhether you’re snapping pics on the go or curating your social feed, Lightroom puts powerful AI editor tools in your pocket to make quick edits easy and fun. Adobe Lightroom is here to hel...",
   "product_type": "app",
-  "category": "ai-application",
+  "category": "ai-video-animation",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "app_store",
@@ -83,10 +83,10 @@
         "updated_at": "2026-02-16"
       },
       "platforms": {
-        "source": "app_store",
-        "tier": 2,
-        "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       },
       "pricing": {
         "source": "app_store",
@@ -135,6 +135,84 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "description_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -158,7 +236,10 @@
   "company": {
     "name": "Adobe Inc.",
     "url": "https://www.adobe.com/products/photoshop-lightroom.html",
-    "website": "https://www.adobe.com/products/photoshop-lightroom.html"
+    "website": "https://www.adobe.com/products/photoshop-lightroom.html",
+    "name_zh": "Adobe Inc.",
+    "description": "Adobe's free mobile and web photo/video editing app with AI-powered enhancement tools.",
+    "employee_count_range": "51-200"
   },
   "icon_url": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/0f/24/f9/0f24f94b-95c3-2919-3033-87251592c5b7/AppIcon-0-1x_U007ephone-0-1-0-0-85-220-0.png/512x512bb.jpg",
   "tags": [
@@ -202,7 +283,9 @@
     "CY"
   ],
   "platforms": [
-    "ios"
+    "ios",
+    "android",
+    "web"
   ],
   "pricing": {
     "model": "free",
@@ -228,5 +311,38 @@
     "Adobe Express",
     "Photoshop",
     "Adobe Acrobat"
+  ],
+  "target_audience": [
+    "content-creators",
+    "video-editors",
+    "marketers",
+    "photographers",
+    "videographers"
+  ],
+  "use_cases": [
+    "video-generation",
+    "video-editing",
+    "animation",
+    "photo-editing",
+    "image-enhancement"
+  ],
+  "name_zh": "Lightroom: AI Photo Editor",
+  "description_zh": "Adobe Lightroom的免费AI照片和视频编辑器，具有智能增强功能。",
+  "open_source": false,
+  "api_available": false,
+  "hiring": {
+    "is_hiring": true,
+    "careers_url": "https://adobe.com/careers",
+    "tech_stack": [
+      "React",
+      "Swift",
+      "Kotlin",
+      "Adobe Cloud"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "modalities": [
+    "image",
+    "video"
   ]
 }

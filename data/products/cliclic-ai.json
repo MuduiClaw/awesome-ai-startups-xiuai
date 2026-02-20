@@ -4,11 +4,11 @@
   "product_url": "https://www.cliclic.ai/",
   "description": "创客贴推出的AI商品图生成和编辑工具",
   "product_type": "other",
-  "category": "ai-creative-media",
+  "category": "ai-image-design",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "aibot",
@@ -77,10 +77,10 @@
         "updated_at": "2026-02-16"
       },
       "tags": {
-        "source": "toolify",
+        "source": "ainav",
         "tier": 2,
         "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "updated_at": "2026-02-18"
       },
       "company.website": {
         "source": "toolify",
@@ -105,6 +105,90 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "platforms": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "ainav",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-18"
+      },
+      "name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "competitors": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -118,13 +202,21 @@
       "url": "https://www.toolify.ai/tool/cliclic-ai",
       "source_name": "toolify",
       "scraped_at": "2026-02-16"
+    },
+    {
+      "url": "https://www.ainav.cn",
+      "source_name": "ainav",
+      "scraped_at": "2026-02-18"
     }
   ],
   "description_zh": "创客贴推出的AI商品图生成和编辑工具",
   "company": {
     "name": "Cliclic AI",
     "url": "https://cliclic.ai",
-    "website": "https://www.cliclic.ai"
+    "website": "https://www.cliclic.ai",
+    "name_zh": "Cliclic AI",
+    "description": "AI product image generation and editing tool for e-commerce sellers and merchants.",
+    "employee_count_range": "11-50"
   },
   "icon_url": "https://ai-bot.cn/wp-content/uploads/2024/05/cliclic-ai-icon.png",
   "sub_category": "image-generation",
@@ -133,7 +225,8 @@
     "AI Product Photography",
     "AI Background Generator",
     "AI Image Generator",
-    "AI Photo Editor"
+    "AI Photo Editor",
+    "AI图片处理"
   ],
   "pricing": {
     "model": "freemium",
@@ -147,5 +240,43 @@
     "Marketing visuals",
     "Scene creation",
     "Custom sizes"
+  ],
+  "platforms": [
+    "web"
+  ],
+  "target_audience": [
+    "designers",
+    "content-creators",
+    "marketers",
+    "e-commerce",
+    "merchants"
+  ],
+  "use_cases": [
+    "photo-editing",
+    "image-manipulation",
+    "product-image-generation",
+    "ecommerce-content",
+    "image-editing",
+    "marketing"
+  ],
+  "hiring": {
+    "careers_url": "",
+    "is_hiring": true,
+    "tech_stack": [
+      "React",
+      "Node.js",
+      "Python",
+      "Alibaba Cloud"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "name_zh": "Cliclic AI",
+  "open_source": false,
+  "api_available": false,
+  "modalities": [
+    "image"
+  ],
+  "competitors": [
+    "pixlr"
   ]
 }

@@ -4,11 +4,11 @@
   "product_url": "https://virtualgs.wordpress.com/",
   "description": "AI Chat is a new AI-oriented chat engine powered by Apple Intelligence. \nYou can ask it for story ideas, plan travel trips, get food recipes, and lots more!\n\nAll data are private, with the ability to work offline without Internet. Supports language translation.\nRequired devices that supports Apple Intelligence, eg iPhone 15 Pro and above, M1 iPad/Mac and above, and Vision Pro.",
   "product_type": "app",
-  "category": "ai-application",
+  "category": "ai-translation",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "app_store",
@@ -123,6 +123,96 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "keywords": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "description_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "sub_category": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -136,7 +226,10 @@
   "company": {
     "name": "Virtual GS",
     "url": "https://virtualgs.wordpress.com",
-    "website": "https://virtualgs.wordpress.com"
+    "website": "https://virtualgs.wordpress.com",
+    "name_zh": "Virtual GS",
+    "description": "Privacy-focused AI chat platform integrated with Apple Intelligence.",
+    "employee_count_range": "1-10"
   },
   "icon_url": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/1e/e9/3e/1ee93e24-7e47-6a71-18e3-3fb130cc750a/AppIcon-0-0-1x_U007epad-0-1-P3-85-220.png/512x512bb.jpg",
   "tags": [
@@ -158,5 +251,65 @@
   "app_store": {
     "apple_store_url": "https://apps.apple.com/app/id6752370280",
     "rating": 0.0
-  }
+  },
+  "keywords": [
+    "AI Chat: Private Intelligence",
+    "Virtual GS",
+    "ai translation",
+    "Social Networking",
+    "AI",
+    "Chat",
+    "AI-oriented",
+    "engine",
+    "powered",
+    "Apple",
+    "Intelligence",
+    "story",
+    "ideas",
+    "plan",
+    "travel",
+    "trips",
+    "food",
+    "recipes",
+    "lots",
+    "data",
+    "private",
+    "ability",
+    "work",
+    "app"
+  ],
+  "target_audience": [
+    "translators",
+    "content-creators",
+    "global-teams",
+    "apple-users",
+    "privacy-conscious-users",
+    "general-users"
+  ],
+  "use_cases": [
+    "text-translation",
+    "document-translation",
+    "localization",
+    "private-ai-chat",
+    "story-generation",
+    "planning"
+  ],
+  "name_zh": "AI Chat: Private Intelligence",
+  "description_zh": "由Apple Intelligence驱动的AI聊天引擎，支持隐私和离线使用。",
+  "sub_category": "private-ai",
+  "open_source": false,
+  "api_available": false,
+  "hiring": {
+    "is_hiring": false,
+    "careers_url": "",
+    "tech_stack": [
+      "Swift",
+      "Core ML",
+      "Apple Intelligence"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "modalities": [
+    "text"
+  ]
 }

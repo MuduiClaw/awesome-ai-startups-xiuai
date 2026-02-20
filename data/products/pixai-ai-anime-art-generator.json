@@ -4,11 +4,11 @@
   "product_url": "https://pixai.art",
   "description": "PixAI: Unleashing Artistic Potential with AI - Now with Exciting New Features!\n\nPixAI continues to be your go-to platform for unleashing your artistic potential with cutting-edge AI technology. Transform your imagination into captivating artwork effortlessly, and best of all, it's free! Explore our comprehensive Model Market, edit with powerful tools, and engage with a vibrant artists' community. PixAI merges technology and creativity to redefine artistic boundaries.\n\n[Key Features]:\n\nModel M...",
   "product_type": "app",
-  "category": "ai-application",
+  "category": "ai-image-design",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "app_store",
@@ -83,10 +83,10 @@
         "updated_at": "2026-02-16"
       },
       "platforms": {
-        "source": "app_store",
-        "tier": 2,
-        "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       },
       "pricing": {
         "source": "app_store",
@@ -135,6 +135,90 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "description_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "competitors": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -153,7 +237,10 @@
   "company": {
     "name": "METANOMALY PTE. LTD.",
     "url": "https://pixai.art",
-    "website": "https://pixai.art"
+    "website": "https://pixai.art",
+    "name_zh": "METANOMALY PTE. LTD.",
+    "description": "Dedicated anime art generation platform using cutting-edge AI technology for creative expression.",
+    "employee_count_range": "11-50"
   },
   "icon_url": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/9a/57/a0/9a57a091-e025-f97a-94ca-ec9574d752ba/AppIcon-0-0-1x_U007epad-0-1-sRGB-85-220.png/512x512bb.jpg",
   "tags": [
@@ -182,7 +269,9 @@
     "VI"
   ],
   "platforms": [
-    "ios"
+    "ios",
+    "web",
+    "android"
   ],
   "pricing": {
     "model": "free",
@@ -203,5 +292,43 @@
     "Image generation",
     "Text-to-image",
     "Art contests"
+  ],
+  "target_audience": [
+    "designers",
+    "content-creators",
+    "marketers",
+    "anime-fans",
+    "artists",
+    "game-developers"
+  ],
+  "use_cases": [
+    "image-generation",
+    "image-editing",
+    "graphic-design",
+    "anime-character-generation",
+    "character-design",
+    "artwork-creation"
+  ],
+  "name_zh": "PixAI - AI动漫艺术生成器",
+  "description_zh": "专业AI动漫艺术生成平台，支持角色创建和无限创意表达。",
+  "open_source": false,
+  "api_available": true,
+  "hiring": {
+    "is_hiring": true,
+    "careers_url": "https://pixai.art/careers",
+    "tech_stack": [
+      "React",
+      "Node.js",
+      "PyTorch",
+      "CUDA"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "modalities": [
+    "text",
+    "image"
+  ],
+  "competitors": [
+    "novelai"
   ]
 }

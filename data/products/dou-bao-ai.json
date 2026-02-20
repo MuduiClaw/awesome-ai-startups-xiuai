@@ -4,11 +4,11 @@
   "product_url": "",
   "description": "抖音旗下AI助手-豆包AI，具备AI对话交流、AI 搜索、PDF 问答、ai图像生成、写作辅助、音乐生成、阅读总结、解题答疑和学术探索等多种功能",
   "product_type": "other",
-  "category": "ai-application",
+  "category": "ai-chatbot-agent",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "ainav",
@@ -81,6 +81,90 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "keywords": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "ainav",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-18"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "platforms": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "competitors": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -95,11 +179,76 @@
   "description_zh": "抖音旗下AI助手-豆包AI，具备AI对话交流、AI 搜索、PDF 问答、ai图像生成、写作辅助、音乐生成、阅读总结、解题答疑和学术探索等多种功能",
   "company": {
     "name": "豆包AI",
-    "url": "https://www.ainav.cn"
+    "url": "https://www.ainav.cn",
+    "name_zh": "豆包AI（抖音）",
+    "description": "字节跳动（抖音母公司）旗下的多功能AI助手平台",
+    "employee_count_range": "51-200"
   },
   "icon_url": "https://www.ainav.cn/wp-content/uploads/2023/08/623e559be9fc6dcf7b76ed3b77da680b_avatar-head.e48d5531.png",
   "tags": [
     "AI对话聊天"
   ],
-  "sub_category": "chatbot"
+  "sub_category": "chatbot",
+  "keywords": [
+    "豆包AI",
+    "ai chatbot agent",
+    "chatbot",
+    "AI对话聊天",
+    "AI",
+    "抖音旗下",
+    "助手",
+    "豆包",
+    "具备",
+    "对话交流",
+    "搜索",
+    "问答",
+    "图像生成",
+    "写作辅助",
+    "音乐生成",
+    "阅读总结",
+    "解题答疑和学术探索等多种功能",
+    "other"
+  ],
+  "target_audience": [
+    "developers",
+    "enterprises",
+    "general-users",
+    "content-creators",
+    "chinese-users"
+  ],
+  "use_cases": [
+    "ai-chat",
+    "virtual-assistant",
+    "task-automation",
+    "conversational-ai",
+    "search",
+    "image-generation",
+    "summarization"
+  ],
+  "hiring": {
+    "careers_url": "",
+    "is_hiring": true,
+    "tech_stack": [
+      "PyTorch",
+      "Transformer",
+      "大模型",
+      "云基础设施"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "open_source": false,
+  "api_available": true,
+  "modalities": [
+    "text",
+    "image",
+    "audio"
+  ],
+  "platforms": [
+    "web",
+    "ios",
+    "android"
+  ],
+  "competitors": [
+    "chatgpt"
+  ]
 }

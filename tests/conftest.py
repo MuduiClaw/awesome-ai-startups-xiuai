@@ -17,7 +17,7 @@ def sample_product_data() -> dict:
         "product_url": "https://test-product.com",
         "description": "A test product for unit testing purposes with enough description length.",
         "product_type": "app",
-        "category": "ai-app",
+        "category": "ai-chatbot-agent",
         "status": "active",
         "company": {
             "name": "Test Company",
@@ -53,3 +53,15 @@ def tmp_products_dir(tmp_path: Path, sample_product_data: dict) -> Path:
     filepath.write_text(json.dumps(sample_product_data, indent=2), encoding="utf-8")
 
     return products_dir
+
+
+@pytest.fixture
+def tmp_db(tmp_path: Path):
+    """Create a temporary ProductDB with schema initialized."""
+    from scrapers.db import ProductDB
+
+    db_path = tmp_path / "test_products.db"
+    db = ProductDB(db_path)
+    db.init_schema()
+    yield db
+    db.close()

@@ -32,8 +32,35 @@ class IndexGenerator:
         "status",
     ]
 
+    def __init__(self, db: Any = None) -> None:
+        self._db = db
+
     def generate(self) -> list[dict[str, Any]]:
         """Generate index.json and return the data."""
+        products = (
+            self._generate_from_db()
+            if self._db is not None
+            else self._generate_from_files()
+        )
+
+        output = {
+            "total": len(products),
+            "products": products,
+        }
+
+        INDEX_FILE.write_text(
+            json.dumps(output, indent=2, ensure_ascii=False) + "\n",
+            encoding="utf-8",
+        )
+
+        return products
+
+    def _generate_from_db(self) -> list[dict[str, Any]]:
+        """Generate index entries from SQLite (single SQL query)."""
+        return self._db.get_index_entries()
+
+    def _generate_from_files(self) -> list[dict[str, Any]]:
+        """Generate index entries from JSON files (legacy path)."""
         products: list[dict[str, Any]] = []
 
         for filepath in sorted(PRODUCTS_DIR.glob("*.json")):
@@ -68,15 +95,5 @@ class IndexGenerator:
 
         # Sort by total funding descending, then name
         products.sort(key=lambda p: (-p.get("total_raised_usd", 0), p.get("name", "")))
-
-        output = {
-            "total": len(products),
-            "products": products,
-        }
-
-        INDEX_FILE.write_text(
-            json.dumps(output, indent=2, ensure_ascii=False) + "\n",
-            encoding="utf-8",
-        )
 
         return products

@@ -8,7 +8,7 @@
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "ainav",
@@ -111,6 +111,60 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "platforms": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -131,7 +185,9 @@
   "company": {
     "name": "X Detector AI ​内容检测器",
     "url": "https://xdetector.ai",
-    "website": "https://www.xdetector.ai"
+    "website": "https://www.xdetector.ai",
+    "name_zh": "X Detector AI",
+    "description": "AI content detection platform supporting multiple languages for content moderation and safety."
   },
   "icon_url": "https://www.ainav.cn/wp-content/uploads/2024/07/2177d-xdetector.ai.png",
   "sub_category": "ai-content-detection",
@@ -154,5 +210,32 @@
     "Academic Integrity",
     "Content Authenticity",
     "Multilingual Support"
+  ],
+  "platforms": [
+    "web",
+    "api"
+  ],
+  "target_audience": [
+    "security-professionals",
+    "enterprises",
+    "compliance-teams",
+    "content-moderators",
+    "platform-operators",
+    "publishers"
+  ],
+  "use_cases": [
+    "ai-content-detection",
+    "plagiarism-checking",
+    "content-moderation",
+    "spam-detection",
+    "harmful-content-filtering"
+  ],
+  "open_source": false,
+  "api_available": true,
+  "hiring": {
+    "careers_url": ""
+  },
+  "modalities": [
+    "text"
   ]
 }

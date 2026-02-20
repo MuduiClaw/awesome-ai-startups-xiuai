@@ -4,11 +4,11 @@
   "product_url": "https://claude.ai",
   "description": "Meet Claude, your AI problem solver and thinking partner. Claude works with you to write, research, code, and tackle complex problems with depth and precision. It enhances your thinking and expands what you're capable of, right from your phone.\n\nAI WRITING ASSISTANT \n\nTurn rough thinking into polished work. Whether you're crafting social media posts, professional emails, or complex reports, Claude refines tone, structure, and clarity — iterating with you until your voice comes through. Get wr...",
   "product_type": "app",
-  "category": "ai-application",
+  "category": "ai-chatbot-agent",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "app_store",
@@ -83,10 +83,10 @@
         "updated_at": "2026-02-16"
       },
       "platforms": {
-        "source": "app_store",
-        "tier": 2,
-        "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       },
       "pricing": {
         "source": "app_store",
@@ -135,6 +135,90 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "api_available": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "description_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "competitors": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -153,7 +237,10 @@
   "company": {
     "name": "Anthropic PBC",
     "url": "https://claude.ai",
-    "website": "https://claude.ai"
+    "website": "https://claude.ai",
+    "name_zh": "Anthropic PBC",
+    "description": "Advanced AI assistant by Anthropic offering problem-solving, research, coding, and writing capabilities.",
+    "employee_count_range": "11-50"
   },
   "icon_url": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/78/af/af/78afaf80-0cd7-e887-96f9-21396f1c66ad/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
   "tags": [
@@ -176,7 +263,10 @@
     "ES"
   ],
   "platforms": [
-    "ios"
+    "ios",
+    "web",
+    "android",
+    "api"
   ],
   "pricing": {
     "model": "free",
@@ -194,5 +284,45 @@
     "Task automation",
     "API access",
     "Web access"
+  ],
+  "api_available": true,
+  "target_audience": [
+    "developers",
+    "enterprises",
+    "general-users",
+    "researchers",
+    "writers",
+    "professionals"
+  ],
+  "use_cases": [
+    "ai-chat",
+    "conversational-ai",
+    "api-integration",
+    "model-access",
+    "coding",
+    "research",
+    "writing",
+    "problem-solving",
+    "analysis"
+  ],
+  "name_zh": "Claude（Anthropic）",
+  "description_zh": "AI问题解决和思考伙伴，支持写作、研究、编程，具有深度思考能力。",
+  "open_source": false,
+  "hiring": {
+    "is_hiring": true,
+    "careers_url": "https://www.anthropic.com/careers",
+    "tech_stack": [
+      "Python",
+      "PyTorch",
+      "Transformer Models",
+      "AWS"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "modalities": [
+    "text"
+  ],
+  "competitors": [
+    "google-gemini"
   ]
 }

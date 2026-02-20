@@ -4,11 +4,11 @@
   "product_url": "https://poe.com",
   "description": "Poe AI是一个由海外知名问答社区Quora开发的AI聊天机器人平台，它整合了包括但不限于GPT-4、GPT-3.5、Claude等在内的多个主流大型语言模型。",
   "product_type": "other",
-  "category": "ai-application",
+  "category": "ai-chatbot-agent",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "ainav",
@@ -105,6 +105,90 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "platforms": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "ainav",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-18"
+      },
+      "name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "competitors": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -134,7 +218,10 @@
   "company": {
     "name": "Poe AI",
     "url": "https://poe.com",
-    "website": "https://useprose.com"
+    "website": "https://useprose.com",
+    "name_zh": "Poe AI",
+    "description": "Poe AI is a platform by Quora that integrates multiple large language models including GPT-4 and Claude.",
+    "employee_count_range": "51-200"
   },
   "icon_url": "https://www.ainav.cn/wp-content/uploads/2023/06/9ef48-poe.com.png",
   "sub_category": "chatbot",
@@ -171,5 +258,47 @@
     "Quora",
     "chatbot",
     "artificial intelligence"
+  ],
+  "platforms": [
+    "web",
+    "ios",
+    "android"
+  ],
+  "target_audience": [
+    "developers",
+    "enterprises",
+    "general-users",
+    "researchers"
+  ],
+  "use_cases": [
+    "ai-chat",
+    "conversational-ai",
+    "grammar-checking",
+    "writing-assistance",
+    "text-generation",
+    "question-answering",
+    "content-creation"
+  ],
+  "hiring": {
+    "careers_url": "",
+    "is_hiring": true,
+    "tech_stack": [
+      "React",
+      "Python",
+      "OpenAI API",
+      "Anthropic API"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "name_zh": "Poe AI",
+  "open_source": false,
+  "api_available": true,
+  "modalities": [
+    "text"
+  ],
+  "competitors": [
+    "chatgpt",
+    "claude-ai",
+    "copilot"
   ]
 }

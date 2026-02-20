@@ -4,11 +4,11 @@
   "product_url": "https://remini.ai",
   "description": "Remini是一款在线实时照片增强应用，采用世界顶尖的人工智能技术，能够将低分辨率、模糊、像素化、老旧和损坏的照片修复为高质量、清晰锐利的大照片，包括取消模糊和锐化器、降噪器、老照片修复器、图像放大、固色剂、面部增强剂、背景增强器、低质量增强剂、视频增强器这些功能",
   "product_type": "other",
-  "category": "ai-creative-media",
+  "category": "ai-image-design",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "ainav",
@@ -113,16 +113,94 @@
         "updated_at": "2026-02-16"
       },
       "platforms": {
-        "source": "app_store",
-        "tier": 2,
-        "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       },
       "keywords": {
         "source": "toolify",
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "ainav",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-18"
+      },
+      "name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "competitors": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -152,7 +230,10 @@
   "company": {
     "name": "Remini",
     "url": "https://remini.ai",
-    "website": "https://remini.ai"
+    "website": "https://remini.ai",
+    "name_zh": "Remini",
+    "description": "Remini is an AI app for enhancing and restoring photos and videos.",
+    "employee_count_range": "11-50"
   },
   "icon_url": "https://www.ainav.cn/wp-content/uploads/2023/11/4a030-remini.ai.png",
   "sub_category": "image-editing",
@@ -190,7 +271,9 @@
     "VI"
   ],
   "platforms": [
-    "ios"
+    "ios",
+    "web",
+    "android"
   ],
   "app_store": {
     "apple_store_url": "https://apps.apple.com/app/id1470373330",
@@ -210,5 +293,39 @@
     "Face enhancement",
     "Background enhancement",
     "AI photo generation"
+  ],
+  "target_audience": [
+    "designers",
+    "content-creators",
+    "marketers",
+    "photographers",
+    "casual-users"
+  ],
+  "use_cases": [
+    "photo-enhancement",
+    "image-upscaling",
+    "photo-restoration",
+    "video-enhancement"
+  ],
+  "hiring": {
+    "careers_url": "",
+    "is_hiring": true,
+    "tech_stack": [
+      "React",
+      "Node.js",
+      "TensorFlow",
+      "AWS"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "name_zh": "Remini",
+  "open_source": false,
+  "api_available": true,
+  "modalities": [
+    "image",
+    "video"
+  ],
+  "competitors": [
+    "upscayl"
   ]
 }

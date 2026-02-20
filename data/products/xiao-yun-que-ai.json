@@ -4,11 +4,11 @@
   "product_url": "",
   "description": "小云雀是一款全能AI创作助手，集成来自字节跳动最新的图像（Seedream 5.0、4.5等模型）与视频（Seedance 2.0、1.5）生成模型。它通过对话式交互界面，让用户仅需输入文字或上传参考素材，即可快速生成高质量的短视频、图片或获取创作灵感。该工具集成了从脚本分析、分镜设计到最终画面生成的一整套流程，旨在降低专业内容创作的门槛。",
   "product_type": "other",
-  "category": "ai-creative-media",
+  "category": "ai-video-animation",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "ainav",
@@ -81,6 +81,84 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "keywords": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "ainav",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-18"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "platforms": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "competitors": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -95,11 +173,72 @@
   "description_zh": "小云雀是一款全能AI创作助手，集成来自字节跳动最新的图像（Seedream 5.0、4.5等模型）与视频（Seedance 2.0、1.5）生成模型。它通过对话式交互界面，让用户仅需输入文字或上传参考素材，即可快速生成高质量的短视频、图片或获取创作灵感。该工具集成了从脚本分析、分镜设计到最终画面生成的一整套流程，旨在降低专业内容创作的门槛。",
   "company": {
     "name": "小云雀AI",
-    "url": "https://www.ainav.cn"
+    "url": "https://www.ainav.cn",
+    "name_zh": "字节跳动",
+    "description": "All-in-one AI creation assistant integrating ByteDance's latest image and video generation models.",
+    "employee_count_range": "51-200"
   },
   "icon_url": "https://www.ainav.cn/wp-content/uploads/2026/02/1770653977-50edc109ded4077db84aeb239cfa19e1_logo-white-64.ico",
   "sub_category": "video-generation",
   "tags": [
     "AI视频工具"
+  ],
+  "keywords": [
+    "小云雀AI",
+    "ai video animation",
+    "video generation",
+    "AI视频工具",
+    "AI",
+    "Seedream",
+    "Seedance",
+    "小云雀是一款全能",
+    "创作助手",
+    "集成来自字节跳动最新的图像",
+    "等模型",
+    "与视频",
+    "生成模型",
+    "它通过对话式交互界面",
+    "让用户仅需输入文字或上传参考素材",
+    "即可快速生成高质量的短视频",
+    "图片或获取创作灵感",
+    "该工具集成了从脚本分析",
+    "分镜设计到最终画面生成的一整套流程",
+    "旨在降低专业内容创作的门槛",
+    "other"
+  ],
+  "target_audience": [
+    "content-creators",
+    "video-editors",
+    "marketers",
+    "video-producers",
+    "creators"
+  ],
+  "use_cases": [
+    "video-generation",
+    "video-editing",
+    "animation",
+    "image-generation",
+    "short-form-video",
+    "creative-inspiration"
+  ],
+  "hiring": {
+    "careers_url": "",
+    "is_hiring": true,
+    "last_checked": "2026-02-20"
+  },
+  "open_source": false,
+  "api_available": false,
+  "modalities": [
+    "text",
+    "image",
+    "video"
+  ],
+  "platforms": [
+    "web"
+  ],
+  "competitors": [
+    "runway",
+    "descript",
+    "synthesia"
   ]
 }

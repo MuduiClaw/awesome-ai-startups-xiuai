@@ -4,11 +4,11 @@
   "product_url": "https://liblibai.paluai.com/ainav",
   "description": "\"LiblibAI-哩布哩布AI\"是一个国内AI绘画原创模型分享社区，这些模型涵盖了各种主题和风格，如建筑设计、插画设计、摄影、游戏、中国风、室内设计、动漫、工业设计等。",
   "product_type": "other",
-  "category": "ai-creative-media",
+  "category": "ai-image-design",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "ainav",
@@ -87,6 +87,90 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "keywords": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "platforms": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "ainav",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-18"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "competitors": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -106,12 +190,73 @@
   "description_zh": "\"LiblibAI-哩布哩布AI\"是一个国内AI绘画原创模型分享社区，这些模型涵盖了各种主题和风格，如建筑设计、插画设计、摄影、游戏、中国风、室内设计、动漫、工业设计等。",
   "company": {
     "name": "LiblibAI·哩布哩布AI",
-    "url": "https://liblibai.paluai.com"
+    "url": "https://liblibai.paluai.com",
+    "name_zh": "LiblibAI",
+    "description": "Chinese AI art generation community offering diverse model collections for various artistic styles.",
+    "employee_count_range": "1-10"
   },
   "icon_url": "https://www.ainav.cn/wp-content/uploads/2024/04/6be69-www.liblib.art.png",
   "sub_category": "image-generation",
   "tags": [
     "AI绘画工具",
     "ai-image-generators"
+  ],
+  "keywords": [
+    "LiblibAI·哩布哩布AI",
+    "ai image design",
+    "image generation",
+    "AI绘画工具",
+    "ai image generators",
+    "LiblibAI-",
+    "AI",
+    "哩布哩布",
+    "是一个国内",
+    "绘画原创模型分享社区",
+    "这些模型涵盖了各种主题和风格",
+    "如建筑设计",
+    "插画设计",
+    "摄影",
+    "游戏",
+    "中国风",
+    "室内设计",
+    "动漫",
+    "工业设计等",
+    "other"
+  ],
+  "platforms": [
+    "web"
+  ],
+  "target_audience": [
+    "designers",
+    "content-creators",
+    "marketers",
+    "artists"
+  ],
+  "use_cases": [
+    "image-generation",
+    "image-editing",
+    "graphic-design",
+    "ai-art-generation",
+    "model-sharing",
+    "custom-image-creation"
+  ],
+  "hiring": {
+    "careers_url": "",
+    "is_hiring": false,
+    "tech_stack": [
+      "Python",
+      "PyTorch",
+      "React",
+      "Node.js"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "open_source": false,
+  "api_available": true,
+  "modalities": [
+    "image"
+  ],
+  "competitors": [
+    "civitai"
   ]
 }

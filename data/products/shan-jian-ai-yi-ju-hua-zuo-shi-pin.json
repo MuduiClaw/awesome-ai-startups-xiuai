@@ -4,11 +4,11 @@
   "product_url": "https://shanjian.tv/",
   "description": "闪剪 AI 是新一代的 AI 创作工具，你只要像平时聊天一样，说出你的创意，哪怕就一句话，就能生成视频、图片、音乐、文章等自媒体内容，轻松打造你的个人影响力。\n\n核心亮点\n【特效模板】玩法多样，灵感不断，一键套用，年味十足。\n【AI 生视频】上传图片 + 一句话，就能轻松做出广告大片。\n【AI 生图】一句话做图，轻松搞定电商、营销、新媒体等素材。\n【AI 音乐】无需乐理，讲出你的故事，AI 为你写歌谱曲。\n【AI Team 智能体】 只需一句话，就能轻松搞定短视频、图文、文章等内容。每个人都能成为传播者，每个人都值得被看见。\n\n———————还有更多精彩玩法———————\n\n【定制数字人】\n上传 30 秒视频或者一张图片，就能 1:1 复制你的形象和声音，定制专属的数字人来拍摄短视频。现在可以无限次定制数字人，性价比超高！\n【直播快剪】\n导入直播链接就能实时录制直播，还能自动把直播切成精彩片段，生成配有字幕、花字、音效和转场效果的短视频，一键发布到平台带货。\n【声音克隆】\n支持克隆 10 种以上外语和国内方言的声音，简单录下自己的声音，就能一键克隆，轻松制作“本地化”短视频。\n\n...",
   "product_type": "app",
-  "category": "ai-application",
+  "category": "ai-video-animation",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "app_store",
@@ -101,10 +101,10 @@
         "updated_at": "2026-02-16"
       },
       "platforms": {
-        "source": "app_store",
-        "tier": 2,
-        "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       },
       "pricing": {
         "source": "app_store",
@@ -141,6 +141,84 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "keywords": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "sub_category": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "competitors": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -157,7 +235,9 @@
     "name": "深圳市趣推科技有限公司",
     "url": "https://shanjian.tv",
     "name_zh": "深圳市趣推科技有限公司",
-    "website": "https://shanjian.tv"
+    "website": "https://shanjian.tv",
+    "description": "Chinese AI content creation tool for generating multimedia from text prompts.",
+    "employee_count_range": "11-50"
   },
   "icon_url": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/e9/cd/49/e9cd495e-8b7b-2daf-771e-844f6a1ce204/AppIcon-0-0-1x_U007ephone-0-1-0-85-220.png/512x512bb.jpg",
   "tags": [
@@ -168,7 +248,10 @@
     "ZH"
   ],
   "platforms": [
-    "ios"
+    "ios",
+    "web",
+    "android",
+    "api"
   ],
   "pricing": {
     "model": "free",
@@ -178,5 +261,68 @@
   "app_store": {
     "apple_store_url": "https://apps.apple.com/app/id1579618651",
     "rating": 4.6
-  }
+  },
+  "keywords": [
+    "闪剪 AI - 一句话做视频",
+    "深圳市趣推科技有限公司",
+    "ai video animation",
+    "Photo & Video",
+    "AI",
+    "Team",
+    "闪剪",
+    "是新一代的",
+    "创作工具",
+    "你只要像平时聊天一样",
+    "说出你的创意",
+    "哪怕就一句话",
+    "就能生成视频",
+    "图片",
+    "音乐",
+    "文章等自媒体内容",
+    "轻松打造你的个人影响力",
+    "核心亮点",
+    "特效模板",
+    "玩法多样",
+    "灵感不断",
+    "app"
+  ],
+  "target_audience": [
+    "content-creators",
+    "video-editors",
+    "marketers",
+    "self-media",
+    "businesses"
+  ],
+  "use_cases": [
+    "video-generation",
+    "video-editing",
+    "animation",
+    "image-generation",
+    "content-creation",
+    "music-generation"
+  ],
+  "sub_category": "content-generator",
+  "open_source": false,
+  "api_available": true,
+  "hiring": {
+    "is_hiring": true,
+    "careers_url": "",
+    "tech_stack": [
+      "Python",
+      "React",
+      "FFmpeg",
+      "TensorFlow"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "modalities": [
+    "text",
+    "image",
+    "video",
+    "audio"
+  ],
+  "competitors": [
+    "descript",
+    "runway"
+  ]
 }

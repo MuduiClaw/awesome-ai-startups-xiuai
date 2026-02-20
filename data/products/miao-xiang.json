@@ -4,11 +4,11 @@
   "product_url": "http://ai.eastmoney.com",
   "description": "妙想是东方财富旗下金融大模型，已构建金融全品类、高品质数据流，覆盖各类金融业务场景。\n基于妙想大模型重磅推出的下一代智能金融终端——妙想投研助理，提供智能问答、研报总结、深度分析及各类投研助理功能，全面赋能从研究目标确立、市场信息检索、数据整合与分析，到撰写研究报告的完整投研工作环节，大幅提高投研效率。\n\n【产品亮点】\n-妙想问答：仅需简单问句即可全面检索市场热点、金融数据、政策观点等，问答全程溯源，点击即可查看\n-研报总结：智能总结研报内容，提炼核心观点，原文信息溯源，轻松实现研报倍速阅读，把握投资要点\n-超级图表：根据查找到的数据信息自动生成图表，答案呈现清晰，内容真实可靠\n-宏观分析：专业宏观EDB数据库，收录国内外百万宏观指标，权威信源、一问即得\n-行业分析：细分行业数据库，梳理各产业链上下游投资标的，结合市场信息、行情数据、板块估值等综合解析行业走向，探查板块动态\n-企业分析：企业深度资料图谱，囊括财务经营数据、董监高数据、股东持股数据、重大事项变动等，完整呈现企业发展全景\n-股票分析：三大诊股维度，多维度展现股票的优势与风险；支持创意选股、条件选股，精准定位心仪潜力股...",
   "product_type": "app",
-  "category": "ai-application",
+  "category": "ai-productivity",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "app_store",
@@ -101,10 +101,10 @@
         "updated_at": "2026-02-16"
       },
       "platforms": {
-        "source": "app_store",
-        "tier": 2,
-        "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       },
       "pricing": {
         "source": "app_store",
@@ -129,6 +129,78 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "keywords": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "sub_category": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -145,7 +217,9 @@
     "name": "东方财富信息股份有限公司",
     "url": "http://ai.eastmoney.com",
     "name_zh": "东方财富信息股份有限公司",
-    "website": "http://ai.eastmoney.com"
+    "website": "http://ai.eastmoney.com",
+    "description": "AI-powered investment research assistant with financial LLM by East Money",
+    "employee_count_range": "51-200"
   },
   "icon_url": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/be/57/84/be5784fb-368d-4eeb-a9fa-9fc2b135e6da/AppIcon-0-1x_U007emarketing-0-7-0-0-sRGB-85-220-0.png/512x512bb.jpg",
   "tags": [
@@ -155,7 +229,9 @@
     "ZH"
   ],
   "platforms": [
-    "ios"
+    "ios",
+    "web",
+    "android"
   ],
   "pricing": {
     "model": "free",
@@ -165,5 +241,60 @@
   "app_store": {
     "apple_store_url": "https://apps.apple.com/app/id6469681957",
     "rating": 3.9
-  }
+  },
+  "keywords": [
+    "妙想",
+    "东方财富信息股份有限公司",
+    "ai productivity",
+    "Productivity",
+    "妙想是东方财富旗下金融大模型",
+    "已构建金融全品类",
+    "高品质数据流",
+    "覆盖各类金融业务场景",
+    "基于妙想大模型重磅推出的下一代智能金融终端",
+    "妙想投研助理",
+    "提供智能问答",
+    "研报总结",
+    "深度分析及各类投研助理功能",
+    "全面赋能从研究目标确立",
+    "市场信息检索",
+    "数据整合与分析",
+    "到撰写研究报告的完整投研工作环节",
+    "大幅提高投研效率",
+    "产品亮点",
+    "app"
+  ],
+  "target_audience": [
+    "professionals",
+    "teams",
+    "enterprises",
+    "investors",
+    "analysts",
+    "financial-professionals"
+  ],
+  "use_cases": [
+    "workflow-automation",
+    "document-management",
+    "task-management",
+    "investment-research",
+    "document-analysis",
+    "data-visualization"
+  ],
+  "sub_category": "financial-assistant",
+  "open_source": false,
+  "api_available": false,
+  "hiring": {
+    "is_hiring": true,
+    "careers_url": "https://eastmoney.com/careers",
+    "tech_stack": [
+      "Python",
+      "React",
+      "PostgreSQL",
+      "Alibaba Cloud"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "modalities": [
+    "text"
+  ]
 }

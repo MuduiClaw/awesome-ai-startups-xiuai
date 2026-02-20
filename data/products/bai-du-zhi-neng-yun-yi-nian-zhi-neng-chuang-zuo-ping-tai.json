@@ -4,11 +4,11 @@
   "product_url": "https://yinian.cloud.baidu.com/creativity/index",
   "description": "百度智能云一念是基于百度文心大模型打造的内容创作平台。集文、图、视频等多种内容模态于一体，旨在助力企业更便捷高效地获取内容创作灵感和营销物料。",
   "product_type": "other",
-  "category": "ai-application",
+  "category": "ai-chatbot-agent",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "ainav",
@@ -81,6 +81,90 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "keywords": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "platforms": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "ainav",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-18"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "competitors": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -95,10 +179,66 @@
   "description_zh": "百度智能云一念是基于百度文心大模型打造的内容创作平台。集文、图、视频等多种内容模态于一体，旨在助力企业更便捷高效地获取内容创作灵感和营销物料。",
   "company": {
     "name": "百度智能云一念·智能创作平台",
-    "url": "https://yinian.cloud.baidu.com"
+    "url": "https://yinian.cloud.baidu.com",
+    "name_zh": "百度",
+    "description": "Baidu Cloud's multimodal content creation platform powered by Wenxin LLM for text, image, and video.",
+    "employee_count_range": "51-200"
   },
   "sub_category": "text-generation",
   "tags": [
     "AI文本工具"
+  ],
+  "keywords": [
+    "百度智能云一念·智能创作平台",
+    "ai chatbot agent",
+    "text generation",
+    "AI文本工具",
+    "百度智能云一念是基于百度文心大模型打造的内容创作平台",
+    "集文",
+    "视频等多种内容模态于一体",
+    "旨在助力企业更便捷高效地获取内容创作灵感和营销物料",
+    "other"
+  ],
+  "platforms": [
+    "web"
+  ],
+  "target_audience": [
+    "developers",
+    "enterprises",
+    "general-users",
+    "content-creators",
+    "marketers",
+    "advertisers",
+    "businesses"
+  ],
+  "use_cases": [
+    "ai-chat",
+    "virtual-assistant",
+    "task-automation",
+    "content-creation",
+    "marketing-material-generation",
+    "video-creation",
+    "copywriting"
+  ],
+  "hiring": {
+    "careers_url": "",
+    "is_hiring": true,
+    "tech_stack": [
+      "Python",
+      "ERNIE",
+      "Paddlepaddle",
+      "Computer Vision"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "open_source": false,
+  "api_available": true,
+  "modalities": [
+    "text",
+    "image",
+    "video"
+  ],
+  "competitors": [
+    "synthesia"
   ]
 }

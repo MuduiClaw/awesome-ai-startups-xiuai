@@ -8,7 +8,7 @@
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "ainav",
@@ -87,6 +87,84 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "keywords": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "platforms": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -101,11 +179,69 @@
   "description_zh": "昆仑万维「天工SkyAgents」AI Agents（智能体）开发平台，基于昆仑万维「天工大模型」打造，具备从感知到决策，从决策到执行的自主学习和独立思考能力",
   "company": {
     "name": "昆仑万维「天工SkyAgents」",
-    "url": "https://model-platform.tiangong.cn"
+    "url": "https://model-platform.tiangong.cn",
+    "name_zh": "昆仑万维",
+    "description": "昆仑万维是一家领先的AI技术公司，致力于开发天工大模型和AI智能体平台，赋能企业智能化转型。",
+    "employee_count_range": "51-200"
   },
   "icon_url": "https://www.ainav.cn/wp-content/uploads/2023/12/88a7f-model-platform.tiangong.cn.png",
   "sub_category": "developer-community",
   "tags": [
     "AI开发者社区"
+  ],
+  "keywords": [
+    "昆仑万维「天工SkyAgents」",
+    "ai dev platform",
+    "developer community",
+    "AI开发者社区",
+    "SkyAgents",
+    "AI",
+    "Agents",
+    "昆仑万维",
+    "天工",
+    "智能体",
+    "开发平台",
+    "基于昆仑万维",
+    "天工大模型",
+    "打造",
+    "具备从感知到决策",
+    "从决策到执行的自主学习和独立思考能力",
+    "other"
+  ],
+  "platforms": [
+    "web",
+    "api",
+    "self-hosted"
+  ],
+  "target_audience": [
+    "developers",
+    "enterprises",
+    "data-scientists",
+    "ai-teams"
+  ],
+  "use_cases": [
+    "code-generation",
+    "app-development",
+    "api-integration",
+    "ai-agent-development",
+    "intelligent-automation",
+    "decision-making-systems"
+  ],
+  "open_source": false,
+  "api_available": true,
+  "hiring": {
+    "is_hiring": true,
+    "careers_url": "https://kunlun.com/careers",
+    "tech_stack": [
+      "Python",
+      "TensorFlow",
+      "PyTorch",
+      "Alibaba Cloud"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "modalities": [
+    "text",
+    "multimodal"
   ]
 }

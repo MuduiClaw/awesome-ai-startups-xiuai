@@ -4,11 +4,11 @@
   "product_url": "https://y.qq.com/vemus/index.html?adtag=aibot_ai_musictool_homepage",
   "description": "腾讯音乐旗下首款一站式AI音乐创作工具",
   "product_type": "other",
-  "category": "ai-application",
+  "category": "ai-audio-music",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "aibot",
@@ -77,10 +77,100 @@
         "updated_at": "2026-02-16"
       },
       "tags": {
-        "source": "aibot",
+        "source": "ainav",
         "tier": 2,
         "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "updated_at": "2026-02-18"
+      },
+      "keywords": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "platforms": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "sub_category": {
+        "source": "ainav",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-18"
+      },
+      "hiring.careers_url": {
+        "source": "ainav",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-18"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "competitors": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -89,16 +179,68 @@
       "url": "https://ai-bot.cn/favorites/ai-audio-tools/",
       "source_name": "aibot",
       "scraped_at": "2026-02-16"
+    },
+    {
+      "url": "https://www.ainav.cn",
+      "source_name": "ainav",
+      "scraped_at": "2026-02-18"
     }
   ],
   "name_zh": "Vemus未音",
   "description_zh": "腾讯音乐旗下首款一站式AI音乐创作工具",
   "company": {
     "name": "Vemus未音",
-    "url": "https://y.qq.com"
+    "url": "https://y.qq.com",
+    "name_zh": "腾讯音乐娱乐集团",
+    "description": "Tencent Music Entertainment's AI-powered music creation platform enabling artists to compose and generate music.",
+    "employee_count_range": "51-200"
   },
   "icon_url": "https://ai-bot.cn/wp-content/uploads/2026/02/Vemus-icon.png",
   "tags": [
-    "ai-audio-tools"
+    "ai-audio-tools",
+    "AI音频工具"
+  ],
+  "keywords": [
+    "Vemus未音",
+    "ai audio music",
+    "ai audio tools",
+    "AI",
+    "腾讯音乐旗下首款一站式",
+    "音乐创作工具",
+    "other"
+  ],
+  "platforms": [
+    "web"
+  ],
+  "target_audience": [
+    "musicians",
+    "content-creators",
+    "podcasters",
+    "music-producers"
+  ],
+  "use_cases": [
+    "music-generation",
+    "audio-editing",
+    "voice-synthesis",
+    "music-composition"
+  ],
+  "sub_category": "audio-speech",
+  "hiring": {
+    "careers_url": "",
+    "is_hiring": true,
+    "tech_stack": [
+      "TensorFlow",
+      "Python",
+      "Tencent Cloud"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "open_source": false,
+  "api_available": false,
+  "modalities": [
+    "audio"
+  ],
+  "competitors": [
+    "soundraw"
   ]
 }

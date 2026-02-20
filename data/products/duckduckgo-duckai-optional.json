@@ -4,11 +4,11 @@
   "product_url": "https://duckduckgo.com/",
   "description": "At DuckDuckGo, we believe the best way to protect your personal information from hackers, scammers, and privacy-invasive companies is to stop it from being collected at all. That's why millions of people choose DuckDuckGo over Chrome and other browsers to search and browse online. Our built-in search engine is like Google but never tracks your searches. Our browsing protections, such as ad tracker blocking and cookie blocking, help stop other companies from collecting your data. While our opt...",
   "product_type": "app",
-  "category": "ai-application",
+  "category": "ai-chatbot-agent",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "app_store",
@@ -83,10 +83,10 @@
         "updated_at": "2026-02-16"
       },
       "platforms": {
-        "source": "app_store",
-        "tier": 2,
-        "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       },
       "pricing": {
         "source": "app_store",
@@ -123,6 +123,96 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "keywords": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "description_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "sub_category": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -136,7 +226,10 @@
   "company": {
     "name": "DuckDuckGo, Inc.",
     "url": "https://duckduckgo.com",
-    "website": "https://duckduckgo.com"
+    "website": "https://duckduckgo.com",
+    "name_zh": "DuckDuckGo公司",
+    "description": "Privacy-focused search engine and browser protecting users from data collection.",
+    "employee_count_range": "11-50"
   },
   "icon_url": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/d8/44/b0/d844b0d8-1a17-30ae-f2d1-31a7d47e8669/AppIcon-0-0-1x_U007epad-0-0-0-1-0-0-0-85-220.png/512x512bb.jpg",
   "tags": [
@@ -171,7 +264,10 @@
     "TR"
   ],
   "platforms": [
-    "ios"
+    "ios",
+    "web",
+    "android",
+    "desktop"
   ],
   "pricing": {
     "model": "free",
@@ -181,5 +277,65 @@
   "app_store": {
     "apple_store_url": "https://apps.apple.com/app/id663592361",
     "rating": 4.8
-  }
+  },
+  "keywords": [
+    "DuckDuckGo, Duck.ai (optional)",
+    "DuckDuckGo, Inc.",
+    "ai chatbot agent",
+    "Utilities",
+    "DuckDuckGo",
+    "believe",
+    "best",
+    "protect",
+    "personal",
+    "information",
+    "hackers",
+    "scammers",
+    "privacy-invasive",
+    "companies",
+    "stop",
+    "being",
+    "collected",
+    "millions",
+    "people",
+    "choose",
+    "over",
+    "Chrome",
+    "other",
+    "app"
+  ],
+  "target_audience": [
+    "developers",
+    "enterprises",
+    "general-users",
+    "privacy-conscious-users",
+    "business-users"
+  ],
+  "use_cases": [
+    "ai-chat",
+    "virtual-assistant",
+    "task-automation",
+    "web-search",
+    "privacy-protection",
+    "information-retrieval",
+    "browsing"
+  ],
+  "name_zh": "DuckDuckGo搜索引擎",
+  "description_zh": "隐私优先的搜索引擎和浏览器，数百万用户选择以保护个人信息",
+  "sub_category": "search-engine",
+  "open_source": false,
+  "api_available": false,
+  "hiring": {
+    "is_hiring": true,
+    "careers_url": "https://duckduckgo.com/careers",
+    "tech_stack": [
+      "Rust",
+      "JavaScript",
+      "Node.js"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "modalities": [
+    "text"
+  ]
 }

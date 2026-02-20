@@ -4,11 +4,11 @@
   "product_url": "https://replit.com/",
   "description": "Replit is the best way to create and ship real projects, apps, games, and more right from your phone. With Replit, you can create anything, anywhere. Make apps & sites with natural language prompts. No-code needed\n\nTell Replit Agent your app or website idea, and it will build it for you automatically. It’s like having an entire team of software engineers on demand, ready to build what you need — all through a simple chat.\n\nHere's what you can do with the Replit app:\n• Build websites and apps ...",
   "product_type": "app",
-  "category": "ai-application",
+  "category": "ai-social-entertainment",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "app_store",
@@ -83,10 +83,10 @@
         "updated_at": "2026-02-16"
       },
       "platforms": {
-        "source": "app_store",
-        "tier": 2,
-        "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       },
       "pricing": {
         "source": "app_store",
@@ -135,6 +135,84 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "description_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -153,7 +231,10 @@
   "company": {
     "name": "Replit",
     "url": "https://replit.com",
-    "website": "https://replit.com"
+    "website": "https://replit.com",
+    "name_zh": "Replit",
+    "description": "Replit Vibe Code Apps lets you create apps with natural language prompts, no coding required.",
+    "employee_count_range": "51-200"
   },
   "icon_url": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/a6/4a/0f/a64a0f4d-4b9c-6420-162a-0c7df9e34a1b/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
   "tags": [
@@ -168,7 +249,9 @@
     "EN"
   ],
   "platforms": [
-    "ios"
+    "ios",
+    "web",
+    "android"
   ],
   "pricing": {
     "model": "free",
@@ -192,5 +275,41 @@
     "Web Development",
     "App Development",
     "Cloud Workspace"
+  ],
+  "target_audience": [
+    "developers",
+    "general-users",
+    "content-creators",
+    "influencers",
+    "non-technical-users"
+  ],
+  "use_cases": [
+    "code-generation",
+    "code-review",
+    "developer-productivity",
+    "app-development",
+    "website-creation",
+    "app-creation",
+    "website-building"
+  ],
+  "name_zh": "Replit: Vibe代码应用",
+  "description_zh": "使用自然语言提示创建应用和网站，无需编码。",
+  "open_source": false,
+  "api_available": false,
+  "hiring": {
+    "is_hiring": true,
+    "careers_url": "https://replit.com/careers",
+    "tech_stack": [
+      "JavaScript",
+      "React",
+      "Node.js",
+      "Python",
+      "OpenAI-API"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "modalities": [
+    "code",
+    "text"
   ]
 }

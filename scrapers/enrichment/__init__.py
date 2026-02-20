@@ -1,5 +1,6 @@
 """Data enrichment pipeline: normalize, deduplicate, merge, validate, score."""
 
+from scrapers.db import ProductDB
 from scrapers.enrichment.cross_validator import CrossValidationViolation, CrossValidator
 from scrapers.enrichment.deduplicator import Deduplicator
 from scrapers.enrichment.icon_fetcher import IconFetcher
@@ -15,6 +16,7 @@ __all__ = [
     "Normalizer",
     "Deduplicator",
     "Merger",
+    "ProductDB",
     "KeywordExtractor",
     "IconFetcher",
     "QualityScorer",

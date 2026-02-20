@@ -4,11 +4,11 @@
   "product_url": "https://youtochat.com",
   "description": "YoutoChat智能客服系统是一款高效、智能的客户服务应用。无论您是企业还是个人，\n都可以通过该应用实现快速、便捷的客户交流和解决问题。我们提供全天候在线客服支\n持，让您的客户感受到无与伦比的服务。\n主要特点：\n1、多渠道支持：通过YoutoChat，您可以同时管理多个渠道上的客户交流，支持接入\n所有平台一键沟通，包括网站、社交媒体等，简化工作流程。\n2、实时消息通知：接收客户发来的消息时时刻刻都能收到通知，确保您不会错过任何\n重要的客户咨询。\n3、多语言翻译：支持全球多种语言实时对话翻译，大程度提高沟通效率\n4、客户数据分析：通过数据分析功能，您可以深入了解客户需求，优化服务流程，提\n升客户满意度。\n5、客户档案管理：我们提供客户档案管理功能，帮助您记录客户信息、交流记录、问\n题解决情况等，方便日后查阅和分析。\nYoutoChat智能客服系统将为您提供无与伦比的客户服务体验。立即下载，让我们帮助\n您与客户建立更紧密的联系吧！",
   "product_type": "app",
-  "category": "ai-application",
+  "category": "ai-chatbot-agent",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "app_store",
@@ -89,10 +89,10 @@
         "updated_at": "2026-02-16"
       },
       "platforms": {
-        "source": "app_store",
-        "tier": 2,
-        "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       },
       "pricing": {
         "source": "app_store",
@@ -141,6 +141,84 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "competitors": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -160,7 +238,10 @@
   "company": {
     "name": "Hangzhou Chenlian Information Technology Co., Ltd",
     "url": "https://youtochat.com",
-    "website": "https://youtochat.com"
+    "website": "https://youtochat.com",
+    "name_zh": "杭州晨联信息技术有限公司",
+    "description": "YoutoChat is an intelligent customer service system supporting omnichannel communication.",
+    "employee_count_range": "1-10"
   },
   "icon_url": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/51/36/6d/51366d8c-bdff-2e37-75dc-00a239376f0f/AppIcon-0-0-1x_U007ephone-0-11-0-85-220.png/512x512bb.jpg",
   "tags": [
@@ -173,7 +254,9 @@
     "EN"
   ],
   "platforms": [
-    "ios"
+    "ios",
+    "web",
+    "api"
   ],
   "pricing": {
     "model": "freemium",
@@ -200,5 +283,41 @@
     "AI for consultants",
     "AI monetization",
     "AI for customer support"
+  ],
+  "target_audience": [
+    "developers",
+    "enterprises",
+    "general-users",
+    "businesses",
+    "customer-service-teams",
+    "e-commerce"
+  ],
+  "use_cases": [
+    "ai-chat",
+    "conversational-ai",
+    "customer-support",
+    "omnichannel-chat",
+    "automation",
+    "multilingual-support"
+  ],
+  "name_zh": "YoutoChat",
+  "open_source": false,
+  "api_available": true,
+  "hiring": {
+    "is_hiring": false,
+    "careers_url": "",
+    "tech_stack": [
+      "Python",
+      "Java",
+      "React",
+      "PostgreSQL"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "modalities": [
+    "text"
+  ],
+  "competitors": [
+    "tidio"
   ]
 }

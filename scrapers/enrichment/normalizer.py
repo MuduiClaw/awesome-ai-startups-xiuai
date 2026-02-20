@@ -61,13 +61,17 @@ _COUNTRY_CODES: dict[str, str] = {
 # Old category → new category aliases (scrapers still emit legacy values)
 _CATEGORY_ALIASES: dict[str, str] = {
     "ai-model": "ai-foundation-model",
-    "ai-app": "ai-application",
-    "ai-agent": "ai-application",
+    "ai-app": "ai-chatbot-agent",
+    "ai-agent": "ai-chatbot-agent",
     "ai-dev-tool": "ai-dev-platform",
     "ai-data": "ai-data-platform",
     "ai-search": "ai-search-retrieval",
     "ai-security": "ai-security-governance",
     "ai-science": "ai-science-research",
+    # Legacy 11-category taxonomy → new 22-category
+    "ai-application": "ai-chatbot-agent",
+    "ai-creative-media": "ai-image-design",
+    "ai-enterprise-vertical": "ai-marketing-commerce",
 }
 
 

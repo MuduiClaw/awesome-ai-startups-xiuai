@@ -4,11 +4,11 @@
   "product_url": "https://leonardo.ai/",
   "description": "Welcome to Leonardo.Ai , the ultimate AI art image and video generator, now available on iOS!\n\nHarness the power of Leonardo.Ai on your iPhone or iPad and unlock a world of creative possibilities with these key features:\n\nImage Enhancement: More than just an AI photo editor, you can transform existing photos with the Image to Image feature and more, allowing you to tweak and enhance your artwork with ease.\n\nRefinement Tools: Leonardo’s creative suite lets you refine images directly within the...",
   "product_type": "app",
-  "category": "ai-application",
+  "category": "ai-video-animation",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "app_store",
@@ -83,10 +83,10 @@
         "updated_at": "2026-02-16"
       },
       "platforms": {
-        "source": "app_store",
-        "tier": 2,
-        "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       },
       "pricing": {
         "source": "app_store",
@@ -135,6 +135,90 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "description_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "competitors": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -153,7 +237,10 @@
   "company": {
     "name": "Leonardo Interactive Pty Ltd",
     "url": "https://leonardo.ai",
-    "website": "https://leonardo.ai"
+    "website": "https://leonardo.ai",
+    "name_zh": "Leonardo",
+    "description": "Comprehensive AI art and image generation platform offering powerful creative tools for artists and designers.",
+    "employee_count_range": "11-50"
   },
   "icon_url": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/50/cd/c5/50cdc517-a2dd-1fee-332a-360111ff1408/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
   "tags": [
@@ -168,7 +255,8 @@
     "EN"
   ],
   "platforms": [
-    "ios"
+    "ios",
+    "web"
   ],
   "pricing": {
     "model": "free",
@@ -190,5 +278,43 @@
     "Graphic design",
     "AI tools",
     "Creative AI"
+  ],
+  "target_audience": [
+    "content-creators",
+    "video-editors",
+    "marketers",
+    "photographers",
+    "artists",
+    "designers"
+  ],
+  "use_cases": [
+    "video-generation",
+    "video-editing",
+    "animation",
+    "image-generation",
+    "ai-art-creation",
+    "visual-content"
+  ],
+  "name_zh": "Leonardo.Ai图像生成器",
+  "description_zh": "终极AI艺术图像和视频生成器,支持iOS端应用。",
+  "open_source": false,
+  "api_available": true,
+  "hiring": {
+    "is_hiring": true,
+    "careers_url": "https://leonardo.ai/careers",
+    "tech_stack": [
+      "Python",
+      "React",
+      "Stable Diffusion",
+      "AWS"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "modalities": [
+    "image",
+    "video"
+  ],
+  "competitors": [
+    "midjourney"
   ]
 }

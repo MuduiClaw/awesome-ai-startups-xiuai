@@ -4,11 +4,11 @@
   "product_url": "https://transor.ai/",
   "description": "AI翻译工具，提供多场景实时翻译服务",
   "product_type": "other",
-  "category": "ai-application",
+  "category": "ai-translation",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-18",
     "provenance": {
       "name": {
         "source": "aibot",
@@ -111,6 +111,24 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "platforms": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "target_audience": {
+        "source": "rule-based-seo",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-18"
+      },
+      "use_cases": {
+        "source": "rule-based-seo",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-18"
       }
     }
   },
@@ -162,5 +180,19 @@
     "Cross-platform Translator",
     "Netflix Subtitles",
     "YouTube Subtitles"
+  ],
+  "platforms": [
+    "web"
+  ],
+  "target_audience": [
+    "translators",
+    "content-creators",
+    "global-teams",
+    "students"
+  ],
+  "use_cases": [
+    "text-translation",
+    "document-translation",
+    "localization"
   ]
 }

@@ -4,11 +4,11 @@
   "product_url": "https://www.fotor.com",
   "description": "GoArt is an excellent AI image generator owned by Fotor, helping you create amazing artworks from text and photo easily. Allow you to use Photo Cartoonizer to turn your photos into cartoon avatars in one click. Take AI Art Generator From Text to convert your ideas into unique paintings, drawings in seconds. Even turn your photos into artworks in the style of Van Gogh, Monet, Picasso and other masters with AI art filters of Big Painter in a snap.\n\n【PHOTO CARTOONIZER】\nJust upload your selfie, G...",
   "product_type": "app",
-  "category": "ai-application",
+  "category": "ai-video-animation",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "app_store",
@@ -83,10 +83,10 @@
         "updated_at": "2026-02-16"
       },
       "platforms": {
-        "source": "app_store",
-        "tier": 2,
-        "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       },
       "pricing": {
         "source": "app_store",
@@ -135,6 +135,90 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "description_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "competitors": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -158,7 +242,10 @@
   "company": {
     "name": "Chengdu Everimaging Science and Technology Co., Ltd",
     "url": "https://www.fotor.com",
-    "website": "https://www.fotor.com"
+    "website": "https://www.fotor.com",
+    "name_zh": "成都云工科技有限公司",
+    "description": "AI image generation tool for creating artwork from text and photos, owned by Fotor.",
+    "employee_count_range": "11-50"
   },
   "icon_url": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/0a/e0/12/0ae012dc-a7c3-4d0e-f2eb-443d3fe303f6/AppIcon-0-0-1x_U007ephone-0-11-0-85-220.png/512x512bb.jpg",
   "tags": [
@@ -188,7 +275,9 @@
     "VI"
   ],
   "platforms": [
-    "ios"
+    "ios",
+    "web",
+    "android"
   ],
   "pricing": {
     "model": "free",
@@ -209,5 +298,43 @@
     "Free photo editor",
     "AI design",
     "Photo enhancement"
+  ],
+  "target_audience": [
+    "content-creators",
+    "video-editors",
+    "marketers",
+    "photographers",
+    "designers",
+    "artists"
+  ],
+  "use_cases": [
+    "photo-editing",
+    "image-manipulation",
+    "background-removal",
+    "image-editing",
+    "text-to-image",
+    "photo-enhancement",
+    "cartoon-generation"
+  ],
+  "name_zh": "GoArt - AI艺术图像生成器",
+  "description_zh": "由Fotor提供的优秀AI图像生成器，从文本和照片创建艺术作品。",
+  "open_source": false,
+  "api_available": false,
+  "hiring": {
+    "is_hiring": true,
+    "careers_url": "",
+    "tech_stack": [
+      "Python",
+      "React Native",
+      "PyTorch"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "modalities": [
+    "text",
+    "image"
+  ],
+  "competitors": [
+    "midjourney"
   ]
 }

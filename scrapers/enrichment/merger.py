@@ -142,6 +142,8 @@ _SCALAR_FIELD_MAP: dict[str, str] = {
     "api_docs_url": "api_docs_url",
     "pricing_model": "pricing.model",
     "has_free_tier": "pricing.has_free_tier",
+    "hiring_is_hiring": "hiring.is_hiring",
+    "hiring_careers_url": "hiring.careers_url",
     "status": "status",
     "release_date": "release_date",
 }
@@ -185,8 +187,10 @@ class TieredMerger:
     def __init__(
         self,
         cross_validator: CrossValidator | None = None,
+        db: Any = None,
     ) -> None:
         self._cross_validator = cross_validator
+        self._db = db  # Optional ProductDB for dual-write
 
     # -- public API ---------------------------------------------------------
 
@@ -240,6 +244,14 @@ class TieredMerger:
                 scraped,
             )
 
+        # -- hiring.last_checked auto-set when hiring fields are present ----
+        if (
+            scraped.hiring_is_hiring is not None
+            or scraped.hiring_tech_stack
+            or scraped.hiring_positions
+        ):
+            _set_nested(product, "hiring.last_checked", date.today().isoformat())
+
         # -- social links from extra (mirrors create_new logic) --------------
         for extra_key, json_path in _SOCIAL_LINK_MAP.items():
             val = scraped.extra.get(extra_key)
@@ -258,6 +270,8 @@ class TieredMerger:
 
         # -- persist --------------------------------------------------------
         self._write(filepath, product)
+        if self._db is not None:
+            self._db.upsert(product)
         return product
 
     def create_new(self, slug: str, scraped: ScrapedProduct) -> dict[str, Any]:
@@ -443,6 +457,8 @@ class TieredMerger:
         filepath = PRODUCTS_DIR / f"{slug}.json"
         filepath.parent.mkdir(parents=True, exist_ok=True)
         self._write(filepath, product)
+        if self._db is not None:
+            self._db.upsert(product)
         return product
 
     # -- slug validation ----------------------------------------------------

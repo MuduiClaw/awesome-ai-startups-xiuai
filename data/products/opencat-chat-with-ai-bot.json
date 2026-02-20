@@ -4,11 +4,11 @@
   "product_url": "https://opencat.app",
   "description": "OpenCat is a natively supported AI utility tool for Mac, iPhone, and iPad that seamlessly integrates AI into your daily routine. It is completely ad-free and features an elegantly intuitive interface that is simple and user-friendly. OpenCat delivers a smooth AI experience, offering support for the latest popular models (INCLUDING DeepSeek R1). It also includes convenient keyboard extensions, realistic voice synthesis, and integration with automated shortcuts.\n\nOpenCat allows seamless switchi...",
   "product_type": "app",
-  "category": "ai-application",
+  "category": "ai-chatbot-agent",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "app_store",
@@ -83,10 +83,10 @@
         "updated_at": "2026-02-16"
       },
       "platforms": {
-        "source": "app_store",
-        "tier": 2,
-        "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       },
       "pricing": {
         "source": "app_store",
@@ -135,6 +135,84 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "description_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -153,7 +231,10 @@
   "company": {
     "name": "Early Moon, LLC",
     "url": "https://opencat.app",
-    "website": "https://opencat.app"
+    "website": "https://opencat.app",
+    "name_zh": "Early Moon, LLC",
+    "description": "Native AI utility tool for Apple devices with ad-free experience and intuitive interface.",
+    "employee_count_range": "1-10"
   },
   "icon_url": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/cd/ff/20/cdff20d0-3642-bca3-47c0-3b419669c5fd/AppIcon-0-1x_U007epad-0-1-0-85-220-0.png/512x512bb.jpg",
   "tags": [
@@ -169,7 +250,8 @@
     "ZH"
   ],
   "platforms": [
-    "ios"
+    "ios",
+    "desktop"
   ],
   "pricing": {
     "model": "free",
@@ -195,5 +277,40 @@
     "Markdown rendering",
     "Prompt library",
     "Multiple models"
+  ],
+  "target_audience": [
+    "developers",
+    "enterprises",
+    "general-users",
+    "apple-users",
+    "productivity-enthusiasts",
+    "ai-enthusiasts"
+  ],
+  "use_cases": [
+    "ai-chat",
+    "conversational-ai",
+    "voice-assistant",
+    "voice-synthesis",
+    "speech-recognition",
+    "text-generation",
+    "image-generation",
+    "translation"
+  ],
+  "name_zh": "OpenCat - 与AI聊天",
+  "description_zh": "Mac、iPhone和iPad的原生AI工具，无广告，界面简洁易用。",
+  "open_source": false,
+  "api_available": false,
+  "hiring": {
+    "is_hiring": false,
+    "careers_url": "",
+    "tech_stack": [
+      "Swift",
+      "OpenAI API"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "modalities": [
+    "text",
+    "image"
   ]
 }

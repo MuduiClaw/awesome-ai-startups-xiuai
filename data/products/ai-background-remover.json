@@ -4,11 +4,11 @@
   "product_url": "https://backfire-2d80c.firebaseapp.com/",
   "description": "With the power of Machine Learning, removing background has never been this easy.\nAll of the processes will stay within your phone, we do not upload your image to processing.\nJust one click, and let the power of AI do the rest.",
   "product_type": "app",
-  "category": "ai-application",
+  "category": "ai-education",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "app_store",
@@ -83,10 +83,10 @@
         "updated_at": "2026-02-16"
       },
       "platforms": {
-        "source": "app_store",
-        "tier": 2,
-        "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       },
       "pricing": {
         "source": "app_store",
@@ -135,6 +135,84 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "description_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -168,7 +246,10 @@
   "company": {
     "name": "Tuan Huynh",
     "url": "https://backfire-2d80c.firebaseapp.com",
-    "website": "https://backfire-2d80c.firebaseapp.com"
+    "website": "https://backfire-2d80c.firebaseapp.com",
+    "name_zh": "Tuan Huynh",
+    "description": "Mobile application using machine learning for on-device background removal without cloud processing.",
+    "employee_count_range": "1-10"
   },
   "icon_url": "https://is1-ssl.mzstatic.com/image/thumb/Purple122/v4/b9/ad/55/b9ad5592-aad2-45b6-20ac-2186d7b8e270/AppIcon-1x_U007emarketing-0-10-0-85-220.png/512x512bb.jpg",
   "tags": [
@@ -187,7 +268,8 @@
     "VI"
   ],
   "platforms": [
-    "ios"
+    "ios",
+    "android"
   ],
   "pricing": {
     "model": "free",
@@ -226,5 +308,37 @@
     "Local processing",
     "Free tool",
     "Transparent background"
+  ],
+  "target_audience": [
+    "students",
+    "educators",
+    "researchers",
+    "photographers",
+    "content-creators",
+    "social-media-users"
+  ],
+  "use_cases": [
+    "photo-editing",
+    "image-manipulation",
+    "background-removal",
+    "image-editing",
+    "video-editing",
+    "portrait-retouching"
+  ],
+  "name_zh": "AI背景移除器",
+  "description_zh": "机器学习驱动的背景移除应用，处理在本地手机进行。",
+  "open_source": false,
+  "api_available": false,
+  "hiring": {
+    "is_hiring": false,
+    "careers_url": "",
+    "tech_stack": [
+      "Kotlin",
+      "TensorFlow Lite"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "modalities": [
+    "image"
   ]
 }

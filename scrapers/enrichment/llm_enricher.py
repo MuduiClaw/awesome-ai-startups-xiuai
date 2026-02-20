@@ -59,8 +59,6 @@ _VALID_PRODUCT_TYPES = (
 )
 _VALID_CATEGORIES = (
     "ai-foundation-model",
-    "ai-application",
-    "ai-creative-media",
     "ai-dev-platform",
     "ai-infrastructure",
     "ai-data-platform",
@@ -68,7 +66,20 @@ _VALID_CATEGORIES = (
     "ai-hardware",
     "ai-security-governance",
     "ai-science-research",
-    "ai-enterprise-vertical",
+    "ai-image-design",
+    "ai-video-animation",
+    "ai-audio-music",
+    "ai-chatbot-agent",
+    "ai-writing-content",
+    "ai-productivity",
+    "ai-education",
+    "ai-marketing-commerce",
+    "ai-social-entertainment",
+    "ai-customer-service",
+    "ai-translation",
+    "ai-finance-legal",
+    "ai-hr-recruiting",
+    "ai-sales-crm",
 )
 _VALID_STATUSES = (
     "active",
@@ -81,6 +92,7 @@ _VALID_STATUSES = (
 _VALID_PRICING_MODELS = (
     "free",
     "freemium",
+    "free-trial",
     "paid",
     "enterprise",
     "open-source",

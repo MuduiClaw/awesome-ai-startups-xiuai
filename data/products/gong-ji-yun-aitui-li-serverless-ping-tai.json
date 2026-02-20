@@ -4,11 +4,11 @@
   "product_url": "https://console.suanli.cn/auth/login?invite_code=M3TZzabQSE",
   "description": "共绩云AI推理Serverless GPU平台，提供极致弹性、部署极简、资源丰富且价格低至1.68元/小时的RTX 4090",
   "product_type": "other",
-  "category": "ai-application",
+  "category": "ai-chatbot-agent",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "ainav",
@@ -81,6 +81,90 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "keywords": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "platforms": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "sub_category": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -95,10 +179,66 @@
   "description_zh": "共绩云AI推理Serverless GPU平台，提供极致弹性、部署极简、资源丰富且价格低至1.68元/小时的RTX 4090",
   "company": {
     "name": "共绩云AI推理 Serverless 平台",
-    "url": "https://console.suanli.cn"
+    "url": "https://console.suanli.cn",
+    "name_zh": "共绩云",
+    "description": "Chinese serverless AI inference platform offering affordable GPU computing resources.",
+    "employee_count_range": "11-50"
   },
   "icon_url": "https://www.ainav.cn/wp-content/uploads/2025/05/1748592215-favicon.ico",
   "tags": [
     "AI算力平台"
+  ],
+  "keywords": [
+    "共绩云AI推理 Serverless 平台",
+    "ai chatbot agent",
+    "AI算力平台",
+    "AI",
+    "Serverless",
+    "GPU",
+    "共绩云",
+    "推理",
+    "平台",
+    "提供极致弹性",
+    "部署极简",
+    "资源丰富且价格低至",
+    "小时的",
+    "other"
+  ],
+  "platforms": [
+    "web",
+    "api",
+    "cli"
+  ],
+  "target_audience": [
+    "developers",
+    "enterprises",
+    "general-users",
+    "ai-researchers",
+    "startups"
+  ],
+  "use_cases": [
+    "ai-chat",
+    "virtual-assistant",
+    "task-automation",
+    "ai-inference",
+    "model-deployment",
+    "gpu-computing"
+  ],
+  "sub_category": "gpu-cloud",
+  "open_source": false,
+  "api_available": true,
+  "hiring": {
+    "is_hiring": true,
+    "careers_url": "",
+    "tech_stack": [
+      "Kubernetes",
+      "NVIDIA-CUDA",
+      "Python",
+      "Go"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "modalities": [
+    "multimodal"
   ]
 }

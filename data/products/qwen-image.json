@@ -4,11 +4,11 @@
   "product_url": "https://qwenimage.ai",
   "description": "AI for stunning visuals, multilingual text rendering, and precise image editing.",
   "product_type": "app",
-  "category": "ai-creative-media",
+  "category": "ai-image-design",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "toolify",
@@ -105,6 +105,96 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "open_source": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "platforms": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "description_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "competitors": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -123,7 +213,10 @@
   "company": {
     "name": "Qwen Image",
     "url": "https://qwenimage.ai",
-    "website": "https://qwenimage.ai"
+    "website": "https://qwenimage.ai",
+    "name_zh": "阿里巴巴",
+    "description": "AI image generation and editing tool with multilingual text rendering and advanced editing features.",
+    "employee_count_range": "51-200"
   },
   "icon_url": "https://cdn-images.toolify.ai/website-logos/20250805/1754356916_86309681_27580.webp",
   "sub_category": "ai image generator",
@@ -158,5 +251,42 @@
   "pricing": {
     "model": "free",
     "has_free_tier": true
-  }
+  },
+  "open_source": true,
+  "platforms": [
+    "web",
+    "api"
+  ],
+  "target_audience": [
+    "designers",
+    "content-creators",
+    "marketers",
+    "enterprises"
+  ],
+  "use_cases": [
+    "photo-editing",
+    "image-manipulation",
+    "image-generation",
+    "multilingual-text"
+  ],
+  "name_zh": "Qwen Image",
+  "description_zh": "支持多语言文本渲染和精准图像编辑的AI图像生成工具。",
+  "api_available": true,
+  "hiring": {
+    "is_hiring": true,
+    "careers_url": "https://careers.alibaba.com",
+    "tech_stack": [
+      "PyTorch",
+      "Python",
+      "Alibaba Cloud"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "modalities": [
+    "text",
+    "image"
+  ],
+  "competitors": [
+    "midjourney"
+  ]
 }

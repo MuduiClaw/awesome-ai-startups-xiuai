@@ -4,11 +4,11 @@
   "product_url": "https://sellraze.com",
   "description": "AI-powered cross-listing app for fast and efficient online selling.",
   "product_type": "app",
-  "category": "ai-enterprise-vertical",
+  "category": "ai-sales-crm",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "toolify",
@@ -93,6 +93,78 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "platforms": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "description_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "competitors": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -106,7 +178,9 @@
   "company": {
     "name": "SellRaze",
     "url": "https://sellraze.com",
-    "website": "https://sellraze.com"
+    "website": "https://sellraze.com",
+    "name_zh": "SellRaze",
+    "description": "AI-powered cross-listing platform for multi-channel ecommerce"
   },
   "icon_url": "https://cdn-images.toolify.ai/website-logos/20250411/1744350833_46977543_23773.webp",
   "sub_category": "ai sales",
@@ -130,5 +204,36 @@
   "pricing": {
     "model": "enterprise",
     "has_free_tier": false
-  }
+  },
+  "platforms": [
+    "web"
+  ],
+  "target_audience": [
+    "sales-professionals",
+    "enterprises",
+    "marketers",
+    "ecommerce-sellers",
+    "multi-channel-sellers"
+  ],
+  "use_cases": [
+    "lead-generation",
+    "sales-automation",
+    "crm-management",
+    "cross-listing",
+    "listing-sync",
+    "multi-channel-selling"
+  ],
+  "name_zh": "SellRaze交叉列表",
+  "description_zh": "AI驱动的交叉列表应用，实现快速高效的在线销售",
+  "open_source": false,
+  "api_available": true,
+  "hiring": {
+    "careers_url": ""
+  },
+  "modalities": [
+    "text"
+  ],
+  "competitors": [
+    "sellmate-ai"
+  ]
 }

@@ -4,11 +4,11 @@
   "product_url": "https://viggle.ai/",
   "description": "AI生成可控的角色动态视频的工具",
   "product_type": "other",
-  "category": "ai-application",
+  "category": "ai-video-animation",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "aibot",
@@ -71,10 +71,10 @@
         "updated_at": "2026-02-16"
       },
       "tags": {
-        "source": "toolify",
+        "source": "ainav",
         "tier": 2,
         "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "updated_at": "2026-02-18"
       },
       "sub_category": {
         "source": "toolify",
@@ -105,6 +105,78 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "platforms": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "ainav",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-18"
+      },
+      "name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -123,13 +195,21 @@
       "url": "https://www.toolify.ai/tool/viggle",
       "source_name": "toolify",
       "scraped_at": "2026-02-16"
+    },
+    {
+      "url": "https://www.ainav.cn",
+      "source_name": "ainav",
+      "scraped_at": "2026-02-18"
     }
   ],
   "description_zh": "AI生成可控的角色动态视频的工具",
   "company": {
     "name": "Viggle",
     "url": "https://viggle.ai",
-    "website": "https://viggleai.io"
+    "website": "https://viggleai.io",
+    "name_zh": "Viggle",
+    "description": "AI tool for generating controllable character animation videos with various effects",
+    "employee_count_range": "1-10"
   },
   "icon_url": "https://ai-bot.cn/wp-content/uploads/2024/04/viggle-ai-icon.png",
   "tags": [
@@ -138,7 +218,8 @@
     "AI Video Generator",
     "Image to Video",
     "AI Meme Generator",
-    "AI Face Swap Video"
+    "AI Face Swap Video",
+    "AI视频工具"
   ],
   "sub_category": "ai animation generator",
   "pricing": {
@@ -163,5 +244,35 @@
     "VFX",
     "AI tool",
     "Video editing"
+  ],
+  "platforms": [
+    "web"
+  ],
+  "target_audience": [
+    "content-creators",
+    "video-editors",
+    "marketers",
+    "animators",
+    "designers"
+  ],
+  "use_cases": [
+    "video-generation",
+    "video-editing",
+    "animation",
+    "character-animation",
+    "motion-control"
+  ],
+  "hiring": {
+    "careers_url": "",
+    "is_hiring": false,
+    "last_checked": "2026-02-20"
+  },
+  "name_zh": "Viggle",
+  "open_source": false,
+  "api_available": false,
+  "modalities": [
+    "text",
+    "image",
+    "video"
   ]
 }

@@ -4,11 +4,11 @@
   "product_url": "https://cloud.siliconflow.cn/i/SjhsJgfH",
   "description": "生成式AI计算基础设施平台",
   "product_type": "other",
-  "category": "ai-application",
+  "category": "ai-chatbot-agent",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "aibot",
@@ -83,16 +83,100 @@
         "updated_at": "2026-02-16"
       },
       "use_cases": {
-        "source": "theresanaiforthat",
-        "tier": 2,
-        "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       },
       "sub_category": {
         "source": "toolify",
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "api_available": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "keywords": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "platforms": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "theresanaiforthat",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-18"
+      },
+      "name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "competitors": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -117,7 +201,10 @@
   "company": {
     "name": "SiliconFlow",
     "url": "https://cloud.siliconflow.cn",
-    "website": "https://www.siliconflow.com"
+    "website": "https://www.siliconflow.com",
+    "name_zh": "硅基流",
+    "description": "Chinese generative AI infrastructure and inference platform.",
+    "employee_count_range": "11-50"
   },
   "icon_url": "https://ai-bot.cn/wp-content/uploads/2025/06/SiliconFlow-logo.png",
   "tags": [
@@ -129,7 +216,55 @@
     "AI Models"
   ],
   "use_cases": [
-    "AI inference"
+    "AI inference",
+    "ai-infrastructure",
+    "model-deployment",
+    "inference-api",
+    "model-hosting"
   ],
-  "sub_category": "ai developer tools"
+  "sub_category": "ai developer tools",
+  "api_available": true,
+  "keywords": [
+    "SiliconFlow",
+    "ai chatbot agent",
+    "ai developer tools",
+    "ai frameworks",
+    "AI inference",
+    "AI API",
+    "AI Models",
+    "AI",
+    "生成式",
+    "计算基础设施平台",
+    "other"
+  ],
+  "platforms": [
+    "api",
+    "web"
+  ],
+  "target_audience": [
+    "developers",
+    "enterprises",
+    "general-users",
+    "ai-researchers"
+  ],
+  "hiring": {
+    "careers_url": "",
+    "is_hiring": true,
+    "tech_stack": [
+      "Python",
+      "CUDA",
+      "Docker"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "name_zh": "硅基流",
+  "open_source": false,
+  "modalities": [
+    "text",
+    "image",
+    "multimodal"
+  ],
+  "competitors": [
+    "together-ai"
+  ]
 }

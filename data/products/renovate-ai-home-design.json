@@ -4,11 +4,11 @@
   "product_url": "https://renovateai.app",
   "description": "Discover the future of home design, architectural design, and home renovation with Renovate AI, your go-to solution for creating stunning interiors, exteriors, and landscapes. \n\nWhether you're planning a full home design or design a room project, our cutting-edge technology simplifies every step in your design space. With our powerful features as an AI room planner and home planner, Renovate AI empowers you to transform your home into the space you’ve always envisioned. Everything you need, f...",
   "product_type": "app",
-  "category": "ai-application",
+  "category": "ai-image-design",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "app_store",
@@ -83,10 +83,10 @@
         "updated_at": "2026-02-16"
       },
       "platforms": {
-        "source": "app_store",
-        "tier": 2,
-        "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       },
       "pricing": {
         "source": "app_store",
@@ -135,6 +135,90 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "description_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "competitors": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -153,7 +237,10 @@
   "company": {
     "name": "Trial and Error, Inc",
     "url": "https://renovateai.app",
-    "website": "https://renovateai.app"
+    "website": "https://renovateai.app",
+    "name_zh": "Trial and Error, Inc",
+    "description": "Renovate AI is a home design solution for creating interior and exterior visualizations.",
+    "employee_count_range": "1-10"
   },
   "icon_url": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/5e/16/8c/5e168c06-4d79-df47-bec7-0a52e3ba4c7d/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
   "tags": [
@@ -166,7 +253,8 @@
     "EN"
   ],
   "platforms": [
-    "ios"
+    "ios",
+    "web"
   ],
   "pricing": {
     "model": "free",
@@ -189,5 +277,36 @@
     "AI",
     "Image upscaling",
     "Object removal"
+  ],
+  "target_audience": [
+    "designers",
+    "content-creators",
+    "marketers",
+    "homeowners"
+  ],
+  "use_cases": [
+    "interior-design",
+    "room-visualization",
+    "home-design"
+  ],
+  "name_zh": "Renovate AI - 家居设计",
+  "description_zh": "未来家居设计解决方案，创建室内、户外和景观可视化效果。",
+  "open_source": false,
+  "api_available": false,
+  "hiring": {
+    "is_hiring": false,
+    "careers_url": "",
+    "tech_stack": [
+      "Swift",
+      "React",
+      "TensorFlow"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "modalities": [
+    "image"
+  ],
+  "competitors": [
+    "rendair-ai-platform"
   ]
 }

@@ -4,11 +4,11 @@
   "product_url": "https://meeting.iflyrec.com/",
   "description": "AI智能会议系统，实时字幕、实时翻译、自动生成会议记录",
   "product_type": "other",
-  "category": "ai-application",
+  "category": "ai-productivity",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "aibot",
@@ -87,6 +87,72 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "keywords": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "platforms": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -101,11 +167,55 @@
   "description_zh": "AI智能会议系统，实时字幕、实时翻译、自动生成会议记录",
   "company": {
     "name": "讯飞会议",
-    "url": "https://meeting.iflyrec.com"
+    "url": "https://meeting.iflyrec.com",
+    "name_zh": "科大讯飞",
+    "description": "iFLYTEK's AI-powered meeting platform with transcription and real-time translation",
+    "employee_count_range": "51-200"
   },
   "icon_url": "https://ai-bot.cn/wp-content/uploads/2024/09/meeting-iflyrec-logo.png",
   "sub_category": "meeting-assistant",
   "tags": [
     "ai-meeting-tools"
+  ],
+  "keywords": [
+    "讯飞会议",
+    "ai productivity",
+    "meeting assistant",
+    "ai meeting tools",
+    "AI",
+    "智能会议系统",
+    "实时字幕",
+    "实时翻译",
+    "自动生成会议记录",
+    "other"
+  ],
+  "platforms": [
+    "web",
+    "desktop"
+  ],
+  "target_audience": [
+    "professionals",
+    "teams",
+    "enterprises",
+    "remote-teams",
+    "meeting-organizers"
+  ],
+  "use_cases": [
+    "workflow-automation",
+    "document-management",
+    "task-management",
+    "meeting-transcription",
+    "real-time-translation",
+    "meeting-notes"
+  ],
+  "open_source": false,
+  "hiring": {
+    "is_hiring": true,
+    "careers_url": "",
+    "last_checked": "2026-02-20"
+  },
+  "modalities": [
+    "audio",
+    "text"
   ]
 }

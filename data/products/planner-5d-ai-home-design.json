@@ -4,11 +4,11 @@
   "product_url": "https://planner5d.com",
   "description": "Planner 5D is the top-rated AI Home Design and Room Planner app that makes interior design effortless. Easily create detailed 2D & 3D floor plans, explore a catalog of over 8,400 furniture and decor items, and generate stunning, realistic images of your future home.\n\n▶ #1 HOUSE DESIGN TOOL\n\nWhether you want to design space for your home interior or need a garden planner to help with your backyard, Planner 5D is here to support you on your design journey. From floor plans to room designs in ju...",
   "product_type": "app",
-  "category": "ai-application",
+  "category": "ai-image-design",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "app_store",
@@ -83,10 +83,10 @@
         "updated_at": "2026-02-16"
       },
       "platforms": {
-        "source": "app_store",
-        "tier": 2,
-        "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       },
       "pricing": {
         "source": "app_store",
@@ -135,6 +135,84 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "description_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -153,7 +231,10 @@
   "company": {
     "name": "Planner5D, UAB",
     "url": "https://planner5d.com",
-    "website": "https://planner5d.com"
+    "website": "https://planner5d.com",
+    "name_zh": "Planner5D",
+    "description": "Leading AI-powered interior design and room planning platform enabling users to create professional 2D/3D floor plans with extensive furniture catalog.",
+    "employee_count_range": "11-50"
   },
   "icon_url": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/ec/a3/cf/eca3cf41-2dc0-5045-b544-4416e5c721e6/AppIcon-0-0-1x_U007epad-0-1-0-85-220.png/512x512bb.jpg",
   "tags": [
@@ -191,7 +272,9 @@
     "VI"
   ],
   "platforms": [
-    "ios"
+    "ios",
+    "web",
+    "android"
   ],
   "pricing": {
     "model": "free",
@@ -214,5 +297,41 @@
     "Kitchen Planner",
     "Bathroom Planner",
     "Landscape Design"
+  ],
+  "target_audience": [
+    "designers",
+    "content-creators",
+    "marketers",
+    "homeowners",
+    "interior-designers",
+    "architects",
+    "real-estate-professionals"
+  ],
+  "use_cases": [
+    "interior-design",
+    "room-visualization",
+    "floor-plan-design",
+    "3d-visualization",
+    "interior-decoration",
+    "furniture-planning"
+  ],
+  "name_zh": "Planner 5D: AI家居设计",
+  "description_zh": "AI驱动的室内设计工具，可创建2D/3D平面图、可视化家居和探索8400+家具项目。",
+  "open_source": false,
+  "api_available": false,
+  "hiring": {
+    "is_hiring": true,
+    "careers_url": "https://planner5d.com/careers",
+    "tech_stack": [
+      "React",
+      "Three.js",
+      "Node.js",
+      "AWS"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "modalities": [
+    "image",
+    "3d"
   ]
 }

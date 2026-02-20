@@ -4,11 +4,11 @@
   "product_url": "https://quantifind.com",
   "description": "AI-powered risk screening and investigations platform for AML-KYC compliance.",
   "product_type": "app",
-  "category": "ai-enterprise-vertical",
+  "category": "ai-finance-legal",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-18",
     "provenance": {
       "name": {
         "source": "toolify",
@@ -93,6 +93,30 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "api_available": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "platforms": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "target_audience": {
+        "source": "rule-based-seo",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-18"
+      },
+      "use_cases": {
+        "source": "rule-based-seo",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-18"
       }
     }
   },
@@ -136,5 +160,20 @@
   "pricing": {
     "model": "enterprise",
     "has_free_tier": false
-  }
+  },
+  "api_available": true,
+  "platforms": [
+    "api"
+  ],
+  "target_audience": [
+    "finance-professionals",
+    "lawyers",
+    "enterprises"
+  ],
+  "use_cases": [
+    "workflow-automation",
+    "process-optimization",
+    "api-integration",
+    "model-access"
+  ]
 }

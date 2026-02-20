@@ -4,11 +4,11 @@
   "product_url": "https://www.bing.com/new",
   "description": "New Bing 是一个人工智能搜索引擎，可以对复杂的问题提供详细的回答，并作为一种创造性的工具来帮助用户写故事、诗歌或为项目产生想法。",
   "product_type": "other",
-  "category": "ai-application",
+  "category": "ai-chatbot-agent",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "ainav",
@@ -87,6 +87,90 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "keywords": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "platforms": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "ainav",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-18"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "competitors": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -110,7 +194,10 @@
   "description_zh": "New Bing 是一个人工智能搜索引擎，可以对复杂的问题提供详细的回答，并作为一种创造性的工具来帮助用户写故事、诗歌或为项目产生想法。",
   "company": {
     "name": "New Bing",
-    "url": "https://www.bing.com/new"
+    "url": "https://www.bing.com/new",
+    "name_zh": "微软",
+    "description": "Microsoft's AI-powered search engine providing detailed answers to complex queries with creative writing and content generation capabilities.",
+    "employee_count_range": "1001-5000"
   },
   "icon_url": "https://www.ainav.cn/wp-content/uploads/2023/03/new-bing-icon.png",
   "sub_category": "chatbot",
@@ -119,5 +206,60 @@
     "ai-translation-tools",
     "ai-image-generators"
   ],
-  "name_zh": "必应翻译"
+  "name_zh": "必应翻译",
+  "keywords": [
+    "New Bing",
+    "必应翻译",
+    "ai chatbot agent",
+    "chatbot",
+    "AI对话聊天",
+    "ai translation tools",
+    "ai image generators",
+    "Bing",
+    "是一个人工智能搜索引擎",
+    "可以对复杂的问题提供详细的回答",
+    "并作为一种创造性的工具来帮助用户写故事",
+    "诗歌或为项目产生想法",
+    "other"
+  ],
+  "platforms": [
+    "web"
+  ],
+  "target_audience": [
+    "developers",
+    "enterprises",
+    "general-users",
+    "researchers",
+    "writers",
+    "students",
+    "content-creators"
+  ],
+  "use_cases": [
+    "ai-chat",
+    "virtual-assistant",
+    "task-automation",
+    "search",
+    "content-generation",
+    "creative-writing",
+    "idea-brainstorming"
+  ],
+  "hiring": {
+    "careers_url": "",
+    "is_hiring": true,
+    "tech_stack": [
+      "Azure",
+      "GPT",
+      "C#"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "open_source": false,
+  "api_available": false,
+  "modalities": [
+    "text",
+    "image"
+  ],
+  "competitors": [
+    "chatgpt"
+  ]
 }

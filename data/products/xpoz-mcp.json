@@ -4,11 +4,11 @@
   "product_url": "https://www.xpoz.ai",
   "description": "Enable LLMs to search and analyze live social media through natural language.",
   "product_type": "app",
-  "category": "ai-application",
+  "category": "ai-social-entertainment",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "theresanaiforthat",
@@ -77,10 +77,10 @@
         "updated_at": "2026-02-16"
       },
       "use_cases": {
-        "source": "theresanaiforthat",
-        "tier": 2,
-        "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       },
       "sub_category": {
         "source": "toolify",
@@ -105,6 +105,78 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "api_available": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "platforms": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "theresanaiforthat",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-18"
+      },
+      "name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "description_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -123,7 +195,10 @@
   "company": {
     "name": "Xpoz MCP",
     "url": "https://www.xpoz.ai",
-    "website": "https://www.xpoz.ai"
+    "website": "https://www.xpoz.ai",
+    "name_zh": "Xpoz MCP",
+    "description": "Enable LLMs to search and analyze live social media through natural language interface.",
+    "employee_count_range": "1-10"
   },
   "icon_url": "https://media.theresanaiforthat.com/icons/xpoz-mcp.svg?height=207",
   "tags": [
@@ -136,7 +211,10 @@
     "AI API"
   ],
   "use_cases": [
-    "Social media analysis"
+    "Social media analysis",
+    "social-media-analysis",
+    "trend-monitoring",
+    "data-research"
   ],
   "sub_category": "ai social media",
   "pricing": {
@@ -159,5 +237,29 @@
     "Brand Monitoring",
     "Sentiment Analysis",
     "Social Listening"
+  ],
+  "api_available": true,
+  "platforms": [
+    "api"
+  ],
+  "target_audience": [
+    "general-users",
+    "content-creators",
+    "influencers",
+    "researchers",
+    "marketers",
+    "data-analysts",
+    "enterprises"
+  ],
+  "hiring": {
+    "careers_url": "",
+    "is_hiring": false,
+    "last_checked": "2026-02-20"
+  },
+  "name_zh": "Xpoz MCP",
+  "description_zh": "支持LLM通过自然语言搜索和分析实时社交媒体的工具",
+  "open_source": false,
+  "modalities": [
+    "text"
   ]
 }

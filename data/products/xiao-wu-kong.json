@@ -4,11 +4,11 @@
   "product_url": "https://wukong.com",
   "description": "小悟空原是字节跳动推出的综合类搜索引擎“悟空搜索”，现已更名并转型为 AI 对话助手",
   "product_type": "other",
-  "category": "ai-application",
+  "category": "ai-chatbot-agent",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "ainav",
@@ -87,6 +87,78 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "keywords": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "platforms": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "ainav",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-18"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -106,12 +178,59 @@
   "description_zh": "小悟空原是字节跳动推出的综合类搜索引擎“悟空搜索”，现已更名并转型为 AI 对话助手",
   "company": {
     "name": "小悟空",
-    "url": "https://wukong.com"
+    "url": "https://wukong.com",
+    "name_zh": "字节跳动",
+    "description": "ByteDance's AI conversation and search assistant, evolved from Wukong Search engine.",
+    "employee_count_range": "51-200"
   },
   "icon_url": "https://www.ainav.cn/wp-content/uploads/2024/01/c6db5-wukong.com.png",
   "sub_category": "chatbot",
   "tags": [
     "AI对话聊天",
     "ai-chatbots"
+  ],
+  "keywords": [
+    "小悟空",
+    "ai chatbot agent",
+    "chatbot",
+    "AI对话聊天",
+    "ai chatbots",
+    "AI",
+    "小悟空原是字节跳动推出的综合类搜索引擎",
+    "悟空搜索",
+    "现已更名并转型为",
+    "对话助手",
+    "other"
+  ],
+  "platforms": [
+    "web",
+    "ios",
+    "android"
+  ],
+  "target_audience": [
+    "developers",
+    "enterprises",
+    "general-users",
+    "students",
+    "researchers",
+    "professionals"
+  ],
+  "use_cases": [
+    "ai-chat",
+    "virtual-assistant",
+    "task-automation",
+    "information-search",
+    "ai-conversation",
+    "question-answering"
+  ],
+  "hiring": {
+    "careers_url": "",
+    "is_hiring": true,
+    "last_checked": "2026-02-20"
+  },
+  "open_source": false,
+  "api_available": false,
+  "modalities": [
+    "text"
   ]
 }

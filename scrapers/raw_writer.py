@@ -13,18 +13,20 @@ def _make_filename(item: dict[str, object], index: int) -> str:
     """Derive a filename from a raw item dict.
 
     Priority:
-    1. Source-specific ID fields (id, appId, trackId, handle, tool_id).
-    2. Product name slugified and truncated to 50 chars.
+    1. Product name slugified and truncated to 50 chars.
+       Checks common name fields: name, title, trackName, trackCensoredName.
+    2. Source-specific ID fields (id, appId, trackId, handle, tool_id).
     3. Fallback: zero-padded index.
     """
+    for key in ("name", "title", "trackName", "trackCensoredName"):
+        value = item.get(key)
+        if isinstance(value, str) and value.strip():
+            return _safe_filename(value.strip()[:50])
+
     for key in ("id", "appId", "trackId", "handle", "tool_id"):
         value = item.get(key)
         if value is not None:
             return _safe_filename(str(value))
-
-    name = item.get("name")
-    if isinstance(name, str) and name.strip():
-        return _safe_filename(name.strip()[:50])
 
     return f"{index:04d}"
 

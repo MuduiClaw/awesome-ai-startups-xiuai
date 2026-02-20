@@ -177,8 +177,6 @@ _COMPILED_RULES: list[tuple[re.Pattern[str], list[str]]] = [
 
 _CATEGORY_TAGS: dict[str, list[str]] = {
     "ai-foundation-model": ["nlp", "researchers"],
-    "ai-application": ["consumers"],
-    "ai-creative-media": ["creators", "content-creation"],
     "ai-dev-platform": ["developers"],
     "ai-infrastructure": ["developers", "enterprises"],
     "ai-data-platform": ["data-analysis", "data-scientists"],
@@ -186,7 +184,20 @@ _CATEGORY_TAGS: dict[str, list[str]] = {
     "ai-hardware": ["robotics"],
     "ai-security-governance": ["enterprises"],
     "ai-science-research": ["researchers", "research"],
-    "ai-enterprise-vertical": ["enterprises", "b2b"],
+    "ai-image-design": ["creators", "content-creation"],
+    "ai-video-animation": ["creators", "content-creation"],
+    "ai-audio-music": ["creators", "content-creation"],
+    "ai-chatbot-agent": ["chatbot", "consumers"],
+    "ai-writing-content": ["writing-assistant", "consumers"],
+    "ai-productivity": ["consumers"],
+    "ai-education": ["education-tutoring", "consumers"],
+    "ai-marketing-commerce": ["marketing", "enterprises"],
+    "ai-social-entertainment": ["consumers"],
+    "ai-customer-service": ["customer-support", "enterprises"],
+    "ai-translation": ["translation", "consumers"],
+    "ai-finance-legal": ["finance-accounting", "enterprises"],
+    "ai-hr-recruiting": ["hr-recruiting", "enterprises"],
+    "ai-sales-crm": ["sales-crm", "enterprises", "b2b"],
 }
 
 # ── Sub-category → tag mappings ──────────────────────────────────────────────

@@ -4,11 +4,11 @@
   "product_url": "https://singify.co/vocal-remover",
   "description": "Split any song into vocals and instrumentals instantly.",
   "product_type": "app",
-  "category": "ai-application",
+  "category": "ai-audio-music",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "theresanaiforthat",
@@ -77,10 +77,10 @@
         "updated_at": "2026-02-16"
       },
       "use_cases": {
-        "source": "theresanaiforthat",
-        "tier": 2,
-        "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       },
       "sub_category": {
         "source": "toolify",
@@ -93,6 +93,78 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "platforms": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "description_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -111,7 +183,10 @@
   "company": {
     "name": "Singify AI Vocal Remover",
     "url": "https://singify.co/vocal-remover",
-    "website": "https://singify.co/vocal-remover"
+    "website": "https://singify.co/vocal-remover",
+    "name_zh": "Singify AI",
+    "description": "AI audio tool that instantly separates vocal and instrumental tracks from any song",
+    "employee_count_range": "1-10"
   },
   "icon_url": "https://media.theresanaiforthat.com/icons/singify-ai-vocal-remover.svg?height=207",
   "tags": [
@@ -121,10 +196,39 @@
     "AI Music Generator"
   ],
   "use_cases": [
-    "Vocal removal"
+    "Vocal removal",
+    "vocal-removal",
+    "karaoke-creation",
+    "music-editing"
   ],
   "sub_category": "ai audio splitter",
   "keywords": [
     "Effortlessly splits any song into distinct tracks and removes vocals from any song"
+  ],
+  "platforms": [
+    "web"
+  ],
+  "target_audience": [
+    "musicians",
+    "content-creators",
+    "podcasters",
+    "producers",
+    "audio-enthusiasts"
+  ],
+  "name_zh": "Singify AI 人声移除工具",
+  "description_zh": "即时将任何歌曲分离为人声和伴奏",
+  "open_source": false,
+  "api_available": true,
+  "hiring": {
+    "careers_url": "",
+    "tech_stack": [
+      "Python",
+      "PyTorch",
+      "Web Audio API"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "modalities": [
+    "audio"
   ]
 }

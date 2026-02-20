@@ -4,11 +4,11 @@
   "product_url": "https://github.com/speechmatics/speechmatics-python-sdk",
   "description": "Python SDK for Speechmatics speech recognition APIs.",
   "product_type": "app",
-  "category": "ai-application",
+  "category": "ai-writing-content",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "theresanaiforthat",
@@ -77,10 +77,10 @@
         "updated_at": "2026-02-16"
       },
       "use_cases": {
-        "source": "theresanaiforthat",
-        "tier": 2,
-        "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       },
       "name_zh": {
         "source": "ainav",
@@ -125,16 +125,76 @@
         "updated_at": "2026-02-16"
       },
       "platforms": {
-        "source": "app_store",
-        "tier": 2,
-        "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       },
       "keywords": {
         "source": "toolify",
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "open_source": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "ainav",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-18"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -243,7 +303,10 @@
   "company": {
     "name": "Speechmatics | Python SDK",
     "url": "https://github.com/speechmatics/speechmatics-python-sdk",
-    "website": "https://github.com/speechmatics/speechmatics-python-sdk"
+    "website": "https://github.com/speechmatics/speechmatics-python-sdk",
+    "name_zh": "Speechmatics",
+    "description": "Python SDK for Speechmatics speech recognition APIs",
+    "employee_count_range": "11-50"
   },
   "icon_url": "https://media.theresanaiforthat.com/icons/speechmatics-python-sdk.svg?height=207",
   "tags": [
@@ -269,7 +332,11 @@
     "AI For Data Analytics"
   ],
   "use_cases": [
-    "Transcription"
+    "Transcription",
+    "speech-recognition",
+    "api-integration",
+    "transcription",
+    "voice-processing"
   ],
   "name_zh": "Nano Banana图片生成提示词库",
   "description_zh": "100多条Nano-banana在各个任务场景下生成的令人惊艳的图片和提示词",
@@ -283,7 +350,8 @@
     "EN"
   ],
   "platforms": [
-    "ios"
+    "ios",
+    "api"
   ],
   "app_store": {
     "apple_store_url": "https://apps.apple.com/app/id6748571505",
@@ -380,5 +448,28 @@
     "Debugging",
     "Codebase understanding",
     "Vulnerability prevention"
+  ],
+  "open_source": true,
+  "target_audience": [
+    "developers",
+    "content-creators",
+    "marketers",
+    "writers",
+    "data-engineers",
+    "ml-engineers",
+    "devops"
+  ],
+  "hiring": {
+    "careers_url": "",
+    "is_hiring": false,
+    "tech_stack": [
+      "Python",
+      "REST API"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "api_available": true,
+  "modalities": [
+    "audio"
   ]
 }

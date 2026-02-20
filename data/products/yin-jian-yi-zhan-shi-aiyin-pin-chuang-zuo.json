@@ -4,11 +4,11 @@
   "product_url": "https://audioeditor.ximalaya.com/",
   "description": "是一个一站式音频创作平台，提供从播客创作、有声制作、AI创作百宝箱：AI分段、AI降噪、字幕下载、音量均衡、声音美化、智能配乐一系列功能",
   "product_type": "other",
-  "category": "ai-creative-media",
+  "category": "ai-audio-music",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "ainav",
@@ -87,6 +87,90 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "keywords": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "platforms": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "competitors": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -101,11 +185,71 @@
   "description_zh": "是一个一站式音频创作平台，提供从播客创作、有声制作、AI创作百宝箱：AI分段、AI降噪、字幕下载、音量均衡、声音美化、智能配乐一系列功能",
   "company": {
     "name": "音剪·一站式AI音频创作",
-    "url": "https://audioeditor.ximalaya.com"
+    "url": "https://audioeditor.ximalaya.com",
+    "name_zh": "音剪",
+    "description": "Comprehensive AI-powered audio creation platform for podcasts, audiobooks, and audio content production.",
+    "employee_count_range": "11-50"
   },
   "icon_url": "https://www.ainav.cn/wp-content/uploads/2024/03/8f94f-audioeditor.ximalaya.com.png",
   "sub_category": "audio-speech",
   "tags": [
     "AI音频工具"
+  ],
+  "keywords": [
+    "音剪·一站式AI音频创作",
+    "ai audio music",
+    "audio speech",
+    "AI音频工具",
+    "AI",
+    "是一个一站式音频创作平台",
+    "提供从播客创作",
+    "有声制作",
+    "创作百宝箱",
+    "分段",
+    "降噪",
+    "字幕下载",
+    "音量均衡",
+    "声音美化",
+    "智能配乐一系列功能",
+    "other"
+  ],
+  "platforms": [
+    "web"
+  ],
+  "target_audience": [
+    "musicians",
+    "content-creators",
+    "podcasters",
+    "audio-creators",
+    "content-producers",
+    "voiceover-artists"
+  ],
+  "use_cases": [
+    "music-generation",
+    "audio-editing",
+    "voice-synthesis",
+    "podcast-creation",
+    "voice-enhancement",
+    "auto-music-generation"
+  ],
+  "open_source": false,
+  "api_available": false,
+  "hiring": {
+    "is_hiring": true,
+    "careers_url": "",
+    "tech_stack": [
+      "Python",
+      "React",
+      "Node.js",
+      "Web Audio API"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "modalities": [
+    "audio",
+    "text"
+  ],
+  "competitors": [
+    "descript"
   ]
 }

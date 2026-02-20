@@ -4,11 +4,11 @@
   "product_url": "https://buninux.lemonsqueezy.com?aff=O0D1K",
   "description": "A collection of UI/UX tips for creating usable web applications.",
   "product_type": "app",
-  "category": "ai-application",
+  "category": "ai-image-design",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "toolify",
@@ -93,6 +93,90 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "platforms": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-18"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "name_zh": {
+        "source": "llm-batch-translation",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-18"
+      },
+      "description_zh": {
+        "source": "llm-batch-translation",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-18"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-translation",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-18"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-18"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-18"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-18"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-18"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-hiring",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-18"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-hiring",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-18"
+      },
+      "hiring.careers_url": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -106,7 +190,10 @@
   "company": {
     "name": "100 UI/UX Tips",
     "url": "https://buninux.lemonsqueezy.com?aff=O0D1K",
-    "website": "https://buninux.lemonsqueezy.com?aff=O0D1K"
+    "website": "https://buninux.lemonsqueezy.com?aff=O0D1K",
+    "name_zh": "100 UI/UX Tips",
+    "description": "BuninUX is an independent creator selling digital design education products through Lemon Squeezy.",
+    "employee_count_range": "1-10"
   },
   "icon_url": "https://cdn-images.toolify.ai/website-logos/20250410/1744258537_13660087_12929.webp",
   "sub_category": "other",
@@ -127,5 +214,43 @@
   "pricing": {
     "model": "paid",
     "has_free_tier": false
+  },
+  "platforms": [
+    "web"
+  ],
+  "target_audience": [
+    "designers",
+    "content-creators",
+    "marketers",
+    "developers",
+    "product-managers"
+  ],
+  "use_cases": [
+    "image-generation",
+    "image-editing",
+    "graphic-design",
+    "ui-design-learning",
+    "ux-best-practices",
+    "web-design",
+    "web-design-guidance",
+    "ux-principles"
+  ],
+  "name_zh": "100个UI/UX技巧",
+  "description_zh": "实用UI/UX技巧合集，帮助打造易用的Web应用。",
+  "open_source": false,
+  "api_available": false,
+  "modalities": [
+    "text",
+    "image"
+  ],
+  "hiring": {
+    "is_hiring": false,
+    "last_checked": "2026-02-20",
+    "careers_url": "",
+    "tech_stack": [
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ]
   }
 }

@@ -4,11 +4,11 @@
   "product_url": "https://tags.novelai.dev",
   "description": "标签超市（Danbooru 标签超市）是一个在线资源库，它为AI绘画和图像生成提供了丰富的标签选择。这个平台特别适用于使用Novel AI或类似模型进行创作的艺术家和设计师。其核心功能是提供一个庞大的标签库，这些标签涵盖了各种描述性词汇",
   "product_type": "other",
-  "category": "ai-application",
+  "category": "ai-writing-content",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "ainav",
@@ -87,6 +87,90 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "keywords": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "platforms": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "ainav",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-18"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "competitors": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -101,11 +185,70 @@
   "description_zh": "标签超市（Danbooru 标签超市）是一个在线资源库，它为AI绘画和图像生成提供了丰富的标签选择。这个平台特别适用于使用Novel AI或类似模型进行创作的艺术家和设计师。其核心功能是提供一个庞大的标签库，这些标签涵盖了各种描述性词汇",
   "company": {
     "name": "Danbooru 标签超市",
-    "url": "https://tags.novelai.dev"
+    "url": "https://tags.novelai.dev",
+    "name_zh": "Danbooru标签超市",
+    "description": "Chinese resource library providing AI art generation tags and descriptors.",
+    "employee_count_range": "1-10"
   },
   "icon_url": "https://www.ainav.cn/wp-content/uploads/2024/09/cb070-tags.novelai.dev.png",
   "sub_category": "prompt-engineering",
   "tags": [
     "AI提示词"
+  ],
+  "keywords": [
+    "Danbooru 标签超市",
+    "ai writing content",
+    "prompt engineering",
+    "AI提示词",
+    "Danbooru",
+    "AI",
+    "Novel",
+    "标签超市",
+    "是一个在线资源库",
+    "它为",
+    "绘画和图像生成提供了丰富的标签选择",
+    "这个平台特别适用于使用",
+    "或类似模型进行创作的艺术家和设计师",
+    "其核心功能是提供一个庞大的标签库",
+    "这些标签涵盖了各种描述性词汇",
+    "other"
+  ],
+  "platforms": [
+    "web"
+  ],
+  "target_audience": [
+    "content-creators",
+    "marketers",
+    "writers",
+    "artists",
+    "designers",
+    "ai-creators"
+  ],
+  "use_cases": [
+    "content-writing",
+    "copywriting",
+    "text-generation",
+    "prompt-engineering",
+    "image-generation",
+    "ai-art-creation"
+  ],
+  "hiring": {
+    "careers_url": "",
+    "is_hiring": false,
+    "tech_stack": [
+      "Python",
+      "PostgreSQL"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "open_source": false,
+  "api_available": false,
+  "modalities": [
+    "text",
+    "image"
+  ],
+  "competitors": [
+    "civitai",
+    "lexica"
   ]
 }

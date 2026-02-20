@@ -4,11 +4,11 @@
   "product_url": "https://www.rockflow.ai",
   "description": "嗨，欢迎来到RockFlow奇运证券！跟随众多年轻投资者一同投资美港股、基金、ETF。这里是趣味十足又安全感满满的交易平台，是专为新时代年轻人打造的移动端投资APP，是充满摇滚精神的投资理财乐园。\n\n\n关于RockFlow奇运证券：我们是一站式金融投资交易平台，正致力于创造一个海纳百川的投资天地。希望给我们每一位投资者带去不一样的、新奇有趣的投资体验。\n\n\n在RockFlow奇运证券的应用中，我们为您精心准备了最新的美港股市场信息，无论您是投资新手还是驰骋金融市场的牛人，我们都能助您一臂之力。\n\n\n--- 国际投资市场的“自助餐厅” ---\n应有尽有：一键购入美国股票、香港股票、ETF、基金等等各类资产。\n-> 美股：苹果、亚马逊、英伟达、特斯拉、Snapchat、优步、微软、辉瑞、耐克、推特……\n-> 做空ETF：QQQ、SQQQ、TQQQ、QLD、PSQ……让你在熊市中也能一红到底！\n-> 指数：DIA，GLD，JNK……\n\n\n--- 资金安全 首要保障---\n50w美金账户险：由美国SIPC提供的高达50w美金的保险仅仅是我们全套资金保障的一环。RockFlow奇运证券倾其...",
   "product_type": "app",
-  "category": "ai-application",
+  "category": "ai-finance-legal",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "app_store",
@@ -95,10 +95,10 @@
         "updated_at": "2026-02-16"
       },
       "platforms": {
-        "source": "app_store",
-        "tier": 2,
-        "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       },
       "pricing": {
         "source": "app_store",
@@ -123,6 +123,84 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "keywords": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "sub_category": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -138,7 +216,10 @@
   "company": {
     "name": "ROCKALPHA LIMITED",
     "url": "https://www.rockflow.ai",
-    "website": "https://www.rockflow.ai"
+    "website": "https://www.rockflow.ai",
+    "name_zh": "ROCKALPHA LIMITED",
+    "description": "Mobile investment platform for trading US/Hong Kong stocks and cryptocurrency",
+    "employee_count_range": "11-50"
   },
   "icon_url": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/f5/45/2d/f5452db4-2dd5-c8f7-aa21-bc4ff82e8e07/AppIconInner-0-0-1x_U007emarketing-0-8-0-sRGB-85-220.png/512x512bb.jpg",
   "tags": [
@@ -152,7 +233,9 @@
     "ZH"
   ],
   "platforms": [
-    "ios"
+    "ios",
+    "android",
+    "web"
   ],
   "pricing": {
     "model": "free",
@@ -162,5 +245,66 @@
   "app_store": {
     "apple_store_url": "https://apps.apple.com/app/id6463616723",
     "rating": 4.4
-  }
+  },
+  "keywords": [
+    "RockFlow奇运证券：AI投资理财",
+    "ROCKALPHA LIMITED",
+    "ai finance legal",
+    "Finance",
+    "RockFlow",
+    "Snapchat",
+    "SQQQ",
+    "TQQQ",
+    "SIPC",
+    "欢迎来到",
+    "奇运证券",
+    "跟随众多年轻投资者一同投资美港股",
+    "基金",
+    "这里是趣味十足又安全感满满的交易平台",
+    "是专为新时代年轻人打造的移动端投资",
+    "是充满摇滚精神的投资理财乐园",
+    "关于",
+    "我们是一站式金融投资交易平台",
+    "正致力于创造一个海纳百川的投资天地",
+    "希望给我们每一位投资者带去不一样的",
+    "新奇有趣的投资体验",
+    "奇运证券的应用中",
+    "我们为您精心准备了最新的美港股市场信息",
+    "app"
+  ],
+  "target_audience": [
+    "finance-professionals",
+    "lawyers",
+    "enterprises",
+    "young-investors",
+    "traders",
+    "retail-investors",
+    "finance-enthusiasts"
+  ],
+  "use_cases": [
+    "financial-analysis",
+    "legal-research",
+    "compliance",
+    "stock-trading",
+    "investment-management",
+    "cryptocurrency-trading",
+    "financial-planning"
+  ],
+  "sub_category": "investment-app",
+  "open_source": false,
+  "api_available": true,
+  "hiring": {
+    "is_hiring": true,
+    "careers_url": "",
+    "tech_stack": [
+      "React Native",
+      "Python",
+      "Trading APIs",
+      "Real-time Data"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "modalities": [
+    "text"
+  ]
 }

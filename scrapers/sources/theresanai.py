@@ -76,25 +76,30 @@ _CATEGORY_URLS = [
 # ---------------------------------------------------------------------------
 
 _CATEGORY_MAP: dict[str, str] = {
-    # Creative & media
-    "image-generators": "ai-creative-media",
-    "video-generators": "ai-creative-media",
-    "music-generators": "ai-creative-media",
-    "design": "ai-creative-media",
-    "3d": "ai-creative-media",
-    "audio": "ai-creative-media",
-    "speech": "ai-creative-media",
-    "gaming": "ai-creative-media",
-    # Text generation — TAAFT's broadest category, mostly apps not models.
-    # Actual LLMs are refined via task_slug keyword matching.
-    "text-generators": "ai-application",
-    # Applications
-    "chatbots": "ai-application",
-    "writing-assistants": "ai-application",
-    "marketing": "ai-application",
-    "productivity": "ai-application",
-    "customer-support": "ai-application",
-    "education": "ai-application",
+    # Image & design
+    "image-generators": "ai-image-design",
+    "design": "ai-image-design",
+    "3d": "ai-image-design",
+    # Video & animation
+    "video-generators": "ai-video-animation",
+    "gaming": "ai-video-animation",
+    # Audio & music
+    "music-generators": "ai-audio-music",
+    "audio": "ai-audio-music",
+    "speech": "ai-audio-music",
+    # Chatbot & agent
+    "text-generators": "ai-writing-content",
+    "chatbots": "ai-chatbot-agent",
+    # Writing & content
+    "writing-assistants": "ai-writing-content",
+    # Productivity
+    "productivity": "ai-productivity",
+    # Marketing & commerce
+    "marketing": "ai-marketing-commerce",
+    # Education
+    "education": "ai-education",
+    # Customer service
+    "customer-support": "ai-customer-service",
     # Developer tools
     "code-assistants": "ai-dev-platform",
     "developer-tools": "ai-dev-platform",
@@ -107,18 +112,18 @@ _CATEGORY_MAP: dict[str, str] = {
     "autonomous-vehicles": "ai-hardware",
     # Security
     "cybersecurity": "ai-security-governance",
-    # Verticals
+    # Science
     "healthcare": "ai-science-research",
-    "finance": "ai-enterprise-vertical",
-    "legal": "ai-enterprise-vertical",
+    # Finance & legal
+    "finance": "ai-finance-legal",
+    "legal": "ai-finance-legal",
 }
 
 # Keyword fallback rules for unmapped categories.
 _KEYWORD_RULES: list[tuple[tuple[str, ...], str]] = [
-    (
-        ("image", "video", "photo", "design", "art", "music", "audio", "3d", "voice"),
-        "ai-creative-media",
-    ),
+    (("image", "photo", "design", "art", "3d", "avatar"), "ai-image-design"),
+    (("video", "animation", "movie"), "ai-video-animation"),
+    (("music", "audio", "voice", "speech", "sound"), "ai-audio-music"),
     (
         ("code", "developer", "programming", "devops", "api", "no-code"),
         "ai-dev-platform",
@@ -130,11 +135,15 @@ _KEYWORD_RULES: list[tuple[tuple[str, ...], str]] = [
         ("healthcare", "medical", "science", "research", "biology", "chemistry"),
         "ai-science-research",
     ),
-    (("llm", "model", "language-model", "foundation"), "ai-foundation-model"),
-    (
-        ("finance", "legal", "accounting", "hr", "recruiting", "real-estate"),
-        "ai-enterprise-vertical",
-    ),
+    (("llm", "language-model", "foundation"), "ai-foundation-model"),
+    (("marketing", "seo", "advertising", "ecommerce"), "ai-marketing-commerce"),
+    (("finance", "legal", "accounting"), "ai-finance-legal"),
+    (("hr", "recruiting", "resume", "interview"), "ai-hr-recruiting"),
+    (("sales", "crm"), "ai-sales-crm"),
+    (("education", "tutoring", "course"), "ai-education"),
+    (("translat",), "ai-translation"),
+    (("customer-service", "helpdesk", "customer-support"), "ai-customer-service"),
+    (("writing", "copywriting", "blog", "content"), "ai-writing-content"),
     (("robot", "hardware", "chip"), "ai-hardware"),
 ]
 
@@ -144,7 +153,7 @@ _KEYWORD_RULES: list[tuple[tuple[str, ...], str]] = [
 
 _PRODUCT_TYPE_KEYWORDS: list[tuple[tuple[str, ...], str]] = [
     (("code", "developer", "api", "sdk", "framework", "no-code"), "dev-tool"),
-    (("llm", "model", "language-model", "foundation"), "llm"),
+    (("llm", "language-model", "foundation"), "llm"),
     (("robot", "hardware", "chip", "autonomous"), "hardware"),
 ]
 
@@ -487,7 +496,7 @@ def _li_to_product(li: Any, cat_slug: str) -> ScrapedProduct | None:
     category = _map_category(cat_slug)
     if task_slug:
         refined = _map_category(task_slug)
-        if refined != "ai-application":
+        if refined != "ai-chatbot-agent":
             # task_slug matched a specific category — use it
             category = refined
 
@@ -559,7 +568,7 @@ def _raw_featured_to_product(item: dict[str, object]) -> ScrapedProduct | None:
     category = _map_category(cat_slug)
     if task_slug:
         refined = _map_category(task_slug)
-        if refined != "ai-application":
+        if refined != "ai-chatbot-agent":
             category = refined
 
     sub_category = _SUB_CATEGORY_MAP.get(cat_slug)
@@ -766,7 +775,7 @@ def _clean_url(url: str) -> str:
 def _map_category(slug: str) -> str:
     """Map a TAAFT category slug to our schema category."""
     if not slug:
-        return "ai-application"
+        return "ai-chatbot-agent"
 
     if slug in _CATEGORY_MAP:
         return _CATEGORY_MAP[slug]
@@ -777,7 +786,7 @@ def _map_category(slug: str) -> str:
         if any(kw in slug_lower for kw in keywords):
             return our_category
 
-    return "ai-application"
+    return "ai-chatbot-agent"
 
 
 def _infer_product_type(slug: str) -> str:

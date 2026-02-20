@@ -46,8 +46,6 @@
       "type": "string",
       "enum": [
         "ai-foundation-model",
-        "ai-application",
-        "ai-creative-media",
         "ai-dev-platform",
         "ai-infrastructure",
         "ai-data-platform",
@@ -55,7 +53,20 @@
         "ai-hardware",
         "ai-security-governance",
         "ai-science-research",
-        "ai-enterprise-vertical"
+        "ai-image-design",
+        "ai-video-animation",
+        "ai-audio-music",
+        "ai-chatbot-agent",
+        "ai-writing-content",
+        "ai-productivity",
+        "ai-education",
+        "ai-marketing-commerce",
+        "ai-social-entertainment",
+        "ai-customer-service",
+        "ai-translation",
+        "ai-finance-legal",
+        "ai-hr-recruiting",
+        "ai-sales-crm"
       ]
     },
     "sub_category": {
@@ -347,6 +358,7 @@
       "additionalProperties": false,
       "properties": {
         "is_hiring": { "type": "boolean" },
+        "careers_url": { "type": "string", "format": "uri" },
         "total_positions": { "type": "integer", "minimum": 0 },
         "positions": {
           "type": "array",

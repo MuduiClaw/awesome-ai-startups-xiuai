@@ -4,11 +4,11 @@
   "product_url": "https://moises.ai",
   "description": "World's #1 vocal remover for musicians. Use AI to extract or remove vocals & instruments from any song and play your favorite music in any key, and at any speed. The best stem player for creating guitar, drums, piano, vocals and bass backing tracks.\n\nMaster your audio’s chords and stems with pitch-perfect guitar tabs, smart metronome, and AI mixer. Get the best AI driven music tool for stem and vocal remover and join the band today.\n\nPro features for music makers, guitar players, audio nerds ...",
   "product_type": "app",
-  "category": "ai-application",
+  "category": "ai-audio-music",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "app_store",
@@ -83,10 +83,10 @@
         "updated_at": "2026-02-16"
       },
       "platforms": {
-        "source": "app_store",
-        "tier": 2,
-        "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       },
       "pricing": {
         "source": "app_store",
@@ -135,6 +135,84 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "description_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -153,7 +231,10 @@
   "company": {
     "name": "Moises Systems, Inc",
     "url": "https://moises.ai",
-    "website": "https://moises.ai"
+    "website": "https://moises.ai",
+    "name_zh": "Moises Systems, Inc",
+    "description": "AI-powered audio processing platform specializing in intelligent vocal and instrument separation for musicians worldwide.",
+    "employee_count_range": "11-50"
   },
   "icon_url": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/22/88/14/228814e2-eea2-e1db-44ce-c40b1c44c2c7/AppIcon-0-0-1x_U007epad-0-1-0-85-220.png/512x512bb.jpg",
   "tags": [
@@ -199,7 +280,10 @@
     "VI"
   ],
   "platforms": [
-    "ios"
+    "ios",
+    "web",
+    "android",
+    "api"
   ],
   "pricing": {
     "model": "free",
@@ -221,5 +305,40 @@
     "Pitch changer",
     "Metronome",
     "Audio speed changer"
+  ],
+  "target_audience": [
+    "musicians",
+    "content-creators",
+    "podcasters",
+    "audio-engineers",
+    "producers"
+  ],
+  "use_cases": [
+    "music-generation",
+    "audio-editing",
+    "voice-synthesis",
+    "vocal-removal",
+    "stem-separation",
+    "audio-mastering",
+    "chord-detection"
+  ],
+  "name_zh": "Moises音乐人应用",
+  "description_zh": "专业级AI人声分离和混音工具，支持提取/移除声乐和乐器，自动识别和弦，调整音速。",
+  "open_source": false,
+  "api_available": true,
+  "hiring": {
+    "is_hiring": true,
+    "careers_url": "https://moises.ai/careers",
+    "tech_stack": [
+      "Python",
+      "TensorFlow",
+      "React",
+      "Node.js",
+      "AWS"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "modalities": [
+    "audio"
   ]
 }

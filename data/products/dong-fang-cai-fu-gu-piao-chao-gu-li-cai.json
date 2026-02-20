@@ -4,11 +4,11 @@
   "product_url": "http://www.18.com.cn",
   "description": "东方财富APP又升级啦！东方财富APP覆盖了股票、基金、期货、债券、外汇、银行、保险等诸多金融领域数据，每日更新数万条财经资讯信息，为用户提供便利服务。\n\n特色功能： \n●妙想AI——更懂股民的金融大模型，深度思考、专业数据、更懂金融，更优体验\n●股吧——中国高人气股票主题社区，覆盖财经资讯、股友评论、个股行情、股市热点、基本面数据等多个股市实用功能\n●专业数据——覆盖全球重要市场行情 ，汇集股票新股申购、公司资料、证券投资研报等金融行业数百亿条数据\n●开户交易——全程网上股票开户，不排队，更有开户惊喜福利，交易安全、方便、快捷\n●即时提醒——股友互动、市场热点、自选股（公告、研报、数据等）动态消息及时提醒\n●主力资金流——真实还原实时主力大单，揭秘主力资金布局 \n●高手跟踪——实盘组合、高手看盘、专业投顾百家争鸣，还有百万奖池的实盘大赛等你参加\n●智能选股——主题投资、画线工具、筹码分布、分时叠加、超级Level-2、盘口异动、资金流向，从选股到分析到盘中决策，智能选股工具为您的投资决策助力\n●丰富活动——好礼天天领，更有丰富模拟活动带你轻松玩转各类投资",
   "product_type": "app",
-  "category": "ai-application",
+  "category": "ai-finance-legal",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "app_store",
@@ -101,10 +101,10 @@
         "updated_at": "2026-02-16"
       },
       "platforms": {
-        "source": "app_store",
-        "tier": 2,
-        "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       },
       "pricing": {
         "source": "app_store",
@@ -129,6 +129,78 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "keywords": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "sub_category": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -145,7 +217,9 @@
     "name": "东方财富信息股份有限公司",
     "url": "http://www.18.com.cn",
     "name_zh": "东方财富信息股份有限公司",
-    "website": "http://www.18.com.cn"
+    "website": "http://www.18.com.cn",
+    "description": "East Money is a leading Chinese financial information platform offering stock trading and investment data.",
+    "employee_count_range": "51-200"
   },
   "icon_url": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/ca/55/dc/ca55dceb-ee95-7c6c-335d-8e2a12a18312/AppIcon-0-0-1x_U007ephone-0-11-0-0-sRGB-85-220.png/512x512bb.jpg",
   "tags": [
@@ -155,7 +229,8 @@
     "ZH"
   ],
   "platforms": [
-    "ios"
+    "ios",
+    "android"
   ],
   "pricing": {
     "model": "free",
@@ -165,5 +240,63 @@
   "app_store": {
     "apple_store_url": "https://apps.apple.com/app/id423525686",
     "rating": 4.7
-  }
+  },
+  "keywords": [
+    "东方财富-股票、炒股、理财",
+    "东方财富信息股份有限公司",
+    "ai finance legal",
+    "Finance",
+    "AI",
+    "Level-2",
+    "东方财富",
+    "又升级啦",
+    "覆盖了股票",
+    "基金",
+    "期货",
+    "债券",
+    "外汇",
+    "银行",
+    "保险等诸多金融领域数据",
+    "每日更新数万条财经资讯信息",
+    "为用户提供便利服务",
+    "特色功能",
+    "妙想",
+    "更懂股民的金融大模型",
+    "app"
+  ],
+  "target_audience": [
+    "finance-professionals",
+    "lawyers",
+    "enterprises",
+    "investors",
+    "traders",
+    "financial-professionals",
+    "retail-investors"
+  ],
+  "use_cases": [
+    "financial-analysis",
+    "legal-research",
+    "compliance",
+    "stock-trading",
+    "investment-research",
+    "financial-news",
+    "portfolio-management"
+  ],
+  "sub_category": "investment-platform",
+  "open_source": false,
+  "api_available": false,
+  "hiring": {
+    "is_hiring": true,
+    "careers_url": "https://www.eastmoney.com/careers",
+    "tech_stack": [
+      "Java",
+      "React Native",
+      "PostgreSQL",
+      "Alibaba Cloud"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "modalities": [
+    "text"
+  ]
 }

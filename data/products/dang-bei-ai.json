@@ -4,11 +4,11 @@
   "product_url": "https://ai.dangbei.com",
   "description": "当贝AI，体验DeepSeek满血版，聚合全网优质AI大模型，如DeepSeek-R1 671B、豆包、通义千问、智谱等。当贝AI知识库，深度AI解决方案，极速、高效、免费、无需注册、不限量！",
   "product_type": "other",
-  "category": "ai-application",
+  "category": "ai-chatbot-agent",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "ainav",
@@ -87,6 +87,84 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "keywords": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "platforms": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "ainav",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-18"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -101,11 +179,72 @@
   "description_zh": "当贝AI，体验DeepSeek满血版，聚合全网优质AI大模型，如DeepSeek-R1 671B、豆包、通义千问、智谱等。当贝AI知识库，深度AI解决方案，极速、高效、免费、无需注册、不限量！",
   "company": {
     "name": "当贝AI",
-    "url": "https://ai.dangbei.com"
+    "url": "https://ai.dangbei.com",
+    "name_zh": "当贝AI",
+    "description": "Chinese aggregated AI chatting platform combining multiple LLMs including DeepSeek.",
+    "employee_count_range": "1-10"
   },
   "icon_url": "https://www.ainav.cn/wp-content/uploads/2025/10/1760368723-faviconV2.png",
   "tags": [
     "AI对话聊天"
   ],
-  "sub_category": "chatbot"
+  "sub_category": "chatbot",
+  "keywords": [
+    "当贝AI",
+    "ai chatbot agent",
+    "chatbot",
+    "AI对话聊天",
+    "AI",
+    "DeepSeek",
+    "DeepSeek-R1",
+    "当贝",
+    "体验",
+    "满血版",
+    "聚合全网优质",
+    "大模型",
+    "豆包",
+    "通义千问",
+    "智谱等",
+    "知识库",
+    "深度",
+    "解决方案",
+    "极速",
+    "高效",
+    "免费",
+    "other"
+  ],
+  "platforms": [
+    "web"
+  ],
+  "target_audience": [
+    "developers",
+    "enterprises",
+    "general-users",
+    "chinese-users",
+    "students",
+    "professionals"
+  ],
+  "use_cases": [
+    "ai-chat",
+    "virtual-assistant",
+    "task-automation",
+    "ai-chatting",
+    "knowledge-retrieval",
+    "content-generation"
+  ],
+  "hiring": {
+    "careers_url": "",
+    "is_hiring": false,
+    "tech_stack": [
+      "Python",
+      "DeepSeek API",
+      "Web"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "open_source": false,
+  "api_available": false,
+  "modalities": [
+    "text"
+  ]
 }

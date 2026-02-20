@@ -4,11 +4,11 @@
   "product_url": "https://www.tukeli.net",
   "description": "图可丽是一款集图片&amp;视频处理的在线网站，可提供批量抠图、去水印、视频抠图、一键生成漫画、视频转漫画、图像修复、模糊视频变高清、AI绘画、AI更换背景等功能。",
   "product_type": "other",
-  "category": "ai-creative-media",
+  "category": "ai-image-design",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "ainav",
@@ -87,6 +87,78 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "keywords": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "platforms": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "ainav",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-18"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -106,12 +178,66 @@
   "description_zh": "图可丽是一款集图片&amp;视频处理的在线网站，可提供批量抠图、去水印、视频抠图、一键生成漫画、视频转漫画、图像修复、模糊视频变高清、AI绘画、AI更换背景等功能。",
   "company": {
     "name": "图可丽",
-    "url": "https://tukeli.net"
+    "url": "https://tukeli.net",
+    "name_zh": "图可丽",
+    "description": "Online image and video processing tool with batch effects and AI features.",
+    "employee_count_range": "1-10"
   },
   "icon_url": "https://www.ainav.cn/wp-content/uploads/2023/10/7257b6ea164136563a8a218ffece2142.jpg",
   "sub_category": "image-editing",
   "tags": [
     "AI图片处理",
     "ai-image-background-removers"
+  ],
+  "keywords": [
+    "图可丽",
+    "ai image design",
+    "image editing",
+    "AI图片处理",
+    "ai image background removers",
+    "AI",
+    "图可丽是一款集图片",
+    "视频处理的在线网站",
+    "可提供批量抠图",
+    "去水印",
+    "视频抠图",
+    "一键生成漫画",
+    "视频转漫画",
+    "图像修复",
+    "模糊视频变高清",
+    "绘画",
+    "更换背景等功能",
+    "other"
+  ],
+  "platforms": [
+    "web"
+  ],
+  "target_audience": [
+    "designers",
+    "content-creators",
+    "marketers",
+    "video-editors",
+    "graphic-designers"
+  ],
+  "use_cases": [
+    "image-generation",
+    "image-editing",
+    "graphic-design",
+    "background-removal",
+    "watermark-removal",
+    "video-editing",
+    "cartoon-generation",
+    "image-upscaling"
+  ],
+  "hiring": {
+    "careers_url": "",
+    "is_hiring": false,
+    "last_checked": "2026-02-20"
+  },
+  "open_source": false,
+  "api_available": false,
+  "modalities": [
+    "image",
+    "video"
   ]
 }

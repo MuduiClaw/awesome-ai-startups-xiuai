@@ -4,11 +4,11 @@
   "product_url": "https://www.datafountain.cn",
   "description": "DataFountain(简称DF平台)是国内领先的数据科学及人工智能协同创新平台，提供AI 竞赛/大数据竞赛、人工智能数据集、开源分享社区、AI实验室等服务。是CCF大赛官方指定竞赛平台。",
   "product_type": "other",
-  "category": "ai-application",
+  "category": "ai-chatbot-agent",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "ainav",
@@ -81,6 +81,96 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "keywords": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "platforms": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "sub_category": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "competitors": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -95,10 +185,69 @@
   "description_zh": "DataFountain(简称DF平台)是国内领先的数据科学及人工智能协同创新平台，提供AI 竞赛/大数据竞赛、人工智能数据集、开源分享社区、AI实验室等服务。是CCF大赛官方指定竞赛平台。",
   "company": {
     "name": "DataFountain大数据竞赛平台",
-    "url": "https://datafountain.cn"
+    "url": "https://datafountain.cn",
+    "name_zh": "DataFountain",
+    "description": "Chinese data science competition and community platform for AI innovation.",
+    "employee_count_range": "11-50"
   },
   "icon_url": "https://api.iowen.cn/favicon/www.datafountain.cn.png",
   "tags": [
     "AI竞赛"
+  ],
+  "keywords": [
+    "DataFountain大数据竞赛平台",
+    "ai chatbot agent",
+    "AI竞赛",
+    "DataFountain",
+    "AI",
+    "简称",
+    "平台",
+    "是国内领先的数据科学及人工智能协同创新平台",
+    "提供",
+    "竞赛",
+    "大数据竞赛",
+    "人工智能数据集",
+    "开源分享社区",
+    "实验室等服务",
+    "大赛官方指定竞赛平台",
+    "other"
+  ],
+  "platforms": [
+    "web"
+  ],
+  "target_audience": [
+    "developers",
+    "enterprises",
+    "general-users",
+    "data-scientists",
+    "ai-developers",
+    "students"
+  ],
+  "use_cases": [
+    "ai-chat",
+    "virtual-assistant",
+    "task-automation",
+    "ai-competition",
+    "dataset-sharing",
+    "community-learning"
+  ],
+  "sub_category": "competition-platform",
+  "open_source": false,
+  "api_available": false,
+  "hiring": {
+    "is_hiring": true,
+    "careers_url": "https://datafountain.cn/careers",
+    "tech_stack": [
+      "Python",
+      "React",
+      "PostgreSQL"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "modalities": [
+    "text"
+  ],
+  "competitors": [
+    "kaggle"
   ]
 }

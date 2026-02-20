@@ -7,6 +7,7 @@ const nextConfig: NextConfig = {
     unoptimized: true,
   },
   reactCompiler: true,
+  serverExternalPackages: ["better-sqlite3"],
 };
 
 export default nextConfig;

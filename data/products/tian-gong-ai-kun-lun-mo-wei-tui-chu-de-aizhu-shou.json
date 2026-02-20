@@ -4,11 +4,11 @@
   "product_url": "https://www.tiangong.cn",
   "description": "天工 AI 由昆仑万维推出，有天工 3.0 大模型。具备文档音视分析、写作等功能，可进行彩页创作。还有宝典广场，能认领或创建宝典。提供AI 搜索，简洁高级，让知识流通，可登录或下载 App 体验。",
   "product_type": "other",
-  "category": "ai-application",
+  "category": "ai-chatbot-agent",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "ainav",
@@ -87,6 +87,84 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "keywords": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "platforms": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "ainav",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-18"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -116,7 +194,10 @@
   "description_zh": "天工 AI 由昆仑万维推出，有天工 3.0 大模型。具备文档音视分析、写作等功能，可进行彩页创作。还有宝典广场，能认领或创建宝典。提供AI 搜索，简洁高级，让知识流通，可登录或下载 App 体验。",
   "company": {
     "name": "天工AI – 昆仑万维推出的AI助手",
-    "url": "https://tiangong.cn"
+    "url": "https://tiangong.cn",
+    "name_zh": "昆仑万维",
+    "description": "Chinese AI assistant powered by Kunlun Wanwei with large language models and multimedia analysis capabilities.",
+    "employee_count_range": "51-200"
   },
   "icon_url": "https://www.ainav.cn/wp-content/uploads/2023/08/957cc-search.tiangong.cn.png",
   "sub_category": "chatbot",
@@ -127,5 +208,72 @@
     "ai-search-engines",
     "ai-chatbots",
     "ai-audio-tools"
+  ],
+  "keywords": [
+    "天工AI – 昆仑万维推出的AI助手",
+    "ai chatbot agent",
+    "chatbot",
+    "AI对话聊天",
+    "AI智能体平台",
+    "AI音频工具",
+    "ai search engines",
+    "ai chatbots",
+    "ai audio tools",
+    "AI",
+    "天工",
+    "由昆仑万维推出",
+    "有天工",
+    "大模型",
+    "具备文档音视分析",
+    "写作等功能",
+    "可进行彩页创作",
+    "还有宝典广场",
+    "能认领或创建宝典",
+    "提供",
+    "搜索",
+    "简洁高级",
+    "让知识流通",
+    "可登录或下载",
+    "体验",
+    "other"
+  ],
+  "platforms": [
+    "web",
+    "ios",
+    "android"
+  ],
+  "target_audience": [
+    "developers",
+    "enterprises",
+    "general-users",
+    "chinese-users",
+    "ai-enthusiasts",
+    "businesses"
+  ],
+  "use_cases": [
+    "ai-chat",
+    "virtual-assistant",
+    "task-automation",
+    "text-generation",
+    "document-analysis",
+    "creative-writing",
+    "ai-search"
+  ],
+  "hiring": {
+    "careers_url": "",
+    "is_hiring": true,
+    "tech_stack": [
+      "Python",
+      "PyTorch",
+      "Transformer"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "open_source": false,
+  "api_available": true,
+  "modalities": [
+    "text",
+    "audio",
+    "video"
   ]
 }

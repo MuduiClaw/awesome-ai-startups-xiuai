@@ -9,11 +9,21 @@ from typing import Any
 import click
 from dotenv import load_dotenv
 
-from scrapers.config import PRODUCTS_DIR
+from scrapers.config import DB_FILE, PRODUCTS_DIR
 
 # Load .env file so API keys (FIRECRAWL_API_KEY, GITHUB_TOKEN, etc.)
 # are available via os.environ without requiring system-level env vars.
 load_dotenv()
+
+
+def _open_db() -> Any:
+    """Open the ProductDB if the database file exists, else return None."""
+    if DB_FILE.exists():
+        from scrapers.db import ProductDB
+
+        db = ProductDB()
+        return db
+    return None
 
 
 @click.group()
@@ -54,11 +64,12 @@ def scrape(source: str, limit: int, dry_run: bool) -> None:
     from scrapers.enrichment.cross_validator import CrossValidator
     from scrapers.enrichment.normalizer import PlausibilityValidator
 
+    db = _open_db()
     normalizer = Normalizer()
     plausibility = PlausibilityValidator()
-    deduplicator = Deduplicator()
-    cross_validator = CrossValidator()
-    merger = Merger(cross_validator=cross_validator)
+    deduplicator = Deduplicator(db=db)
+    cross_validator = CrossValidator(db=db)
+    merger = Merger(cross_validator=cross_validator, db=db)
 
     all_scraped: list = []
     for scraper_cls in scrapers_to_run:
@@ -240,13 +251,17 @@ def generate_stats() -> None:
     """Regenerate index.json and stats.json from product data."""
     from scrapers.generators import IndexGenerator, StatsGenerator
 
+    db = _open_db()
+    if db:
+        click.echo("Using SQLite database for generation...")
+
     click.echo("Generating index.json...")
-    index_gen = IndexGenerator()
+    index_gen = IndexGenerator(db=db)
     products = index_gen.generate()
     click.echo(f"  Index: {len(products)} products")
 
     click.echo("Generating stats.json...")
-    stats_gen = StatsGenerator()
+    stats_gen = StatsGenerator(db=db)
     stats = stats_gen.generate()
     click.echo(
         f"  Stats: {stats['total_products']} products, "
@@ -523,6 +538,122 @@ def llm_enrich(budget: int, model: str | None, dry_run: bool) -> None:
 
     click.echo("LLM enrichment system not yet fully implemented.")
     click.echo("Run 'aiscrape enrich' for existing LLM enrichment.")
+
+
+@cli.command("init-db")
+@click.option(
+    "--verify", is_flag=True, help="Verify round-trip fidelity after migration"
+)
+def init_db(verify: bool) -> None:
+    """Initialize/rebuild the SQLite database from product JSON files."""
+    import time
+
+    from scrapers.db import ProductDB
+
+    click.echo("Loading product JSON files...")
+    t0 = time.time()
+    products: list[dict[str, Any]] = []
+    for filepath in sorted(PRODUCTS_DIR.glob("*.json")):
+        try:
+            data = json.loads(filepath.read_text(encoding="utf-8"))
+            products.append(data)
+        except (json.JSONDecodeError, OSError) as e:
+            click.echo(f"  SKIP {filepath.name}: {e}")
+
+    load_time = time.time() - t0
+    click.echo(f"Loaded {len(products)} products in {load_time:.1f}s")
+
+    if not products:
+        click.echo("No products found.")
+        return
+
+    # Remove existing DB
+    if DB_FILE.exists():
+        DB_FILE.unlink()
+        click.echo(f"Removed existing database: {DB_FILE}")
+
+    click.echo(f"Creating database at {DB_FILE}...")
+    with ProductDB() as db:
+        db.init_schema()
+        t0 = time.time()
+        count = db.upsert_batch(products)
+        insert_time = time.time() - t0
+        click.echo(f"Inserted {count} products in {insert_time:.1f}s")
+
+        t0 = time.time()
+        db.rebuild_fts()
+        fts_time = time.time() - t0
+        click.echo(f"FTS index rebuilt in {fts_time:.1f}s")
+
+        db_size_mb = DB_FILE.stat().st_size / (1024 * 1024)
+        click.echo(f"Database: {count} products, {db_size_mb:.1f} MB")
+
+        if verify:
+            click.echo("Verifying round-trip fidelity...")
+            passed = 0
+            failed = 0
+            for original in products:
+                slug = original.get("slug", "")
+                if not slug:
+                    continue
+                reconstructed = db.get(slug)
+                if reconstructed is None:
+                    click.echo(f"  MISSING: {slug}")
+                    failed += 1
+                    continue
+                # Quick check: critical fields
+                ok = True
+                for field in ("name", "category", "status", "product_url"):
+                    if original.get(field) != reconstructed.get(field):
+                        click.echo(
+                            f"  MISMATCH {slug}.{field}: "
+                            f"{original.get(field)!r} -> {reconstructed.get(field)!r}"
+                        )
+                        ok = False
+                if ok:
+                    passed += 1
+                else:
+                    failed += 1
+            click.echo(f"Verification: {passed} passed, {failed} failed")
+            if failed > 0:
+                sys.exit(1)
+
+    click.echo("\nDone!")
+
+
+@cli.command("export-json")
+@click.option(
+    "--output-dir", default=None, help="Output directory (default: data/products/)"
+)
+def export_json(output_dir: str | None) -> None:
+    """Export all products from SQLite back to individual JSON files."""
+    from pathlib import Path
+
+    from scrapers.db import ProductDB
+
+    if not DB_FILE.exists():
+        click.echo(f"Database not found: {DB_FILE}")
+        click.echo("Run 'aiscrape init-db' first.")
+        sys.exit(1)
+
+    out_path = Path(output_dir) if output_dir else PRODUCTS_DIR
+    out_path.mkdir(parents=True, exist_ok=True)
+
+    with ProductDB() as db:
+        slugs = db.all_slugs()
+        click.echo(f"Exporting {len(slugs)} products to {out_path}...")
+
+        for slug in slugs:
+            data = db.get(slug)
+            if data is None:
+                continue
+            filepath = out_path / f"{slug}.json"
+            filepath.write_text(
+                json.dumps(data, indent=2, ensure_ascii=False) + "\n",
+                encoding="utf-8",
+            )
+
+    click.echo(f"Exported {len(slugs)} products to {out_path}")
 
 
 if __name__ == "__main__":

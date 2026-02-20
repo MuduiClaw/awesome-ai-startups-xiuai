@@ -4,11 +4,11 @@
   "product_url": "https://hioscar.com/",
   "description": "The Oscar app helps make your healthcare experience even easier. Access your plan and benefits whenever, and wherever.\n\nHere's some great stuff you can do with the app:\n\n• ﻿﻿See all your plan information by pulling up your ID card on the go.\n• Find care right away – whether you’re searching for a specific condition or specialty, we’ll show you everyone in network.\n﻿﻿• Talk to a provider 24/7 with Virtual Urgent Care.\n• Message us with your questions. Our AI Support answers in seconds and our ...",
   "product_type": "app",
-  "category": "ai-application",
+  "category": "ai-chatbot-agent",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "app_store",
@@ -83,10 +83,10 @@
         "updated_at": "2026-02-16"
       },
       "platforms": {
-        "source": "app_store",
-        "tier": 2,
-        "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       },
       "pricing": {
         "source": "app_store",
@@ -123,6 +123,96 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "keywords": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "description_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "sub_category": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -136,7 +226,10 @@
   "company": {
     "name": "Oscar Management Corporation",
     "url": "https://hioscar.com",
-    "website": "https://hioscar.com"
+    "website": "https://hioscar.com",
+    "name_zh": "Oscar Management Corporation",
+    "description": "Oscar Health is a digital health insurance platform simplifying healthcare access and management.",
+    "employee_count_range": "51-200"
   },
   "icon_url": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/b3/0d/e5/b30de5fe-d92c-4836-a387-da26e480fa32/AppIcon-0-0-1x_U007emarketing-0-7-0-85-220.png/512x512bb.jpg",
   "tags": [
@@ -147,7 +240,9 @@
     "ES"
   ],
   "platforms": [
-    "ios"
+    "ios",
+    "android",
+    "web"
   ],
   "pricing": {
     "model": "free",
@@ -157,5 +252,65 @@
   "app_store": {
     "apple_store_url": "https://apps.apple.com/app/id781584599",
     "rating": 4.9
-  }
+  },
+  "keywords": [
+    "Oscar Health",
+    "Oscar Management Corporation",
+    "ai chatbot agent",
+    "Medical",
+    "Oscar",
+    "helps",
+    "make",
+    "healthcare",
+    "experience",
+    "even",
+    "easier",
+    "Access",
+    "plan",
+    "benefits",
+    "whenever",
+    "wherever",
+    "Here",
+    "some",
+    "great",
+    "stuff",
+    "information",
+    "pulling",
+    "card",
+    "app"
+  ],
+  "target_audience": [
+    "developers",
+    "enterprises",
+    "general-users",
+    "insurance-customers",
+    "individuals",
+    "healthcare-users"
+  ],
+  "use_cases": [
+    "ai-chat",
+    "virtual-assistant",
+    "task-automation",
+    "insurance-management",
+    "healthcare-access",
+    "benefits-tracking"
+  ],
+  "name_zh": "Oscar Health",
+  "description_zh": "健康保险应用帮助用户管理医疗计划和福利。",
+  "sub_category": "health-insurance",
+  "open_source": false,
+  "api_available": false,
+  "hiring": {
+    "is_hiring": true,
+    "careers_url": "https://www.oscarhealthcareers.com/",
+    "tech_stack": [
+      "React Native",
+      "Node.js",
+      "AWS"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "modalities": [
+    "text"
+  ]
 }

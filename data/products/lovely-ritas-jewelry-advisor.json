@@ -4,11 +4,11 @@
   "product_url": "https://chatgpt.com/g/g-69232c8577948191a6d151a6658eb844-lovely-rita-s-jewelry-advisor",
   "description": "Your expert guide to fine jewelry, sizing & gift ideas",
   "product_type": "app",
-  "category": "ai-application",
+  "category": "ai-chatbot-agent",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "theresanaiforthat",
@@ -77,10 +77,10 @@
         "updated_at": "2026-02-16"
       },
       "use_cases": {
-        "source": "theresanaiforthat",
-        "tier": 2,
-        "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       },
       "sub_category": {
         "source": "ainav",
@@ -111,6 +111,72 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "platforms": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "ainav",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-18"
+      },
+      "name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -149,7 +215,10 @@
   "company": {
     "name": "Lovely Rita's Jewelry Advisor",
     "url": "https://chatgpt.com/g/g-69232c8577948191a6d151a6658eb844-lovely-rita-s-jewelry-advisor",
-    "website": "https://chatgpt.com/g/g-69232c8577948191a6d151a6658eb844-lovely-rita-s-jewelry-advisor"
+    "website": "https://chatgpt.com/g/g-69232c8577948191a6d151a6658eb844-lovely-rita-s-jewelry-advisor",
+    "name_zh": "Lovely Rita",
+    "description": "AI chatbot providing jewelry recommendations and expert guidance.",
+    "employee_count_range": "1-10"
   },
   "icon_url": "https://media.theresanaiforthat.com/icons/lovely-rita-s-jewelry-advisor.svg?height=207",
   "tags": [
@@ -170,7 +239,10 @@
   "use_cases": [
     "Jewelry recommendations",
     "Answer engine optimization",
-    "Decision making"
+    "Decision making",
+    "jewelry-recommendations",
+    "size-guidance",
+    "gift-suggestions"
   ],
   "sub_category": "chatbot",
   "description_zh": "OpenAI 推出的AI聊天机器人",
@@ -185,5 +257,27 @@
     "Task automation",
     "Content generation",
     "OpenAI"
+  ],
+  "platforms": [
+    "web"
+  ],
+  "target_audience": [
+    "developers",
+    "enterprises",
+    "general-users",
+    "jewelry-shoppers",
+    "gift-buyers",
+    "jewelers"
+  ],
+  "hiring": {
+    "careers_url": "",
+    "is_hiring": false,
+    "last_checked": "2026-02-20"
+  },
+  "name_zh": "Rita的珠宝顾问",
+  "open_source": false,
+  "api_available": false,
+  "modalities": [
+    "text"
   ]
 }

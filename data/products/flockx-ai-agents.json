@@ -4,11 +4,11 @@
   "product_url": "https://www.flockx.io",
   "description": "Build an AI Agent and teach it with no code then watch it collaborate with other agents. \n\nTrain Your AI Agent\n- Share knowledge easily\n- Automate knowledge capture\n- Integrate existing tools\n- Preserve valuable conversations\n\nConnect & Collaborate\n- AI Agent Collaboration Network\n- One-on-one conversations\n- Inter-agent learning\n- Collective intelligence sharing\n\nWatch It Grow\n- Learn from every interaction\n- Surface relevant insights\n- Cross-agent discoveries\n- Build networked knowledge\n\nUs...",
   "product_type": "app",
-  "category": "ai-application",
+  "category": "ai-chatbot-agent",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "app_store",
@@ -83,10 +83,10 @@
         "updated_at": "2026-02-16"
       },
       "platforms": {
-        "source": "app_store",
-        "tier": 2,
-        "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       },
       "pricing": {
         "source": "app_store",
@@ -135,6 +135,90 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "description_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "competitors": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -153,7 +237,10 @@
   "company": {
     "name": "FETCH AI INC",
     "url": "https://www.flockx.io",
-    "website": "https://www.flockx.io"
+    "website": "https://www.flockx.io",
+    "name_zh": "FETCH AI INC",
+    "description": "AI agent collaboration network enabling no-code AI agent creation and multi-agent interactions.",
+    "employee_count_range": "11-50"
   },
   "icon_url": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/df/ee/2d/dfee2da7-2c64-71fc-f713-740b7c7584e7/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg",
   "tags": [
@@ -168,7 +255,9 @@
     "EN"
   ],
   "platforms": [
-    "ios"
+    "ios",
+    "web",
+    "api"
   ],
   "pricing": {
     "model": "free",
@@ -190,5 +279,43 @@
     "Fetch.ai",
     "Artificial Intelligence",
     "Knowledge Sharing"
+  ],
+  "target_audience": [
+    "developers",
+    "enterprises",
+    "general-users",
+    "web3-users"
+  ],
+  "use_cases": [
+    "ai-chat",
+    "conversational-ai",
+    "task-automation",
+    "autonomous-agents",
+    "agent-creation",
+    "agent-collaboration",
+    "automation",
+    "knowledge-management"
+  ],
+  "name_zh": "flockx: AI Agents",
+  "description_zh": "AI代理协作网络，支持多代理协作和知识共享",
+  "open_source": false,
+  "api_available": true,
+  "hiring": {
+    "is_hiring": true,
+    "careers_url": "",
+    "tech_stack": [
+      "Python",
+      "Rust",
+      "blockchain"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "modalities": [
+    "text",
+    "code"
+  ],
+  "competitors": [
+    "autogpt",
+    "langchain"
   ]
 }

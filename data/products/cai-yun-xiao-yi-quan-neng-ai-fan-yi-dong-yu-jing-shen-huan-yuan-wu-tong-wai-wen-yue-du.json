@@ -4,11 +4,11 @@
   "product_url": "http://caiyunai.com",
   "description": "彩云小译，文字、语音、网页、文档、图片、漫画全能翻译工具，支持18种语言互译，集成多种先进AI翻译模型，兼具“边说边译”，“边看边译”的实时翻译功能，满足学习、看文、工作、出国、旅游等多元场景下的翻译需求。\n支持文字翻译、语音翻译、网页翻译、文档翻译、拍照翻译、漫画翻译、屏幕翻译，具备对照阅读模式、术语库、翻译风格定制等功能，全面适配个性化表达需求，翻译更准确、更智能、更贴近你习惯的语感。\n小译是登上微博热搜的AI明星，也多次获得应用商店首页推荐，是广受用户赞誉的实力派翻译AI。\n【亮点功能】\n翻译语种\n 支持英语、日语、韩语、法语、俄语、西班牙语等18种语言互译，覆盖全球150+国家\n多种AI翻译模型\n集成小译自研V4、V3模型，以及Deepseek、千问3、GLM等多种主流大语言模型，支持自由切换与场景推荐\n网页翻译 & 外文小说阅读\n输入网址自动翻译双语阅读，轻松双语对照浏览外文网站与小说章节；特别优化外文小说场景；可将网页/小说内容一键保存到本地，即使网站失效也能安心阅读。\n文档翻译\n支持PDF、Word（.docx/.doc）、PPT、Excel（.xls）、EPUB等...",
   "product_type": "app",
-  "category": "ai-application",
+  "category": "ai-productivity",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "app_store",
@@ -95,10 +95,10 @@
         "updated_at": "2026-02-16"
       },
       "platforms": {
-        "source": "app_store",
-        "tier": 2,
-        "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       },
       "pricing": {
         "source": "app_store",
@@ -135,6 +135,84 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "keywords": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "sub_category": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -150,7 +228,10 @@
   "company": {
     "name": "Beijing ColorfulClouds Technology Co., Ltd.",
     "url": "http://caiyunai.com",
-    "website": "http://caiyunai.com"
+    "website": "http://caiyunai.com",
+    "name_zh": "北京彩云科技有限公司",
+    "description": "Comprehensive AI translation app supporting 18 languages with multiple input formats.",
+    "employee_count_range": "11-50"
   },
   "icon_url": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/ef/ab/ba/efabba02-e87a-d378-c597-10e75c9ffff6/AppIcon-0-0-1x_U007epad-0-1-0-0-sRGB-85-220.png/512x512bb.jpg",
   "tags": [
@@ -163,7 +244,9 @@
     "VI"
   ],
   "platforms": [
-    "ios"
+    "ios",
+    "web",
+    "android"
   ],
   "pricing": {
     "model": "free",
@@ -173,5 +256,67 @@
   "app_store": {
     "apple_store_url": "https://apps.apple.com/app/id1187138321",
     "rating": 4.4
-  }
+  },
+  "keywords": [
+    "彩云小译 - 全能AI 翻译：懂语境神还原，无痛外文阅读",
+    "Beijing ColorfulClouds Technology Co., Ltd.",
+    "ai productivity",
+    "Productivity",
+    "AI",
+    "Deepseek",
+    "Word",
+    "docx",
+    "Excel",
+    "EPUB",
+    "彩云小译",
+    "文字",
+    "语音",
+    "网页",
+    "文档",
+    "图片",
+    "漫画全能翻译工具",
+    "支持",
+    "种语言互译",
+    "集成多种先进",
+    "翻译模型",
+    "兼具",
+    "边说边译",
+    "边看边译",
+    "的实时翻译功能",
+    "app"
+  ],
+  "target_audience": [
+    "professionals",
+    "teams",
+    "enterprises",
+    "language-learners",
+    "travelers"
+  ],
+  "use_cases": [
+    "workflow-automation",
+    "document-management",
+    "task-management",
+    "text-translation",
+    "voice-translation",
+    "document-translation",
+    "web-translation"
+  ],
+  "sub_category": "translation-app",
+  "open_source": false,
+  "api_available": false,
+  "hiring": {
+    "is_hiring": true,
+    "careers_url": "",
+    "tech_stack": [
+      "React",
+      "Python",
+      "NLP"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "modalities": [
+    "text",
+    "audio",
+    "image"
+  ]
 }

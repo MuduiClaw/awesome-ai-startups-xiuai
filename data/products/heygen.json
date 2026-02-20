@@ -4,11 +4,11 @@
   "product_url": "https://heygen.com/?sid=rewardful&via=ai-bot",
   "description": "专业的AI数字人视频创作平台",
   "product_type": "other",
-  "category": "ai-application",
+  "category": "ai-education",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "aibot",
@@ -107,10 +107,10 @@
         "updated_at": "2026-02-16"
       },
       "platforms": {
-        "source": "app_store",
-        "tier": 2,
-        "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       },
       "sub_category": {
         "source": "toolify",
@@ -123,6 +123,84 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "competitors": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -147,7 +225,10 @@
   "company": {
     "name": "HeyGen",
     "url": "https://heygen.com",
-    "website": "https://www.heygen.com"
+    "website": "https://www.heygen.com",
+    "name_zh": "HeyGen",
+    "description": "HeyGen is an AI video creation platform specializing in realistic digital avatar video generation with multilingual support.",
+    "employee_count_range": "51-200"
   },
   "icon_url": "https://ai-bot.cn/wp-content/uploads/2025/10/HeyGen-icon.png",
   "tags": [
@@ -169,7 +250,9 @@
     "PT"
   ],
   "platforms": [
-    "ios"
+    "ios",
+    "web",
+    "api"
   ],
   "app_store": {
     "apple_store_url": "https://apps.apple.com/app/id6711356409",
@@ -188,5 +271,47 @@
     "Sales videos",
     "Localization",
     "Interactive Avatars"
+  ],
+  "target_audience": [
+    "students",
+    "educators",
+    "researchers",
+    "content creators",
+    "marketers",
+    "enterprises"
+  ],
+  "use_cases": [
+    "avatar-generation",
+    "character-creation",
+    "video-creation",
+    "avatar-synthesis",
+    "multilingual-videos",
+    "corporate-training"
+  ],
+  "name_zh": "HeyGen",
+  "open_source": false,
+  "api_available": true,
+  "hiring": {
+    "is_hiring": true,
+    "careers_url": "https://heygen.com/careers",
+    "tech_stack": [
+      "React",
+      "Node.js",
+      "Python",
+      "TensorFlow",
+      "AWS"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "modalities": [
+    "text",
+    "video",
+    "image",
+    "audio"
+  ],
+  "competitors": [
+    "synthesia",
+    "d-id",
+    "opus-clip"
   ]
 }

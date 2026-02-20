@@ -4,11 +4,11 @@
   "product_url": "https://yuanqi.tencent.com",
   "description": "腾讯元器是基于腾讯混元大模型的AI智能体创作与分发平台。无需代码，用户可以通过添加提示词设定、插件、知识库等功能创建智能体，智能体支持腾讯全域分发渠道。",
   "product_type": "other",
-  "category": "ai-application",
+  "category": "ai-chatbot-agent",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "ainav",
@@ -87,6 +87,90 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "keywords": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "platforms": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "ainav",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-18"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "competitors": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -101,11 +185,66 @@
   "description_zh": "腾讯元器是基于腾讯混元大模型的AI智能体创作与分发平台。无需代码，用户可以通过添加提示词设定、插件、知识库等功能创建智能体，智能体支持腾讯全域分发渠道。",
   "company": {
     "name": "腾讯元器",
-    "url": "https://yuanqi.tencent.com"
+    "url": "https://yuanqi.tencent.com",
+    "name_zh": "腾讯",
+    "description": "Tencent's no-code AI agent creation and distribution platform.",
+    "employee_count_range": "1001-5000"
   },
   "icon_url": "https://www.ainav.cn/wp-content/uploads/2024/06/88fc7-yuanqi.tencent.com.png",
   "sub_category": "ai-agent",
   "tags": [
     "AI智能体平台"
+  ],
+  "keywords": [
+    "腾讯元器",
+    "ai chatbot agent",
+    "ai agent",
+    "AI智能体平台",
+    "AI",
+    "腾讯元器是基于腾讯混元大模型的",
+    "智能体创作与分发平台",
+    "无需代码",
+    "用户可以通过添加提示词设定",
+    "插件",
+    "知识库等功能创建智能体",
+    "智能体支持腾讯全域分发渠道",
+    "other"
+  ],
+  "platforms": [
+    "web"
+  ],
+  "target_audience": [
+    "developers",
+    "enterprises",
+    "general-users",
+    "businesses",
+    "creators"
+  ],
+  "use_cases": [
+    "ai-chat",
+    "virtual-assistant",
+    "task-automation",
+    "ai-agent-creation",
+    "bot-building",
+    "agent-distribution"
+  ],
+  "hiring": {
+    "careers_url": "",
+    "is_hiring": true,
+    "tech_stack": [
+      "Python",
+      "Hunyuan LLM"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "open_source": false,
+  "api_available": true,
+  "modalities": [
+    "text",
+    "multimodal"
+  ],
+  "competitors": [
+    "dify",
+    "agentgpt"
   ]
 }

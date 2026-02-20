@@ -4,11 +4,11 @@
   "product_url": "http://www.xiniudata.com",
   "description": "烯牛数据是一家科创金融数据服务商，涵盖了科创企业数据、创业人才数据、创投机构数据、政府引导基金数据等多种数据源，为全链条全周期科创金融提供数据分析及模型服务。\n烯牛数据APP包含了AI智能问答，科创企业和机构信息实时追踪，科创从业者交流平台，科创金融数据查询等功能。全力打造科创领域AI社交和数据查询平台。",
   "product_type": "app",
-  "category": "ai-application",
+  "category": "ai-chatbot-agent",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "app_store",
@@ -101,10 +101,10 @@
         "updated_at": "2026-02-16"
       },
       "platforms": {
-        "source": "app_store",
-        "tier": 2,
-        "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       },
       "pricing": {
         "source": "app_store",
@@ -129,6 +129,78 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "keywords": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "sub_category": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -145,7 +217,9 @@
     "name": "上海烯牛信息技术有限公司",
     "url": "http://www.xiniudata.com",
     "name_zh": "上海烯牛信息技术有限公司",
-    "website": "http://www.xiniudata.com"
+    "website": "http://www.xiniudata.com",
+    "description": "Tech finance data service provider covering startup, talent, and investment fund data.",
+    "employee_count_range": "11-50"
   },
   "icon_url": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/2d/4d/a7/2d4da783-e4c9-5256-5352-3c83496d53b9/AppIcon-0-0-1x_U007emarketing-0-8-0-0-85-220.png/512x512bb.jpg",
   "tags": [
@@ -155,7 +229,9 @@
     "ZH"
   ],
   "platforms": [
-    "ios"
+    "ios",
+    "web",
+    "android"
   ],
   "pricing": {
     "model": "free",
@@ -165,5 +241,57 @@
   "app_store": {
     "apple_store_url": "https://apps.apple.com/app/id1246012153",
     "rating": 1.0
-  }
+  },
+  "keywords": [
+    "烯牛数据",
+    "上海烯牛信息技术有限公司",
+    "ai chatbot agent",
+    "Business",
+    "AI",
+    "烯牛数据是一家科创金融数据服务商",
+    "涵盖了科创企业数据",
+    "创业人才数据",
+    "创投机构数据",
+    "政府引导基金数据等多种数据源",
+    "为全链条全周期科创金融提供数据分析及模型服务",
+    "包含了",
+    "智能问答",
+    "科创企业和机构信息实时追踪",
+    "科创从业者交流平台",
+    "科创金融数据查询等功能",
+    "全力打造科创领域",
+    "社交和数据查询平台",
+    "app"
+  ],
+  "target_audience": [
+    "developers",
+    "enterprises",
+    "general-users",
+    "investors",
+    "entrepreneurs",
+    "venture-capitalists"
+  ],
+  "use_cases": [
+    "ai-chat",
+    "virtual-assistant",
+    "task-automation",
+    "startup-data-analysis",
+    "investment-research",
+    "market-intelligence"
+  ],
+  "sub_category": "financial-data-platform",
+  "open_source": false,
+  "api_available": true,
+  "hiring": {
+    "is_hiring": true,
+    "careers_url": "",
+    "tech_stack": [
+      "Python",
+      "PostgreSQL"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "modalities": [
+    "text"
+  ]
 }

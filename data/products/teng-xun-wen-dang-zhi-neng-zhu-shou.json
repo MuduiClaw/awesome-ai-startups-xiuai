@@ -4,11 +4,11 @@
   "product_url": "https://docs.qq.com/",
   "description": "腾讯推出的AI文档生成和辅助工具",
   "product_type": "other",
-  "category": "ai-application",
+  "category": "ai-productivity",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "aibot",
@@ -125,10 +125,76 @@
         "updated_at": "2026-02-16"
       },
       "platforms": {
-        "source": "app_store",
-        "tier": 2,
-        "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "keywords": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -150,7 +216,9 @@
     "name": "腾讯文档智能助手",
     "url": "https://docs.qq.com",
     "name_zh": "文龙 赖",
-    "website": "http://docs.qq.com/doc/p/6834871b424e6bc68478acff852c61d2df4e2dad"
+    "website": "http://docs.qq.com/doc/p/6834871b424e6bc68478acff852c61d2df4e2dad",
+    "description": "Tencent's AI-powered document generation and writing assistance tool.",
+    "employee_count_range": "1001-5000"
   },
   "icon_url": "https://ai-bot.cn/wp-content/uploads/2024/01/qq-docs-ai-logo.png",
   "sub_category": "document-processing",
@@ -168,10 +236,51 @@
     "ZH"
   ],
   "platforms": [
-    "ios"
+    "ios",
+    "web"
   ],
   "app_store": {
     "apple_store_url": "https://apps.apple.com/app/id6462851272",
     "rating": 4.7
-  }
+  },
+  "keywords": [
+    "腾讯文档智能助手",
+    "文龙 赖",
+    "ai productivity",
+    "document processing",
+    "ai document tools",
+    "Lifestyle",
+    "AI",
+    "腾讯推出的",
+    "文档生成和辅助工具",
+    "other"
+  ],
+  "target_audience": [
+    "professionals",
+    "teams",
+    "enterprises",
+    "content-creators"
+  ],
+  "use_cases": [
+    "workflow-automation",
+    "document-management",
+    "task-management",
+    "document-generation",
+    "content-creation",
+    "writing-assistance"
+  ],
+  "open_source": false,
+  "api_available": false,
+  "hiring": {
+    "is_hiring": true,
+    "careers_url": "https://www.tencent.com/en-us/careers.html",
+    "tech_stack": [
+      "Python",
+      "NLP"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "modalities": [
+    "text"
+  ]
 }

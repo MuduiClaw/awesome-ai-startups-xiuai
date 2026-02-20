@@ -4,11 +4,11 @@
   "product_url": "https://tongyi.aliyun.com/qianwen",
   "description": "“通义舞王”的免费功能，使用户能够轻松地生成个性化的舞蹈视频。用户在按照提示要求上传照片后，经过十几分钟的等待，即可自动生成舞蹈视频。",
   "product_type": "other",
-  "category": "ai-creative-media",
+  "category": "ai-video-animation",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "ainav",
@@ -87,6 +87,90 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "keywords": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "platforms": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "competitors": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -101,11 +185,64 @@
   "description_zh": "“通义舞王”的免费功能，使用户能够轻松地生成个性化的舞蹈视频。用户在按照提示要求上传照片后，经过十几分钟的等待，即可自动生成舞蹈视频。",
   "company": {
     "name": "通义舞王",
-    "url": "https://tongyi.aliyun.com"
+    "url": "https://tongyi.aliyun.com",
+    "name_zh": "通义舞王",
+    "description": "AI dance video generation tool from Alibaba.",
+    "employee_count_range": "11-50"
   },
   "icon_url": "https://www.ainav.cn/wp-content/uploads/2024/01/54fc0-tongyi.aliyun.com.png",
   "sub_category": "video-generation",
   "tags": [
     "AI视频工具"
+  ],
+  "keywords": [
+    "通义舞王",
+    "ai video animation",
+    "video generation",
+    "AI视频工具",
+    "的免费功能",
+    "使用户能够轻松地生成个性化的舞蹈视频",
+    "用户在按照提示要求上传照片后",
+    "经过十几分钟的等待",
+    "即可自动生成舞蹈视频",
+    "other"
+  ],
+  "platforms": [
+    "web"
+  ],
+  "target_audience": [
+    "content-creators",
+    "video-editors",
+    "marketers",
+    "entertainers",
+    "social-media"
+  ],
+  "use_cases": [
+    "video-generation",
+    "video-editing",
+    "animation",
+    "dance-video-generation",
+    "entertainment",
+    "content-creation"
+  ],
+  "open_source": false,
+  "api_available": false,
+  "hiring": {
+    "is_hiring": true,
+    "careers_url": "https://career.alibaba.com",
+    "tech_stack": [
+      "Python",
+      "Alibaba Cloud",
+      "Motion Capture"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "modalities": [
+    "video",
+    "image"
+  ],
+  "competitors": [
+    "d-id",
+    "synthesia"
   ]
 }

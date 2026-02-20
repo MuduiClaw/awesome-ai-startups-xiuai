@@ -1,444 +1,750 @@
 #!/usr/bin/env python3
-"""Phase 2: Migrate product categories (10 → 11) and tags (flat → dimensional).
+"""Migrate product categories from 11-category to 22-category taxonomy.
+
+Three-tier routing strategy:
+  Tier 1: 8 unchanged categories pass through directly.
+  Tier 2: Route by sub_category field (~86% of reclassified products).
+  Tier 3: Keyword fallback on name + description + tags (~14% remainder).
+
+Also fixes the product_type='llm' bug for 3D model generators (68 products).
 
 Usage:
-    python scripts/migrate_categories.py          # Execute migration
-    python scripts/migrate_categories.py --dry-run # Preview changes
+    python scripts/migrate_categories.py --dry-run   # Preview changes
+    python scripts/migrate_categories.py --execute    # Apply to disk
+    python scripts/migrate_categories.py --stats      # Show distribution
 """
 
 from __future__ import annotations
 
+import argparse
 import json
 import sys
+from collections import Counter
 from pathlib import Path
-from typing import Any
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
-PRODUCTS_DIR = REPO_ROOT / "data" / "products"
-TAGS_FILE = REPO_ROOT / "data" / "tags.json"
+DATA_DIR = REPO_ROOT / "data" / "products"
 
-# ── Category mapping: old 10 → new 11 ──────────────────────────────────────
+# ── Tier 1: Categories that pass through unchanged ─────────────────────────
 
-# Default mapping (1:1 renames)
-_CATEGORY_MAP: dict[str, str] = {
-    "ai-infrastructure": "ai-infrastructure",
-    "ai-dev-tool": "ai-dev-platform",
-    "ai-data": "ai-data-platform",
-    "ai-search": "ai-search-retrieval",
-    "ai-security": "ai-security-governance",
-    "ai-science": "ai-science-research",
-    "ai-hardware": "ai-hardware",
-}
-
-# ai-model sub_categories that indicate creative/media rather than foundation model
-_CREATIVE_MEDIA_SUBCATS: set[str] = {
-    "image-generation",
-    "video-generation",
-    "audio-speech",
-    "music-generation",
-    "3d-generation",
-}
-
-# ai-model tags that indicate creative/media
-_CREATIVE_MEDIA_TAGS: set[str] = {
-    "text-to-image",
-    "text-to-video",
-    "text-to-speech",
-    "text-to-3d",
-    "text-to-music",
-    "image-to-video",
-    "diffusion-model",
-}
-
-# ai-agent sub_categories that indicate dev platform
-_AGENT_DEV_SUBCATS: set[str] = {
-    "multi-agent-platform",
-    "coding-agent",
-}
-
-# ai-app sub_categories that indicate enterprise vertical
-_ENTERPRISE_VERTICAL_SUBCATS: set[str] = {
-    "healthcare-medical",
-    "education-tutoring",
-    "finance-accounting",
-    "legal",
-}
-
-# ── Tag mapping: old flat → new dimensional ─────────────────────────────────
-
-_TAG_MAP: dict[str, str | None] = {
-    # Direct mappings (same ID in new system)
-    # technology
-    "transformer": "transformer",
-    "diffusion-model": "diffusion-model",
-    "rag": "rag",
-    "multimodal": "multimodal",
-    "nlp": "nlp",
-    "computer-vision": "computer-vision",
-    "reinforcement-learning": "reinforcement-learning",
-    "fine-tuning": "fine-tuning",
-    "embedding": "embedding",
-    "speech-to-text": "speech-to-text",
-    "text-to-image": "text-to-image",
-    "text-to-video": "text-to-video",
-    "text-to-speech": "text-to-speech",
-    "text-to-3d": "text-to-3d",
-    "text-to-music": "text-to-music",
-    "code-generation": "code-generation",
-    "prompt-engineering": "prompt-engineering",
-    "image-to-video": "image-to-video",
-    # use_case
-    "chatbot": "chatbot",
-    "copilot": "copilot",
-    "content-creation": "content-creation",
-    "customer-support": "customer-support",
-    "search-engine": "search-engine",
-    "marketing": "marketing",
-    # domain
-    "drug-discovery": "drug-discovery",
-    "medical-imaging": "medical-imaging",
-    "protein-folding": "protein-folding",
-    "clinical-trials": "clinical-trials",
-    "trading": "trading",
-    "risk-assessment": "risk-assessment",
-    "fraud-detection": "fraud-detection",
-    "defense": "defense",
-    "self-driving": "self-driving",
-    "humanoid-robot": "humanoid-robot",
-    "drone": "drone",
-    # business_model
-    "open-source": "open-source",
-    "saas": "saas",
-    "freemium": "freemium",
-    "enterprise": "enterprise",
-    "cloud-native": "cloud-native",
-    "closed-source": "closed-source",
-    "b2b": "b2b",
-    "b2c": "b2c",
-    # technical
-    "real-time": "real-time",
-    "low-latency": "low-latency",
-    "high-throughput": "high-throughput",
-    "on-device": "on-device",
-    "edge-ai": "edge-ai",
-    "mobile-app": "mobile-app",
-    "desktop-app": "desktop-app",
-    "browser-extension": "browser-extension",
-    "api-platform": "api-platform",
-    "sdk": "sdk",
-    "cli-tool": "cli-tool",
-    # special
-    "unicorn": "unicorn",
-    "decacorn": "decacorn",
-    "yc-backed": "yc-backed",
-    "china": "china",
-    "us": "us",
-    "europe": "europe",
-    "japan": "japan",
-    "korea": "korea",
-    # Renamed tags
-    "developer-tools": "developers",
-    "open-weights": "open-source",
-    # Scraper-specific tags to map
-    "ai-chatbots": "chatbot",
-    # Dropped tags (not in new 114 vocabulary)
-    "generative-ai": None,
-    "startup": None,
-    "hardware": None,
-    "agents": None,
-    "data-labeling": None,
-    "synthetic-data": None,
-    "vector-database": None,
-    "model-serving": None,
-    "mlops": None,
-    "gpu-cloud": None,
-    "inference": None,
-    "safety": None,
-    "alignment": None,
-    "governance": None,
-    "privacy": None,
-    "series-a": None,
-}
-
-
-def _load_valid_tags() -> set[str]:
-    """Load all valid tag IDs from the new dimensional tags.json."""
-    data = json.loads(TAGS_FILE.read_text(encoding="utf-8"))
-    valid: set[str] = set()
-    for dim in data["dimensions"].values():
-        for tag in dim["tags"]:
-            valid.add(tag["id"])
-    return valid
-
-
-_NEW_CATEGORIES: set[str] = {
-    "ai-foundation-model",
-    "ai-application",
-    "ai-creative-media",
-    "ai-dev-platform",
-    "ai-infrastructure",
-    "ai-data-platform",
-    "ai-search-retrieval",
-    "ai-hardware",
-    "ai-security-governance",
-    "ai-science-research",
-    "ai-enterprise-vertical",
-}
-
-
-def _map_category(product: dict[str, Any]) -> str:
-    """Map old category to new category using sub_category and tags heuristics."""
-    old_cat: str = product.get("category", "")
-    sub_cat: str = product.get("sub_category", "")
-    tags = set(product.get("tags", []))
-
-    # Already in new category system — pass through (idempotent)
-    if old_cat in _NEW_CATEGORIES:
-        return old_cat
-
-    # Direct 1:1 mappings
-    if old_cat in _CATEGORY_MAP:
-        return _CATEGORY_MAP[old_cat]
-
-    # ai-model → ai-foundation-model or ai-creative-media
-    if old_cat == "ai-model":
-        if sub_cat in _CREATIVE_MEDIA_SUBCATS:
-            return "ai-creative-media"
-        if tags & _CREATIVE_MEDIA_TAGS:
-            return "ai-creative-media"
-        return "ai-foundation-model"
-
-    # ai-app → ai-application or ai-enterprise-vertical
-    if old_cat == "ai-app":
-        if sub_cat in _ENTERPRISE_VERTICAL_SUBCATS:
-            return "ai-enterprise-vertical"
-        return "ai-application"
-
-    # ai-agent → ai-application or ai-dev-platform
-    if old_cat == "ai-agent":
-        if sub_cat in _AGENT_DEV_SUBCATS:
-            return "ai-dev-platform"
-        return "ai-application"
-
-    # Fallback
-    return "ai-application"
-
-
-def _map_tags(old_tags: list[str], valid_tags: set[str]) -> list[str]:
-    """Map old flat tags to new dimensional tag IDs."""
-    new_tags: list[str] = []
-    seen: set[str] = set()
-
-    for tag in old_tags:
-        if tag in _TAG_MAP:
-            mapped = _TAG_MAP[tag]
-            if mapped and mapped not in seen:
-                new_tags.append(mapped)
-                seen.add(mapped)
-        elif tag in valid_tags and tag not in seen:
-            # Tag is already valid in new system
-            new_tags.append(tag)
-            seen.add(tag)
-        # else: drop unknown tags silently
-
-    return new_tags
-
-
-def _infer_tags(product: dict[str, Any], existing_tags: set[str]) -> list[str]:
-    """Infer additional tags from product fields."""
-    inferred: list[str] = []
-
-    # open_source → open-source tag
-    if product.get("open_source") is True and "open-source" not in existing_tags:
-        inferred.append("open-source")
-
-    # pricing.model → business model tags (defensive: pricing may be None or non-dict)
-    pricing = product.get("pricing") or {}
-    pricing_model = pricing.get("model", "") if isinstance(pricing, dict) else ""
-    if pricing_model == "freemium" and "freemium" not in existing_tags:
-        inferred.append("freemium")
-    elif pricing_model == "open-source" and "open-source" not in existing_tags:
-        inferred.append("open-source")
-
-    # Country → special tags (defensive: company/headquarters may be None or non-dict)
-    company = product.get("company") or {}
-    hq = company.get("headquarters", {}) if isinstance(company, dict) else {}
-    country = hq.get("country", "") if isinstance(hq, dict) else ""
-    country_map = {
-        "China": "china",
-        "United States": "us",
-        "Japan": "japan",
-        "South Korea": "korea",
+PASSTHROUGH_CATEGORIES = frozenset(
+    {
+        "ai-foundation-model",
+        "ai-dev-platform",
+        "ai-infrastructure",
+        "ai-data-platform",
+        "ai-search-retrieval",
+        "ai-hardware",
+        "ai-security-governance",
+        "ai-science-research",
     }
-    for country_name, tag in country_map.items():
-        if country == country_name and tag not in existing_tags:
-            inferred.append(tag)
+)
 
-    # European countries → europe tag
-    european = {
-        "United Kingdom",
-        "Germany",
-        "France",
-        "Sweden",
-        "Norway",
-        "Finland",
-        "Denmark",
-        "Netherlands",
-        "Belgium",
-        "Switzerland",
-        "Austria",
-        "Italy",
-        "Spain",
-        "Portugal",
-        "Ireland",
-        "Poland",
-        "Czech Republic",
-        "Romania",
-        "Hungary",
-        "Estonia",
-        "Latvia",
-        "Lithuania",
-    }
-    if country in european and "europe" not in existing_tags:
-        inferred.append("europe")
+# ── Tier 2: Sub-category routing tables ─────────────────────────────────────
 
-    # Funding valuation → unicorn/decacorn (defensive: funding may be None or non-dict)
-    funding = company.get("funding", {}) if isinstance(company, dict) else {}
-    valuation = (
-        funding.get("valuation_usd", 0) if isinstance(funding, dict) else 0
-    ) or 0
-    if valuation >= 10_000_000_000 and "decacorn" not in existing_tags:
-        inferred.append("decacorn")
-    elif valuation >= 1_000_000_000 and "unicorn" not in existing_tags:
-        inferred.append("unicorn")
+# ai-creative-media → split into 3 categories
+_CREATIVE_MEDIA_ROUTES: list[tuple[tuple[str, ...], str]] = [
+    # Video & animation
+    (
+        (
+            "video",
+            "animation",
+            "animated",
+            "movie",
+            "tiktok video",
+            "youtube video",
+            "short video",
+            "ugc",
+            "lip sync",
+            "face swap video",
+            "avatar video",
+            "cartoon video",
+            "commercial",
+            "subtitle",
+            "dubbing",
+            "video translat",
+            "video editor",
+            "video enhancer",
+            "video search",
+            "video summar",
+            "video recording",
+            "script to video",
+            "image to video",
+            "text to video",
+            "video to video",
+            "music video",
+        ),
+        "ai-video-animation",
+    ),
+    # Audio & music
+    (
+        (
+            "audio",
+            "music",
+            "song",
+            "voice",
+            "speech",
+            "sound",
+            "vocal",
+            "transcri",
+            "lyrics",
+            "cover generator",
+            "midi",
+            "beat",
+            "melody",
+            "singing",
+            "rap generator",
+            "stems",
+            "splitter",
+            "mastering",
+            "noise cancel",
+            "tts",
+            "text to speech",
+            "speech to text",
+            "voice clon",
+            "voice chang",
+            "voice over",
+            "voice enhanc",
+            "voice translat",
+            "audio to text",
+            "celebrity voice",
+        ),
+        "ai-audio-music",
+    ),
+    # Image & design (default for creative-media)
+    (
+        (
+            "image",
+            "photo",
+            "art",
+            "design",
+            "illustration",
+            "avatar",
+            "headshot",
+            "profile picture",
+            "poster",
+            "infographic",
+            "graphic",
+            "ppt",
+            "presentation",
+            "interior",
+            "3d",
+            "game",
+            "anime",
+            "background",
+            "watermark",
+            "eraser",
+            "remover",
+            "upscal",
+            "enhancer",
+            "style transfer",
+            "product photo",
+            "clothing",
+            "realistic",
+            "inpainting",
+            "outpainting",
+            "expand",
+            "combiner",
+            "colorize",
+            "pixel",
+            "t shirt",
+            "icon",
+            "landscape",
+            "ux design",
+            "charting",
+            "describe image",
+            "image scan",
+            "face recogni",
+            "image detect",
+            "image translat",
+            "crop",
+            "passport",
+            "baby gen",
+            "object remover",
+            "floor plan",
+            "drawing",
+            "sketch",
+            "texture",
+            "pattern",
+            "wallpaper",
+            "mockup",
+            "svg",
+            "vector",
+            "selfie",
+            "yearbook",
+            "disney",
+            "sticker",
+            "coloring book",
+            "comic",
+            "manga",
+            "waifu",
+            "album cover",
+            "tattoo",
+        ),
+        "ai-image-design",
+    ),
+]
 
-    # api_available → api-service
-    if (
-        product.get("api_available") is True
-        and "api-platform" not in existing_tags
-        and "api-service" not in existing_tags
-    ):
-        inferred.append("api-service")
+# ai-application → split into multiple categories
+_APPLICATION_ROUTES: list[tuple[tuple[str, ...], str]] = [
+    # Education
+    (
+        (
+            "education",
+            "tutoring",
+            "course",
+            "homework",
+            "language learning",
+            "flashcard",
+            "lesson plan",
+            "quiz",
+            "teacher",
+            "math",
+        ),
+        "ai-education",
+    ),
+    # Translation
+    (
+        ("translat", "translate"),
+        "ai-translation",
+    ),
+    # Customer service
+    (
+        (
+            "customer service",
+            "call center",
+            "helpdesk",
+            "customer support",
+        ),
+        "ai-customer-service",
+    ),
+    # Marketing & commerce
+    (
+        (
+            "marketing",
+            "seo",
+            "ad generator",
+            "advertising",
+            "ad creative",
+            "digital marketing",
+            "email marketing",
+            "marketing plan",
+            "affiliate marketing",
+            "lead generation",
+            "landing page",
+            "shopify",
+            "shopping",
+            "ecommerce",
+            "e-commerce",
+            "commerce",
+            "influencer",
+            "caption generator",
+            "hashtag",
+            "instagram",
+            "tiktok",
+            "facebook",
+            "social media post",
+        ),
+        "ai-marketing-commerce",
+    ),
+    # Social & entertainment
+    (
+        (
+            "social media",
+            "character",
+            "roleplay",
+            "girlfriend",
+            "boyfriend",
+            "dating",
+            "games",
+            "gaming",
+            "nsfw",
+            "anime girlfriend",
+            "meme",
+            "dream interpreter",
+            "religion",
+            "bible",
+            "god",
+            "joke",
+            "rizz",
+            "pickup lines",
+            "dirty talk",
+            "travel",
+            "trip planner",
+            "recipe",
+            "cooking",
+            "fitness",
+            "mental health",
+            "beauty",
+            "hairstyle",
+            "fashion",
+            "outfit",
+            "predictions",
+            "sports",
+            "poker",
+            "news",
+            "podcast",
+        ),
+        "ai-social-entertainment",
+    ),
+    # Productivity
+    (
+        (
+            "productivity",
+            "workflow",
+            "task management",
+            "scheduling",
+            "project management",
+            "meeting",
+            "calendar",
+            "note",
+            "knowledge management",
+            "knowledge base",
+            "forms",
+            "spreadsheet",
+            "excel",
+            "document",
+            "pdf",
+            "ocr",
+            "scanner",
+            "files",
+            "whiteboard",
+            "mind map",
+            "email assistant",
+            "copilot",
+            "coaching",
+            "consulting",
+            "monitor",
+            "erp",
+            "tools directory",
+        ),
+        "ai-productivity",
+    ),
+    # Writing & content
+    (
+        (
+            "writing",
+            "copywriting",
+            "blog",
+            "rewriter",
+            "paraphras",
+            "story",
+            "book",
+            "essay",
+            "report generator",
+            "text generator",
+            "script writing",
+            "creative writing",
+            "novel",
+            "letter",
+            "email generator",
+            "article",
+            "content",
+            "seo writing",
+            "humanizer",
+            "bypasser",
+            "grammar",
+            "proofread",
+            "answer",
+            "reply",
+            "response generator",
+            "message generator",
+            "bio generator",
+            "name generator",
+            "domain name",
+            "title generator",
+            "description generator",
+            "review generator",
+            "prompt",
+            "newsletter",
+            "paragraph",
+            "sentence",
+            "summary",
+            "reader",
+        ),
+        "ai-writing-content",
+    ),
+    # Chatbot & agent (default for application)
+    (
+        (
+            "chatbot",
+            "chat",
+            "assistant",
+            "agent",
+            "conversational",
+        ),
+        "ai-chatbot-agent",
+    ),
+]
 
-    # architecture → technology tags
-    arch = (product.get("architecture") or "").lower()
-    if "transformer" in arch and "transformer" not in existing_tags:
-        inferred.append("transformer")
-    if ("moe" in arch or "mixture" in arch) and "moe" not in existing_tags:
-        inferred.append("moe")
-    if "diffusion" in arch and "diffusion-model" not in existing_tags:
-        inferred.append("diffusion-model")
+# ai-enterprise-vertical → split into multiple categories
+_ENTERPRISE_ROUTES: list[tuple[tuple[str, ...], str]] = [
+    # HR & recruiting
+    (
+        (
+            "recruit",
+            "hiring",
+            "job",
+            "resume",
+            "interview",
+            "talent",
+            "hr",
+            "human resource",
+        ),
+        "ai-hr-recruiting",
+    ),
+    # Finance & legal
+    (
+        (
+            "finance",
+            "accounting",
+            "tax",
+            "investing",
+            "trading",
+            "crypto",
+            "stock",
+            "fintech",
+            "legal",
+            "contract",
+            "law",
+        ),
+        "ai-finance-legal",
+    ),
+    # Sales & CRM
+    (
+        (
+            "sales",
+            "crm",
+            "lead generation",
+        ),
+        "ai-sales-crm",
+    ),
+    # Marketing & commerce (from enterprise overlap)
+    (
+        (
+            "seo",
+            "ad generator",
+            "advertising",
+            "ad creative",
+            "digital marketing",
+            "email marketing",
+            "marketing plan",
+            "marketing",
+        ),
+        "ai-marketing-commerce",
+    ),
+]
 
-    # modalities → multimodal
-    modalities = product.get("modalities", [])
-    if len(modalities) > 1 and "multimodal" not in existing_tags:
-        inferred.append("multimodal")
+# ── Tier 3: Keyword fallback on name + description + tags ───────────────────
 
-    return inferred
+_KEYWORD_FALLBACK: list[tuple[tuple[str, ...], str]] = [
+    (
+        ("education", "tutoring", "course", "learning", "teach", "school"),
+        "ai-education",
+    ),
+    (("translat",), "ai-translation"),
+    (
+        ("customer service", "customer support", "helpdesk", "call center"),
+        "ai-customer-service",
+    ),
+    (
+        (
+            "video",
+            "animation",
+            "movie",
+        ),
+        "ai-video-animation",
+    ),
+    (
+        ("audio", "music", "song", "voice", "speech", "sound", "vocal", "podcast"),
+        "ai-audio-music",
+    ),
+    (
+        ("image", "photo", "art", "design", "illustration", "3d model", "avatar"),
+        "ai-image-design",
+    ),
+    (
+        ("marketing", "seo", "advertising", "ecommerce", "e-commerce", "influencer"),
+        "ai-marketing-commerce",
+    ),
+    (
+        (
+            "social media",
+            "character",
+            "roleplay",
+            "girlfriend",
+            "dating",
+            "game",
+            "gaming",
+            "entertainment",
+            "nsfw",
+        ),
+        "ai-social-entertainment",
+    ),
+    (
+        ("recruit", "hiring", "resume", "interview", "job search", "talent"),
+        "ai-hr-recruiting",
+    ),
+    (
+        ("finance", "accounting", "tax", "investing", "trading", "legal", "contract"),
+        "ai-finance-legal",
+    ),
+    (("sales", "crm"), "ai-sales-crm"),
+    (
+        (
+            "writing",
+            "copywriting",
+            "blog",
+            "content creat",
+            "story",
+            "book",
+            "essay",
+            "report",
+        ),
+        "ai-writing-content",
+    ),
+    (
+        (
+            "productivity",
+            "workflow",
+            "task manag",
+            "scheduling",
+            "project manag",
+            "meeting",
+            "note",
+            "document",
+            "pdf",
+        ),
+        "ai-productivity",
+    ),
+]
+
+# Default fallback per removed category
+_CATEGORY_DEFAULTS: dict[str, str] = {
+    "ai-application": "ai-chatbot-agent",
+    "ai-creative-media": "ai-image-design",
+    "ai-enterprise-vertical": "ai-marketing-commerce",
+}
 
 
-def migrate_product(
-    product: dict[str, Any], valid_tags: set[str]
-) -> tuple[dict[str, Any], list[str]]:
-    """Migrate a single product. Returns (updated_product, changes_list)."""
+def migrate_product(data: dict) -> tuple[dict, list[str]]:
+    """Migrate a single product's category. Returns (modified_data, list_of_changes)."""
     changes: list[str] = []
+    category = data.get("category", "")
+    sub = (data.get("sub_category") or "").lower()
 
-    # 1. Map category
-    old_cat = product.get("category", "")
-    new_cat = _map_category(product)
-    if old_cat != new_cat:
-        product["category"] = new_cat
-        changes.append(f"category: {old_cat} → {new_cat}")
+    # ── Tier 1: Passthrough ──
+    if category in PASSTHROUGH_CATEGORIES:
+        changes.extend(_fix_product_type_bug(data))
+        return data, changes
 
-    # 2. Map tags
-    old_tags = product.get("tags", [])
-    new_tags = _map_tags(old_tags, valid_tags)
+    # ── Tier 2: Sub-category routing ──
+    new_cat = None
 
-    # 3. Infer additional tags
-    inferred = _infer_tags(product, set(new_tags))
-    new_tags.extend(inferred)
+    if category == "ai-creative-media":
+        new_cat = _route_by_subcategory(sub, _CREATIVE_MEDIA_ROUTES)
+    elif category == "ai-application":
+        new_cat = _route_by_subcategory(sub, _APPLICATION_ROUTES)
+    elif category == "ai-enterprise-vertical":
+        new_cat = _route_by_subcategory(sub, _ENTERPRISE_ROUTES)
 
-    # Deduplicate while preserving order
-    seen: set[str] = set()
-    deduped: list[str] = []
-    for t in new_tags:
-        if t not in seen:
-            deduped.append(t)
-            seen.add(t)
-    new_tags = deduped
+    # ── Tier 3: Keyword fallback ──
+    if new_cat is None:
+        text = _build_search_text(data)
+        new_cat = _route_by_keywords(text, _KEYWORD_FALLBACK)
 
-    if old_tags != new_tags:
-        product["tags"] = new_tags
-        added = set(new_tags) - set(old_tags)
-        removed = set(old_tags) - set(new_tags)
-        if added:
-            changes.append(f"tags added: {', '.join(sorted(added))}")
-        if removed:
-            changes.append(f"tags removed: {', '.join(sorted(removed))}")
+    # ── Ultimate fallback ──
+    if new_cat is None:
+        new_cat = _CATEGORY_DEFAULTS.get(category, "ai-chatbot-agent")
 
-    return product, changes
+    if new_cat != category:
+        changes.append(f"category: {category} -> {new_cat}")
+        data["category"] = new_cat
+
+    # Fix product_type bug
+    changes.extend(_fix_product_type_bug(data))
+
+    return data, changes
 
 
-def main() -> None:
-    dry_run = "--dry-run" in sys.argv
+def _route_by_subcategory(
+    sub: str, routes: list[tuple[tuple[str, ...], str]]
+) -> str | None:
+    """Match sub_category against routing table keywords."""
+    if not sub or sub == "none" or sub == "other":
+        return None
+    for keywords, target in routes:
+        if any(kw in sub for kw in keywords):
+            return target
+    return None
 
-    if not PRODUCTS_DIR.exists():
-        print(f"Products directory not found: {PRODUCTS_DIR}")
+
+def _route_by_keywords(
+    text: str, rules: list[tuple[tuple[str, ...], str]]
+) -> str | None:
+    """Match combined text against keyword rules."""
+    if not text:
+        return None
+    text_lower = text.lower()
+    for keywords, target in rules:
+        if any(kw in text_lower for kw in keywords):
+            return target
+    return None
+
+
+def _build_search_text(data: dict) -> str:
+    """Combine name + description + tags for keyword matching."""
+    parts = [
+        data.get("name", ""),
+        data.get("description", ""),
+    ]
+    tags = data.get("tags", [])
+    if isinstance(tags, list):
+        parts.extend(tags)
+    keywords = data.get("keywords", [])
+    if isinstance(keywords, list):
+        parts.extend(keywords)
+    return " ".join(str(p) for p in parts if p)
+
+
+def _fix_product_type_bug(data: dict) -> list[str]:
+    """Fix 3D model products incorrectly marked as product_type='llm'."""
+    changes: list[str] = []
+    if data.get("product_type") == "llm":
+        sub = (data.get("sub_category") or "").lower()
+        name = (data.get("name") or "").lower()
+        cat = data.get("category", "")
+        # If it's a 3D model generator or in creative/image/video category, fix it
+        if (
+            "3d" in sub
+            or "3d" in name
+            or "model generator" in sub
+            or cat in ("ai-image-design", "ai-video-animation", "ai-audio-music")
+        ):
+            data["product_type"] = "app"
+            changes.append("product_type: llm -> app (3D model bug fix)")
+    return changes
+
+
+def run_migration(mode: str) -> None:
+    """Run the migration in the specified mode."""
+    if not DATA_DIR.exists():
+        print(f"Error: {DATA_DIR} not found")
         sys.exit(1)
 
-    valid_tags = _load_valid_tags()
-    print(f"Loaded {len(valid_tags)} valid tags from {TAGS_FILE.name}")
+    files = sorted(DATA_DIR.glob("*.json"))
+    print(f"Found {len(files)} product files in {DATA_DIR}")
 
-    product_files = sorted(PRODUCTS_DIR.glob("*.json"))
-    print(f"Found {len(product_files)} product files to migrate\n")
+    stats_before: Counter[str] = Counter()
+    stats_after: Counter[str] = Counter()
+    changed_count = 0
+    ptype_fixes = 0
+    all_changes: list[tuple[str, list[str]]] = []
 
-    total_changed = 0
-    category_changes: dict[str, int] = {}
-    tags_added_total = 0
-    tags_removed_total = 0
-
-    for filepath in product_files:
+    for filepath in files:
         try:
             data = json.loads(filepath.read_text(encoding="utf-8"))
-        except json.JSONDecodeError:
-            print(f"  SKIP {filepath.name} (invalid JSON)")
+        except (json.JSONDecodeError, OSError) as exc:
+            print(f"  SKIP {filepath.name}: {exc}")
             continue
 
-        old_tags = set(data.get("tags", []))
-        product, changes = migrate_product(data, valid_tags)
+        stats_before[data.get("category", "UNKNOWN")] += 1
+
+        migrated, changes = migrate_product(data)
+
+        stats_after[migrated.get("category", "UNKNOWN")] += 1
 
         if changes:
-            total_changed += 1
-            new_tags = set(product.get("tags", []))
-            tags_added_total += len(new_tags - old_tags)
-            tags_removed_total += len(old_tags - new_tags)
+            changed_count += 1
+            all_changes.append((filepath.name, changes))
+            ptype_fix = any("product_type" in c for c in changes)
+            if ptype_fix:
+                ptype_fixes += 1
 
-            # Track category changes
-            for c in changes:
-                if c.startswith("category:"):
-                    old_new = c.split(": ")[1]
-                    category_changes[old_new] = category_changes.get(old_new, 0) + 1
-
-            if dry_run:
-                print(f"  {filepath.name}:")
-                for c in changes:
-                    print(f"    {c}")
-            else:
+            if mode == "execute":
                 filepath.write_text(
-                    json.dumps(product, indent=2, ensure_ascii=False) + "\n",
+                    json.dumps(migrated, indent=2, ensure_ascii=False) + "\n",
                     encoding="utf-8",
                 )
 
-    print(f"\n{'[DRY RUN] ' if dry_run else ''}Summary:")
-    print(f"  Total products: {len(product_files)}")
-    print(f"  Changed: {total_changed}")
-    print(f"  Tags added: {tags_added_total}")
-    print(f"  Tags removed: {tags_removed_total}")
+    # ── Report ──
+    print(f"\n{'=' * 60}")
+    print(f"Migration {'EXECUTED' if mode == 'execute' else 'DRY RUN'}")
+    print(f"{'=' * 60}")
+    print(f"Total files:        {len(files)}")
+    print(f"Changed:            {changed_count}")
+    print(f"product_type fixes: {ptype_fixes}")
 
-    if category_changes:
-        print("\n  Category migrations:")
-        for change, count in sorted(category_changes.items()):
-            print(f"    {change}: {count}")
+    if mode == "dry-run" and all_changes:
+        print("\n--- Sample changes (first 30) ---")
+        for fname, changes in all_changes[:30]:
+            for c in changes:
+                print(f"  {fname}: {c}")
+        if len(all_changes) > 30:
+            print(f"  ... and {len(all_changes) - 30} more")
+
+    print("\n--- Category distribution BEFORE ---")
+    for cat, cnt in stats_before.most_common():
+        pct = 100.0 * cnt / len(files) if files else 0
+        print(f"  {cat:30s} {cnt:>6d}  ({pct:5.1f}%)")
+
+    print("\n--- Category distribution AFTER ---")
+    for cat, cnt in stats_after.most_common():
+        pct = 100.0 * cnt / len(files) if files else 0
+        print(f"  {cat:30s} {cnt:>6d}  ({pct:5.1f}%)")
+
+    # Verify no removed categories remain
+    removed = {"ai-application", "ai-creative-media", "ai-enterprise-vertical"}
+    remaining_removed = removed & set(stats_after.keys())
+    if remaining_removed:
+        print(f"\n  WARNING: Removed categories still present: {remaining_removed}")
+    else:
+        print("\n  OK: All removed categories eliminated")
+
+    # Check no category exceeds 20%
+    if stats_after:
+        max_cat = stats_after.most_common(1)[0]
+        max_pct = 100.0 * max_cat[1] / len(files) if files else 0
+        if max_pct > 20:
+            print(f"  WARNING: {max_cat[0]} has {max_pct:.1f}% of products")
+        else:
+            print(
+                f"  OK: No category exceeds 20% (max: {max_cat[0]} at {max_pct:.1f}%)"
+            )
+
+
+def show_stats() -> None:
+    """Show current category distribution."""
+    files = sorted(DATA_DIR.glob("*.json"))
+    stats: Counter[str] = Counter()
+    for filepath in files:
+        try:
+            data = json.loads(filepath.read_text(encoding="utf-8"))
+            stats[data.get("category", "UNKNOWN")] += 1
+        except Exception:
+            pass
+    print(f"Total: {len(files)}")
+    for cat, cnt in stats.most_common():
+        pct = 100.0 * cnt / len(files) if files else 0
+        print(f"  {cat:30s} {cnt:>6d}  ({pct:5.1f}%)")
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(
+        description="Migrate product categories (11 -> 22)"
+    )
+    group = parser.add_mutually_exclusive_group(required=True)
+    group.add_argument("--dry-run", action="store_true", help="Preview changes")
+    group.add_argument("--execute", action="store_true", help="Apply changes to disk")
+    group.add_argument("--stats", action="store_true", help="Show current distribution")
+    args = parser.parse_args()
+
+    if args.stats:
+        show_stats()
+    elif args.dry_run:
+        run_migration("dry-run")
+    elif args.execute:
+        run_migration("execute")
 
 
 if __name__ == "__main__":

@@ -8,7 +8,7 @@
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "ainav",
@@ -87,6 +87,84 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "keywords": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "platforms": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -101,11 +179,71 @@
   "description_zh": "这个hivemoderation 网站通过上传图片，就可以检测出AI绘画的概率，网站还指出了是用什么AI绘画工具制作的。同时网站还贴心的准备了浏览器扩展，可以方便的安装到edge和chrome浏览器扩展上。",
   "company": {
     "name": "hivemoderation AI图片检测网站",
-    "url": "https://hivemoderation.com"
+    "url": "https://hivemoderation.com",
+    "name_zh": "HiveModeration",
+    "description": "Chinese AI detection platform for identifying AI-generated images and detecting the tools used to create them.",
+    "employee_count_range": "1-10"
   },
   "icon_url": "https://www.ainav.cn/wp-content/uploads/2025/01/1736696497-favicon.ico",
   "sub_category": "ai-content-detection",
   "tags": [
     "AI内容检测"
+  ],
+  "keywords": [
+    "hivemoderation AI图片检测网站",
+    "ai security governance",
+    "ai content detection",
+    "AI内容检测",
+    "hivemoderation",
+    "AI",
+    "edge",
+    "chrome",
+    "这个",
+    "网站通过上传图片",
+    "就可以检测出",
+    "绘画的概率",
+    "网站还指出了是用什么",
+    "绘画工具制作的",
+    "同时网站还贴心的准备了浏览器扩展",
+    "可以方便的安装到",
+    "浏览器扩展上",
+    "other"
+  ],
+  "platforms": [
+    "web"
+  ],
+  "target_audience": [
+    "security-professionals",
+    "enterprises",
+    "compliance-teams",
+    "content-moderators",
+    "platforms",
+    "creators",
+    "researchers"
+  ],
+  "use_cases": [
+    "threat-detection",
+    "compliance-monitoring",
+    "data-protection",
+    "ai-detection",
+    "image-analysis",
+    "content-moderation",
+    "authenticity-verification"
+  ],
+  "open_source": false,
+  "api_available": false,
+  "hiring": {
+    "is_hiring": false,
+    "careers_url": "",
+    "tech_stack": [
+      "Python",
+      "TensorFlow",
+      "Flask",
+      "OpenCV"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "modalities": [
+    "image"
   ]
 }

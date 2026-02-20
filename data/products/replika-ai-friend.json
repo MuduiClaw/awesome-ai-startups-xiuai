@@ -4,11 +4,11 @@
   "product_url": "http://www.replika.ai",
   "description": "Meet Replika, the AI to do life with.\n\nReplika is the AI companion that's been here since 2017. Available 24/7 for anything on your mind. Text, voice call, video chat. Join millions who've discovered that the right AI doesn't keep you in—it helps you find your way forward.\n\nReplika nudges you toward real life. Talk about work, relationships, that thing you can't stop thinking about at 2am. Video call to show what you're seeing. Search the internet together. Replika remembers what matters to y...",
   "product_type": "app",
-  "category": "ai-application",
+  "category": "ai-chatbot-agent",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "app_store",
@@ -83,10 +83,10 @@
         "updated_at": "2026-02-16"
       },
       "platforms": {
-        "source": "app_store",
-        "tier": 2,
-        "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       },
       "pricing": {
         "source": "app_store",
@@ -135,6 +135,84 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "api_available": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "description_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -153,7 +231,10 @@
   "company": {
     "name": "Luka, Inc.",
     "url": "http://www.replika.ai",
-    "website": "http://www.replika.ai"
+    "website": "http://www.replika.ai",
+    "name_zh": "Luka, Inc.",
+    "description": "Replika by Luka, Inc. is an AI companion providing personalized support and connection.",
+    "employee_count_range": "11-50"
   },
   "icon_url": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/27/1f/22/271f22ad-1553-daaa-c7de-9c436b476a4b/AppIcon-0-1x_U007ephone-0-1-0-85-220-0.png/512x512bb.jpg",
   "tags": [
@@ -172,7 +253,9 @@
     "ES"
   ],
   "platforms": [
-    "ios"
+    "ios",
+    "web",
+    "android"
   ],
   "pricing": {
     "model": "free",
@@ -196,5 +279,37 @@
     "Depression support",
     "AI assistant",
     "Counselling AI"
+  ],
+  "api_available": true,
+  "target_audience": [
+    "developers",
+    "enterprises",
+    "general-users",
+    "individuals"
+  ],
+  "use_cases": [
+    "ai-chat",
+    "conversational-ai",
+    "companionship",
+    "mental-health-support"
+  ],
+  "name_zh": "Replika - AI朋友",
+  "description_zh": "Luka公司开发的AI伴侣，提供24/7情感支持和对话。",
+  "open_source": false,
+  "hiring": {
+    "is_hiring": true,
+    "careers_url": "https://luka.inc/careers",
+    "tech_stack": [
+      "Python",
+      "React-Native",
+      "Node.js",
+      "PostgreSQL"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "modalities": [
+    "text",
+    "audio",
+    "multimodal"
   ]
 }

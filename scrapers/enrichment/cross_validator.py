@@ -91,7 +91,7 @@ class CrossValidator:
     - Company data inconsistencies across products from the same company
     """
 
-    def __init__(self) -> None:
+    def __init__(self, db: Any = None) -> None:
         self._name_to_slug: dict[str, str] = {}
         self._name_zh_to_slug: dict[str, str] = {}
         self._url_to_slug: dict[str, str] = {}
@@ -101,7 +101,10 @@ class CrossValidator:
             {}
         )  # company_name -> first seen data
         self._violations: list[CrossValidationViolation] = []
-        self._load_existing()
+        if db is not None:
+            self._load_existing_from_db(db)
+        else:
+            self._load_existing()
 
     # -- index building -----------------------------------------------------
 
@@ -145,6 +148,16 @@ class CrossValidator:
                     "founded_year": company.get("founded_year"),
                     "name_zh": company.get("name_zh"),
                 }
+
+    def _load_existing_from_db(self, db: Any) -> None:
+        """Build indexes from SQLite in a single query."""
+        index = db.get_cross_validation_index()
+        self._name_to_slug = index["names"]
+        self._name_zh_to_slug = index["names_zh"]
+        self._url_to_slug = index["urls"]
+        self._description_by_slug = index["descriptions"]
+        self._description_zh_by_slug = index["descriptions_zh"]
+        self._company_data = index["company_data"]
 
     # -- public API ---------------------------------------------------------
 

@@ -73,7 +73,7 @@ Company JSON files live in `data/companies/` and must conform to `data/schema/co
 
 Required fields: `slug`, `name`, `description` (min 10 chars), `website` (URI), `category` (enum), `founded_year`, `headquarters` (city + country).
 
-Valid categories: `llm-foundation-model`, `ai-coding`, `ai-image-video`, `ai-audio-speech`, `ai-search`, `ai-robotics`, `ai-infrastructure`, `ai-data-analytics`, `ai-assistant`, `ai-enterprise`, `autonomous-vehicles`, `ai-security-defense`, `ai-healthcare`, `ai-education`, `ai-finance`, `ai-gaming`, `ai-other`.
+Valid categories (22): `ai-foundation-model`, `ai-dev-platform`, `ai-infrastructure`, `ai-data-platform`, `ai-search-retrieval`, `ai-hardware`, `ai-security-governance`, `ai-science-research`, `ai-image-design`, `ai-video-animation`, `ai-audio-music`, `ai-chatbot-agent`, `ai-writing-content`, `ai-productivity`, `ai-education`, `ai-marketing-commerce`, `ai-social-entertainment`, `ai-customer-service`, `ai-translation`, `ai-finance-legal`, `ai-hr-recruiting`, `ai-sales-crm`.
 
 The slug must match the filename (without `.json`) and follow pattern `^[a-z0-9-]+$`.
 

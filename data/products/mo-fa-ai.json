@@ -4,11 +4,11 @@
   "product_url": "https://www.mofaai.com.cn/login?q=125154",
   "description": "魔法AI是一家专注于跨境营销的科技公司，致力于用前沿的AI技术来赋能跨境电商、外贸，海外社媒等海外营销场景，帮助中国品牌走向世界。魔法AI集成了300+日常工作的预训练应用，一键生成商品listing、SEO内容、网红开发信、Facebook广告文案、商品图等营销内容。",
   "product_type": "other",
-  "category": "ai-application",
+  "category": "ai-marketing-commerce",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "ainav",
@@ -87,6 +87,90 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "keywords": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "platforms": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "ainav",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-18"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "competitors": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -101,11 +185,74 @@
   "description_zh": "魔法AI是一家专注于跨境营销的科技公司，致力于用前沿的AI技术来赋能跨境电商、外贸，海外社媒等海外营销场景，帮助中国品牌走向世界。魔法AI集成了300+日常工作的预训练应用，一键生成商品listing、SEO内容、网红开发信、Facebook广告文案、商品图等营销内容。",
   "company": {
     "name": "魔法AI",
-    "url": "https://mofaai.com.cn"
+    "url": "https://mofaai.com.cn",
+    "name_zh": "魔法AI",
+    "description": "Magic AI specializes in AI-powered cross-border marketing with 300+ pre-trained applications.",
+    "employee_count_range": "11-50"
   },
   "icon_url": "https://www.ainav.cn/wp-content/uploads/2023/10/t017778e2b31c24303d.png",
   "sub_category": "text-generation",
   "tags": [
     "AI文本工具"
+  ],
+  "keywords": [
+    "魔法AI",
+    "ai marketing commerce",
+    "text generation",
+    "AI文本工具",
+    "AI",
+    "listing",
+    "Facebook",
+    "魔法",
+    "是一家专注于跨境营销的科技公司",
+    "致力于用前沿的",
+    "技术来赋能跨境电商",
+    "外贸",
+    "海外社媒等海外营销场景",
+    "帮助中国品牌走向世界",
+    "集成了",
+    "日常工作的预训练应用",
+    "一键生成商品",
+    "内容",
+    "网红开发信",
+    "广告文案",
+    "商品图等营销内容",
+    "other"
+  ],
+  "platforms": [
+    "web"
+  ],
+  "target_audience": [
+    "marketers",
+    "enterprises",
+    "e-commerce-sellers",
+    "e-commerce",
+    "cross-border-sellers"
+  ],
+  "use_cases": [
+    "ad-creation",
+    "marketing-automation",
+    "e-commerce-optimization",
+    "marketing-content-generation",
+    "product-listing",
+    "seo-optimization"
+  ],
+  "hiring": {
+    "careers_url": "",
+    "is_hiring": true,
+    "tech_stack": [
+      "Python",
+      "React",
+      "NLP"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "open_source": false,
+  "api_available": false,
+  "modalities": [
+    "text"
+  ],
+  "competitors": [
+    "jasper"
   ]
 }

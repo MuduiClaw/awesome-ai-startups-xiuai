@@ -4,11 +4,11 @@
   "product_url": "https://jimeng.jianying.com",
   "description": "即梦AI是一款由抖音出品的AI图片、视频创作工具，目前已经全量上线了4.0模型生成图片版本",
   "product_type": "other",
-  "category": "ai-creative-media",
+  "category": "ai-image-design",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "ainav",
@@ -125,10 +125,82 @@
         "updated_at": "2026-02-16"
       },
       "platforms": {
-        "source": "app_store",
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "keywords": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "ainav",
         "tier": 2,
         "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "updated_at": "2026-02-18"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "competitors": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -155,7 +227,9 @@
     "name": "即梦AI",
     "url": "https://jimeng.jianying.com",
     "name_zh": "深圳市脸萌科技有限公司",
-    "website": "https://jimeng.jianying.com"
+    "website": "https://jimeng.jianying.com",
+    "description": "TikTok's AI image and video generation tool with advanced 4.0 model for content creation.",
+    "employee_count_range": "51-200"
   },
   "icon_url": "https://www.ainav.cn/wp-content/uploads/2025/12/1767159237-jimeng-logo-1.png",
   "sub_category": "image-generation",
@@ -174,10 +248,63 @@
     "ZH"
   ],
   "platforms": [
-    "ios"
+    "ios",
+    "web",
+    "android"
   ],
   "app_store": {
     "apple_store_url": "https://apps.apple.com/app/id6503676563",
     "rating": 4.7
-  }
+  },
+  "keywords": [
+    "即梦AI",
+    "深圳市脸萌科技有限公司",
+    "ai image design",
+    "image generation",
+    "AI绘画工具",
+    "ai video tools",
+    "Photo & Video",
+    "AI",
+    "即梦",
+    "是一款由抖音出品的",
+    "图片",
+    "视频创作工具",
+    "目前已经全量上线了",
+    "模型生成图片版本",
+    "other"
+  ],
+  "target_audience": [
+    "designers",
+    "content-creators",
+    "marketers",
+    "social-media-users"
+  ],
+  "use_cases": [
+    "image-generation",
+    "image-editing",
+    "graphic-design",
+    "video-generation",
+    "content-creation"
+  ],
+  "hiring": {
+    "careers_url": "",
+    "is_hiring": true,
+    "tech_stack": [
+      "Python",
+      "React",
+      "Diffusion Models",
+      "ByteDance Infrastructure"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "open_source": false,
+  "api_available": false,
+  "modalities": [
+    "image",
+    "video"
+  ],
+  "competitors": [
+    "midjourney",
+    "runway"
+  ]
 }

@@ -54,18 +54,18 @@ _CARD_PATTERN = re.compile(
 # Category mapping: AiNav Chinese category_name → (schema category, sub_category)
 # ---------------------------------------------------------------------------
 _AINAV_CATEGORY_MAP: dict[str, tuple[str, str]] = {
-    "AI绘画工具": ("ai-creative-media", "image-generation"),
-    "AI图片处理": ("ai-creative-media", "image-editing"),
-    "AI文本工具": ("ai-application", "text-generation"),
-    "AI对话聊天": ("ai-application", "chatbot"),
+    "AI绘画工具": ("ai-image-design", "image-generation"),
+    "AI图片处理": ("ai-image-design", "image-editing"),
+    "AI文本工具": ("ai-writing-content", "text-generation"),
+    "AI对话聊天": ("ai-chatbot-agent", "chatbot"),
     "AI开发者社区": ("ai-dev-platform", "developer-community"),
     "AI编程工具": ("ai-dev-platform", "coding-assistant"),
-    "AI视频工具": ("ai-creative-media", "video-generation"),
-    "AI智能体平台": ("ai-application", "ai-agent"),
+    "AI视频工具": ("ai-video-animation", "video-generation"),
+    "AI智能体平台": ("ai-chatbot-agent", "ai-agent"),
     "AI搜索引擎": ("ai-search-retrieval", "ai-search"),
-    "AI音频工具": ("ai-creative-media", "audio-speech"),
-    "AI办公工具": ("ai-application", "productivity"),
-    "AI提示词": ("ai-application", "prompt-engineering"),
+    "AI音频工具": ("ai-audio-music", "audio-speech"),
+    "AI办公工具": ("ai-productivity", "productivity"),
+    "AI提示词": ("ai-writing-content", "prompt-engineering"),
     "AI内容检测": ("ai-security-governance", "ai-content-detection"),
 }
 
@@ -178,7 +178,7 @@ class AiNavScraper(BaseScraper):
             desc_zh = desc_str if desc_str and _has_chinese(desc_str) else None
 
             cat, sub = _AINAV_CATEGORY_MAP.get(
-                cat_name, ("ai-application", None)
+                cat_name, ("ai-chatbot-agent", None)
             )
 
             products.append(

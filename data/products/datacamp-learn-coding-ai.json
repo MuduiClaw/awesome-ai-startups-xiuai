@@ -4,11 +4,11 @@
   "product_url": "https://www.datacamp.com/mobile",
   "description": "Learn to code and master AI skills with DataCamp.\n\nMaster in-demand programming, coding, and technology skills in Python, SQL, R, AI, and more through interactive courses, real-world projects, and industry-recognized certifications. Whether you’re getting started with coding or learning advanced queries, DataCamp’s diverse curriculum helps you learn programming languages such as Python or SQL, alongside expert-led AI training, so you can stay ahead in the modern technology landscape.\n\nWhy lea...",
   "product_type": "app",
-  "category": "ai-application",
+  "category": "ai-education",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "app_store",
@@ -83,10 +83,10 @@
         "updated_at": "2026-02-16"
       },
       "platforms": {
-        "source": "app_store",
-        "tier": 2,
-        "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       },
       "pricing": {
         "source": "app_store",
@@ -135,6 +135,90 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "api_available": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "description_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "competitors": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -153,7 +237,10 @@
   "company": {
     "name": "Datacamp",
     "url": "https://www.datacamp.com/mobile",
-    "website": "https://www.datacamp.com/mobile"
+    "website": "https://www.datacamp.com/mobile",
+    "name_zh": "DataCamp",
+    "description": "EdTech platform offering coding, data science, and AI skill development courses.",
+    "employee_count_range": "51-200"
   },
   "icon_url": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/7a/5c/1d/7a5c1da1-57ed-d120-098f-8ed9b5c557d7/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
   "tags": [
@@ -176,7 +263,8 @@
     "TR"
   ],
   "platforms": [
-    "ios"
+    "ios",
+    "web"
   ],
   "pricing": {
     "model": "free",
@@ -204,5 +292,43 @@
     "Skill Tracks",
     "Certification",
     "Data Visualization"
+  ],
+  "api_available": true,
+  "target_audience": [
+    "students",
+    "educators",
+    "researchers",
+    "professionals",
+    "career-changers"
+  ],
+  "use_cases": [
+    "ai-chat",
+    "conversational-ai",
+    "prompt-engineering",
+    "llm-optimization",
+    "api-integration",
+    "skill-development",
+    "coding-education",
+    "career-training"
+  ],
+  "name_zh": "DataCamp：学习编程和AI",
+  "description_zh": "学习编程、SQL、Python、R和AI等技能的在线学习平台，提供交互式课程和认证。",
+  "open_source": false,
+  "hiring": {
+    "is_hiring": true,
+    "careers_url": "https://datacamp.com/careers",
+    "tech_stack": [
+      "React",
+      "Python",
+      "PostgreSQL"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "modalities": [
+    "text",
+    "video"
+  ],
+  "competitors": [
+    "coursera"
   ]
 }

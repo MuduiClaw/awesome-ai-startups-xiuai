@@ -143,6 +143,8 @@ class ScrapedProduct:
     release_date: str | None = None
 
     # -- Hiring (flat fields for scraper simplicity) ---------------------
+    hiring_is_hiring: bool | None = None
+    hiring_careers_url: str = ""
     hiring_positions: tuple[dict[str, str], ...] = ()
     hiring_tech_stack: tuple[str, ...] = ()
 

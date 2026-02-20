@@ -4,11 +4,11 @@
   "product_url": "https://pi.ai",
   "description": "Hey, I'm Pi. I'm an emotionally intelligent AI, designed to empower you to feel confident and supported to tackle everyday life. Whether you're looking to explore new ideas, talk through a difficult topic, or just want someone to listen, Pi is here for you.\n\nTALK IT OUT\n- Prep for a hard conversation, or just vent when you need someone to talk to. Try voice mode to talk it out live!\n\nFUEL YOUR CURIOSITY\n- Learn about a new topic, or practice a language.\n\nGET THINGS DONE\n- Talk through decisio...",
   "product_type": "app",
-  "category": "ai-application",
+  "category": "ai-education",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "app_store",
@@ -83,10 +83,10 @@
         "updated_at": "2026-02-16"
       },
       "platforms": {
-        "source": "app_store",
-        "tier": 2,
-        "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       },
       "pricing": {
         "source": "app_store",
@@ -135,6 +135,90 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "api_available": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "description_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "competitors": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -158,7 +242,10 @@
   "company": {
     "name": "Inflection AI",
     "url": "https://pi.ai",
-    "website": "https://pi.ai"
+    "website": "https://pi.ai",
+    "name_zh": "Inflection AI",
+    "description": "Emotionally intelligent personal AI assistant by Inflection AI.",
+    "employee_count_range": "11-50"
   },
   "icon_url": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/bb/58/88/bb588852-6c8b-7e7b-d990-1eea45108c90/AppIcon-0-0-1x_U007epad-0-1-0-85-220.png/512x512bb.jpg",
   "tags": [
@@ -177,7 +264,9 @@
     "EN"
   ],
   "platforms": [
-    "ios"
+    "ios",
+    "web",
+    "android"
   ],
   "pricing": {
     "model": "free",
@@ -211,5 +300,41 @@
     "Supportive AI",
     "Advice",
     "Information"
+  ],
+  "api_available": true,
+  "target_audience": [
+    "students",
+    "educators",
+    "researchers",
+    "consumers",
+    "mental-health-seekers"
+  ],
+  "use_cases": [
+    "ai-chat",
+    "conversational-ai",
+    "personal-assistance",
+    "emotional-support",
+    "learning-support"
+  ],
+  "name_zh": "Pi 个人AI助手",
+  "description_zh": "情感智能AI，旨在赋能用户应对日常生活挑战。",
+  "open_source": false,
+  "hiring": {
+    "is_hiring": true,
+    "careers_url": "https://www.inflection.ai/careers",
+    "tech_stack": [
+      "Python",
+      "PyTorch",
+      "React",
+      "AWS"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "modalities": [
+    "text"
+  ],
+  "competitors": [
+    "chatgpt",
+    "gemini"
   ]
 }

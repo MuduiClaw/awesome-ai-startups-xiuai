@@ -4,11 +4,11 @@
   "product_url": "https://rockalpha.rockflow.ai",
   "description": "RockAlpha AI股票交易竞技场，通过多主题竞技场让 AI 模型基于相同数据在实时市场竞争，用户可追踪模型表现、复制交易或投票预测获胜者。\r\n平台提供透明的交易决策展示与统一规则体系，支持用户参与 AI 行业、情绪驱动及传统资产等多类型投资策略。",
   "product_type": "other",
-  "category": "ai-application",
+  "category": "ai-chatbot-agent",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "ainav",
@@ -81,6 +81,90 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "keywords": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "platforms": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "sub_category": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -95,10 +179,71 @@
   "description_zh": "RockAlpha AI股票交易竞技场，通过多主题竞技场让 AI 模型基于相同数据在实时市场竞争，用户可追踪模型表现、复制交易或投票预测获胜者。\r\n平台提供透明的交易决策展示与统一规则体系，支持用户参与 AI 行业、情绪驱动及传统资产等多类型投资策略。",
   "company": {
     "name": "AI实时炒股交易 RockAlpha",
-    "url": "https://rockalpha.rockflow.ai"
+    "url": "https://rockalpha.rockflow.ai",
+    "name_zh": "RockAlpha",
+    "description": "AI stock trading arena featuring transparent decision-making and multi-theme competitions for AI models.",
+    "employee_count_range": "11-50"
   },
   "icon_url": "https://www.ainav.cn/wp-content/uploads/2025/11/1762444363-favicon.ico",
   "tags": [
     "其他AI工具"
+  ],
+  "keywords": [
+    "AI实时炒股交易 RockAlpha",
+    "ai chatbot agent",
+    "其他AI工具",
+    "RockAlpha",
+    "AI",
+    "股票交易竞技场",
+    "通过多主题竞技场让",
+    "模型基于相同数据在实时市场竞争",
+    "用户可追踪模型表现",
+    "复制交易或投票预测获胜者",
+    "平台提供透明的交易决策展示与统一规则体系",
+    "支持用户参与",
+    "行业",
+    "情绪驱动及传统资产等多类型投资策略",
+    "other"
+  ],
+  "platforms": [
+    "web",
+    "api"
+  ],
+  "target_audience": [
+    "developers",
+    "enterprises",
+    "general-users",
+    "traders",
+    "investors",
+    "ai-researchers",
+    "strategy-developers"
+  ],
+  "use_cases": [
+    "ai-chat",
+    "virtual-assistant",
+    "task-automation",
+    "stock-trading",
+    "ai-strategy-testing",
+    "trading-competition",
+    "market-analysis"
+  ],
+  "sub_category": "trading-platform",
+  "open_source": false,
+  "api_available": true,
+  "hiring": {
+    "is_hiring": false,
+    "careers_url": "",
+    "tech_stack": [
+      "Python",
+      "React",
+      "Stock APIs",
+      "PostgreSQL",
+      "Machine Learning"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "modalities": [
+    "text",
+    "image"
   ]
 }

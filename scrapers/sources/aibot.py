@@ -71,22 +71,22 @@ _INTERNAL_URL_RE = re.compile(r"^https?://ai-bot\.cn/sites/\d+\.html$")
 # Category mapping: AiBot category_slug → (schema category, sub_category)
 # ---------------------------------------------------------------------------
 _AIBOT_CATEGORY_MAP: dict[str, tuple[str, str]] = {
-    "ai-agent": ("ai-application", "ai-agent"),
+    "ai-agent": ("ai-chatbot-agent", "ai-agent"),
     "ai-search-engines": ("ai-search-retrieval", "ai-search"),
-    "ai-productivity-tools": ("ai-application", "productivity"),
+    "ai-productivity-tools": ("ai-productivity", "productivity"),
     "ai-content-detection-and-optimization-tools": (
         "ai-security-governance",
         "ai-content-detection",
     ),
-    "ai-product-photo-generators": ("ai-creative-media", "image-generation"),
-    "ai-recruitment-and-job-search-tools": ("ai-enterprise-vertical", "recruitment"),
-    "ai-translation-tools": ("ai-application", "translation"),
-    "ai-mindmap-tools": ("ai-application", "mind-mapping"),
-    "ai-meeting-tools": ("ai-application", "meeting-assistant"),
-    "ai-3d-model-generation": ("ai-creative-media", "3d-generation"),
-    "ai-legal-assistants": ("ai-enterprise-vertical", "legal"),
-    "ai-finance-tools": ("ai-enterprise-vertical", "finance-accounting"),
-    "ai-document-tools": ("ai-application", "document-processing"),
+    "ai-product-photo-generators": ("ai-image-design", "image-generation"),
+    "ai-recruitment-and-job-search-tools": ("ai-hr-recruiting", "recruitment"),
+    "ai-translation-tools": ("ai-translation", "translation"),
+    "ai-mindmap-tools": ("ai-productivity", "mind-mapping"),
+    "ai-meeting-tools": ("ai-productivity", "meeting-assistant"),
+    "ai-3d-model-generation": ("ai-image-design", "3d-generation"),
+    "ai-legal-assistants": ("ai-finance-legal", "legal"),
+    "ai-finance-tools": ("ai-finance-legal", "finance-accounting"),
+    "ai-document-tools": ("ai-productivity", "document-processing"),
 }
 
 
@@ -195,7 +195,7 @@ class AiBotScraper(BaseScraper):
             desc_str = str(description) if description else None
             desc_zh = desc_str if desc_str and _has_chinese(desc_str) else None
 
-            cat, sub = _AIBOT_CATEGORY_MAP.get(cat_slug, ("ai-application", None))
+            cat, sub = _AIBOT_CATEGORY_MAP.get(cat_slug, ("ai-chatbot-agent", None))
 
             products.append(
                 ScrapedProduct(

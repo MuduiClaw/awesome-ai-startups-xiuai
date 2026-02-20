@@ -4,11 +4,11 @@
   "product_url": "https://ai.meta.com/meta-ai/",
   "description": "Create, remix, and share vibes—immersive AI videos of yourself, your friends, and anything you can imagine. Get tailored answers and inspiration with Meta AI, and go hands-free with AI glasses.\n \nGet access to industry-leading AI models for generating creative videos and images. Lip sync to your favorite songs with your friends or bring your vibes to life with custom dialogue. Just describe what you want to create and play with different edits and styles to make the perfect vibe. Explore the ...",
   "product_type": "app",
-  "category": "ai-application",
+  "category": "ai-education",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "app_store",
@@ -83,10 +83,10 @@
         "updated_at": "2026-02-16"
       },
       "platforms": {
-        "source": "app_store",
-        "tier": 2,
-        "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       },
       "pricing": {
         "source": "app_store",
@@ -141,6 +141,78 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "open_source": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -164,7 +236,10 @@
   "company": {
     "name": "Meta Platforms, Inc.",
     "url": "https://ai.meta.com/meta-ai",
-    "website": "https://ai.meta.com/meta-ai"
+    "website": "https://ai.meta.com/meta-ai",
+    "name_zh": "Meta",
+    "description": "Meta's AI-powered immersive experience platform combining video generation with AR/VR hardware.",
+    "employee_count_range": "51-200"
   },
   "icon_url": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/dd/64/23/dd642392-19a2-87b2-1e60-1bd3cb39a095/AppIcon-0-0-1x_U007epad-0-1-0-sRGB-0-85-220.png/512x512bb.jpg",
   "tags": [
@@ -209,7 +284,8 @@
     "VI"
   ],
   "platforms": [
-    "ios"
+    "ios",
+    "web"
   ],
   "pricing": {
     "model": "free",
@@ -231,5 +307,41 @@
     "Open source",
     "Zero-shot learning",
     "Interactive segmentation"
+  ],
+  "open_source": true,
+  "target_audience": [
+    "students",
+    "educators",
+    "researchers",
+    "vr-users",
+    "content-creators",
+    "tech-enthusiasts"
+  ],
+  "use_cases": [
+    "online-learning",
+    "tutoring",
+    "study-assistance",
+    "video-generation",
+    "ai-interaction",
+    "immersive-experiences"
+  ],
+  "name_zh": "Meta AI - Vibes & AI眼镜",
+  "api_available": false,
+  "hiring": {
+    "is_hiring": true,
+    "careers_url": "https://www.metacareers.com",
+    "tech_stack": [
+      "PyTorch",
+      "C++",
+      "Python",
+      "React Native"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "modalities": [
+    "text",
+    "image",
+    "video",
+    "multimodal"
   ]
 }

@@ -4,11 +4,11 @@
   "product_url": "https://www.wujieai.com",
   "description": "无界AI，专注于AIGC（人工智能创作图片、漫画与视频）赛道，研发符合中国审美的绘画大模型（国风、国潮、国漫），结合区块链技术，对AI作品进行版权登记与保护，集聚国内AI魔法师与炼丹师们，打造AIGC的内容社区与商业化应用。",
   "product_type": "other",
-  "category": "ai-creative-media",
+  "category": "ai-image-design",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "ainav",
@@ -87,6 +87,90 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "keywords": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "platforms": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "ainav",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-18"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "competitors": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -106,12 +190,78 @@
   "description_zh": "无界AI，专注于AIGC（人工智能创作图片、漫画与视频）赛道，研发符合中国审美的绘画大模型（国风、国潮、国漫），结合区块链技术，对AI作品进行版权登记与保护，集聚国内AI魔法师与炼丹师们，打造AIGC的内容社区与商业化应用。",
   "company": {
     "name": "无界AI",
-    "url": "https://wujieai.com"
+    "url": "https://wujieai.com",
+    "name_zh": "无界AI",
+    "description": "Chinese AIGC platform focused on anime and comic art generation with blockchain IP protection",
+    "employee_count_range": "11-50"
   },
   "icon_url": "https://www.ainav.cn/wp-content/uploads/2023/03/d5936-www.wujieai.com.png",
   "sub_category": "image-generation",
   "tags": [
     "AI绘画工具",
     "ai-image-generators"
+  ],
+  "keywords": [
+    "无界AI",
+    "ai image design",
+    "image generation",
+    "AI绘画工具",
+    "ai image generators",
+    "AI",
+    "AIGC",
+    "无界",
+    "专注于",
+    "人工智能创作图片",
+    "漫画与视频",
+    "赛道",
+    "研发符合中国审美的绘画大模型",
+    "国风",
+    "国潮",
+    "国漫",
+    "结合区块链技术",
+    "作品进行版权登记与保护",
+    "集聚国内",
+    "魔法师与炼丹师们",
+    "打造",
+    "的内容社区与商业化应用",
+    "other"
+  ],
+  "platforms": [
+    "web",
+    "ios",
+    "android"
+  ],
+  "target_audience": [
+    "designers",
+    "content-creators",
+    "marketers",
+    "artists"
+  ],
+  "use_cases": [
+    "image-generation",
+    "image-editing",
+    "graphic-design",
+    "anime-generation",
+    "video-generation"
+  ],
+  "hiring": {
+    "careers_url": "",
+    "is_hiring": true,
+    "tech_stack": [
+      "Python",
+      "PyTorch",
+      "Blockchain"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "open_source": false,
+  "api_available": true,
+  "modalities": [
+    "image",
+    "video"
+  ],
+  "competitors": [
+    "midjourney",
+    "novelai"
   ]
 }

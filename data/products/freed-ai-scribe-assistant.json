@@ -4,11 +4,11 @@
   "product_url": "https://www.getfreed.ai",
   "description": "Freed: AI-Powered Clinician Assistant\n\nHow easy is it to create a clinical note with Freed? \n\nJust tap the “Capture” button. That's it.\n\nFreed's AI scribe creates your complete SOAP note instantly. Join thousands of clinicians who've discovered a faster, simpler way to chart.\n\nWhat you'll love:\n- Instant notes that capture everything, exactly as discussed\n- Works right out of the box — no training needed\n- Can be trained to learn your style and adapt to your preferences \n- Available on any de...",
   "product_type": "app",
-  "category": "ai-application",
+  "category": "ai-audio-music",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "app_store",
@@ -83,10 +83,10 @@
         "updated_at": "2026-02-16"
       },
       "platforms": {
-        "source": "app_store",
-        "tier": 2,
-        "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       },
       "pricing": {
         "source": "app_store",
@@ -135,6 +135,84 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "description_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -153,7 +231,10 @@
   "company": {
     "name": "Freed Inc",
     "url": "https://www.getfreed.ai",
-    "website": "https://www.getfreed.ai"
+    "website": "https://www.getfreed.ai",
+    "name_zh": "Freed Inc",
+    "description": "AI-powered clinical documentation tool for physicians to generate SOAP notes instantly.",
+    "employee_count_range": "11-50"
   },
   "icon_url": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/c6/49/f7/c649f732-0747-57be-e42d-845369806931/AppIconF2-0-1x_U007epad-0-1-0-85-220-0.png/512x512bb.jpg",
   "tags": [
@@ -167,7 +248,8 @@
     "EN"
   ],
   "platforms": [
-    "ios"
+    "ios",
+    "web"
   ],
   "pricing": {
     "model": "free",
@@ -187,5 +269,39 @@
     "Healthcare efficiency",
     "SOAP notes",
     "Artificial intelligence"
+  ],
+  "target_audience": [
+    "musicians",
+    "content-creators",
+    "podcasters",
+    "healthcare-providers",
+    "doctors",
+    "clinicians"
+  ],
+  "use_cases": [
+    "speech-to-text",
+    "transcription",
+    "clinical-documentation",
+    "medical-transcription",
+    "note-taking"
+  ],
+  "name_zh": "Freed - AI医疗笔录助手",
+  "description_zh": "为临床医生设计的AI笔录工具，快速生成SOAP笔记。",
+  "open_source": false,
+  "api_available": false,
+  "hiring": {
+    "is_hiring": true,
+    "careers_url": "https://www.freedhealth.com/careers",
+    "tech_stack": [
+      "Python",
+      "Speech Recognition",
+      "NLP",
+      "Healthcare APIs"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "modalities": [
+    "audio",
+    "text"
   ]
 }

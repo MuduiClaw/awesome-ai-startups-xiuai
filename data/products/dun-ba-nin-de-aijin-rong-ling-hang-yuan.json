@@ -4,11 +4,11 @@
   "product_url": "https://capybaraai.io/",
   "description": "利用囤吧改变您的财务决策\n\n囤吧将人工智能与金融相结合，提供更好的金融见解，简化了投资决策中的信息获取流程。我们的应用程序利用生成式人工智能和无监督 ML 分析文本数据，并将其转换为人工智能驱动的投资见解。我们的愿景是让选择金融产品进行投资变得简单直观，就像浏览餐厅菜单并决定是否去那里用餐一样。\n\n主要功能\n\n实时早期关注系统（REAS）： 我们的生成式人工智能（Generative-AI）驱动市场信号，直接从海量金融数据中为您提供实时见解，让您抢占先机。\n\n信息简化： MAT 通过简化新闻分析，在一分钟内提供快速、全面的金融洞察。\n\n反向推理（B-Inference）： 反向推理自动洞察公司的历史基本面，识别并量化影响过去价格变化的事件。\n\n宏观语义分析（MSA）： MSA 利用微观聚类洞察力，将宏观新闻与公司相关联，为基于事件的连锁传播建立事件网络。这种方法提高了宏观事件的可解释性，并揭示了事件与公司之间隐藏的联系。\n\n智能投资组合： 模拟交易、风险评估和策略洞察的一站式平台，允许用户为社区分享和包装他们的交易方法。\n\n使用条款: https://www.apple.com....",
   "product_type": "app",
-  "category": "ai-application",
+  "category": "ai-finance-legal",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "app_store",
@@ -95,10 +95,10 @@
         "updated_at": "2026-02-16"
       },
       "platforms": {
-        "source": "app_store",
-        "tier": 2,
-        "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       },
       "pricing": {
         "source": "app_store",
@@ -123,6 +123,84 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "keywords": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "sub_category": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -138,7 +216,10 @@
   "company": {
     "name": "Zerui Ji",
     "url": "https://capybaraai.io",
-    "website": "https://capybaraai.io"
+    "website": "https://capybaraai.io",
+    "name_zh": "Zerui Ji",
+    "description": "AI-powered financial analysis platform combining AI with financial data for investment insights.",
+    "employee_count_range": "1-10"
   },
   "icon_url": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/01/25/27/01252775-5aa2-b149-60fe-e6273e76ff49/AppIcon-0-0-1x_U007ephone-0-0-sRGB-85-220.png/512x512bb.jpg",
   "tags": [
@@ -149,7 +230,9 @@
     "ZH"
   ],
   "platforms": [
-    "ios"
+    "ios",
+    "web",
+    "android"
   ],
   "pricing": {
     "model": "free",
@@ -159,5 +242,65 @@
   "app_store": {
     "apple_store_url": "https://apps.apple.com/app/id6505093427",
     "rating": 0.0
-  }
+  },
+  "keywords": [
+    "囤吧-您的AI+金融领航员",
+    "Zerui Ji",
+    "ai finance legal",
+    "Finance",
+    "ML",
+    "REAS",
+    "Generative-AI",
+    "B-Inference",
+    "https",
+    "apple",
+    "利用囤吧改变您的财务决策",
+    "囤吧将人工智能与金融相结合",
+    "提供更好的金融见解",
+    "简化了投资决策中的信息获取流程",
+    "我们的应用程序利用生成式人工智能和无监督",
+    "分析文本数据",
+    "并将其转换为人工智能驱动的投资见解",
+    "我们的愿景是让选择金融产品进行投资变得简单直观",
+    "就像浏览餐厅菜单并决定是否去那里用餐一样",
+    "主要功能",
+    "实时早期关注系统",
+    "我们的生成式人工智能",
+    "驱动市场信号",
+    "直接从海量金融数据中为您提供实时见解",
+    "让您抢占先机",
+    "app"
+  ],
+  "target_audience": [
+    "finance-professionals",
+    "lawyers",
+    "enterprises",
+    "investors",
+    "financial-professionals",
+    "wealth-managers"
+  ],
+  "use_cases": [
+    "financial-analysis",
+    "legal-research",
+    "compliance",
+    "investment-analysis",
+    "financial-insights",
+    "data-analysis"
+  ],
+  "sub_category": "fintech",
+  "open_source": false,
+  "api_available": false,
+  "hiring": {
+    "is_hiring": false,
+    "careers_url": "",
+    "tech_stack": [
+      "Python",
+      "React",
+      "Tencent-Cloud"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "modalities": [
+    "text"
+  ]
 }

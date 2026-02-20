@@ -4,11 +4,11 @@
   "product_url": "https://www.chuangkit.com/",
   "description": "创客贴,极简好用的智能在线设计软件，在线图片编辑器，免费使用。提供海量正版设计模板和图片素材",
   "product_type": "other",
-  "category": "ai-creative-media",
+  "category": "ai-image-design",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "ainav",
@@ -125,10 +125,76 @@
         "updated_at": "2026-02-16"
       },
       "platforms": {
-        "source": "app_store",
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "keywords": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "ainav",
         "tier": 2,
         "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "updated_at": "2026-02-18"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -150,7 +216,9 @@
     "name": "创客贴设计",
     "url": "https://chuangkit.com",
     "name_zh": "北京艺源酷科技有限公司",
-    "website": "https://www.chuangkit.com"
+    "website": "https://www.chuangkit.com",
+    "description": "Simple and intuitive AI-powered online design software with extensive templates and assets library.",
+    "employee_count_range": "51-200"
   },
   "icon_url": "https://www.ainav.cn/wp-content/uploads/2024/01/64801-www.chuangkit.com.png",
   "sub_category": "image-editing",
@@ -167,10 +235,53 @@
     "ZH"
   ],
   "platforms": [
-    "ios"
+    "ios",
+    "web"
   ],
   "app_store": {
     "apple_store_url": "https://apps.apple.com/app/id1454506905",
     "rating": 4.8
-  }
+  },
+  "keywords": [
+    "创客贴设计",
+    "北京艺源酷科技有限公司",
+    "ai image design",
+    "image editing",
+    "AI图片处理",
+    "Graphics & Design",
+    "创客贴",
+    "极简好用的智能在线设计软件",
+    "在线图片编辑器",
+    "免费使用",
+    "提供海量正版设计模板和图片素材",
+    "other"
+  ],
+  "target_audience": [
+    "designers",
+    "content-creators",
+    "marketers",
+    "small-businesses"
+  ],
+  "use_cases": [
+    "image-generation",
+    "image-editing",
+    "graphic-design",
+    "design",
+    "template-creation"
+  ],
+  "hiring": {
+    "careers_url": "",
+    "is_hiring": true,
+    "tech_stack": [
+      "React",
+      "Node.js",
+      "MySQL"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "open_source": false,
+  "api_available": false,
+  "modalities": [
+    "image"
+  ]
 }

@@ -1,8 +1,8 @@
 name: Daily Scrape
 
 on:
-  schedule:
-    - cron: "0 6 * * *" # 06:00 UTC daily
+  # schedule:
+  #   - cron: "0 6 * * *" # 06:00 UTC daily — disabled, scrapers paused
   workflow_dispatch: # Allow manual trigger
 
 permissions:
@@ -27,58 +27,27 @@ jobs:
           cache: "pip"
 
       - name: Install dependencies
-        run: |
-          pip install -e ".[browser]"
-          playwright install chromium --with-deps
+        run: pip install -e ".[dev]"
 
-      - name: Discovery phase
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PRODUCTHUNT_TOKEN: ${{ secrets.PRODUCTHUNT_TOKEN }}
-        run: |
-          aiscrape discover --source github,aibot,ainav --limit 200 || echo "[WARN] discover failed"
-          if [ -n "$PRODUCTHUNT_TOKEN" ]; then
-            aiscrape discover --source producthunt --limit 200 || echo "[WARN] producthunt discover failed"
-          fi
-
-      - name: Scrape (API-based sources)
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          for source in lmsys openrouter; do
-            echo "--- Scraping $source ---"
-            aiscrape scrape --source "$source" --limit 50 || echo "[WARN] $source failed, continuing..."
-          done
-
-      - name: Scrape (browser-based sources)
-        run: |
-          for source in theresanaiforthat toolify; do
-            echo "--- Scraping $source ---"
-            aiscrape scrape --source "$source" --limit 20 || echo "[WARN] $source failed, continuing..."
-          done
-
-      - name: Enrichment phase
-        env:
-          FIRECRAWL_API_KEY: ${{ secrets.FIRECRAWL_API_KEY }}
-        run: |
-          for source in app_store; do
-            aiscrape scrape --source "$source" --limit 20 || echo "[WARN] $source failed"
-          done
-          if [ -n "$FIRECRAWL_API_KEY" ]; then
-            aiscrape scrape --source crunchbase --limit 20 || echo "[WARN] crunchbase failed"
-          fi
-
-      - name: LLM enrichment
-        if: env.ANTHROPIC_API_KEY != ''
-        env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: aiscrape llm-enrich --budget 55
+      # ── Scrapers disabled ─────────────────────────────────────────────
+      # To re-enable, uncomment the schedule trigger above and the
+      # scraper steps below.
+      #
+      # - name: Discovery phase
+      # - name: Scrape (API-based sources)
+      # - name: Scrape (browser-based sources)
+      # - name: Enrichment phase
+      # - name: LLM enrichment
+      # ─────────────────────────────────────────────────────────────────
 
       - name: Migrate categories (normalize legacy values)
         run: python scripts/migrate_categories.py
 
       - name: Validate all data
         run: aiscrape validate
+
+      - name: Rebuild SQLite database
+        run: aiscrape init-db
 
       - name: Generate stats and index
         run: aiscrape generate-stats
@@ -92,7 +61,6 @@ jobs:
             echo "No changes to commit"
           else
             git commit -m "chore: daily data update $(date -u +%Y-%m-%d)"
-            # Pull latest remote changes, regenerate stats if conflict on auto-generated files
             git pull --rebase origin main || {
               echo "Rebase conflict detected, resolving..."
               git rebase --abort

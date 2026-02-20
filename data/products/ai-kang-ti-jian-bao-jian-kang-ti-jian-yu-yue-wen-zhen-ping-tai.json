@@ -4,11 +4,11 @@
   "product_url": "http://www.tijianbao.com",
   "description": "爱康集团旗下的个性化健康管理平台，旨在打破体检套餐千篇一律的局面，为个人和企业客户提供个性化健康管理方案定制。业务涵盖：体检、齿科、疫苗、基因检测的购买预约，报告查询和解读，以及慢病管理、二次诊疗、就医绿色通道等检后管理服务。\n当前服务覆盖58 大城市、166家体检与医疗中心。同时，爱康集团与全国200多个城市超过800家医疗机构建立合作网络。\n【个性化体检】\n1、自选体检，用户可根据自身情况，自由进行项目选择，生成套餐。\n2、定制体检，用户填写健康问卷，即可定制具有针对性的体检套餐。\n【体检快速预约】全国分院自由选择，随时随地，省事省心。\n【报告及时查看】体检报告及时线上查看，历年报告数据对比，专家免费解读，健康风险全面掌握。\n【健康热点】聚焦高发疾病，关注生命中的“红绿灯”，我们把您的健康放在心上。\n【有人“管”的体检】AI健康筛查、慢病管理、二次会诊、就医绿通，真正做到全方位管理每一位客户的健康。\n\n【免责说明】\n报告阅读说明\n您本次体检报告由健康信息、本次体检主要阳性结果和异常情况、专家指导建议及本次体检结果等部分组成。\n健康体检数据只是针对本次体检覆盖的相关器官的相关项...",
   "product_type": "app",
-  "category": "ai-application",
+  "category": "ai-chatbot-agent",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "app_store",
@@ -101,10 +101,10 @@
         "updated_at": "2026-02-16"
       },
       "platforms": {
-        "source": "app_store",
-        "tier": 2,
-        "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       },
       "pricing": {
         "source": "app_store",
@@ -129,6 +129,78 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "keywords": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "sub_category": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -145,7 +217,9 @@
     "name": "天津爱康体检宝健康科技有限公司",
     "url": "http://www.tijianbao.com",
     "name_zh": "天津爱康体检宝健康科技有限公司",
-    "website": "http://www.tijianbao.com"
+    "website": "http://www.tijianbao.com",
+    "description": "Chinese health screening and medical consultation platform providing personalized health management and report analysis.",
+    "employee_count_range": "11-50"
   },
   "icon_url": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/49/0a/7f/490a7f92-0e8a-8c4b-c245-8d2fb8615a82/AppIcon-1x_U007emarketing-0-6-0-0-sRGB-85-220-0.png/512x512bb.jpg",
   "tags": [
@@ -157,7 +231,9 @@
     "ZH"
   ],
   "platforms": [
-    "ios"
+    "ios",
+    "web",
+    "android"
   ],
   "pricing": {
     "model": "free",
@@ -167,5 +243,60 @@
   "app_store": {
     "apple_store_url": "https://apps.apple.com/app/id589738449",
     "rating": 4.7
-  }
+  },
+  "keywords": [
+    "爱康体检宝—健康体检预约问诊平台",
+    "天津爱康体检宝健康科技有限公司",
+    "ai chatbot agent",
+    "Medical",
+    "AI",
+    "爱康集团旗下的个性化健康管理平台",
+    "旨在打破体检套餐千篇一律的局面",
+    "为个人和企业客户提供个性化健康管理方案定制",
+    "业务涵盖",
+    "体检",
+    "齿科",
+    "疫苗",
+    "基因检测的购买预约",
+    "报告查询和解读",
+    "以及慢病管理",
+    "二次诊疗",
+    "就医绿色通道等检后管理服务",
+    "当前服务覆盖",
+    "大城市",
+    "家体检与医疗中心",
+    "app"
+  ],
+  "target_audience": [
+    "developers",
+    "enterprises",
+    "general-users",
+    "healthcare-users",
+    "individuals"
+  ],
+  "use_cases": [
+    "ai-chat",
+    "virtual-assistant",
+    "task-automation",
+    "health-screening",
+    "medical-consultation",
+    "health-management"
+  ],
+  "sub_category": "healthcare-platform",
+  "open_source": false,
+  "api_available": false,
+  "hiring": {
+    "is_hiring": true,
+    "careers_url": "",
+    "tech_stack": [
+      "React",
+      "Node.js",
+      "MySQL",
+      "Aliyun"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "modalities": [
+    "text"
+  ]
 }

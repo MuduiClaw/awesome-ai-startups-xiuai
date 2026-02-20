@@ -4,11 +4,11 @@
   "product_url": "https://lyrebirdstudio.net",
   "description": "ToonApp：AI头像生成器与动漫相机大师！\n想要一键变身漫画主角？ToonApp 是最火的 AI漫画生成 与 动漫头像制作 应用，让你轻松把自拍变成可爱又时尚的卡通形象！只需上传相片，即可用AI特效相机打造独一无二的卡通头像、漫画滤镜或趣味动画视频。\n\n全新功能上线！\n不仅能“照片变漫画”，现在还可以用 AI相机 一键将照片变成炫酷视频！数百款流行模板，帮你快速生成适合 TikTok、Instagram、微博的爆款短视频。\n\nAI宝丽来特效：复古又时尚\n体验最IN的AI宝丽来模板！你的自拍将瞬间变成复古风格的照片，免费编辑图片，打造独特个性相片。\n\nY2K鬼面特效：万圣节限定玩法\n跟随潮流，用ToonApp特效相机打造你的Y2K风格肖像。让你的头像更神秘、更酷炫，轻松登上社交媒体热榜！\n\nAI美人鱼特效：潜入梦幻亚特兰蒂斯\n开启美人鱼潮流！用全新AI滤镜生成闪亮尾巴、流动长发和水下特效，让你化身神秘的海洋公主，在社交平台掀起浪花！\n\nAI手办生成器：打造专属3D动漫形象\n想变成英雄或可爱手办？ToonApp 的 头像生成器 可将你变成1/7比例的3D迷你人偶！只需一键，即可生...",
   "product_type": "app",
-  "category": "ai-application",
+  "category": "ai-video-animation",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "app_store",
@@ -95,10 +95,10 @@
         "updated_at": "2026-02-16"
       },
       "platforms": {
-        "source": "app_store",
-        "tier": 2,
-        "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       },
       "pricing": {
         "source": "app_store",
@@ -135,6 +135,84 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "keywords": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "sub_category": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -150,7 +228,10 @@
   "company": {
     "name": "Lyrebird Studio",
     "url": "https://lyrebirdstudio.net",
-    "website": "https://lyrebirdstudio.net"
+    "website": "https://lyrebirdstudio.net",
+    "name_zh": "Lyrebird Studio",
+    "description": "Mobile app for AI-powered avatar generation and anime-style photo editing",
+    "employee_count_range": "11-50"
   },
   "icon_url": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/48/78/38/487838a0-fa35-0e83-1b32-8003547a058e/AppIcon-0-0-1x_U007ephone-0-1-0-0-85-220.png/512x512bb.jpg",
   "tags": [
@@ -174,7 +255,9 @@
     "TR"
   ],
   "platforms": [
-    "ios"
+    "ios",
+    "android",
+    "web"
   ],
   "pricing": {
     "model": "free",
@@ -184,5 +267,62 @@
   "app_store": {
     "apple_store_url": "https://apps.apple.com/app/id1540719743",
     "rating": 4.8
-  }
+  },
+  "keywords": [
+    "ToonApp 相片大师：AI图片生成 卡通头像 卡通照片",
+    "Lyrebird Studio",
+    "ai video animation",
+    "Photo & Video",
+    "ToonApp",
+    "AI",
+    "TikTok",
+    "Instagram",
+    "头像生成器与动漫相机大师",
+    "想要一键变身漫画主角",
+    "是最火的",
+    "漫画生成",
+    "动漫头像制作",
+    "应用",
+    "让你轻松把自拍变成可爱又时尚的卡通形象",
+    "只需上传相片",
+    "即可用",
+    "特效相机打造独一无二的卡通头像",
+    "漫画滤镜或趣味动画视频",
+    "全新功能上线",
+    "不仅能",
+    "照片变漫画",
+    "现在还可以用",
+    "app"
+  ],
+  "target_audience": [
+    "content-creators",
+    "video-editors",
+    "marketers",
+    "social-media-users",
+    "teenagers"
+  ],
+  "use_cases": [
+    "video-generation",
+    "video-editing",
+    "animation",
+    "avatar-generation",
+    "photo-editing"
+  ],
+  "sub_category": "avatar-generator",
+  "open_source": false,
+  "api_available": false,
+  "hiring": {
+    "is_hiring": false,
+    "careers_url": "https://jobs.lyrebird.ai",
+    "tech_stack": [
+      "React Native",
+      "Python",
+      "TensorFlow"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "modalities": [
+    "image",
+    "video"
+  ]
 }

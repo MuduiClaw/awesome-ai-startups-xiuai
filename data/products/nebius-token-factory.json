@@ -4,11 +4,11 @@
   "product_url": "https://nebius.com/services/studio-inference-service",
   "description": "Enterprise-grade open-source AI inference at unlimited scale.",
   "product_type": "app",
-  "category": "ai-application",
+  "category": "ai-education",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "theresanaiforthat",
@@ -77,10 +77,10 @@
         "updated_at": "2026-02-16"
       },
       "use_cases": {
-        "source": "theresanaiforthat",
-        "tier": 2,
-        "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       },
       "sub_category": {
         "source": "toolify",
@@ -105,6 +105,90 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "open_source": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "api_available": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "platforms": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "theresanaiforthat",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-18"
+      },
+      "name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "description_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "competitors": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -123,7 +207,10 @@
   "company": {
     "name": "Nebius Token Factory",
     "url": "https://nebius.com/services/studio-inference-service",
-    "website": "https://nebius.com/services/studio-inference-service"
+    "website": "https://nebius.com/services/studio-inference-service",
+    "name_zh": "Nebius Token Factory",
+    "description": "Nebius Token Factory provides enterprise-grade open-source AI inference platform at unlimited scale.",
+    "employee_count_range": "11-50"
   },
   "icon_url": "https://media.theresanaiforthat.com/icons/nebius-token-factory.svg?height=207",
   "tags": [
@@ -135,7 +222,11 @@
     "Open Source AI Models"
   ],
   "use_cases": [
-    "AI inference"
+    "AI inference",
+    "ai-inference",
+    "model-deployment",
+    "llm-inference",
+    "ai-infrastructure"
   ],
   "sub_category": "ai developer tools",
   "pricing": {
@@ -158,5 +249,43 @@
     "Deep Learning",
     "Data Science",
     "H100"
+  ],
+  "open_source": true,
+  "api_available": true,
+  "platforms": [
+    "api",
+    "web",
+    "cli",
+    "self-hosted"
+  ],
+  "target_audience": [
+    "developers",
+    "students",
+    "educators",
+    "researchers",
+    "enterprises",
+    "ai-researchers",
+    "ml-engineers"
+  ],
+  "hiring": {
+    "careers_url": "",
+    "is_hiring": true,
+    "tech_stack": [
+      "Python",
+      "CUDA",
+      "Kubernetes",
+      "vLLM"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "name_zh": "Nebius Token Factory",
+  "description_zh": "企业级开源AI推理,支持无限规模部署。",
+  "modalities": [
+    "text"
+  ],
+  "competitors": [
+    "replicate",
+    "together-ai",
+    "modal"
   ]
 }

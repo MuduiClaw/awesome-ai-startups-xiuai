@@ -18,6 +18,7 @@ RAW_DIR = DATA_DIR / "raw"
 
 # Data files
 PRODUCT_SCHEMA_FILE = SCHEMA_DIR / "product.schema.json"
+DB_FILE = DATA_DIR / "products.db"
 INDEX_FILE = DATA_DIR / "index.json"
 STATS_FILE = DATA_DIR / "stats.json"
 CATEGORIES_FILE = DATA_DIR / "categories.json"

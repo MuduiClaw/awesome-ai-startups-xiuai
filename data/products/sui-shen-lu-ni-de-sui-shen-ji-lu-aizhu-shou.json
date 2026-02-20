@@ -4,11 +4,11 @@
   "product_url": "https://suishenlu.cn",
   "description": "随身鹿是一款集录音转文字、重点提炼、结构化纪要生成与AI智能问答为一体的AI效率助手，专为职场人士和学生设计。通过精准的语音转写和AI深度分析，随身鹿帮助用户将碎片化的录音转化为条理清晰的知识。无论是自动生成会议纪要、任务清单，还是从录音中提取要点，随身鹿都能让您更轻松地管理和使用您的文件。\n\n\n【随身鹿能做什么？】\n\n1. 专业级录音与转写\n\n• 转写准确率最高可达99%：支持中文（含粤语、四川话等方言）、英语及日韩法德等14种语言，精准还原语音。\n\n• 行业词库优化：针对金融、医疗、法律、科技等领域专项优化，专业术语识别更精准。\n\n• 声纹区分：智能识别不同说话人，自动生成对话式文本，谁说了什么一目了然。\n\n• 实时翻译：支持多语种互译与悬浮字幕，跨语言沟通无障碍。\n\n2. 与你的音频知识库对话\n\n• 智能问答：针对文件自由提问，比如“会议关于预算的结论是什么？”或“客户提了哪些需求？”，AI都能即时给出精准结论。\n\n• 跨文件综合分析：打破单个文件的界限，无论是跨越几个月的项目讨论，还是分散的灵感记录，随身鹿都能综合分析并提供深刻见解。\n\n3. AI 笔记与深度提炼\n\n• ...",
   "product_type": "app",
-  "category": "ai-application",
+  "category": "ai-productivity",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "app_store",
@@ -95,10 +95,10 @@
         "updated_at": "2026-02-16"
       },
       "platforms": {
-        "source": "app_store",
-        "tier": 2,
-        "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       },
       "pricing": {
         "source": "app_store",
@@ -135,6 +135,84 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "keywords": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "sub_category": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -150,7 +228,10 @@
   "company": {
     "name": "Xiaoling",
     "url": "https://suishenlu.cn",
-    "website": "https://suishenlu.cn"
+    "website": "https://suishenlu.cn",
+    "name_zh": "小灵科技",
+    "description": "AI productivity startup focused on voice transcription and meeting intelligence for Chinese market.",
+    "employee_count_range": "1-10"
   },
   "icon_url": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/a2/c1/ce/a2c1ce8a-e17a-aca3-7a60-83e183b04880/AppIcon-0-0-1x_U007epad-0-1-0-85-220.png/512x512bb.jpg",
   "tags": [
@@ -160,7 +241,9 @@
     "ZH"
   ],
   "platforms": [
-    "ios"
+    "ios",
+    "web",
+    "android"
   ],
   "pricing": {
     "model": "free",
@@ -170,5 +253,63 @@
   "app_store": {
     "apple_store_url": "https://apps.apple.com/app/id731368203",
     "rating": 4.6
-  }
+  },
+  "keywords": [
+    "随身鹿-你的随身记录AI助手",
+    "Xiaoling",
+    "ai productivity",
+    "Productivity",
+    "AI",
+    "随身鹿是一款集录音转文字",
+    "重点提炼",
+    "结构化纪要生成与",
+    "智能问答为一体的",
+    "效率助手",
+    "专为职场人士和学生设计",
+    "通过精准的语音转写和",
+    "深度分析",
+    "随身鹿帮助用户将碎片化的录音转化为条理清晰的知识",
+    "无论是自动生成会议纪要",
+    "任务清单",
+    "还是从录音中提取要点",
+    "随身鹿都能让您更轻松地管理和使用您的文件",
+    "随身鹿能做什么",
+    "专业级录音与转写",
+    "app"
+  ],
+  "target_audience": [
+    "professionals",
+    "teams",
+    "enterprises",
+    "students",
+    "remote-workers"
+  ],
+  "use_cases": [
+    "workflow-automation",
+    "document-management",
+    "task-management",
+    "voice-to-text",
+    "meeting-notes",
+    "transcription",
+    "knowledge-management"
+  ],
+  "sub_category": "transcription-assistant",
+  "open_source": false,
+  "api_available": true,
+  "hiring": {
+    "is_hiring": true,
+    "careers_url": "",
+    "tech_stack": [
+      "Python",
+      "React",
+      "Alibaba Cloud",
+      "PostgreSQL",
+      "Speech Recognition"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "modalities": [
+    "audio",
+    "text"
+  ]
 }

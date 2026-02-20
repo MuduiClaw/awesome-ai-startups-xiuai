@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 from dataclasses import dataclass
+from typing import Any
 
 from scrapers.base import ScrapedProduct
 from scrapers.config import PRODUCTS_DIR
@@ -38,11 +39,21 @@ class DeduplicationResult:
 class Deduplicator:
     """Deduplicate scraped products against the existing data directory."""
 
-    def __init__(self) -> None:
+    def __init__(self, db: Any = None) -> None:
         self._existing_domains: dict[str, str] = {}  # domain -> slug
         self._existing_names: dict[str, str] = {}  # lowercase name -> slug
         self._existing_names_zh: dict[str, str] = {}  # name_zh -> slug
-        self._load_existing()
+        if db is not None:
+            self._load_existing_from_db(db)
+        else:
+            self._load_existing()
+
+    def _load_existing_from_db(self, db: Any) -> None:
+        """Load dedup index from SQLite in a single query."""
+        index = db.get_dedup_index()
+        self._existing_domains = index["domains"]
+        self._existing_names = index["names"]
+        self._existing_names_zh = index["names_zh"]
 
     def _load_existing(self) -> None:
         """Load domains and names from existing product JSON files."""

@@ -4,11 +4,11 @@
   "product_url": "https://www.sousapp.xyz",
   "description": "All-in-one AI kitchen assistant: pantry management, recipe generation, meal planning, shopping lists",
   "product_type": "app",
-  "category": "ai-application",
+  "category": "ai-chatbot-agent",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "theresanaiforthat",
@@ -77,10 +77,100 @@
         "updated_at": "2026-02-16"
       },
       "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "keywords": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "platforms": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
         "source": "theresanaiforthat",
         "tier": 2,
         "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "updated_at": "2026-02-18"
+      },
+      "name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "description_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "sub_category": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -94,7 +184,10 @@
   "company": {
     "name": "Sous | AI Recipe Generator & Kitchen Assistant",
     "url": "https://www.sousapp.xyz",
-    "website": "https://www.sousapp.xyz"
+    "website": "https://www.sousapp.xyz",
+    "name_zh": "Sous",
+    "description": "AI-powered kitchen assistant for meal planning and recipe management",
+    "employee_count_range": "1-10"
   },
   "icon_url": "https://media.theresanaiforthat.com/icons/sous-ai-recipe-generator.png?height=207",
   "tags": [
@@ -102,6 +195,58 @@
     "recipes"
   ],
   "use_cases": [
-    "Recipes"
+    "Recipes",
+    "meal-planning",
+    "recipe-generation",
+    "kitchen-management"
+  ],
+  "keywords": [
+    "Sous | AI Recipe Generator & Kitchen Assistant",
+    "ai chatbot agent",
+    "Recipes",
+    "All-in-one",
+    "AI",
+    "kitchen",
+    "assistant",
+    "pantry",
+    "management",
+    "recipe",
+    "generation",
+    "meal",
+    "planning",
+    "shopping",
+    "lists",
+    "app"
+  ],
+  "platforms": [
+    "web",
+    "ios",
+    "android"
+  ],
+  "target_audience": [
+    "developers",
+    "enterprises",
+    "general-users",
+    "home-cooks",
+    "meal-planners",
+    "food-enthusiasts"
+  ],
+  "hiring": {
+    "careers_url": "",
+    "is_hiring": false,
+    "tech_stack": [
+      "React Native",
+      "Node.js",
+      "NLP"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "name_zh": "Sous | AI食谱生成器和厨房助手",
+  "description_zh": "一体化AI厨房助手：食材管理、食谱生成、膳食计划、购物单",
+  "sub_category": "cooking-assistant",
+  "open_source": false,
+  "api_available": false,
+  "modalities": [
+    "text"
   ]
 }

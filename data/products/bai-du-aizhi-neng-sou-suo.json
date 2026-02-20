@@ -4,11 +4,11 @@
   "product_url": "http://xbox.m.baidu.com/mo/",
   "description": "百度App，数亿用户优选的搜索和资讯客户端。更懂中文的语音搜索识别技术。热门新闻、视频抢先看，更有全网正版小说，海量独家短剧。\n【智能搜索】 强大的搜索引擎，搭载文心一言大模型，多模态搜索，所见即所得，更深度、精准理解你的搜索意图，快速识别图片内容，直达你想要的结果。\n【热门资讯】 精选新闻资讯、视频、漫画等优质内容，热门评论置顶显示，查看、互动更方便。 \n【文心助手】AI全能助手，即时解决你的所有问题。深入研究、深度搜索，为你解决复杂问题；AI拍题，一键解惑学习难题；AI生图、AI生成视频、AI写作，精彩内容跃然屏幕，还能AI语音通话、视频通话、文字聊天，带给你全新的AI体验！\n【短视频】 首页底部快速进入视频频道，海量明星娱乐、搞笑段子、经典剧集视频，还能拍小视频记录身边新鲜事，简单操作能拍又能看。 \n【语音识别】 加入更懂中文的语音识别技术，新增方言识别能力，支持语音播报资讯，精准理解你的语音指令，即使在嘈杂环境中也能清晰识别，沟通无障碍。 \n【小说/短剧】 海量正版小说、短剧随心看，小说支持书架列表、阅读进度可多台设备自动云同步。短剧涵盖都市、爱情等多种题材，智能推荐，精...",
   "product_type": "app",
-  "category": "ai-application",
+  "category": "ai-chatbot-agent",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "app_store",
@@ -95,10 +95,10 @@
         "updated_at": "2026-02-16"
       },
       "platforms": {
-        "source": "app_store",
-        "tier": 2,
-        "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       },
       "pricing": {
         "source": "app_store",
@@ -135,6 +135,84 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "keywords": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "sub_category": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -150,7 +228,10 @@
   "company": {
     "name": "Beijing Baidu Netcom Science & Technology Co.,Ltd",
     "url": "http://xbox.m.baidu.com/mo",
-    "website": "http://xbox.m.baidu.com/mo"
+    "website": "http://xbox.m.baidu.com/mo",
+    "name_zh": "百度",
+    "description": "Baidu App's integrated AI search powered by Wenxin LLM with multimodal capabilities.",
+    "employee_count_range": "51-200"
   },
   "icon_url": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/a8/0b/36/a80b36bb-a726-fe11-fb60-838d9eca164a/AppIcon-0-0-1x_U007epad-0-1-0-0-sRGB-85-220.png/512x512bb.jpg",
   "tags": [
@@ -160,7 +241,10 @@
     "EN"
   ],
   "platforms": [
-    "ios"
+    "ios",
+    "web",
+    "android",
+    "api"
   ],
   "pricing": {
     "model": "free",
@@ -170,5 +254,65 @@
   "app_store": {
     "apple_store_url": "https://apps.apple.com/app/id382201985",
     "rating": 4.5
-  }
+  },
+  "keywords": [
+    "百度-AI智能搜索",
+    "Beijing Baidu Netcom Science & Technology Co.,Ltd",
+    "ai chatbot agent",
+    "Utilities",
+    "AI",
+    "百度",
+    "数亿用户优选的搜索和资讯客户端",
+    "更懂中文的语音搜索识别技术",
+    "热门新闻",
+    "视频抢先看",
+    "更有全网正版小说",
+    "海量独家短剧",
+    "智能搜索",
+    "强大的搜索引擎",
+    "搭载文心一言大模型",
+    "多模态搜索",
+    "所见即所得",
+    "更深度",
+    "精准理解你的搜索意图",
+    "快速识别图片内容",
+    "app"
+  ],
+  "target_audience": [
+    "developers",
+    "enterprises",
+    "general-users",
+    "mobile-users",
+    "search-users",
+    "information-seekers"
+  ],
+  "use_cases": [
+    "ai-chat",
+    "virtual-assistant",
+    "task-automation",
+    "intelligent-search",
+    "multimodal-search",
+    "voice-search",
+    "image-search"
+  ],
+  "sub_category": "search-engine",
+  "open_source": false,
+  "api_available": true,
+  "hiring": {
+    "is_hiring": true,
+    "careers_url": "https://talent.baidu.com",
+    "tech_stack": [
+      "Python",
+      "ERNIE",
+      "Paddlepaddle",
+      "Computer Vision"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "modalities": [
+    "text",
+    "image",
+    "audio",
+    "video"
+  ]
 }

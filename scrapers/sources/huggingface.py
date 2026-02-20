@@ -218,7 +218,7 @@ class HuggingFaceScraper(BaseScraper):
                 model_name, company_name, pipeline_tag, param_count
             ),
             product_type=_PIPELINE_TO_PRODUCT_TYPE.get(pipeline_tag, "other"),
-            category="ai-model",
+            category="ai-foundation-model",
             sub_category=sub_category,
             tags=tuple(tags),
             modalities=tuple(modalities),

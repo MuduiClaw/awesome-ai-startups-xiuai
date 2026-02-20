@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 from dataclasses import dataclass
+from typing import Any
 
 from scrapers.config import PRODUCTS_DIR
 
@@ -25,19 +26,33 @@ _REFERENCE_FIELDS: tuple[str, ...] = ("competitors", "based_on", "used_by")
 class IntegrityValidator:
     """Validate cross-product references (competitors, based_on, used_by)."""
 
-    def validate_all(self) -> list[IntegrityError]:
-        """Check all products for broken references.
+    def __init__(self, db: Any = None) -> None:
+        self._db = db
 
-        Loads every product slug from PRODUCTS_DIR, then verifies that all
-        slug references in competitor / based_on / used_by arrays point to
-        existing product files.
-        """
+    def validate_all(self) -> list[IntegrityError]:
+        """Check all products for broken references."""
+        if self._db is not None:
+            return self._validate_all_from_db()
+        return self._validate_all_from_files()
+
+    def _validate_all_from_db(self) -> list[IntegrityError]:
+        """Check all products from SQLite for broken references."""
+        all_slugs = set(self._db.all_slugs())
+        all_products = self._db.get_all_dicts()
+
+        errors: list[IntegrityError] = []
+        for data in all_products:
+            errors.extend(self.validate_product(data, all_slugs))
+        return errors
+
+    def _validate_all_from_files(self) -> list[IntegrityError]:
+        """Check all products from JSON files for broken references."""
         if not PRODUCTS_DIR.exists():
             return []
 
         # 1. Collect all known slugs and their parsed data
         all_slugs: set[str] = set()
-        products: list[tuple[str, dict]] = []
+        products: list[tuple[str, dict[str, Any]]] = []
 
         for filepath in sorted(PRODUCTS_DIR.glob("*.json")):
             slug = filepath.stem
@@ -46,7 +61,6 @@ class IntegrityValidator:
                 data = json.loads(filepath.read_text(encoding="utf-8"))
                 products.append((slug, data))
             except (json.JSONDecodeError, OSError):
-                # Skip files that cannot be parsed; schema validator handles those
                 continue
 
         # 2. Validate each product's references

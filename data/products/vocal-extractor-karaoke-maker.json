@@ -4,11 +4,11 @@
   "product_url": "http://vocalextractor.com/en",
   "description": "Feature Overview\n\nVocal Extractor separates songs in your Music Library into vocals and accompaniment with just a tap of a button on the main screen (*1), instantly creating karaoke and a cappella tracks.\n\nThe generated vocal and backing (karaoke) tracks can be saved as files and exported to iCloud, Dropbox, Google Drive, and other platforms. This allows you to use the isolated tracks in other applications or on different platforms (*2).\n\nUnlike traditional apps based on OOPS (Out of Phase St...",
   "product_type": "app",
-  "category": "ai-application",
+  "category": "ai-audio-music",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "app_store",
@@ -123,6 +123,96 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "keywords": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "target_audience": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "description_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "sub_category": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -136,7 +226,10 @@
   "company": {
     "name": "Hikaru Tsuyumine",
     "url": "http://vocalextractor.com/en",
-    "website": "http://vocalextractor.com/en"
+    "website": "http://vocalextractor.com/en",
+    "name_zh": "Hikaru Tsuyumine",
+    "description": "iOS app for separating vocals and creating karaoke tracks",
+    "employee_count_range": "1-10"
   },
   "icon_url": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/28/e6/79/28e67918-eef2-73ca-7331-725e85e1111c/AppIcon-0-0-1x_U007emarketing-0-6-0-85-220.png/512x512bb.jpg",
   "tags": [
@@ -157,5 +250,64 @@
   "app_store": {
     "apple_store_url": "https://apps.apple.com/app/id1438806137",
     "rating": 4.3
-  }
+  },
+  "keywords": [
+    "Vocal Extractor -Karaoke maker",
+    "Hikaru Tsuyumine",
+    "ai audio music",
+    "Music",
+    "Feature",
+    "Overview",
+    "Vocal",
+    "Extractor",
+    "separates",
+    "songs",
+    "Library",
+    "vocals",
+    "accompaniment",
+    "button",
+    "main",
+    "screen",
+    "instantly",
+    "creating",
+    "karaoke",
+    "cappella",
+    "tracks",
+    "generated",
+    "app"
+  ],
+  "target_audience": [
+    "musicians",
+    "content-creators",
+    "podcasters",
+    "music-producers",
+    "karaoke-users"
+  ],
+  "use_cases": [
+    "music-generation",
+    "audio-editing",
+    "voice-synthesis",
+    "vocal-extraction",
+    "karaoke-creation",
+    "music-production",
+    "audio-separation"
+  ],
+  "name_zh": "人声提取器 - 卡拉OK制作器",
+  "description_zh": "将库中的歌曲分离为人声和伴奏的音乐应用，用于创建卡拉OK",
+  "sub_category": "audio-editor",
+  "open_source": false,
+  "api_available": false,
+  "hiring": {
+    "is_hiring": false,
+    "careers_url": "",
+    "tech_stack": [
+      "Swift",
+      "Core Audio",
+      "Audio processing"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "modalities": [
+    "audio"
+  ]
 }

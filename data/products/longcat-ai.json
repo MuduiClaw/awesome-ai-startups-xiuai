@@ -4,11 +4,11 @@
   "product_url": "https://longcat.chat",
   "description": "美团自研大模型 AI 对话平台 LongCat 的官方网站，提供 LongCat 系列模型的网页端对话体验，支持电脑、手机浏览器访问，注册登录后即可直接使用 AI 能力；",
   "product_type": "other",
-  "category": "ai-application",
+  "category": "ai-chatbot-agent",
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-16",
+    "last_updated": "2026-02-20",
     "provenance": {
       "name": {
         "source": "ainav",
@@ -87,6 +87,90 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "keywords": {
+        "source": "rule-based-enrichment",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-17"
+      },
+      "platforms": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "target_audience": {
+        "source": "rule-based-seo",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-18"
+      },
+      "use_cases": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.careers_url": {
+        "source": "ainav",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-18"
+      },
+      "company.name_zh": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.description": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "company.employee_count_range": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "open_source": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "api_available": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.is_hiring": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "modalities": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "competitors": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
+      },
+      "hiring.tech_stack": {
+        "source": "llm-batch-combined",
+        "tier": 3,
+        "confidence": 0.5,
+        "updated_at": "2026-02-20"
       }
     }
   },
@@ -110,7 +194,10 @@
   "description_zh": "美团自研大模型 AI 对话平台 LongCat 的官方网站，提供 LongCat 系列模型的网页端对话体验，支持电脑、手机浏览器访问，注册登录后即可直接使用 AI 能力；",
   "company": {
     "name": "LongCat AI",
-    "url": "https://longcat.chat"
+    "url": "https://longcat.chat",
+    "name_zh": "美团 (Meituan)",
+    "description": "Meituan's proprietary large language model chatbot platform with web and mobile access",
+    "employee_count_range": "51-200"
   },
   "icon_url": "https://www.ainav.cn/wp-content/uploads/2025/12/1764576495-LongCat-icon.png",
   "tags": [
@@ -119,5 +206,61 @@
     "ai-frameworks"
   ],
   "sub_category": "chatbot",
-  "name_zh": "LongCat开放平台"
+  "name_zh": "LongCat开放平台",
+  "keywords": [
+    "LongCat AI",
+    "LongCat开放平台",
+    "ai chatbot agent",
+    "chatbot",
+    "AI对话聊天",
+    "ai chatbots",
+    "ai frameworks",
+    "AI",
+    "LongCat",
+    "美团自研大模型",
+    "对话平台",
+    "的官方网站",
+    "提供",
+    "系列模型的网页端对话体验",
+    "支持电脑",
+    "手机浏览器访问",
+    "注册登录后即可直接使用",
+    "能力",
+    "other"
+  ],
+  "platforms": [
+    "web",
+    "ios",
+    "android"
+  ],
+  "target_audience": [
+    "developers",
+    "enterprises",
+    "general-users"
+  ],
+  "use_cases": [
+    "ai-chat",
+    "virtual-assistant",
+    "task-automation",
+    "conversational-ai",
+    "text-generation"
+  ],
+  "hiring": {
+    "careers_url": "",
+    "is_hiring": true,
+    "tech_stack": [
+      "Python",
+      "TensorFlow",
+      "PyTorch"
+    ],
+    "last_checked": "2026-02-20"
+  },
+  "open_source": false,
+  "api_available": true,
+  "modalities": [
+    "text"
+  ],
+  "competitors": [
+    "chatgpt"
+  ]
 }

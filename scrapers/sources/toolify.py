@@ -38,138 +38,176 @@ _UTM_RE = re.compile(r"[?&]utm_source=toolify.*$", re.IGNORECASE)
 # e.g. "ai-app" → "ai-application" if needed.
 _CATEGORY_MAP: dict[str, str] = {
     # -----------------------------------------------------------------
-    # ai-creative-media — image/video/audio/3D/design
+    # ai-image-design — image/photo/design/3D/avatar
     # -----------------------------------------------------------------
-    "ai-image-generator": "ai-creative-media",
-    "ai-video-generator": "ai-creative-media",
-    "ai-art-generator": "ai-creative-media",
-    "ai-design-generator": "ai-creative-media",
-    "ai-music-generator": "ai-creative-media",
-    "ai-audio": "ai-creative-media",
-    "ai-3d-model-generator": "ai-creative-media",
-    "ai-photo-editor": "ai-creative-media",
-    "ai-voice-cloning": "ai-creative-media",
-    "text-to-speech": "ai-creative-media",
-    # Image generation & editing
-    "image-to-video": "ai-creative-media",
-    "text-to-video": "ai-creative-media",
-    "text-to-image": "ai-creative-media",
-    "image-to-image": "ai-creative-media",
-    "video-to-video": "ai-creative-media",
-    "ai-image-upscaler": "ai-creative-media",
-    "ai-photo-restoration": "ai-creative-media",
-    "ai-image-enhancer": "ai-creative-media",
-    "ai-photo-enhancer": "ai-creative-media",
-    "ai-image-sharpening": "ai-creative-media",
-    "ai-unblur-image": "ai-creative-media",
-    "ai-inpainting": "ai-creative-media",
-    "ai-outpainting": "ai-creative-media",
-    "ai-expand-image": "ai-creative-media",
-    "ai-image-combiner": "ai-creative-media",
-    "ai-style-transfer": "ai-creative-media",
-    "ai-background-remover": "ai-creative-media",
-    "ai-background-generator": "ai-creative-media",
-    "ai-watermark-remover": "ai-creative-media",
-    "ai-eraser": "ai-creative-media",
-    "object-remover-ai": "ai-creative-media",
-    "ai-illustration-generator": "ai-creative-media",
-    "ai-anime-generator": "ai-creative-media",
-    "ai-realistic-image-generator": "ai-creative-media",
-    "ai-product-photography": "ai-creative-media",
-    "ai-clothing-generator": "ai-creative-media",
-    # Video generation & editing
-    "ai-short-video-generator": "ai-creative-media",
-    "ai-video-editor": "ai-creative-media",
-    "ai-video-enhancer": "ai-creative-media",
-    "ai-animation-generator": "ai-creative-media",
-    "ai-animated-video": "ai-creative-media",
-    "ai-cartoon-video-generator": "ai-creative-media",
-    "ai-lip-sync-generator": "ai-creative-media",
-    "ai-face-swap-generator": "ai-creative-media",
-    "ai-face-swap-video": "ai-creative-media",
-    "ai-commercial-generator": "ai-creative-media",
-    "ai-tiktok-video-generator": "ai-creative-media",
-    "ai-ugc-video-generator": "ai-creative-media",
-    "ai-youtube-video-maker": "ai-creative-media",
-    "ai-music-video-generator": "ai-creative-media",
-    "ai-movie-generator": "ai-creative-media",
-    "ai-video-translator": "ai-creative-media",
-    "ai-subtitle-generator": "ai-creative-media",
-    "ai-dubbing": "ai-creative-media",
-    "script-to-video-ai-generator": "ai-creative-media",
-    "ai-avatar-video-generator": "ai-creative-media",
-    # Audio & speech
-    "ai-song-generator": "ai-creative-media",
-    "ai-voice-generator": "ai-creative-media",
-    "ai-voice-over": "ai-creative-media",
-    "ai-text-to-speech": "ai-creative-media",
-    "ai-text-to-music": "ai-creative-media",
-    "ai-speech-to-text": "ai-creative-media",
-    "ai-lyrics-generator": "ai-creative-media",
-    "ai-vocal-remover": "ai-creative-media",
-    "ai-transcriber": "ai-creative-media",
-    "ai-transcription": "ai-creative-media",
-    "ai-cover-generator": "ai-creative-media",
-    # Avatar & profile
-    "ai-avatar-generator": "ai-creative-media",
-    "ai-headshot-generator": "ai-creative-media",
-    "ai-profile-picture-generator": "ai-creative-media",
-    # Design & presentation
-    "ai-graphic-design": "ai-creative-media",
-    "ai-design-assistant": "ai-creative-media",
-    "ai-poster-generator": "ai-creative-media",
-    "ai-infographic-generator": "ai-creative-media",
-    "ai-ppt-maker": "ai-creative-media",
-    "ai-presentation-generator": "ai-creative-media",
-    "ai-interior-design": "ai-creative-media",
-    # 3D & gaming
-    "text-to-3d": "ai-creative-media",
-    "image-to-3d-model": "ai-creative-media",
-    "ai-game-generator": "ai-creative-media",
-    # YouTube
-    "ai-youtube": "ai-creative-media",
+    "ai-image-generator": "ai-image-design",
+    "ai-art-generator": "ai-image-design",
+    "ai-design-generator": "ai-image-design",
+    "ai-photo-editor": "ai-image-design",
+    "text-to-image": "ai-image-design",
+    "image-to-image": "ai-image-design",
+    "ai-image-upscaler": "ai-image-design",
+    "ai-photo-restoration": "ai-image-design",
+    "ai-image-enhancer": "ai-image-design",
+    "ai-photo-enhancer": "ai-image-design",
+    "ai-image-sharpening": "ai-image-design",
+    "ai-unblur-image": "ai-image-design",
+    "ai-inpainting": "ai-image-design",
+    "ai-outpainting": "ai-image-design",
+    "ai-expand-image": "ai-image-design",
+    "ai-image-combiner": "ai-image-design",
+    "ai-style-transfer": "ai-image-design",
+    "ai-background-remover": "ai-image-design",
+    "ai-background-generator": "ai-image-design",
+    "ai-watermark-remover": "ai-image-design",
+    "ai-eraser": "ai-image-design",
+    "object-remover-ai": "ai-image-design",
+    "ai-illustration-generator": "ai-image-design",
+    "ai-anime-generator": "ai-image-design",
+    "ai-realistic-image-generator": "ai-image-design",
+    "ai-product-photography": "ai-image-design",
+    "ai-clothing-generator": "ai-image-design",
+    "ai-avatar-generator": "ai-image-design",
+    "ai-headshot-generator": "ai-image-design",
+    "ai-profile-picture-generator": "ai-image-design",
+    "ai-graphic-design": "ai-image-design",
+    "ai-design-assistant": "ai-image-design",
+    "ai-poster-generator": "ai-image-design",
+    "ai-infographic-generator": "ai-image-design",
+    "ai-ppt-maker": "ai-image-design",
+    "ai-presentation-generator": "ai-image-design",
+    "ai-interior-design": "ai-image-design",
+    "text-to-3d": "ai-image-design",
+    "image-to-3d-model": "ai-image-design",
+    "ai-3d-model-generator": "ai-image-design",
+    "ai-game-generator": "ai-image-design",
     # -----------------------------------------------------------------
-    # ai-application — writing/productivity/social/character/chatbot
+    # ai-video-animation — video generation/editing/animation
     # -----------------------------------------------------------------
-    "ai-chatbot": "ai-application",
-    "ai-assistant": "ai-application",
-    "ai-productivity-tools": "ai-application",
-    "ai-writing-assistants": "ai-application",
-    "ai-agent": "ai-application",
-    "ai-marketing": "ai-application",
-    "ai-customer-service": "ai-application",
-    "ai-education": "ai-application",
-    "ai-email-assistant": "ai-application",
-    "ai-social-media-assistant": "ai-application",
-    "ai-scheduling": "ai-application",
-    "ai-translation": "ai-application",
-    # Writing & content
-    "ai-writing": "ai-application",
-    "ai-rewriter": "ai-application",
-    "ai-copywriting": "ai-application",
-    "ai-blog-generator": "ai-application",
-    "ai-documents-generator": "ai-application",
-    "ai-paraphraser": "ai-application",
-    "ai-report-generator": "ai-application",
-    "seo-writing-ai": "ai-application",
-    "ai-pdf": "ai-application",
-    "humanizer-ai": "ai-application",
-    # Productivity & workflow
-    "ai-knowledge-management": "ai-application",
-    "ai-copilot": "ai-application",
-    "ai-workflow": "ai-application",
-    "ai-task-management": "ai-application",
-    "ai-meeting-assistant": "ai-application",
-    "ai-coaching": "ai-application",
-    "ai-interview-assistant": "ai-application",
-    # Social & character
-    "ai-character": "ai-application",
-    "ai-roleplay": "ai-application",
-    "ai-social-media": "ai-application",
-    "ai-social-media-post-generator": "ai-application",
-    # Prompts
-    "ai-prompt-generator": "ai-application",
-    "prompt-engineering": "ai-application",
+    "ai-video-generator": "ai-video-animation",
+    "image-to-video": "ai-video-animation",
+    "text-to-video": "ai-video-animation",
+    "video-to-video": "ai-video-animation",
+    "ai-short-video-generator": "ai-video-animation",
+    "ai-video-editor": "ai-video-animation",
+    "ai-video-enhancer": "ai-video-animation",
+    "ai-animation-generator": "ai-video-animation",
+    "ai-animated-video": "ai-video-animation",
+    "ai-cartoon-video-generator": "ai-video-animation",
+    "ai-lip-sync-generator": "ai-video-animation",
+    "ai-face-swap-generator": "ai-video-animation",
+    "ai-face-swap-video": "ai-video-animation",
+    "ai-commercial-generator": "ai-video-animation",
+    "ai-tiktok-video-generator": "ai-video-animation",
+    "ai-ugc-video-generator": "ai-video-animation",
+    "ai-youtube-video-maker": "ai-video-animation",
+    "ai-music-video-generator": "ai-video-animation",
+    "ai-movie-generator": "ai-video-animation",
+    "ai-video-translator": "ai-video-animation",
+    "ai-subtitle-generator": "ai-video-animation",
+    "ai-dubbing": "ai-video-animation",
+    "script-to-video-ai-generator": "ai-video-animation",
+    "ai-avatar-video-generator": "ai-video-animation",
+    "ai-youtube": "ai-video-animation",
+    # -----------------------------------------------------------------
+    # ai-audio-music — audio/voice/music/speech
+    # -----------------------------------------------------------------
+    "ai-music-generator": "ai-audio-music",
+    "ai-audio": "ai-audio-music",
+    "ai-voice-cloning": "ai-audio-music",
+    "text-to-speech": "ai-audio-music",
+    "ai-song-generator": "ai-audio-music",
+    "ai-voice-generator": "ai-audio-music",
+    "ai-voice-over": "ai-audio-music",
+    "ai-text-to-speech": "ai-audio-music",
+    "ai-text-to-music": "ai-audio-music",
+    "ai-speech-to-text": "ai-audio-music",
+    "ai-lyrics-generator": "ai-audio-music",
+    "ai-vocal-remover": "ai-audio-music",
+    "ai-transcriber": "ai-audio-music",
+    "ai-transcription": "ai-audio-music",
+    "ai-cover-generator": "ai-audio-music",
+    # -----------------------------------------------------------------
+    # ai-chatbot-agent — chatbot/assistant/agent
+    # -----------------------------------------------------------------
+    "ai-chatbot": "ai-chatbot-agent",
+    "ai-assistant": "ai-chatbot-agent",
+    "ai-agent": "ai-chatbot-agent",
+    # -----------------------------------------------------------------
+    # ai-writing-content — writing/copywriting/content
+    # -----------------------------------------------------------------
+    "ai-writing-assistants": "ai-writing-content",
+    "ai-writing": "ai-writing-content",
+    "ai-rewriter": "ai-writing-content",
+    "ai-copywriting": "ai-writing-content",
+    "ai-blog-generator": "ai-writing-content",
+    "ai-documents-generator": "ai-writing-content",
+    "ai-paraphraser": "ai-writing-content",
+    "ai-report-generator": "ai-writing-content",
+    "seo-writing-ai": "ai-writing-content",
+    "ai-pdf": "ai-writing-content",
+    "humanizer-ai": "ai-writing-content",
+    "ai-prompt-generator": "ai-writing-content",
+    "prompt-engineering": "ai-writing-content",
+    # -----------------------------------------------------------------
+    # ai-productivity — workflow/scheduling/knowledge/copilot
+    # -----------------------------------------------------------------
+    "ai-productivity-tools": "ai-productivity",
+    "ai-knowledge-management": "ai-productivity",
+    "ai-copilot": "ai-productivity",
+    "ai-workflow": "ai-productivity",
+    "ai-task-management": "ai-productivity",
+    "ai-meeting-assistant": "ai-productivity",
+    "ai-coaching": "ai-productivity",
+    "ai-email-assistant": "ai-productivity",
+    "ai-scheduling": "ai-productivity",
+    # -----------------------------------------------------------------
+    # ai-education
+    # -----------------------------------------------------------------
+    "ai-education": "ai-education",
+    # -----------------------------------------------------------------
+    # ai-marketing-commerce — marketing/SEO/ads/social media posts
+    # -----------------------------------------------------------------
+    "ai-marketing": "ai-marketing-commerce",
+    "ai-seo-tools": "ai-marketing-commerce",
+    "ai-ad-generator": "ai-marketing-commerce",
+    "ai-advertising": "ai-marketing-commerce",
+    "ai-digital-marketing": "ai-marketing-commerce",
+    "ai-ad-creative": "ai-marketing-commerce",
+    "ai-marketing-plan-generator": "ai-marketing-commerce",
+    "ai-email-marketing": "ai-marketing-commerce",
+    "ai-social-media-post-generator": "ai-marketing-commerce",
+    # -----------------------------------------------------------------
+    # ai-social-entertainment — social/character/roleplay
+    # -----------------------------------------------------------------
+    "ai-character": "ai-social-entertainment",
+    "ai-roleplay": "ai-social-entertainment",
+    "ai-social-media": "ai-social-entertainment",
+    "ai-social-media-assistant": "ai-social-entertainment",
+    # -----------------------------------------------------------------
+    # ai-customer-service
+    # -----------------------------------------------------------------
+    "ai-customer-service": "ai-customer-service",
+    # -----------------------------------------------------------------
+    # ai-translation
+    # -----------------------------------------------------------------
+    "ai-translation": "ai-translation",
+    # -----------------------------------------------------------------
+    # ai-hr-recruiting
+    # -----------------------------------------------------------------
+    "ai-interview-assistant": "ai-hr-recruiting",
+    # -----------------------------------------------------------------
+    # ai-finance-legal
+    # -----------------------------------------------------------------
+    "ai-finance": "ai-finance-legal",
+    "ai-legal-assistant": "ai-finance-legal",
+    "ai-for-finance": "ai-finance-legal",
+    # -----------------------------------------------------------------
+    # ai-sales-crm
+    # -----------------------------------------------------------------
+    "ai-lead-generation": "ai-sales-crm",
+    "ai-sales-assistant": "ai-sales-crm",
+    "ai-sales": "ai-sales-crm",
     # -----------------------------------------------------------------
     # ai-dev-platform — developer tools, coding, no-code, web
     # -----------------------------------------------------------------
@@ -181,22 +219,6 @@ _CATEGORY_MAP: dict[str, str] = {
     "ai-web-scraping": "ai-dev-platform",
     "ai-website-builder": "ai-dev-platform",
     "ai-app-builder": "ai-dev-platform",
-    # -----------------------------------------------------------------
-    # ai-enterprise-vertical — marketing/sales/finance/legal/HR
-    # -----------------------------------------------------------------
-    "ai-finance": "ai-enterprise-vertical",
-    "ai-legal-assistant": "ai-enterprise-vertical",
-    "ai-seo-tools": "ai-enterprise-vertical",
-    "ai-ad-generator": "ai-enterprise-vertical",
-    "ai-advertising": "ai-enterprise-vertical",
-    "ai-digital-marketing": "ai-enterprise-vertical",
-    "ai-ad-creative": "ai-enterprise-vertical",
-    "ai-lead-generation": "ai-enterprise-vertical",
-    "ai-sales-assistant": "ai-enterprise-vertical",
-    "ai-sales": "ai-enterprise-vertical",
-    "ai-marketing-plan-generator": "ai-enterprise-vertical",
-    "ai-email-marketing": "ai-enterprise-vertical",
-    "ai-for-finance": "ai-enterprise-vertical",
     # -----------------------------------------------------------------
     # ai-data-platform — analytics & data
     # -----------------------------------------------------------------
@@ -238,10 +260,9 @@ _CATEGORY_MAP: dict[str, str] = {
 
 # Keyword fallback rules for unmapped categories.
 _KEYWORD_RULES: list[tuple[tuple[str, ...], str]] = [
-    (
-        ("image", "video", "photo", "design", "art", "music", "audio", "3d", "voice"),
-        "ai-creative-media",
-    ),
+    (("image", "photo", "design", "art", "3d", "avatar"), "ai-image-design"),
+    (("video", "animation", "movie"), "ai-video-animation"),
+    (("music", "audio", "voice", "speech", "sound"), "ai-audio-music"),
     (
         ("code", "developer", "programming", "devops", "api", "no-code"),
         "ai-dev-platform",
@@ -253,11 +274,15 @@ _KEYWORD_RULES: list[tuple[tuple[str, ...], str]] = [
         ("healthcare", "medical", "science", "research", "biology", "chemistry"),
         "ai-science-research",
     ),
-    (("llm", "model", "language-model", "foundation"), "ai-foundation-model"),
-    (
-        ("finance", "legal", "accounting", "hr", "recruiting", "real-estate"),
-        "ai-enterprise-vertical",
-    ),
+    (("llm", "language-model", "foundation"), "ai-foundation-model"),
+    (("marketing", "seo", "advertising", "ecommerce"), "ai-marketing-commerce"),
+    (("finance", "legal", "accounting"), "ai-finance-legal"),
+    (("hr", "recruiting", "resume", "interview"), "ai-hr-recruiting"),
+    (("sales", "crm"), "ai-sales-crm"),
+    (("education", "tutoring", "course"), "ai-education"),
+    (("translat",), "ai-translation"),
+    (("customer-service", "helpdesk"), "ai-customer-service"),
+    (("writing", "copywriting", "blog", "content"), "ai-writing-content"),
     (("robot", "hardware", "chip"), "ai-hardware"),
 ]
 
@@ -267,7 +292,7 @@ _KEYWORD_RULES: list[tuple[tuple[str, ...], str]] = [
 
 _PRODUCT_TYPE_KEYWORDS: list[tuple[tuple[str, ...], str]] = [
     (("code", "developer", "api", "sdk", "framework", "no-code"), "dev-tool"),
-    (("llm", "model", "language-model", "foundation"), "llm"),
+    (("llm", "language-model", "foundation"), "llm"),
 ]
 
 # ---------------------------------------------------------------------------
@@ -527,7 +552,7 @@ def _clean_url(url: str) -> str:
 def _map_category(toolify_handle: str) -> str:
     """Map a Toolify category handle to our schema category."""
     if not toolify_handle:
-        return "ai-application"
+        return "ai-chatbot-agent"
 
     # Direct map first
     if toolify_handle in _CATEGORY_MAP:
@@ -539,7 +564,7 @@ def _map_category(toolify_handle: str) -> str:
         if any(kw in handle_lower for kw in keywords):
             return our_category
 
-    return "ai-application"
+    return "ai-chatbot-agent"
 
 
 def _infer_product_type(toolify_handle: str) -> str:
