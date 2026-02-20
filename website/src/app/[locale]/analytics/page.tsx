@@ -1,6 +1,8 @@
 import { getStats } from "@/lib/data";
 import { getDictionary } from "@/lib/i18n";
 import { formatCurrency } from "@/lib/utils";
+
+export const revalidate = 3600;
 import { Card } from "@/components/ui/Card";
 import { FundingChart } from "@/components/analytics/FundingChart";
 import { CategoryDistribution } from "@/components/analytics/CategoryDistribution";

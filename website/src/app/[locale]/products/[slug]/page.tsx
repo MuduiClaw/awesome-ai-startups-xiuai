@@ -4,9 +4,19 @@ import { ProductDetail } from "@/components/product/ProductDetail";
 import { localized } from "@/lib/utils";
 import type { Locale } from "@/lib/types";
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
+
+// ISR: regenerate cached pages every hour
+export const revalidate = 3600;
+// Allow slugs not in generateStaticParams to be rendered on-demand
+export const dynamicParams = true;
+
+// Pre-render only the top 1000 products at build time (by funding desc).
+// The rest are generated on-demand via ISR when first visited.
+const BUILD_TIME_LIMIT = 1000;
 
 export function generateStaticParams() {
-  const slugs = getAllSlugs();
+  const slugs = getAllSlugs().slice(0, BUILD_TIME_LIMIT);
   const params: { locale: string; slug: string }[] = [];
   for (const locale of locales) {
     for (const slug of slugs) {
@@ -37,7 +47,14 @@ export default async function ProductPage({
   params: Promise<{ locale: string; slug: string }>;
 }) {
   const { locale, slug } = await params;
-  const product = getProductBySlug(slug);
+
+  let product;
+  try {
+    product = getProductBySlug(slug);
+  } catch {
+    notFound();
+  }
+
   const dict = await getDictionary(locale as Locale);
   const categories = getCategories();
   const cat = categories.find((c) => c.id === product.category);

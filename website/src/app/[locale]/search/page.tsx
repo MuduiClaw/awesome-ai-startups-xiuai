@@ -3,6 +3,8 @@ import { getDictionary } from "@/lib/i18n";
 import { SearchPageClient } from "./SearchPageClient";
 import type { Locale } from "@/lib/types";
 
+export const revalidate = 3600;
+
 export default async function SearchPage({
   params,
 }: {

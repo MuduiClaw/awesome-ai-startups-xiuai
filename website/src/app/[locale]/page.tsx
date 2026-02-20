@@ -3,6 +3,8 @@ import { getDictionary } from "@/lib/i18n";
 import { ProductGrid } from "@/components/product/ProductGrid";
 import type { Locale } from "@/lib/types";
 
+export const revalidate = 3600;
+
 const INITIAL_PAGE_SIZE = 24;
 
 export default async function HomePage({

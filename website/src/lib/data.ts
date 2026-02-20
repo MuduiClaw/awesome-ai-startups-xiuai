@@ -302,14 +302,19 @@ export function getAllProducts(): ProductIndex {
   _allProductsCache = result;
 
   // Write lightweight static JSON for client-side lazy loading.
-  // This runs at build time (SSG) and writes into public/ so it's served as a static file.
-  const publicDataDir = path.join(process.cwd(), "public", "data");
-  if (!fs.existsSync(publicDataDir)) {
-    fs.mkdirSync(publicDataDir, { recursive: true });
-  }
-  const litePath = path.join(publicDataDir, "products-lite.json");
-  if (!fs.existsSync(litePath)) {
-    fs.writeFileSync(litePath, JSON.stringify(result.products));
+  // This runs at build time and writes into public/ so it's served as a static file.
+  // In serverless runtime the filesystem is read-only, so we silently skip.
+  try {
+    const publicDataDir = path.join(process.cwd(), "public", "data");
+    if (!fs.existsSync(publicDataDir)) {
+      fs.mkdirSync(publicDataDir, { recursive: true });
+    }
+    const litePath = path.join(publicDataDir, "products-lite.json");
+    if (!fs.existsSync(litePath)) {
+      fs.writeFileSync(litePath, JSON.stringify(result.products));
+    }
+  } catch {
+    // Expected in serverless runtime — file was already written during build
   }
 
   return result;

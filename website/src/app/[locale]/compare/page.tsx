@@ -2,6 +2,8 @@ import { getDictionary } from "@/lib/i18n";
 import { ComparePageClient } from "./ComparePageClient";
 import type { Locale } from "@/lib/types";
 
+export const revalidate = 3600;
+
 export default async function ComparePage({
   params,
 }: {
