@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 import type { Locale } from "@/lib/types";
 
@@ -18,6 +17,10 @@ function GlobeIcon() {
   );
 }
 
+// Use <a> instead of <Link> for locale switching.
+// The homepage embeds ~17 MB of RSC payload. Next.js <Link> fetches and parses
+// this entire payload on the main thread, causing multi-second freezes.
+// A plain <a> triggers a full page load which streams and renders progressively.
 export function LanguageSwitcher({ locale }: LanguageSwitcherProps) {
   const pathname = usePathname();
 
@@ -29,7 +32,7 @@ export function LanguageSwitcher({ locale }: LanguageSwitcherProps) {
       className="inline-flex items-center rounded-full border border-border bg-muted/50 p-0.5 text-sm"
       aria-label="Language"
     >
-      <Link
+      <a
         href={buildPath("en")}
         aria-current={locale === "en" ? "page" : undefined}
         className={`inline-flex items-center gap-1 rounded-full px-2.5 py-1 transition-colors ${
@@ -40,8 +43,8 @@ export function LanguageSwitcher({ locale }: LanguageSwitcherProps) {
       >
         <GlobeIcon />
         EN
-      </Link>
-      <Link
+      </a>
+      <a
         href={buildPath("zh")}
         aria-current={locale === "zh" ? "page" : undefined}
         className={`inline-flex items-center rounded-full px-2.5 py-1 transition-colors ${
@@ -51,7 +54,7 @@ export function LanguageSwitcher({ locale }: LanguageSwitcherProps) {
         }`}
       >
         中文
-      </Link>
+      </a>
     </nav>
   );
 }

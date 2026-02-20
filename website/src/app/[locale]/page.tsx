@@ -1,7 +1,9 @@
-import { getAllProducts, getCategories } from "@/lib/data";
+import { getAllProducts, getCategories, getCategoryCounts } from "@/lib/data";
 import { getDictionary } from "@/lib/i18n";
 import { ProductGrid } from "@/components/product/ProductGrid";
 import type { Locale } from "@/lib/types";
+
+const INITIAL_PAGE_SIZE = 24;
 
 export default async function HomePage({
   params,
@@ -12,6 +14,10 @@ export default async function HomePage({
   const dict = await getDictionary(locale as Locale);
   const { products, total } = getAllProducts();
   const categories = getCategories();
+  const categoryCounts = getCategoryCounts();
+
+  // Only embed the first page in HTML — the rest loads from /data/products-lite.json
+  const initialProducts = products.slice(0, INITIAL_PAGE_SIZE);
 
   return (
     <div>
@@ -22,8 +28,10 @@ export default async function HomePage({
         </p>
       </div>
       <ProductGrid
-        products={products}
+        initialProducts={initialProducts}
+        totalProducts={total}
         categories={categories}
+        categoryCounts={categoryCounts}
         locale={locale as Locale}
         dict={dict}
       />

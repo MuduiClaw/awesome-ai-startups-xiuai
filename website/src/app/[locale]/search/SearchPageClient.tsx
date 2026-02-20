@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback, useMemo } from "react";
+import { useState, useCallback, useMemo, useEffect } from "react";
 import { SearchBar } from "@/components/search/SearchBar";
 import { SearchResults } from "@/components/search/SearchResults";
 import { FilterPanel } from "@/components/search/FilterPanel";
@@ -9,23 +9,37 @@ import type { ProductIndexEntry, Locale, Category } from "@/lib/types";
 import type { Dictionary } from "@/lib/dict";
 
 interface SearchPageClientProps {
-  products: ProductIndexEntry[];
   categories: Category[];
-  countries: string[];
   locale: Locale;
   dict: Dictionary;
 }
 
 export function SearchPageClient({
-  products,
   categories,
-  countries,
   locale,
   dict,
 }: SearchPageClientProps) {
+  const [products, setProducts] = useState<ProductIndexEntry[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
   const [query, setQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [selectedCountry, setSelectedCountry] = useState<string | null>(null);
+
+  // Load products from static JSON
+  useEffect(() => {
+    fetch("/data/products-lite.json")
+      .then((res) => res.json())
+      .then((data: ProductIndexEntry[]) => {
+        setProducts(data);
+        setIsLoading(false);
+      })
+      .catch(() => setIsLoading(false));
+  }, []);
+
+  const countries = useMemo(
+    () => Array.from(new Set(products.map((p) => p.country).filter(Boolean))).sort(),
+    [products],
+  );
 
   const searchIndex = useMemo(() => createSearchIndex(products), [products]);
 
@@ -76,13 +90,17 @@ export function SearchPageClient({
         />
       </div>
 
-      <SearchResults
-        results={results}
-        locale={locale}
-        categories={categories}
-        noResultsText={dict.search.no_results}
-        resultsText={dict.search.results}
-      />
+      {isLoading ? (
+        <p className="text-center text-muted-foreground py-12 animate-pulse">Loading...</p>
+      ) : (
+        <SearchResults
+          results={results}
+          locale={locale}
+          categories={categories}
+          noResultsText={dict.search.no_results}
+          resultsText={dict.search.results}
+        />
+      )}
     </div>
   );
 }

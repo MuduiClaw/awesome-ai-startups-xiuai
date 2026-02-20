@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
 import { formatCurrency, formatRound, localized } from "@/lib/utils";
@@ -8,17 +8,29 @@ import type { ProductIndexEntry, Locale } from "@/lib/types";
 import type { Dictionary } from "@/lib/dict";
 
 interface ComparePageClientProps {
-  products: ProductIndexEntry[];
   locale: Locale;
   dict: Dictionary;
 }
 
-export function ComparePageClient({ products, locale, dict }: ComparePageClientProps) {
+export function ComparePageClient({ locale, dict }: ComparePageClientProps) {
+  const [products, setProducts] = useState<ProductIndexEntry[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
   const [selectedSlugs, setSelectedSlugs] = useState<string[]>([]);
   const [searchTerm, setSearchTerm] = useState("");
 
   const t = dict.product;
   const c = dict.compare;
+
+  // Load products from static JSON
+  useEffect(() => {
+    fetch("/data/products-lite.json")
+      .then((res) => res.json())
+      .then((data: ProductIndexEntry[]) => {
+        setProducts(data);
+        setIsLoading(false);
+      })
+      .catch(() => setIsLoading(false));
+  }, []);
 
   const selected = useMemo(
     () => products.filter((p) => selectedSlugs.includes(p.slug)),
@@ -60,6 +72,15 @@ export function ComparePageClient({ products, locale, dict }: ComparePageClientP
     { key: "employees", label: t.employees, render: (p: ProductIndexEntry) => p.employee_count_range || c.no_data },
     { key: "open_source", label: t.open_source, render: (p: ProductIndexEntry) => p.open_source ? t.yes : t.no },
   ];
+
+  if (isLoading) {
+    return (
+      <div>
+        <h1 className="text-3xl font-bold mb-6">{c.title}</h1>
+        <p className="text-center text-muted-foreground py-12 animate-pulse">Loading...</p>
+      </div>
+    );
+  }
 
   return (
     <div>

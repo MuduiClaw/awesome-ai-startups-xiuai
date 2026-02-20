@@ -10,6 +10,7 @@ export interface ProductDict {
   funding: string;
   total_raised: string;
   last_round: string;
+  last_round_date: string;
   valuation: string;
   investors: string;
   key_people: string;
@@ -29,6 +30,45 @@ export interface ProductDict {
   category: string;
   yes: string;
   no: string;
+  // Rich detail fields
+  pricing: string;
+  pricing_model: string;
+  free_tier: string;
+  technical: string;
+  modalities: string;
+  platforms: string;
+  api_available: string;
+  api_docs: string;
+  architecture: string;
+  parameters: string;
+  context_window: string;
+  supported_languages: string;
+  release_date: string;
+  license: string;
+  repository: string;
+  github_stars: string;
+  use_cases: string;
+  target_audience: string;
+  competitors: string;
+  based_on: string;
+  used_by: string;
+  hiring: string;
+  is_hiring: string;
+  careers: string;
+  tech_stack: string;
+  open_positions: string;
+  sub_category: string;
+  app_store: string;
+  rating: string;
+  free: string;
+  freemium: string;
+  paid: string;
+  enterprise: string;
+  open_source_model: string;
+  usage_based: string;
+  free_trial: string;
+  last_updated: string;
+  added_date: string;
 }
 
 export interface SearchDict {

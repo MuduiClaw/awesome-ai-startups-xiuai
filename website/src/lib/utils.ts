@@ -41,3 +41,33 @@ export function localized(item: any, locale: "en" | "zh", field: string = "name"
   }
   return (item[field] as string) ?? "";
 }
+
+/** Format a pricing model string for display. */
+export function formatPricingModel(model: string): string {
+  const map: Record<string, string> = {
+    free: "Free",
+    freemium: "Freemium",
+    "free-trial": "Free Trial",
+    paid: "Paid",
+    enterprise: "Enterprise",
+    "open-source": "Open Source",
+    "usage-based": "Usage-Based",
+  };
+  return map[model] || model;
+}
+
+/** Format a slug-style string to title case for display. */
+export function formatSlug(slug: string): string {
+  return slug
+    .split("-")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+}
+
+/** Format a number with K/M/B suffix. */
+export function formatNumber(num: number): string {
+  if (num >= 1_000_000_000) return `${(num / 1_000_000_000).toFixed(1)}B`;
+  if (num >= 1_000_000) return `${(num / 1_000_000).toFixed(1)}M`;
+  if (num >= 1_000) return `${(num / 1_000).toFixed(0)}K`;
+  return String(num);
+}

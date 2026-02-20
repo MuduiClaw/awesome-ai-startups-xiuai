@@ -20,6 +20,31 @@ export interface Social {
   crunchbase?: string;
 }
 
+export interface Hiring {
+  is_hiring?: boolean;
+  careers_url?: string;
+  tech_stack?: string[];
+  total_positions?: number;
+  positions?: { title: string; location?: string; url?: string }[];
+  last_checked?: string;
+}
+
+export interface AppStore {
+  apple_store_url?: string;
+  google_play_url?: string;
+  rating?: number;
+  downloads?: string;
+  last_updated?: string;
+}
+
+export interface Pricing {
+  model?: string;
+  has_free_tier?: boolean;
+  url?: string;
+  input_price_per_1m_tokens?: number;
+  output_price_per_1m_tokens?: number;
+}
+
 export interface CompanyInfo {
   name: string;
   name_zh?: string;
@@ -69,13 +94,35 @@ export interface ProductDetail {
   open_source?: boolean;
   status: string;
   repository_url?: string;
+  license?: string;
   company: CompanyInfo;
   key_people?: KeyPerson[];
   sources?: Source[];
   meta?: ProductMeta;
+  // Rich fields
+  pricing?: Pricing;
+  modalities?: string[];
+  platforms?: string[];
+  target_audience?: string[];
+  use_cases?: string[];
+  competitors?: string[];
+  based_on?: string[];
+  used_by?: string[];
+  hiring?: Hiring;
+  app_store?: AppStore;
+  api_available?: boolean;
+  api_docs_url?: string;
+  architecture?: string;
+  parameter_count?: string;
+  context_window?: number;
+  supported_languages?: string[];
+  release_date?: string;
+  github_stars?: number;
 }
 
-/** Flattened product entry from index.json — used for list/card views. */
+/** Flattened product entry from index.json — used for list/card views.
+ *  Optimized for minimal payload: only fields displayed on cards.
+ *  Descriptions truncated to 160 chars, tags limited to 3. */
 export interface ProductIndexEntry {
   slug: string;
   name: string;
@@ -87,7 +134,6 @@ export interface ProductIndexEntry {
   product_type: string;
   category: string;
   tags?: string[];
-  keywords?: string[];
   open_source?: boolean;
   status: string;
   company_name: string;
@@ -99,6 +145,12 @@ export interface ProductIndexEntry {
   last_round: string;
   valuation_usd: number;
   employee_count_range: string;
+  // Rich card fields
+  pricing_model?: string;
+  has_free_tier?: boolean;
+  modalities?: string[];
+  platforms?: string[];
+  api_available?: boolean;
 }
 
 export interface ProductIndex {
