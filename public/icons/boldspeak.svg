@@ -1,0 +1,40 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="mainGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="50%" stop-color="#06b6d4" />
+      <stop offset="100%" stop-color="#3b82f6" />
+    </linearGradient>
+  </defs>
+
+  <!-- Main circle with glow effect -->
+  <circle cx="24" cy="24" r="20" fill="url(#mainGrad)" opacity="0.15" />
+  <circle cx="24" cy="24" r="17" fill="url(#mainGrad)" filter="drop-shadow(0 4px 12px rgba(16,185,129,0.4))" />
+  
+  <!-- Letter B -->
+  <text x="24" y="32" font-family="system-ui" font-size="20" font-weight="900" text-anchor="middle" fill="white" letter-spacing="-1">B</text>
+  
+  <!-- Sound waves -->
+  <g opacity="0.6">
+    <!-- Right waves -->
+    <path d="M 38 18 Q 42 18, 42 24 Q 42 30, 38 30" stroke="url(#mainGrad)" stroke-width="2" stroke-linecap="round" fill="none" />
+    <path d="M 42 15 Q 46 15, 46 24 Q 46 33, 42 33" stroke="url(#mainGrad)" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.7" />
+    <!-- Left waves -->
+    <path d="M 10 18 Q 6 18, 6 24 Q 6 30, 10 30" stroke="url(#mainGrad)" stroke-width="2" stroke-linecap="round" fill="none" />
+    <path d="M 6 15 Q 2 15, 2 24 Q 2 33, 6 33" stroke="url(#mainGrad)" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.7" />
+  </g>
+</svg>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

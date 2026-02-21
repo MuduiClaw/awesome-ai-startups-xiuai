@@ -1,0 +1,637 @@
+<p>Error: SQLSTATE[HY000] [2002] Cannot assign requested address<br>
+		Line 37 of file /var/www/html/efty.com/odf/classes/database.class.php</p>  <!doctype html>
+
+<html lang="en">
+
+<head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <base href="https://efty.com/">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <!-- Custom breakpoints -->
+    <link rel="stylesheet" href="assets/css/breakpoint-xxl.css">
+
+    <!-- Animate -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    <!-- Efty default CSS -->
+    <link rel="stylesheet" href="assets/css/default24.css">
+    <link rel="stylesheet" href="odf/css/odf.css">
+
+    <!-- Toastify -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
+    
+    <!-- Efty page specific CSS -->
+    <link rel="stylesheet" href="assets/css/overviews27.css">
+    <link rel="stylesheet" href="assets/css/nouislider.min.css">
+    <link rel="stylesheet" href="assets/css/nouislider_efty.css">
+    <link rel="stylesheet" href="assets/css/domain24.css">
+    <link rel="stylesheet" href="assets/css/loading_spinner.css">
+
+    <!-- Font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <title>404 Page not found | Efty</title>
+
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+    <!-- Toastify -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+    <script type="text/javascript" src="https://efty.com/odf/js/odf.js"></script><script>Odf.set('website_base_url', 'https://efty.com/');$(document).ready(function() {Odf.init();});</script>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/img/y-green.png" sizes="128x128" />
+    <meta name="application-name" content="Efty"/>
+
+</head>    <body>
+		
+		<div id="preloader">
+			<div id="status">
+				<div class="spinner">
+				  <div class="spinner-wrapper">
+					<div class="rotator">
+					  <div class="inner-spin"></div>
+					  <div class="inner-spin"></div>
+					</div>
+				  </div>
+				</div>
+			</div>
+		</div>
+
+		<nav class="navbar navbar-expand-lg fixed-top navbar-light navbar-efty navbar-efty-light p-0 pt-2 pb-2 py-3" >
+
+            <a class="navbar-brand float-left ml-3 d-block d-lg-none" href="https://efty.com/">
+                <img src="https://efty.com/assets/img/brand/efty-lg-color.png" alt="Efty" class="logo-for-white-navbar">
+                <img src="https://efty.com/assets/img/brand/efty-lg.png" alt="Efty" class="logo-for-green-navbar">
+            </a>
+            <button class="navbar-toggler mr-3" type="button" data-toggle="collapse" data-target="#navbarCorporate" aria-controls="navbarCorporate" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarCorporate">
+
+                <div class="container-fluid">
+
+                    <div class="row no-gutter w-100 px-0 px-lh-5 px-xxl-0">
+
+                        <div class="col-12 offset-0 col-lg-8 offset-lg-0 col-xxl-6 offset-xxl-2 my-auto">
+
+                            <ul class="navbar-nav w-100 flex-row">
+
+                                <li class="nav-item mr-4 d-none d-lg-block">
+                                    <a class="navbar-brand float-left" href="https://efty.com/">
+                                        <img src="https://efty.com/assets/img/brand/efty-lg-color.png" alt="Efty" class="logo-for-white-navbar">
+                                        <img src="https://efty.com/assets/img/brand/efty-lg.png" alt="Efty" class="logo-for-green-navbar">
+                                    </a>
+                                </li>
+
+                                <li class="nav-item mr-4 pt-1">
+                                    <a class="nav-link text-white dropdown-toggle show" id="buymenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Buy domains</a>
+                                    <div class="dropdown-menu border-4 rounded mt-2" aria-labelledby="buymenu" id="buymenu-wrapper" data-popper="static">
+                                        <a href="domains/" title="Find your domain" class="dropdown-item py-2">
+                                            <i class="far fa-arrow-alt-circle-right mr-2"></i> Find your domain
+                                        </a>
+                                        <a href="knowledge/buying-domains-made-easy/" title="Buying domains made easy" class="dropdown-item py-2">
+                                            <i class="far fa-arrow-alt-circle-right mr-2"></i> Buying domains made easy
+                                        </a>
+                                        <a href="knowledge/the-safe-and-trusted-way-to-buy-premium-domain-names/" title="Buying domains made easy" class="dropdown-item py-2">
+                                            <i class="far fa-arrow-alt-circle-right mr-2"></i> The Safe and Trusted Way to Buy Domains
+                                        </a>
+                                        <a href="support/" title="Support" class="dropdown-item py-2">
+                                            <i class="far fa-arrow-alt-circle-right mr-2"></i> Get assistance
+                                        </a>
+                                    </div>
+                                </li>
+
+                                <li class="nav-item mr-4 pt-1">
+                                    <a class="nav-link text-white" href="https://efty.com/products/efty_investor/">Sell domains</a>
+                                </li>
+
+                                <li class="nav-item mr-4 pt-1 dropdown-center">
+                                    <a class="nav-link fw-bold text-white dropdown-toggle show" id="productmenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Products</a>
+                                    <div class="dropdown-menu border-light border-4 rounded py-0 mt-2" aria-labelledby="productmenu" id="productmenu-wrapper" data-popper="static">
+                                        <div class="row m-0 h-100">
+                                            <div class="col-12 col-lg-4 px-0 pt-0 h-100 product-tiles text-white">
+                                                                                                    <div class="dropsub active p-0 pl-4 pt-2 p-lg-3 rounded-0 rounded-lg-start" id="dropsub_efty_investor">
+                                                        <div class="mb-2">
+                                                            <a href="products/efty_investor/" title="Efty Investor" class="w-100 d-flex align-items-center">
+                                                                <img src="assets/img/brand/investor.png" alt="Efty Investor" class="prod-icon mr-2" />
+                                                                <img src="assets/img/brand/investor_alt.png" alt="Efty Investor" class="prod-icon prod-icon-alt mr-2" />
+                                                                <span class="font-weight-bold">Efty Investor</span>
+                                                            </a>
+                                                        </div>
+                                                        <p>Accelerate growth and reach new levels of efficiency with access to powerful tools to manage, market, and monetize your domain name portfolio.</p>
+                                                    </div>
+                                                                                                        <div class="dropsub p-0 pl-4 pt-2 p-lg-3 rounded-0 rounded-lg-start" id="dropsub_efty_pay">
+                                                        <div class="mb-2">
+                                                            <a href="products/efty_pay/" title="Efty Pay" class="w-100 d-flex align-items-center">
+                                                                <img src="assets/img/brand/pay.png" alt="Efty Pay" class="prod-icon mr-2" />
+                                                                <img src="assets/img/brand/pay_alt.png" alt="Efty Pay" class="prod-icon prod-icon-alt mr-2" />
+                                                                <span class="font-weight-bold">Efty Pay</span>
+                                                            </a>
+                                                        </div>
+                                                        <p>We cut out the unnecessary steps to make buying or selling domains easy, fast, and stress-free.</p>
+                                                    </div>
+                                                                                                        <div class="dropsub p-0 pl-4 pt-2 p-lg-3 rounded-0 rounded-lg-start" id="dropsub_efty_market">
+                                                        <div class="mb-2">
+                                                            <a href="products/efty_market/" title="Efty Market" class="w-100 d-flex align-items-center">
+                                                                <img src="assets/img/brand/efty.png" alt="Efty Market" class="prod-icon mr-2" />
+                                                                <img src="assets/img/brand/efty_alt.png" alt="Efty Market" class="prod-icon prod-icon-alt mr-2" />
+                                                                <span class="font-weight-bold">Efty Market</span>
+                                                            </a>
+                                                        </div>
+                                                        <p>The simple way to sell or buy domain names starts with the marketplace that fuels your business.</p>
+                                                    </div>
+                                                                                                </div>
+                                            <div class="col-12 col-lg-8 pt-3 h-100">
+                                                                                                    <div class="row dropsub-content h-100 " id="dropsub_efty_investor_content">
+
+                                                        <div class="col-12 col-lg-6">
+                                                                                                                        <a href="products/efty_investor/#landers" class="dropdown-link prod-feature">
+                                                                <div class="d-flex flex-row align-items-center justify-content-start mb-3">
+                                                                    <div class="justify-content-center px-3">
+                                                                        <img src="assets/img/icons/1.png" class="dropdown-menu-icon">
+                                                                    </div>
+                                                                    <div class="">
+                                                                        <div class="font-weight-bold">
+                                                                            <span class="feature-title">For-Sale landing pages</span>
+                                                                            <i class="fas fa-chevron-right smaller ml-1 feature-chevron" style="display:none;"></i>
+                                                                        </div>
+                                                                        <div>Boost sales with stunning landing pages that attract & convert buyers.</div>
+                                                                    </div>
+                                                                </div>
+                                                            </a>
+                                                                                                                        <a href="products/efty_investor/#integrations" class="dropdown-link prod-feature">
+                                                                <div class="d-flex flex-row align-items-center justify-content-start mb-3">
+                                                                    <div class="justify-content-center px-3">
+                                                                        <img src="assets/img/icons/2.png" class="dropdown-menu-icon">
+                                                                    </div>
+                                                                    <div class="">
+                                                                        <div class="font-weight-bold">
+                                                                            <span class="feature-title">Connect your favorite tools</span>
+                                                                            <i class="fas fa-chevron-right smaller ml-1 feature-chevron" style="display:none;"></i>
+                                                                        </div>
+                                                                        <div>Connect with other marketplaces and tools to streamline your business.</div>
+                                                                    </div>
+                                                                </div>
+                                                            </a>
+                                                                                                                        <a href="products/efty_investor/#brokerage" class="dropdown-link prod-feature">
+                                                                <div class="d-flex flex-row align-items-center justify-content-start mb-3">
+                                                                    <div class="justify-content-center px-3">
+                                                                        <img src="assets/img/icons/3.png" class="dropdown-menu-icon">
+                                                                    </div>
+                                                                    <div class="">
+                                                                        <div class="font-weight-bold">
+                                                                            <span class="feature-title">Brokerage</span>
+                                                                            <i class="fas fa-chevron-right smaller ml-1 feature-chevron" style="display:none;"></i>
+                                                                        </div>
+                                                                        <div>Access expert brokers to negotiate the best deals and increase sales.</div>
+                                                                    </div>
+                                                                </div>
+                                                            </a>
+                                                                                                                    </div><div class="col-12 col-lg-6">
+                                                                                                                        <a href="products/efty_investor/#marketplace" class="dropdown-link prod-feature">
+                                                                <div class="d-flex flex-row align-items-center justify-content-start mb-3">
+                                                                    <div class="justify-content-center px-3">
+                                                                        <img src="assets/img/icons/4.png" class="dropdown-menu-icon">
+                                                                    </div>
+                                                                    <div class="">
+                                                                        <div class="font-weight-bold">
+                                                                            <span class="feature-title">Custom Marketplace</span>
+                                                                            <i class="fas fa-chevron-right smaller ml-1 feature-chevron" style="display:none;"></i>
+                                                                        </div>
+                                                                        <div>Create a branded marketplace to showcase and sell your domain names.</div>
+                                                                    </div>
+                                                                </div>
+                                                            </a>
+                                                                                                                        <a href="products/efty_investor/#portfolio-management" class="dropdown-link prod-feature">
+                                                                <div class="d-flex flex-row align-items-center justify-content-start mb-3">
+                                                                    <div class="justify-content-center px-3">
+                                                                        <img src="assets/img/icons/5.png" class="dropdown-menu-icon">
+                                                                    </div>
+                                                                    <div class="">
+                                                                        <div class="font-weight-bold">
+                                                                            <span class="feature-title">Portfolio Management</span>
+                                                                            <i class="fas fa-chevron-right smaller ml-1 feature-chevron" style="display:none;"></i>
+                                                                        </div>
+                                                                        <div>Manage and optimize your domain portfolio for informed decision-making.</div>
+                                                                    </div>
+                                                                </div>
+                                                            </a>
+                                                                                                                        <a href="products/efty_investor/#insights" class="dropdown-link prod-feature">
+                                                                <div class="d-flex flex-row align-items-center justify-content-start mb-3">
+                                                                    <div class="justify-content-center px-3">
+                                                                        <img src="assets/img/icons/6.png" class="dropdown-menu-icon">
+                                                                    </div>
+                                                                    <div class="">
+                                                                        <div class="font-weight-bold">
+                                                                            <span class="feature-title">Data-driven Insights</span>
+                                                                            <i class="fas fa-chevron-right smaller ml-1 feature-chevron" style="display:none;"></i>
+                                                                        </div>
+                                                                        <div>Leverage insights to make informed decisions and drive higher returns.</div>
+                                                                    </div>
+                                                                </div>
+                                                            </a>
+                                                                                                                    </div><div class="col-12 col-lg-6">
+                                                                                                                    </div>
+                                                                                                                    <div class="dropsub-banner w-100 px-4">
+                                                                <a href="https://app.efty.com/login/signup/" target="_blank" class="btn btn-sm btn-outline-success w-100"><i class="fas fa-chevron-right mr-2"></i>Sign up and start selling</a>
+                                                            </div>
+                                                                                                                </div>
+                                                                                                        <div class="row dropsub-content h-100  d-none" id="dropsub_efty_pay_content">
+
+                                                        <div class="col-12 col-lg-6">
+                                                                                                                        <a href="products/efty_pay/#secure" class="dropdown-link prod-feature">
+                                                                <div class="d-flex flex-row align-items-center justify-content-start mb-3">
+                                                                    <div class="justify-content-center px-3">
+                                                                        <img src="assets/img/icons/7.png" class="dropdown-menu-icon">
+                                                                    </div>
+                                                                    <div class="">
+                                                                        <div class="font-weight-bold">
+                                                                            <span class="feature-title">Secure transactions</span>
+                                                                            <i class="fas fa-chevron-right smaller ml-1 feature-chevron" style="display:none;"></i>
+                                                                        </div>
+                                                                        <div>Transfer domains with confidence, ensuring a fast and safe experience.</div>
+                                                                    </div>
+                                                                </div>
+                                                            </a>
+                                                                                                                        <a href="products/efty_pay/#automation" class="dropdown-link prod-feature">
+                                                                <div class="d-flex flex-row align-items-center justify-content-start mb-3">
+                                                                    <div class="justify-content-center px-3">
+                                                                        <img src="assets/img/icons/8.png" class="dropdown-menu-icon">
+                                                                    </div>
+                                                                    <div class="">
+                                                                        <div class="font-weight-bold">
+                                                                            <span class="feature-title">Transaction Automation</span>
+                                                                            <i class="fas fa-chevron-right smaller ml-1 feature-chevron" style="display:none;"></i>
+                                                                        </div>
+                                                                        <div>Simplify transfers with automated workflows for a seamless experience.</div>
+                                                                    </div>
+                                                                </div>
+                                                            </a>
+                                                                                                                        <a href="products/efty_pay/#expert" class="dropdown-link prod-feature">
+                                                                <div class="d-flex flex-row align-items-center justify-content-start mb-3">
+                                                                    <div class="justify-content-center px-3">
+                                                                        <img src="assets/img/icons/9.png" class="dropdown-menu-icon">
+                                                                    </div>
+                                                                    <div class="">
+                                                                        <div class="font-weight-bold">
+                                                                            <span class="feature-title">Expert Guidance</span>
+                                                                            <i class="fas fa-chevron-right smaller ml-1 feature-chevron" style="display:none;"></i>
+                                                                        </div>
+                                                                        <div>Expert assistance for buyer & seller throughout the transfer process.</div>
+                                                                    </div>
+                                                                </div>
+                                                            </a>
+                                                                                                                    </div><div class="col-12 col-lg-6">
+                                                                                                                        <a href="products/efty_pay/#hassle-free" class="dropdown-link prod-feature">
+                                                                <div class="d-flex flex-row align-items-center justify-content-start mb-3">
+                                                                    <div class="justify-content-center px-3">
+                                                                        <img src="assets/img/icons/10.png" class="dropdown-menu-icon">
+                                                                    </div>
+                                                                    <div class="">
+                                                                        <div class="font-weight-bold">
+                                                                            <span class="feature-title">Domain transfers. Made easy</span>
+                                                                            <i class="fas fa-chevron-right smaller ml-1 feature-chevron" style="display:none;"></i>
+                                                                        </div>
+                                                                        <div>Experience a smooth domain transfer without unnecessary complexities.</div>
+                                                                    </div>
+                                                                </div>
+                                                            </a>
+                                                                                                                        <a href="products/efty_pay/#fast-payouts" class="dropdown-link prod-feature">
+                                                                <div class="d-flex flex-row align-items-center justify-content-start mb-3">
+                                                                    <div class="justify-content-center px-3">
+                                                                        <img src="assets/img/icons/11.png" class="dropdown-menu-icon">
+                                                                    </div>
+                                                                    <div class="">
+                                                                        <div class="font-weight-bold">
+                                                                            <span class="feature-title">Rapid payouts</span>
+                                                                            <i class="fas fa-chevron-right smaller ml-1 feature-chevron" style="display:none;"></i>
+                                                                        </div>
+                                                                        <div>Swift and timely payouts when you have transferred the domain to us.</div>
+                                                                    </div>
+                                                                </div>
+                                                            </a>
+                                                                                                                        <a href="products/efty_pay/#import-leads" class="dropdown-link prod-feature">
+                                                                <div class="d-flex flex-row align-items-center justify-content-start mb-3">
+                                                                    <div class="justify-content-center px-3">
+                                                                        <img src="assets/img/icons/12.png" class="dropdown-menu-icon">
+                                                                    </div>
+                                                                    <div class="">
+                                                                        <div class="font-weight-bold">
+                                                                            <span class="feature-title">Bring your sale</span>
+                                                                            <i class="fas fa-chevron-right smaller ml-1 feature-chevron" style="display:none;"></i>
+                                                                        </div>
+                                                                        <div>Import your leads, and we process the transaction for a 5% commission.</div>
+                                                                    </div>
+                                                                </div>
+                                                            </a>
+                                                                                                                    </div><div class="col-12 col-lg-6">
+                                                                                                                    </div>
+                                                                                                            </div>
+                                                                                                        <div class="row dropsub-content h-100  d-none" id="dropsub_efty_market_content">
+
+                                                        <div class="col-12 col-lg-6">
+                                                                                                                        <a href="products/efty_market/#zero-commission" class="dropdown-link prod-feature">
+                                                                <div class="d-flex flex-row align-items-center justify-content-start mb-3">
+                                                                    <div class="justify-content-center px-3">
+                                                                        <img src="assets/img/icons/13.png" class="dropdown-menu-icon">
+                                                                    </div>
+                                                                    <div class="">
+                                                                        <div class="font-weight-bold">
+                                                                            <span class="feature-title">Competitive Commission Fees</span>
+                                                                            <i class="fas fa-chevron-right smaller ml-1 feature-chevron" style="display:none;"></i>
+                                                                        </div>
+                                                                        <div>Make more money with domain name investing, maximizing your profits.</div>
+                                                                    </div>
+                                                                </div>
+                                                            </a>
+                                                                                                                        <a href="products/efty_market/#exposure" class="dropdown-link prod-feature">
+                                                                <div class="d-flex flex-row align-items-center justify-content-start mb-3">
+                                                                    <div class="justify-content-center px-3">
+                                                                        <img src="assets/img/icons/14.png" class="dropdown-menu-icon">
+                                                                    </div>
+                                                                    <div class="">
+                                                                        <div class="font-weight-bold">
+                                                                            <span class="feature-title">Extend your reach</span>
+                                                                            <i class="fas fa-chevron-right smaller ml-1 feature-chevron" style="display:none;"></i>
+                                                                        </div>
+                                                                        <div>Reach a broad audience of potential buyers for your domain names.</div>
+                                                                    </div>
+                                                                </div>
+                                                            </a>
+                                                                                                                        <a href="products/efty_market/#listings" class="dropdown-link prod-feature">
+                                                                <div class="d-flex flex-row align-items-center justify-content-start mb-3">
+                                                                    <div class="justify-content-center px-3">
+                                                                        <img src="assets/img/icons/15.png" class="dropdown-menu-icon">
+                                                                    </div>
+                                                                    <div class="">
+                                                                        <div class="font-weight-bold">
+                                                                            <span class="feature-title">Easy Listing Process</span>
+                                                                            <i class="fas fa-chevron-right smaller ml-1 feature-chevron" style="display:none;"></i>
+                                                                        </div>
+                                                                        <div>List your domain names effortlessly. We simplify the selling process.</div>
+                                                                    </div>
+                                                                </div>
+                                                            </a>
+                                                                                                                    </div><div class="col-12 col-lg-6">
+                                                                                                                        <a href="products/efty_market/#search" class="dropdown-link prod-feature">
+                                                                <div class="d-flex flex-row align-items-center justify-content-start mb-3">
+                                                                    <div class="justify-content-center px-3">
+                                                                        <img src="assets/img/icons/16.png" class="dropdown-menu-icon">
+                                                                    </div>
+                                                                    <div class="">
+                                                                        <div class="font-weight-bold">
+                                                                            <span class="feature-title">Advance Search</span>
+                                                                            <i class="fas fa-chevron-right smaller ml-1 feature-chevron" style="display:none;"></i>
+                                                                        </div>
+                                                                        <div>Find your perfect brand name easily with advanced filtering options.</div>
+                                                                    </div>
+                                                                </div>
+                                                            </a>
+                                                                                                                        <a href="products/efty_market/#support" class="dropdown-link prod-feature">
+                                                                <div class="d-flex flex-row align-items-center justify-content-start mb-3">
+                                                                    <div class="justify-content-center px-3">
+                                                                        <img src="assets/img/icons/17.png" class="dropdown-menu-icon">
+                                                                    </div>
+                                                                    <div class="">
+                                                                        <div class="font-weight-bold">
+                                                                            <span class="feature-title">We're here to help</span>
+                                                                            <i class="fas fa-chevron-right smaller ml-1 feature-chevron" style="display:none;"></i>
+                                                                        </div>
+                                                                        <div>Receive excellent support throughout your selling or buying journey.</div>
+                                                                    </div>
+                                                                </div>
+                                                            </a>
+                                                                                                                        <a href="products/efty_market/#presentation" class="dropdown-link prod-feature">
+                                                                <div class="d-flex flex-row align-items-center justify-content-start mb-3">
+                                                                    <div class="justify-content-center px-3">
+                                                                        <img src="assets/img/icons/18.png" class="dropdown-menu-icon">
+                                                                    </div>
+                                                                    <div class="">
+                                                                        <div class="font-weight-bold">
+                                                                            <span class="feature-title">Pixel-perfect presentation</span>
+                                                                            <i class="fas fa-chevron-right smaller ml-1 feature-chevron" style="display:none;"></i>
+                                                                        </div>
+                                                                        <div>Showcase your domains with professional and captivating presentations.</div>
+                                                                    </div>
+                                                                </div>
+                                                            </a>
+                                                                                                                    </div><div class="col-12 col-lg-6">
+                                                                                                                    </div>
+                                                                                                            </div>
+                                                                                                </div>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li class="nav-item mr-4 pt-1">
+                                    <a class="nav-link text-white dropdown-toggle show" id="aboutusmenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About us</a>
+                                    <div class="dropdown-menu border-4 rounded mt-2" aria-labelledby="aboutusmenu" id="aboutusmenu-wrapper" data-popper="static">
+                                        <a href="about/" title="About our company" class="dropdown-item py-2">
+                                            <i class="far fa-arrow-alt-circle-right mr-2"></i> About our company
+                                        </a>
+                                        <a href="partnership-program/" title="Partnership Program" class="dropdown-item py-2">
+                                            <i class="far fa-arrow-alt-circle-right mr-2"></i> Partnership Program
+                                        </a>
+                                        <a href="career/jobs/" title="Jobs" class="dropdown-item py-2">
+                                            <i class="far fa-arrow-alt-circle-right mr-2"></i> Jobs
+                                        </a>
+                                    </div>
+                                </li>
+
+                                <li class="nav-item mr-4 pt-1">
+                                    <a class="nav-link text-white" href="https://efty.com/support/">Get support</a>
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+                        <div class="col-12 col-lg-4 col-xxl-2 my-auto text-right pr-0">
+
+                            <a class="c2a-for-green-navbar btn-c2a btn border-white text-white p-2 pl-3 pr-3" href="https://app.efty.com/login/signup/"><i class="fas fa-chevron-right mr-2"></i>Start selling</a>
+                            <a class="c2a-for-white-navbar btn-c2a btn btn-primary  p-2 pl-3 pr-3" href="https://app.efty.com/login/signup/"><i class="fas fa-chevron-right mr-2"></i>Start selling</a>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+				
+		</nav>		<div class="jumbotron home jumbotron-fluid mb-0 first-element">
+			
+			<div class="container-fluid pr-0 pr-md-3">
+			
+				<div class="row w-100">
+					
+					<div class="col-12 col-md-10 offset-md-1 col-xl-8 offset-xl-2 text-center">
+						
+						<h2 class="font-weight-bold "><i class="far fa-frown mr-2" aria-hidden="true"></i>We can't find the page you're looking for.. Sorry!</h2>
+						<p class="lead font-weight-bold mt-3">You can either go back to our <a href="/">home page</a>, or use the form below to search for a domain name.</p>
+						<p class="lead mt-4">Browse through thousands of domain names on Efty and communicate directly with sellers. Easy communication, secure payments and the best possible support.</p>
+							
+						<form class="form-inline pt-3" method="post" action="/domains/">
+									
+							<input class="form-control w-100 p-4" type="search" placeholder="Find your domain name" name="search" aria-label="Search">
+							<button class="btn btn-outline-light search-submit" type="submit"><i class="fas fa-search"></i></button>
+			
+						</form>
+					
+					</div>
+					
+				</div>
+				
+		 	 </div>
+			
+		</div>
+		
+		<footer class="w-100 mt-0 pt-5 pb-2">
+		
+			<div class="container">
+
+                <div class="row pb-4">
+
+                   <div class="col-12 col-md-4 col-xxl-2 offset-xxl-2 pb-5 pb-lg-0 text-center text-lg-left">
+
+                       <p class="font-weight-bold display-6">About Efty</p>
+                       <a href="https://efty.com/about/" class="mb-3 h5">About us</a><br>
+                       <a href="https://efty.com/contact/" class="mb-3 h5">Contact</a><br>
+                       <a href="https://efty.com/legal/" class="mb-3 h5">Legal</a><br>
+                       <a href="https://efty.com/support/" class="h5">Support</a><br>
+                       <a href="https://efty.com/career/jobs/" class="h5">Jobs</a><br>
+                       <a href="https://efty.com/sitemap/" class="h5">Sitemap</a><br>
+                       <a href="https://blog.efty.com/" class="h5">Blog</a><br>
+
+                   </div>
+
+                    <div class="col-12 col-md-4 col-xxl-2 offset-xxl-1 pb-5 pb-lg-0 text-center text-lg-left ">
+
+                        <div class="w-100 mb-3 align-items-center d-flex justify-content-center justify-content-lg-start">
+                            <span class="font-weight-bold display-6 pr-2">Efty Pay</span>
+                        </div>
+                        <a href="https://efty.com/products/efty_pay/" class="mb-2 h5">Product features</a><br>
+                        <a href="https://efty.com/knowledge/buying-domains-made-easy/" class="mb-2 h5">Buying domains explained</a><br>
+                        <a href="https://support.efty.com/collection/1-efty-pay" target="_blank" class="mb-2 h5">Knowledge base</a><br>
+                        <!--<a href="#" class="mb-2 h5">API Documentation</a><br>-->
+                        <a href="https://efty.com/partnership-program/" class="mb-2 h5">Partnership program</a>
+
+                    </div>
+
+                    <div class="col-12 col-md-4 col-xxl-2 offset-xxl-1 pb-5 pb-lg-0 text-center text-lg-left">
+
+                        <p class="font-weight-bold display-6">Efty Investor</p>
+                        <a href="https://app.efty.com/" class="mb-2 h5">Sign in</a><br>
+                        <a href="https://efty.com/products/efty_investor/" class="mb-2 h5">Product features</a><br>
+                        <a href="https://efty.com/pricing/" class="mb-2 h5">Pricing</a><br>
+                        <a href="https://support.efty.com/collection/39-efty-investor" target="_blank" class="mb-2 h5">Knowledge base</a>
+
+                    </div>
+
+                </div>
+			
+				<div class="row pb-3">
+				
+					<div class="col-4 offset-xxl-2">
+						
+						<a href="https://efty.com/"><img src="https://efty.com/assets/img/brand/efty-lg.png" alt="Efty" class="logo"></a>
+
+                    </div>
+
+                    <div class="col-8 col-xxl-4 offset-xxl-0 text-right">
+						
+						<ul class="social p-0">
+
+                            <li class="d-inline-block mr-2">
+                                <a href="https://twitter.com/eftycom" class="text-white h3"><i class="fab fa-x-twitter"></i></a>
+                            </li>
+
+                            <li class="d-inline-block mr-2">
+                                <a href="mailto:ask@efty.com" class="text-white h3"><i class="fas fa-envelope"></i></a>
+                            </li>
+							
+                            <li class="d-inline-block mr-2">
+                                <a href="https://www.domaining.com/feed/efty/" class="text-white h3"><img src="https://efty.com/assets/img/domcom.png" class="mt-min-2"></a>
+                            </li>
+							
+                        </ul>
+						
+					</div>
+					
+					
+				</div>
+
+                <div class="row">
+
+                    <div class="col-12">
+
+                        <hr class="bg-white">
+
+                    </div>
+
+                </div>
+			
+				<div class="row mt-2 text-center">
+				
+					<div class="col-12">
+					
+                        <p class="">Copyright &copy; 2013 - 2025 Efty B.V. Groningen, The Netherlands. All rights reserved.</p>
+						
+					</div>
+				
+				</div>
+				
+			</div>
+			
+		</footer>
+		
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+		<script src="https://efty.com/assets/js/fitty.min.js"></script>
+		<script src="https://efty.com/assets/js/default26.js"></script>
+
+        <!-- Efty infrastructure UA -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-51651642-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'UA-51651642-1');
+        </script>
+        <!-- ./Efty infrastructure UA -->
+
+
+        <!-- Efty infrastructure gtag -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-NJTY3D1YSB"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-NJTY3D1YSB');
+        </script>
+        <!-- ./Efty infrastructure gtag -->
+
+
+
+        <!-- /Efty user GA4 / UA -->
+                <!-- /Efty user GA4 / UA -->
+
+        <!-- Simple Analytics -->
+        <script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+        <!-- ./Simple Analytics -->
+	</body>
+	
+</html>

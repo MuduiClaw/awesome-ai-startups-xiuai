@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AnalogAI</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            max-width: 200px;
+            margin-bottom: 30px;
+        }
+
+        .description {
+            margin: 30px 0;
+            line-height: 1.8;
+            color: #333;
+            font-size: 18px;
+        }
+
+        .features {
+            text-align: left;
+            margin: 20px 0;
+            padding: 20px;
+            background-color: #f8f8f8;
+            border-radius: 8px;
+        }
+
+        .features ul {
+            margin: 10px 0;
+            padding-left: 20px;
+            line-height: 1.6;
+        }
+
+        .consent-text {
+            margin: 20px 0;
+            line-height: 1.6;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .privacy-link {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+
+        .speak-button {
+            padding: 15px 30px;
+            font-size: 18px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+        }
+
+        .speak-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="/static/logo.svg" alt="AnalogAI Logo" class="logo">
+        
+        <div class="description">
+            Welcome to our Interactive Digital Human Experience!
+        </div>
+
+        <div class="features">
+            <p>Experience the future of AI interaction with our self-learning digital human:</p>
+            <ul>
+                <li>Engage in natural conversations and ask questions on various topics</li>
+                <li>Teach new topics in real-time through interactive learning</li>
+                <li>Watch as the digital human adapts and learns from your interactions</li>
+                <li>Experience dynamic responses based on continuous learning</li>
+            </ul>
+            <p>Note: Each session is limited to 10 minutes per user to ensure everyone gets a chance to interact.</p>
+        </div>
+
+        <div class="consent-text">
+            Your voice input will be recorded, collected, and converted to text, and the text will be used and shared with our service provider to provide you with this demo experience. We retain this information for the duration of the demo experience. For more information about our data processing practices, see our <a href="https://analogai.net/privacy-policy" class="privacy-link" target="_blank">Privacy Policy</a>.
+        </div>
+
+        <button class="speak-button" onclick="window.location.href='/experience'">Click to Speak</button>
+    </div>
+</body>
+</html> 

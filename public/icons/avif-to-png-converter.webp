@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Convert AVIF to PNG easily in single click. Download all converted files in single click. Transform AVIF to PNG, AVIF to PNG Converter, AVIF to PNG, AVIF to PNG Convert, .avif to png">
+ <link rel="manifest" href="/manifest.json">
+<script defer src="/main.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+  <title>AVIF to PNG - Convert AVIF to PNG File - aviftopng.org</title>
+  <script src='https://push.aplu.io/push-notify.js'></script>
+  <style>
+      
+      #suggestions {
+    margin-top: 5px;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.suggestion {
+    padding: 8px;
+    cursor: pointer;
+}
+
+.no-suggestions {
+    padding: 8px;
+    color: #666;
+}
+
+   body 
+        {
+            font-family: Arial, sans-serif;
+            margin: auto;
+            padding: 1px;
+            text-align: center;
+            background-color: #f2f2f2;
+        }
+
+         .container {
+        text-align: center;;
+        max-width: 740px;
+        margin: 15px auto;
+        padding: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    	background-color: #ffffff;
+    }
+
+        .divcontainer 
+        {
+            max-width: 740px;
+            margin: 15px auto;
+            padding: 15px;
+            background-color: #fff;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            text-align: left;
+        }
+        
+        h1, h2 
+        {
+            margin-top: 0;
+            color: #333;
+        }
+        
+         p 
+         {
+            color: #000;
+            line-height: 1.4;
+        }
+a:link {
+	text-decoration: none;
+	color: blue;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+li 
+         {
+            color: #000;
+            line-height: 1.4;
+        }
+
+
+        #input 
+        {
+           color: #fff; cursor: pointer; background-color:green; margin:5px; padding:5px 5px;
+        }
+
+       #preview 
+       {
+        margin-top: 20px;
+        margin-bottom:10px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        max-height: 265px; /* Set a maximum height for the container */
+        overflow-y: auto; /* Enable vertical scrolling */
+        }
+
+
+        .converted-image 
+        {
+            max-width: 154px;
+            max-height: 154px;
+            padding:1px;
+            margin: 5px;
+            border:1px solid #ccc;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        #convertBtn, #downloadBtn, #resetButton 
+        {
+            padding: 6.6px 6.6px;
+            font-size: 16px;
+            background-color: #0400ff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #convertBtn:hover, #downloadBtn:hover 
+        {
+            background-color: #0056b3;
+        }
+
+        #downloadBtn 
+        {
+            display: none;
+            margin-top: 20px;
+        }
+
+        #resetButton 
+        {
+            background-color: #DC3545;
+            color: white;
+            margin-top: 20px;
+            margin-left: 10px;
+        }
+        #loading 
+        {
+            display: none;
+            margin-top: 20px;
+            margin-bottom:10px;
+            font-style: italic;
+            color: #6c757d;
+        }
+
+        #info 
+        {
+            margin-top: 20px;
+            text-align: left;
+        }
+        
+        .table-container 
+        {
+          max-height: 400px;
+          overflow-y: auto;
+        }
+
+
+        table 
+        {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td 
+        {
+            padding: 8px;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        th 
+        {
+            background-color: #f8f9fa;
+            font-weight: bold;
+            text-align: left;
+        }
+  </style>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TZZXF3G0PL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TZZXF3G0PL');
+</script>
+  
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-949171021"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-949171021');
+</script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8521792464712682"
+     crossorigin="anonymous"></script>
+     
+     <script async src="https://fundingchoicesmessages.google.com/i/pub-8521792464712682?ers=1" nonce="i1vsml-y6z0hbE_bJ9H12w"></script><script nonce="i1vsml-y6z0hbE_bJ9H12w">(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>
+</head>
+<body>
+      <div class="container">
+    <h1>AVIF to PNG | <a href="heic-to-jpg">HEIC to JPG</a> | <a href="/webp-to-png">WebP to PNG</a> | <a href="pdf-to-png">PDF to PNG</a> | <a href="blog">Blog</a></h1>
+    <input type="file" id="input" aria-label="Search" accept=".avif" multiple />
+    <button id="convertBtn">Convert AVIF to PNG</button>
+    <div id="preview"></div>
+    <div id="loading">Preparing download...</div>
+    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8521792464712682"
+     crossorigin="anonymous"></script>
+<!-- AVIFtoPNG -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8521792464712682"
+     data-ad-slot="8776921871"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+    
+    <button id="downloadBtn">Download All Converted Images</button>
+    <button id="resetButton" style="display: none;" onclick="resetConverter()">Reset</button>
+    <div id="info" class="table-container"></div>
+    </div>
+    
+<div class="divcontainer">
+    <input type="text" id="searchInput" onkeyup="search()" placeholder="Search..." autocomplete="off">
+    <div id="suggestions"></div>
+    <!-- Write Content Here -->
+   <h2 style="color:blue;">Tips/Notes:</h2> 
+   <ol><li>Press "<b style="color:blue;">Ctrl + D</b>" on your keyboard to save or bookmark this tool for future use.</li>
+    <li><b>Add this widget</b> to your website or page. <a href="/embed" style="color:green;" target=_blank rel=”nofollow”>Click here for code</a>.</li>
+    </ol>
+    <h2>Features</h2>
+    <ol>
+        <li>Multiple files at the same time.</li>
+        <li><b>Work offline</b> - In case, the tool is running and suddenly the device loses internet connection or is lost, it will not interrupt it and will complete the process.</li>
+        <li>Works with all major and latest browsers. However, chrome is recommended.</li>
+        <li>Convert in single click.</li>
+        <li>No more hassle of downloading files one by one as a headache. Download in single click.</li>
+    </ol>
+    <h2>Limitations</h2>
+    <ol>
+        <li>It may take several seconds to several minutes if the files are large or numerous or large size various files.</li>
+        <li>Need to stay on the screen till the conversion get completed.</li>
+    </ol>
+    <h2>How this (AvifToPNG) AVIF in PNG converter work</h2>
+    
+    <p>To transform AVIF em PNG is very easy. Just choose AVIF file to change in PNG and click convert PNG. After conversion, the preview will be avilable and the download button will be there.</p>
+    
+    <h2>The Need for AVIF to PNG Converter Free:</h2>
+<p>As promising as AVIF is, the format's widespread adoption has been somewhat limited due to compatibility issues. While modern web browsers and devices increasingly support AVIF, some older browsers and platforms may struggle to display AVIF images correctly. To address this challenge, developers and content creators require a solution to convert AVIF files to a more universally supported format, such as PNG (Portable Network Graphics).</p>
+
+<p>PNG is a widely supported image format that has been a staple on the web for many years. It offers lossless compression and supports transparency, making it an ideal choice for graphics, icons, and images requiring sharp edges and precise detail.</p>
+<p>In today's rapidly evolving digital landscape, the demand for high-quality images is at an all-time high. To meet this demand, a plethora of image formats have emerged, each striving to strike the perfect balance between image quality and file size. Among the latest formats making waves is AVIF (AVIF full form is AV1 Image File Format), developed by the Alliance for Open Media (AOM). AVIF presents a promising future with its superior image quality and remarkable compression capabilities. However, as with any new technology, widespread adoption takes time. To ensure the accessibility of AVIF images, a powerful and versatile tool comes to the rescue - the AVIF to PNG Converter free. Here o this page, we delve into the significance of AVIF, its strengths, and how an AVIF to PNG converter serves as a bridge between these two image formats.</p>
+
+<h2>Understanding AVIF and the full form of AVIF</h2>
+
+<p>AVIF is a modern image format that draws its foundation from the AV1 video codec. AVIF stands ofr AV1 Image File Format. The AOM designed AVIF with the goal of providing exceptional image quality while maintaining efficient compression, making it an ideal choice for delivering high-definition images over the internet. One of the standout features of AVIF is its ability to achieve file sizes up to 50% smaller than traditional formats like JPEG and WebP, all without compromising on visual fidelity. This compression efficiency is achieved through the use of advanced coding techniques and a versatile image format structure. Additionally, AVIF supports an array of advanced features, including wide color gamuts, High Dynamic Range (HDR), and lossless compression.</p>
+
+<h2>The Rise of AVIF</h2>
+
+<p>As the tech industry embraces AVIF, major web browsers and image editing software have started incorporating native support for this format. The growing support for AVIF is driven by the increasing need for faster load times and enhanced user experiences. Websites that utilize AVIF images experience significantly reduced page loading times, resulting in improved search engine rankings and higher user retention rates.</p>
+
+<p>Despite its numerous advantages, the widespread adoption of AVIF is still an ongoing process. Many legacy systems, older browsers, and image processing tools may not yet be equipped to handle AVIF files. Consequently, converting AVIF images to more universally supported formats like PNG becomes necessary to ensure seamless accessibility across diverse platforms.</p>
+
+<h2>Convert AVIF to PNG</h2>
+
+<p>Convert AVIF to PNG or this converter is a specialized software tool designed to seamlessly transform AVIF images into the popular PNG format. This conversion process ensures that AVIF images can be viewed and edited using conventional image viewers, editors, and web browsers, filling the gap between the new and the old.</p>
+
+<h2>Key Features and Benefits of converter AVIF para PNG</h2>
+
+<p><b>Enhanced Compatibility</b>: The primary benefit of Arquivo AVIF para PNG is its ability to make AVIF images accessible across a broader range of devices and platforms. By converting AVIF files to PNG, users can ensure compatibility with older systems and software that might not yet support AVIF. This compatibility extends to a wide variety of devices, from desktop computers and laptops to smartphones and tablets.</p>
+
+<p><b>Preserving Image Quality</b>: A well-designed from AVIF to PNG free ensures minimal loss of image quality during the conversion process. While PNG is not a lossless format, the converter can retain a high level of visual fidelity, making the output nearly indistinguishable from the original AVIF image. This feature is essential for professional photographers, graphic designers, and anyone else who values image integrity.</p>
+
+<p><b>File Size Reduction</b>: Although PNG files are generally larger than AVIF files, an AVIF to PNG converter can apply additional compression techniques without significant quality loss. This helps reduce the size of the converted PNG files, making them more suitable for storage and sharing without compromising on visual appeal.</p>
+
+<p><b>Simplified Editing</b>: Many image editing software and tools support PNG as their default format. Convert AVIF file to PNG, users can conveniently edit their images using their preferred editing software without encountering any compatibility issues. This feature ensures a seamless workflow, streamlining the editing process for professionals and hobbyists alike.</p>
+
+<p><b>Online Accessibility</b>: With the increasing popularity of AVIF, online platforms and social media networks may soon add native support for this format. However, until that becomes a reality, converting .AVIF to PNG remains an effective way to share images with a wider audience. By converting to PNG, users can ensure that their images can be easily uploaded and shared on various online platforms.</p>
+
+<footer>© 2023 - 2024 <a href="/">AVIFtoPNG.org</a> | <a href="blog">Blog</a> | <a href="about">About</a> | <a href="about">Contact</a> | <a href="privacy-policy">Privacy Policy</a></footer></div>
+<!-- Default Statcounter code for aviftopng.org
+https://aviftopng.org/ -->
+<script type="text/javascript">
+var sc_project=12980102; 
+var sc_invisible=1; 
+var sc_security="2207090b"; 
+</script>
+<script type="text/javascript"
+src="https://www.statcounter.com/counter/counter.js"
+async></script>
+<noscript><div class="statcounter"><a title="Web Analytics"
+href="https://statcounter.com/" target="_blank"><img
+class="statcounter"
+src="https://c.statcounter.com/12980102/0/2207090b/1/"
+alt="Web Analytics"
+referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
+<!-- End of Statcounter Code -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.6.0/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+<script>
+
+// This for Search
+function search() {
+        var input = document.getElementById('searchInput').value;
+        console.log("Input: " + input); // Debugging message
+        var xmlhttp;
+        if (input.length == 0) {
+            document.getElementById("suggestions").innerHTML = "";
+            return;
+        }
+        xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            console.log("Ready state: " + this.readyState); // Debugging message
+            console.log("Status: " + this.status); // Debugging message
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("suggestions").innerHTML = this.responseText;
+            }
+        };
+        xmlhttp.open("GET", "search.php?q=" + input, true);
+        xmlhttp.send();
+    }
+// The above code for search
+
+    function convertAVIFtoPNG() {
+        const input = document.getElementById('input');
+        const preview = document.getElementById('preview');
+        const downloadBtn = document.getElementById('downloadBtn');
+        const loading = document.getElementById('loading');
+        const info = document.getElementById('info');
+        const files = input.files;
+        if (!files.length) return;
+
+        preview.innerHTML = '';
+        loading.style.display = 'block';
+        info.innerHTML = '';
+
+        const zip = new JSZip();
+        let conversionsCompleted = 0;
+
+        Array.from(files).forEach(file => {
+            const reader = new FileReader();
+            reader.onload = function (event) {
+                const avifData = event.target.result;
+                const avifBase64 = avifData.split(',')[1];
+                const pngBase64 = avifToPng(avifBase64);
+                zip.file(file.name.replace('.avif', '.png'), pngBase64, { base64: true });
+                const pngImg = new Image();
+                pngImg.src = 'data:image/png;base64,' + pngBase64;
+                pngImg.classList.add('converted-image');
+                preview.appendChild(pngImg);
+                conversionsCompleted++;
+                if (conversionsCompleted === files.length) {
+                    loading.style.display = 'none';
+                    downloadBtn.style.display = 'inline-block';
+                    resetButton.style.display = 'inline-block';
+                    downloadBtn.onclick = () => {
+                        loading.style.display = 'block';
+                        downloadBtn.style.display = 'none';
+                        zip.generateAsync({ type: 'blob' }, function updateCallback(metadata) {
+                            const percent = Math.floor((metadata.percent || 0) * 100);
+                            loading.innerHTML = `Preparing download... (${percent}%)<br>Can you please wait till 10 thousand percent?<br>
+We are preparing to throw the converted images or files in zip folder onto your screen`;
+                        }).then(blob => {
+                            loading.style.display = 'none';
+                            downloadBtn.style.display = 'inline-block';
+                            saveAs(blob, 'converted_images.zip');
+                        });
+                    };
+
+                    info.innerHTML += `<h2>File Information</h2>`;
+                    const table = document.createElement('table');
+                    table.style.width = '100%';
+                    table.style.borderCollapse = 'collapse';
+                    table.style.borderRadius = '8px';
+                    table.style.overflow = 'hidden';
+                    table.style.marginTop = '20px';
+                    table.innerHTML = `<tr>
+                                        <th>AVIF File Name</th>
+                                        <th>AVIF File Size</th>
+                                        <th>AVIF File Extension</th>
+                                        <th>Converted PNG File Name</th>
+                                        <th>Converted PNG File Size</th>
+                                        <th>Converted PNG File Extension</th>
+                                    </tr>`;
+                    Array.from(files).forEach(file => {
+                        const avifFileSize = formatBytes(file.size);
+                        const avifExtension = file.name.split('.').pop();
+                        const pngFileName = file.name.replace('.avif', '.png');
+                        const pngExtension = 'png';
+                        const pngFileSize = formatBytes(pngBase64.length);
+
+                        const row = document.createElement('tr');
+                        row.innerHTML = `<td>${file.name}</td>
+                                     <td>${avifFileSize}</td>
+                                     <td>${avifExtension}</td>
+                                     <td>${pngFileName}</td>
+                                     <td>${pngFileSize}</td>
+                                     <td>${pngExtension}</td>`;
+                        table.appendChild(row);
+                    });
+                    info.appendChild(table);
+                }
+            };
+            reader.readAsDataURL(file);
+        });
+    }
+
+    function avifToPng(avifBase64) {
+        return avifBase64; // Placeholder for actual conversion logic
+    }
+
+    function formatBytes(bytes, decimals = 2) {
+        if (bytes === 0) return '0 Bytes';
+        const k = 1024;
+        const dm = decimals < 0 ? 0 : decimals;
+        const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
+        const i = Math.floor(Math.log(bytes) / Math.log(k));
+        return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];
+    }
+    
+    function resetConverter() {
+        location.reload(); // Reload the page to reset the converter
+    }
+    
+    <!-- This code is to disable the right click and Ctrl+U -->
+   // Disable right-click context menu
+document.addEventListener('contextmenu', function (event) {
+    event.preventDefault();
+});
+
+// Disable Ctrl+U (View Page Source)
+document.addEventListener('keydown', function (event) {
+    // Check if Ctrl key is pressed and the 'u' key is pressed
+    if (event.ctrlKey && event.key === 'u') {
+        event.preventDefault();
+    }
+});
+<!-- This code is to disable the right click and Ctrl+U -->
+
+    const convertBtn = document.getElementById('convertBtn');
+    convertBtn.addEventListener('click', convertAVIFtoPNG);
+    
+    
+// below code for PWA    
+  
+  
+  
+  
+ let deferredPrompt;
+
+window.addEventListener('beforeinstallprompt', (event) => {
+  // Prevent the mini-info bar from appearing on mobile
+  event.preventDefault();
+  
+  // Stash the event so it can be triggered later.
+  deferredPrompt = event;
+  
+  // Show your custom install button
+  // For example, you might show a global install button or notify the user in some way
+  const installButton = document.createElement('button');
+  installButton.textContent = 'Install App';
+  installButton.style.position = 'fixed';
+  installButton.style.bottom = '20px';
+  installButton.style.right = '20px';
+  installButton.style.zIndex = '1000';
+  installButton.style.display = 'block';
+  document.body.appendChild(installButton);
+
+  installButton.addEventListener('click', () => {
+    // Hide the install button
+    installButton.style.display = 'none';
+    
+    // Show the install prompt
+    deferredPrompt.prompt();
+    
+    // Wait for the user to respond to the prompt
+    deferredPrompt.userChoice.then((choiceResult) => {
+      if (choiceResult.outcome === 'accepted') {
+        console.log('User accepted the install prompt');
+      } else {
+        console.log('User dismissed the install prompt');
+      }
+      deferredPrompt = null;
+    });
+  });
+});
+
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/service-worker.js')
+      .then((registration) => {
+        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+      })
+      .catch((error) => {
+        console.log('ServiceWorker registration failed: ', error);
+      });
+  });
+}
+
+
+
+</script>
+</body>
+</html>

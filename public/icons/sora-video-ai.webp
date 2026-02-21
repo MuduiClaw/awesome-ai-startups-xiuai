@@ -1,0 +1,1339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16843220528"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'AW-16843220528');
+    </script>
+
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "pvw4lildi2");
+    </script>
+
+    <!-- Primary Meta Tags -->
+    <title>ClipVideoAI: #1 Video AI Generator</title>
+    <meta name="title" content="ClipVideoAI: #1 Video AI Generator">
+    <meta name="description" content="Create professional videos with AI. Transform text to video in minutes. The fastest AI video generator for content creators, marketers, and educators. Start creating now!" />
+    <meta name="keywords" content="fast video generator, instant video creation, ai video maker, quick video generator, ai video creation, text to video ai, video ai generator, automated video creation, ai video production, video automation" />
+    <meta name="author" content="ClipVideo AI">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="ClipVideo AI" />
+    <meta property="og:title" content="Fast AI Video Generator | Instant Video Creation | ClipVideo AI" />
+    <meta property="og:description" content="Create professional videos with AI. Transform any text into high-quality video content in minutes. Perfect for content creators and marketing teams." />
+    <meta property="og:image" content="https://clipvideo.ai/og-image.png" />
+    <meta property="og:url" content="https://clipvideo.ai" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@clipvideoai" />
+    <meta name="twitter:title" content="Fast AI Video Generator | ClipVideo AI" />
+    <meta name="twitter:description" content="Create professional videos with AI. Transform text to video in minutes. Try our AI video generator now!" />
+    <meta name="twitter:image" content="https://clipvideo.ai/og-image.png" />
+
+    <!-- Favicon -->
+    <link rel="canonical" href="https://clipvideo.ai" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#10B981">
+    <link rel="shortcut icon" href="/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#10B981">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#000000">
+    <!-- End Favicon -->
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="preload" as="style" href="https://clipvideo.ai/build/assets/app-l6Vz7etE.css" /><link rel="stylesheet" href="https://clipvideo.ai/build/assets/app-l6Vz7etE.css" />
+    <script>
+        lucide.createIcons();
+    </script>
+
+    <script src="https://analytics.ahrefs.com/analytics.js" data-key="ZjvUNSXHh5jKVeqgsGlPWA" async></script>
+    <style>
+        /* Custom styles */
+        .brand-gradient {
+            background: linear-gradient(to right, #10B981, #06B6D4);
+        }
+
+        .glass-sharp {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            position: relative;
+            z-index: 1;
+        }
+
+        .animate-pulse-brightness {
+            animation: pulse-brightness 2s infinite;
+        }
+
+        @keyframes pulse-brightness {
+            0%, 100% { filter: brightness(1); }
+            50% { filter: brightness(1.2); }
+        }
+
+        body {
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+        body::-webkit-scrollbar {
+            display: none;
+        }
+
+        .preview-face {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: opacity 0.3s ease;
+        }
+
+        .preview-face img {
+            max-width: 80%;
+            height: auto;
+        }
+
+        .text-gradient {
+            background: linear-gradient(to right, #fff 20%, rgba(255, 255, 255, 0.7));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(to right, #10B981, #06B6D4);
+        }
+
+        .text-gradient-animated {
+            background: linear-gradient(to right, #fff, #fff, rgba(255, 255, 255, 0.6));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% auto;
+            animation: shine 3s linear infinite;
+        }
+
+        @keyframes shine {
+            to {
+                background-position: 200% center;
+            }
+        }
+
+        .animate-pulse-slow {
+            animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: .7;
+            }
+        }
+
+        @keyframes arrow-pulse {
+            0%, 100% {
+                transform: translateX(0);
+                opacity: 0.8;
+            }
+            50% {
+                transform: translateX(-10px);
+                opacity: 1;
+            }
+        }
+
+        .animate-pulse-slow {
+            animation: arrow-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
+        .shadow-glow {
+            box-shadow: 0 0 30px -5px rgba(16, 185, 129, 0.3);
+        }
+
+        .source-image-card {
+            transition: all 0.3s ease;
+        }
+
+        .source-image-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 30px -5px rgba(16, 185, 129, 0.3);
+        }
+
+        .heading-gradient {
+            position: relative;
+            display: inline-block;
+            color: white;
+            z-index: 1;
+        }
+
+        .heading-gradient::after {
+            content: attr(data-text);
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: -1;
+            background: linear-gradient(to right, #fff, #fff, rgba(255, 255, 255, 0.6));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .relative {
+            position: relative;
+            z-index: 1;
+        }
+
+        .fixed {
+            z-index: 0;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes floatReverse {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(10px); }
+        }
+
+        .float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .float-reverse {
+            animation: floatReverse 6s ease-in-out infinite;
+        }
+
+        .float-delay-1 {
+            animation-delay: -2s;
+        }
+
+        .float-delay-2 {
+            animation-delay: -4s;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            grid-auto-rows: minmax(100px, auto);
+            gap: 1rem;
+            max-height: 800px;
+            overflow: hidden;
+            padding: 2rem;
+            margin: -2rem;
+        }
+
+        @media (max-width: 1024px) {
+            .video-grid {
+                grid-template-columns: repeat(4, 1fr);
+                max-height: 600px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .video-grid {
+                grid-template-columns: repeat(3, 1fr);
+                max-height: 500px;
+            }
+        }
+
+        .video-item {
+            grid-column: span 2;
+            transition: all 0.3s ease;
+        }
+
+        .video-item:nth-child(3n) {
+            grid-column: span 3;
+        }
+
+        .video-item:nth-child(5n) {
+            grid-column: span 2;
+        }
+
+        .video-item:hover {
+            z-index: 10;
+        }
+
+        .video-scroll {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            padding: 1rem 0;
+        }
+
+        .video-track {
+            display: flex;
+            gap: 1rem;
+            animation: scroll 60s linear infinite;
+            width: max-content;
+        }
+
+        .video-track-reverse {
+            animation: scroll-reverse 60s linear infinite;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        @keyframes scroll-reverse {
+            0% {
+                transform: translateX(-50%);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        .video-item {
+            width: 400px;
+            flex-shrink: 0;
+        }
+
+        @media (max-width: 768px) {
+            .video-item {
+                width: 300px;
+            }
+        }
+    </style>
+</head>
+<body class="bg-black">
+    <div class="min-h-screen bg-black">
+        <div class="fixed inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(120,119,198,0.3),rgba(255,255,255,0))] pointer-events-none"></div>
+        <div class="fixed inset-0 pointer-events-none">
+            <div class="absolute -top-[40rem] -left-[40rem] w-[80rem] h-[80rem] rounded-full bg-[#10B981]/10 blur-3xl"></div>
+            <div class="absolute -bottom-[40rem] -right-[40rem] w-[80rem] h-[80rem] rounded-full bg-[#06B6D4]/10 blur-3xl"></div>
+        </div>
+        <div class="relative">
+            <nav class="sticky top-2 sm:top-4 z-50">
+                <div class="max-w-7xl mx-auto px-1 sm:px-4 lg:px-8">
+                    <div class="flex items-center justify-between h-12 sm:h-16 glass-sharp rounded-full px-2 sm:px-6">
+                        <div class="flex items-center gap-1.5 sm:gap-3">
+                            <a href="/" class="flex items-center gap-1.5 sm:gap-3">
+                                <img src="https://clipvideo.ai/images/clipvideo-logo.png" alt="ClipVideo AI Logo" class="w-6 h-6 sm:w-8 sm:h-8">
+                                <span class="text-sm sm:text-lg font-medium bg-gradient-to-r from-white via-white to-white/60 bg-clip-text text-transparent">
+                                    ClipVideo AI
+                                </span>
+                            </a>
+                        </div>
+                        <div class="flex items-center gap-2 sm:gap-6">
+                            <a href="https://clipvideo.ai/blog" class="text-[11px] sm:text-sm text-white/50 hover:text-white transition-colors flex items-center gap-1.5">
+                                <i data-lucide="book-open" class="w-4 h-4"></i>
+                                <span>Blog</span>
+                            </a>
+                            <a href="https://dashboard.clipvideo.ai/login" class="text-[11px] sm:text-sm text-white/50 hover:text-white transition-colors flex items-center gap-1.5">
+                                <i data-lucide="log-in" class="w-4 h-4"></i>
+                                <span>Sign in</span>
+                            </a>
+                            <a href="https://dashboard.clipvideo.ai/register"
+                               class="h-[30px] sm:h-[38px] px-2.5 sm:px-6 brand-gradient rounded-full flex items-center gap-1 sm:gap-2 transition-all hover:scale-105 hover:brightness-110">
+                                <span class="text-[11px] sm:text-sm font-medium whitespace-nowrap">Start Creating</span>
+                                <i data-lucide="arrow-right" class="w-3 h-3 sm:w-4 sm:h-4"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="relative pt-8">
+                <div class="flex justify-center py-8 lg:py-12">
+                    <section class="w-full hero relative overflow-hidden max-w-7xl">
+                        <div class="w-full mx-auto px-6 relative z-10">
+                            <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+                                <div class="w-full lg:w-1/2 text-left">
+                                    <h1 class="text-5xl lg:text-7xl font-bold mb-8 leading-[1.1]">
+                                        <span class="text-gradient block mb-2">Create AI Videos</span>
+                                        <span class="text-gradient">in Minutes</span>
+                                    </h1>
+
+                                    <p class="text-xl text-white/80 mb-8">
+                                        Transform your product photos into captivating videos with AI.
+                                        <span class="text-emerald-400 font-medium">Perfect for marketing and e-commerce.</span>
+                                    </p>
+
+                                    <div class="flex flex-col sm:flex-row items-center gap-4 mb-8">
+                                        <a href="https://dashboard.clipvideo.ai/register"
+                                           class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 brand-gradient rounded-full text-lg font-medium shadow-lg shadow-emerald-500/20 hover:scale-105 transition-all duration-300 animate-pulse-brightness group">
+                                            <i data-lucide="wand-2" class="w-5 h-5"></i>
+                                            <span>Start Creating</span>
+                                            <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+                                        </a>
+                                        <a href="https://clipvideo.ai/videos/215b541a-39a2-4a13-88af-7a69e1bbc31d"
+                                           class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-4 glass-sharp hover:bg-white/10 rounded-full text-base font-medium transition-all border border-white/10">
+                                            <i data-lucide="video" class="w-5 h-5 text-emerald-400"></i>
+                                            <span class="text-white/90">View Examples</span>
+                                        </a>
+                                    </div>
+
+                                    <div class="flex flex-wrap gap-4">
+                                        <div class="glass-sharp px-4 py-2 rounded-xl flex items-center gap-2">
+                                            <i data-lucide="clock" class="w-4 h-4 text-emerald-400"></i>
+                                            <span class="text-sm text-white/90">~2 Minute Generation</span>
+                                        </div>
+                                        <div class="glass-sharp px-4 py-2 rounded-xl flex items-center gap-2">
+                                            <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i>
+                                            <span class="text-sm text-white/90">Professional Quality</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="w-full lg:w-1/2">
+                                    <div class="glass-sharp rounded-2xl p-4 sm:p-6 relative bg-black/60">
+                                        <div class="absolute inset-0 -z-10">
+                                            <div class="absolute inset-0 bg-emerald-500/10 blur-[100px] rounded-full"></div>
+                                        </div>
+                                        <div class="text-center mb-6">
+                                            <div class="inline-flex items-center gap-2 glass-sharp px-4 py-2 rounded-full mb-4">
+                                                <i data-lucide="sparkles" class="w-4 h-4 text-emerald-400"></i>
+                                                <span class="text-sm text-white/90">Video Demo</span>
+                                            </div>
+                                            <h3 class="text-2xl font-bold bg-gradient-to-r from-white via-white to-white/60 bg-clip-text text-transparent mb-3">
+                                                Product to Video Transformation
+                                            </h3>
+                                            <p class="text-sm text-white/80">
+                                                Watch how we turn a simple product photo into an engaging video. Perfect for showcasing your products on social media and e-commerce platforms.
+                                            </p>
+                                        </div>
+                                        <div class="relative">
+                                            <div class="relative aspect-video">
+                                                <iframe
+                                                    src="https://player.vimeo.com/video/1047969021?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479"
+                                                    class="absolute top-0 left-0 w-full h-full rounded-xl"
+                                                    frameborder="0"
+                                                    allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+                                                    title="How to use ClipVideo.AI"
+                                                    allowfullscreen>
+                                                </iframe>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <section class="py-12 lg:py-16 relative overflow-hidden">
+                    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(16,185,129,0.02)_0%,rgba(16,185,129,0.05)_40%,transparent_70%)] pointer-events-none"></div>
+
+                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <div class="text-center mb-12">
+                            <div class="inline-flex items-center gap-2 glass-sharp px-4 py-2 rounded-full mb-6">
+                                <i data-lucide="user" class="w-4 h-4 text-purple-400"></i>
+                                <span class="text-sm text-white/90">Face to Video</span>
+                            </div>
+                            <h2 class="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-white via-white to-white/60 bg-clip-text text-transparent mb-6">
+                                Turn Any Face Photo Into a Video
+                            </h2>
+                            <p class="text-lg text-white/90 max-w-2xl mx-auto mb-8">
+                                Upload a face photo and let our AI create professional videos for any purpose. From educational content to performances, the possibilities are endless.
+                            </p>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <!-- Educational Content Example -->
+                            <div class="glass-sharp rounded-2xl p-6 sm:p-8 relative group overflow-hidden">
+                                <div class="flex items-start gap-6 mb-6">
+                                    <div class="w-24 h-24 rounded-xl overflow-hidden shrink-0">
+                                        <img src="https://clipvideo.ai/videos/landing/david.png" alt="Teacher Photo" class="w-full h-full object-cover">
+                                    </div>
+                                    <div>
+                                        <h3 class="text-xl font-semibold text-white mb-2">Educational Videos</h3>
+                                        <p class="text-white/80 text-sm">
+                                            Create professional course content and tutorials from a single photo. Perfect for online education and training.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="aspect-video rounded-xl overflow-hidden relative">
+                                    <div class="absolute top-4 left-4 z-10">
+                                        <span class="px-3 py-1 rounded-full bg-emerald-500/20 backdrop-blur-sm text-xs text-white font-medium">AI Generated Result</span>
+                                    </div>
+                                    <video
+                                        class="w-full h-full object-cover"
+                                        autoplay
+                                        loop
+                                        muted
+                                        playsinline>
+                                        <source src="https://clipvideo.ai/videos/landing/david.mp4" type="video/mp4">
+                                    </video>
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                                    <div class="absolute bottom-4 left-4 right-4">
+                                        <div class="flex items-center gap-2 text-sm text-white/90">
+                                            <i data-lucide="video" class="w-4 h-4 text-emerald-400"></i>
+                                            <span>Professional Course Creation</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-6">
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="px-3 py-1 rounded-full bg-white/10 text-xs text-white">Online Courses</span>
+                                        <span class="px-3 py-1 rounded-full bg-white/10 text-xs text-white">Corporate Training</span>
+                                        <span class="px-3 py-1 rounded-full bg-white/10 text-xs text-white">Educational Content</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Performance Example -->
+                            <div class="glass-sharp rounded-2xl p-6 sm:p-8 relative group overflow-hidden">
+                                <div class="flex items-start gap-6 mb-6">
+                                    <div class="w-24 h-24 rounded-xl overflow-hidden shrink-0">
+                                        <img src="https://clipvideo.ai/videos/landing/dima.png" alt="Dancer Photo" class="w-full h-full object-cover">
+                                    </div>
+                                    <div>
+                                        <h3 class="text-xl font-semibold text-white mb-2">Performance Videos</h3>
+                                        <p class="text-white/80 text-sm">
+                                            Generate dynamic performance videos for dance, fitness, and entertainment content from a single photo.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="aspect-video rounded-xl overflow-hidden relative">
+                                    <div class="absolute top-4 left-4 z-10">
+                                        <span class="px-3 py-1 rounded-full bg-emerald-500/20 backdrop-blur-sm text-xs text-white font-medium">AI Generated Result</span>
+                                    </div>
+                                    <video
+                                        class="w-full h-full object-cover"
+                                        autoplay
+                                        loop
+                                        muted
+                                        playsinline>
+                                        <source src="https://clipvideo.ai/videos/landing/dima.mp4" type="video/mp4">
+                                    </video>
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                                    <div class="absolute bottom-4 left-4 right-4">
+                                        <div class="flex items-center gap-2 text-sm text-white/90">
+                                            <i data-lucide="video" class="w-4 h-4 text-emerald-400"></i>
+                                            <span>Dynamic Performance Content</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-6">
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="px-3 py-1 rounded-full bg-white/10 text-xs text-white">Dance Videos</span>
+                                        <span class="px-3 py-1 rounded-full bg-white/10 text-xs text-white">Fitness Content</span>
+                                        <span class="px-3 py-1 rounded-full bg-white/10 text-xs text-white">Entertainment</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-12 text-center">
+                            <div class="inline-flex items-center gap-2 glass-sharp px-6 py-3 rounded-xl text-white/80">
+                                <i data-lucide="sparkles" class="w-4 h-4 text-emerald-400"></i>
+                                <span class="text-sm">Upload your photo and describe the video you want to create</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="py-12 lg:py-16 relative overflow-hidden">
+                    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(16,185,129,0.02)_0%,rgba(16,185,129,0.05)_40%,transparent_70%)] pointer-events-none"></div>
+
+                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <div class="text-center mb-12">
+                            <div class="inline-flex items-center gap-2 glass-sharp px-4 py-2 rounded-full mb-6">
+                                <i data-lucide="sparkles" class="w-4 h-4 text-purple-400"></i>
+                                <span class="text-sm text-white/90">Example Videos</span>
+                            </div>
+                            <h2 class="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-white via-white to-white/60 bg-clip-text text-transparent mb-6">
+                                See What Our AI Can Create
+                            </h2>
+                            <p class="text-lg text-white/90 max-w-2xl mx-auto mb-8">
+                                Browse through our collection of AI-generated videos. From product showcases to creative stories — these examples demonstrate the power and versatility of our platform.
+                            </p>
+                        </div>
+
+                        <div class="space-y-4">
+                            <div class="video-scroll">
+                                <div class="video-track">
+                                                                            <div class="video-item">
+                                            <div class="glass-sharp rounded-2xl overflow-hidden aspect-video group relative">
+                                                <video
+                                                    class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
+                                                    autoplay
+                                                    loop
+                                                    muted
+                                                    playsinline>
+                                                    <source src="https://clipvideo.ai/videos/landing/1.mp4" type="video/mp4">
+                                                </video>
+                                                <div class="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                            </div>
+                                        </div>
+                                                                            <div class="video-item">
+                                            <div class="glass-sharp rounded-2xl overflow-hidden aspect-video group relative">
+                                                <video
+                                                    class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
+                                                    autoplay
+                                                    loop
+                                                    muted
+                                                    playsinline>
+                                                    <source src="https://clipvideo.ai/videos/landing/2.mp4" type="video/mp4">
+                                                </video>
+                                                <div class="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                            </div>
+                                        </div>
+                                                                            <div class="video-item">
+                                            <div class="glass-sharp rounded-2xl overflow-hidden aspect-video group relative">
+                                                <video
+                                                    class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
+                                                    autoplay
+                                                    loop
+                                                    muted
+                                                    playsinline>
+                                                    <source src="https://clipvideo.ai/videos/landing/3.mp4" type="video/mp4">
+                                                </video>
+                                                <div class="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                            </div>
+                                        </div>
+                                                                            <div class="video-item">
+                                            <div class="glass-sharp rounded-2xl overflow-hidden aspect-video group relative">
+                                                <video
+                                                    class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
+                                                    autoplay
+                                                    loop
+                                                    muted
+                                                    playsinline>
+                                                    <source src="https://clipvideo.ai/videos/landing/4.mp4" type="video/mp4">
+                                                </video>
+                                                <div class="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                            </div>
+                                        </div>
+                                                                            <div class="video-item">
+                                            <div class="glass-sharp rounded-2xl overflow-hidden aspect-video group relative">
+                                                <video
+                                                    class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
+                                                    autoplay
+                                                    loop
+                                                    muted
+                                                    playsinline>
+                                                    <source src="https://clipvideo.ai/videos/landing/5.mp4" type="video/mp4">
+                                                </video>
+                                                <div class="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                            </div>
+                                        </div>
+                                                                            <div class="video-item">
+                                            <div class="glass-sharp rounded-2xl overflow-hidden aspect-video group relative">
+                                                <video
+                                                    class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
+                                                    autoplay
+                                                    loop
+                                                    muted
+                                                    playsinline>
+                                                    <source src="https://clipvideo.ai/videos/landing/6.mp4" type="video/mp4">
+                                                </video>
+                                                <div class="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                            </div>
+                                        </div>
+                                                                            <div class="video-item">
+                                            <div class="glass-sharp rounded-2xl overflow-hidden aspect-video group relative">
+                                                <video
+                                                    class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
+                                                    autoplay
+                                                    loop
+                                                    muted
+                                                    playsinline>
+                                                    <source src="https://clipvideo.ai/videos/landing/7.mp4" type="video/mp4">
+                                                </video>
+                                                <div class="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                            </div>
+                                        </div>
+                                                                            <div class="video-item">
+                                            <div class="glass-sharp rounded-2xl overflow-hidden aspect-video group relative">
+                                                <video
+                                                    class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
+                                                    autoplay
+                                                    loop
+                                                    muted
+                                                    playsinline>
+                                                    <source src="https://clipvideo.ai/videos/landing/8.mp4" type="video/mp4">
+                                                </video>
+                                                <div class="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                            </div>
+                                        </div>
+                                                                                                                <div class="video-item">
+                                            <div class="glass-sharp rounded-2xl overflow-hidden aspect-video group relative">
+                                                <video
+                                                    class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
+                                                    autoplay
+                                                    loop
+                                                    muted
+                                                    playsinline>
+                                                    <source src="https://clipvideo.ai/videos/landing/1.mp4" type="video/mp4">
+                                                </video>
+                                                <div class="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                            </div>
+                                        </div>
+                                                                            <div class="video-item">
+                                            <div class="glass-sharp rounded-2xl overflow-hidden aspect-video group relative">
+                                                <video
+                                                    class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
+                                                    autoplay
+                                                    loop
+                                                    muted
+                                                    playsinline>
+                                                    <source src="https://clipvideo.ai/videos/landing/2.mp4" type="video/mp4">
+                                                </video>
+                                                <div class="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                            </div>
+                                        </div>
+                                                                            <div class="video-item">
+                                            <div class="glass-sharp rounded-2xl overflow-hidden aspect-video group relative">
+                                                <video
+                                                    class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
+                                                    autoplay
+                                                    loop
+                                                    muted
+                                                    playsinline>
+                                                    <source src="https://clipvideo.ai/videos/landing/3.mp4" type="video/mp4">
+                                                </video>
+                                                <div class="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                            </div>
+                                        </div>
+                                                                            <div class="video-item">
+                                            <div class="glass-sharp rounded-2xl overflow-hidden aspect-video group relative">
+                                                <video
+                                                    class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
+                                                    autoplay
+                                                    loop
+                                                    muted
+                                                    playsinline>
+                                                    <source src="https://clipvideo.ai/videos/landing/4.mp4" type="video/mp4">
+                                                </video>
+                                                <div class="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                            </div>
+                                        </div>
+                                                                            <div class="video-item">
+                                            <div class="glass-sharp rounded-2xl overflow-hidden aspect-video group relative">
+                                                <video
+                                                    class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
+                                                    autoplay
+                                                    loop
+                                                    muted
+                                                    playsinline>
+                                                    <source src="https://clipvideo.ai/videos/landing/5.mp4" type="video/mp4">
+                                                </video>
+                                                <div class="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                            </div>
+                                        </div>
+                                                                            <div class="video-item">
+                                            <div class="glass-sharp rounded-2xl overflow-hidden aspect-video group relative">
+                                                <video
+                                                    class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
+                                                    autoplay
+                                                    loop
+                                                    muted
+                                                    playsinline>
+                                                    <source src="https://clipvideo.ai/videos/landing/6.mp4" type="video/mp4">
+                                                </video>
+                                                <div class="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                            </div>
+                                        </div>
+                                                                            <div class="video-item">
+                                            <div class="glass-sharp rounded-2xl overflow-hidden aspect-video group relative">
+                                                <video
+                                                    class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
+                                                    autoplay
+                                                    loop
+                                                    muted
+                                                    playsinline>
+                                                    <source src="https://clipvideo.ai/videos/landing/7.mp4" type="video/mp4">
+                                                </video>
+                                                <div class="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                            </div>
+                                        </div>
+                                                                            <div class="video-item">
+                                            <div class="glass-sharp rounded-2xl overflow-hidden aspect-video group relative">
+                                                <video
+                                                    class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
+                                                    autoplay
+                                                    loop
+                                                    muted
+                                                    playsinline>
+                                                    <source src="https://clipvideo.ai/videos/landing/8.mp4" type="video/mp4">
+                                                </video>
+                                                <div class="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                            </div>
+                                        </div>
+                                                                    </div>
+                            </div>
+
+                            <div class="video-scroll">
+                                <div class="video-track video-track-reverse">
+                                                                            <div class="video-item">
+                                            <div class="glass-sharp rounded-2xl overflow-hidden aspect-video group relative">
+                                                <video
+                                                    class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
+                                                    autoplay
+                                                    loop
+                                                    muted
+                                                    playsinline>
+                                                    <source src="https://clipvideo.ai/videos/landing/9.mp4" type="video/mp4">
+                                                </video>
+                                                <div class="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                            </div>
+                                        </div>
+                                                                            <div class="video-item">
+                                            <div class="glass-sharp rounded-2xl overflow-hidden aspect-video group relative">
+                                                <video
+                                                    class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
+                                                    autoplay
+                                                    loop
+                                                    muted
+                                                    playsinline>
+                                                    <source src="https://clipvideo.ai/videos/landing/10.mp4" type="video/mp4">
+                                                </video>
+                                                <div class="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                            </div>
+                                        </div>
+                                                                            <div class="video-item">
+                                            <div class="glass-sharp rounded-2xl overflow-hidden aspect-video group relative">
+                                                <video
+                                                    class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
+                                                    autoplay
+                                                    loop
+                                                    muted
+                                                    playsinline>
+                                                    <source src="https://clipvideo.ai/videos/landing/11.mp4" type="video/mp4">
+                                                </video>
+                                                <div class="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                            </div>
+                                        </div>
+                                                                            <div class="video-item">
+                                            <div class="glass-sharp rounded-2xl overflow-hidden aspect-video group relative">
+                                                <video
+                                                    class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
+                                                    autoplay
+                                                    loop
+                                                    muted
+                                                    playsinline>
+                                                    <source src="https://clipvideo.ai/videos/landing/12.mp4" type="video/mp4">
+                                                </video>
+                                                <div class="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                            </div>
+                                        </div>
+                                                                            <div class="video-item">
+                                            <div class="glass-sharp rounded-2xl overflow-hidden aspect-video group relative">
+                                                <video
+                                                    class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
+                                                    autoplay
+                                                    loop
+                                                    muted
+                                                    playsinline>
+                                                    <source src="https://clipvideo.ai/videos/landing/13.mp4" type="video/mp4">
+                                                </video>
+                                                <div class="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                            </div>
+                                        </div>
+                                                                            <div class="video-item">
+                                            <div class="glass-sharp rounded-2xl overflow-hidden aspect-video group relative">
+                                                <video
+                                                    class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
+                                                    autoplay
+                                                    loop
+                                                    muted
+                                                    playsinline>
+                                                    <source src="https://clipvideo.ai/videos/landing/14.mp4" type="video/mp4">
+                                                </video>
+                                                <div class="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                            </div>
+                                        </div>
+                                                                            <div class="video-item">
+                                            <div class="glass-sharp rounded-2xl overflow-hidden aspect-video group relative">
+                                                <video
+                                                    class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
+                                                    autoplay
+                                                    loop
+                                                    muted
+                                                    playsinline>
+                                                    <source src="https://clipvideo.ai/videos/landing/15.mp4" type="video/mp4">
+                                                </video>
+                                                <div class="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                            </div>
+                                        </div>
+                                                                                                                <div class="video-item">
+                                            <div class="glass-sharp rounded-2xl overflow-hidden aspect-video group relative">
+                                                <video
+                                                    class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
+                                                    autoplay
+                                                    loop
+                                                    muted
+                                                    playsinline>
+                                                    <source src="https://clipvideo.ai/videos/landing/9.mp4" type="video/mp4">
+                                                </video>
+                                                <div class="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                            </div>
+                                        </div>
+                                                                            <div class="video-item">
+                                            <div class="glass-sharp rounded-2xl overflow-hidden aspect-video group relative">
+                                                <video
+                                                    class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
+                                                    autoplay
+                                                    loop
+                                                    muted
+                                                    playsinline>
+                                                    <source src="https://clipvideo.ai/videos/landing/10.mp4" type="video/mp4">
+                                                </video>
+                                                <div class="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                            </div>
+                                        </div>
+                                                                            <div class="video-item">
+                                            <div class="glass-sharp rounded-2xl overflow-hidden aspect-video group relative">
+                                                <video
+                                                    class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
+                                                    autoplay
+                                                    loop
+                                                    muted
+                                                    playsinline>
+                                                    <source src="https://clipvideo.ai/videos/landing/11.mp4" type="video/mp4">
+                                                </video>
+                                                <div class="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                            </div>
+                                        </div>
+                                                                            <div class="video-item">
+                                            <div class="glass-sharp rounded-2xl overflow-hidden aspect-video group relative">
+                                                <video
+                                                    class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
+                                                    autoplay
+                                                    loop
+                                                    muted
+                                                    playsinline>
+                                                    <source src="https://clipvideo.ai/videos/landing/12.mp4" type="video/mp4">
+                                                </video>
+                                                <div class="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                            </div>
+                                        </div>
+                                                                            <div class="video-item">
+                                            <div class="glass-sharp rounded-2xl overflow-hidden aspect-video group relative">
+                                                <video
+                                                    class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
+                                                    autoplay
+                                                    loop
+                                                    muted
+                                                    playsinline>
+                                                    <source src="https://clipvideo.ai/videos/landing/13.mp4" type="video/mp4">
+                                                </video>
+                                                <div class="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                            </div>
+                                        </div>
+                                                                            <div class="video-item">
+                                            <div class="glass-sharp rounded-2xl overflow-hidden aspect-video group relative">
+                                                <video
+                                                    class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
+                                                    autoplay
+                                                    loop
+                                                    muted
+                                                    playsinline>
+                                                    <source src="https://clipvideo.ai/videos/landing/14.mp4" type="video/mp4">
+                                                </video>
+                                                <div class="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                            </div>
+                                        </div>
+                                                                            <div class="video-item">
+                                            <div class="glass-sharp rounded-2xl overflow-hidden aspect-video group relative">
+                                                <video
+                                                    class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
+                                                    autoplay
+                                                    loop
+                                                    muted
+                                                    playsinline>
+                                                    <source src="https://clipvideo.ai/videos/landing/15.mp4" type="video/mp4">
+                                                </video>
+                                                <div class="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                            </div>
+                                        </div>
+                                                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="py-12 lg:py-16 relative overflow-hidden">
+                    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(16,185,129,0.02)_0%,rgba(16,185,129,0.05)_40%,transparent_70%)] pointer-events-none"></div>
+
+                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8 text-left">
+                            <div class="lg:col-span-2 glass-sharp rounded-2xl relative group overflow-hidden h-[300px] sm:h-[400px]">
+                                <img
+                                    src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&auto=format&fit=crop"
+                                    alt="Marketing Teams"
+                                    class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 brightness-50">
+                                <div class="absolute inset-0 bg-black/60"></div>
+                                <div class="absolute inset-0 p-4 sm:p-8 flex flex-col justify-end">
+                                    <div class="flex items-center gap-3 mb-4">
+                                        <div class="w-10 h-10 rounded-xl brand-gradient flex items-center justify-center group-hover:scale-110 transition-all">
+                                            <i data-lucide="users" class="w-5 h-5"></i>
+                                        </div>
+                                        <h3 class="text-xl font-semibold text-white">Marketing Teams</h3>
+                                    </div>
+                                    <p class="text-white/90 mb-4 text-sm sm:text-base select-text">
+                                        Create engaging social media content and ads that convert
+                                    </p>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="px-3 py-1 rounded-full bg-white/10 text-xs sm:text-sm text-white select-text">Social Media</span>
+                                        <span class="px-3 py-1 rounded-full bg-white/10 text-xs sm:text-sm text-white select-text">Advertising</span>
+                                        <span class="px-3 py-1 rounded-full bg-white/10 text-xs sm:text-sm text-white select-text">Branding</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="glass-sharp rounded-2xl relative group overflow-hidden h-[300px] sm:h-[400px]">
+                                <img
+                                    src="https://images.unsplash.com/photo-1533227268428-f9ed0900fb3b?w=800&auto=format&fit=crop"
+                                    alt="Content Creators"
+                                    class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 brightness-50">
+                                <div class="absolute inset-0 bg-black/60"></div>
+                                <div class="absolute inset-0 p-4 sm:p-8 flex flex-col justify-end">
+                                    <div class="flex items-center gap-3 mb-4">
+                                        <div class="w-10 h-10 rounded-xl brand-gradient flex items-center justify-center group-hover:scale-110 transition-all">
+                                            <i data-lucide="video" class="w-5 h-5"></i>
+                                        </div>
+                                        <h3 class="text-xl font-semibold text-white">Content Creators</h3>
+                                    </div>
+                                    <p class="text-white/90 mb-4 text-sm sm:text-base select-text">
+                                        Generate unique videos for YouTube, TikTok, and Instagram
+                                    </p>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="px-3 py-1 rounded-full bg-white/10 text-xs sm:text-sm text-white select-text">YouTube</span>
+                                        <span class="px-3 py-1 rounded-full bg-white/10 text-xs sm:text-sm text-white select-text">TikTok</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="glass-sharp rounded-2xl relative group overflow-hidden h-[300px] sm:h-[400px]">
+                                <img
+                                    src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&auto=format&fit=crop"
+                                    alt="Developers"
+                                    class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 brightness-50">
+                                <div class="absolute inset-0 bg-black/60"></div>
+                                <div class="absolute inset-0 p-4 sm:p-8 flex flex-col justify-end">
+                                    <div class="flex items-center gap-3 mb-4">
+                                        <div class="w-10 h-10 rounded-xl brand-gradient flex items-center justify-center group-hover:scale-110 transition-all">
+                                            <i data-lucide="code" class="w-5 h-5"></i>
+                                        </div>
+                                        <h3 class="text-xl font-semibold text-white">Developers</h3>
+                                    </div>
+                                    <p class="text-white/90 mb-4 text-sm sm:text-base select-text">
+                                        Integrate video generation into your applications
+                                    </p>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="px-3 py-1 rounded-full bg-white/10 text-xs sm:text-sm text-white select-text">API</span>
+                                        <span class="px-3 py-1 rounded-full bg-white/10 text-xs sm:text-sm text-white select-text">SDK</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="lg:col-span-2 glass-sharp rounded-2xl relative group overflow-hidden h-[300px] sm:h-[400px]">
+                                <img
+                                    src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800&auto=format&fit=crop"
+                                    alt="Educators"
+                                    class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 brightness-50">
+                                <div class="absolute inset-0 bg-black/60"></div>
+                                <div class="absolute inset-0 p-4 sm:p-8 flex flex-col justify-end">
+                                    <div class="flex items-center gap-3 mb-4">
+                                        <div class="w-10 h-10 rounded-xl brand-gradient flex items-center justify-center group-hover:scale-110 transition-all">
+                                            <i data-lucide="workflow" class="w-5 h-5"></i>
+                                        </div>
+                                        <h3 class="text-xl font-semibold text-white">Educators</h3>
+                                    </div>
+                                    <p class="text-white/90 mb-4 text-sm sm:text-base select-text">
+                                        Create engaging educational content and tutorials
+                                    </p>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="px-3 py-1 rounded-full bg-white/10 text-xs sm:text-sm text-white select-text">Education</span>
+                                        <span class="px-3 py-1 rounded-full bg-white/10 text-xs sm:text-sm text-white select-text">Tutorials</span>
+                                        <span class="px-3 py-1 rounded-full bg-white/10 text-xs sm:text-sm text-white select-text">Interactive</span>
+                                        <span class="px-3 py-1 rounded-full bg-white/10 text-xs sm:text-sm text-white select-text">E-learning</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="py-12 lg:py-16 relative overflow-hidden">
+                    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(6,182,212,0.1),transparent_70%)] pointer-events-none"></div>
+
+                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <div class="text-center mb-10 lg:mb-12">
+                            <h2 class="text-3xl sm:text-4xl font-bold mb-6 heading-gradient select-text" data-text="Simple, Transparent Pricing">
+                                Simple, Transparent Pricing
+                            </h2>
+                            <p class="text-lg text-white/90 max-w-2xl mx-auto select-text">
+                                Choose your plan and start creating amazing videos today. No hidden fees.
+                            </p>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl mx-auto px-4 sm:px-0 mb-16">
+                            <div class="glass-sharp rounded-2xl p-6 sm:p-8 hover:bg-white/5 transition-all flex flex-col h-full">
+                                <div class="flex-1">
+                                    <h3 class="text-xl font-semibold text-white mb-2">Basic</h3>
+                                    <div class="flex items-baseline gap-2 mb-6">
+                                        <span class="text-4xl font-bold text-white select-text">€49</span>
+                                        <span class="text-white/50">/month</span>
+                                    </div>
+                                    <ul class="space-y-3">
+                                        <li class="flex items-start gap-3">
+                                            <i data-lucide="check" class="w-5 h-5 text-emerald-400 shrink-0 mt-0.5"></i>
+                                            <span class="text-white">
+                                                <span class="font-medium">490 Credits</span>
+                                                <span class="text-white/60">(~70 Videos)</span>
+                                            </span>
+                                        </li>
+                                        <li class="flex items-start gap-3">
+                                            <i data-lucide="check" class="w-5 h-5 text-emerald-400 shrink-0 mt-0.5"></i>
+                                            <span class="text-white/90 select-text">Model Training</span>
+                                        </li>
+                                        <li class="flex items-start gap-3">
+                                            <i data-lucide="check" class="w-5 h-5 text-emerald-400 shrink-0 mt-0.5"></i>
+                                            <span class="text-white/90 select-text">Basic tools</span>
+                                        </li>
+                                        <li class="flex items-start gap-3">
+                                            <i data-lucide="check" class="w-5 h-5 text-emerald-400 shrink-0 mt-0.5"></i>
+                                            <span class="text-white/90 select-text">Email support</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="mt-8">
+                                    <a href="https://dashboard.clipvideo.ai/register"
+                                       class="h-[42px] w-full bg-black/80 text-white rounded-xl flex items-center justify-center gap-2 px-6 transition-transform hover:scale-105">
+                                        <span class="text-sm font-medium">Get Started</span>
+                                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="glass-sharp rounded-2xl p-6 sm:p-8 hover:bg-white/5 transition-all relative border border-emerald-500/20 flex flex-col h-full">
+                                <div class="absolute -top-4 left-1/2 -translate-x-1/2 brand-gradient rounded-full px-4 py-1 text-sm font-medium">
+                                    Recommended
+                                </div>
+                                <div class="flex-1">
+                                    <h3 class="text-xl font-semibold text-white mb-2">Plus</h3>
+                                    <div class="flex items-baseline gap-2 mb-6">
+                                        <span class="text-4xl font-bold text-white select-text">€99</span>
+                                        <span class="text-white/50">/month</span>
+                                    </div>
+                                    <ul class="space-y-3">
+                                        <li class="flex items-start gap-3">
+                                            <i data-lucide="check" class="w-5 h-5 text-emerald-400 shrink-0 mt-0.5"></i>
+                                            <span class="text-white">
+                                                <span class="font-medium">980 Credits</span>
+                                                <span class="text-white/60">(~140 Videos)</span>
+                                            </span>
+                                        </li>
+                                        <li class="flex items-start gap-3">
+                                            <i data-lucide="check" class="w-5 h-5 text-emerald-400 shrink-0 mt-0.5"></i>
+                                            <span class="text-white/90 select-text">Model Training</span>
+                                        </li>
+                                        <li class="flex items-start gap-3">
+                                            <i data-lucide="check" class="w-5 h-5 text-emerald-400 shrink-0 mt-0.5"></i>
+                                            <span class="text-white/90 select-text">Basic tools</span>
+                                        </li>
+                                        <li class="flex items-start gap-3">
+                                            <i data-lucide="check" class="w-5 h-5 text-emerald-400 shrink-0 mt-0.5"></i>
+                                            <span class="text-white/90 select-text">Email support</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="mt-8">
+                                    <a href="https://dashboard.clipvideo.ai/register"
+                                       class="h-[42px] w-full brand-gradient rounded-xl flex items-center justify-center gap-2 px-6 transition-transform hover:scale-105">
+                                        <span class="text-sm font-medium">Get Started</span>
+                                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="glass-sharp rounded-2xl p-6 sm:p-8 hover:bg-white/5 transition-all flex flex-col h-full">
+                                <div class="flex-1">
+                                    <h3 class="text-xl font-semibold text-white mb-2">Cinema</h3>
+                                    <div class="flex items-baseline gap-2 mb-6">
+                                        <span class="text-4xl font-bold text-white select-text">€199</span>
+                                        <span class="text-white/50">/month</span>
+                                    </div>
+                                    <ul class="space-y-3">
+                                        <li class="flex items-start gap-3">
+                                            <i data-lucide="check" class="w-5 h-5 text-emerald-400 shrink-0 mt-0.5"></i>
+                                            <span class="text-white">
+                                                <span class="font-medium">1,960 Credits</span>
+                                                <span class="text-white/60">(~280 Videos)</span>
+                                            </span>
+                                        </li>
+                                        <li class="flex items-start gap-3">
+                                            <i data-lucide="check" class="w-5 h-5 text-emerald-400 shrink-0 mt-0.5"></i>
+                                            <span class="text-white/90 select-text">Model Training</span>
+                                        </li>
+                                        <li class="flex items-start gap-3">
+                                            <i data-lucide="check" class="w-5 h-5 text-emerald-400 shrink-0 mt-0.5"></i>
+                                            <span class="text-white/90 select-text">Basic tools</span>
+                                        </li>
+                                        <li class="flex items-start gap-3">
+                                            <i data-lucide="check" class="w-5 h-5 text-emerald-400 shrink-0 mt-0.5"></i>
+                                            <span class="text-white/90 select-text">Email support</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="mt-8">
+                                    <a href="https://dashboard.clipvideo.ai/register"
+                                       class="h-[42px] w-full bg-black/80 text-white rounded-xl flex items-center justify-center gap-2 px-6 transition-transform hover:scale-105">
+                                        <span class="text-sm font-medium">Get Started</span>
+                                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="text-center relative z-10">
+                            <a href="/cdn-cgi/l/email-protection#92e1e7e2e2fde0e6d2f1fefbe2e4fbf6f7fdbcf3fb" class="inline-flex items-center space-x-3 px-4 sm:px-6 py-2.5 sm:py-3 rounded-full bg-white/[0.02] border border-white/[0.05] hover:bg-white/[0.05] transition-all cursor-pointer group no-underline">
+                                <span class="text-white/60 text-sm">Need a custom plan?</span>
+                                <span class="text-emerald-400 group-hover:text-emerald-300 text-sm font-medium flex items-center gap-1 transition-colors">
+                                    Contact our team
+                                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="py-12 lg:py-16 relative overflow-hidden px-6">
+                    <div class="glass-sharp rounded-3xl p-8 sm:p-16 text-center relative overflow-hidden mx-4 sm:mx-0">
+                        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(16,185,129,0.1),transparent_70%)] pointer-events-none"></div>
+
+                        <h2 class="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-white via-white to-white/60 bg-clip-text text-transparent mb-6 relative">
+                            Start Creating Amazing Videos Today
+                        </h2>
+                        <p class="text-white/90 max-w-2xl mx-auto mb-8 relative text-sm sm:text-base">
+                            Join thousands of creators and start transforming your ideas into stunning videos today.
+                        </p>
+                        <div class="relative">
+                            <a href="https://dashboard.clipvideo.ai/register"
+                               class="h-[42px] brand-gradient rounded-xl inline-flex items-center justify-center gap-2 px-6 sm:px-8 transition-transform hover:scale-105 w-full sm:w-auto">
+                                <span class="text-sm font-medium">Get Started Now</span>
+                                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+
+                <footer class="py-8 lg:py-12 border-t border-white/10">
+                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+                            <div>
+                                <a href="/" class="flex items-center gap-2 mb-4">
+                                    <img src="/images/clipvideo-logo.png" alt="ClipVideo AI Logo" class="w-8 h-8">
+                                    <span class="text-lg font-medium bg-gradient-to-r from-white via-white to-white/60 bg-clip-text text-transparent">
+                                        ClipVideo AI
+                                    </span>
+                                </a>
+                                <p class="text-sm text-white/60">
+                                    Professional AI-powered video generation platform for creators and businesses.
+                                </p>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-medium mb-4">Legal</h4>
+                                <div class="space-y-2">
+                                    <a href="/privacy" class="block text-sm text-white/90 hover:text-white transition-colors">Privacy Policy</a>
+                                    <a href="/terms" class="block text-sm text-white/90 hover:text-white transition-colors">Terms of Service</a>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-medium mb-4">Security</h4>
+                                <div class="space-y-3">
+                                    <div class="flex items-center gap-2">
+                                        <i data-lucide="shield-check" class="w-4 h-4 text-emerald-400"></i>
+                                        <span class="text-sm text-white/90">SSL Secured</span>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <i data-lucide="lock" class="w-4 h-4 text-emerald-400"></i>
+                                        <span class="text-sm text-white/90">256-bit Encryption</span>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <i data-lucide="server" class="w-4 h-4 text-emerald-400"></i>
+                                        <span class="text-sm text-white/90">GDPR Compliant</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-medium mb-4">Payment Methods</h4>
+                                <div class="space-y-3">
+                                    <div class="flex items-center gap-2">
+                                        <i data-lucide="credit-card" class="w-4 h-4 text-emerald-400"></i>
+                                        <span class="text-sm text-white/90">Secure Payments via Stripe</span>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i>
+                                        <span class="text-sm text-white/90">PCI Compliant via Stripe</span>
+                                    </div>
+                                    <div class="flex flex-wrap gap-2 mt-2">
+                                        <img src="https://cdn-icons-png.flaticon.com/32/349/349221.png" alt="Visa" class="h-5 w-auto opacity-75">
+                                        <img src="https://cdn-icons-png.flaticon.com/32/349/349228.png" alt="Mastercard" class="h-5 w-auto opacity-75">
+                                        <img src="https://cdn-icons-png.flaticon.com/32/349/349230.png" alt="American Express" class="h-5 w-auto opacity-75">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4">
+                            <div class="text-sm text-white/60">
+                                © 2025 ClipVideo AI. All rights reserved.
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div class="flex items-center gap-2 text-sm text-white/60">
+                                    <i data-lucide="shield" class="w-4 h-4"></i>
+                                    <span>Protected by SSL</span>
+                                </div>
+                                <div class="h-4 w-px bg-white/10"></div>
+                                <div class="flex items-center gap-2 text-sm text-white/60">
+                                    <i data-lucide="check-circle" class="w-4 h-4"></i>
+                                    <span>Verified & Secure</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        lucide.createIcons();
+    </script>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    history.pushState(null, null, this.getAttribute('href'));
+                }
+            });
+        });
+    </script>
+</body>
+</html>

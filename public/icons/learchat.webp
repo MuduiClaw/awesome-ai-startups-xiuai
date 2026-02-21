@@ -1,0 +1,1475 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8113445092035363"
+    crossorigin="anonymous"></script>
+  <title>LearChat</title>
+  <style>
+    body,
+    html {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      height: 100%;
+      background-color: #f5f5f5;
+    }
+
+    .chat-container {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+      background-color: #ffffff;
+      position: relative;
+    }
+
+    .chat-header {
+      padding: 1rem;
+      border-bottom: 1px solid #e0e0e0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .chat-header img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      margin-bottom: 0.5rem;
+      cursor: pointer;
+    }
+
+    .chat-header img:hover {
+      opacity: 0.8;
+    }
+
+    .chat-header h1 {
+      font-size: 1.2rem;
+      margin: 0;
+    }
+
+
+    .header-buttons {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .left-header-buttons {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .icon-button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+      color: inherit;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .icon-button svg {
+      width: 24px;
+      height: 24px;
+      fill: none;
+    }
+
+    .chat-messages {
+      flex: 1;
+      overflow-y: auto;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .message {
+      max-width: 70%;
+      margin-bottom: 1rem;
+      padding: 0.8rem 1rem;
+      border-radius: 1rem;
+      line-height: 1.4;
+      font-size: 0.9rem;
+      word-wrap: break-word;
+    }
+
+    .ai-message {
+      align-self: flex-start;
+      background-color: #f0f0f0;
+      color: #333;
+      border-bottom-left-radius: 0.2rem;
+    }
+
+    .user-message {
+      align-self: flex-end;
+      background-color: #000000;
+      color: white;
+      border-bottom-right-radius: 0.2rem;
+    }
+
+    @media (max-width: 600px) {
+      .message {
+        max-width: 85%;
+      }
+    }
+
+    /* New styles for larger buttons on desktop */
+    @media (min-width: 768px) {
+      .icon-button {
+        padding: 0.75rem;
+      }
+
+      .icon-button svg {
+        width: 32px;
+        height: 32px;
+      }
+    }
+
+    .chat-input-container {
+      display: flex;
+      flex-direction: column;
+      padding: 0.5rem 1rem;
+      border-top: 1px solid #e0e0e0;
+      background-color: #ffffff;
+    }
+
+    .message-count {
+      font-size: 0.8rem;
+      color: #666;
+      margin-bottom: 0.5rem;
+      text-align: center;
+      width: 100%;
+    }
+
+    .chat-input {
+      display: flex;
+      border-top: none;
+    }
+
+    .chat-input textarea {
+      flex: 1;
+      padding: 0.8rem;
+      border: 1px solid #e0e0e0;
+      border-radius: 1.5rem;
+      font-size: 0.9rem;
+      resize: none;
+      overflow-y: hidden;
+      min-height: 20px;
+      max-height: 150px;
+      line-height: 1.2;
+    }
+
+    .chat-input button {
+      background-color: #000000;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      margin-left: 0.5rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .chat-input button:hover {
+      background-color: #333333;
+    }
+
+    .chat-input button svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .overlay-content {
+      background-color: white;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 80%;
+      max-height: 80%;
+      overflow-y: auto;
+    }
+
+    .overlay-content h2 {
+      margin-top: 0;
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+
+    .overlay-content button {
+      background-color: #000000;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 0.25rem;
+      cursor: pointer;
+      font-size: 1rem;
+      margin: 0.5rem 0;
+      width: 200px;
+    }
+
+    .overlay-content button:hover {
+      background-color: #333333;
+    }
+
+    .help-content {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .help-content p {
+      margin-bottom: 1rem;
+      line-height: 1.5;
+    }
+
+    .help-content ul {
+      padding-left: 20px;
+    }
+
+    .help-content li {
+      margin-bottom: 0.5rem;
+    }
+
+    .loading-dots {
+      display: inline-block;
+      width: 70px;
+      text-align: left;
+    }
+
+    .loading-dots::after {
+      content: '.';
+      animation: dots 1.5s steps(5, end) infinite;
+    }
+
+    @keyframes dots {
+
+      0%,
+      20% {
+        color: rgba(0, 0, 0, 0);
+        text-shadow:
+          .25em 0 0 rgba(0, 0, 0, 0),
+          .5em 0 0 rgba(0, 0, 0, 0);
+      }
+
+      40% {
+        color: #333;
+        text-shadow:
+          .25em 0 0 rgba(0, 0, 0, 0),
+          .5em 0 0 rgba(0, 0, 0, 0);
+      }
+
+      60% {
+        text-shadow:
+          .25em 0 0 #333,
+          .5em 0 0 rgba(0, 0, 0, 0);
+      }
+
+      80%,
+      100% {
+        text-shadow:
+          .25em 0 0 #333,
+          .5em 0 0 #333;
+      }
+    }
+
+    .new-user-content {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      max-width: 320px;
+      width: 90%;
+      padding: 1.5rem;
+    }
+
+    .new-user-content h2 {
+      font-size: 1.2rem;
+      margin: 0 0 1rem;
+      text-align: center;
+    }
+
+    .intro-text {
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .checkbox-container {
+      margin-bottom: 0.75rem;
+    }
+
+    .checkbox-container label {
+      display: flex;
+      align-items: flex-start;
+      font-size: 0.85rem;
+      line-height: 1.4;
+    }
+
+    .checkbox-container input[type="checkbox"] {
+      margin: 0.2rem 0.5rem 0 0;
+      flex-shrink: 0;
+    }
+
+    .age-note {
+      font-size: 0.75rem;
+      color: #666;
+      margin: 1rem 0;
+      text-align: center;
+    }
+
+    .new-user-content button {
+      width: 100%;
+      padding: 0.75rem;
+      font-size: 1rem;
+      background-color: #000;
+      color: white;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .new-user-content button:hover:not(:disabled) {
+      background-color: #333;
+    }
+
+    .new-user-content button:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+
+    .new-user-content a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+
+    .new-user-content a:hover {
+      text-decoration: underline;
+    }
+
+    /* .copyright {
+      font-size: 0.8rem;
+      color: #666;
+      margin-top: 1rem;
+      text-align: center;
+    } */
+
+    .account-info-content {
+      background-color: white;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 80%;
+      max-height: 80%;
+      overflow-y: auto;
+    }
+
+    .account-info-content h2 {
+      font-size: 1.5rem;
+      margin: 0 0 1rem;
+    }
+
+    .account-info-item {
+      margin-bottom: 1rem;
+      width: 100%;
+      text-align: left;
+    }
+
+    .account-info-item label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+
+    .account-info-item span {
+      display: block;
+      word-break: break-all;
+    }
+
+    .account-info-content button {
+      background-color: #000000;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 0.25rem;
+      cursor: pointer;
+      font-size: 1rem;
+      margin-top: 1rem;
+    }
+
+    .account-info-content button:hover {
+      background-color: #333333;
+    }
+
+    .menu-content {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .menu-button {
+      background-color: #000000;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 0.25rem;
+      cursor: pointer;
+      font-size: 1rem;
+      width: 200px;
+    }
+
+    .menu-button:hover {
+      background-color: #333333;
+    }
+
+    .logout-section {
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid #e0e0e0;
+    }
+
+    .logout-button {
+      background-color: transparent;
+      color: #666;
+      border: 1px solid #666;
+      padding: 0.5rem 1rem;
+      border-radius: 0.25rem;
+      cursor: pointer;
+      font-size: 0.9rem;
+      width: 200px;
+    }
+
+    .logout-button:hover {
+      background-color: #f0f0f0;
+    }
+
+    #friendSwitchOverlay .overlay-content {
+      width: 320px;
+      background-color: #f5f5f5;
+      border-radius: 15px;
+      padding: 20px;
+    }
+
+    #friendSwitchOverlay h2 {
+      margin-top: 0;
+      margin-bottom: 20px;
+      font-size: 1.5rem;
+      color: #333;
+      text-align: center;
+    }
+
+    .friend-switch-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 100%;
+      margin-bottom: 20px;
+      background-color: #f5f5f5;
+    }
+
+    .friend-switch-content button {
+      background-color: #f5f5f5;
+      padding: 0px;
+      width: 45%;
+      margin-left: 5px;
+      margin-right: 5px;
+    }
+
+    .friend-button {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0px;
+      width: calc(25% - 10px);
+      margin-bottom: 20px;
+      transition: background-color 0.3s;
+      border-radius: 10px;
+    }
+
+    #friendSwitchOverlay .friend-button:hover {
+      background-color: #e0e0e0;
+    }
+
+    .friend-button img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+
+    .friend-button .friend-name {
+      font-size: 1rem;
+      color: #333;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .friend-button .friend-description {
+      font-size: 0.8rem;
+      color: #666;
+      text-align: center;
+      max-width: 100%;
+      overflow-wrap: break-word;
+    }
+
+    #closeFriendSwitchButton {
+      width: 100%;
+      padding: 12px;
+      background-color: #000;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .landing-container {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      padding: 2rem 1rem;
+      text-align: center;
+      background-color: #f8f9fa;
+    }
+
+    .landing-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .landing-container h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #333;
+    }
+
+    .landing-container p {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      color: #666;
+      max-width: 600px;
+    }
+
+    .cta-button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 2rem;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px rgba(0, 123, 255, 0.2);
+      margin-bottom: 2rem;
+    }
+
+    .cta-button:hover {
+      background-color: #0056b3;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 8px rgba(0, 123, 255, 0.3);
+    }
+
+    .friends-preview {
+      cursor: pointer;
+      width: 100%;
+      max-width: 900px;
+      margin-bottom: 2rem;
+    }
+
+    .friends-preview h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      color: #333;
+    }
+
+    .friend-preview-content {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .friend-preview {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: calc(33.33% - 1rem);
+      min-width: 200px;
+      padding: 1.5rem;
+      background-color: white;
+      border-radius: 1rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .friend-preview:hover {
+      transform: translateY(-5px);
+    }
+
+    .friend-preview img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      margin-bottom: 1rem;
+      border: 3px solid #007bff;
+    }
+
+    .friend-preview .friend-name {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+      color: #333;
+    }
+
+    .friend-preview .friend-description {
+      font-size: 0.9rem;
+      color: #666;
+      text-align: center;
+    }
+
+    .copyright {
+      font-size: 0.8rem;
+      color: #666;
+      padding: 1rem 0;
+    }
+
+    @media (min-width: 768px) {
+      .landing-container {
+        padding: 0rem 2rem;
+      }
+
+      .landing-content {
+        text-align: center;
+      }
+
+      .landing-container h1 {
+        font-size: 3.5rem;
+      }
+
+      .landing-container p {
+        font-size: 1.1rem;
+      }
+
+      .cta-button {
+        font-size: 1.2rem;
+        padding: 1rem 2rem;
+      }
+
+      .friends-preview {
+        width: 100%;
+      }
+
+      .friend-preview-content {
+        flex-direction: row;
+      }
+    }
+
+    @media (min-width: 1200px) {
+      .landing-container {
+        padding: 0rem 4rem;
+      }
+
+      .landing-container h1 {
+        font-size: 4rem;
+      }
+
+      .landing-container p {
+        font-size: 1.2rem;
+      }
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="landingContainer" class="landing-container">
+    <div class="landing-content">
+      <h1>Welcome to LearChat</h1>
+      <p>Chat with your AI friend, coach, or whatever</p>
+      <!-- <p>LearChat friends are "alive" and get updated every day. Try asking "what did you have for breakfast today?"</p> -->
+      <button id="loginButton" class="cta-button">Start Chat</button>
+
+      <div class="friends-preview">
+        <h2>Meet Your AI Friends</h2>
+        <div class="friend-preview-content">
+          <div class="friend-preview">
+            <img src="gordo-profile.png" alt="Gordo">
+            <div class="friend-info">
+              <span class="friend-name">Gordo</span>
+              <span class="friend-description">Astronaut and space enthusiast</span>
+            </div>
+          </div>
+          <div class="friend-preview">
+            <img src="coach-profile.png" alt="Coach">
+            <div class="friend-info">
+              <span class="friend-name">Coach</span>
+              <span class="friend-description">Fitness & Motivation Coach</span>
+            </div>
+          </div>
+          <div class="friend-preview">
+            <img src="tiffany-profile.png" alt="Tiffany">
+            <div class="friend-info">
+              <span class="friend-name">Tiffany</span>
+              <span class="friend-description">Typical valley girl</span>
+            </div>
+          </div>
+          <div class="friend-preview">
+            <img src="merrick-profile.png" alt="Merrick">
+            <div class="friend-info">
+              <span class="friend-name">Merrick</span>
+              <span class="friend-description">A great wizard</span>
+            </div>
+          </div>
+          <div class="friend-preview">
+            <img src="dog-profile.png" alt="Dog">
+            <div class="friend-info">
+              <span class="friend-name">Dog</span>
+              <span class="friend-description">Woof</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">
+      &copy; <span id="copyrightYear"></span> LearChat. All rights reserved.
+    </div>
+  </div>
+
+  <div id="chatContainer" class="chat-container hidden">
+    <div class="chat-header">
+      <img id="profileImage" src="gordo-profile.png" alt="AI Avatar">
+      <h1>Gordo</h1>
+    </div>
+    <div class="left-header-buttons">
+      <button id="friendSwitchButton" class="icon-button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round">
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+          <circle cx="9" cy="7" r="4"></circle>
+          <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+          <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+        </svg>
+      </button>
+    </div>
+    <div class="header-buttons">
+      <button id="helpButton" class="icon-button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+          <line x1="12" y1="17" x2="12.01" y2="17"></line>
+        </svg>
+      </button>
+      <button id="menuButton" class="icon-button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+    <div id="chatMessages" class="chat-messages"></div>
+    <div class="chat-input-container">
+      <div class="message-count" id="messageCount"></div>
+      <div class="chat-input">
+        <textarea id="messageInput" placeholder="Type your message..." rows="1"></textarea>
+        <button id="sendButton">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <line x1="22" y1="2" x2="11" y2="13"></line>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div id="loginOverlay" class="overlay" style="display: none;">
+    <div class="overlay-content">
+      <h2>LearChat</h2>
+      <p>My AI Best Friend</p>
+      <button id="loginButton">Login</button>
+    </div>
+  </div>
+
+  <div id="menuOverlay" class="overlay" style="display: none;">
+    <div class="overlay-content">
+      <h2>Menu</h2>
+      <div class="menu-content">
+        <button id="clearChatButton" class="menu-button">Clear Chat</button>
+        <button id="accountInfoButton" class="menu-button">Account Info</button>
+        <div class="logout-section">
+          <button id="logoutButton" class="logout-button">Logout</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="helpOverlay" class="overlay" style="display: none;">
+    <div class="overlay-content">
+      <h2>LearChat.com</h2>
+      <div class="help-content">
+        <p>LearChat = Your AI Best Friend</p>
+        <p>It is currently in an early alpha phase</p>
+        <p>We are a small team of Product obsessed engineers and currently fully bootstrapped</p>
+      </div>
+      <p class="copyright">&copy; <span id="copyrightYear"></span> LearChat. All rights reserved.</p>
+      <button id="closeHelpButton">Close</button>
+    </div>
+  </div>
+
+  <div id="newUserOverlay" class="overlay" style="display: none;">
+    <div class="overlay-content new-user-content">
+      <h2>Welcome to LearChat</h2>
+      <p class="intro-text">Before we begin, please confirm the following:</p>
+      <div class="checkbox-container">
+        <label>
+          <input type="checkbox" id="termsCheckbox">
+          <span>I accept the <a href="/terms" target="_blank">Terms and Conditions</a> and <a href="/privacy"
+              target="_blank">Privacy Policy</a></span>
+        </label>
+      </div>
+      <div class="checkbox-container">
+        <label>
+          <input type="checkbox" id="ageCheckbox">
+          <span>I am over 18 years old</span>
+        </label>
+      </div>
+      <p class="age-note">Age verification is required to ensure appropriate content and comply with regulations.</p>
+      <button id="confirmNewUserButton" disabled>Continue</button>
+    </div>
+  </div>
+
+  <div id="accountInfoOverlay" class="overlay" style="display: none;">
+    <div class="overlay-content account-info-content">
+      <h2>Account Information</h2>
+      <div class="account-info-item">
+        <label>Name:</label>
+        <span id="accountInfoName"></span>
+      </div>
+      <div class="account-info-item">
+        <label>Email:</label>
+        <span id="accountInfoEmail"></span>
+      </div>
+      <button id="closeAccountInfoButton">Close</button>
+    </div>
+  </div>
+
+  <div id="friendSwitchOverlay" class="overlay" style="display: none;">
+    <div class="overlay-content">
+      <h2>Switch AI Friend</h2>
+      <div class="friend-switch-content">
+        <button class="friend-button" data-friend="Gordo">
+          <img src="gordo-profile.png" alt="Gordo">
+          <span class="friend-name">Gordo</span>
+          <span class="friend-description">Astronaut and space enthusiast</span>
+        </button>
+        <button class="friend-button" data-friend="Coach">
+          <img src="coach-profile.png" alt="Coach">
+          <span class="friend-name">Coach</span>
+          <span class="friend-description">Fitness & Motivation Coach</span>
+        </button>
+        <button class="friend-button" data-friend="Tiffany">
+          <img src="tiffany-profile.png" alt="Tiffany">
+          <span class="friend-name">Tiffany</span>
+          <span class="friend-description">Typical valley girl</span>
+        </button>
+        <button class="friend-button" data-friend="Merrick">
+          <img src="merrick-profile.png" alt="Merrick">
+          <span class="friend-name">Merrick</span>
+          <span class="friend-description">A great wizard</span>
+        </button>
+        <button class="friend-button" data-friend="Dog">
+          <img src="dog-profile.png" alt="Dog">
+          <span class="friend-name">Dog</span>
+          <span class="friend-description">Woof</span>
+        </button>
+      </div>
+      <button id="closeFriendSwitchButton">Close</button>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const chatMessages = document.getElementById('chatMessages');
+      const messageInput = document.getElementById('messageInput');
+      const loginOverlay = document.getElementById('loginOverlay');
+      const menuOverlay = document.getElementById('menuOverlay');
+      const helpOverlay = document.getElementById('helpOverlay');
+      const menuButton = document.getElementById('menuButton');
+      const helpButton = document.getElementById('helpButton');
+      const sendButton = document.getElementById('sendButton');
+      const loginButton = document.getElementById('loginButton');
+      const logoutButton = document.getElementById('logoutButton');
+      const closeHelpButton = document.getElementById('closeHelpButton');
+      const clearChatButton = document.getElementById('clearChatButton');
+      const accountInfoOverlay = document.getElementById('accountInfoOverlay');
+      const closeAccountInfoButton = document.getElementById('closeAccountInfoButton');
+      const profileImage = document.getElementById('profileImage');
+      const friendSwitchOverlay = document.getElementById('friendSwitchOverlay');
+      const closeFriendSwitchButton = document.getElementById('closeFriendSwitchButton');
+      const friendSwitchButton = document.getElementById('friendSwitchButton');
+
+      const landingContainer = document.getElementById('landingContainer');
+      const chatContainer = document.getElementById('chatContainer');
+
+      // Kinde Auth configuration
+      const clientId = '7945d5fc85704cbd8615f490836a94b1';
+      const domain = 'learchat.kinde.com';
+      // const backendURL = 'https://b8bd1db7-a49f-44fb-93b8-d504c302d831-00-2g5qb2mnd8vqg.janeway.replit.dev/';
+      const backendURL = 'https://learchatv1.replit.app/'
+
+      document.getElementById('copyrightYear').textContent = new Date().getFullYear();
+
+      const accountInfoButton = document.getElementById('accountInfoButton');
+
+      let currentCharacter = 'gordo'; // Default character
+
+      function generateRandomString(length) {
+        const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        return Array.from(crypto.getRandomValues(new Uint8Array(length)))
+          .map(byte => characters[byte % characters.length])
+          .join('');
+      }
+
+      async function generateCodeChallenge(codeVerifier) {
+        const digest = await crypto.subtle.digest(
+          'SHA-256',
+          new TextEncoder().encode(codeVerifier)
+        );
+        return btoa(String.fromCharCode(...new Uint8Array(digest)))
+          .replace(/\+/g, '-')
+          .replace(/\//g, '_')
+          .replace(/=+$/, '');
+      }
+
+      // Check for authorization code in URL
+      const urlParams = new URLSearchParams(window.location.search);
+      const authorizationCode = urlParams.get('code');
+
+      if (authorizationCode) {
+        const storedState = localStorage.getItem('state');
+        const codeVerifier = localStorage.getItem('code_verifier');
+
+        if (storedState === urlParams.get('state')) {
+          // Exchange the authorization code for tokens
+          fetch(`https://${domain}/oauth2/token`, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            body: `grant_type=authorization_code&client_id=${clientId}&code=${authorizationCode}&redirect_uri=${encodeURIComponent(window.location.origin)}&code_verifier=${codeVerifier}`
+          })
+            .then(response => response.json())
+            .then(tokenData => {
+              localStorage.setItem('access_token', tokenData.access_token);
+              localStorage.setItem('id_token', tokenData.id_token);
+              window.history.replaceState({}, document.title, "/"); // Clear URL parameters
+              login();
+            })
+            .catch(error => console.error('Error:', error));
+        }
+      }
+
+      function showLandingPage() {
+        landingContainer.classList.remove('hidden');
+        chatContainer.classList.add('hidden');
+      }
+
+      function showChatInterface() {
+        landingContainer.classList.add('hidden');
+        chatContainer.classList.remove('hidden');
+      }
+
+      function checkLogin() {
+        const accessToken = localStorage.getItem('access_token');
+        if (!accessToken) {
+          showLandingPage();
+        } else {
+          login();
+        }
+      }
+
+      function updateMessageCount(count) {
+        const messageCountElement = document.getElementById('messageCount');
+        messageCountElement.textContent = `${count} messages remaining (refreshed daily)`;
+      }
+
+      async function checkUserExists(accessToken) {
+        try {
+          const response = await fetch(backendURL + 'check-user', {
+            method: 'GET',
+            headers: {
+              'Authorization': `Bearer ${accessToken}`
+            }
+          });
+
+          if (response.status === 401) {
+            const data = await response.json();
+            if (data.detail === "Invalid token") {
+              handleInvalidToken();
+              return null;
+            }
+          }
+
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
+
+          const data = await response.json();
+          if (data.exists) {
+            // Store user information in local storage
+            localStorage.setItem('userName', data.name || '');
+            localStorage.setItem('userEmail', data.email || '');
+          }
+          return data;
+        } catch (error) {
+          console.error('Error checking user:', error);
+          throw error;
+        }
+      }
+
+      function handleInvalidToken() {
+        console.log('Invalid token detected. Logging out...');
+        logout();
+        // Optionally, you can show a message to the user
+        // alert('Your session has expired. Please log in again.');
+      }
+
+      async function login() {
+        const accessToken = localStorage.getItem('access_token');
+        const idToken = localStorage.getItem('id_token');
+        if (!accessToken || !idToken) {
+          showLandingPage();
+          return;
+        }
+
+        try {
+          const userInfo = await checkUserExists(accessToken);
+          if (userInfo === null) {
+            return;
+          }
+          if (userInfo.exists) {
+            localStorage.setItem('returningUser', 'true');
+            showChatInterface();
+            showFriendSwitchOverlay();
+            // addMessage(`Welcome back! I'm ${currentCharacter}. What's up?`, false);
+            updateMessageCount(userInfo.messagesRemaining);
+          } else {
+            if (localStorage.getItem('userAcceptedTerms') === 'true') {
+              showChatInterface();
+              addMessage(`Hello! I'm ${currentCharacter}, your AI best friend. What's up?`, false);
+              updateMessageCount(userInfo.messagesRemaining);
+            } else {
+              showNewUserOverlay();
+            }
+          }
+        } catch (error) {
+          console.error('Error during login:', error);
+          showLandingPage();
+        }
+      }
+
+      function logout() {
+        localStorage.removeItem('access_token');
+        localStorage.removeItem('id_token');
+        localStorage.removeItem('userName');
+        localStorage.removeItem('userEmail');
+        localStorage.removeItem('returningUser');
+        localStorage.removeItem('userAcceptedTerms');
+        chatMessages.innerHTML = '';
+        closeMenu();
+        showLandingPage();
+      }
+
+      function addMessage(message, isUser) {
+        const messageElement = document.createElement('div');
+        messageElement.classList.add('message');
+        messageElement.classList.add(isUser ? 'user-message' : 'ai-message');
+        messageElement.textContent = message;
+        chatMessages.appendChild(messageElement);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+      }
+
+      async function sendMessage() {
+        const accessToken = localStorage.getItem('access_token');
+        if (!accessToken) {
+          checkLogin();
+          return;
+        }
+
+        const message = messageInput.value.trim();
+        if (message) {
+          addMessage(message, true);
+          messageInput.value = '';
+
+          const loadingElement = addLoadingAnimation();
+
+          try {
+            const response = await fetch(`${backendURL}chat/${currentCharacter}`, {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${accessToken}`
+              },
+              body: JSON.stringify({content: message})
+            });
+
+            if (!response.ok) {
+              throw new Error(`HTTP error! status: ${response.status}`);
+            }
+
+            const data = await response.json();
+            loadingElement.remove();
+            addMessage(data.message, false);
+
+            if (data.messagesRemaining !== undefined) {
+              updateMessageCount(data.messagesRemaining);
+            }
+          } catch (error) {
+            console.error('Error:', error);
+            loadingElement.remove();
+            addMessage("Sorry, there was an error processing your request.", false);
+          }
+        }
+      }
+
+      async function clearChat() {
+        const accessToken = localStorage.getItem('access_token');
+        if (!accessToken) {
+          console.error("No access token found");
+          return;
+        }
+
+        try {
+          const response = await fetch(`${backendURL}clear/${currentCharacter}`, {
+            method: 'POST',
+            headers: {
+              'Authorization': `Bearer ${accessToken}`
+            }
+          });
+
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
+
+          const data = await response.json();
+          console.log(data.message);
+
+          chatMessages.innerHTML = '';
+          addMessage(`Hello! I'm ${currentCharacter}, your AI best friend. How are you today?`, false);
+
+          const userInfo = await checkUserExists(accessToken);
+          updateMessageCount(userInfo.messagesRemaining);
+
+          closeMenu();
+        } catch (error) {
+          console.error('Error clearing chat:', error);
+          addMessage("Sorry, there was an error clearing the chat history.", false);
+        }
+      }
+
+      function addLoadingAnimation() {
+        const loadingElement = document.createElement('div');
+        loadingElement.classList.add('message', 'ai-message');
+        loadingElement.innerHTML = '<span class="loading-dots">.</span>';
+        chatMessages.appendChild(loadingElement);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+        return loadingElement;
+      }
+
+      function toggleMenu() {
+        menuOverlay.style.display = 'flex';
+        setTimeout(() => {
+          document.addEventListener('click', closeMenuOnClickOutside);
+        }, 0);
+      }
+
+      function closeMenu() {
+        menuOverlay.style.display = 'none';
+        document.removeEventListener('click', closeMenuOnClickOutside);
+      }
+
+      function toggleHelp() {
+        helpOverlay.style.display = 'flex';
+        setTimeout(() => {
+          document.addEventListener('click', closeHelpOnClickOutside);
+        }, 0);
+      }
+
+      function closeHelp() {
+        helpOverlay.style.display = 'none';
+        document.removeEventListener('click', closeHelpOnClickOutside);
+      }
+
+      function closeMenuOnClickOutside(event) {
+        if (!event.target.closest('.overlay-content') && !event.target.closest('#menuButton')) {
+          closeMenu();
+        }
+      }
+
+      function closeHelpOnClickOutside(event) {
+        if (!event.target.closest('.overlay-content') && !event.target.closest('#helpButton')) {
+          closeHelp();
+        }
+      }
+
+      function showNewUserOverlay() {
+        document.getElementById('newUserOverlay').style.display = 'flex';
+        const termsCheckbox = document.getElementById('termsCheckbox');
+        const ageCheckbox = document.getElementById('ageCheckbox');
+        const confirmButton = document.getElementById('confirmNewUserButton');
+
+        function checkboxChanged() {
+          confirmButton.disabled = !(termsCheckbox.checked && ageCheckbox.checked);
+        }
+
+        termsCheckbox.addEventListener('change', checkboxChanged);
+        ageCheckbox.addEventListener('change', checkboxChanged);
+
+        confirmButton.addEventListener('click', async () => {
+          if (termsCheckbox.checked && ageCheckbox.checked) {
+            confirmButton.disabled = true;
+            confirmButton.textContent = 'Registering...';
+
+            try {
+              const accessToken = localStorage.getItem('access_token');
+              const idToken = localStorage.getItem('id_token');
+              const response = await fetch(backendURL + 'register-user', {
+                method: 'POST',
+                headers: {
+                  'Authorization': `Bearer ${accessToken}`,
+                  'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                  termsAccepted: true,
+                  ageVerified: true,
+                  idToken: idToken
+                })
+              });
+
+              if (!response.ok) {
+                throw new Error('Failed to register user');
+              }
+
+              const data = await response.json();
+              console.log('User registered successfully:', data);
+
+              localStorage.setItem('userAcceptedTerms', 'true');
+              document.getElementById('newUserOverlay').style.display = 'none';
+              login();
+            } catch (error) {
+              console.error('Error registering user:', error);
+              alert('There was an error registering your account. Please try again.');
+              confirmButton.disabled = false;
+              confirmButton.textContent = 'Continue';
+            }
+          }
+        });
+      }
+
+      function showAccountInfo() {
+        const name = localStorage.getItem('userName') || 'N/A';
+        const email = localStorage.getItem('userEmail') || 'N/A';
+        document.getElementById('accountInfoName').textContent = name;
+        document.getElementById('accountInfoEmail').textContent = email;
+        accountInfoOverlay.style.display = 'flex';
+        closeMenu();
+
+        setTimeout(() => {
+          document.addEventListener('click', closeAccountInfoOnClickOutside);
+        }, 0);
+      }
+
+      function closeAccountInfo() {
+        accountInfoOverlay.style.display = 'none';
+        document.removeEventListener('click', closeAccountInfoOnClickOutside);
+      }
+
+      function closeAccountInfoOnClickOutside(event) {
+        if (!event.target.closest('.account-info-content') && !event.target.closest('#accountInfoButton')) {
+          closeAccountInfo();
+        }
+      }
+
+      function toggleFriendSwitch(event) {
+        event.stopPropagation(); // Prevent the event from bubbling up
+        friendSwitchOverlay.style.display = 'flex';
+        setTimeout(() => {
+          document.addEventListener('click', closeFriendSwitchOnClickOutside);
+        }, 0);
+      }
+
+      function showFriendSwitchOverlay() {
+        friendSwitchOverlay.style.display = 'flex';
+        // Add event listener to close the overlay when clicking outside
+        setTimeout(() => {
+          document.addEventListener('click', closeFriendSwitchOnClickOutside);
+        }, 0);
+      }
+
+
+      function closeFriendSwitch() {
+        friendSwitchOverlay.style.display = 'none';
+        document.removeEventListener('click', closeFriendSwitchOnClickOutside);
+        // Add a welcome message after closing the friend switch overlay
+        // addMessage(`Welcome! I'm ${currentCharacter}. How can I help you today?`, false);
+      }
+
+      function closeFriendSwitchOnClickOutside(event) {
+        if (!event.target.closest('.overlay-content') &&
+          event.target !== profileImage &&
+          event.target !== friendSwitchButton) {
+          closeFriendSwitch();
+        }
+      }
+
+      async function switchFriend(friendName) {
+        console.log(`Switching to ${friendName}`);
+        currentCharacter = friendName.toLowerCase();
+        profileImage.src = `${currentCharacter}-profile.png`;
+        document.querySelector('.chat-header h1').textContent = friendName;
+        closeFriendSwitch();
+        const accessToken = localStorage.getItem('access_token');
+        if (!accessToken) {
+          console.error("No access token found");
+          return;
+        }
+
+        try {
+          const response = await fetch(`${backendURL}clear/${currentCharacter}`, {
+            method: 'POST',
+            headers: {
+              'Authorization': `Bearer ${accessToken}`
+            }
+          });
+
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
+
+          chatMessages.innerHTML = '';
+          addMessage(`Hello! I'm ${friendName}, your new AI best friend. How can I help you today?`, false);
+
+          const userInfo = await checkUserExists(accessToken);
+          updateMessageCount(userInfo.messagesRemaining);
+        } catch (error) {
+          console.error('Error switching friend:', error);
+          addMessage("Sorry, there was an error switching to the new friend.", false);
+        }
+
+
+      }
+
+      const friendPreviews = document.querySelectorAll('.friend-preview');
+      friendPreviews.forEach(preview => {
+        preview.addEventListener('click', startChat);
+      });
+
+      async function startChat() {
+        const state = generateRandomString(16);
+        const codeVerifier = generateRandomString(64);
+        const codeChallenge = await generateCodeChallenge(codeVerifier);
+
+        localStorage.setItem('state', state);
+        localStorage.setItem('code_verifier', codeVerifier);
+
+        const authUrl = `https://${domain}/oauth2/auth?response_type=code&client_id=${clientId}&redirect_uri=${encodeURIComponent(window.location.origin)}&scope=openid%20profile%20email&state=${state}&code_challenge=${codeChallenge}&code_challenge_method=S256&prompt=login`;
+
+        window.location.href = authUrl;
+      }
+
+      loginButton.addEventListener('click', startChat);
+
+      // Event Listeners
+      // loginButton.addEventListener('click', async () => {
+      //   const state = generateRandomString(16);
+      //   const codeVerifier = generateRandomString(64);
+      //   const codeChallenge = await generateCodeChallenge(codeVerifier);
+
+      //   localStorage.setItem('state', state);
+      //   localStorage.setItem('code_verifier', codeVerifier);
+
+      //   const authUrl = `https://${domain}/oauth2/auth?response_type=code&client_id=${clientId}&redirect_uri=${encodeURIComponent(window.location.origin)}&scope=openid%20profile%20email&state=${state}&code_challenge=${codeChallenge}&code_challenge_method=S256&prompt=login`;
+
+      //   window.location.href = authUrl;
+      // });
+
+      menuButton.addEventListener('click', toggleMenu);
+      helpButton.addEventListener('click', toggleHelp);
+      sendButton.addEventListener('click', sendMessage);
+      closeHelpButton.addEventListener('click', closeHelp);
+      clearChatButton.addEventListener('click', clearChat);
+      logoutButton.addEventListener('click', logout);
+      accountInfoButton.addEventListener('click', showAccountInfo);
+      closeAccountInfoButton.addEventListener('click', closeAccountInfo);
+      friendSwitchButton.addEventListener('click', toggleFriendSwitch);
+      profileImage.addEventListener('click', toggleFriendSwitch);
+      closeFriendSwitchButton.addEventListener('click', closeFriendSwitch);
+
+      document.querySelectorAll('.friend-button').forEach(button => {
+        button.addEventListener('click', () => {
+          switchFriend(button.dataset.friend);
+        });
+      });
+
+      messageInput.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' && !e.shiftKey) {
+          e.preventDefault();
+          sendMessage();
+        }
+      });
+
+      // Check login status when the page loads
+      checkLogin();
+    });
+  </script>
+</body>
+
+</html>

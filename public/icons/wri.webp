@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WriCo - AI-Powered Writing Assistant</title>
+    <meta itemprop="description" content="The AI-powered writing app designed to help you generate ideas, develop characters, outline plots, and organize scenes like a pro. Enhance your creativity with AI-driven suggestions and bring your story to life effortlessly.">
+    <meta itemprop="keywords" content="writing, app, AI, story, planner, creativity, characters, plots, scenes, ideas, suggestions">
+    <meta itemprop="author" content="TooflexDev">
+    <met itemprop="image" content="https://writercopilot.app/logo.png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#c2a686',
+                        secondary: '#8c7a61',
+                        accent: '#e6d7c3',
+                        dark: '#4a4139',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-accent/10">
+    <header class="bg-white shadow-md fixed w-full z-10">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="logo.png" alt="WriCo Logo" class="h-10 w-10 mr-3">
+                <a href="#" class="text-2xl font-bold text-primary">WriCo</a>
+            </div>
+            <nav aria-label="Main Navigation">
+                <ul class="flex space-x-6">
+                    <li><a href="#features" class="text-dark hover:text-primary transition duration-300">Features</a>
+                    </li>
+                    <li><a href="#pricing" class="text-dark hover:text-primary transition duration-300">Pricing</a></li>
+                    <li><a href="#faq" class="text-dark hover:text-primary transition duration-300">FAQ</a></li>
+                    <li><a href="privacy-policy.html"
+                            class="text-dark hover:text-primary transition duration-300">Privacy Policy</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero" class="pt-24 pb-16 bg-gradient-to-r from-primary to-secondary">
+            <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 text-white mb-8 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-6">Unlock Your Story's Full Potential with WriCo</h1>
+                    <p class="text-xl mb-8">The AI-powered writing app designed to help you generate ideas, develop
+                        characters, outline plots, and organize scenes like a pro. Enhance your creativity with
+                        AI-driven suggestions and bring your story to life effortlessly.</p>
+                    <div class="flex space-x-4">
+                        <a href="https://apps.apple.com/fr/app/wrico-the-best-story-planner/id6502863672">
+                            <img src="app-store-badge.svg" alt="Available on the App Store" class="h-12">
+                        </a>
+                        <a href="https://apps.apple.com/fr/app/wrico-the-best-story-planner/id6502863672">
+                            <img src="mac-app-store-badge.svg" alt="Available on the Mac App Store" class="h-12">
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <img src="iphone.png" alt="WriCo App Interface" class="max-w-full h-auto rounded-lg shadow-2xl">
+                </div>
+            </div>
+        </section>
+
+<section id="features" class="py-20">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-dark">Craft Compelling Stories with Ease</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                <img src="writer.webp" alt="Plot Outlining" class="w-16 h-16 mb-4">
+                <h3 class="text-xl font-semibold mb-2 text-primary">Organize Your Plots</h3>
+                <p class="text-dark">Map out your story's structure with intuitive outlining tools that help you
+                    visualize the bigger picture.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                <img src="compelling-charact.png" alt="Character Development" class="w-16 h-16 mb-4">
+                <h3 class="text-xl font-semibold mb-2 text-primary">Develop Memorable Characters</h3>
+                <p class="text-dark">Dive deep into character creation with detailed templates. Explore backgrounds,
+                    motivations, and relationships.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                <img src="Engaging%20Scenes.webp" alt="Scene Organization" class="w-16 h-16 mb-4">
+                <h3 class="text-xl font-semibold mb-2 text-primary">Structure Engaging Scenes</h3>
+                <p class="text-dark">Effortlessly arrange and refine your scenes, ensuring a seamless flow and
+                    captivating narrative progression.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                <img src="ai-features.webp" alt="AI Story Suggestions" class="w-16 h-16 mb-4">
+                <h3 class="text-xl font-semibold mb-2 text-primary">AI-Powered Story Suggestions</h3>
+                <p class="text-dark">Generate unique story ideas and prompts with AI, sparking creativity and helping
+                    you overcome writer's block.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                <img src="sync.webp" alt="Seamless Sync" class="w-16 h-16 mb-4">
+                <h3 class="text-xl font-semibold mb-2 text-primary">Seamless Sync & Access</h3>
+                <p class="text-dark">Access your work from anywhere. WriCo seamlessly syncs your projects across all
+                    your Apple devices.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                <img src="notes.webp" alt="Capture Ideas" class="w-16 h-16 mb-4">
+                <h3 class="text-xl font-semibold mb-2 text-primary">Capture Every Spark of Inspiration</h3>
+                <p class="text-dark">Jot down ideas, notes, and research effortlessly within your projects, keeping
+                    everything organized.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <section id="pricing" class="py-20 bg-accent/20">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-dark">Choose Your Plan</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                        <h3 class="text-2xl font-semibold mb-4 text-primary">Premium Monthly</h3>
+                        <p class="text-4xl font-bold mb-6 text-dark">$12.99<span
+                                class="text-lg text-secondary">/month</span></p>
+                        <ul class="mb-8">
+                            <li class="flex items-center mb-2">
+                                <svg class="w-5 h-5 text-primary mr-2" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Unlock all AI text generation features
+                            </li>
+                            <li class="flex items-center mb-2">
+                                <svg class="w-5 h-5 text-primary mr-2" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Enhanced writing process
+                            </li>
+                        </ul>
+                    </div>
+                    <div
+                        class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition duration-300 border-2 border-primary transform scale-105">
+                        <h3 class="text-2xl font-semibold mb-4 text-primary">Premium Yearly</h3>
+                        <p class="text-4xl font-bold mb-6 text-dark">$99.99<span
+                                class="text-lg text-secondary">/year</span></p>
+                        <ul class="mb-8">
+                            <li class="flex items-center mb-2">
+                                <svg class="w-5 h-5 text-primary mr-2" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                All AI text generation features
+                            </li>
+                            <li class="flex items-center mb-2">
+                                <svg class="w-5 h-5 text-primary mr-2" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Save 36% compared to monthly plan
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                        <h3 class="text-2xl font-semibold mb-4 text-primary">AI Media Credits</h3>
+                        <p class="text-4xl font-bold mb-6 text-dark">From $2.99</p>
+                        <ul class="mb-8">
+                            <li class="flex items-center mb-2">
+                                <svg class="w-5 h-5 text-primary mr-2" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Image generation capabilities
+                            </li>
+                            <li class="flex items-center mb-2">
+                                <svg class="w-5 h-5 text-primary mr-2" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Flexible credit options
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="py-20">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-dark">Frequently Asked Questions</h2>
+                <div class="max-w-3xl mx-auto">
+                    <div class="mb-6">
+                        <h3 class="text-xl font-semibold mb-2 text-primary">What devices are compatible with WriCo?</h3>
+                        <p class="text-dark">WriCo is designed for Apple devices and is compatible with iPhone, iPad,
+                            and Mac, ensuring you can write wherever inspiration strikes.</p>
+                    </div>
+                    <div class="mb-6">
+                        <h3 class="text-xl font-semibold mb-2 text-primary">Is there a free version of WriCo?</h3>
+                        <p class="text-dark">Yes! The core app is free to use, allowing you to organize notes, plots,
+                            characters, and more. However, advanced text AI features are available through a
+                            subscription, and image generation operates on a credit system.</p>
+                    </div>
+                    <div class="mb-6">
+                        <h3 class="text-xl font-semibold mb-2 text-primary">How does WriCo sync my work across my
+                            devices?</h3>
+                        <p class="text-dark">WriCo uses iCloud to seamlessly and securely sync your projects across your
+                            Apple devices when connected to the internet. Your work is always backed up and accessible.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-2 text-primary">What support options are available?</h3>
+                        <p class="text-dark">We're here to help! You can reach us at info@writercopilot.app for any
+                            questions or support needs.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="cta" class="py-20 bg-primary text-white">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Unleash Your Inner Storyteller?</h2>
+                <p class="text-xl mb-8">Start crafting your masterpiece today with WriCo.</p>
+                <div class="flex justify-center space-x-4">
+                        <a href="https://apps.apple.com/fr/app/wrico-the-best-story-planner/id6502863672">
+                            <img src="app-store-badge.svg" alt="Available on the App Store" class="h-12">
+                        </a>
+                        <a href="https://apps.apple.com/fr/app/wrico-the-best-story-planner/id6502863672">
+                            <img src="mac-app-store-badge.svg" alt="Available on the Mac App Store" class="h-12">
+                        </a>
+                        </div>
+                        </div>
+                        </section>
+                        </main>
+                        
+                        <footer class="bg-dark text-white py-12">
+                            <div class="container mx-auto px-4">
+                                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                                    <div>
+                                        <h3 class="text-xl font-semibold mb-4">WriCo</h3>
+                                        <p class="text-sm text-gray-400">Empowering writers with AI-driven tools to bring their stories to life.
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-xl font-semibold mb-4">Quick Links</h3>
+                                        <ul class="space-y-2">
+                                            <li><a href="#" class="text-gray-400 hover:text-primary transition duration-300">Home</a></li>
+                                            <li><a href="#features"
+                                                    class="text-gray-400 hover:text-primary transition duration-300">Features</a></li>
+                                            <li><a href="#pricing" class="text-gray-400 hover:text-primary transition duration-300">Pricing</a>
+                                            </li>
+                                            <li><a href="#faq" class="text-gray-400 hover:text-primary transition duration-300">FAQ</a></li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-xl font-semibold mb-4">Legal</h3>
+                                        <ul class="space-y-2">
+                                            <li><a href="privacy-policy.html"
+                                                    class="text-gray-400 hover:text-primary transition duration-300">Privacy Policy</a></li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-xl font-semibold mb-4">Connect</h3>
+                                        <ul class="space-y-2">
+                                            <li><a href="https://x.com/TooflexDev" class="text-gray-400 hover:text-primary transition duration-300">X (Twitter)</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="mt-8 pt-8 border-t border-gray-700 text-center">
+                                    <p class="text-sm text-gray-400">&copy; 2024 WriCo. All rights reserved.</p>
+                                </div>
+                            </div>
+                        </footer>
+                        
+    <script>
+        // Add smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Remove the scroll event listener as the header is now always white
+    </script>
+                        </body>
+                        
+                        </html>

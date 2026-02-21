@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style data-vite-theme="" data-inject-first="">:root {
+      --background: 240 10% 3.9%;
+--foreground: 0 0% 98%;
+--muted: 240 3.7% 15.9%;
+--muted-foreground: 240 5% 64.9%;
+--popover: 240 10% 3.9%;
+--popover-foreground: 0 0% 98%;
+--card: 240 10% 3.9%;
+--card-foreground: 0 0% 98%;
+--border: 240 3.7% 15.9%;
+--input: 240 3.7% 15.9%;
+--primary: 212 72% 45%;
+--primary-foreground: 214 66% 98%;
+--secondary: 240 3.7% 15.9%;
+--secondary-foreground: 0 0% 98%;
+--accent: 240 3.7% 15.9%;
+--accent-foreground: 0 0% 98%;
+--destructive: 0 62.8% 30.6%;
+--destructive-foreground: 0 0% 98%;
+--ring: 240 4.9% 83.9%;
+--radius: 0.75rem;
+  }
+  .light {
+      --background: 0 0% 100%;
+--foreground: 20 14.3% 4.1%;
+--muted: 60 4.8% 95.9%;
+--muted-foreground: 25 5.3% 44.7%;
+--popover: 0 0% 100%;
+--popover-foreground: 20 14.3% 4.1%;
+--card: 0 0% 100%;
+--card-foreground: 20 14.3% 4.1%;
+--border: 20 5.9% 90%;
+--input: 20 5.9% 90%;
+--primary: 212 72% 45%;
+--primary-foreground: 214 66% 98%;
+--secondary: 60 4.8% 95.9%;
+--secondary-foreground: 24 9.8% 10%;
+--accent: 60 4.8% 95.9%;
+--accent-foreground: 24 9.8% 10%;
+--destructive: 0 84.2% 60.2%;
+--destructive-foreground: 60 9.1% 97.8%;
+--ring: 20 14.3% 4.1%;
+--radius: 0.75rem;
+  }</style>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Play Untold</title>
+    <meta name="description" content="AI-powered storytelling platform that transforms narrative creation through generative AI and interactive technologies." />
+    <!-- Open Graph / Facebook -->
+
+    <!-- Monetag Ads - Using the exact format provided by Monetag -->
+    <script>(function(d,z,s){s.src='https://'+d+'/401/'+z;try{(document.body||document.documentElement).appendChild(s)}catch(e){}})('groleegni.net',9168538,document.createElement('script'))</script>
+    
+    <!-- Debugging script for Monetag -->
+    <script>
+      window.monetagDebugging = true;
+      
+      // Track script initialization
+      document.addEventListener('DOMContentLoaded', function() {
+        console.log('Checking for Monetag script...');
+        setTimeout(function() {
+          const scripts = document.querySelectorAll('script');
+          let monetagFound = false;
+          
+          scripts.forEach(script => {
+              if (script.src && script.src.includes('groleegni.net')) {
+                  console.log('Found Monetag script:', script.src);
+                  monetagFound = true;
+              }
+          });
+          
+          if (!monetagFound) {
+              console.error('No Monetag script detected after page load!');
+          }
+        }, 2000);
+      });
+    </script>
+
+    <meta property="og:title" content="Play Untold" />
+    <meta property="og:description" content="AI-powered storytelling platform that transforms narrative creation through generative AI and interactive technologies." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="" /> <!-- This gets filled dynamically -->
+    <meta property="og:site_name" content="Play Untold" />
+    <meta property="og:image" content="" /> <!-- Add a default image URL for Facebook shares -->
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Play Untold" />
+    <meta name="twitter:description" content="AI-powered storytelling platform that transforms narrative creation through generative AI and interactive technologies." />
+    <!-- Facebook specific -->
+    <meta property="fb:app_id" content="" /> <!-- Optional: Add your Facebook App ID if you have one -->
+    <!-- Facebook WebView Compatibility -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <!-- Allow Facebook to open in WebView -->
+    <meta property="al:web:should_fallback" content="true" />
+    <meta property="al:android:url" content="" />
+    <meta property="al:ios:url" content="" />
+    <script type="module" crossorigin src="/assets/index-BMoEJN9L.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-DSOXym_G.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>

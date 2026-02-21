@@ -1,0 +1,1594 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Midjourney API for AI Image Generation - Apiframe</title>
+
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="Midjourney API for AI Image Generation - Apiframe" />
+    <meta name="description" content="Integrate Midjourney's powerful AI image generation capabilities into your applications with our Midjourney API. Midjourney V7 Available!" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://apiframe.ai" />
+    <meta property="og:title" content="Midjourney API for AI Image Generation - Apiframe" />
+    <meta property="og:description" content="Integrate Midjourney into your applications. Midjourney V7 Available!" />
+    <meta property="og:image" content="https://apiframe.ai/images/meta-image-new.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://apiframe.ai" />
+    <meta property="twitter:title" content="Midjourney API for AI Image Generation - Apiframe" />
+    <meta property="twitter:description" content="Integrate Midjourney's powerful AI image generation capabilities into your applications. Midjourney V7 Available!" />
+    <meta property="twitter:image" content="https://apiframe.ai/images/meta-image-new.png" />
+
+    <link rel="canonical" href="https://apiframe.ai" />
+
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "SoftwareApplication",
+          "name": "Apiframe",
+          "url": "https://apiframe.ai",
+          "applicationCategory": "WebApplication",
+          "about": {
+            "@type": "Thing",
+            "name": "Midjourney API",
+            "description": "A set of AI APIs to enhance your apps and workflows with code or no-code."
+          },
+          "operatingSystem": "Any (Web-based Application)",
+          "featureList": "Midjourney API, Faceswap API, AI Photos API, AI Video API, Flux, Ideogram, Runway ML, Luma Dream Machine, and more.",
+          "softwareHelp": {
+            "@type": "CreativeWork",
+            "url": "https://docs.apiframe.ai"
+          }
+        }
+    </script>
+
+
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="icon" href="/images/icon.png" type="image/png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,100&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+<link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+
+<link href="/output.css" rel="stylesheet">
+<link href="/fonts/fonts.css" rel="stylesheet">
+
+<!-- <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script> -->
+<script src="/js/lottie-player.js"></script>
+
+<script>(function (w, r) { w._rwq = r; w[r] = w[r] || function () { (w[r].q = w[r].q || []).push(arguments) } })(window, 'rewardful');</script>
+<script async src='https://r.wdfl.co/rw.js' data-rewardful='4b0158'></script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q1JM07WFSE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Q1JM07WFSE');
+</script>
+
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-16945298030"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag('js', new Date());
+
+  gtag('config', 'AW-16945298030');
+</script>
+</head>
+
+<body>
+    <div class="bg-[#121116] pt-4">
+        <nav class="fixed top-0 left-0 right-0 z-50 px-4">
+    <div id="desktop-menu"
+        class="flex justify-between items-center px-3 py-3 max-w-[900px] mx-auto bg-[#FBFBFB] rounded-md m-4">
+        <p class="text-[#121116] font-apfont text-[1.5rem] -ml-1">
+            <a href="/">
+                <img src="/images/webclip.png" alt="apiframe" class="w-10 inline">
+                <span class="">
+                    apiframe
+                </span>
+            </a>
+        </p>
+
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-button" class="md:hidden">
+            <span class="material-symbols-outlined text-2xl">menu</span>
+        </button>
+
+        <!-- Desktop menu -->
+        <ul class="hidden md:flex gap-7 lg:gap-10 font-apfont text-sm">
+            <li class="mega-menu-parent">
+                <span class="inline-flex items-center hover:no-underline mega-hover cursor-pointer aspan">
+                    <span class="">Products</span>
+                    <span
+                        class="material-symbols-outlined rotate-90 -mt-1 no-underline hover:no-underline  duration-1000 text-[16px]">
+                        play_arrow
+                    </span>
+                </span>
+
+                <div class="absolute -ml-44 lg:-ml-20 top-[58px] mega-menu hidden p-0.5">
+                    <div class=" mt-[30px] w-[700px] h-fit bg-white rounded-md shadow-md p-6 font-normal font-inter">
+                        <div class="grid grid-cols-2 gap-5">
+                            <a href="/ai-image-generation">
+                                <div data-color="#316bff" class="flex gap-3 p-2 bg-white rounded-md duration-700">
+                                    <div class="shrink-0">
+                                        <p class="bg-[#316bff22] rounded-md p-2 logo-container duration-700"><img
+                                                src="/images/ai-image-icon.svg" alt="apiframe"
+                                                class="w-8 rounded p-1 bg-[#316BFF]"></p>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-apfont">AI Image</h3>
+                                        <p class="text-gray-700">Powerful AI tools to help you create stunning images.
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <a href="/ai-photos-generation">
+                                <div data-color="#ff4d4d" class="flex gap-3 p-2 bg-white rounded-md duration-700">
+                                    <div class="shrink-0">
+                                        <p class="bg-[#316bff22] rounded-md p-2 logo-container duration-700"><img
+                                                src="/images/ai-photos-icon.svg" alt="apiframe"
+                                                class="w-8 rounded p-1 bg-[#FF4D4D]"></p>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-apfont">AI Photos</h3>
+                                        <p class="text-gray-700">Create realistic photos of a subject.</p>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <a href="/ai-video-generation">
+                                <div data-color="#38a1d6" class="flex gap-3 p-2 bg-white rounded-md duration-700">
+                                    <div class="shrink-0">
+                                        <p class="bg-[#316bff22] rounded-md p-2 logo-container duration-700"><img
+                                                src="/images/ai-video-icon.svg" alt="apiframe"
+                                                class="w-8 rounded p-1 bg-[#38A1D6]"></p>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-apfont">AI Video</h3>
+                                        <p class="text-gray-700">Create any video you can imagine with AI.</p>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <a href="/ai-faceswap">
+                                <div data-color="#ffb866" class="flex gap-3 p-2 bg-white rounded-md duration-700">
+                                    <div class="shrink-0">
+                                        <p class="bg-[#316bff22] rounded-md p-2 logo-container duration-700">
+                                            <span class="inline-block m-0 w-8 bg-[#FFB866] rounded p-[1px]">
+                                                <img src="/images/faceswap-icon-2.svg" alt="apiframe"
+                                                    class="inline-block">
+                                            </span>
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-apfont">AI Faceswap</h3>
+                                        <p class="text-gray-700">Swap faces in a photo or video.</p>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <a href="/ai-music-generation">
+                                <div data-color="#2b2e3d" class="flex gap-3 p-2 bg-white rounded-md duration-700">
+                                    <div class="shrink-0">
+                                        <p class="bg-[#316bff22] rounded-md p-2 logo-container duration-700"><img
+                                                src="/images/ai-music-icon.svg" alt="apiframe"
+                                                class="w-8 rounded p-1 bg-[#2b2e3d]"></p>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-apfont">AI Music</h3>
+                                        <p class="text-gray-700">Create amazing and realistic music with AI.</p>
+                                    </div>
+                                </div>
+                            </a>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </li>
+
+            <li>
+                <a href="https://docs.apiframe.ai">
+                    Docs
+                </a>
+            </li>
+            <li>
+                <a href="/pricing">
+                    Pricing
+                </a>
+            </li>
+            <li>
+                <a href="https://blog.apiframe.ai">
+                    Blog
+                </a>
+            </li>
+            <li>
+                <a href="https://apiframe.getrewardful.com/signup" target="_blank">
+                    <span class="text-gray-700 font-light">$</span>Affiliates
+                </a>
+            </li>
+        </ul>
+
+        <p class="hidden md:block">
+            <a href="https://app.apiframe.ai/signup" class="bg-[#121116] block text-[#E2E2E2] px-5 py-2.5 rounded-md font-apfont text-sm hover:bg-opacity-80">
+                Connect
+                <img src="/images/arrow-right.png" alt="arrow" class="w-5 inline-block ml-1">
+            </a>
+        </p>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-[#FBFBFB] mx-4 px-4 py-5 rounded-b-md">
+        <ul class="space-y-4 font-apfont text-sm">
+            <li class="mega-menu-parent select-none">
+                <span class="inline-flex items-center hover:no-underline mega-hover cursor-pointer aspan">
+                    <span class="">Products</span>
+                    <span
+                        class="material-symbols-outlined rotate-90 -mt-1 no-underline hover:no-underline  duration-1000 text-[16px]">
+                        play_arrow
+                    </span>
+                </span>
+
+                <div class="mega-menu h-0 opacity-0 overflow-hidden transition duration-1000">
+                    <div class=" mt-[30px] w-full h-fit bg-white rounded-md shadow-md p-2 font-normal font-inter">
+                        <div class="grid grid-cols-1 gap-3">
+
+                            <a href="/ai-image-generation">
+                                <div data-color="#316bff" class="flex gap-3 p-2 bg-white rounded-md duration-700">
+                                    <div class="shrink-0">
+                                        <p class="bg-[#316bff22] rounded-md p-2 logo-container duration-700"><img
+                                                src="/images/ai-image-icon.svg" alt="apiframe"
+                                                class="w-8 rounded p-1 bg-[#316BFF]"></p>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-apfont">AI Image</h3>
+                                        <p class="text-gray-700">Powerful AI tools to help you create stunning images.
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <a href="/ai-photos-generation">
+                                <div data-color="#ff4d4d" class="flex gap-3 p-2 bg-white rounded-md duration-700">
+                                    <div class="shrink-0">
+                                        <p class="bg-[#316bff22] rounded-md p-2 logo-container duration-700"><img
+                                                src="/images/ai-photos-icon.svg" alt="apiframe"
+                                                class="w-8 rounded p-1 bg-[#FF4D4D]"></p>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-apfont">AI Photos</h3>
+                                        <p class="text-gray-700">Create realistic photos of a subject.</p>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <a href="/ai-video-generation">
+                                <div data-color="#38a1d6" class="flex gap-3 p-2 bg-white rounded-md duration-700">
+                                    <div class="shrink-0">
+                                        <p class="bg-[#316bff22] rounded-md p-2 logo-container duration-700"><img
+                                                src="/images/ai-video-icon.svg" alt="apiframe"
+                                                class="w-8 rounded p-1 bg-[#38A1D6]"></p>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-apfont">AI Video</h3>
+                                        <p class="text-gray-700">Create any video you can imagine with AI.</p>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <a href="/ai-faceswap">
+                                <div data-color="#ffb866" class="flex gap-3 p-2 bg-white rounded-md duration-700">
+                                    <div class="shrink-0">
+                                        <p class="bg-[#316bff22] rounded-md p-2 logo-container duration-700">
+                                            <span class="inline-block m-0 w-8 bg-[#FFB866] rounded p-[1px]">
+                                                <img src="/images/faceswap-icon-2.svg" alt="apiframe"
+                                                    class="inline-block">
+                                            </span>
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-apfont">AI Faceswap</h3>
+                                        <p class="text-gray-700">Swap faces in a photo or video.</p>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <a href="/ai-music-generation">
+                                <div data-color="#2b2e3d" class="flex gap-3 p-2 bg-white rounded-md duration-700">
+                                    <div class="shrink-0">
+                                        <p class="bg-[#316bff22] rounded-md p-2 logo-container duration-700"><img
+                                                src="/images/ai-music-icon.svg" alt="apiframe"
+                                                class="w-8 rounded p-1 bg-[#2b2e3d]"></p>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-apfont">AI Music</h3>
+                                        <p class="text-gray-700">Create amazing and realistic music with AI.</p>
+                                    </div>
+                                </div>
+                            </a>
+
+                        </div>
+
+                    </div>
+                </div>
+            </li>
+            <li>
+                <a href="https://docs.apiframe.ai">
+                    Docs
+                </a>
+            </li>
+            <li>
+                <a href="/pricing">
+                    Pricing
+                </a>
+            </li>
+            <li>
+                <a href="https://blog.apiframe.ai">
+                    Blog
+                </a>
+            </li>
+            <li>
+                <a href="https://apiframe.getrewardful.com/signup" target="_blank">
+                    <span class="text-gray-700 font-light">$</span>Affiliates
+                </a>
+            </li>
+            <li class="pt-4">
+                <a href="https://app.apiframe.ai/signup"
+                    class="w-full bg-[#121116] block text-[#E2E2E2] px-5 py-2.5 rounded-md font-apfont text-sm hover:!bg-opacity-95 text-center hover:no-underline">
+                    Connect
+                    <img src="/images/arrow-right.png" alt="arrow" class="w-5 inline-block ml-1">
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<script>
+    let showMobileMegaMenu = false;
+
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    let isMobileMenuOpen = !mobileMenu.classList.contains('hidden');
+
+
+
+    const mobileMegaMenu = document.querySelector('#mobile-menu .mega-menu');
+    const mobileMegaMenuButton = document.querySelector('#mobile-menu .mega-hover');
+
+
+
+    mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        isMobileMenuOpen = !isMobileMenuOpen;
+
+        if (!isMobileMenuOpen) {
+            showMobileMegaMenu = false;
+            toggleMobileMegaMenu();
+        }
+    });
+
+    function toggleMobileMegaMenu() {
+        if (showMobileMegaMenu) {
+            mobileMegaMenu.classList.remove('h-0');
+            mobileMegaMenu.classList.remove('opacity-0');
+            mobileMegaMenu.classList.add('h-fit');
+            mobileMegaMenu.classList.add('opacity-100');
+            mobileMegaMenuButton.classList.add('active-mobile-mega-menu');
+        } else {
+            mobileMegaMenu.classList.remove('h-fit');
+            mobileMegaMenu.classList.add('h-0');
+            mobileMegaMenu.classList.add('opacity-0');
+            mobileMegaMenu.classList.remove('opacity-100');
+            mobileMegaMenuButton.classList.remove('active-mobile-mega-menu');
+        }
+    }
+
+    mobileMegaMenuButton.addEventListener('click', () => {
+        showMobileMegaMenu = !showMobileMegaMenu;
+
+        toggleMobileMegaMenu();
+    });
+</script>
+        <div class="mt-[30px]">
+    <div class="relative pt-20 pb-10 md:py-20 z-10">
+
+
+        <div class="hidden md:block relative overflow-hidden ">
+            <lottie-player class="mx-auto h-fit  z-0 max-w-[1280px]" src="./assets/animation3.json"
+                background="transparent" speed="1" loop autoplay></lottie-player>
+        </div>
+
+
+        <h1
+            class="p-1 lg:p-0  text-[1.9rem] md:text-[1.9rem] lg:text-[2.4rem] xl:text-[3rem] font-bold  font-apfont max-w-[590px] text-center  mx-auto leading-[1.3] text-[#E2E2E2] -mt-0 md:-mt-[160px] lg:-mt-[200px] xl:-mt-[250px] relative z-30">
+            The #1 way to integrate  <br> <span
+                class="bg-gradient-to-r from-[#FEFF91] to-[#B4FF6C] px-2 py-1.5 text-black rounded-lg"> the Midjourney API </span>  <br> in  <span class="bg-gradient-to-r from-[#FEFF91] to-[#B4FF6C] bg-clip-text text-transparent"> your apps</span>
+        </h1>
+
+        <div class="text-center mt-10 relative z-30">
+            <a href="https://app.apiframe.ai/signup"
+                class="text-[#121116] bg-[#E2E2E2] px-5 py-2.5 rounded-md font-apfont text-sm hover:bg-opacity-80 border inline-flex items-center justify-center">
+                <img src="./images/mj.png" alt="arrow" class=" w-7 inline-block">
+                <span>Integrate Midjourney</span>
+            </a>
+
+            <div class="flex justify-between max-w-[316px] mx-auto -mt-7">
+                <img src="./images/pigtail.png" alt="logo1" class="w-[50px]">
+                <img src="./images/pigtail.png" alt="logo2" class="w-[50px] scale-x-[-1]">
+            </div>
+        </div>
+    </div>
+
+    <div class="pb-[0px] mt-8 relative z-30">
+    <div class="xl:flex relative z-30 text-white max-w-[1200px] mx-auto font-inter ">
+        <div class="w-fit mx-auto xl:mx-0 text-center xl:text-left">
+            <p class="text-[2rem] font-semibold">+150,000</p>
+            <p class="text-gray-400 font-medium">images generated every week.</p>
+        </div>
+        <p class="hidden xl:block h-[100px] w-[1px] bg-blue-500 mx-8"></p>
+        <div class="lg:flex mt-8 xl:mt-0 w-fit mx-auto xl:mx-0">
+            <div class="max-w-[380px] mx-auto lg:mx-0 text-center lg:text-left">
+                <p class="text-[2rem] font-semibold">Businesses trust us</p>
+                <p class="text-gray-400 font-medium">
+                    Average rating of 4.7 out of 5 from several reviews across Trustpilot, G2 and Product Hunt.
+                </p>
+            </div>
+            <div class="grid grid-cols-3 gap-4 w-fit mx-auto lg:mx-0 mt-8 lg:mt-0">
+                <div
+                    class="border border-gray-600 border-opacity-20 rounded-md p-3 bg-gray-700 bg-opacity-5">
+                    <p class="text-center">Trustpilot</p>
+                    <p class="text-[1.5rem] font-semibold font-apfont text-center">4.4 / 5</p>
+                    <p class="text-center">
+                        <img src="./images/full-star.png" alt="full-star" class="w-[12px] inline-block">
+                        <img src="./images/full-star.png" alt="full-star" class="w-[12px] inline-block">
+                        <img src="./images/full-star.png" alt="full-star" class="w-[12px] inline-block">
+                        <img src="./images/full-star.png" alt="full-star" class="w-[12px] inline-block">
+                        <img src="./images/half-star.png" alt="half-star" class="w-[6px] inline-block">
+                    </p>
+                </div>
+                <div
+                    class="border border-gray-600 border-opacity-20 rounded-md p-3 bg-gray-700 bg-opacity-5">
+                    <p class="text-center">G2 Reviews</p>
+                    <p class="text-[1.5rem] font-semibold font-apfont text-center">4.7 / 5</p>
+                    <p class="text-center">
+                        <img src="./images/full-star.png" alt="full-star" class="w-[12px] inline-block">
+                        <img src="./images/full-star.png" alt="full-star" class="w-[12px] inline-block">
+                        <img src="./images/full-star.png" alt="full-star" class="w-[12px] inline-block">
+                        <img src="./images/full-star.png" alt="full-star" class="w-[12px] inline-block">
+                        <img src="./images/full-star.png" alt="half-star" class="w-[12px] inline-block">
+                    </p>
+                </div>
+                <div
+                    class="border border-gray-600 border-opacity-20 rounded-md p-3 bg-gray-700 bg-opacity-5">
+                    <p class="text-center">Product Hunt</p>
+                    <p class="text-[1.5rem] font-semibold font-apfont text-center">5 / 5</p>
+                    <p class="text-center">
+                        <img src="./images/full-star.png" alt="full-star" class="w-[12px] inline-block">
+                        <img src="./images/full-star.png" alt="full-star" class="w-[12px] inline-block">
+                        <img src="./images/full-star.png" alt="full-star" class="w-[12px] inline-block">
+                        <img src="./images/full-star.png" alt="full-star" class="w-[12px] inline-block">
+                        <img src="./images/full-star.png" alt="half-star" class="w-[12px] inline-block">
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+    <div class="relative">
+        <img src="./images/rect.png" alt="rect" class="w-[100vw] bg-[#2B2E3D] object-contain absolute top-0 left-0 z-0">
+    </div>
+</div>
+    </div>
+
+    <div id="tools" class="bg-[#2B2E3D]  pt-20 lg:pt-48 pb-10 lg:pb-32">
+
+        <div id="slider" class="hidden sm:block relative z-0">
+            <div class="going-left">
+                <div class=" carousel">
+                    <div class="group">
+                        <img loading="lazy" src="https://cdn.apiframe.pro/images/54323605962396860332900509033664-1.png"
+                            alt="" class="card object-cover">
+                        <img loading="lazy" src="https://cdn.apiframe.pro/images/145559655091749579166314-1.png" alt=""
+                            class="card object-cover">
+                        <img loading="lazy" src="https://cdn.apiframe.pro/images/963294505089076235202666-1.png" alt=""
+                            class="card object-cover">
+                        <img loading="lazy" src="https://cdn.apiframe.pro/images/150581806577244087175524-1.png" alt=""
+                            class="card object-cover">
+                        <img loading="lazy" src="https://cdn.apiframe.pro/images/129445647392041009341059.png" alt=""
+                            class="card object-cover">
+                        <img loading="lazy" src="https://cdn.apiframe.pro/images/558826169629802013748394.png" alt=""
+                            class="card object-cover">
+                        <img loading="lazy" src="https://cdn.apiframe.pro/images/644294880252391229171821-1.png" alt=""
+                            class="card object-cover">
+                        <img loading="lazy" src="https://cdn.apiframe.pro/images/655035547957788679131731-1.png" alt=""
+                            class="card object-cover">
+                        <img loading="lazy" src="https://cdn.apiframe.pro/images/661979370421416258198225-1.png" alt=""
+                            class="card object-cover">
+                        <img loading="lazy" src="https://cdn.apiframe.pro/images/541902596238466824861815-1.png" alt=""
+                            class="card object-cover">
+                        <img loading="lazy" src="https://cdn.apiframe.pro/images/963294505089076235202666-1.png" alt=""
+                            class="card object-cover">
+
+                    </div>
+
+                    <div aria-hidden="true" class="group">
+                        <img loading="lazy" src="https://cdn.apiframe.pro/images/54323605962396860332900509033664-1.png"
+                            alt="" class="card object-cover">
+                        <img loading="lazy" src="https://cdn.apiframe.pro/images/145559655091749579166314-1.png" alt=""
+                            class="card object-cover">
+                        <img loading="lazy" src="https://cdn.apiframe.pro/images/963294505089076235202666-1.png" alt=""
+                            class="card object-cover">
+                        <img loading="lazy" src="https://cdn.apiframe.pro/images/150581806577244087175524-1.png" alt=""
+                            class="card object-cover">
+                        <img loading="lazy" src="https://cdn.apiframe.pro/images/129445647392041009341059.png" alt=""
+                            class="card object-cover">
+                        <img loading="lazy" src="https://cdn.apiframe.pro/images/558826169629802013748394.png" alt=""
+                            class="card object-cover">
+                        <img loading="lazy" src="https://cdn.apiframe.pro/images/644294880252391229171821-1.png" alt=""
+                            class="card object-cover">
+                        <img loading="lazy" src="https://cdn.apiframe.pro/images/655035547957788679131731-1.png" alt=""
+                            class="card object-cover">
+                        <img loading="lazy" src="https://cdn.apiframe.pro/images/661979370421416258198225-1.png" alt=""
+                            class="card object-cover">
+                        <img loading="lazy" src="https://cdn.apiframe.pro/images/541902596238466824861815-1.png" alt=""
+                            class="card object-cover">
+                        <img loading="lazy" src="https://cdn.apiframe.pro/images/963294505089076235202666-1.png" alt=""
+                            class="card object-cover">
+                    </div>
+                </div>
+            </div>
+
+            <div class="going-right">
+                <div class="carousel">
+                    <div class="group">
+                        <img loading="lazy" src="https://cdn.apiframe.pro/images/219431739794643294184460-1.png" alt=""
+                            class="card object-cover">
+                        <img loading="lazy" src="https://cdn.apiframe.pro/images/807511441343377238705267-1.png" alt=""
+                            class="card object-cover">
+                        <img loading="lazy"
+                            src="https://cdn.apiframe.pro/images/607fa964-e92c-4485-8674-3fd58687c188.png" alt=""
+                            class="card object-cover">
+                        <img loading="lazy" src="https://cdn.apiframe.pro/images/161569768672336296587820-1.png" alt=""
+                            class="card object-cover">
+                        <img loading="lazy" src="https://cdn.apiframe.pro/images/680912655087618642920466-1.png" alt=""
+                            class="card object-cover">
+                        <img loading="lazy" src="https://cdn.apiframe.pro/images/43651862843867428809633674530400-1.png"
+                            alt="" class="card object-cover">
+                        <img loading="lazy" src="https://cdn.apiframe.pro/images/657740684908363292739779-1.png" alt=""
+                            class="card object-cover">
+                        <img loading="lazy" src="https://cdn.apiframe.pro/images/710800262643356898801228-1.png" alt=""
+                            class="card object-cover">
+                        <img loading="lazy" src="https://cdn.apiframe.pro/images/10342739127492137177125268587061-1.png"
+                            alt="" class="card object-cover">
+                    </div>
+
+                    <div aria-hidden="true" class="group">
+                        <img loading="lazy" src="https://cdn.apiframe.pro/images/219431739794643294184460-1.png" alt=""
+                            class="card object-cover">
+                        <img loading="lazy" src="https://cdn.apiframe.pro/images/807511441343377238705267-1.png" alt=""
+                            class="card object-cover">
+                        <img loading="lazy"
+                            src="https://cdn.apiframe.pro/images/607fa964-e92c-4485-8674-3fd58687c188.png" alt=""
+                            class="card object-cover">
+                        <img loading="lazy" src="https://cdn.apiframe.pro/images/161569768672336296587820-1.png" alt=""
+                            class="card object-cover">
+                        <img loading="lazy" src="https://cdn.apiframe.pro/images/680912655087618642920466-1.png" alt=""
+                            class="card object-cover">
+                        <img loading="lazy" src="https://cdn.apiframe.pro/images/274991470710131807779575-1.png" alt=""
+                            class="card object-cover">
+                        <img loading="lazy" src="https://cdn.apiframe.pro/images/43651862843867428809633674530400-1.png"
+                            alt="" class="card object-cover">
+                        <img loading="lazy" src="https://cdn.apiframe.pro/images/657740684908363292739779-1.png" alt=""
+                            class="card object-cover">
+                        <img loading="lazy" src="https://cdn.apiframe.pro/images/710800262643356898801228-1.png" alt=""
+                            class="card object-cover">
+                        <img loading="lazy" src="https://cdn.apiframe.pro/images/10342739127492137177125268587061-1.png"
+                            alt="" class="card object-cover">
+                        <img loading="lazy" src="https://cdn.apiframe.pro/images/161569768672336296587820-1.png" alt=""
+                            class="card object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div
+            class="max-w-[800px] mx-auto bg-gradient-to-r from-[#2b2e3db4] via-[#2B2E3D] to-[#2b2e3db4] rounded-xl lg:-mt-[350px] relative z-10">
+            <div class="hidden lg:flex justify-between mb-5 px-10">
+                <img id="tool-1" src="./images/ai-image.svg" alt="ai-image" class="w-[150px] duration-500">
+                <img id="tool-2" src="./images/ai-photos.svg" alt="ai-photos" class="w-[150px] duration-500">
+            </div>
+            <h2 class="text-[2rem] lg:text-[2.8rem] font-apfont text-[#E2E2E2] text-center max-w-[900px] mx-auto p-4">
+                Discover
+                <p id="tool-5"
+                    class="text-[#121116] font-apfont text-[1.5rem] inline-block bg-white p-1 pr-1.5 rounded-md rotate-[-3deg] duration-500">
+                    <img src="./images/webclip.png" alt="apiframe" class="w-10 inline">
+                    <span class="">
+                        apiframe
+                    </span>
+                </p>
+                a suite of AI APIs to <span
+                    class="bg-clip-text text-transparent bg-gradient-to-r from-[#FEFF91] to-[#B4FF6C]">enhance <span
+                        id="tool-center">your</span> apps and workflows</span> with code or
+                no-code.
+            </h2>
+            <div class="hidden lg:flex justify-between mt-5 px-10">
+                <img id="tool-3" src="./images/faceswap.svg" alt="faceswap" class="w-[150px] duration-500">
+                <img id="tool-4" src="./images/ai-video.svg" alt="ai-video" class="w-[150px] duration-500">
+            </div>
+        </div>
+
+
+
+
+        <div class=" mt-20 lg:mt-40" id="tool-1">
+    <h2 class="text-[2rem] lg:text-[2.8rem] font-apfont text-[#E2E2E2] text-center max-w-[900px] mx-auto">
+        Generate high-quality images with
+        <p id=""
+            class="text-[#121116] font-apfont text-[1.5rem] inline-block bg-white p-1 px-2 rounded-md rotate-[-3deg] duration-500">
+            <img src="./images/mj.png" alt="midjourney" class="w-10 inline">
+            <span class="">
+                Midjourney
+            </span>
+        </p>
+        , the best Model for AI Images.
+    </h2>
+
+    <div class="flex flex-col-reverse md:grid grid-cols-6 xl:grid-cols-8 md:gap-8 mt-20 max-w-[1200px] mx-auto p-4 xl:p-0">
+        <div class="col-span-3 ">
+            <div class="bg-[#16151E] rounded-b-2xl md:rounded-2xl p-10 h-fit">
+                <div class="inline-flex items-center">
+                    <span id="tool-1-step-1-number"
+                        class="bg-[#316BFF] text-[2rem] font-apfont text-[#E2E2E2] rounded-xl px-5 py-2 !w-[60px] !h-[60px]">
+                        1
+                    </span>
+                    <span class="w-[40px] xl:w-[80px] h-[0px] border-b-2 border-[#67676F] border-dashed"></span>
+                    <span id="tool-1-step-2-number"
+                        class="bg-[#67676F] text-[2rem] font-apfont text-[#E2E2E2] rounded-xl px-5 py-2 !w-[60px] !h-[60px]">
+                        2
+                    </span>
+                    <span class="w-[40px] xl:w-[80px] h-[0px] border-b-2 border-[#67676F] border-dashed"></span>
+                    <span id="tool-1-step-3-number"
+                        class="bg-[#67676F] text-[2rem] font-apfont text-[#E2E2E2] rounded-xl px-5 py-2 !w-[60px] !h-[60px]">
+                        3
+                    </span>
+                </div>
+                <div class="max-h-[350px] overflow-hidden">
+                    <div class="mt-3 md:max-w-[350px]" id="tool-1-step-1">
+                        <h3 class="mt-5 text-[1.2rem] font-inter font-medium text-[#E2E2E2]">Bring your
+                            imagination to life
+                        </h3>
+                        <p class="mt-5 text-[1rem] font-inter font-medium text-gray-400">
+                            With Midjourney, you can generate high-quality images with a simple text prompt.
+                            Anything you
+                            can imagine, you can create. Your imagination is the only limit.
+                        </p>
+                    </div>
+                    <div class="mt-3 md:max-w-[350px]" id="tool-1-step-2">
+                        <h3 class="mt-5 text-[1.2rem] font-inter font-medium text-[#E2E2E2]">Refine your
+                            creation
+                        </h3>
+                        <p class="mt-5 text-[1rem] font-inter font-medium text-gray-400">
+                            Want it bigger? Smaller? More detailed? You can refine your creation using one of
+                            the
+                            multiple tools: Upscaling, Variation, Zooming, and more.
+                        </p>
+                    </div>
+                    <div class="mt-3 md:max-w-[350px]" id="tool-1-step-3">
+                        <h3 class="mt-5 text-[1.2rem] font-inter font-medium text-[#E2E2E2]">Show the world
+                        </h3>
+                        <p class="mt-5 text-[1rem] font-inter font-medium text-gray-400">
+                            We host your images indefinitely on our private CDN, you can use our links or
+                            download
+                            them and use them anywhere, anytime.
+                        </p>
+                    </div>
+                </div>
+                <div class="mt-5 bg-gray-400 bg-opacity-10 h-[240px] rounded-xl p-4">
+                    <p class="text-[1rem] font-inter font-medium text-gray-200">
+                        <span class="font-bold block">Ondrej B.</span>
+                        <span class="block text-gray-500 text-opacity-70">CEO & Founder - Small Business</span>
+                    </p>
+                    <p class="text-[1rem] font-inter font-medium text-gray-200 mt-2">
+                        <span>Very good Midjourney API. Using them on scale and I am very satisfied.
+                        I tried a lot of competitors, but this API works like a charm finally + they care about discord accounts and handling all nonsense banning from MJ side.
+                    </span>
+                    </p>
+                </div>
+            </div>
+            <div class="mt-5 sm:flex justify-between">
+                <a href="https://app.apiframe.ai/signup" target="_blank"
+                    class="bg-[#316BFF] text-white font-apfont rounded-xl px-5 py-3 hover:bg-opacity-80 w-full sm:w-auto inline-block text-center">
+                    Start creating <img src="./images/arrow-right.png" alt="arrow-right" class="w-5 inline">
+                </a>
+
+                <p class="flex gap-5 mt-3 sm:mt-0">
+                    <a class="bg-[#16151E] rounded-xl px-3 py-3 text-white font-apfont inline-flex items-center gap-2 hover:text-gray-400"
+                        href="https://docs.apiframe.ai/api-endpoints" target="_blank">Docs <span
+                            class="material-symbols-outlined text-[18px]">developer_guide</span></a>
+                    <a href="https://blog.apiframe.ai" target="_blank"
+                        class="bg-[#16151E] rounded-xl px-3 py-3 text-white font-apfont inline-flex items-center gap-2 hover:text-gray-400">
+                        Blog
+                        <span class="material-symbols-outlined text-[18px]">article</span>
+                    </a>
+                </p>
+            </div>
+        </div>
+        <div class="col-span-3 xl:col-span-5">
+            <div>
+                <img id="tool-1-image-1" src="./images/woman-portrait-min.png" alt="midjourney api illustration of a woman portrait"
+                    class="rounded-t-3xl md:rounded-3xl max-w-[100%] w-full xl:w-auto inline-block min-h-[630px] object-cover">
+                <img id="tool-1-image-2" src="./images/space-station-min.png" alt="midjourney api illustration of a space station"
+                    class="rounded-t-3xl md:rounded-3xl max-w-[100%] w-full xl:w-auto inline-block min-h-[630px] object-cover">
+                <img id="tool-1-image-3" src="./images/magical-landscape-min.png" alt="midjourney api illustration of a magical landscape"
+                    class="rounded-t-3xl md:rounded-3xl max-w-[100%] w-full xl:w-auto inline-block min-h-[630px] object-cover">
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class=" mt-20 lg:mt-40" id="tool-2">
+    <h2 class="text-[2rem] lg:text-[2.8rem] font-apfont text-[#E2E2E2] text-center max-w-[900px] mx-auto">
+        Generate realistic
+        <p id=""
+            class="text-[#121116] font-apfont text-[1.5rem] inline-block bg-white p-1 px-2 rounded-md rotate-[-3deg] duration-500">
+            <img src="./images/ai-video-icon-black.png" alt="ai video" class="w-10 inline">
+            <span class="">
+                Videos
+            </span>
+        </p>
+        , with the best Models for AI Videos.
+    </h2>
+
+    <div class="flex flex-col-reverse md:grid grid-cols-6 xl:grid-cols-8 md:gap-8 mt-20 max-w-[1200px] mx-auto p-4 xl:p-0">
+        <div class="col-span-3 order-2">
+            <div class="bg-[#16151E] rounded-b-2xl md:rounded-2xl p-10 h-fit">
+                <div class="inline-flex items-center">
+                    <span id="tool-2-step-1-number"
+                        class="bg-[#316BFF] text-[2rem] font-apfont text-[#E2E2E2] rounded-xl px-5 py-2 !w-[60px] !h-[60px]">
+                        1
+                    </span>
+                    <span class="w-[40px] xl:w-[80px] h-[0px] border-b-2 border-[#67676F] border-dashed"></span>
+                    <span id="tool-2-step-2-number"
+                        class="bg-[#67676F] text-[2rem] font-apfont text-[#E2E2E2] rounded-xl px-5 py-2 !w-[60px] !h-[60px]">
+                        2
+                    </span>
+                    <span class="w-[40px] xl:w-[80px] h-[0px] border-b-2 border-[#67676F] border-dashed"></span>
+                    <span id="tool-2-step-3-number"
+                        class="bg-[#67676F] text-[2rem] font-apfont text-[#E2E2E2] rounded-xl px-5 py-2 !w-[60px] !h-[60px]">
+                        3
+                    </span>
+                </div>
+                <div class="max-h-[350px] overflow-hidden">
+                    <div class="mt-3 md:max-w-[350px]" id="tool-2-step-1">
+                        <h3 class="mt-5 text-[1.2rem] font-inter font-medium text-[#E2E2E2]">Generate amazing AI
+                            videos
+                        </h3>
+                        <p class="mt-5 text-[1rem] font-inter font-medium text-gray-400">
+                            Choose between Runway ML, Kling, Luma AI, and more. You can generate videos with a simple text prompt, an image, or a video.
+                        </p>
+                    </div>
+                    <div class="mt-3 md:max-w-[350px]" id="tool-2-step-2">
+                        <h3 class="mt-5 text-[1.2rem] font-inter font-medium text-[#E2E2E2]">Extend your videos
+                        </h3>
+                        <p class="mt-5 text-[1rem] font-inter font-medium text-gray-400">
+                            Want it longer? You can extend your videos using the "extend" feature offered by most models.
+                        </p>
+                    </div>
+                    <div class="mt-3 md:max-w-[350px]" id="tool-2-step-3">
+                        <h3 class="mt-5 text-[1.2rem] font-inter font-medium text-[#E2E2E2]">Show the world
+                        </h3>
+                        <p class="mt-5 text-[1rem] font-inter font-medium text-gray-400">
+                            After you generate your video, you can download it and use it anywhere, anytime. There is no limit on the usage.
+                        </p>
+                    </div>
+                </div>
+                <div class="mt-5 bg-gray-400 bg-opacity-10 h-[240px] rounded-xl p-4">
+                    <p class="text-[1rem] font-inter font-medium text-gray-200">
+                        <span class="font-bold block">Alex S.</span>
+                        <span class="block text-gray-500 text-opacity-70">Design Engineering Partner - Small Business</span>
+                    </p>
+                    <p class="text-[1rem] font-inter font-medium text-gray-200 mt-2">
+                        <span>They have : <br> - an easy integration, <br> - great documentation, <br> - an npm library, <br> - and a discord community for questions.
+                    </span>
+                    </p>
+                </div>
+            </div>
+            <div class="mt-5 sm:flex justify-between">
+                <a href="https://app.apiframe.ai/signup" target="_blank"
+                    class="bg-[#316BFF] text-white font-apfont rounded-xl px-5 py-3 hover:bg-opacity-80 w-full sm:w-auto inline-block text-center">
+                    Start creating <img src="./images/arrow-right.png" alt="arrow-right" class="w-5 inline">
+                </a>
+
+                <p class="flex gap-5 mt-3 sm:mt-0">
+                    <a class="bg-[#16151E] rounded-xl px-3 py-3 text-white font-apfont inline-flex items-center gap-2 hover:text-gray-400"
+                        href="https://docs.apiframe.ai/luma-ai-api/imagine" target="_blank">Docs <span
+                            class="material-symbols-outlined text-[18px]">developer_guide</span></a>
+                    <a href="https://blog.apiframe.ai" target="_blank"
+                        class="bg-[#16151E] rounded-xl px-3 py-3 text-white font-apfont inline-flex items-center gap-2 hover:text-gray-400">
+                        Blog
+                        <span class="material-symbols-outlined text-[18px]">article</span>
+                    </a>
+                </p>
+            </div>
+        </div>
+        <div class="col-span-3 xl:col-span-5 order-1">
+
+            <div>
+                <img id="tool-2-image-1" src="./images/robots-fighting.png" alt="robots fighting"
+                    class="rounded-t-3xl md:rounded-3xl max-w-[100%] w-full xl:w-auto inline-block min-h-[630px] object-cover">
+                <img id="tool-2-image-2" src="./images/bear-playing-guitar.png" alt="bear playing guitar"
+                    class="rounded-t-3xl md:rounded-3xl max-w-[100%] w-full xl:w-auto inline-block min-h-[630px] object-cover">
+                <img id="tool-2-image-3" src="./images/car-speeding.png" alt="car speeding"
+                    class="rounded-t-3xl md:rounded-3xl max-w-[100%] w-full xl:w-auto inline-block min-h-[630px] object-cover">
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class=" mt-20 lg:mt-40" id="tool-3">
+    <h2 class="text-[2rem] lg:text-[2.8rem] font-apfont text-[#E2E2E2] text-center max-w-[900px] mx-auto">
+        Create realistic and good quality
+        <p id=""
+            class="text-[#121116] font-apfont text-[1.5rem] inline-block bg-white p-1 px-2 rounded-md rotate-[-3deg] duration-500">
+            <img src="./images/faceswap-icon.png" alt="ai video" class="w-10 inline">
+            <span class="">
+                Faceswap
+            </span>
+        </p>
+        images with AI .
+    </h2>
+
+    <div class="flex flex-col-reverse md:grid grid-cols-6 xl:grid-cols-8 md:gap-8 mt-20 max-w-[1200px] mx-auto p-4 xl:p-0">
+        <div class="col-span-3 ">
+            <div class="bg-[#16151E] rounded-b-2xl md:rounded-2xl p-10 h-fit">
+                <div class="inline-flex items-center">
+                    <span id="tool-3-step-1-number"
+                        class="bg-[#316BFF] text-[2rem] font-apfont text-[#E2E2E2] rounded-xl px-5 py-2 !w-[60px] !h-[60px]">
+                        1
+                    </span>
+                    <span class="w-[40px] xl:w-[80px] h-[0px] border-b-2 border-[#67676F] border-dashed"></span>
+                    <span id="tool-3-step-2-number"
+                        class="bg-[#67676F] text-[2rem] font-apfont text-[#E2E2E2] rounded-xl px-5 py-2 !w-[60px] !h-[60px]">
+                        2
+                    </span>
+                    <span class="w-[40px] xl:w-[80px] h-[0px] border-b-2 border-[#67676F] border-dashed"></span>
+                    <span id="tool-3-step-3-number"
+                        class="bg-[#67676F] text-[2rem] font-apfont text-[#E2E2E2] rounded-xl px-5 py-2 !w-[60px] !h-[60px]">
+                        3
+                    </span>
+                </div>
+                <div class="max-h-[350px] overflow-hidden">
+                    <div class="mt-3 md:max-w-[350px]" id="tool-3-step-1">
+                        <h3 class="mt-5 text-[1.2rem] font-inter font-medium text-[#E2E2E2]">Choose your photos
+                        </h3>
+                        <p class="mt-5 text-[1rem] font-inter font-medium text-gray-400">
+                            For face swapping, you will need a subject photo and a target photo. The face on the target photo will be swapped with the face on the subject photo.
+                        </p>
+                    </div>
+                    <div class="mt-3 md:max-w-[350px]" id="tool-3-step-2">
+                        <h3 class="mt-5 text-[1.2rem] font-inter font-medium text-[#E2E2E2]">Generate your face swap
+                        </h3>
+                        <p class="mt-5 text-[1rem] font-inter font-medium text-gray-400">
+                            By making an API call or using our web app, you can generate the face swap image. The result will be a photo with the face of the subject on the target photo.
+                        </p>
+                    </div>
+                    <div class="mt-3 md:max-w-[350px]" id="tool-3-step-3">
+                        <h3 class="mt-5 text-[1.2rem] font-inter font-medium text-[#E2E2E2]">Show the world
+                        </h3>
+                        <p class="mt-5 text-[1rem] font-inter font-medium text-gray-400">
+                            You can use the face swap image for any purpose, whether it's for social media, marketing, or personal use. You own the image.
+                        </p>
+                    </div>
+                </div>
+                <div class="mt-5 bg-gray-400 bg-opacity-10 h-[240px] rounded-xl p-4">
+                    <p class="text-[1rem] font-inter font-medium text-gray-200">
+                        <span class="font-bold block">Mathieu P.</span>
+                        <span class="block text-gray-500 text-opacity-70">CEO & Founder - Small Business</span>
+                    </p>
+                    <p class="text-[1rem] font-inter font-medium text-gray-200 mt-2">
+                        <span class="leading-[1.8]">
+                        Very powerful API
+                        <br>
+                        Helps you to simplify integration of Midjourney in your CMS or automatize image generation in your workflows. Highly recommended.
+                    </span>
+                    </p>
+                </div>
+            </div>
+            <div class="mt-5 sm:flex justify-between">
+                <a href="https://app.apiframe.ai/signup" target="_blank"
+                    class="bg-[#316BFF] text-white font-apfont rounded-xl px-5 py-3 hover:bg-opacity-80 w-full sm:w-auto inline-block text-center">
+                    Start creating <img src="./images/arrow-right.png" alt="arrow-right" class="w-5 inline">
+                </a>
+
+                <p class="flex gap-5 mt-3 sm:mt-0">
+                    <a class="bg-[#16151E] rounded-xl px-3 py-3 text-white font-apfont inline-flex items-center gap-2 hover:text-gray-400"
+                        href="https://docs.apiframe.ai/api-endpoints/faceswap" target="_blank">Docs <span
+                            class="material-symbols-outlined text-[18px]">developer_guide</span></a>
+                    <a href="https://blog.apiframe.ai" target="_blank"
+                        class="bg-[#16151E] rounded-xl px-3 py-3 text-white font-apfont inline-flex items-center gap-2 hover:text-gray-400">
+                        Blog
+                        <span class="material-symbols-outlined text-[18px]">article</span>
+                    </a>
+                </p>
+            </div>
+        </div>
+        <div class="col-span-3 xl:col-span-5">
+
+            <div>
+                <img id="tool-3-image-1" src="./images/poutine-pope-2-min.png" alt="poutine pope"
+                    class="rounded-t-3xl md:rounded-3xl max-w-[100%] w-full xl:w-auto inline-block min-h-[600px] object-cover">
+                <img id="tool-3-image-2" src="./images/will-nurse-min.png" alt="will nurse"
+                    class="rounded-t-3xl md:rounded-3xl max-w-[100%] w-full xl:w-auto inline-block min-h-[600px] object-cover">
+                <img id="tool-3-image-3" src="./images/brad-superman-min.png" alt="brad superman"
+                    class="rounded-t-3xl md:rounded-3xl max-w-[100%] w-full xl:w-auto inline-block min-h-[600px] object-cover">
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class=" mt-20 lg:mt-40" id="tool-4">
+    <h2 class="text-[2rem] lg:text-[2.8rem] font-apfont text-[#E2E2E2] text-center max-w-[900px] mx-auto">
+        Generate ultra realistic
+        <p id=""
+            class="text-[#121116] font-apfont text-[1.5rem] inline-block bg-white p-1 px-2 rounded-md rotate-[-3deg] duration-500">
+            <img src="./images/ai-photos-icon.png" alt="ai photos" class="w-8 inline">
+            <span class="">
+               Photos
+            </span>
+        </p>
+        that nobody can tell apart from real ones.
+    </h2>
+
+    <div class="flex flex-col-reverse md:grid grid-cols-6 xl:grid-cols-8 md:gap-8 mt-20 max-w-[1200px] mx-auto p-4 xl:p-0">
+        <div class="col-span-3 order-2">
+            <div class="bg-[#16151E] rounded-b-2xl md:rounded-2xl p-10 h-fit">
+                <div class="inline-flex items-center">
+                    <span id="tool-4-step-1-number"
+                        class="bg-[#316BFF] text-[2rem] font-apfont text-[#E2E2E2] rounded-xl px-5 py-2 !w-[60px] !h-[60px]">
+                        1
+                    </span>
+                    <span class="w-[40px] xl:w-[80px] h-[0px] border-b-2 border-[#67676F] border-dashed"></span>
+                    <span id="tool-4-step-2-number"
+                        class="bg-[#67676F] text-[2rem] font-apfont text-[#E2E2E2] rounded-xl px-5 py-2 !w-[60px] !h-[60px]">
+                        2
+                    </span>
+                    <span class="w-[40px] xl:w-[80px] h-[0px] border-b-2 border-[#67676F] border-dashed"></span>
+                    <span id="tool-4-step-3-number"
+                        class="bg-[#67676F] text-[2rem] font-apfont text-[#E2E2E2] rounded-xl px-5 py-2 !w-[60px] !h-[60px]">
+                        3
+                    </span>
+                </div>
+                <div class="max-h-[350px] overflow-hidden">
+                    <div class="mt-3 md:max-w-[350px]" id="tool-4-step-1">
+                        <h3 class="mt-5 text-[1.2rem] font-inter font-medium text-[#E2E2E2]">Train AI on a subject
+                        </h3>
+                        <p class="mt-5 text-[1rem] font-inter font-medium text-gray-400">
+                            With a set of photos from a subject (whether selfies or portraits), you can train AI to understand how the subject looks like.
+                        </p>
+                    </div>
+                    <div class="mt-3 md:max-w-[350px]" id="tool-4-step-2">
+                        <h3 class="mt-5 text-[1.2rem] font-inter font-medium text-[#E2E2E2]">Generate photos
+                        </h3>
+                        <p class="mt-5 text-[1rem] font-inter font-medium text-gray-400">
+                            After the training process, you can generate high quality photos of the subject. These photos are indistinguishable from real ones.
+                        </p>
+                    </div>
+                    <div class="mt-3 md:max-w-[350px]" id="tool-4-step-3">
+                        <h3 class="mt-5 text-[1.2rem] font-inter font-medium text-[#E2E2E2]">Show the world
+                        </h3>
+                        <p class="mt-5 text-[1rem] font-inter font-medium text-gray-400">
+                            You can use the photos for any purpose, whether it's for social media, marketing, or personal use. You own the photos.
+                        </p>
+                    </div>
+                </div>
+                <div class="mt-5 bg-gray-400 bg-opacity-10 h-[240px] rounded-xl p-4">
+                    <p class="text-[1rem] font-inter font-medium text-gray-200">
+                        <span class="font-bold block">Fernando G.</span>
+                        <span class="block text-gray-500 text-opacity-70">CEO & Founder - Small Business</span>
+                    </p>
+                    <p class="text-[1rem] font-inter font-medium text-gray-200 mt-2">
+                        <span class="leading-[1.8]">The API works well, it is fast and returns everything necessary for the applications.
+                            <br>
+                            Its integration is easy and the support response is fast.
+                    </span>
+                    </p>
+                </div>
+            </div>
+            <div class="mt-5 sm:flex justify-between">
+                <a href="https://app.apiframe.ai/signup" target="_blank"
+                    class="bg-[#316BFF] text-white font-apfont rounded-xl px-5 py-3 hover:bg-opacity-80 w-full sm:w-auto inline-block text-center">
+                    Start creating <img src="./images/arrow-right.png" alt="arrow-right" class="w-5 inline">
+                </a>
+
+                <p class="flex gap-5 mt-3 sm:mt-0">
+                    <a class="bg-[#16151E] rounded-xl px-3 py-3 text-white font-apfont inline-flex items-center gap-2 hover:text-gray-400"
+                        href="https://docs.apiframe.ai/ai-photos" target="_blank">Docs <span
+                            class="material-symbols-outlined text-[18px]">developer_guide</span></a>
+                    <a href="https://blog.apiframe.ai" target="_blank"
+                        class="bg-[#16151E] rounded-xl px-3 py-3 text-white font-apfont inline-flex items-center gap-2 hover:text-gray-400">
+                        Blog
+                        <span class="material-symbols-outlined text-[18px]">article</span>
+                    </a>
+                </p>
+            </div>
+        </div>
+        <div class="col-span-3 xl:col-span-5 order-1">
+
+            <div>
+                <img id="tool-4-image-1" src="./images/asian-woman-2-min.png" alt="asian woman"
+                    class="rounded-t-3xl md:rounded-3xl max-w-[100%] w-full xl:w-auto inline-block min-h-[630px] object-cover">
+                <img id="tool-4-image-2" src="./images/black-man-min.png" alt="black man"
+                    class="rounded-t-3xl md:rounded-3xl max-w-[100%] w-full xl:w-auto inline-block min-h-[630px] object-cover">
+                <img id="tool-4-image-3" src="./images/white-man-min.png" alt="white man"
+                    class="rounded-t-3xl md:rounded-3xl max-w-[100%] w-full xl:w-auto inline-block min-h-[630px] object-cover">
+            </div>
+
+        </div>
+    </div>
+</div>    </div>
+
+    <div class="bg-[#121116] pt-32 pb-20 px-4 xl:px-0">
+            <div class="md:grid grid-cols-6 xl:grid-cols-8 gap-10 max-w-[1200px] mx-auto ">
+                <div class="col-span-3">
+                    <h2 class="text-[2.5rem] font-apfont text-[#fff]">
+                        What people build with Apiframe.
+                    </h2>
+                    <h3 class="text-[1.5rem] font-inter text-[#fff]">
+                        Here are the most popular use cases for our APIs.
+                    </h3>
+                    <div class="mt-10 space-y-2 use-case-items">
+                        <div class="bg-gray-500 bg-opacity-10 text-gray-800 rounded-xl p-4 cursor-pointer hover:bg-opacity-5 use-case-item active max-w-[690px]"
+                            data-image="./images/ai-avatars.png">
+                            <h3 class="text-[1.3rem]  font-medium">
+                                AI Avatar apps
+                            </h3>
+                            <p class="text-[1rem] font-inter font-medium  use-case-content">
+                                Create your own AI avatar apps with our AI Avatar API.
+                            </p>
+                        </div>
+                        <div class="bg-gray-500 bg-opacity-10 text-gray-800 rounded-xl p-4 cursor-pointer hover:bg-opacity-5 use-case-item"
+                            data-image="./images/ai-quizzes.png">
+                            <h3 class="text-[1.3rem]  font-medium">
+                                AI Generated Quizzes
+                            </h3>
+                            <p class="text-[1rem] font-inter font-medium  use-case-content hidden">
+                                Create your own AI quizzes with our AI Quizzes API.
+                            </p>
+                        </div>
+                        <div class="bg-gray-500 bg-opacity-10 text-gray-800 rounded-xl p-4 cursor-pointer hover:bg-opacity-5 use-case-item"
+                            data-image="./images/ai-headshots.png">
+                            <h3 class="text-[1.3rem]  font-medium">
+                                AI Realistic Headshots
+                            </h3>
+                            <p class="text-[1rem] font-inter font-medium  use-case-content hidden">
+                                Create your own AI realistic headshots with our AI Headshots API.
+                            </p>
+                        </div>
+                        <div class="bg-gray-500 bg-opacity-10 text-gray-800 rounded-xl p-4 cursor-pointer hover:bg-opacity-5 use-case-item"
+                            data-image="./images/ai-stock-photos.png">
+                            <h3 class="text-[1.3rem]  font-medium">
+                                AI Stock Photos
+                            </h3>
+                            <p class="text-[1rem] font-inter font-medium  use-case-content hidden">
+                                Create your own AI stock photos with our AI Stock Photos API.
+                            </p>
+                        </div>
+                        <div class="bg-gray-500 bg-opacity-10 text-gray-800 rounded-xl p-4 cursor-pointer hover:bg-opacity-5 use-case-item"
+                            data-image="./images/social-media-posts.jpeg">
+                            <h3 class="text-[1.3rem]  font-medium">
+                                Automated Social Media Posts
+                            </h3>
+                            <p class="text-[1rem] font-inter font-medium  use-case-content hidden">
+                                Create your own automated social media posts with our Automated Social Media Posts API.
+                            </p>
+                        </div>
+                    </div>
+
+                    <img src="./images/semi-rect.svg" alt="dashed semi rectangle" class="w-[600px] absolute left-0 rotate-180">
+                </div>
+                <div class="col-span-3 xl:col-span-5 pt-0 md:pt-20 ">
+                    <img src="./images/semi-rect.svg" alt="dashed semi rectangle" class="w-[600px] absolute  right-0">
+
+                    <img id="use-case-illustration" src="./images/ai-avatars.png"
+                        alt="ai avatars"
+                        class="rounded-3xl max-w-[690px] inline-block opacity-100 transition-opacity duration-300 mt-[30px] md:mt-[110px]">
+                </div>
+            </div>
+        </div>
+    <div class="pt-40 pb-28 bg-[#121116] text-center">
+    <h2 class="text-[2rem] lg:text-[2.8rem] font-apfont text-white text-center max-w-[900px] mx-auto">
+        Integrate with all your apps
+    </h2>
+    <h3 class="text-[1.5rem] font-inter text-white text-center max-w-[900px] mx-auto mt-5">
+        Get more done with the tools you already use.
+    </h3>
+
+    <p class="mt-6 text-gray-200">
+        Available on your favorite automation platform.
+    </p>
+    <div class="flex justify-center gap-10 mt-3">
+        <a href="https://zapier.com/developer/public-invite/206208/ec97720e8e6185737a752546e76468dd/" title="Zapier"
+            target="_blank">
+            <img src="./images/zapier.svg" alt="Zapier" class="w-[60px]">
+        </a>
+        <a href="https://www.make.com/en/hq/app-invitation/8789e9dcc0943cd0a146cabd353637de" title="Make"
+            target="_blank">
+            <img src="./images/make.svg" alt="Make" class="w-[70px]">
+        </a>
+        <a href="https://connect.pabbly.com/share-app/DERQYgNUUDNUHgZsB0BUc1xIVlIBWAdjUElRQ1ZZVCwESgBVBURdNwpGVnRVAgNiB04BawVaUTFdSQUBUwVWJVVMUX5RTgdaV2QEQVQLACoMblAnA0hQalQFBjUHT1RuXEdWcQFMB1pQXlFsVk1UEgRdAHsFS11DCkpWPlUaA2EHTgFoBVxRcV1k"
+            title="Pabbly Connect" target="_blank">
+            <img src="./images/pabbly.png" alt="Pabbly Connect" class="w-[60px]">
+        </a>
+    </div>
+
+    <div>
+        <img src="./images/semi-rect.svg" alt="" class="w-[600px] absolute left-0 scale-x-[-1]">
+        <img src="./images/semi-rect.svg" alt="" class="w-[600px] absolute right-0">
+    </div>
+    <div
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-28 max-w-[1200px] mx-auto px-4 xl:px-0 place-items-center">
+        <div class="bg-white rounded-xl p-5  xl:p-10 text-center w-fit">
+            <div class="text-center space-x-2 xl:space-x-3 inline-flex items-center">
+                <span class="inline-block w-[80px] h-[80px] border rounded p-1">
+                    <img src="./images/anthropic.png" alt="anthropic">
+                </span>
+                <span class="inline-block w-[80px] h-[80px] border rounded p-1">
+                    <img src="./images/webclip.png" alt="apiframe">
+                </span>
+                <span class="inline-block w-[80px] h-[80px] border rounded p-1">
+                    <img src="./images/facebook.png" alt="facebook">
+                </span>
+            </div>
+            <h4 class="text-[1.2rem] font-inter font-medium text-black mt-5">Post on Facebook daily</h4>
+        </div>
+        <div class="bg-white rounded-xl p-5  xl:p-10 text-center w-fit">
+            <div class="text-center space-x-2 xl:space-x-3 inline-flex items-center">
+                <span class="inline-block w-[80px] h-[80px] border rounded p-1.5">
+                    <img src="./images/anthropic.png" alt="anthropic">
+                </span>
+                <span class="inline-block w-[80px] h-[80px] border rounded p-0">
+                    <img src="./images/webclip.png" alt="apiframe">
+                </span>
+                <span class="inline-block w-[80px] h-[80px] border rounded p-1.5">
+                    <img src="./images/instagram.png" alt="instagram">
+                </span>
+            </div>
+            <h4 class="text-[1.2rem] font-inter font-medium text-black mt-5">Post on Instagram daily</h4>
+        </div>
+        <div class="bg-white rounded-xl p-5  xl:p-10 text-center w-fit">
+            <div class="text-center space-x-2 xl:space-x-3 inline-flex items-center">
+                <span class="inline-block w-[80px] h-[80px] border rounded p-1.5">
+                    <img src="./images/anthropic.png" alt="anthropic">
+                </span>
+                <span class="inline-block w-[80px] h-[80px] border rounded p-0">
+                    <img src="./images/webclip.png" alt="apiframe">
+                </span>
+                <span class="inline-block w-[80px] h-[80px] border rounded p-1">
+                    <img src="./images/tiktok.png" alt="tiktok">
+                </span>
+            </div>
+            <h4 class="text-[1.2rem] font-inter font-medium text-black mt-5">Post on Tiktok daily</h4>
+        </div>
+        <div class="bg-white rounded-xl p-5  xl:p-10 text-center w-fit">
+            <div class="text-center space-x-2 xl:space-x-3 inline-flex items-center">
+                <span class="inline-block w-[80px] h-[80px] border rounded p-1.5">
+                    <img src="./images/anthropic.png" alt="anthropic">
+                </span>
+                <span class="inline-block w-[80px] h-[80px] border rounded p-0">
+                    <img src="./images/webclip.png" alt="apiframe">
+                </span>
+                <span class="inline-block w-[80px] h-[80px] border rounded p-0">
+                    <img src="./images/wordpress2.png" alt="wordpress">
+                </span>
+            </div>
+            <h4 class="text-[1.2rem] font-inter font-medium text-black mt-5">Post Blog Posts daily</h4>
+        </div>
+        <div class="bg-white rounded-xl p-5  xl:p-10 text-center w-fit">
+            <div class="text-center space-x-2 xl:space-x-3 inline-flex items-center">
+            <span class="inline-block w-[80px] h-[80px] border rounded p-1">
+                    <img src="./images/anthropic.png" alt="anthropic">
+                </span>
+                <span class="inline-block w-[80px] h-[80px] border rounded p-0">
+                    <img src="./images/webclip.png" alt="apiframe">
+                </span>
+                <span class="inline-block w-[80px] h-[80px] border rounded p-0">
+                    <img src="./images/googlesheets2.png" alt="googlesheets" class="h-[76px]">
+                </span>
+            </div>
+            <h4 class="text-[1.2rem] font-inter font-medium text-black mt-5">Batch image generation</h4>
+        </div>
+        <div class="bg-white rounded-xl p-5  xl:p-10 text-center w-fit">
+            <div class="text-center space-x-2 xl:space-x-3 inline-flex items-center">
+            <span class="inline-block w-[80px] h-[80px] border rounded p-1.5">
+                    <img src="./images/anthropic.png" alt="anthropic">
+                </span>
+                <span class="inline-block w-[80px] h-[80px] border rounded p-0">
+                    <img src="./images/webclip.png" alt="apiframe">
+                </span>
+                <span class="inline-block w-[80px] h-[80px] border rounded p-1.5">
+                    <img src="./images/pinterest.png" alt="tiktok">
+                </span>
+            </div>
+            <h4 class="text-[1.2rem] font-inter font-medium text-black mt-5">Post on Pinterest daily</h4>
+        </div>
+    </div>
+    <div class="mb-16">
+        <img src="./images/semi-rect.svg" alt="" class="w-[600px] absolute left-0 rotate-180">
+        <img src="./images/semi-rect.svg" alt="" class="w-[600px] absolute right-0 scale-y-[-1]">
+    </div>
+</div>
+    <div class="pt-40  bg-[#2B2E3D] relative px-4">
+    <div class="max-w-[1200px] mx-auto">
+        <h2 class="text-[2rem] lg:text-[2.8rem] font-apfont text-[#fff] text-left">Read our latest blog posts</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10 mt-8 max-w-[1200px] mx-auto">
+
+
+            <div class="bg-gray-100 rounded-lg">
+                <img loading="lazy" src="./images/posts/midjourney-on-zapier.webp" alt="midjourney on zapier"
+                    class="w-full max-h-[200px] object-cover rounded-t-md">
+                <div class="p-5">
+                    <a href="https://blog.apiframe.ai/how-to-use-midjourney-ai-on-zapier">
+                        <h3 class="text-lg font-apfont text-gray-800">How to use Midjourney AI on Zapier?</h3>
+                        <p class="text-gray-500 text-base font-inter">
+                            Learn how to use Midjourney AI on Zapier to create stunning images. From creating an account
+                            to generating images.
+                        </p>
+                    </a>
+                </div>
+            </div>
+
+
+
+            <div class="bg-gray-100 rounded-lg">
+                <img loading="lazy" src="./images/posts/wonderful-landscape.png" alt="wonderful landscape"
+                    class="w-full max-h-[200px] object-cover rounded-t-md">
+                <div class="p-5">
+                    <a href="https://blog.apiframe.ai/is-there-an-api-for-midjourney">
+                        <h3 class="text-lg font-apfont text-gray-800">Is there an API for Midjourney?</h3>
+                        <p class="text-gray-500 text-base font-inter">
+                            Find out if there is an API for Midjourney and how to use it.
+                        </p>
+                    </a>
+                </div>
+            </div>
+
+
+
+            <div class="bg-gray-100 rounded-lg">
+                <img loading="lazy" src="./images/posts/midjourney-on-make.png" alt="midjourney on make"
+                    class="w-full max-h-[200px] object-cover rounded-t-md">
+                <div class="p-5">
+                    <a href="https://blog.apiframe.ai/how-to-use-midjourney-ai-on-make">
+                        <h3 class="text-lg font-apfont text-gray-800">How to use Midjourney AI on Make.com?</h3>
+                        <p class="text-gray-500 text-base font-inter">
+                            Learn how to use Midjourney AI on Make.com to create amazing images. Integrate Midjourney AI
+                            in your scenarios.
+                        </p>
+                    </a>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+    <div class="pt-40  bg-[#2B2E3D] relative px-4">
+    <div class="max-w-[1200px] mx-auto bg-[#121116] rounded-2xl p-10 md:grid grid-cols-3 gap-10">
+        <div class="col-span-1 ">
+            <h2 class="text-[1.8rem] font-apfont text-[#fff]">
+                Frequently Asked Questions
+            </h2>
+            <p class="my-12">
+                <a href="https://app.apiframe.ai/signup" target="_blank"
+                    class="bg-[#316BFF] text-white font-apfont rounded-xl px-5 py-3 hover:bg-opacity-80">
+                    Sign up <img src="./images/arrow-right.png" alt="arrow-right" class="w-5 inline">
+                </a>
+            </p>
+            <div class="bg-white rounded-xl p-5 bg-opacity-5">
+                <p class="text-[1.3rem] font-apfont text-[#fff]">Still have a question?</p>
+                <p class="text-[1rem] font-inter text-gray-400 font-medium">
+                    <a href="https://discord.gg/pM3qyNAXXC" target="_blank"
+                        class="mt-2 font-inter font-medium text-[#e8861b]">
+                        Contact us on Discord!
+                    </a> We'll be happy to help you.
+                </p>
+            </div>
+        </div>
+        <div class="col-span-2 space-y-5 mt-4 md:mt-0">
+            <div class="bg-[#2B2E3D] bg-opacity-40 rounded-xl p-5">
+                <div class="flex justify-between items-center cursor-pointer" onclick="toggleFaq(this)">
+                    <h3 class="text-[1rem] font-inter font-medium text-[#fff]">
+                        What is Apiframe?
+                    </h3>
+                    <span class="material-symbols-outlined text-white transition-transform duration-300">
+                        add
+                    </span>
+                </div>
+                <p class="text-[1rem] font-inter text-gray-400 font-medium mt-2 overflow-hidden transition-all duration-300" style="max-height: 0;">
+                    Apiframe is a platform that offers a suite of AI APIs to enhance your apps and workflows with code or no-code.
+                </p>
+            </div>
+            <div class="bg-[#2B2E3D] bg-opacity-40 rounded-xl p-5">
+                <div class="flex justify-between items-center cursor-pointer" onclick="toggleFaq(this)">
+                    <h3 class="text-[1rem] font-inter font-medium text-[#fff]">
+                        Is there a Midjourney API?
+                    </h3>
+                    <span class="material-symbols-outlined text-white transition-transform duration-300">
+                        add
+                    </span>
+                </div>
+                <p class="text-[1rem] font-inter text-gray-400 font-medium mt-2 overflow-hidden transition-all duration-300" style="max-height: 0;">
+                <span class="block">There is currently no official API for Midjourney. However, we at Apiframe offer a powerful and rich-featured API to automate Midjourney AI image creation. </span>
+
+                <span class="block my-2">This allows developers, product owners, etc. to fully leverage Midjourney AI's image generation capabilities through a stable and scalable API.</span>
+
+                <span class="block">Get started by <a href="https://app.apiframe.ai/signup" class="text-[#e8861b]">creating an account</a> or take a look at our comprehensive and extensive <a href="https://docs.apiframe.ai/" class="text-[#e8861b]">API Documentation</a>.</span>
+                </p>
+            </div>
+            <div class="bg-[#2B2E3D] bg-opacity-40 rounded-xl p-5">
+                <div class="flex justify-between items-center cursor-pointer" onclick="toggleFaq(this)">
+                    <h3 class="text-[1rem] font-inter font-medium text-[#fff]">
+                        What if Midjourney releases an official API?
+                    </h3>
+                    <span class="material-symbols-outlined text-white transition-transform duration-300">
+                        add
+                    </span>
+                </div>
+                <p class="text-[1rem] font-inter text-gray-400 font-medium mt-2 overflow-hidden transition-all duration-300" style="max-height: 0;">
+                <span class="block">Midjourney stated that they are not planning to release a public API since this may lead to unsolicited competition. </span>
+                
+                <span class="block">However, if Midjourney releases an API, you can still use our API or switch to the new one.</span>
+                </p>
+            </div>
+            <div class="bg-[#2B2E3D] bg-opacity-40 rounded-xl p-5">
+                <div class="flex justify-between items-center cursor-pointer" onclick="toggleFaq(this)">
+                    <h3 class="text-[1rem] font-inter font-medium text-[#fff]">
+                        What APIs are available?
+                    </h3>
+                    <span class="material-symbols-outlined text-white transition-transform duration-300">
+                        add
+                    </span>
+                </div>
+                <p class="text-[1rem] font-inter text-gray-400 font-medium mt-2 overflow-hidden transition-all duration-300" style="max-height: 0;">
+                <span class="block">We offer APIs for <a href="/ai-image-generation" class="text-[#e8861b]">ai image generation</a>, <a href="/ai-photos-generation" class="text-[#e8861b]">ai photos</a>, <a href="/ai-video-generation" class="text-[#e8861b]">ai video generation</a>, <a href="/ai-music-generation" class="text-[#e8861b]">ai music generation</a>, and <a href="/ai-faceswap" class="text-[#e8861b]">face swapping</a>, with more being added regularly.</span>
+
+                    <span class="block mt-4">- For AI image generation, we offer: the Midjourney API, Ideogram API, Flux API, and more.</span>
+                    <span class="block mt-3">- For AI video generation, we offer: the Runway API, Luma API, Kling API, and more.</span>
+                    <span class="block mt-3">- For AI music generation, we offer: the Suno API, the Udio API, and more.</span>
+                </p>
+            </div>
+            <div class="bg-[#2B2E3D] bg-opacity-40 rounded-xl p-5">
+                <div class="flex justify-between items-center cursor-pointer" onclick="toggleFaq(this)">
+                    <h3 class="text-[1rem] font-inter font-medium text-[#fff]">
+                        Do I need coding experience?
+                    </h3>
+                    <span class="material-symbols-outlined text-white transition-transform duration-300">
+                        add
+                    </span>
+                </div>
+                <p class="text-[1rem] font-inter text-gray-400 font-medium mt-2 overflow-hidden transition-all duration-300" style="max-height: 0;">
+                    No! Apiframe can be used with or without code through our no-code integrations with popular platforms.
+                </p>
+            </div>
+            <div class="bg-[#2B2E3D] bg-opacity-40 rounded-xl p-5">
+                <div class="flex justify-between items-center cursor-pointer" onclick="toggleFaq(this)">
+                    <h3 class="text-[1rem] font-inter font-medium text-[#fff]">
+                        Is there a free trial?
+                    </h3>
+                    <span class="material-symbols-outlined text-white transition-transform duration-300">
+                        add
+                    </span>
+                </div>
+                <p class="text-[1rem] font-inter text-gray-400 font-medium mt-2 overflow-hidden transition-all duration-300" style="max-height: 0;">
+                No, we don't offer a free trial but a paid trial for $10. <a href="https://app.apiframe.ai/signup" class="text-[#e8861b]">Get Access here</a>
+                </p>
+            </div>
+            <div class="bg-[#2B2E3D] bg-opacity-40 rounded-xl p-5">
+                <div class="flex justify-between items-center cursor-pointer" onclick="toggleFaq(this)">
+                    <h3 class="text-[1rem] font-inter font-medium text-[#fff]">
+                    Do generated images expire?
+                    </h3>
+                    <span class="material-symbols-outlined text-white transition-transform duration-300">
+                        add
+                    </span>
+                </div>
+                <p class="text-[1rem] font-inter text-gray-400 font-medium mt-2 overflow-hidden transition-all duration-300" style="max-height: 0;">
+                <span class="block">Generated images don't ever expire. We host generated images on our private CDN, and they will stay available forever in opposite to other Midjourney API providers.</span>
+
+                <span class="block my-2">Our CDN with powerful caching features allows you to load even large images fast.</span>
+                </p>
+            </div>
+
+        </div>
+
+        <script>
+            function toggleFaq(element) {
+                const answer = element.nextElementSibling;
+                const icon = element.querySelector('.material-symbols-outlined');
+                
+                // Toggle icon rotation
+                icon.style.transform = icon.style.transform === 'rotate(45deg)' ? 'rotate(0deg)' : 'rotate(45deg)';
+                
+                // Toggle content height
+                if (answer.style.maxHeight === '0px' || !answer.style.maxHeight) {
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                    answer.style.marginTop = '0.5rem';
+                } else {
+                    answer.style.maxHeight = '0px';
+                    answer.style.marginTop = '0';
+                }
+            }
+        </script>
+    </div>
+    <div class="h-[60px] bg-[#2B2E3D]">
+
+    </div>
+    <div class="relative">
+        <img src="/images/rect2.png" alt="rect" class="w-[100vw] object-contain absolute  left-0 z-10 top-0 ">
+    </div>
+</div>
+    <div class="pt-10 pb-10 bg-[#121116]">
+    <div class="lg:grid grid-cols-3 gap-10 p-8 lg:p-20">
+        <div class="col-span-1">
+            <img src="/images/apiframe.png" alt="logo" class="w-[150px]">
+            <h2 class="text-gray-400 text-lg font-normal mt-5 font-inter">
+                Integrate the Midjourney API into your apps and workflows.
+            </h2>
+        </div>
+        <div class="col-span-2">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-10">
+                <div class="col-span-1">
+                    <h2 class="text-gray-200 text-lg font-normal mt-5 font-inter">
+                        Products
+                    </h2>
+                    <ul class="mt-5 space-y-5">
+                        <li>
+                            <a href="/ai-image-generation"
+                                class="text-gray-400 text-sm font-normal mt-5 font-inter hover:text-gray-200">
+                                AI Image
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/ai-photos-generation"
+                                class="text-gray-400 text-sm font-normal mt-5 font-inter hover:text-gray-200">
+                                AI Photos
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/ai-video-generation"
+                                class="text-gray-400 text-sm font-normal mt-5 font-inter hover:text-gray-200">
+                                AI Video
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/ai-faceswap"
+                                class="text-gray-400 text-sm font-normal mt-5 font-inter hover:text-gray-200">
+                                Faceswap
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/ai-music-generation"
+                                class="text-gray-400 text-sm font-normal mt-5 font-inter hover:text-gray-200">
+                                AI Music
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-span-1">
+                    <h2 class="text-gray-200 text-lg font-normal mt-5 font-inter">
+                        Resources
+                    </h2>
+                    <ul class="mt-5 space-y-5">
+                        <li>
+                            <a href="https://blog.apiframe.ai"
+                                class="text-gray-400 text-sm font-normal mt-5 font-inter hover:text-gray-200">
+                                Blog
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://docs.apiframe.ai"
+                                class="text-gray-400 text-sm font-normal mt-5 font-inter hover:text-gray-200">
+                                Documentation
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-span-1">
+                    <h2 class="text-gray-200 text-lg font-normal mt-5 font-inter">
+                        Legal
+                    </h2>
+                    <ul class="mt-5 space-y-5">
+                        <li>
+                            <a href="/privacy-policy"
+                                class="text-gray-400 text-sm font-normal mt-5 font-inter hover:text-gray-200">
+                                Privacy
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/terms-of-service"
+                                class="text-gray-400 text-sm font-normal mt-5 font-inter hover:text-gray-200">
+                                Terms
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/privacy-policy#tracking-technologies-and-cookies"
+                                class="text-gray-400 text-sm font-normal mt-5 font-inter hover:text-gray-200">
+                                Cookies
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-span-1">
+                    <h2 class="text-gray-200 text-lg font-normal mt-5 font-inter">
+                        AI Tools
+                    </h2>
+                    <ul class="mt-5 space-y-5">
+                        <li>
+                            <a href="/ai-tools/"
+                                class="text-gray-400 text-sm font-normal mt-5 font-inter hover:text-gray-200">
+                                All AI Tools
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/ai-tools/free-ai-book-cover-generator"
+                                class="text-gray-400 text-sm font-normal mt-5 font-inter hover:text-gray-200">
+                                Free AI Book Cover Generator
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/ai-tools/youtube-thumbnail-generator"
+                                class="text-gray-400 text-sm font-normal mt-5 font-inter hover:text-gray-200">
+                                Youtube Thumbnail Generator
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/ai-tools/ghibli-ai-image-generator"
+                                class="text-gray-400 text-sm font-normal mt-5 font-inter hover:text-gray-200">
+                                Ghibli AI Image Generator
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="flex justify-center">
+        <p class="text-gray-200 text-sm font-normal mt-10 font-inter">
+            &copy; 2023 Apiframe - All rights reserved.
+        </p>
+    </div>
+</div>
+    <script src="./js/use-cases.js"></script>
+    <script src="./js/tool.js"></script>
+    <script src="./js/move-tools-steps.js"></script>
+
+
+</body>
+
+</html>

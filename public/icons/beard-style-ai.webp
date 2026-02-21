@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">	
+    <title>Under Maintenance</title>
+    <meta name="robots" content="noindex, nofollow">
+    <style>
+        /* Debugging styles to visualize the layout */
+        body, html {
+            height: 100%;
+            margin: 0;
+            overflow: hidden; /* Prevents scrolling */
+            background-color: #fff; /* Light grey background for visibility */
+        }
+        .maintenance-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); /* Centers the element */
+            text-align: center;
+        }
+        .maintenance-container img {
+            max-height: 700px;
+            max-width: 100%;
+            height: auto;
+            display: block;
+            background-color: #fff; /* White background for the image */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="maintenance-container">
+        <img src="under-maintenance.png" alt="Under Maintenance" />
+    </div>
+</body>
+</html>

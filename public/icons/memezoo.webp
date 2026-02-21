@@ -1,0 +1,2433 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <!-- Ensure proper mobile responsiveness -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zoo Memes | [meme.am]</title>
+  
+  <!-- Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<!-- Preload Nunito font files -->
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Nunito:wght@800&display=swap" as="style">
+<link rel="preload" href="https://fonts.gstatic.com/s/nunito/v25/XRXV3I6Li01BKofINeaBTMnFcQ.woff2" as="font" type="font/woff2" crossorigin>
+
+<!-- Then load the stylesheet normally -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@800&display=swap">
+
+  
+  <link rel="apple-touch-icon" sizes="57x57" href="/static/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/static/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/static/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/static/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/static/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/static/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/static/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/static/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="167x167" href="/static/apple-touch-icon-167x167.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180x180.png">
+  <link rel="apple-touch-icon" sizes="1024x1024" href="/static/apple-touch-icon-1024x1024.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/static/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="/static/favicon-64x64.png">
+  <link rel="icon" type="image/png" sizes="128x128" href="/static/favicon-128x128.png">
+  <link rel="icon" type="image/png" sizes="256x256" href="/static/favicon-256x256.png">
+  <link rel="manifest" href="/static/site.webmanifest">
+  <meta name="msapplication-TileImage" content="/static/mstile-144x144.png">
+
+
+
+
+  
+  <style>
+	  @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@800&display=swap');
+	  
+	  *, *::before, *::after {
+	      box-sizing: border-box;
+	  }
+	  @font-face {
+	    font-family: 'Nunito';
+	    font-style: normal;
+	    font-weight: 800;
+	    font-display: swap; /* This helps prevent invisible text while font loads */
+	    src: url(https://fonts.gstatic.com/s/nunito/v25/XRXV3I6Li01BKofINeaBTMnFcQ.woff2) format('woff2');
+	  }
+	  
+    /* Global Styles */
+    body {
+      font-family: Arial, sans-serif;
+	  /* These values adjust Arial to better match Nunito's dimensions */
+	    letter-spacing: -0.02em;
+	    word-spacing: 0.05em;
+      margin: 0;
+      padding: 0;
+      background: #ffffff;
+    }
+    header, footer {
+      background: #000000;
+      color: #fff;
+      text-align: left;
+      padding: 10px;
+    }
+    header h1, footer p {
+      margin: 0;
+    }
+
+    a {
+      color: #337ab7;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+	.logo {
+	  font-family: 'Nunito', 'Arial Rounded MT Bold', sans-serif;
+	  font-size: 29px;
+	  font-weight: 800;
+	}
+	.logo a {
+	  text-decoration: none;
+	}
+	.logo a:hover {
+	  text-decoration: none;
+	}
+	.logo span {
+	  background: linear-gradient(90deg, #A1C4FD, #C2E9FB);
+	  -webkit-background-clip: text;
+	  background-clip: text;
+	  color: transparent;
+	}
+	.logo .highlight {
+	  background: linear-gradient(90deg, #D4FC79, #96E6A1);
+	  -webkit-background-clip: text;
+	  background-clip: text;
+	  color: transparent;
+	}
+	
+	
+    /* New Styles for User Dropdown in Header */
+	.header-right {
+	    flex: 1;
+	    display: flex;
+	    justify-content: flex-end;
+	    position: relative; /* Change from absolute to relative */
+	    top: auto;
+	    right: auto;
+	  }
+	
+    /* Make Meme Button Styles */
+    .make-meme-btn {
+      display: inline-block;
+      vertical-align: middle;
+      margin-left: 15px;
+      background: linear-gradient(90deg, #A1C4FD, #C2E9FB);
+      color: #000;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 800;
+      padding: 8px 16px;
+      border-radius: 8px;
+      border: none;
+      text-transform: uppercase;
+      font-size: 14px;
+      cursor: pointer;
+      box-shadow: 3px 3px 0px rgba(0,0,0,0.8);
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+    
+    .make-meme-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 5px 5px 0px rgba(0,0,0,0.8);
+      text-decoration: none;
+    }
+    
+    .make-meme-btn:active {
+      transform: translateY(1px);
+      box-shadow: 1px 1px 0px rgba(0,0,0,0.8);
+    }
+	
+    /* Make Meme Button Styles */
+    .upload-btn {
+      display: inline-block;
+      vertical-align: middle;
+      margin-left: 15px;
+      background: linear-gradient(90deg, #A1C4FD, #C2E9FB);
+      color: #000;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 800;
+      padding: 8px 16px;
+      border-radius: 8px;
+      border: none;
+      text-transform: uppercase;
+      font-size: 14px;
+      cursor: pointer;
+      box-shadow: 3px 3px 0px rgba(0,0,0,0.8);
+      transition: all 0.2s ease;
+      text-decoration: none;
+	  height:38px;
+    }
+    
+    .upload-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 5px 5px 0px rgba(0,0,0,0.8);
+      text-decoration: none;
+    }
+    
+    .upload-btn:active {
+      transform: translateY(1px);
+      box-shadow: 1px 1px 0px rgba(0,0,0,0.8);
+    }
+    
+	.header-content {
+	    width: 100%;
+	    display: flex;
+	    align-items: center;
+	  }
+    
+	  .header-left {
+	      display: flex;
+	      align-items: center;
+	    }
+	
+	
+	/* Header Center Navigation (Arrows) */
+	.header-center {
+	  flex: 1;
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	  visibility: hidden;
+	  opacity: 0;
+	  transition: visibility 0.2s ease, opacity 0.2s ease;
+	}
+
+	.meme-detail-page .header-center {
+	  visibility: visible;
+	  opacity: 1;
+	}
+    
+    .arrow-container {
+	 will-change: transform;
+      display: flex;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 3px 3px 0px rgba(0,0,0,0.8);
+      transition: all 0.2s ease;
+	  
+	  height: 38px;
+    }
+    
+    .arrow-container:hover {
+      transform: translateY(-2px);
+      box-shadow: 5px 5px 0px rgba(0,0,0,0.8);
+    }
+    
+    .arrow-btn {
+      border: none;
+      padding: 8px 16px; /* Match auth button padding */
+      cursor: pointer;
+      font-size: 16px;
+      color: #000000;
+      outline: none;
+      transition: background 0.2s ease;
+      text-decoration: none;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+    
+    /* Left half gradient to match login button */
+    .left-arrow {
+      background: linear-gradient(90deg, #A1C4FD, #C2E9FB);
+	  opacity: 1.0 !important;
+    }
+    
+    /* Right half gradient to match signup button */
+    .right-arrow {
+      background: linear-gradient(90deg, #D4FC79, #96E6A1);
+	  opacity: 1.0 !important;
+    }
+    
+    .arrow-btn:hover {
+      opacity: 1;
+	  text-decoration: none;
+    }
+	  
+	/* User Icon Styles */
+	.user-dropdown {
+	  position: relative;
+	  display: inline-block;
+	}
+
+	.user-button {
+	  background: transparent;
+	  border: none;
+	  cursor: pointer;
+	  padding: 0;
+	  transition: transform 0.2s ease;
+	}
+
+	.user-button:hover {
+	  transform: scale(1.1);
+	}
+
+	.user-icon {
+		line-height: 40px;
+	  border-radius: 50%;
+	  display: block;
+	  align-items: center;
+	  justify-content: center;
+	  font-family: 'Nunito', sans-serif;
+	  font-weight: 800;
+	  font-size: 18px;
+	  color: #000;
+	  background: linear-gradient(135deg, #A1C4FD, #C2E9FB);
+	  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+	  transition: all 0.3s ease;
+	  width: 40px; /* Fixed width */
+	  height: 40px; /* Fixed height */
+	}
+
+	.user-icon.with-image {
+	  object-fit: cover;
+	  background: none;
+	}
+
+	.user-button:hover .user-icon {
+	  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+	}
+
+	.dropdown-content {
+	  display: none;
+	  position: absolute;
+	  right: 0;
+	  background-color: #fff;
+	  min-width: 150px;
+	  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+	  border-radius: 8px;
+	  z-index: 1;
+	  overflow: hidden;
+	  transform: translateY(10px);
+	  opacity: 0;
+	  transition: all 0.3s ease;
+	}
+
+	.user-dropdown:hover .dropdown-content {
+	  display: block;
+	  opacity: 1;
+	  transform: translateY(5px);
+	}
+
+	.dropdown-content a {
+	  color: #333;
+	  padding: 12px 16px;
+	  text-decoration: none;
+	  display: block;
+	  transition: background-color 0.2s ease;
+	  font-family: 'Nunito', sans-serif;
+	  font-weight: 600;
+	  font-size: 14px;
+	}
+
+	.dropdown-content a:hover {
+	  background-color: #f5f5f5;
+	  color: #000;
+	}
+
+	/* Add a subtle separator between menu items */
+	.dropdown-content a:not(:last-child) {
+	  border-bottom: 1px solid #eee;
+	}
+	
+    footer {
+      font-size: 13px;
+      font-weight: 800;
+      font-family: 'Nunito', 'Arial Rounded MT Bold', sans-serif;
+    }
+	footer .highlight {
+	  background: linear-gradient(90deg, #D4FC79, #96E6A1);
+	  -webkit-background-clip: text;
+	  background-clip: text;
+	  color: transparent;
+	}
+	footer span {
+	  background: linear-gradient(90deg, #A1C4FD, #C2E9FB);
+	  -webkit-background-clip: text;
+	  background-clip: text;
+	  color: transparent;
+	}
+    meme-detail-page
+      h1 {
+        font-size: 24px;
+      }
+      .logo {
+        font-size: 22px;
+      }
+    }
+
+    /* Banner Ad Styles */
+    #banner-ad {
+      width: 100%;
+      background: #000000;
+      text-align: center;
+      padding: 30px 0;
+      overflow: hidden;
+      max-height: 100px; /* initial height */
+      transition: max-height 0.3s ease;
+    }
+
+    /* Sticky header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 2000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px;
+    }
+
+    /* Tags Section Styles */
+    #tags-section {
+      background: #333;
+      padding: 10px 20px;
+      color: #fff;
+      text-align: center;
+    }
+    /* Desktop: show one line by default, then expand on button click */
+    @media (min-width: 769px) {
+	    .fa-arrow-left, .fa-arrow-right {
+	      will-change: transform;
+	    }
+      /* Make sure header is sticky on desktop */
+      header {
+        position: sticky;
+        top: 0;
+      }
+      
+      /* Properly position the arrows in the center */
+	  .header-center {
+	    position: absolute;
+	    left: 50%;
+	    transform: translateX(-50%);
+	    z-index: 10;
+	    display: flex; /* Changed from none to flex */
+	    align-items: center;
+	    visibility: hidden;
+	    opacity: 0;
+	  }
+	  
+	  /* Show arrows only on meme detail pages */
+	    .meme-detail-page .header-center {
+	      display: flex;
+	    }
+	    /* Show arrows on meme detail pages */
+	    .meme-detail-page .header-center {
+	      visibility: visible;
+	      opacity: 1;
+	    }
+		
+      
+      /* Completely hide mobile arrows on desktop */
+      .mobile-nav-arrows {
+        display: none !important;
+      }
+      
+      .arrow-btn {
+        height: 38px; /* Match auth button height */
+        display: flex;
+        align-items: center;
+      }
+      
+      main {
+        padding: 5px;
+        min-height: 80vh;
+      }
+      
+      .user-icon {
+        width: 40px;
+        height: 40px;
+      }
+      
+      #tags-wrapper {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 10px;
+        overflow: hidden;
+        white-space: nowrap;
+        transition: height 0.3s ease;
+      }
+      #tags-wrapper.expanded {
+        flex-wrap: wrap;
+        white-space: normal;
+        overflow: visible;
+      }
+      #more-tags-button {
+        display: block;
+        margin: 10px auto 0 auto;
+        background: #fff;
+        border: none;
+        color: #000;
+        padding: 5px 10px;
+        cursor: pointer;
+        border-radius: 5px;
+        text-transform: uppercase;
+        font-weight: bold;
+      }
+      /* Make tags sticky on meme detail pages */
+      .sticky-tags {
+        position: sticky;
+        top: 59px;  /* Adjust this value to match your header/banner height */
+        z-index: 950;
+      }
+      
+      .tag {
+        background: #555;
+        padding: 5px 10px;
+        border-radius: 3px;
+        white-space: nowrap;
+      }
+      .mobile-upload-icon {
+        display: none;
+      }
+    }
+	
+    /* Mobile: horizontal scroll, no More Tags button */
+    @media (max-width: 768px) {
+      /* Keep header sticky on mobile */
+      header {
+        position: sticky;
+        top: 0;
+      }
+      
+      /* Hide desktop arrows on mobile */
+      .header-center {
+        display: none !important;
+      }
+      
+      /* Mobile nav arrows styles */
+	  .mobile-nav-arrows {
+	    position: fixed;
+	    top: 13px; /* Match the header-right top position */
+	    right: 11px;
+	    opacity: 0; /* Change back to 0 so it's initially hidden */
+	    visibility: visible; /* Change back to hidden if transition */
+	    transform: translateY(0);
+	    transition: opacity 0.2s ease, visibility 0.2s ease; /* Faster transition */
+	    z-index: 2001;
+	  }
+		.mobile-nav-arrows.visible {
+		  opacity: 1 !important;
+		  visibility: visible !important;
+		  display: flex !important;
+		  /* Add more specific position */
+		  position: fixed;
+		  top: 13px;
+		  right: 10px;
+		  z-index: 2500; /* Increase z-index to make sure it's above everything */
+		}
+	  
+      
+      /* Ensure vertical alignment with auth buttons */
+      .mobile-nav-arrows .arrow-container {
+        display: flex;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 3px 3px 0px rgba(0,0,0,0.8); /* Match auth buttons */
+        height: 29px; /* Match auth button height */
+      }
+      
+      /* Fast transition for header-right */
+      .header-right {
+        transition: opacity 0.2s ease, visibility 0.2s ease; /* Faster transition */
+      }
+      
+      .header-right.scrolled {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+      }
+	  
+	  
+      
+      /* Smaller arrow buttons on mobile */
+      .arrow-btn {
+        padding: 6px 10px;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%; /* Fill the container height */
+      }
+      
+      .upload-btn {
+        display: none;
+      }
+      .mobile-upload-icon {
+        display: inline-block;
+        cursor: pointer;
+        font-size: 18px; /* Adjust size as needed */
+        color: #A1C4FD; /* Use your preferred color #337ab7*/
+        margin-right: 10px;
+      }
+      
+      main {
+        padding: 0px;
+        min-height: 80vh;
+      }
+      
+      .user-icon {
+        width: 30px;
+        height: 30px;
+      }
+      
+      #tags-wrapper {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+      }
+      #more-tags-button {
+        display: none;
+      }
+      .tag {
+        display: inline-block;
+      }
+      /* Make tags sticky on meme detail pages */
+	  /* Make tags sticky on meme detail pages - Fixed to always be sticky */
+	  .sticky-tags {
+	    position: sticky;
+	    padding: 2px;
+	    top: 49px;  /* Adjust this value to match your header/banner height */
+	    z-index: 950;
+	    font-size: 10px;
+	    font-weight: 300;
+	  }
+	  /* Make ALL tags sections sticky on mobile */
+	  #tags-section {
+	    position: sticky;
+	    top: 56px; /* Match the header height */
+	    z-index: 950;
+	    background: #333;
+	    padding: 4px 3px;
+	    color: #fff;
+	    text-align: center;
+	    overflow-x: hidden;
+	  }
+      .tag {
+        background: #555;
+        padding: 4px 3px;
+        border-radius: 3px;
+        white-space: nowrap;
+        font-size: 10px;
+        font-weight: 300;
+        margin-left: 3px;
+      }
+    }
+    
+	/* Fix for older browsers */
+	.logo span, .logo .highlight, footer span, footer .highlight {
+	  -webkit-text-fill-color: transparent;
+	}
+	
+	#tags-section a {
+	  color: #fff;
+	  text-decoration: none;
+	}
+	
+	.meme-title {
+	  position: absolute;
+	  bottom: 0;
+	  left: 0;
+	  right: 0;
+	  background: rgba(0, 0, 0, 0.6);
+	  color: #fff;
+	  padding: 5px;
+	  text-align: center;
+	  font-size: 0.9em;
+	}
+	.hide-memes {
+	  display: none;
+	}
+  </style>
+  <!-- Matomo -->
+  <script>
+    var _paq = window._paq = window._paq || [];
+    /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+      var u="//matomo.ieplsg.com/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '424']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+    })();
+  </script>
+  <!-- End Matomo Code -->
+  <script async data-id="101451432" src="//static.getclicky.com/js"></script>
+  
+  
+  <!-- CSS -->
+  <style>
+	  /* Auth Buttons Styles */
+	  .auth-btn {
+	    display: inline-block;
+	    vertical-align: middle;
+	    font-family: 'Nunito', sans-serif;
+	    font-weight: 800;
+	    padding: 8px 16px;
+	    border-radius: 8px;
+	    border: none;
+	    text-transform: uppercase;
+	    font-size: 14px;
+	    cursor: pointer;
+	    /* Fixed position shadow with space reserved for the hover state */
+	    box-shadow: 3px 3px 0px rgba(0,0,0,0.8);
+	    transition: all 0.2s ease;
+	    text-decoration: none;
+	    color: #000;
+	    /* Add margin to reserve space for shadow expansion */
+	    margin-bottom: 2px;
+	    margin-right: 2px;
+	    /* Use transform instead of margin changes */
+	    position: relative;
+		height: 38px;
+	  }
+
+	  .login-btn {
+	    background: linear-gradient(90deg, #A1C4FD, #C2E9FB);
+	  }
+
+	  .signup-btn {
+	    background: linear-gradient(90deg, #D4FC79, #96E6A1);
+	  }
+
+	  .auth-btn:hover {
+	    transform: translateY(-2px);
+	    box-shadow: 5px 5px 0px rgba(0,0,0,0.8);
+	    text-decoration: none;
+	  }
+
+	  .auth-btn:active {
+	    transform: translateY(1px);
+	    box-shadow: 1px 1px 0px rgba(0,0,0,0.8);
+	  }
+
+	  /* Mobile Styles */
+	  @media (max-width: 480px) {
+	    .auth-buttons {
+		    display: flex;
+		    flex-direction: row; /* Force horizontal alignment */
+		    justify-content: flex-end;
+		    align-items: center;
+		    gap: 6px; /* Space between buttons */
+	    }
+		
+		
+  
+	    .auth-btn {
+	      padding: 6px 10px; /* Reduced padding */
+	      font-size: 12px; /* Smaller font size */
+	      border-radius: 6px; /* Slightly smaller border radius */
+	      box-shadow: 2px 2px 0px rgba(0,0,0,0.8); /* Smaller shadow */
+	      /* Smaller margin compensation for mobile */
+	      margin-bottom: 1px;
+	      margin-right: 1px;
+		  
+		  box-sizing: border-box;
+		  height: 29px;
+	      line-height: 1;
+	      display: flex;
+	      align-items: center;
+	      justify-content: center;
+	    }
+  
+	    .auth-btn:hover {
+	      box-shadow: 3px 3px 0px rgba(0,0,0,0.8); /* Smaller hover shadow */
+	    }
+	  }
+	  
+	</style>
+	
+	<style>
+	/* Side Menu Styles */
+	#sideMenu {
+	  position: fixed;
+	  left: 0;
+	  width: 300px;
+	  background-color: #1a1a1a;
+	  box-shadow: 4px 0 10px rgba(0, 0, 0, 0.3);
+	  z-index: 1900;
+	  overflow-y: auto;
+	  color: #fff;
+	  font-family: 'Nunito', sans-serif;
+	  /* Only use transform for animation, not display property */
+	  transform: translateX(-100%);
+	  transition: transform 0.3s ease;
+	  /* Always visible in the DOM but off-screen */
+	  visibility: hidden;
+	}
+	
+    @media (min-width: 480px) {
+		#sideMenu {
+			top: 60px; /* Adjust if your header height is different */
+  	  height: calc(100% - 60px);
+  		}
+    }
+	  @media (max-width: 479px) {
+	  #sideMenu {
+		  top: 56px; /* Adjust if your header height is different */
+	  height: calc(100% - 56px);
+  		}
+ 	 }
+
+	#sideMenu.active {
+	  transform: translateX(0);
+	  visibility: visible;
+	}
+
+	.menu-header {
+	  padding: 20px 15px;
+	  background: #000;
+	  text-align: center;
+	  border-bottom: 2px solid #333;
+	}
+
+	.menu-header .logo {
+	  font-family: 'Nunito', 'Arial Rounded MT Bold', sans-serif;
+	  font-size: 26px;
+	  font-weight: 800;
+	}
+
+	.menu-header .logo .normal {
+	  background: linear-gradient(90deg, #A1C4FD, #C2E9FB);
+	  -webkit-background-clip: text;
+	  background-clip: text;
+	  color: transparent;
+	  -webkit-text-fill-color: transparent;
+	}
+
+	.menu-header .logo .highlight {
+	  background: linear-gradient(90deg, #D4FC79, #96E6A1);
+	  -webkit-background-clip: text;
+	  background-clip: text;
+	  color: transparent;
+	  -webkit-text-fill-color: transparent;
+	}
+
+	#sideMenu ul {
+	  list-style: none;
+	  padding: 10px 0;
+	  margin: 0;
+	}
+
+	.menu-divider {
+	  height: 1px;
+	  background: #333;
+	  margin: 10px 20px;
+	}
+
+	#sideMenu li:not(.menu-divider) {
+	  margin: 0;
+	  transition: background-color 0.2s ease;
+	}
+
+	#sideMenu li:not(.menu-divider):hover {
+	  background-color: #333;
+	}
+
+	#sideMenu a {
+	  display: flex;
+	  align-items: center;
+	  text-decoration: none;
+	  color: #fff;
+	  font-size: 16px;
+	  font-weight: 600;
+	  padding: 15px 20px;
+	  transition: color 0.2s ease;
+	}
+
+	#sideMenu a:hover {
+	  color: #A1C4FD;
+	  text-decoration: none;
+	}
+
+	#sideMenu a i {
+	  width: 24px;
+	  margin-right: 15px;
+	  text-align: center;
+	  font-size: 18px;
+	}
+
+	.menu-footer {
+	  padding: 15px 20px;
+	  border-top: 1px solid #333;
+	  font-size: 12px;
+	  color: #999;
+	  text-align: center;
+	  position: absolute;
+	  bottom: 0;
+	  width: 100%;
+	  background: #151515;
+	}
+
+	/* Updated Hamburger Button Styles */
+	.hamburger-btn {
+	  background: transparent;
+	  border: none;
+	  cursor: pointer;
+	  color: #A1C4FD;
+	  transition: transform 0.3s ease, color 0.3s ease;
+	  padding: 0;
+	  z-index: 1001; /* Make sure it's above the menu */
+  
+	  /* Fixed width and height to prevent layout shift */
+	  width: 40px;
+	  height: 40px;
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+	}
+
+	.hamburger-btn i {
+	  /* Fixed font size */
+	  font-size: 24px;
+	  /* Center the icon within the fixed-width container */
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+	  width: 24px; /* Ensure the icon itself has a fixed width */
+	  height: 24px; /* Ensure the icon itself has a fixed height */
+	}
+
+	.hamburger-btn:hover {
+	  transform: scale(1.1);
+	  color: #D4FC79;
+	}
+
+	/* Ensure minimum width on mobile */
+	@media (max-width: 768px) {
+	  #sideMenu {
+	    width: 280px;
+	  }
+  
+	  #sideMenu a {
+	    font-size: 15px;
+	    padding: 12px 20px;
+	  }
+  
+	  .menu-header .logo {
+	    font-size: 22px;
+	  }
+	  
+	  .hamburger-btn {
+	      width: 36px;
+	      height: 36px;
+	    }
+  
+	    .hamburger-btn i {
+	      font-size: 20px;
+	      width: 20px;
+	      height: 20px;
+	    }
+		
+		/* HIDING LOGIN AND SIGNUP ON MEME */
+		.meme-detail-page .header-right {
+		    /* display: none; */
+		  }
+	}
+	</style>
+	
+	<style>
+	  /* Improved sidebar search styles */
+	  #sideMenu li.search-item {
+	    padding: 0;
+	    margin: 0;
+	  }
+  
+	  #sideMenu li.search-item:hover {
+	    background-color: transparent;
+	  }
+  
+	  #sideMenu .sidebar-search-form {
+	    padding: 5px 20px 15px;
+	    background-color: #1a1a1a;
+	  }
+  
+	  #sideMenu .sidebar-search-form form {
+	    display: flex;
+	    width: 100%;
+	    box-shadow: 3px 3px 0px rgba(0,0,0,0.3);
+	    border-radius: 6px;
+	    overflow: hidden;
+	  }
+  
+	  #sideMenu .sidebar-search-form input {
+	    flex: 1;
+	    padding: 10px 12px;
+	    border: none;
+	    background: #333;
+	    color: #fff;
+	    font-family: 'Nunito', sans-serif;
+	    font-size: 14px;
+	    outline: none;
+	  }
+  
+	  #sideMenu .sidebar-search-form input::placeholder {
+	    color: #aaa;
+	  }
+  
+	  #sideMenu .sidebar-search-form button {
+	    padding: 0 15px;
+	    border: none;
+	    background: linear-gradient(90deg, #A1C4FD, #C2E9FB);
+	    color: #000;
+	    font-family: 'Nunito', sans-serif;
+	    font-weight: 800;
+	    cursor: pointer;
+	    display: flex;
+	    align-items: center;
+	    justify-content: center;
+	  }
+  
+	  #sideMenu .sidebar-search-form button:hover {
+	    background: linear-gradient(90deg, #D4FC79, #96E6A1);
+	  }
+	</style>
+	
+	<style>
+	  /* Desktop search box styles */
+	  .desktop-search-box {
+	    display: none; /* Initially hidden, will be shown with media query */
+	    margin-left: 15px;
+	    position: relative;
+	  }
+  
+	  .desktop-search-box form {
+	    display: flex;
+	    height: 38px; /* Match the height of other buttons */
+	  }
+  
+	  .desktop-search-box input {
+	    padding: 8px 12px;
+	    border-radius: 8px 0 0 8px;
+	    border: none;
+	    font-family: 'Nunito', sans-serif;
+	    font-size: 14px;
+	    width: 180px;
+	    box-shadow: 3px 3px 0 rgba(0,0,0,0.8);
+	    position: relative;
+	    z-index: 1;
+	  }
+  
+	  .desktop-search-box button {
+	    padding: 8px 12px;
+	    border-radius: 0 8px 8px 0;
+	    border: none;
+	    background: linear-gradient(90deg, #A1C4FD, #C2E9FB);
+	    color: #000;
+	    font-family: 'Nunito', sans-serif;
+	    font-weight: 800;
+	    cursor: pointer;
+	    box-shadow: 3px 3px 0 rgba(0,0,0,0.8);
+	    position: relative;
+	    z-index: 1;
+	  }
+  
+	  /* Only show desktop search on larger screens */
+	  @media (min-width: 769px) {
+	    .desktop-search-box {
+	      display: flex;
+	    }
+	  }
+  
+	  /* Adjust on smaller screens */
+	  @media (max-width: 1024px) {
+	    .desktop-search-box input {
+	      width: 150px;
+	    }
+	  }
+	</style>
+  
+  
+  <meta name="description" content="Explore the best Zoo memes on meme.am. Browse a collection of hilarious, trending, and viral memes in our gallery. Updated daily!">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Zoo Memes | meme.am",
+    "description": "Discover a collection of hilarious Zoo memes. Browse trending, viral, and user-generated memes at meme.am.",
+    "url": "http://meme.am/tag/zoo",
+    "thumbnailUrl": [
+      
+      "https://meme.am/binary/VxCTUob-diving-down-this-rabbit-hole-you-wont-believe-what-i-found.jpeg",
+      
+      "https://meme.am/binary/ssmZaxY-some-days-you-just-cant-shake-off-a-bomb.jpeg",
+      
+      "https://meme.am/binary/zqUPNBk-ignite-the-fun-with-ignius-spicy-amtgard-memes.png",
+      
+      "https://meme.am/binary/9mgKcsJ-embracing-the-essence-of-summer.png",
+      
+      "https://meme.am/binary/mZxqoOE-breathtaking-sunrise-over-scottsdale.jpeg"
+      
+    ],
+    "hasPart": [
+      
+      {
+        "@type": "ImageObject",
+        "name": "Diving Down This Rabbit Hole: You Won&#39;t Believe What I Found!",
+        "contentUrl": "https://meme.am/binary/VxCTUob-diving-down-this-rabbit-hole-you-wont-believe-what-i-found.jpeg",
+        "url": "https://meme.am/meme/VxCTUob-diving-down-this-rabbit-hole-you-wont-believe-what-i-found",
+        "encodingFormat": "image/jpeg"
+      },
+      
+      {
+        "@type": "ImageObject",
+        "name": "Some Days, You Just Can&#39;t Shake Off a Bomb!",
+        "contentUrl": "https://meme.am/binary/ssmZaxY-some-days-you-just-cant-shake-off-a-bomb.jpeg",
+        "url": "https://meme.am/meme/ssmZaxY-some-days-you-just-cant-shake-off-a-bomb",
+        "encodingFormat": "image/jpeg"
+      },
+      
+      {
+        "@type": "ImageObject",
+        "name": "Ignite the Fun with Ignius&#39; Spicy Amtgard Memes",
+        "contentUrl": "https://meme.am/binary/zqUPNBk-ignite-the-fun-with-ignius-spicy-amtgard-memes.png",
+        "url": "https://meme.am/meme/zqUPNBk-ignite-the-fun-with-ignius-spicy-amtgard-memes",
+        "encodingFormat": "image/jpeg"
+      },
+      
+      {
+        "@type": "ImageObject",
+        "name": "Embracing the Essence of Summer",
+        "contentUrl": "https://meme.am/binary/9mgKcsJ-embracing-the-essence-of-summer.png",
+        "url": "https://meme.am/meme/9mgKcsJ-embracing-the-essence-of-summer",
+        "encodingFormat": "image/jpeg"
+      },
+      
+      {
+        "@type": "ImageObject",
+        "name": "Breathtaking Sunrise Over Scottsdale",
+        "contentUrl": "https://meme.am/binary/mZxqoOE-breathtaking-sunrise-over-scottsdale.jpeg",
+        "url": "https://meme.am/meme/mZxqoOE-breathtaking-sunrise-over-scottsdale",
+        "encodingFormat": "image/jpeg"
+      },
+      
+      {
+        "@type": "ImageObject",
+        "name": "Adorable puppy in dreamland.",
+        "contentUrl": "https://meme.am/binary/Fz9jjvO-adorable-puppy-in-dreamland.jpeg",
+        "url": "https://meme.am/meme/Fz9jjvO-adorable-puppy-in-dreamland",
+        "encodingFormat": "image/jpeg"
+      },
+      
+      {
+        "@type": "ImageObject",
+        "name": "Creative Wedding Crafts: My DIY Journey So Far!",
+        "contentUrl": "https://meme.am/binary/zRDoYQu-creative-wedding-crafts-my-diy-journey-so-far.jpeg",
+        "url": "https://meme.am/meme/zRDoYQu-creative-wedding-crafts-my-diy-journey-so-far",
+        "encodingFormat": "image/jpeg"
+      },
+      
+      {
+        "@type": "ImageObject",
+        "name": "Now That&#39;s Some Serious Thinking!",
+        "contentUrl": "https://meme.am/binary/A7GYx9s-now-thats-some-serious-thinking.jpeg",
+        "url": "https://meme.am/meme/A7GYx9s-now-thats-some-serious-thinking",
+        "encodingFormat": "image/jpeg"
+      },
+      
+      {
+        "@type": "ImageObject",
+        "name": "The Blueprint for a Healthy Relationship",
+        "contentUrl": "https://meme.am/binary/PahLT8v-the-blueprint-for-a-healthy-relationship.png",
+        "url": "https://meme.am/meme/PahLT8v-the-blueprint-for-a-healthy-relationship",
+        "encodingFormat": "image/jpeg"
+      },
+      
+      {
+        "@type": "ImageObject",
+        "name": "The Intense Gaze of Stare Cat: Always Watching You",
+        "contentUrl": "https://meme.am/binary/VE19RFz-the-intense-gaze-of-stare-cat-always-watching-you.jpeg",
+        "url": "https://meme.am/meme/VE19RFz-the-intense-gaze-of-stare-cat-always-watching-you",
+        "encodingFormat": "image/jpeg"
+      },
+      
+      {
+        "@type": "ImageObject",
+        "name": "I’m skeptical, but these con artists have caused more harm than good.",
+        "contentUrl": "https://meme.am/binary/AiZUzRb-im-skeptical-but-these-con-artists-have-caused-more-harm-than-good.jpeg",
+        "url": "https://meme.am/meme/AiZUzRb-im-skeptical-but-these-con-artists-have-caused-more-harm-than-good",
+        "encodingFormat": "image/jpeg"
+      },
+      
+      {
+        "@type": "ImageObject",
+        "name": "Now That&#39;s Convenient!",
+        "contentUrl": "https://meme.am/binary/lduajhq-now-thats-convenient.mp4",
+        "url": "https://meme.am/meme/lduajhq-now-thats-convenient",
+        "encodingFormat": "video/mp4"
+      },
+      
+      {
+        "@type": "ImageObject",
+        "name": "This movie has my heart completely!",
+        "contentUrl": "https://meme.am/binary/uAo3LlU-this-movie-has-my-heart-completely.jpeg",
+        "url": "https://meme.am/meme/uAo3LlU-this-movie-has-my-heart-completely",
+        "encodingFormat": "image/jpeg"
+      },
+      
+      {
+        "@type": "ImageObject",
+        "name": "Woman Enjoys Heartwarming Hugs from Affectionate Lions!",
+        "contentUrl": "https://meme.am/binary/JHH66RE-woman-enjoys-heartwarming-hugs-from-affectionate-lions.mp4",
+        "url": "https://meme.am/meme/JHH66RE-woman-enjoys-heartwarming-hugs-from-affectionate-lions",
+        "encodingFormat": "video/mp4"
+      },
+      
+      {
+        "@type": "ImageObject",
+        "name": "Innovative City Planning: The Magic of Hex-Based Design",
+        "contentUrl": "https://meme.am/binary/dBTlc93-innovative-city-planning-the-magic-of-hex-based-design.jpeg",
+        "url": "https://meme.am/meme/dBTlc93-innovative-city-planning-the-magic-of-hex-based-design",
+        "encodingFormat": "image/jpeg"
+      },
+      
+      {
+        "@type": "ImageObject",
+        "name": "Help Support a Struggling Stoner&#39;s Journey",
+        "contentUrl": "https://meme.am/binary/TQOEl2Z-help-support-a-struggling-stoners-journey.png",
+        "url": "https://meme.am/meme/TQOEl2Z-help-support-a-struggling-stoners-journey",
+        "encodingFormat": "image/jpeg"
+      },
+      
+      {
+        "@type": "ImageObject",
+        "name": "Highlighting the Good Cops Among Us",
+        "contentUrl": "https://meme.am/binary/EQdsYJs-highlighting-the-good-cops-among-us.mp4",
+        "url": "https://meme.am/meme/EQdsYJs-highlighting-the-good-cops-among-us",
+        "encodingFormat": "video/mp4"
+      },
+      
+      {
+        "@type": "ImageObject",
+        "name": "Criminal Shoots Himself in the Foot - A Hilarious Repeat!",
+        "contentUrl": "https://meme.am/binary/cDV4IHE-criminal-shoots-himself-in-the-foot---a-hilarious-repeat.png",
+        "url": "https://meme.am/meme/cDV4IHE-criminal-shoots-himself-in-the-foot---a-hilarious-repeat",
+        "encodingFormat": "image/jpeg"
+      },
+      
+      {
+        "@type": "ImageObject",
+        "name": "The Wh40k Abominant: A Fearsome Presence",
+        "contentUrl": "https://meme.am/binary/Og8Nkno-the-wh40k-abominant-a-fearsome-presence.jpeg",
+        "url": "https://meme.am/meme/Og8Nkno-the-wh40k-abominant-a-fearsome-presence",
+        "encodingFormat": "image/jpeg"
+      },
+      
+      {
+        "@type": "ImageObject",
+        "name": "Check out this awesome abstract pizza my friend shared with me!",
+        "contentUrl": "https://meme.am/binary/gsbxPgJ-check-out-this-awesome-abstract-pizza-my-friend-shared-with-me.jpeg",
+        "url": "https://meme.am/meme/gsbxPgJ-check-out-this-awesome-abstract-pizza-my-friend-shared-with-me",
+        "encodingFormat": "image/jpeg"
+      }
+      
+    ]
+  }
+  </script>
+
+  <style>
+    /* Gallery Styles for Tag Page */
+    .gallery {
+      column-count: 4;
+      column-gap: 10px;
+      padding: 10px;
+    }
+    @media (max-width: 768px) {
+      .gallery {
+        column-count: 1;
+      }
+    }
+    
+    .meme {
+      display: inline-block;
+      width: 100%;
+      margin-bottom: 10px;
+      break-inside: avoid;
+      position: relative;
+      background-color: #eee; /* fallback background */
+      min-height: 150px;      /* ensures container isn’t empty */
+      border: 2px solid #000; /* 2px border for all memes */
+      overflow: hidden;
+    }
+    .meme a {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+    }
+    /* Updated Media Styles */
+    .meme img,
+    .meme video {
+      max-width: 100%;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      display: block;
+      transition: opacity 0.5s ease-in;
+      opacity: 0;
+    }
+    .meme img.loaded,
+    .meme video.loaded {
+      opacity: 1;
+    }
+    #loader {
+      text-align: center;
+      padding: 20px;
+    }
+    /* Meme title overlay */
+    .meme-title {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.6);
+      color: #fff;
+      padding: 5px;
+      text-align: center;
+      z-index: 1;
+    }
+  </style>
+
+</head>
+<body>
+
+
+  <header>
+    <div class="header-left">
+      <!-- Hamburger Menu Button -->
+      <button id="hamburgerBtn" class="hamburger-btn">
+        <i class="fa fa-bars"></i>
+      </button>
+      <!-- Mobile upload icon (only visible on mobile) -->
+      <div class="mobile-upload-icon">
+        <i class="fa fa-upload" id="mobileUploadIcon"></i>
+        <!-- Hidden file input -->
+        <input type="file" id="mobileUploadInput" name="meme" accept="image/*" style="display:none;" />
+      </div>
+      
+      <div class="logo">
+        <a href="/"><span class="normal">meme</span><span class="highlight">.am</span></a>
+      </div>
+      
+      <a href="/upload" class="upload-btn">Upload</a>
+	  
+	  <div class="desktop-search-box">
+	    <form id="header-search-form" onsubmit="handleSearch(event)">
+	      <input type="text" id="header-search-input" placeholder="Search memes...">
+	      <button type="submit">
+	        <i class="fa fa-search"></i>
+	      </button>
+	    </form>
+	  </div>
+    </div>
+  
+    <!-- Centered Navigation with Previous and Next Arrows -->
+    <div class="header-center">
+      <div class="arrow-container">
+        
+        <span class="arrow-btn left-arrow" style="cursor:default; opacity: 1.0 !important;">
+          <i class="fa fa-arrow-left"></i>
+        </span>
+        
+        
+        <span class="arrow-btn right-arrow" style="cursor:default; opacity: 1.0 !important;">
+          <i class="fa fa-arrow-right"></i>
+        </span>
+        
+      </div>
+    </div>
+  
+    <div class="header-right" >
+		
+      
+      <div class="auth-buttons">
+        <a href="/login" class="auth-btn login-btn">Login</a>
+        <a href="/signup" class="auth-btn signup-btn">Sign Up</a>
+      </div>
+      
+    </div>
+  </header>
+
+  <!-- Add mobile navigation arrows that appear on scroll -->
+  <div class="mobile-nav-arrows">
+    <div class="arrow-container">
+      
+      <span class="arrow-btn left-arrow" style="cursor:default; opacity: 1;">
+        <i class="fa fa-arrow-left"></i>
+      </span>
+      
+      
+      <span class="arrow-btn right-arrow" style="cursor:default; opacity: 1;">
+        <i class="fa fa-arrow-right"></i>
+      </span>
+      
+    </div>
+  </div>
+  
+  <!-- Updated JavaScript for mobile scroll behavior -->
+  <script>
+	  // Run immediately instead of waiting for DOMContentLoaded
+	  (function() {
+	    // Check if we're on a meme detail page
+	    const path = window.location.pathname;
+	    const isMemeDetailPage = path.startsWith('/m/') || path.startsWith('/meme/');
+
+	    // Add a class to the body for CSS targeting
+	    if (isMemeDetailPage) {
+	      document.body.classList.add('meme-detail-page');
+	    }
+	  })();
+
+	  // Keep your other DOMContentLoaded code
+	  document.addEventListener('DOMContentLoaded', function() {
+	    // Your other functionality here
+  
+	    // Remove the scroll behavior entirely for meme pages on mobile
+	    const isMobile = window.matchMedia('(max-width: 768px)').matches;
+	    const isMemeDetailPage = document.body.classList.contains('meme-detail-page');
+
+	    if (isMobile && isMemeDetailPage) {
+	      // Set the mobile arrows to be visible immediately
+	      const mobileNavArrows = document.querySelector('.mobile-nav-arrows');
+	      if (mobileNavArrows) {
+	        mobileNavArrows.style.display = 'flex';
+	        mobileNavArrows.style.visibility = 'visible';
+	        mobileNavArrows.style.opacity = '1';
+	      }
+	    }
+	  });
+  </script>
+  
+  <!-- Side Menu (opens below header) -->
+  <nav id="sideMenu">
+    <ul>
+      <li>
+        <a href="/">
+          <i class="fa fa-home"></i>
+          <span>Home</span>
+        </a>
+      </li>
+      <li>
+        <a href="/">
+          <i class="fa fa-fire"></i>
+          <span>Popular</span>
+        </a>
+      </li>
+      <li>
+        <a href="/newest">
+          <i class="fa fa-star"></i>
+          <span>Newest</span>
+        </a>
+      </li>
+      <li>
+        <a href="/most-liked">
+          <i class="fa fa-heart"></i>
+          <span>Most Liked</span>
+        </a>
+      </li>
+	  <li>
+	    <a href="/top-tags">
+	      <i class="fa fa-tags"></i>
+	      <span>Top 500 Tags</span>
+	    </a>
+	  </li>
+	  <!--<li>
+	          <a href="https://www.reddit.com/r/memeampm/" target="_blank" rel="nofollow">
+	            <i class="fa fa-reddit"></i>
+	            <span>meme.am pm Reddit</span>
+	          </a>
+        </li>-->
+	  
+	  
+		<li>
+		  <a href="#" onclick="toggleSidebarSearch(event)">
+		    <i class="fa fa-search"></i>
+		    <span>Search</span>
+		  </a>
+		</li>
+		<li class="search-item" style="display: none;" id="sidebar-search-container">
+		  <div class="sidebar-search-form">
+		    <form onsubmit="handleSearch(event)">
+		      <input type="text" placeholder="Search memes..." aria-label="Search">
+		      <button type="submit">
+		        <i class="fa fa-search"></i>
+		      </button>
+		    </form>
+		  </div>
+		</li>
+
+	  
+	  
+      <li>
+        <a href="/upload">
+          <i class="fa fa-upload"></i>
+          <span>Upload Meme</span>
+        </a>
+      </li>
+      
+      
+      <li class="menu-divider"></li>
+      <li>
+        <a href="/login">
+          <i class="fa fa-sign-in"></i>
+          <span>Login</span>
+        </a>
+      </li>
+      <li>
+        <a href="/signup">
+          <i class="fa fa-user-plus"></i>
+          <span>Sign Up</span>
+        </a>
+      </li>
+      
+    </ul>
+  </nav>
+  
+  <!-- Fixed JavaScript for Menu Toggle -->
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const sideMenu = document.getElementById('sideMenu');
+  
+    // Improved toggle menu visibility
+    hamburgerBtn.addEventListener('click', function(event) {
+      // Prevent event bubbling to document click
+      event.stopPropagation();
+    
+      if (sideMenu.classList.contains('active')) {
+        // Close menu
+        sideMenu.classList.remove('active');
+        this.innerHTML = '<i class="fa fa-bars"></i>';
+      } else {
+        // Open menu
+        sideMenu.classList.add('active');
+        this.innerHTML = '<i class="fa fa-times"></i>';
+      }
+    });
+  
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+      if (sideMenu.classList.contains('active') && 
+          !sideMenu.contains(event.target) && 
+          !hamburgerBtn.contains(event.target)) {
+        sideMenu.classList.remove('active');
+        hamburgerBtn.innerHTML = '<i class="fa fa-bars"></i>';
+      }
+    });
+  
+    // Close menu when pressing escape key
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape' && sideMenu.classList.contains('active')) {
+        sideMenu.classList.remove('active');
+        hamburgerBtn.innerHTML = '<i class="fa fa-bars"></i>';
+      }
+    });
+  });
+  </script>
+
+
+
+  <div id="tags-section" >
+    <div id="tags-wrapper" class="collapsed">
+      
+        
+          <span class="tag">
+            <a href="/tag/conservation">
+              conservation
+              
+                <span class="hide-memes"> memes</span>
+              
+            </a>
+          </span>
+        
+          <span class="tag">
+            <a href="/tag/animals">
+              animals
+              
+                <span class="hide-memes"> memes</span>
+              
+            </a>
+          </span>
+        
+          <span class="tag">
+            <a href="/tag/funny_animals">
+              funny animals
+              
+                <span class="hide-memes"> memes</span>
+              
+            </a>
+          </span>
+        
+          <span class="tag">
+            <a href="/tag/nature">
+              nature
+              
+                <span class="hide-memes"> memes</span>
+              
+            </a>
+          </span>
+        
+          <span class="tag">
+            <a href="/tag/safari">
+              safari
+              
+                <span class="hide-memes"> memes</span>
+              
+            </a>
+          </span>
+        
+          <span class="tag">
+            <a href="/tag/wildlife">
+              wildlife
+              
+                <span class="hide-memes"> memes</span>
+              
+            </a>
+          </span>
+        
+          <span class="tag">
+            <a href="/tag/zoo">
+              zoo
+              
+                <span class="hide-memes"> memes</span>
+              
+            </a>
+          </span>
+        
+          <span class="tag">
+            <a href="/tag/pets">
+              pets
+              
+                <span class="hide-memes"> memes</span>
+              
+            </a>
+          </span>
+        
+          <span class="tag">
+            <a href="/tag/cats">
+              cats
+              
+                <span class="hide-memes"> memes</span>
+              
+            </a>
+          </span>
+        
+          <span class="tag">
+            <a href="/tag/dogs">
+              dogs
+              
+                <span class="hide-memes"> memes</span>
+              
+            </a>
+          </span>
+        
+          <span class="tag">
+            <a href="/tag/cat_memes">
+              cat memes
+              
+            </a>
+          </span>
+        
+          <span class="tag">
+            <a href="/tag/cute_animals">
+              cute animals
+              
+                <span class="hide-memes"> memes</span>
+              
+            </a>
+          </span>
+        
+          <span class="tag">
+            <a href="/tag/travel">
+              travel
+              
+                <span class="hide-memes"> memes</span>
+              
+            </a>
+          </span>
+        
+          <span class="tag">
+            <a href="/tag/sunset">
+              sunset
+              
+                <span class="hide-memes"> memes</span>
+              
+            </a>
+          </span>
+        
+          <span class="tag">
+            <a href="/tag/landscape">
+              landscape
+              
+                <span class="hide-memes"> memes</span>
+              
+            </a>
+          </span>
+        
+          <span class="tag">
+            <a href="/tag/mountains">
+              mountains
+              
+                <span class="hide-memes"> memes</span>
+              
+            </a>
+          </span>
+        
+          <span class="tag">
+            <a href="/tag/beach">
+              beach
+              
+                <span class="hide-memes"> memes</span>
+              
+            </a>
+          </span>
+        
+          <span class="tag">
+            <a href="/tag/ocean">
+              ocean
+              
+                <span class="hide-memes"> memes</span>
+              
+            </a>
+          </span>
+        
+          <span class="tag">
+            <a href="/tag/hiking">
+              hiking
+              
+                <span class="hide-memes"> memes</span>
+              
+            </a>
+          </span>
+        
+          <span class="tag">
+            <a href="/tag/adventure">
+              adventure
+              
+                <span class="hide-memes"> memes</span>
+              
+            </a>
+          </span>
+        
+          <span class="tag">
+            <a href="/tag/wildlife_photography">
+              wildlife photography
+              
+                <span class="hide-memes"> memes</span>
+              
+            </a>
+          </span>
+        
+          <span class="tag">
+            <a href="/tag/outdoors">
+              outdoors
+              
+                <span class="hide-memes"> memes</span>
+              
+            </a>
+          </span>
+        
+          <span class="tag">
+            <a href="/tag/fauna">
+              fauna
+              
+                <span class="hide-memes"> memes</span>
+              
+            </a>
+          </span>
+        
+      
+      <span class="tag">
+        <a href="https://wallpapers.com/cool" target="_blank">cool wallpapers</a>
+      </span>
+    </div>
+  </div>
+  
+    <button id="more-tags-button" onclick="toggleTags()">▼ MORE TAGS ▼</button>
+  
+
+
+
+
+  <main>
+    
+  <!-- Header -->
+  <h1 style="text-align: center;">Zoo Memes</h1>
+
+  <!-- Gallery of memes with this tag -->
+  <div class="gallery" id="gallery">
+    
+	
+	  <div class="meme" data-id="7166" style="background-color: #9B59B6;">
+	    <a href="/meme/VxCTUob-diving-down-this-rabbit-hole-you-wont-believe-what-i-found">
+	      
+	        <img 
+	          data-src="/binary/VxCTUob-diving-down-this-rabbit-hole-you-wont-believe-what-i-found.jpeg" 
+	          alt="Diving Down This Rabbit Hole: You Won&#39;t Believe What I Found!" 
+	          loading="lazy"
+	          width="1179"
+	          height="1564"
+	          style="aspect-ratio: 1179/1564;">
+	      
+	      <div class="meme-title">Diving Down This Rabbit Hole: You Won&#39;t Believe What I Found!</div>
+	    </a>
+	  </div>
+	  
+	
+	  <div class="meme" data-id="8143" style="background-color: #3498DB;">
+	    <a href="/meme/ssmZaxY-some-days-you-just-cant-shake-off-a-bomb">
+	      
+	        <img 
+	          data-src="/binary/ssmZaxY-some-days-you-just-cant-shake-off-a-bomb.jpeg" 
+	          alt="Some Days, You Just Can&#39;t Shake Off a Bomb!" 
+	          loading="lazy"
+	          width="571"
+	          height="720"
+	          style="aspect-ratio: 571/720;">
+	      
+	      <div class="meme-title">Some Days, You Just Can&#39;t Shake Off a Bomb!</div>
+	    </a>
+	  </div>
+	  
+	
+	  <div class="meme" data-id="9360" style="background-color: #33FF57;">
+	    <a href="/meme/zqUPNBk-ignite-the-fun-with-ignius-spicy-amtgard-memes">
+	      
+	        <img 
+	          data-src="/binary/zqUPNBk-ignite-the-fun-with-ignius-spicy-amtgard-memes.png" 
+	          alt="Ignite the Fun with Ignius&#39; Spicy Amtgard Memes" 
+	          loading="lazy"
+	          width="1130"
+	          height="897"
+	          style="aspect-ratio: 1130/897;">
+	      
+	      <div class="meme-title">Ignite the Fun with Ignius&#39; Spicy Amtgard Memes</div>
+	    </a>
+	  </div>
+	  
+	
+	  <div class="meme" data-id="11327" style="background-color: #33FF57;">
+	    <a href="/meme/9mgKcsJ-embracing-the-essence-of-summer">
+	      
+	        <img 
+	          data-src="/binary/9mgKcsJ-embracing-the-essence-of-summer.png" 
+	          alt="Embracing the Essence of Summer" 
+	          loading="lazy"
+	          width="792"
+	          height="639"
+	          style="aspect-ratio: 792/639;">
+	      
+	      <div class="meme-title">Embracing the Essence of Summer</div>
+	    </a>
+	  </div>
+	  
+	
+	  <div class="meme" data-id="11330" style="background-color: #3498DB;">
+	    <a href="/meme/mZxqoOE-breathtaking-sunrise-over-scottsdale">
+	      
+	        <img 
+	          data-src="/binary/mZxqoOE-breathtaking-sunrise-over-scottsdale.jpeg" 
+	          alt="Breathtaking Sunrise Over Scottsdale" 
+	          loading="lazy"
+	          width="2048"
+	          height="1536"
+	          style="aspect-ratio: 2048/1536;">
+	      
+	      <div class="meme-title">Breathtaking Sunrise Over Scottsdale</div>
+	    </a>
+	  </div>
+	  
+	
+	  <div class="meme" data-id="11341" style="background-color: #9B59B6;">
+	    <a href="/meme/Fz9jjvO-adorable-puppy-in-dreamland">
+	      
+	        <img 
+	          data-src="/binary/Fz9jjvO-adorable-puppy-in-dreamland.jpeg" 
+	          alt="Adorable puppy in dreamland." 
+	          loading="lazy"
+	          width="1536"
+	          height="2048"
+	          style="aspect-ratio: 1536/2048;">
+	      
+	      <div class="meme-title">Adorable puppy in dreamland.</div>
+	    </a>
+	  </div>
+	  
+	
+	  <div class="meme" data-id="11376" style="background-color: #1ABC9C;">
+	    <a href="/meme/zRDoYQu-creative-wedding-crafts-my-diy-journey-so-far">
+	      
+	        <img 
+	          data-src="/binary/zRDoYQu-creative-wedding-crafts-my-diy-journey-so-far.jpeg" 
+	          alt="Creative Wedding Crafts: My DIY Journey So Far!" 
+	          loading="lazy"
+	          width="1536"
+	          height="2048"
+	          style="aspect-ratio: 1536/2048;">
+	      
+	      <div class="meme-title">Creative Wedding Crafts: My DIY Journey So Far!</div>
+	    </a>
+	  </div>
+	  
+	
+	  <div class="meme" data-id="11400" style="background-color: #E67E22;">
+	    <a href="/meme/A7GYx9s-now-thats-some-serious-thinking">
+	      
+	        <img 
+	          data-src="/binary/A7GYx9s-now-thats-some-serious-thinking.jpeg" 
+	          alt="Now That&#39;s Some Serious Thinking!" 
+	          loading="lazy"
+	          width="512"
+	          height="640"
+	          style="aspect-ratio: 512/640;">
+	      
+	      <div class="meme-title">Now That&#39;s Some Serious Thinking!</div>
+	    </a>
+	  </div>
+	  
+	
+	  <div class="meme" data-id="16449" style="background-color: #E67E22;">
+	    <a href="/meme/PahLT8v-the-blueprint-for-a-healthy-relationship">
+	      
+	        <img 
+	          data-src="/binary/PahLT8v-the-blueprint-for-a-healthy-relationship.png" 
+	          alt="The Blueprint for a Healthy Relationship" 
+	          loading="lazy"
+	          width="1080"
+	          height="1069"
+	          style="aspect-ratio: 1080/1069;">
+	      
+	      <div class="meme-title">The Blueprint for a Healthy Relationship</div>
+	    </a>
+	  </div>
+	  
+	
+	  <div class="meme" data-id="20789" style="background-color: #1ABC9C;">
+	    <a href="/meme/VE19RFz-the-intense-gaze-of-stare-cat-always-watching-you">
+	      
+	        <img 
+	          data-src="/binary/VE19RFz-the-intense-gaze-of-stare-cat-always-watching-you.jpeg" 
+	          alt="The Intense Gaze of Stare Cat: Always Watching You" 
+	          loading="lazy"
+	          width="700"
+	          height="857"
+	          style="aspect-ratio: 700/857;">
+	      
+	      <div class="meme-title">The Intense Gaze of Stare Cat: Always Watching You</div>
+	    </a>
+	  </div>
+	  
+	
+	  <div class="meme" data-id="22479" style="background-color: #3498DB;">
+	    <a href="/meme/AiZUzRb-im-skeptical-but-these-con-artists-have-caused-more-harm-than-good">
+	      
+	        <img 
+	          data-src="/binary/AiZUzRb-im-skeptical-but-these-con-artists-have-caused-more-harm-than-good.jpeg" 
+	          alt="I’m skeptical, but these con artists have caused more harm than good." 
+	          loading="lazy"
+	          width="1080"
+	          height="720"
+	          style="aspect-ratio: 1080/720;">
+	      
+	      <div class="meme-title">I’m skeptical, but these con artists have caused more harm than good.</div>
+	    </a>
+	  </div>
+	  
+	
+	  <div class="meme" data-id="27572" style="background-color: #9B59B6;">
+	    <a href="/meme/lduajhq-now-thats-convenient">
+	      
+	        <video 
+	          draggable="false" 
+	          playsinline 
+	          autoplay 
+	          loop 
+	          muted 
+	          preload="none" 
+	          title="Now That&#39;s Convenient!"
+	          width="480"
+	          height="854"
+	          style="width: 100%; height: auto; aspect-ratio: 480/854;">
+	          <source data-src="/binary/lduajhq-now-thats-convenient.mp4" type="video/mp4">
+	          Your browser does not support the video tag.
+	        </video>
+	      
+	      <div class="meme-title">Now That&#39;s Convenient!</div>
+	    </a>
+	  </div>
+	  
+	
+	  <div class="meme" data-id="43340" style="background-color: #3357FF;">
+	    <a href="/meme/uAo3LlU-this-movie-has-my-heart-completely">
+	      
+	        <img 
+	          data-src="/binary/uAo3LlU-this-movie-has-my-heart-completely.jpeg" 
+	          alt="This movie has my heart completely!" 
+	          loading="lazy"
+	          width="345"
+	          height="460"
+	          style="aspect-ratio: 345/460;">
+	      
+	      <div class="meme-title">This movie has my heart completely!</div>
+	    </a>
+	  </div>
+	  
+	
+	  <div class="meme" data-id="45752" style="background-color: #E74C3C;">
+	    <a href="/meme/JHH66RE-woman-enjoys-heartwarming-hugs-from-affectionate-lions">
+	      
+	        <video 
+	          draggable="false" 
+	          playsinline 
+	          autoplay 
+	          loop 
+	          muted 
+	          preload="none" 
+	          title="Woman Enjoys Heartwarming Hugs from Affectionate Lions!"
+	          width="720"
+	          height="652"
+	          style="width: 100%; height: auto; aspect-ratio: 720/652;">
+	          <source data-src="/binary/JHH66RE-woman-enjoys-heartwarming-hugs-from-affectionate-lions.mp4" type="video/mp4">
+	          Your browser does not support the video tag.
+	        </video>
+	      
+	      <div class="meme-title">Woman Enjoys Heartwarming Hugs from Affectionate Lions!</div>
+	    </a>
+	  </div>
+	  
+	
+	  <div class="meme" data-id="45776" style="background-color: #1ABC9C;">
+	    <a href="/meme/dBTlc93-innovative-city-planning-the-magic-of-hex-based-design">
+	      
+	        <img 
+	          data-src="/binary/dBTlc93-innovative-city-planning-the-magic-of-hex-based-design.jpeg" 
+	          alt="Innovative City Planning: The Magic of Hex-Based Design" 
+	          loading="lazy"
+	          width="9944"
+	          height="5976"
+	          style="aspect-ratio: 9944/5976;">
+	      
+	      <div class="meme-title">Innovative City Planning: The Magic of Hex-Based Design</div>
+	    </a>
+	  </div>
+	  
+	
+	  <div class="meme" data-id="45948" style="background-color: #E67E22;">
+	    <a href="/meme/TQOEl2Z-help-support-a-struggling-stoners-journey">
+	      
+	        <img 
+	          data-src="/binary/TQOEl2Z-help-support-a-struggling-stoners-journey.png" 
+	          alt="Help Support a Struggling Stoner&#39;s Journey" 
+	          loading="lazy"
+	          width="336"
+	          height="478"
+	          style="aspect-ratio: 336/478;">
+	      
+	      <div class="meme-title">Help Support a Struggling Stoner&#39;s Journey</div>
+	    </a>
+	  </div>
+	  
+	
+	  <div class="meme" data-id="45960" style="background-color: #9B59B6;">
+	    <a href="/meme/EQdsYJs-highlighting-the-good-cops-among-us">
+	      
+	        <video 
+	          draggable="false" 
+	          playsinline 
+	          autoplay 
+	          loop 
+	          muted 
+	          preload="none" 
+	          title="Highlighting the Good Cops Among Us"
+	          width="480"
+	          height="854"
+	          style="width: 100%; height: auto; aspect-ratio: 480/854;">
+	          <source data-src="/binary/EQdsYJs-highlighting-the-good-cops-among-us.mp4" type="video/mp4">
+	          Your browser does not support the video tag.
+	        </video>
+	      
+	      <div class="meme-title">Highlighting the Good Cops Among Us</div>
+	    </a>
+	  </div>
+	  
+	
+	  <div class="meme" data-id="46168" style="background-color: #3357FF;">
+	    <a href="/meme/cDV4IHE-criminal-shoots-himself-in-the-foot---a-hilarious-repeat">
+	      
+	        <img 
+	          data-src="/binary/cDV4IHE-criminal-shoots-himself-in-the-foot---a-hilarious-repeat.png" 
+	          alt="Criminal Shoots Himself in the Foot - A Hilarious Repeat!" 
+	          loading="lazy"
+	          width="544"
+	          height="541"
+	          style="aspect-ratio: 544/541;">
+	      
+	      <div class="meme-title">Criminal Shoots Himself in the Foot - A Hilarious Repeat!</div>
+	    </a>
+	  </div>
+	  
+	
+	  <div class="meme" data-id="46174" style="background-color: #33FF57;">
+	    <a href="/meme/Og8Nkno-the-wh40k-abominant-a-fearsome-presence">
+	      
+	        <img 
+	          data-src="/binary/Og8Nkno-the-wh40k-abominant-a-fearsome-presence.jpeg" 
+	          alt="The Wh40k Abominant: A Fearsome Presence" 
+	          loading="lazy"
+	          width="3000"
+	          height="4000"
+	          style="aspect-ratio: 3000/4000;">
+	      
+	      <div class="meme-title">The Wh40k Abominant: A Fearsome Presence</div>
+	    </a>
+	  </div>
+	  
+	
+	  <div class="meme" data-id="46197" style="background-color: #1ABC9C;">
+	    <a href="/meme/gsbxPgJ-check-out-this-awesome-abstract-pizza-my-friend-shared-with-me">
+	      
+	        <img 
+	          data-src="/binary/gsbxPgJ-check-out-this-awesome-abstract-pizza-my-friend-shared-with-me.jpeg" 
+	          alt="Check out this awesome abstract pizza my friend shared with me!" 
+	          loading="lazy"
+	          width="500"
+	          height="500"
+	          style="aspect-ratio: 500/500;">
+	      
+	      <div class="meme-title">Check out this awesome abstract pizza my friend shared with me!</div>
+	    </a>
+	  </div>
+	  
+	
+  </div>
+
+  <!-- Loader indicator for infinite scroll -->
+ <!--<div id="loader" style="text-align: center; padding: 20px;">Loading more memes...</div>-->
+  <!--<div id="loader">Loading more memes...</div>-->
+	<div id="loader">
+	  <span style="display:block;">
+	    <img src="/static/ninja-loading.gif" width="70" alt="Loading">
+	  </span>
+	  <span style="display:block;">Loading...</span>
+	</div>
+
+  <!-- JavaScript for Lazy Loading and Infinite Scroll -->
+  <script>
+    // Function to lazy load images and videos
+    function loadMedia(media) {
+      const tagName = media.tagName.toLowerCase();
+      if (tagName === 'img') {
+        media.src = media.getAttribute('data-src');
+        media.onload = function() {
+          media.classList.add('loaded');
+        };
+      } else if (tagName === 'video') {
+        const source = media.querySelector('source');
+        if (source) {
+          source.src = source.getAttribute('data-src');
+          media.load();
+          media.onloadeddata = function() {
+            media.classList.add('loaded');
+          };
+        }
+      }
+    }
+
+    // Intersection Observer for lazy loading
+    let mediaObserver;
+    document.addEventListener("DOMContentLoaded", function() {
+      mediaObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            loadMedia(entry.target);
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { rootMargin: "0px 0px 200px 0px" });
+      
+	  document.querySelectorAll('img[data-src], video').forEach(media => {
+	    if (media.getBoundingClientRect().top < window.innerHeight) {
+	      loadMedia(media);
+	    } else {
+	      mediaObserver.observe(media);
+	    }
+	  });
+    });
+
+    // Infinite scroll for the tag page
+    let isLoading = false;
+    const loader = document.getElementById('loader');
+    const gallery = document.getElementById('gallery');
+
+	function loadMoreMemes() {
+	  if (isLoading) return;
+	  isLoading = true;
+
+	  // Get the last meme's production_id for pagination
+	  const memeElements = document.querySelectorAll('#gallery .meme');
+	  const lastMeme = memeElements[memeElements.length - 1];
+	  const lastId = lastMeme ? lastMeme.getAttribute('data-id') : "";
+
+	  // Fetch more memes using production_id as the pagination token
+	  fetch(`/load_more_tag?last_id=${encodeURIComponent(lastId)}&tag=${encodeURIComponent("zoo")}`)
+	    .then(response => response.json())
+	    .then(data => {
+	      if (data.length === 0) {
+	        loader.style.display = 'none';
+	        isLoading = false;
+	        return;
+	      }
+	      data.forEach(meme => {
+	        const colors = ['#FF5733', '#33FF57', '#3357FF', '#F39C12', '#9B59B6', '#1ABC9C', '#E74C3C', '#2ECC71', '#3498DB', '#E67E22'];
+	        const randomColor = colors[Math.floor(Math.random() * colors.length)];
+	        const memeDiv = document.createElement('div');
+	        memeDiv.classList.add('meme');
+	        // Use production_id here
+	        memeDiv.setAttribute('data-id', meme.meme_id);
+	        memeDiv.style.backgroundColor = randomColor;
+	        let innerHTML = '';
+	        if (meme.local_file_path.endsWith('.mp4')) {
+	          innerHTML = `<a href="/meme/${meme.shortener}-${meme.slug}">
+	                        <video draggable="false" playsinline autoplay loop muted preload="none" title="${meme.title}" 
+	                               width="${meme.width}" height="${meme.height}" 
+	                               style="width: 100%; height: auto; aspect-ratio: ${meme.width}/${meme.height};">
+	                          <source data-src="/binary/${meme.local_file_path.substring(5)}" type="video/mp4">
+	                          Your browser does not support the video tag.
+	                        </video>
+	                        <div class="meme-title">${meme.title}</div>
+	                      </a>`;
+	        } else {
+	          innerHTML = `<a href="/meme/${meme.shortener}-${meme.slug}">
+	                        <img data-src="/binary/${meme.local_file_path.substring(5)}" alt="${meme.title}" loading="lazy"
+	                             width="${meme.width}" height="${meme.height}" 
+	                             style="aspect-ratio: ${meme.width}/${meme.height};">
+	                        <div class="meme-title">${meme.title}</div>
+	                      </a>`;
+	        }
+	        memeDiv.innerHTML = innerHTML;
+	        gallery.appendChild(memeDiv);
+	      });
+	      // Observe newly added media elements for lazy loading
+	      document.querySelectorAll('#gallery img[data-src]:not(.loaded), #gallery video:not(.loaded)').forEach(media => {
+	        mediaObserver.observe(media);
+	      });
+	      isLoading = false;
+	    })
+	    .catch(err => {
+	      console.error("Error loading more memes:", err);
+	      isLoading = false;
+	    });
+	}
+ 
+
+    // Use an Intersection Observer to trigger infinite scroll when the loader is in view
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          loadMoreMemes();
+        }
+      });
+    }, { rootMargin: "0px 0px 100px 0px" });
+
+    observer.observe(loader);
+  </script>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2025 <span class="normal">meme</span><span class="highlight">.am</span>. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // When the user scrolls down, collapse the banner ad.
+    document.addEventListener('scroll', function() {
+      const banner = document.getElementById('banner-ad');
+      if (banner) {
+        if (window.scrollY > 50) {
+          banner.style.maxHeight = '0';
+        } else {
+          banner.style.maxHeight = '100px';
+        }
+      }
+    });
+
+    // Toggle function for desktop More Tags button
+    function toggleTags() {
+      const tagsWrapper = document.getElementById('tags-wrapper');
+      const button = document.getElementById('more-tags-button');
+      if (tagsWrapper.classList.contains('expanded')) {
+        tagsWrapper.classList.remove('expanded');
+        button.textContent = '▼ MORE TAGS ▼';
+      } else {
+        tagsWrapper.classList.add('expanded');
+        button.textContent = '▲ LESS TAGS ▲';
+      }
+    }
+  </script>
+<script>
+	// Function to generate user icon based on username or profile picture
+	document.addEventListener('DOMContentLoaded', function() {
+	  // Get all user buttons
+	  const userButtons = document.querySelectorAll('.user-button');
+  
+	  userButtons.forEach(button => {
+	    const userIcon = button.querySelector('.user-icon');
+	    const username = userIcon.getAttribute('data-username') || '';
+	    const profilePicUrl = userIcon.getAttribute('data-profile-pic');
+    
+	    if (profilePicUrl && profilePicUrl !== 'None' && profilePicUrl !== '') {
+	      // User has a profile picture
+	      userIcon.classList.add('with-image');
+	      userIcon.src = profilePicUrl;
+	      userIcon.alt = username || 'User';
+	    } else {
+	      // No profile picture, create a letter avatar
+	      userIcon.removeAttribute('src');
+      
+	      // Create a div for the letter avatar
+	      const avatarDiv = document.createElement('div');
+	      avatarDiv.className = 'user-icon';
+      
+	      // Get the first letter of the username, default to 'U' if username is empty
+	      const firstLetter = username ? username.charAt(0).toUpperCase() : 'U';
+	      avatarDiv.textContent = firstLetter;
+      
+	      // Replace the img element with the div
+	      button.replaceChild(avatarDiv, userIcon);
+	    }
+	  });
+  
+	  // Add hover effect for dropdown
+	  const dropdowns = document.querySelectorAll('.user-dropdown');
+	  dropdowns.forEach(dropdown => {
+	    const dropdownContent = dropdown.querySelector('.dropdown-content');
+    
+	    dropdown.addEventListener('mouseenter', () => {
+	      dropdownContent.style.display = 'block';
+	      setTimeout(() => {
+	        dropdownContent.style.opacity = '1';
+	        dropdownContent.style.transform = 'translateY(5px)';
+	      }, 10);
+	    });
+    
+	    dropdown.addEventListener('mouseleave', () => {
+	      dropdownContent.style.opacity = '0';
+	      dropdownContent.style.transform = 'translateY(10px)';
+	      setTimeout(() => {
+	        dropdownContent.style.display = 'none';
+	      }, 300);
+	    });
+	  });
+	});
+</script>
+<script>
+  // When the upload icon is clicked, open the file selection dialog
+  document.addEventListener('DOMContentLoaded', function() {
+    const mobileUploadIcon = document.getElementById('mobileUploadIcon');
+    const mobileUploadInput = document.getElementById('mobileUploadInput');
+    
+    if (mobileUploadIcon && mobileUploadInput) {
+      mobileUploadIcon.addEventListener('click', function() {
+        mobileUploadInput.click();
+      });
+    
+      // When a file is selected, upload it directly
+      mobileUploadInput.addEventListener('change', function() {
+        var file = this.files[0];
+        if (file) {
+          var formData = new FormData();
+          // Append the file with the name "meme" to match your backend expectation
+          formData.append('meme', file);
+    
+          // Use fetch API to POST the file
+          fetch('/upload', {
+            method: 'POST',
+            body: formData
+          })
+          .then(response => {
+            // If the response is a redirect (as your /upload route does on success), follow it
+            if (response.redirected) {
+              window.location.href = response.url;
+              return;
+            }
+            // Otherwise, parse the JSON (which might contain error info)
+            return response.json();
+          })
+          .then(data => {
+            // Handle error response, if any
+            if (data && data.error) {
+              alert("Error uploading file: " + data.error);
+            }
+          })
+          .catch(error => {
+            console.error("Upload error:", error);
+            alert("Upload failed.");
+          });
+        }
+      });
+    }
+  });
+</script>
+  <script>
+    // Function to toggle sidebar search
+    function toggleSidebarSearch(event) {
+      event.preventDefault();
+      const searchContainer = document.getElementById('sidebar-search-container');
+    
+      if (searchContainer) {
+        // Toggle visibility
+        const isVisible = searchContainer.style.display !== 'none' && searchContainer.style.display !== '';
+        searchContainer.style.display = isVisible ? 'none' : 'block';
+      
+        // Focus the input if showing
+        if (!isVisible) {
+          setTimeout(() => {
+            const input = searchContainer.querySelector('input');
+            if (input) input.focus();
+          }, 10);
+        }
+      }
+    }
+  
+    // Ensure the search function works for all forms
+    function handleSearch(event) {
+      event.preventDefault();
+      const input = event.target.querySelector('input');
+      if (!input) return;
+    
+      const query = input.value.trim();
+      if (query === "") return;
+    
+      window.location.href = '/search/' + encodeURIComponent(query);
+    }
+  
+    // Make the functions available globally
+    window.toggleSidebarSearch = toggleSidebarSearch;
+    window.handleSearch = handleSearch;
+  
+    // Attach event listeners when the DOM is loaded
+    document.addEventListener('DOMContentLoaded', function() {
+      // Add event listeners to all search forms
+      const searchForms = document.querySelectorAll('.sidebar-search-form form, #header-search-form');
+      searchForms.forEach(form => {
+        form.addEventListener('submit', handleSearch);
+      });
+    });
+  </script>
+
+</body>
+</html>

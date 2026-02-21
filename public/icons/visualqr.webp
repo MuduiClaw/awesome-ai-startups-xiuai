@@ -1,0 +1,267 @@
+
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+  <head>
+    <title>Visual QR: Generate beautiful QR codes using AI.</title>
+    <meta name="description" content="Generate beautiful QR codes using AI.">
+    <meta property="og:image" content="https://visualqr.co/images/screenshots/visualqr-card.png">
+    <meta name="twitter:image:src" content="https://visualqr.co/images/screenshots/visualqr-card.png ">
+    <meta name="twitter:title" content="Visual QR: Generate beautiful QR codes using AI.">
+    <meta name="twitter:description" content="Generate beautiful QR codes using AI.">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:url" content="">
+    <meta name="twitter:domain" content="">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+    <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="X0bS6XEJusGkVrDkHquLsCp5KXmgv9B94KtYqClw2hezrW7HtHICUMOTP85xAI9ublGpdaSm6NvRiENK0ckylg" />
+    
+    <link rel="stylesheet" href="/assets/application-e0cf9d8fcb18bf7f909d8d91a5e78499f82ac29523d475bf3a9ab265d5e2b451.css" data-turbo-track="reload" />
+    <script type="importmap" data-turbo-track="reload">{
+  "imports": {
+    "application": "/assets/application-37f365cbecf1fa2810a8303f4b6571676fa1f9c56c248528bc14ddb857531b95.js",
+    "@hotwired/turbo-rails": "/assets/turbo.min-f309baafa3ae5ad6ccee3e7362118b87678d792db8e8ab466c4fa284dd3a4700.js",
+    "@hotwired/stimulus": "/assets/stimulus.min-d03cf1dff41d6c5698ec2c5d6a501615a7a33754dbeef8d1edd31c928d17c652.js",
+    "@hotwired/stimulus-loading": "/assets/stimulus-loading-1fc59770fb1654500044afd3f5f6d7d00800e5be36746d55b94a2963a7a228aa.js",
+    "controllers/hello_controller": "/assets/controllers/hello_controller-549135e8e7c683a538c3d6d517339ba470fcfb79d62f738a0a089ba41851a554.js",
+    "controllers": "/assets/controllers/index-2db729dddcc5b979110e98de4b6720f83f91a123172e87281d5a58410fc43806.js",
+    "controllers/image_select_controller": "/assets/controllers/image_select_controller-395761c8eef81d81f66a4cf83a74cf11beba75236ddd8a17bcc32208dfd6847d.js",
+    "controllers/application": "/assets/controllers/application-368d98631bccbf2349e0d4f8269afb3fe9625118341966de054759d96ea86c7e.js"
+  }
+}</script>
+<link rel="modulepreload" href="/assets/application-37f365cbecf1fa2810a8303f4b6571676fa1f9c56c248528bc14ddb857531b95.js">
+<link rel="modulepreload" href="/assets/turbo.min-f309baafa3ae5ad6ccee3e7362118b87678d792db8e8ab466c4fa284dd3a4700.js">
+<link rel="modulepreload" href="/assets/stimulus.min-d03cf1dff41d6c5698ec2c5d6a501615a7a33754dbeef8d1edd31c928d17c652.js">
+<link rel="modulepreload" href="/assets/stimulus-loading-1fc59770fb1654500044afd3f5f6d7d00800e5be36746d55b94a2963a7a228aa.js">
+<script src="/assets/es-module-shims.min-d89e73202ec09dede55fb74115af9c5f9f2bb965433de1c2446e1faa6dac2470.js" async="async" data-turbo-track="reload"></script>
+<script type="module">import "application"</script>
+    <link href="/styles/fonts/font.css" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/bootstrap.min.css">
+    <script src="/styles/bootstrap.bundle.min.js"></script>
+    <style>
+
+
+
+   .btn-primary {
+       border: none;
+       background: #ff0084;
+       background: -webkit-linear-gradient(to right, #861ea3, #ff369e, #bc42de, #ff0084);
+       background: linear-gradient(to right, #861ea3, #ff369e, #bc42de, #ff0084);
+       background-size: 300% 300%;
+       -webkit-animation: gradientAniMation 5 ease infinite;
+       -moz-animation: gradientAniMation 5s ease infinite;
+       animation: gradientAniMation 5s ease infinite;
+  }
+   .btn-primary:hover {
+       border: none;
+       background-color: #ff0084;
+       background-color: #ff0084;
+       filter: brightness(115%);
+       color: white;
+  }
+   .btn:hover {
+       border-color: #ff0084;
+  }
+   .btn-secondary {
+       background-color: #383838;
+       border-color: #383838;
+  }
+   .btn-secondary:hover {
+       background-color: #383838;
+       filter: brightness(110%);
+  }
+
+   .form-control-inline {
+       border-top-right-radius: 0;
+       border-bottom-right-radius: 0;
+  }
+   .btn-inline {
+       border-top-left-radius: 0;
+       border-bottom-left-radius: 0;
+       height: calc(3.5rem + 2px);
+  }
+   .carousel-inner {
+       left: 10%;
+       right: 10%;
+  }
+   .carousel-control-next, .carousel-control-prev {
+       filter: invert(100%);
+  }
+
+   .loading-img {
+       animation-duration: 1.25s;
+       animation-fill-mode: forwards;
+       animation-iteration-count: infinite;
+       animation-name: placeHolderShimmer;
+       animation-timing-function: linear;
+       background: darkgray;
+
+        background: linear-gradient(to right, #eeeeee 10%, #dddddd 18%, #eeeeee 33%);
+
+
+       background-size: 800px 104px;
+       height: 100px;
+       position: relative;
+  }
+   @media only screen and (max-width: 600px) {
+       .carousel-inner {
+           left: 0%;
+           right: 0%;
+      }
+       .form-control-inline {
+           border-top-right-radius: 0.5rem !important;
+           border-bottom-right-radius: 0.5rem !important;
+      }
+       .btn-inline {
+           border-top-left-radius: 0.5rem !important;
+           border-bottom-left-radius: 0.5rem !important;
+           height: calc(3.5rem + 2px);
+      }
+
+  }
+
+   @keyframes gradientAniMation {
+       0%{
+          background-position:0% 50%
+      }
+       50%{
+          background-position:100% 50%
+      }
+       100%{
+          background-position:0% 50%
+      }
+  }
+
+   @keyframes placeHolderShimmer{
+       0%{
+           background-position: -468px 0
+      }
+       100%{
+           background-position: 468px 0
+      }
+  }
+</style>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4PM8S0PT9Y"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-4PM8S0PT9Y');
+    </script>
+  </head>
+  <body>
+    <div class="ps-0 pe-0 ps-md-4 pe-md-5">
+  <div class="px-0 px-md-5">
+    <nav class="navbar navbar-expand-lg  px-0 px-md-5">
+      <div class="container-fluid">
+        <a class="navbar-brand" style="font-weight: 700;" href="/">
+          <span style="font-family:Pacifico,sans-serif">visual</span> QR
+        </a>
+        <button class="navbar-toggler d-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent"> -->
+        <!--         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        </ul> -->
+        <!-- </div> -->
+      </div>
+    </nav>
+  </div>
+</div>
+    <div class="m-3 m-md-4 px-1 px-md-4">
+      <div class="container px-0 px-md-5">
+        <div class="row flex-lg-row-reverse align-items-center g-5 py-0 py-md-5">
+  <div class="col-12 col-lg-6">
+    <img width="400" height="400" src="/images/templates/pizza.png" class="img-fluid" alt="...", onclick="document.getElementById(&#39;email&#39;).focus()">
+  </div>
+  <div class="col-lg-6">
+    <h1 class="display-5 d-none d-md-block fw-bold lh-1 mb-3"><span style="font-family:Pacifico,sans-serif">visual</span> QR</h1>
+    <p class="lead">Generate beautiful QR codes using AI.</p>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+    </div>
+  </div>
+  <div class="mt-5">
+      <div class="row mt-md-4">
+          <div class="col-md-4 mt-3 mt-md-0">
+            <img class="img-fluid mt-2 ms-1" loading="lazy" onclick="document.getElementById(&#39;email&#39;).focus()" src="/images/templates/dog.png" />
+          </div>
+          <div class="col-md-4 mt-3 mt-md-0">
+            <img class="img-fluid mt-2 ms-1" loading="lazy" onclick="document.getElementById(&#39;email&#39;).focus()" src="/images/templates/coffee.png" />
+          </div>
+          <div class="col-md-4 mt-3 mt-md-0">
+            <img class="img-fluid mt-2 ms-1" loading="lazy" onclick="document.getElementById(&#39;email&#39;).focus()" src="/images/templates/dog2.png" />
+          </div>
+      </div>
+      <div class="row mt-md-4">
+          <div class="col-md-4 mt-3 mt-md-0">
+            <img class="img-fluid mt-2 ms-1" loading="lazy" onclick="document.getElementById(&#39;email&#39;).focus()" src="/images/templates/burger2.png" />
+          </div>
+          <div class="col-md-4 mt-3 mt-md-0">
+            <img class="img-fluid mt-2 ms-1" loading="lazy" onclick="document.getElementById(&#39;email&#39;).focus()" src="/images/templates/kitty.png" />
+          </div>
+          <div class="col-md-4 mt-3 mt-md-0">
+            <img class="img-fluid mt-2 ms-1" loading="lazy" onclick="document.getElementById(&#39;email&#39;).focus()" src="/images/templates/woman.png" />
+          </div>
+      </div>
+      <div class="row mt-md-4">
+          <div class="col-md-4 mt-3 mt-md-0">
+            <img class="img-fluid mt-2 ms-1" loading="lazy" onclick="document.getElementById(&#39;email&#39;).focus()" src="/images/templates/sushi.png" />
+          </div>
+          <div class="col-md-4 mt-3 mt-md-0">
+            <img class="img-fluid mt-2 ms-1" loading="lazy" onclick="document.getElementById(&#39;email&#39;).focus()" src="/images/templates/pizza.png" />
+          </div>
+          <div class="col-md-4 mt-3 mt-md-0">
+            <img class="img-fluid mt-2 ms-1" loading="lazy" onclick="document.getElementById(&#39;email&#39;).focus()" src="/images/templates/woman4.png" />
+          </div>
+      </div>
+      <div class="row mt-md-4">
+          <div class="col-md-4 mt-3 mt-md-0">
+            <img class="img-fluid mt-2 ms-1" loading="lazy" onclick="document.getElementById(&#39;email&#39;).focus()" src="/images/templates/woman5.png" />
+          </div>
+          <div class="col-md-4 mt-3 mt-md-0">
+            <img class="img-fluid mt-2 ms-1" loading="lazy" onclick="document.getElementById(&#39;email&#39;).focus()" src="/images/templates/woman2.png" />
+          </div>
+          <div class="col-md-4 mt-3 mt-md-0">
+            <img class="img-fluid mt-2 ms-1" loading="lazy" onclick="document.getElementById(&#39;email&#39;).focus()" src="/images/templates/burger.png" />
+          </div>
+      </div>
+      <div class="row mt-md-4">
+          <div class="col-md-4 mt-3 mt-md-0">
+            <img class="img-fluid mt-2 ms-1" loading="lazy" onclick="document.getElementById(&#39;email&#39;).focus()" src="/images/templates/woman3.png" />
+          </div>
+      </div>
+  </div>
+</div>
+<div class="text-center">
+  <a href="https://getapplicantai.com">Applicant AI</a>
+</div>
+<div class="text-center">
+  <a href="https://web3.career">Web3 Jobs</a>
+</div>
+<div class="text-center">
+  <a href="https://fat2fit.ai">AI Body Tansformation</a>
+</div>
+<!-- 
+  <div class="d-none d-md-flex gap-2 mt-4">
+      <img src="/home_qr/dog.png.png" class="d-block mx-lg-auto img-fluid" alt="image" width="100" height="100" loading="lazy">
+      <img src="/home_qr/coffee.png.png" class="d-block mx-lg-auto img-fluid" alt="image" width="100" height="100" loading="lazy">
+      <img src="/home_qr/dog2.png.png" class="d-block mx-lg-auto img-fluid" alt="image" width="100" height="100" loading="lazy">
+      <img src="/home_qr/burger2.png.png" class="d-block mx-lg-auto img-fluid" alt="image" width="100" height="100" loading="lazy">
+      <img src="/home_qr/kitty.png.png" class="d-block mx-lg-auto img-fluid" alt="image" width="100" height="100" loading="lazy">
+      <img src="/home_qr/woman.png.png" class="d-block mx-lg-auto img-fluid" alt="image" width="100" height="100" loading="lazy">
+      <img src="/home_qr/sushi.png.png" class="d-block mx-lg-auto img-fluid" alt="image" width="100" height="100" loading="lazy">
+      <img src="/home_qr/pizza.png.png" class="d-block mx-lg-auto img-fluid" alt="image" width="100" height="100" loading="lazy">
+      <img src="/home_qr/woman4.png.png" class="d-block mx-lg-auto img-fluid" alt="image" width="100" height="100" loading="lazy">
+      <img src="/home_qr/woman5.png.png" class="d-block mx-lg-auto img-fluid" alt="image" width="100" height="100" loading="lazy">
+      <img src="/home_qr/woman2.png.png" class="d-block mx-lg-auto img-fluid" alt="image" width="100" height="100" loading="lazy">
+      <img src="/home_qr/burger.png.png" class="d-block mx-lg-auto img-fluid" alt="image" width="100" height="100" loading="lazy">
+      <img src="/home_qr/woman3.png.png" class="d-block mx-lg-auto img-fluid" alt="image" width="100" height="100" loading="lazy">
+  </div>
+ -->
+      </div>
+    </div>
+  </body>
+</html>

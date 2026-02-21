@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>LLM Pricing - Compare Large Language Model Costs and Pricing</title>
+      <meta name="description" content="LLM Pricing is a website that aggregates and compares the pricing information for various Large Language Models (LLMs) offered by official AI providers and cloud service vendors. Find the best LLM pricing for your project.">
+      <meta name="keywords" content="LLM pricing, GPT pricing, ChatGPT pricing, Anthropic pricing, Cohere pricing, Google AI pricing, AWS AI pricing, Azure AI pricing">
+      <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💵</text></svg>">
+      <script src="https://cdn.tailwindcss.com"></script>
+      <script src="./tailwind.config.js"></script>
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Quicksand:wght@300..700&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+      <script>
+         if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+             document.documentElement.classList.add('dark');
+         } else {
+             document.documentElement.classList.remove('dark')
+         }
+      </script>
+   </head>
+   <body class="bg-white dark:bg-gray-900" style="font-family: 'Roboto Slab';">
+      <section class="bg-white dark:bg-gray-900 px-4">
+         <div class="grid max-w-screen-xl py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
+            <div class="mr-auto place-self-center lg:col-span-7">
+               <h1 class="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white" style="font-weight: 500;">💵 LLM Pricing</h1>
+               <p class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400" style="font-weight: 200;">LLM Pricing is a website that aggregates and compares the pricing information for various Large Language Models (LLMs) offered by official AI providers and cloud service vendors.</p>
+               <p class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400" style="font-weight: 200; font-style: italic;">Designed, developed and updated by Claude 3 Sonnet, prompted by <a target="_blank" href="https://huhuhang.com/" class="mr-4 hover:underline md:mr-6">huhuhang</a></p>
+               <a href="https://www.producthunt.com/posts/llm-pricing?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-llm&#0045;pricing" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=445077&theme=light" alt="LLM&#0032;Pricing - LLMs&#0032;Price&#0032;comparison&#0032;tool&#0032;developed&#0032;and&#0032;updated&#0032;by&#0032;LLM&#0046; | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>
+            </div>
+            <div class="hidden lg:mt-0 lg:col-span-5 lg:flex">
+               <img src="./images/bg.png" alt="mockup">
+            </div>
+         </div>
+      </section>
+      <section class="max-w-screen-xl mx-auto">
+         <div class="p-4 sm:rounded-lg mb-4 bg-gray-100 dark:bg-gray-700">
+            <div class="flex items-center justify-between flex-wrap space-y-4 md:space-y-0">
+               <div class="flex items-center">
+                  <div class="relative mr-4">
+                     <select id="providerFilter" class="block py-2 pl-3 pr-10 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md">
+                        <option value="">All Provider</option>
+                        <!-- Provider options will be populated here -->
+                     </select>
+                  </div>
+                  <div class="relative">
+                     <input type="text" id="modelSearch" class="block p-2 pl-10 text-sm border-gray-300 rounded-md" placeholder="Search by Model Name">
+                     <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                        <svg class="w-5 h-5 text-gray-400" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                           <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.817-4.817A6 6 0 012 8z" clip-rule="evenodd"></path>
+                        </svg>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <section class="relative overflow-x-auto sm:rounded-lg max-w-screen-xl mx-auto">
+         <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+            <thead class="text-xs text-white uppercase bg-blue-400 dark:bg-gray-700 dark:text-gray-400">
+               <tr>
+                  <th scope="col" class="px-6 py-3">
+                     <div class="flex items-center">
+                        Model Name
+                        <a href="#" id="sortModelName">
+                           <svg class="w-3 h-3 ms-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                              <path d="M8.574 11.024h6.852a2.075 2.075 0 0 0 1.847-1.086 1.9 1.9 0 0 0-.11-1.986L13.736 2.9a2.122 2.122 0 0 0-3.472 0L6.837 7.952a1.9 1.9 0 0 0-.11 1.986 2.074 2.074 0 0 0 1.847 1.086Zm6.852 1.952H8.574a2.072 2.072 0 0 0-1.847 1.087 1.9 1.9 0 0 0 .11 1.985l3.426 5.05a2.123 2.123 0 0 0 3.472 0l3.427-5.05a1.9 1.9 0 0 0 .11-1.985 2.074 2.074 0 0 0-1.846-1.087Z"/>
+                           </svg>
+                        </a>
+                     </div>
+                  </th>
+                  <th scope="col" class="px-6 py-3">
+                     <div class="flex items-center">
+                        Providers
+                        <a href="#" id="sortProviders">
+                           <svg class="w-3 h-3 ms-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                              <path d="M8.574 11.024h6.852a2.075 2.075 0 0 0 1.847-1.086 1.9 1.9 0 0 0-.11-1.986L13.736 2.9a2.122 2.122 0 0 0-3.472 0L6.837 7.952a1.9 1.9 0 0 0-.11 1.986 2.074 2.074 0 0 0 1.847 1.086Zm6.852 1.952H8.574a2.072 2.072 0 0 0-1.847 1.087 1.9 1.9 0 0 0 .11 1.985l3.426 5.05a2.123 2.123 0 0 0 3.472 0l3.427-5.05a1.9 1.9 0 0 0 .11-1.985 2.074 2.074 0 0 0-1.846-1.087Z"/>
+                           </svg>
+                        </a>
+                     </div>
+                  </th>
+                  <th scope="col" class="px-6 py-3">
+                     <div class="flex items-center">
+                        1 M Input Tokens
+                        <a href="#" id="sortInputTokens">
+                           <svg class="w-3 h-3 ms-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                              <path d="M8.574 11.024h6.852a2.075 2.075 0 0 0 1.847-1.086 1.9 1.9 0 0 0-.11-1.986L13.736 2.9a2.122 2.122 0 0 0-3.472 0L6.837 7.952a1.9 1.9 0 0 0-.11 1.986 2.074 2.074 0 0 0 1.847 1.086Zm6.852 1.952H8.574a2.072 2.072 0 0 0-1.847 1.087 1.9 1.9 0 0 0 .11 1.985l3.426 5.05a2.123 2.123 0 0 0 3.472 0l3.427-5.05a1.9 1.9 0 0 0 .11-1.985 2.074 2.074 0 0 0-1.846-1.087Z"/>
+                           </svg>
+                        </a>
+                     </div>
+                  </th>
+                  <th scope="col" class="px-6 py-3">
+                     <div class="flex items-center">
+                        1 M Output Tokens
+                        <a href="#" id="sortOutputTokens">
+                           <svg class="w-3 h-3 ms-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                              <path d="M8.574 11.024h6.852a2.075 2.075 0 0 0 1.847-1.086 1.9 1.9 0 0 0-.11-1.986L13.736 2.9a2.122 2.122 0 0 0-3.472 0L6.837 7.952a1.9 1.9 0 0 0-.11 1.986 2.074 2.074 0 0 0 1.847 1.086Zm6.852 1.952H8.574a2.072 2.072 0 0 0-1.847 1.087 1.9 1.9 0 0 0 .11 1.985l3.426 5.05a2.123 2.123 0 0 0 3.472 0l3.427-5.05a1.9 1.9 0 0 0 .11-1.985 2.074 2.074 0 0 0-1.846-1.087Z"/>
+                           </svg>
+                        </a>
+                     </div>
+                  </th>
+                  <th scope="col" class="px-6 py-3">Source</th>
+                  <th scope="col" class="px-6 py-3">Updated Time</th>
+               </tr>
+            </thead>
+            <tbody id="tableBody">
+               <tr id="loadingRow">
+                  <td colspan="10" class="text-center">
+                     <div class="mt-10 text-gray-500 dark:text-white">
+                        <i class="fa-solid fa-circle-notch fa-spin text-2xl"></i>
+                        <p>Data Loading</p>
+                     </div>
+                  </td>
+               </tr>
+               <!-- Data will be inserted here by JavaScript -->
+            </tbody>
+         </table>
+      </section>
+      <section class="relative overflow-x-auto sm:rounded-lg max-w-screen-xl mx-auto">
+         <div id="recordCount" class="p-4 mb-4 mt-4 text-sm text-green-800 sm:rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400" role="alert">
+            <i class="fa-solid fa-rotate fa-spin"></i> Claude 3 Sonnet updates the price list by regularly visiting the pricing page.
+         </div>
+      </section>
+      <footer class="mt-10 p-4 bg-white md:p-8 lg:p-10 dark:bg-gray-900">
+         <div class="mx-auto max-w-screen-xl text-center">
+            <div class="mb-4">
+               <button id="theme-toggle" type="button" class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
+                  <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                     <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                  </svg>
+                  <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                     <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+                  </svg>
+               </button>
+            </div>
+            <a href="#" class="flex justify-center items-center text-2xl font-semibold text-gray-900 dark:text-white">
+            💵 LLM Pricing
+            </a>
+            <p class="my-6 text-gray-500 dark:text-gray-400" style="font-weight: 200; font-style: italic;">Designed, developed and updated by Claude 3 Sonnet, prompted by <a target="_blank" href="https://huhuhang.com/" class="mr-4 hover:underline md:mr-6">huhuhang</a></p>
+            <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400" style="font-weight: 200;">© 2024 LLM Pricing</span>
+         </div>
+      </footer>
+      <section class="mt-10">
+         <div id="bottom-banner" tabindex="-1" class="fixed bottom-0 start-0 z-50 flex justify-between w-full p-4 border-t border-gray-200 bg-blue-50 dark:bg-gray-700 dark:border-gray-600">
+            <div class="flex items-center mx-auto">
+               <p class="flex items-center text-sm font-normal text-gray-500 dark:text-gray-400">
+                  <span class="inline-flex p-1 me-3 bg-gray-200 rounded-full dark:bg-gray-600 w-6 h-6 items-center justify-center">
+                     <svg class="w-3 h-3 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 19">
+                        <path d="M15 1.943v12.114a1 1 0 0 1-1.581.814L8 11V5l5.419-3.871A1 1 0 0 1 15 1.943ZM7 4H2a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2v5a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2V4ZM4 17v-5h1v5H4ZM16 5.183v5.634a2.984 2.984 0 0 0 0-5.634Z"/>
+                     </svg>
+                     <span class="sr-only">Light bulb</span>
+                  </span>
+                  <span>Subscribe to ChatGPT Plus + Claude Pro through Wildcard for just $14.99 per month. <a href="https://bewildcard.com/i/HUHUHANG" class="inline font-medium text-blue-600 underline dark:text-blue-500 underline-offset-2 decoration-600 dark:decoration-500 decoration-solid hover:no-underline">Get started now →</a></span>
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                  </svg></a></span>
+               </p>
+            </div>
+            <div class="flex items-center">
+               <button data-dismiss-target="#bottom-banner" type="button" class="flex-shrink-0 inline-flex justify-center w-7 h-7 items-center text-gray-400 hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 dark:hover:bg-gray-600 dark:hover:text-white">
+                  <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                  </svg>
+                  <span class="sr-only">Close banner</span>
+               </button>
+            </div>
+         </div>
+      </section>
+      <script>
+         let llmData = []; // This will hold the fetched data
+         
+         async function fetchLLMPricing() {
+            const apiUrl = 'https://llm-price.huhuhang.workers.dev/';
+            try {
+               const response = await fetch(apiUrl);
+               const data = await response.json();
+               llmData = data;
+               populateTable(llmData);
+               populateProviders(llmData);
+            } catch (error) {
+               console.error('Error fetching LLM pricing:', error);
+            }
+         }
+         
+         function populateTable(data) {
+            const tableBody = document.getElementById('tableBody');
+            tableBody.innerHTML = ''; // Clear existing table rows
+            const loadingRow = document.getElementById('loadingRow');
+         
+            // Remove the loading animation row
+            if (loadingRow) {
+               loadingRow.remove();
+            }
+         
+            data.forEach(record => {
+               const updateTime = new Date(record.fields.update_time).toLocaleString('en-US', { timeZone: 'UTC', year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' });
+               
+               // Check current color theme
+               const isDarkMode = document.documentElement.classList.contains('dark');
+               
+               // Construct logo file path
+               const providerlogoPath = `/logos/${record.fields.provider.replace(/\s+/g, '').toLowerCase()}${isDarkMode ? '-dark' : '-light'}.svg`;
+         
+               const row = `<tr class="bg-gray-100 border-b dark:bg-gray-800 dark:border-gray-700">
+                     <td class="px-6 py-4 font-medium text-gray-900 dark:text-white">${record.fields.model_name}</td>
+                     <td class="px-6 py-4"><img src="${providerlogoPath}" alt="${record.fields.provider} Logo" class="inline w-6 h-6 mr-2"></td>
+                     <td class="px-6 py-4 font-medium text-gray-900 dark:text-white">
+                        ${parseFloat(record.fields.input_tokens) === 0 ? 'N/A' : new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(record.fields.input_tokens)}
+                     </td>
+                     <td class="px-6 py-4 font-medium text-gray-900 dark:text-white">
+                        ${parseFloat(record.fields.output_tokens) === 0 ? 'N/A' : new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(record.fields.output_tokens)}
+                     </td>
+                     <td class="px-6 py-4">${record.fields.url ? `<a href="${record.fields.url}" class="text-blue-400 hover:underline" target="_blank">${record.fields.provider}</a>` : ''}</td>
+                     <td class="px-6 py-4">${updateTime}</td>
+               </tr>`;
+               tableBody.innerHTML += row;
+            });
+         }
+         
+         function populateProviders(data) {
+             const providers = [...new Set(data.map(record => record.fields.provider))];
+             const providerSelect = document.getElementById('providerFilter');
+             providers.forEach(provider => {
+                 const option = `<option value="${provider}">${provider}</option>`;
+                 providerSelect.innerHTML += option;
+             });
+         }
+         
+         function filterData() {
+             const providerFilter = document.getElementById('providerFilter').value;
+             const modelSearch = document.getElementById('modelSearch').value.toLowerCase();
+         
+             const filteredData = llmData.filter(record => {
+                 return (
+                     (providerFilter === '' || record.fields.provider === providerFilter) &&
+                     record.fields.model_name.toLowerCase().includes(modelSearch)
+                 );
+             });
+         
+             populateTable(filteredData);
+         }
+         
+         document.getElementById('providerFilter').addEventListener('change', filterData);
+         document.getElementById('modelSearch').addEventListener('keyup', filterData);
+         
+         fetchLLMPricing();
+      </script>
+      <script>
+         function updateRecordCount() {
+           const recordCount = document.getElementById('recordCount');
+           const tableRows = document.querySelectorAll('#tableBody tr:not(#loadingRow)');
+           if (tableRows.length === 0) {
+         } else {
+             recordCount.textContent = `${tableRows.length} records after filtering.`;
+           }
+         }
+         
+         window.addEventListener('load', updateRecordCount);
+         document.getElementById('providerFilter').addEventListener('change', updateRecordCount);
+         document.getElementById('modelSearch').addEventListener('keyup', updateRecordCount);
+      </script>
+      <script>
+         var themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+         var themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+         
+         // Change the icon inside the button according to the previous settings.
+         if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            themeToggleLightIcon.classList.remove('hidden');
+         } else {
+            themeToggleDarkIcon.classList.remove('hidden');
+         }
+         
+         var themeToggleBtn = document.getElementById('theme-toggle');
+         
+         themeToggleBtn.addEventListener('click', function() {
+            // Icon in the toggle button
+            themeToggleDarkIcon.classList.toggle('hidden');
+            themeToggleLightIcon.classList.toggle('hidden');
+         
+            // If a color theme has been set before
+            if (localStorage.getItem('color-theme')) {
+               if (localStorage.getItem('color-theme') === 'light') {
+                     document.documentElement.classList.add('dark');
+                     localStorage.setItem('color-theme', 'dark');
+               } else {
+                     document.documentElement.classList.remove('dark');
+                     localStorage.setItem('color-theme', 'light');
+               }
+            // If no color theme has been set before
+            } else {
+               if (document.documentElement.classList.contains('dark')) {
+                     document.documentElement.classList.remove('dark');
+                     localStorage.setItem('color-theme', 'light');
+               } else {
+                     document.documentElement.classList.add('dark');
+                     localStorage.setItem('color-theme', 'dark');
+               }
+            }
+         
+            // Re-call the populateTable function to update the logo.
+            populateTable(llmData);
+         });
+      </script>
+      <script>
+         // Get <a> tag elements
+         const sortModelNameLink = document.getElementById('sortModelName');
+         const sortProvidersLink = document.getElementById('sortProviders');
+         const sortInputTokensLink = document.getElementById('sortInputTokens');
+         const sortOutputTokensLink = document.getElementById('sortOutputTokens');
+         
+         // Declare variables to store the current sort order
+         let modelNameOrder = 'asc'; // Initially ascending
+         let providersOrder = 'asc'; // Initially ascending
+         let inputTokensOrder = 'desc'; // Initially descending
+         let outputTokensOrder = 'desc'; // Initially descending
+
+         // Define sort function
+         function sortTable(column, order) {
+            // Get table data
+            const tableRows = Array.from(document.querySelectorAll('#tableBody tr:not(#loadingRow)'));
+            const sortedRows = tableRows.sort((a, b) => {
+               let aValue, bValue;
+         
+               if (column === 1) { // Providers column
+                     const aProviderImg = a.children[column].querySelector('img');
+                     const bProviderImg = b.children[column].querySelector('img');
+                     aValue = aProviderImg ? aProviderImg.alt.trim().toLowerCase() : '';
+                     bValue = bProviderImg ? bProviderImg.alt.trim().toLowerCase() : '';
+               } else if (column === 0) { // Model Name column
+                     aValue = a.children[column].textContent.trim().toLowerCase();
+                     bValue = b.children[column].textContent.trim().toLowerCase();
+               } else { // Input Tokens and Output Tokens columns
+                     aValue = parseFloat(a.children[column].textContent.replace(/[^0-9.-]+/g, ""));
+                     bValue = parseFloat(b.children[column].textContent.replace(/[^0-9.-]+/g, ""));
+               }
+         
+               if (order === 'asc') {
+                     if (column === 0 || column === 1) {
+                        return aValue.localeCompare(bValue);
+                     } else {
+                        return aValue - bValue;
+                     }
+               } else {
+                     if (column === 0 || column === 1) {
+                        return bValue.localeCompare(aValue);
+                     } else {
+                        return bValue - aValue;
+                     }
+               }
+            });
+         
+            // Clear table body
+            const tableBody = document.getElementById('tableBody');
+            tableBody.innerHTML = '';
+         
+            // Insert sorted rows
+            sortedRows.forEach(row => tableBody.appendChild(row));
+         }
+         
+         // Add click event listeners to <a> tags
+         sortModelNameLink.addEventListener('click', (event) => {
+            event.preventDefault(); // Prevent default behavior
+            modelNameOrder = modelNameOrder === 'asc' ? 'desc' : 'asc';
+            sortTable(0, modelNameOrder); // Sort column 1 (Model Name)
+         });
+         
+         sortProvidersLink.addEventListener('click', (event) => {
+            event.preventDefault(); // Prevent default behavior
+            providersOrder = providersOrder === 'asc' ? 'desc' : 'asc';
+            sortTable(1, providersOrder); // Sort column 2 (Providers)
+         });
+         
+         sortInputTokensLink.addEventListener('click', (event) => {
+            event.preventDefault(); // Prevent default behavior
+            inputTokensOrder = inputTokensOrder === 'asc' ? 'desc' : 'asc';
+            sortTable(2, inputTokensOrder); // Sort column 3 (Input Tokens)
+         });
+         
+         sortOutputTokensLink.addEventListener('click', (event) => {
+            event.preventDefault(); // Prevent default behavior
+            outputTokensOrder = outputTokensOrder === 'asc' ? 'desc' : 'asc';
+            sortTable(3, outputTokensOrder); // Sort column 4 (Output Tokens)
+         });
+      </script>
+      <!-- Google tag (gtag.js) -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZX0QMFZJYL"></script>
+      <script>
+         window.dataLayer = window.dataLayer || [];
+         function gtag(){dataLayer.push(arguments);}
+         gtag('js', new Date());
+         
+         gtag('config', 'G-ZX0QMFZJYL');
+      </script>
+   </body>
+</html>

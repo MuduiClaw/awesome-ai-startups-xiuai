@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background -->
+    <rect width="32" height="32" rx="8" fill="#E6246E"/>
+    
+    <!-- Neural network nodes -->
+    <circle cx="8" cy="8" r="2" fill="rgba(255,255,255,0.4)"/>
+    <circle cx="24" cy="8" r="2" fill="rgba(255,255,255,0.4)"/>
+    <circle cx="8" cy="24" r="2" fill="rgba(255,255,255,0.4)"/>
+    <circle cx="24" cy="24" r="2" fill="rgba(255,255,255,0.4)"/>
+    <circle cx="16" cy="16" r="2" fill="rgba(255,255,255,0.4)"/>
+    
+    <!-- Neural connections -->
+    <line x1="8" y1="8" x2="24" y2="24" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+    <line x1="24" y1="8" x2="8" y2="24" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+    <line x1="8" y1="8" x2="16" y2="16" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+    <line x1="24" y1="8" x2="16" y2="16" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+    <line x1="8" y1="24" x2="16" y2="16" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+    <line x1="24" y1="24" x2="16" y2="16" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+    
+    <!-- Letter B -->
+    <text x="50%" y="50%" text-anchor="middle" dominant-baseline="central" 
+          fill="white" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" 
+          font-weight="800" font-size="18">
+        B
+    </text>
+</svg> 

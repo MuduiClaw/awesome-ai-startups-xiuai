@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="125" height="125" viewBox="0 0 125 125" fill="none">
+  <defs>
+    <!-- Smooth multi-tone gradient with vibrancy -->
+    <linearGradient id="sexyGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#A78BFA"/>
+      <stop offset="40%" stop-color="#7C3AED"/>
+      <stop offset="80%" stop-color="#5B21B6"/>
+      <stop offset="100%" stop-color="#3B0764"/>
+    </linearGradient>
+
+    <filter id="glow-medium" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#8B5CF6" flood-opacity="0.45"/>
+    </filter>
+  </defs>
+
+  <g transform="translate(10,10)">
+    <circle cx="52.85" cy="52.85" r="52.85" fill="white"/>
+    <path d="M52.85 0C23.67 0 0 23.67 0 52.85C0 82.03 23.67 105.7 52.85 105.7C82.03 105.7 105.7 82.03 105.7 52.85C105.7 23.67 82.04 0 52.85 0ZM85.24 61.11C84.3 63.57 82.97 65.69 81.25 67.46C79.54 69.23 77.48 70.61 75.08 71.59C72.67 72.57 70.01 73.05 67.08 73.05H40.23L27.76 32.63V73.05H19.04V32.63H36.77L49.24 73.05V32.63H66.56C69.64 32.63 72.41 33.14 74.87 34.17C77.34 35.19 79.44 36.59 81.2 38.38C82.95 40.17 84.3 42.3 85.24 44.79C86.18 47.27 86.66 50 86.66 52.96C86.66 55.92 86.18 58.63 85.24 61.1V61.11ZM66.21 64.86C68.09 64.86 69.73 64.57 71.11 63.96C72.5 63.37 73.65 62.55 74.58 61.51C75.5 60.47 76.19 59.22 76.63 57.76C77.08 56.3 77.3 54.7 77.3 52.97C77.3 49.2 76.29 46.23 74.3 44.08C72.3 41.92 69.42 40.84 65.69 40.84H61.67L57.96 32.64V64.86H66.21Z" fill="url(#sexyGrad2)" filter="url(#glow-medium)"/>
+  </g>
+</svg>

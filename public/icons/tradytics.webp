@@ -1,0 +1,2128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-171991414-1"></script>
+  <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-171991414-1');
+  </script>
+
+  <!-- Website info -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Page not found</title>
+  <!-- core:css -->
+  <link rel="stylesheet" href="/static/assets/vendors/core/core.css">
+  <!-- endinject -->
+  <!-- plugin css for this page -->
+  <link rel="stylesheet" href="/static/assets/vendors/bootstrap-datepicker/bootstrap-datepicker.min.css">
+  <!-- end plugin css for this page -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="/static/assets/fonts/feather-font/css/iconfont.css">
+  <link rel="stylesheet" href="/static/assets/vendors/flag-icon-css/css/flag-icon.min.css">
+  <!-- endinject -->
+  <!-- Layout styles -->  
+  <link rel="stylesheet" href="/static/assets/css/demo_2/style.css">
+  <link rel="stylesheet" href="/static/assets/css/demo_2/added_styles.css">
+  <!-- End layout styles -->
+  <link rel="shortcut icon" href="/static/assets/images/favicon.ico" />
+</head>
+<body class="sidebar-folded">
+  <div class="main-wrapper">
+      <!--
+
+
+<div id="promo-banner" style="position: fixed; bottom: 0; width: 100%; z-index: 999999999;">
+	<a href='/signup'
+		style='display: flex; align-items: center; justify-content: center; width: 100%; background-color: #A4F720; text-align: center; height: 45px; color: black !important; margin-bottom: 00px;'>
+		<span style="font-size: 15px !important; color: black !important; hover:color: black !important;">
+			<span style="font-weight: 700;">Black Friday Sale</span> - Subscribe and get 40% off all plans 🔥 No Trial
+			(90 of 300 spots left)
+		</span>
+	</a>
+	<button onclick="$('#promo-banner').hide();"
+		style="position: absolute; bottom: 10px; right: 20px; background: transparent; border: none; color: black !important; font-size: 20px; cursor: pointer;">×</button>
+</div>
+
+-->
+
+
+
+
+
+<nav class="sidebar">
+	<div class="sidebar-header">
+		<a href="/" class="sidebar-brand">
+			<!--Noble<span>UI</span>-->
+			<!--<img width="50px" src="/static/assets/images/white_icon.png">-->
+			<h4 class='text-bold tx-24'>Tradytics</h4>
+		</a>
+		<div class="sidebar-toggler not-active">
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+	</div>
+	<div class="sidebar-body">
+		<ul class="nav">
+			<li class="nav-item nav-category">Market Dashboard</li>
+
+			
+			<li class="nav-item">
+				<a href="charts" class="nav-link">
+					
+					<i class="link-icon" data-feather="bar-chart-2"></i>
+					<span class="link-title">Charts</span>
+					
+				</a>
+			</li>
+			
+
+			
+			<li class="nav-item">
+				<a href="overall-market" class="nav-link">
+					
+					<i class="link-icon" data-feather="activity"></i>
+					<span class="link-title">Stocks</span>
+					
+				</a>
+			</li>
+			
+
+
+			
+			<li class="nav-item">
+				<a href="options-market" class="nav-link">
+					
+					<i class="link-icon" data-feather="chevrons-right"></i>
+					<span class="link-title">Options</span>
+					
+				</a>
+			</li>
+			
+
+			
+			<li class="nav-item">
+				<a href="darkpool-market" class="nav-link">
+					
+					<i class="link-icon" data-feather="cloud-drizzle"></i>
+					<span class="link-title">Darkpool</span>
+					
+				</a>
+			</li>
+			
+
+			
+			<li class="nav-item">
+				<a href="crypto-market" class="nav-link">
+					
+					<i class="link-icon" data-feather="hash"></i>
+					<span class="link-title">Crypto</span>
+					
+				</a>
+			</li>
+			
+
+
+			<li class="nav-item">
+				<a class="nav-link" data-toggle="collapse" href="#newsdrop" role="button" aria-expanded="false"
+					aria-controls="newsdrop">
+					<i class="link-icon" data-feather="mic"></i>
+					<span class="link-title">News</span>
+					<i class="link-arrow" data-feather="chevron-down"></i>
+				</a>
+				<div class="collapse" id="newsdrop">
+					<ul class="nav sub-menu">
+						<li class="nav-item">
+							
+							<a href="news" class="nav-link">Stocks</a>
+							
+						</li>
+						<li class="nav-item">
+							
+							<a href="crypto-news" class="nav-link">Crypto</a>
+							
+						</li>
+
+					</ul>
+				</div>
+			</li>
+
+
+			<!--
+			<li class="nav-item">
+				<a href="crypto-market" class="nav-link">
+					
+						<i class="link-icon" data-feather="key"></i>
+						<span class="link-title">Crypto</span>
+					
+				</a>
+			</li>
+			-->
+
+			<!--<li class="nav-item">
+				<a href="chatter" class="nav-link">
+					
+						<i class="link-icon" data-feather="volume-1"></i>
+						<span class="link-title">Chatters</span>
+					
+				</a>
+			</li>-->
+
+
+
+			<li class="nav-item nav-category">Ticker Dashboards</li>
+
+			
+			<li class="nav-item">
+				<a href="stocks-dashboard" class="nav-link">
+					
+					<i class="link-icon" data-feather="bar-chart"></i>
+					<span class="link-title">Stocks</span>
+					
+				</a>
+			</li>
+			
+
+			
+			<li class="nav-item">
+				<a href="options-dashboard" class="nav-link">
+					
+					<i class="link-icon" data-feather="layers"></i>
+					<span class="link-title">Options</span>
+					
+				</a>
+			</li>
+			
+
+			
+			<li class="nav-item">
+				<a href="darkpool-ticker" class="nav-link">
+					
+					<i class="link-icon" data-feather="cloud"></i>
+					<span class="link-title">Darkpool</span>
+					
+				</a>
+			</li>
+			
+
+			<!--
+			<li class="nav-item">
+				<a href="crypto-dashboard" class="nav-link">
+					
+						<i class="link-icon" data-feather="cpu"></i>
+						<span class="link-title">Cryptos</span>
+					
+				</a>
+			</li>
+			-->
+
+
+
+			
+			<li class="nav-item nav-category">Options Flow</li>
+			
+
+			
+			<li class="nav-item">
+				<a href="live-options-flow" class="nav-link">
+					
+					<i class="link-icon" data-feather="loader"></i>
+					<span class="link-title">Live Flow</span>
+					
+				</a>
+			</li>
+			
+
+			
+			<li class="nav-item">
+				<a href="trady-flow" class="nav-link">
+					
+					<i class="link-icon" data-feather="dribbble"></i>
+					<span class="link-title">Repeat Flow</span>
+					
+				</a>
+			</li>
+			
+
+			
+			<li class="nav-item">
+				<a href="flowline" class="nav-link">
+					
+					<i class="link-icon" data-feather="user"></i>
+					<span class="link-title">Flowline</span>
+					
+				</a>
+			</li>
+			
+
+
+
+			<!--<li class="nav-item">
+				<a href="dark-flow" class="nav-link">
+					
+						<i class="link-icon" data-feather="cloud-drizzle"></i>
+						<span class="link-title">Dark Flow</span>
+					
+				</a>
+			</li>-->
+
+			<li class="nav-item nav-category">Swing AI</li>
+
+			
+			<li class="nav-item">
+				<a href="stock-prophet" class="nav-link">
+					
+					<i class="link-icon" data-feather="box"></i>
+					<span class="link-title">Prophet</span>
+					
+				</a>
+			</li>
+			
+
+			<!--
+			<li class="nav-item">
+				<a href="cryptonite" class="nav-link">
+					
+						<i class="link-icon" data-feather="dollar-sign"></i>
+						<span class="link-title">Cryptonite</span>
+					
+				</a>
+			</li>
+			-->
+
+
+			<!--<li class="nav-item">
+				<a href="options-psychic" class="nav-link">
+					
+						<i class="link-icon" data-feather="moon"></i>
+						<span class="link-title">Options Psychic</span>
+					
+				</a>
+			</li>
+			<li class="nav-item">
+				<a href="options-droid" class="nav-link">
+					
+						<i class="link-icon" data-feather="crosshair"></i>
+						<span class="link-title">Options Droid</span>
+					
+				</a>
+			</li>-->
+
+
+			
+			<li class="nav-item nav-category">Intraday AI</li>
+			
+
+			
+			<li class="nav-item">
+				<a href="bullseye" class="nav-link">
+					
+					<i class="link-icon" data-feather="target"></i>
+					<span class="link-title">Bullseye</span>
+					
+				</a>
+			</li>
+			
+
+			<!--<li class="nav-item">
+				<a href="continuation-clairvoyant" class="nav-link">
+					
+						<i class="link-icon" data-feather="send"></i>
+						<span class="link-title">Clairvoyant</span>
+					
+				</a>
+			</li>-->
+
+
+			<li class="nav-item nav-category">Scanners</li>
+
+			
+			<li class="nav-item">
+				<a href="scany" class="nav-link">
+					
+					<i class="link-icon" data-feather="map"></i>
+					<span class="link-title">Stock</span>
+					
+				</a>
+			</li>
+			
+
+			
+			<li class="nav-item">
+				<a href="flash" class="nav-link">
+					
+					<i class="link-icon" data-feather="zap"></i>
+					<span class="link-title">Intraday</span>
+					
+				</a>
+			</li>
+			
+
+			
+			<li class="nav-item">
+				<a href="opintra" class="nav-link">
+					
+					<i class="link-icon" data-feather="filter"></i>
+					<span class="link-title">Options</span>
+					
+				</a>
+			</li>
+			
+
+			<!--
+			<li class="nav-item">
+				<a href="crypto-scan" class="nav-link">
+					
+						<i class="link-icon" data-feather="thermometer"></i>
+						<span class="link-title">Crypto Scan</span>
+					
+				</a>
+			</li>
+			-->
+
+
+
+			
+			<li class="nav-item nav-category">Portfolios</li>
+			
+
+			
+			<li class="nav-item">
+				<a href="ai-portfolios" class="nav-link">
+					
+					<i class="link-icon" data-feather="command"></i>
+					<span class="link-title">Stocks</span>
+					
+				</a>
+			</li>
+			
+
+			<!--
+			<li class="nav-item">
+				<a href="crypto-portfolios" class="nav-link">
+					
+						<i class="link-icon" data-feather="cpu"></i>
+						<span class="link-title">Crypto</span>
+					
+				</a>
+			</li>
+			-->
+
+			<li class="nav-item nav-category">Research</li>
+
+			
+			<li class="nav-item">
+				<a href="earnings" class="nav-link">
+					
+					<i class="link-icon" data-feather="calendar"></i>
+					<span class="link-title">Earnings</span>
+					
+				</a>
+			</li>
+			
+
+
+			<li class="nav-item">
+				<a class="nav-link" data-toggle="collapse" href="#senate" role="button" aria-expanded="false"
+					aria-controls="senate">
+					<i class="link-icon" data-feather="user"></i>
+					<span class="link-title">Congress</span>
+					<i class="link-arrow" data-feather="chevron-down"></i>
+				</a>
+				<div class="collapse" id="senate">
+					<ul class="nav sub-menu">
+						<li class="nav-item">
+							
+							<a href="senate-market" class="nav-link">Latest Summary</a>
+							
+						</li>
+						<li class="nav-item">
+							
+							<a href="senate-etf" class="nav-link">Congress ETF</a>
+							
+						</li>
+						<li class="nav-item">
+							
+							<a href="senate-individual" class="nav-link">Members Dashboard</a>
+							
+						</li>
+					</ul>
+				</div>
+			</li>
+
+			
+			<li class="nav-item">
+				<a class="nav-link" data-toggle="collapse" href="#hedgies" role="button" aria-expanded="false"
+					aria-controls="hedgies">
+					<i class="link-icon" data-feather="home"></i>
+					<span class="link-title">Hedge Funds</span>
+					<i class="link-arrow" data-feather="chevron-down"></i>
+				</a>
+				<div class="collapse" id="hedgies">
+					<ul class="nav sub-menu">
+						<li class="nav-item">
+							
+							<a href="hedgies-market" class="nav-link">Summary</a>
+							
+						</li>
+						<li class="nav-item">
+							
+							<a href="hedgies-company" class="nav-link">Stocks</a>
+							
+						</li>
+						<li class="nav-item">
+							
+							<a href="hedgies-fund" class="nav-link">Funds</a>
+							
+						</li>
+					</ul>
+				</div>
+			</li>
+			
+
+			
+			<li class="nav-item">
+				<a href="peekaboo" class="nav-link">
+					
+					<i class="link-icon" data-feather="inbox"></i>
+					<span class="link-title">Insiders</span>
+					
+				</a>
+			</li>
+			
+
+			
+
+			<!--<li class="nav-item">
+	            <a class="nav-link" data-toggle="collapse" href="#emails" role="button" aria-expanded="false" aria-controls="emails">
+	              <i class="link-icon" data-feather="volume-1"></i>
+	              <span class="link-title">Chatters</span>
+	              <i class="link-arrow" data-feather="chevron-down"></i>
+	            </a>
+	            <div class="collapse" id="emails">
+	              <ul class="nav sub-menu">
+	              	<li class="nav-item">
+
+	                
+	                	<a href="social-market" class="nav-link">Overall Market</a>
+	                
+	                </li>
+
+	                <li class="nav-item">
+	                
+	                	<a href="social-stock" class="nav-link">Stock Search</a>
+	                
+	                </li>
+
+	                <li class="nav-item">
+	                
+	                	<a href="wsb-chatter" class="nav-link">/r/Wallstreetbets</a>
+	                
+	                </li>
+	                <li class="nav-item">
+	                
+	                	<a href="spacs-chatter" class="nav-link">/r/SPACs</a>
+	                
+	                </li>
+	                <li class="nav-item">
+	                
+	                	<a href="investing-chatter" class="nav-link">/r/Investing</a>
+	                
+	                </li>
+	                <li class="nav-item">
+	                
+	                	<a href="pennystocks-chatter" class="nav-link">/r/Pennystocks</a>
+	                
+	                </li>
+	                <li class="nav-item">
+	                
+	                	<a href="thetagang-chatter" class="nav-link">/r/Thetagang</a>
+	                
+	                </li>
+
+	                <li class="nav-item">
+	                
+	                	<a href="twitter-chatter" class="nav-link">Twitter</a>
+	                
+	                </li>
+
+	                <li class="nav-item">
+	                
+	                	<a href="investorhub-chatter" class="nav-link">Investorhub</a>
+	                
+	                </li>
+	                
+	              </ul>
+	            </div>
+	        </li>-->
+			
+
+
+			<!--
+			<li class="nav-item">
+				<a href="crypto-categories" class="nav-link">
+					
+						<i class="link-icon" data-feather="framer"></i>
+						<span class="link-title">Sectors</span>
+					
+				</a>
+			</li>
+			-->
+
+			<!--<li class="nav-item">
+				<a href="trade-sent" class="nav-link">
+					
+						<i class="link-icon" data-feather="clock"></i>
+						<span class="link-title">Trade Sent</span>
+					
+				</a>
+			</li>-->
+
+
+			<li class="nav-item nav-category" id="complex-tools-heading">Complex Tools</li>
+			<div id="complex-tools-nav">
+				<!--<li class="nav-item">
+				<a href="hercules" class="nav-link">
+					
+						<i class="link-icon" data-feather="cloud-lightning"></i>
+						<span class="link-title">Hercules</span>
+					
+				</a>
+			</li>-->
+				<!--<li class="nav-item">
+				<a href="equity-monster" class="nav-link">
+					
+						<i class="link-icon" data-feather="eye"></i>
+						<span class="link-title">Monster</span>
+					
+				</a>
+			</li>-->
+
+				
+				<li class="nav-item">
+					<a href="gambit" class="nav-link">
+						
+						<i class="link-icon" data-feather="crop"></i>
+						<span class="link-title">Gambit</span>
+						
+					</a>
+				</li>
+				
+
+				<!--
+			<li class="nav-item">
+				<a href="eiten" class="nav-link">
+					
+						<i class="link-icon" data-feather="shield"></i>
+						<span class="link-title">Eiten</span>
+					
+				</a>
+			</li>
+			-->
+
+				
+				<li class="nav-item">
+					<a href="yinyang" class="nav-link">
+						
+						<i class="link-icon" data-feather="compass"></i>
+						<span class="link-title">Yinyang</span>
+						
+					</a>
+				</li>
+				
+
+
+
+				<!--
+			<li class="nav-item">
+				<a href="tradytics-dashboard" class="nav-link">
+					
+						<i class="link-icon" data-feather="heart"></i>
+						<span class="link-title">Tradytics AI</span>
+					
+				</a>
+			</li>
+			-->
+
+			</div>
+
+			<li class="nav-item nav-category">Help</li>
+
+			
+			<li class="nav-item">
+				<a href="performance" class="nav-link">
+					
+					<i class="link-icon" data-feather="trending-up"></i>
+					<span class="link-title">Performance</span>
+					
+				</a>
+			</li>
+			
+
+			
+			<li class="nav-item">
+				<span onclick="togglewatchlistsidebar()" class="nav-link cursor-pointer">
+					
+					<i class="link-icon" data-feather="file-text"></i>
+					<span class="link-title">Watchlist</span>
+					
+				</span>
+			</li>
+			
+
+			<li class="nav-item">
+				<a href="discord-bots" class="nav-link">
+					
+					<i class="link-icon" data-feather="share-2"></i>
+					<span class="link-title">Discord Bots</span>
+					
+
+				</a>
+			</li>
+			<li class="nav-item">
+				<a href="educational-material" class="nav-link">
+					
+					<i class="link-icon" data-feather="book-open"></i>
+					<span class="link-title">Education</span>
+					
+
+				</a>
+			</li>
+			<li class="nav-item">
+				<a href="support" class="nav-link">
+					
+					<i class="link-icon" data-feather="hash"></i>
+					<span class="link-title">FAQs</span>
+					
+
+				</a>
+			</li>
+		</ul>
+
+		<!--<div class='row justify-content-center pb-5'>
+		
+		<a href='crypto-market'><button class='btn btn-primary btn-sm p-1'>Crypto</button></a>
+		
+		</div>-->
+
+		<!--<div class="text-center complex-tools">
+		<p class="link-title text-muted tx-12 mb-2">Complex Tools</p>
+		<label class="switch mt--5 text-center">
+            <input type="checkbox" name="complex_tools" id="complex_tools_checkbox" onclick="toggle_complex_tools()"> <span class="slider round"></span>
+        </label>
+		<div>-->
+
+	</div>
+</nav>
+
+<!-- partial -->
+<div class="page-wrapper">
+	<nav class="navbar">
+		<a href="#" class="sidebar-toggler">
+			<i data-feather="menu"></i>
+		</a>
+		<div class="navbar-content">
+			
+
+
+			<ul class="navbar-nav ml-0 w-100 justify-content-end">
+
+				<li class="nav-item nav-notifications mr-2 hidden">
+
+					<span id="streakdiv" class="text-muted tx-14 mx-2 cursor-pointer streak-class" data-toggle="tooltip"
+						title="How many consecutive days you have been active on the platform"><i
+							class=" fa-solid fa-zap mr-1"></i><span id="streak"></span></span>
+				</li>
+
+				<li class="nav-item dropdown nav-notifications mt-1" id="discordtoolbar">
+					<a class="nav-link dropdown-toggle" href="#" id="discordDropdown" role="button" data-toggle="dropdown"
+						aria-haspopup="true" aria-expanded="false">
+						<i class="fa-brands fa-discord tx-16 " data-toggle="tooltip" title="Discord community"></i>
+
+					</a>
+					<div class="dropdown-menu notifications-dropdown" aria-labelledby="discordDropdown"
+						style="min-width: 325px; max-height: 600px; min-height: 10px; overflow: auto;">
+						<div class="dropdown-header d-flex align-items-center justify-content-start p-25"
+							style="padding-bottom: 5px !important;">
+
+							<i class="fa-brands fa-discord tx-16 mr-2"></i>
+
+							<span class="tx-22 active-navbar mb-0">Discord</span>
+							
+						</div>
+						<div class="dropdown-body justify-content-center d-flex flex-column p-3 "
+							style="margin-top: 2px; display: flex; padding-top: 0px !important;">
+							<span class="tx-15 gray-color text-sm">Join our discord community of 16,000+ traders, and get access to insights, alerts, and more!</span>
+							
+						</div>
+
+						<div class="dropdown-body justify-content-center d-flex flex-column p-3"
+							style="margin-top: 2px; display: flex;">
+							<a href="https://discord.com/invite/QuvE2Z8" target="_blank" class="btn btn-primary">Join Discord</a>
+						</div>
+					</div>
+				</li>
+
+				<li class="nav-item dropdown nav-notifications mt-1" id="officehourstoolbar">
+					<a class="nav-link dropdown-toggle" href="#" id="themeDropdown" role="button" data-toggle="dropdown"
+						aria-haspopup="true" aria-expanded="false">
+						<i class="fa-solid fa-phone tx-16 " data-toggle="tooltip" title="Office hours"></i>
+
+					</a>
+					<div class="dropdown-menu notifications-dropdown" aria-labelledby="themeDropdown"
+						style="min-width: 325px; max-height: 600px; min-height: 10px; overflow: auto;">
+						<div class="dropdown-header d-flex align-items-center justify-content-between p-25"
+							style="padding-bottom: 5px !important;">
+
+
+							<span class="tx-22 active-navbar mb-0">Office Hours</span>
+							<i class="fa-solid fa-phone tx-18 text-white font-white"></i>
+							
+						</div>
+						<div class="dropdown-body justify-content-center d-flex flex-column p-3 "
+							style="margin-top: 2px; display: flex; padding-top: 0px !important;">
+							<span class="tx-15 gray-color text-sm">Have any questions, want to better understand the platform? We're here to help!</span>
+							
+						</div>
+
+						<div class="dropdown-body justify-content-center d-flex flex-column p-3"
+							style="margin-top: 2px; display: flex;">
+							<a href="https://calendly.com/tradytics-support/tradytics-office-hours" target="_blank" class="btn btn-primary">Schedule a call</a>
+						</div>
+					</div>
+				</li>
+
+
+				<li class="nav-item dropdown nav-notifications mt-1" id="shortcutstoolbar">
+					<a class="nav-link dropdown-toggle" href="#" id="themeDropdown" role="button" data-toggle="dropdown"
+						aria-haspopup="true" aria-expanded="false">
+						<i class="fa-solid fa-code tx-16 " data-toggle="tooltip" title="Shortcuts"></i>
+
+					</a>
+					<div class="dropdown-menu notifications-dropdown" aria-labelledby="themeDropdown"
+						style="min-width: 325px; max-height: 600px; min-height: 10px; overflow: auto;">
+						<div class="dropdown-header d-flex align-items-center justify-content-between"
+							style="padding-bottom: 5px !important;">
+
+
+							<i class="fa-solid fa-code tx-18 text-white font-white mr-1"></i>
+							<span class="tx-22 active-navbar mb-0">Shortcuts</span>
+						</div>
+
+						<div class="dropdown-body justify-content-center d-flex flex-column  p-3"
+							style="margin-top: 2px; display: flex;">
+
+							<div class="d-flex flex-row justify-content-between align-items-center w-full">
+								<span class="tx-15 gray-color">Go to Charts</span>
+								<span class="tx-15 text-white">Shift + c</span>
+							</div>
+
+							<div class="d-flex flex-row justify-content-between align-items-center w-full">
+								<span class="tx-15 gray-color">Go to News</span>
+								<span class="tx-15 text-white">Shift + n</span>
+							</div>
+
+							<div class="d-flex flex-row justify-content-between align-items-center w-full">
+								<span class="tx-15 gray-color">Toggle Watchlist</span>
+								<span class="tx-15 text-white">Shift + w</span>
+							</div>
+
+							<div class="d-flex flex-row justify-content-between align-items-center w-full">
+								<span class="tx-15 gray-color">Toggle Quickview</span>
+								<span class="tx-15 text-white">Shift + q</span>
+							</div>
+
+						</div>
+
+
+
+					</div>
+				</li>
+
+
+				<li class="nav-item dropdown nav-notifications mt-1" id="skinstoolbar">
+					<a class="nav-link dropdown-toggle" href="#" id="themeDropdown" role="button" data-toggle="dropdown"
+						aria-haspopup="true" aria-expanded="false">
+						<i class="fa-solid fa-palette tx-16 "></i>
+						<div class="indicator">
+							<p style="display: none; position: absolute; right: -7px; top: -3px; text-align: center; font-size: 8px; color: #191B28; font-weight: 800; width: 14px; height: 14px; background-color: #37AD9F; border-radius: 50%;"
+								id="total_notifications_icon_news"></p>
+							<div class="circle" style="display: none;" id="notification_circle_whales"></div>
+						</div>
+					</a>
+					<div class="dropdown-menu notifications-dropdown" aria-labelledby="themeDropdown"
+						style="min-width: 300px; max-height: 600px; min-height: 10px; overflow: auto;">
+						<div class="dropdown-header d-flex align-items-center justify-content-between"
+							style="padding-bottom: 5px !important;">
+
+
+							<i data-feather="camera" class="icon-lg text-white font-white mr-1"></i>
+							<span class="tx-22 active-navbar mb-0">Themes</span>
+						</div>
+
+						<div class="dropdown-body justify-content-center" style="margin-top: 2px; display: flex;">
+
+							<div class="form-group col-12">
+								<label class="tx-16">Select Theme</label>
+								<select id="theme_selector" class="w-100 selector-class" data-width="100%"
+									onchange="change_theme(this.value);">
+
+									<option value="" selected disabled>Choose here</option>
+									<option value="dark-theme">Default/Dark</option>
+									<option value="light-theme">Light</option>
+									<option value="purple-theme">Purple</option>
+									<option value="blue-theme">Blue</option>
+									<option value="red-theme">Red</option>
+									<option value="green-theme">Green</option>
+									<option value="gray-theme">Gray</option>
+
+								</select>
+							</div>
+
+						</div>
+
+
+
+					</div>
+				</li>
+
+
+
+				<li class="nav-item dropdown nav-notifications mt-1" id="whaletrackertoolbar">
+					<a class="nav-link dropdown-toggle" href="#" id="priceNotificationDropdown" role="button"
+						data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<i class="fa-solid fa-eye tx-16 " onclick="whale_tracker_clicked()"></i>
+
+						<div class="indicator">
+							<p style="display: none; position: absolute; right: -7px; top: -3px; text-align: center; font-size: 8px; color: #191B28; font-weight: 800; width: 14px; height: 14px; background-color: #37AD9F; border-radius: 50%;"
+								id="total_notifications_icon_news"></p>
+							<div class="circle" style="display: none;" id="notification_circle_whales"></div>
+						</div>
+					</a>
+					<div class="dropdown-menu notifications-dropdown" aria-labelledby="priceNotificationDropdown"
+						style="min-width: 300px; max-height: 600px; min-height: 10px; overflow: auto;">
+						<div class="dropdown-header d-flex align-items-center justify-content-between"
+							style="padding-bottom: 5px !important;">
+
+
+							<i data-feather="eye" class="icon-lg text-white font-white mr-1"></i>
+							<span class="tx-22 active-navbar mb-0">Track Contracts</span>
+						</div>
+
+						<div class="dropdown-body justify-content-center" style="margin-top: 2px; display: flex;">
+							<button class='btn btn-primary' onclick="track_a_contract()"
+								style="border: 0px; font-size: 12px; margin-left: 3px;">Track a Contract</button>
+
+
+						</div>
+
+						<div class="dropdown-body" id="notifications_dropdown_whales">
+						</div>
+
+					</div>
+				</li>
+
+
+				<li class="nav-item dropdown nav-notifications mt-1 mr-2" id="journaltoolbar">
+					<a class="nav-link dropdown-toggle" href="#" id="priceNotificationDropdown" role="button"
+						data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<i class="fa-brands fa-readme tx-16 " onclick="trading_journal_clicked()"></i>
+
+						<div class="indicator">
+							<p style="display: none; position: absolute; right: -7px; top: -3px; text-align: center; font-size: 8px; color: #191B28; font-weight: 800; width: 14px; height: 14px; background-color: #37AD9F; border-radius: 50%;"
+								id="total_notifications_icon_news"></p>
+							<div class="circle" style="display: none;" id="notification_circle_journal"></div>
+						</div>
+					</a>
+					<div class="dropdown-menu notifications-dropdown" aria-labelledby="priceNotificationDropdown"
+						style="min-width: 300px; max-height: 600px; min-height: 500px; overflow: auto;">
+						<div class="dropdown-header d-flex align-items-center justify-content-between"
+							style="padding-bottom: 5px !important;">
+
+
+							<i data-feather="book-open" class="icon-lg text-white font-white mr-1"></i>
+							<span class="tx-22 active-navbar mb-0">Trading Journal</span>
+						</div>
+
+						<div class="dropdown-body justify-content-between" style="margin-top: 2px; display: flex;">
+							<button onclick="show_journal_modal()" class='btn btn-secondary card-badge'>Add a
+								Trade</button>
+
+							<a href="journal"><button onclick="show_journal_modal()"
+									class='btn btn-secondary card-badge'>My
+									Dashboard</button></a>
+						</div>
+
+
+						<div class="dropdown-body" id="notifications_dropdown_journal">
+						</div>
+					</div>
+				</li>
+
+				<li class="nav-item nav-profile hidden" id="profile_dropdown_logged_out">
+				<button id="button_logged_out" onclick="window.location.href='login'" class="btn" style="background-color: white; color: black; border-radius: 50px !important; font-size: 13px !important; padding: 5px 15px !important;">
+					<span style="color: black !important;">Login</span>
+				</button>
+			</li>
+
+				<li class="nav-item dropdown nav-profile" id="profile_dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="profileDropdown" role="button"
+						data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<div class="smaller-profile" id="headerprofile">
+							<i class="fas fa-user  smaller-profile-text"></i>
+						</div>
+					</a>
+
+					<div class="dropdown-menu" aria-labelledby="profileDropdown">
+						<div class="dropdown-header d-flex flex-column align-items-center">
+							<div class="mb-3 mt-4">
+								<a class="hover-scale" href="/"><img
+										src="/static/assets/images/white_icon.png"
+										width="78px" alt=""></a>
+							</div>
+							<div class="info text-center">
+
+								<div id="header_top_info">
+									<p id="header_name" class="name font-weight-bold mb-0"></p>
+									<p id="header_email" class="email text-muted mb-1"></p>
+									<p id="header_premium" class="mb-3"></p>
+								</div>
+
+							</div>
+						</div>
+						<div class="dropdown-body">
+							<ul class="profile-nav p-0 pt-3" id="user_logged_in">
+								<li class="nav-item" id="header_become_prem">
+									<a href="subscription" class="nav-link" target="_blank">
+										<i class="text-success" data-feather="zap"></i>
+										<span class="text-success">Get Premium</span>
+									</a>
+								</li>
+								<li class="nav-item">
+									<a href="profile" class="nav-link">
+										<i data-feather="user"></i>
+										<span>Profile</span>
+									</a>
+								</li>
+								<li class="nav-item">
+									<a href="journal" class="nav-link">
+										<i data-feather="book-open"></i>
+										<span>Journal</span>
+
+									</a>
+								</li>
+								<!--<li class="nav-item">
+									<a href="tools-customization" class="nav-link">
+										<i data-feather="star"></i>
+										<span>Custom Sidebar</span>
+										<span class="new-item-button-header">New</span>
+									</a>
+								</li>-->
+								<li class="nav-item">
+									<a href="https://discord.com/invite/QuvE2Z8" class="nav-link" target="_blank">
+										<i data-feather="box"></i>
+										<span>Discord Server</span>
+									</a>
+								</li>
+
+								<li class="nav-item">
+									<span onclick="togglewatchlistsidebar()" class="nav-link cursor-pointer">
+										<i data-feather="file-text"></i>
+										<span>Watchlists</span>
+									</span>
+								</li>
+								<li class="nav-item">
+									<a href="referrals" class="nav-link">
+										<i data-feather="globe"></i>
+										<span>Referrals</span>
+									</a>
+								</li>
+								<li class="nav-item">
+									<a href="logout" class="nav-link">
+										<i data-feather="log-out"></i>
+										<span>Log Out</span>
+									</a>
+								</li>
+							</ul>
+
+							<ul class="profile-nav p-0 pt-3" id="user_logged_out">
+								<li class="nav-item">
+									<a href="https://discord.com/invite/QuvE2Z8" class="nav-link" target="_blank">
+										<i data-feather="box"></i>
+										<span>Discord</span>
+									</a>
+								</li>
+								<li class="nav-item">
+									<a href="login" class="nav-link">
+										<i data-feather="user"></i>
+										<span>Login</span>
+									</a>
+								</li>
+								<li class="nav-item">
+									<a href="signup" class="nav-link">
+										<i data-feather="log-out"></i>
+										<span>Signup</span>
+									</a>
+								</li>
+							</ul>
+
+							
+								
+							
+
+
+						</div>
+
+
+
+					</div>
+
+
+				</li>
+			</ul>
+
+
+
+		</div>
+
+
+	</nav>
+
+
+
+
+	<!-- ######## TRADE ENTRY MODAL ------>
+	<div class="modal fade" id="journal_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel3"
+		aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 700px !important;">
+			<div class="modal-content">
+				<div class="modal-header text-center">
+					<h4 class="modal-title text-center" id="exampleModalLabel3">Journal a New Trade</h4>
+				</div>
+				<div class="modal-body">
+					<div class="mb-3" style="display: flex; justify-content: space-between;">
+						<div>
+							<button onclick="set_entry_price('stock')" class="btn p-05 mr-2 btn-primary"
+								id="stock_price_info_journal">Get Symbol Info</button>
+							<button onclick="set_entry_price('option')" class="btn p-05 mr-2 btn-primary"
+								id="option_contracts_info_journal" style="display: none;">Get Symbol Contracts</button>
+						</div>
+						<div>
+							<button id="stock_journal" class="btn btn-dribbble p-05 mr-2"
+								onclick="change_journal_option('#stock_journal', '#option_journal')">Stock</button>
+							<button id="option_journal" class="btn btn-secondary p-05"
+								onclick="change_journal_option('#option_journal', '#stock_journal')">Options</button>
+						</div>
+					</div>
+					<div class="card">
+						<div class="card-body">
+							<div class="row">
+								<div class="col-sm-4">
+									<div class="form-group">
+										<label class="tx-16">Symbol</label>
+										<input name="journal_symbol" id="journal_symbol" type="text"
+											class="form-control" placeholder="Stock ticker">
+									</div>
+								</div>
+								<div class="col-sm-4">
+									<div class="form-group">
+										<label class="tx-16">Price</label>
+										<input id="journal_entry_price" name="journal_entry_price" type="text"
+											class="form-control" placeholder="Entry Price">
+									</div>
+								</div>
+								<div class="col-sm-4" id="stock_type_journal">
+									<div class="form-group">
+										<label class="tx-16">Long/Short</label>
+										<select id="longshort_journal" class="js-example-basic w-100" data-width="100%">
+											<option value="long">Long</option>
+											<option value="short">Short</option>
+										</select>
+									</div>
+								</div>
+
+							</div>
+							<div class="row" id="option_contract_journal" style="display: none;">
+								<div class="col-sm-4">
+									<div class="form-group">
+										<label class="tx-16">Strike</label>
+										<select id="journal_strikes" class="js-example-basic w-100" data-width="100%"
+											onchange="adjust_strike_price(this);">
+
+										</select>
+									</div>
+								</div>
+								<div class="col-sm-4">
+									<div class="form-group">
+										<label class="tx-16">Expiration</label>
+										<select id="journal_expiration" class="js-example-basic w-100" data-width="100%"
+											onchange="adjust_expiration_date(this);">
+
+										</select>
+									</div>
+								</div>
+								<div class="col-sm-4">
+									<div class="form-group">
+										<label class="tx-16">Call/Put</label>
+										<select id="call_put_journal" class="js-example-basic w-100" data-width="100%"
+											onchange="adjust_call_puts_data(this);">
+											<option value="call">Call</option>
+											<option value="put">Put</option>
+										</select>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-sm-7">
+									<div class="form-group">
+										<label class="tx-16">Setups</label>
+										<select id="setups_journal" class="js-example-basic-multiple w-100"
+											multiple="multiple" data-width="100%">
+											<option value="earnings">Earnings</option>
+											<option value="breakout">Breakout</option>
+											<option value="breakdown">Breadown</option>
+											<option value="gapper">Gapper</option>
+											<option value="momentum">Momentum</option>
+											<option value="investment">Investment</option>
+										</select>
+									</div>
+								</div>
+								<div class="col-sm-5">
+									<div class="form-group">
+										<label class="tx-16">Tradytics Tools</label>
+										<select id="tradytics_tools_journal" class="js-example-basic-multiple w-100"
+											multiple="multiple" data-width="100%">
+											<option value="algoflow">Algo Flow</option>
+											<option value="tradyflow">Trady Flow</option>
+											<option value="bullseye">Bullseye</option>
+											<option value="optionsflow">Options Flow</option>
+											<option value="flash">Flash</option>
+											<option value="opintra">Opintra</option>
+											<option value="scany">Scany</option>
+											<option value="prophet">Prophet</option>
+											<option value="crypto">Crypto</option>
+										</select>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-sm-12">
+									<div class="form-group">
+										<label class="tx-16">Miscellaneous Comments</label>
+										<input id="extracomments_journal" type="text" class="form-control"
+											placeholder="Extra comments" maxlength="512">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+				<div class="modal-footer justify-content-between">
+					<button type="button" class="btn btn-secondary" onclick="start_adding_new_setup()">Add a New
+						Setup</button>
+					<button type="button" class="btn btn-secondary" onclick="add_journal_entry()">Add to
+						Journal</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- ########### TRADE EXIT MODAL ############# -->
+	<div class="modal fade" id="journal_modal_exit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel3"
+		aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 700px !important;">
+			<div class="modal-content">
+				<div class="modal-header text-center">
+					<h4 class="modal-title text-center" id="exampleModalLabel3">Complete & Log Trade</h4>
+				</div>
+				<div class="modal-body">
+
+					<div class="card">
+						<div class="card-body">
+							<div class="row">
+								<div class="col-sm-0" style="display: none;">
+									<div class="form-group">
+										<label class="tx-16">Uid</label>
+										<input name="journal_uid_exit" id="journal_uid_exit" type="text"
+											class="form-control" placeholder="Stock ticker" readonly>
+									</div>
+								</div>
+								<div class="col-sm-4">
+									<div class="form-group">
+										<label class="tx-16">Symbol</label>
+										<input name="journal_symbol_exit" id="journal_symbol_exit" type="text"
+											class="form-control" placeholder="Stock ticker" readonly>
+									</div>
+								</div>
+								<div class="col-sm-4">
+									<div class="form-group">
+										<label class="tx-16">Entry Price</label>
+										<input id="journal_entry_price_exit" name="journal_entry_price_exit" type="text"
+											class="form-control" placeholder="Entry Price" readonly="">
+									</div>
+								</div>
+								<div class="col-sm-4">
+									<div class="form-group">
+										<label class="tx-16">Exit Price</label>
+										<input id="journal_exit_price_exit" name="journal_exit_price_exit" type="text"
+											class="form-control" placeholder="Exit Price">
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-sm-4">
+									<div class="form-group">
+										<label class="tx-16">Profit</label>
+										<input id="journal_profit_exit" name="journal_profit_exit" type="text"
+											class="form-control" placeholder="Profit in %">
+									</div>
+								</div>
+
+								<div class="col-sm-8">
+									<div class="form-group">
+										<label class="tx-16">Exit Reason</label>
+										<select id="exit_reasons_journal" class="js-example-basic-multiple w-100"
+											multiple="multiple" data-width="100%">
+											<option value="targethit">Target Hit</option>
+											<option value="partialprofit">Partial Profit Taking</option>
+											<option value="stoploss">Stoploss</option>
+											<option value="marketcrash">Fear of Market Crash</option>
+											<option value="marketcrash">FOMO</option>
+											<option value="marketcrash">Greed</option>
+										</select>
+									</div>
+								</div>
+							</div>
+
+							<div class="row">
+								<div class="col-sm-12">
+									<div class="form-group">
+										<label class="tx-16">Exit Comments & Suggestions to Yourself</label>
+										<input id="extracomments_journal_exit" name="extracomments_journal_exit"
+											type="text" class="form-control" placeholder="Exit comments">
+									</div>
+								</div>
+
+							</div>
+
+							<div class="row mt-2">
+								<div class="col-sm-12 text-center" id="trade_exit_congrats">
+
+								</div>
+							</div>
+
+						</div>
+					</div>
+
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" onclick="close_journal_trade_final()">Alright, Let's
+						Close the Trade</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- ########### TRADE SETUP ADD MODAL ############# -->
+	<div class="modal fade" id="journal_modal_setups" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel3"
+		aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 500px !important;">
+			<div class="modal-content">
+				<div class="modal-header text-center">
+					<h4 class="modal-title text-center" id="exampleModalLabel3">Add a new setup</h4>
+				</div>
+				<div class="modal-body">
+
+					<div class="card">
+						<div class="card-body">
+							<div class="row">
+
+								<div class="col-sm-12">
+									<div class="form-group">
+										<label class="tx-16">Setup Name</label>
+										<input name="setup_name_journal" id="setup_name_journal" type="text"
+											class="form-control" placeholder="Trading Setup e.g Earnings Play">
+										<label class="mt-2 text-muted tx-12">Please make sure there are no spaces or
+											special characters in the name</label>
+									</div>
+								</div>
+
+							</div>
+
+						</div>
+					</div>
+
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" onclick="save_journal_setup()">Save</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- ########### PRICE TRIGGER ALERT ############# -->
+	<div class="modal fade" id="price_trigger_alert_modal" tabindex="-1" role="dialog"
+		aria-labelledby="exampleModalLabel3" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 500px !important;">
+			<div class="modal-content">
+				<div class="modal-header text-center">
+					<h4 class="modal-title text-center" id="exampleModalLabel3">Add a Price Alert</h4>
+				</div>
+				<div class="modal-body">
+
+					<div class="card">
+						<div class="card-body">
+							<div class="row">
+
+								<div class="col-sm-6">
+									<div class="form-group">
+										<label class="tx-16">Symbol</label>
+										<input name="pricetrigger_symbol" id="pricetrigger_symbol" type="text"
+											class="form-control" placeholder="Symbol">
+
+									</div>
+								</div>
+
+								<div class="col-sm-6">
+									<div class="form-group">
+										<label class="tx-16">Price</label>
+										<input name="pricetrigger_target" id="pricetrigger_target" type="number"
+											step="any" min=0 class="form-control" placeholder="Price Target">
+
+									</div>
+								</div>
+
+							</div>
+
+							<div class="row">
+
+								<div class="col-sm-12">
+									<div class="form-group">
+										<label class="tx-16">Crossing</label>
+										<select id="above_below_pricetrigger" class="js-example-basic w-100"
+											data-width="100%">
+											<option value="above">Above</option>
+											<option value="below">Below</option>
+										</select>
+										<label class="tx-14 text-muted mt-1">Where should the price go relative to the
+											target to trigger this alert?</label>
+
+									</div>
+								</div>
+
+							</div>
+
+						</div>
+					</div>
+
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" onclick="add_price_trigger_alert()">Save</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	<!-- ######## TRACK CONTRACT MODAL ------>
+	<div class="modal fade" id="whale_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel3"
+		aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 900px !important;">
+			<div class="modal-content">
+				<div class="modal-header text-center">
+					<h4 class="modal-title text-center text-bold" id="exampleModalLabel3">Track Whales</h4>
+					<p class='text-muted'>Save & track whales for any options contract</p>
+				</div>
+				<div class="modal-body">
+					<div class="mb-3" style="display: flex; justify-content: space-between;">
+
+						<button onclick="fill_symbol_contracts()" class="btn p-15 mr-2 btn-primary"
+							id="option_contracts_info_journal">Fill Symbol Contracts</button>
+
+						<button onclick="draw_whales_tracking_chart()" class="btn p-15 mr-2 btn-blue"
+							id="option_contracts_info_journal">Track Whales</button>
+
+
+					</div>
+
+					<div class="card">
+						<div class="card-body">
+							<div class="row">
+								<div class="col-sm-3">
+									<div class="form-group">
+										<label class="tx-16">Symbol</label>
+										<input name="whale_symbol" id="whale_symbol" type="text" class="form-control"
+											placeholder="Stock ticker">
+									</div>
+								</div>
+								<div class="col-sm-2">
+									<div class="form-group">
+										<label class="tx-16">Call/Put</label>
+										<select id="call_put_whale" class="js-example-basic w-100" data-width="100%"
+											onchange="adjust_call_puts_data_whale(this);">
+											<option value="call">Call</option>
+											<option value="put">Put</option>
+										</select>
+									</div>
+								</div>
+								<div class="col-sm-2">
+									<div class="form-group">
+										<label class="tx-16">Expiration</label>
+										<select id="whale_expiration" class="js-example-basic w-100" data-width="100%"
+											onchange="adjust_expiration_date_whale(this);">
+
+										</select>
+									</div>
+								</div>
+								<div class="col-sm-2">
+									<div class="form-group">
+										<label class="tx-16">Strike</label>
+										<select id="whale_strikes" class="js-example-basic w-100" data-width="100%"
+											onchange="adjust_strike_price_whale(this);">
+
+										</select>
+									</div>
+								</div>
+
+
+								<div class="col-sm-3">
+									<div class="form-group">
+										<label class="tx-16">History (Days)</label>
+										<input name="whale_history" id="whale_history" type="text" class="form-control"
+											placeholder="Lookback days">
+									</div>
+								</div>
+
+							</div>
+
+						</div>
+					</div>
+
+				</div>
+
+				<div class="card" style="padding-bottom: 2rem;">
+					<div class="card-body">
+						<div class="d-flex justify-content-between align-items-baseline mb-1">
+							<h6 class="card-title mb-0"><i data-feather="eye"
+									class="icon-lg mb-1 icon-colors-default"></i> Whale Activity</h6>
+						</div>
+						<p class="text-muted mb-4">Total money being spent on buying or selling this contract. Click on
+							Track Whales button above to populate this.</p>
+						<div class="flot-wrapper">
+							<canvas id="buy_vs_sell_flow_whales" height="120px"></canvas>
+							<canvas id="buy_vs_sell_flow_whales_oi" class="mt-3" height="60px"></canvas>
+						</div>
+					</div>
+				</div>
+
+
+
+				<div class="modal-footer justify-content-end">
+					<button type="button" class="btn btn-secondary" onclick="save_whale_contract()">Save this
+						Contract</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	<div class="modal fade" id="whale_modal_v2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel3"
+		aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 900px !important;">
+			<div class="modal-content">
+				<div class="modal-header text-center">
+					<h4 class="modal-title text-center text-bold" id="exampleModalLabel3">Track Whales</h4>
+					<p class='text-muted'>Save & track whales for any options contract</p>
+				</div>
+
+				<div class="modal-body">
+
+					<div class="card" style="padding-bottom: 2rem;">
+						<div class="card-body">
+							<div class="d-flex justify-content-between align-items-baseline mb-1">
+								<h6 class="card-title mb-0"><i data-feather="eye"
+										class="icon-lg mb-1 icon-colors-default"></i> Whale Activity</h6>
+							</div>
+							<p class="text-muted mb-4">Total money being spent on buying or selling this contract. Click
+								on Track Whales button above to populate this.</p>
+							<div class="flot-wrapper">
+								<canvas id="buy_vs_sell_flow_whales_v2" height="120px"></canvas>
+								<canvas id="buy_vs_sell_flow_whales_v2_oi" class="mt-3" height="60px"></canvas>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+
+	<!-- registration modal -->
+	<div class="modal fade" id="free_registration_modal" tabindex="-1" role="dialog"
+		aria-labelledby="exampleModalLabel3" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document"
+			style="max-width: 800px !important; pointer-events: auto !important;">
+			<div class="card gradientbg" style="box-shadow: 0px 0px 147px 1px rgba(31, 41, 219, 0.26);">
+				<div class="card-body p-0">
+					<div class="w-100 p-2 px-5 card-bg-color mb-2" style="position: absolute;">
+						<p style="font-size: 12px;" class="text-white"><i
+								class="fa-solid fa-triangle-exclamation mr-1 text-danger"></i><span
+								id="modalmessagefree">Without a free account, your data might be delayed and you'll miss
+								out on many of our basic tools due to frequent popups. We invite you to join as a
+								registered member.</span></p>
+					</div>
+
+					<div class="row pt-4">
+						<div class="col-7 px-5 pb-4 pt-5">
+							<h2 class="text-bold text-white-absolute">Login</h2>
+							<p class="tx-16 mt-2 text-white-absolute">
+								<!--Unlock access to our basic tools by creating a free account.-->
+								Embark on your financial journey. A free account gives you the basic tools to start
+								navigating the world of trading
+							</p>
+
+							<div class="d-flex flex-row mt-4 align-items-center">
+								<a href="signup" type="button" class="btn btn-light btn-lg  text-sbold"
+									style="font-size: 1.0rem">Register</a>
+								<a href="login" type="button" class="ml-4 text-white-absolute"
+									style="font-size: 1.0rem">Login</a>
+							</div>
+
+						</div>
+
+						<div class="col-5 px-5 pb-4 pt-5">
+							<div class="checkpoints tx-16">
+
+								<ul class="list-group list-group-flush mt-2 light-box-shadow">
+									<p class="list-group-item tx-16">Free account benefits</p>
+									<li class="list-group-item tx-16"><i class="fas fa-check-circle mr-1"></i> Basic
+										Tools</li>
+									<li class="list-group-item tx-16"><i class="fas fa-check-circle mr-1"></i> Live
+										Charts</li>
+									<li class="list-group-item tx-16"><i class="fas fa-check-circle mr-1"></i>
+										Introductory Analytics</li>
+
+								</ul>
+							</div>
+						</div>
+					</div>
+
+					<div class="w-100 p-2 mb-2 videoinmodal">
+						<!-- lock icon -->
+						<div class="lockicon"><i class="fa-solid fa-lock text-white-absolute tx-30"></i></div>
+
+						<div class="videodiv heavyshadow">
+							<video style="width:100%;" autoplay
+								src="/static/assets/images/video2.mp4"></video>
+						</div>
+					</div>
+
+
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	<!-- premium modal -->
+	<div class="modal fade" id="premium_subscription_modal" tabindex="-1" role="dialog"
+		aria-labelledby="exampleModalLabel3" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document"
+			style="max-width: 800px !important; pointer-events: auto !important;">
+			<div class="card gradientbg">
+				<div class="card-body p-0">
+					<!--<div class="w-100 p-2 px-5 card-bg-color mb-2" style="position: absolute;">
+				<p style="font-size: 12px;" class="text-white"><i class="fa-solid fa-circle-exclamation mr-1 text-warning"></i><span id="modalmessageprem">Premium account gives you unlimited access to everything we offer.</span></p>
+			</div>-->
+
+					<div class="row pt-4">
+						<div class="col-12 col-md-7 col-lg-7 col-xl-7 px-5 pb-4 pt-5">
+							<h2 class="text-bold text-white-absolute">Only for Pro</h2>
+							<p class="tx-16 mt-2 text-white-absolute">
+								<span id="modalmessageprem">Upgrade to premium, and let our AI and tools become your
+									teammate in this trading journey. Together, we'll explore new possibilities</span>
+							</p>
+
+							<div class="d-flex flex-row mt-4 align-items-center">
+								<a href="subscription" type="button" class="btn btn-primary btn-lg  text-sbold"
+									style="font-size: 1.25rem">Upgrade</a>
+
+								<a href="signup" type="button" class="ml-4 text-white-absolute"
+									style="font-size: 1.0rem">Signup</a>
+
+							</div>
+
+						</div>
+
+						<div class="col-12 col-md-5 col-lg-5 col-xl-5 px-5 pb-4 pt-3">
+							<div class="checkpoints tx-16">
+								<ul class="list-group list-group-flush mt-2 light-box-shadow">
+									<p class="list-group-item tx-16">Premium account benefits</p>
+									<li class="list-group-item tx-16"><i class="fas fa-check-circle mr-1"></i> Dozen+
+										tools</li>
+									<li class="list-group-item tx-16"><i class="fas fa-check-circle mr-1"></i> Live
+										Premium Data</li>
+									<li class="list-group-item tx-16"><i class="fas fa-check-circle mr-1"></i> Advanced
+										AI Analytics</li>
+									<li class="list-group-item tx-16"><i class="fas fa-check-circle mr-1"></i> Dedicated
+										Discord Community</li>
+
+								</ul>
+							</div>
+						</div>
+					</div>
+
+					<div class="w-100 p-2 mb-2 videoinmodal">
+						<!-- lock icon -->
+						<div class="lockicon"><i class="fa-solid fa-lock text-white-absolute tx-30"></i></div>
+
+						<div class="videodiv heavyshadow">
+							<video style="width:100%;" autoplay
+								src="/static/assets/images/video2.mp4"></video>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	<div id="free_registration_modal_2" class="user-bottom-left-modal rounded-lg" style="display: none">
+		<div class="card light-card-bg rounded-lg  p-25 bordertoponly lgshadow">
+			<div class="card-header d-flex justify-content-between align-items-start w-full">
+
+				<img src="/static/assets/images/logo-triangle-white.png"
+					style="width: 40px; height: 40px;">
+				<div class="d-flex justify-content-between align-items-center">
+
+					<button onclick="$('#free_registration_modal_2').hide();" class="btn btn-link p-0 text-muted"
+						style="font-size: 20px;">×</button>
+				</div>
+			</div>
+			<div class="card-header">
+
+				<h4 class="card-title mb-2 mt-0" style="font-size: 1.15rem !important; line-height: 1.5rem !important">
+					Sign in or create an account</h4>
+				<p class="tx-15 gray-color">Unlock access to our basic tools by creating an account.</p>
+			</div>
+			<div class="card-body mt-0">
+
+				<div class="d-flex flex-column mb-5">
+					<div class="d-flex flex-row align-items-center">
+						<i class="fa-solid fa-check text-primary mr-2"></i>
+						<span class="tx-15 gray-color">Weekly newsletters</span>
+
+					</div>
+					<div class="d-flex flex-row align-items-center">
+						<i class="fa-solid fa-check text-primary mr-2"></i>
+						<span class="tx-15 gray-color">Live charts</span>
+
+					</div>
+					<div class="d-flex flex-row align-items-center">
+						<i class="fa-solid fa-check text-primary mr-2"></i>
+						<span class="tx-15 gray-color">Basic data</span>
+
+					</div>
+					<div class="d-flex flex-row align-items-center">
+						<i class="fa-solid fa-check text-primary mr-2"></i>
+						<span class="tx-15 gray-color">Market prep</span>
+
+					</div>
+				</div>
+
+				<div class="d-flex flex-column">
+					<div class="d-flex flex-row justify-content-center mb-3 w-full">
+						<a href="/login-with-google" type="button" class="btn btn-white w-full btn-lg" style="color: black !important; hover:color: black !important;">
+							<i class="fab fa-google mr-2"></i>Continue with Google
+						</a>
+					</div>
+					<div class="d-flex flex-row justify-content-end">
+						<a href="login" type="button" class="btn btn-secondary-outline-v2 btn-lg mr-2"
+							>Login with email</a>
+						<a href="signup" type="button" class="btn btn-secondary-outline-v2 btn-lg">Signup</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="premium_subscription_modal_2" class="user-bottom-left-modal" style="display: none">
+		<div class="card  rounded-lg  p-25 bordertoponly lgshadow">
+			<div class="card-header">
+
+				<h4 class="card-title mb-2 mt-2">Get Premium</h4>
+				<p class="tx-15 gray-color" id="getpremiumcard">Unlock access to live data & advanced tools.</p>
+			</div>
+			<div class="card-body mt-0">
+
+				<div class="d-flex flex-column mb-5">
+					<div class="d-flex flex-row align-items-center">
+						<i class="fa-solid fa-check text-primary mr-2"></i>
+						<span class="tx-15 gray-color">Advanced data</span>
+
+					</div>
+					<div class="d-flex flex-row align-items-center">
+						<i class="fa-solid fa-check text-primary mr-2"></i>
+						<span class="tx-15 gray-color">Darkpools</span>
+
+					</div>
+					<div class="d-flex flex-row align-items-center">
+						<i class="fa-solid fa-check text-primary mr-2"></i>
+						<span class="tx-15 gray-color">Live analytics</span>
+
+					</div>
+					<div class="d-flex flex-row align-items-center">
+						<i class="fa-solid fa-check text-primary mr-2"></i>
+						<span class="tx-15 gray-color">Discord community</span>
+					</div>
+					<div class="d-flex flex-row align-items-center">
+						<i class="fa-solid fa-check text-primary mr-2"></i>
+						<span class="tx-15 gray-color">12+ tools</span>
+					</div>
+				</div>
+
+				<div class="d-flex flex-row justify-content-end">
+
+					<a href="subscription" type="button" class="btn btn-secondary-outline-v2 btn-lg">Become Premium</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div id="watchlist-sidebar" class="watchlist-sidebar">
+		<div class="card p-2 bg-navbar lg-shadow watchlist-card-overflow" style="height: 100%">
+			<div class="card-header d-flex flex-row justify-content-between align-items-start">
+
+				<div class="d-flex flex-column">
+					<h4 class="card-title mb-0">Watchlists</h4>
+
+					<div class="d-flex flex-row align-items-center tx-13 mt-1 text-muted">
+						Press
+						<span class="shortcut-button">Shift + W</span>
+						to toggle
+					</div>
+
+				</div>
+
+				<div class="d-flex flex-row align-items-center">
+					<i onclick="show_add_watchlist_modal()"
+						class="mr-2 p-2 rounded-md bgcolor fa-solid fa-plus cursor-pointer"></i>
+
+					<i onclick="hidewatchlist()"
+						class="text-muted tx-13 p-2 rounded-md bgcolor fa-solid fa-arrow-right cursor-pointer"></i>
+				</div>
+
+			</div>
+
+			<div class="d-flex px-3 flex-column mt-2">
+				<h4 class="tx-15 text-bold mb-2">Add a symbol</h4>
+
+				<div class="relative">
+					<input type="text" class="form-control" style="padding-left: 15px !important"
+						placeholder="Ticker & Press Enter" id="watchlist_add_ticker">
+
+					<select
+						style="position: absolute; right: 0px; top: 0px; width: 100px; background-color: var(--navbars-bg) !important;"
+						id="watchlist_names">
+
+					</select>
+
+				</div>
+			</div>
+
+			<div class="card-body" id="watchlist-sidebar-body">
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="add_watchlist_name" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document"
+			style="max-width: 400px !important; pointer-events: auto !important;">
+			<div class="card">
+				<div class="card-body">
+
+					<h4 class="tx-15 text-bold mb-2 mt-1">Add a Watchlist</h4>
+
+					<input type="text" class="form-control mt-3" style="padding-left: 15px !important"
+						placeholder="Enter a watchlist name" id="new_watchlist_name">
+
+					<div class="d-flex justify-content-end mt-3">
+						<button type="button" class="btn btn-secondary mr-2"
+							onclick='$("#add_watchlist_name").modal("toggle");'>Cancel</button>
+						<button type="button" class="btn btn-primary" onclick="add_watchlist_name()">Add</button>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	<div id="quick-sidebar" class="quick-sidebar">
+		<div class="card p-2 bg-navbar lg-shadow watchlist-card-overflow " style="height: 100%; border-radius: 0px;">
+			<div class="card-header pb-3 borderbottomonly">
+
+				<div class="d-flex flex-row justify-content-between align-items-start">
+					<div class="d-flex flex-column">
+						<h4 class="card-title mb-0">Quick View</h4>
+
+						<div class="d-flex flex-row align-items-center tx-13 text-muted">
+							Press
+							<span class="shortcut-button">Shift + Q</span>
+							to toggle
+						</div>
+
+					</div>
+
+					<div class="d-flex flex-row align-items-center">
+						<!-- add an icon that takes to chart page, or a dropdown for stock/darkpool/options -->
+						<i onclick="hidequickchart()"
+							class="p-2 rounded-md bgcolor fa-solid fa-xmark cursor-pointer tx-13 text-muted"></i>
+					</div>
+				</div>
+
+				<div class="d-flex relative mt-2">
+					<input type="text" class="form-control noborder" style="padding-left: 15px !important"
+						placeholder="Ticker & Press Enter" id="quick_add_ticker">
+					<i class="fas fa-search text-muted" style="position: absolute; right: 14px; top: 14px;"></i>
+				</div>
+
+			</div>
+
+			<div class="card-body px-3">
+
+				<div class="d-flex flex-column">
+
+					<div class="d-flex flex-row justify-content-between align-items-center">
+						<span onclick="select_quick_options('#charts_quick')" id="charts_quick"
+							class="btn filter-btn-pressed mr-2">Chart</span>
+						<span onclick="select_quick_options('#algo_quick')" id="algo_quick"
+							class="btn filter-button mr-2">Net Flow</span>
+						<span onclick="select_quick_options('#news_quick')" id="news_quick"
+							class="btn filter-button mr-2">News</span>
+						<span onclick="select_quick_options('#insiders_quick')" id="insiders_quick"
+							class="btn filter-button mr-2">Insiders</span>
+
+
+					</div>
+
+					<div class="d-flex flex-row justify-content-between mb-2 mt-3">
+						<div class="d-flex flex-row align-items-center">
+							<img class="logo-lg mr-2" id="mainlogo_quick" style="display:none !important" />
+							<h5 class="tx-26 white-text text-bold  d-flex" id="mainsymbol_quick">
+							</h5>
+						</div>
+
+						<h5 id="stockprice_quick" class="mb-3 mb-md-0 tx-26 gray-color text-bold d-flex">
+						</h5>
+					</div>
+
+
+					<div id="charts_quick_div" class="d-flex flex-column mt-3" style="display: none !important">
+						<div style="height: 250px !important">
+							<div id="chart_canvas_quick"></div>
+						</div>
+						<div class="d-flex flex-row justify-content-between borderbottom">
+							<span id="1day_quick" onclick="changechart_quick('minute', 1, '#1day_quick')"
+								class="tx-14 pb-2 cursor-pointer selected-option text-bold text-white">1 Day</span>
+							<span id="1week_quick" onclick="changechart_quick('hour', 1, '#1week_quick')"
+								class="gray-color tx-14 pb-2 cursor-pointer">1 Week</span>
+							<span id="1month_quick" onclick="changechart_quick('hour', 4, '#1month_quick')"
+								class="gray-color tx-14 pb-2 cursor-pointer">1 Month</span>
+							<span id="1year_quick" onclick="changechart_quick('day', 1, '#1year_quick')"
+								class="gray-color tx-14 pb-2 cursor-pointer">1 Year</span>
+						</div>
+					</div>
+
+					<div id="algo_quick_div" class="d-flex flex-column mt-3" style="display: none !important">
+						<div style="height: 250px !important">
+							<canvas id="algo_canvas_quick"></canvas>
+						</div>
+					</div>
+
+					<div id="news_quick_div" class="d-flex flex-column mt-3" style="display: none !important">
+
+					</div>
+
+					<div id="insiders_quick_div" class="d-flex flex-column mt-3" style="display: none !important">
+						<div class="table-responsive">
+							<table class="table table-hover mb-0" id="unsider_table_quick">
+								<thead>
+									<tr>
+										<th class="pt-0">FiledAt</th>
+										<th class="pt-0">Ticker</th>
+										<th class="pt-0">Buy/Sell</th>
+										<th class="pt-0">Shares</th>
+										<th class="pt-0">Amount</th>
+									</tr>
+								</thead>
+								<tbody>
+								</tbody>
+							</table>
+						</div>
+					</div>
+
+					<div id="algo_quick_div" class="d-flex flex-column mt-3" style="display: none !important">
+						<div style="height: 250px !important">
+							<canvas id="chart_algo_quick"></canvas>
+						</div>
+					</div>
+
+
+
+
+				</div>
+
+			</div>
+
+		</div>
+	</div>
+
+
+	<div id="quick-contract-sidebar" class="quick-contract-sidebar">
+		<div class="card p-2 bg-navbar lg-shadow watchlist-card-overflow noboder"
+			style="height: 100%; border-radius: 0px;">
+			<div class="card-header pb-3 borderbottomonly">
+
+				<div class="d-flex flex-row justify-content-between align-items-start">
+					<div class="d-flex flex-column">
+						<span class="tx-13 mb-1 text-muted font-regular">Whales Positioning</span>
+						<h4 class="card-title mb-2 " id="quick_contract_symbol"></h4>
+						<div class="d-flex flex-row justify-content-between w-full">
+							<div class="d-flex flex-column align-items-start mr-4">
+								<span class="tx-13 text-muted font-regular">Type</span>
+								<span class="tx-15 text-white font-semibold" id="quick_contract_type"></span>
+							</div>
+							<div class="d-flex flex-column align-items-start mr-4">
+								<span class="tx-13 text-muted font-regular">Net Premiums</span>
+								<span class="tx-15 text-white font-semibold" id="quick_contract_net_premiums"></span>
+							</div>
+							<div class="d-flex flex-column align-items-start  mr-4" id="quick_con_oi_div">
+								<span class="tx-13 text-muted font-regular">Open Interest</span>
+								<span class="tx-15 text-white font-semibold" id="quick_contract_open_interest"></span>
+							</div>
+							<div class="d-flex flex-column align-items-start  mr-4">
+								<span class="tx-13 text-muted font-regular">Total Volume</span>
+								<span class="tx-15 text-white font-semibold" id="quick_contract_total_volume"></span>
+							</div>
+
+
+						</div>
+
+					</div>
+
+					<div class="d-flex flex-row align-items-center">
+						<!-- add an icon that takes to chart page, or a dropdown for stock/darkpool/options -->
+						<i onclick="hidequickcontract()"
+							class="p-2 rounded-md bgcolor fa-solid fa-xmark cursor-pointer tx-13 text-muted"></i>
+					</div>
+
+
+				</div>
+
+
+
+			</div>
+
+			<div class="card-body px-3">
+
+				<div class="d-flex flex-column">
+
+					<div id="algo_quick_div" class="d-flex flex-column mt-3">
+						<div style="height: 230px !important">
+							<canvas id="contract_canvas_quick"></canvas>
+						</div>
+					</div>
+
+
+				</div>
+
+			</div>
+
+			<div class="card-footer">
+				<div class="d-flex flex-row align-items-center mt-2 text-center w-full">
+					<span class="tx-12 text-muted font-regular" id="quick_contract_explanation"></span>
+				</div>
+
+			</div>
+
+		</div>
+	</div>
+      <div class="page-content">
+        <div class="d-flex justify-content-between align-items-center flex-wrap grid-margin">
+          <div>
+            <h4 class="mb-3 mb-md-1">Sorry, this page was not found.</h4>
+            <h5 class="mb-3 mb-md-0 text-muted">404 error.</h5>
+          </div>
+          <!--<div class="d-flex align-items-center flex-wrap text-nowrap">
+            <div class="input-group date datepicker dashboard-date mr-2 mb-2 mb-md-0 d-md-none d-xl-flex" id="dashboardDate">
+              <span class="input-group-addon bg-transparent"><i data-feather="calendar" class="text-primary"></i></span>
+              <input type="text" class="form-control">
+            </div>
+          </div>-->
+        </div>
+
+      
+
+      <!-- partial:partials/_footer.html -->
+      <footer class="footer d-flex flex-column flex-md-row align-items-center justify-content-between">
+        <p class="text-muted text-center text-md-left">Copyright © 2021 <a href="https://www.tradytics.com/" target="_blank">Tradytics</a>. All rights reserved. Market Data by Xignite and IEXCloud.</p>
+        <p class="text-muted text-center text-md-left mb-0 d-none d-md-block">Handcrafted With <i class="mb-1 text-primary ml-1 icon-small" data-feather="heart"></i></p>
+      </footer>
+      <!-- partial -->
+    
+    </div>
+  </div>
+
+  <!-- Url based scripts -->
+  <script src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>
+
+  <!-- core:js -->
+  <script src="/static/assets/vendors/core/core.js"></script>
+  <!-- endinject -->
+  <!-- plugin js for this page -->
+  <script src="/static/assets/vendors/chartjs/Chart.min.js"></script>
+  <script src="/static/assets/vendors/jquery.flot/jquery.flot.js"></script>
+  <script src="/static/assets/vendors/jquery.flot/jquery.flot.resize.js"></script>
+  <script src="/static/assets/vendors/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+  <script src="/static/assets/vendors/apexcharts/apexcharts.min.js"></script>
+  <script src="/static/assets/vendors/progressbar.js/progressbar.min.js"></script>
+  <script src="/static/assets/vendors/datatables.net/jquery.dataTables.js"></script>
+  <script src="/static/assets/vendors/datatables.net-bs4/dataTables.bootstrap4.js"></script>
+  <script src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>
+
+  <!-- end plugin js for this page -->
+  <!-- inject:js -->
+  <script src="/static/assets/vendors/feather-icons/feather.min.js"></script>
+  <script src="/static/assets/js/template.js"></script>
+
+  <!-- endinject -->
+  <!-- custom js for this page -->
+  <script src="/static/assets/js/eiten-dashboard.js"></script>
+  <script src="/static/assets/js/datepicker.js"></script>
+  <script src="/static/assets/js/dashboard.js"></script>
+
+  <!-- end custom js for this page -->
+  <script>
+    
+  </script>
+  <script src="//code.tidio.co/smazqyp2mp7cyph64wjg9fpoyuw5wp5c.js" async></script>
+</body>
+</html>    

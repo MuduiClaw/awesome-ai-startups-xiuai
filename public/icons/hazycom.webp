@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>Hazy | The enterprise synthetic data platform - Hazy</title>
+
+    <!-- Favicons -->
+    <link href="/images/favicons/favicon.ico" rel="shortcut icon" />
+    <link href="/images/favicons/favicon-180.png" rel="apple-touch-icon" sizes="180x180" />
+    <link rel="icon" href="/images/favicons/favicon.svg" type="image/svg+xml">
+    <link href="/images/favicons/site.webmanifest" rel="manifest" />
+    <link color="#5224bc" href="/images/favicons/safari-pinned-tab.svg" rel="mask-icon" />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/assets/css.css">
+  </head>
+
+  <body data-slug="home">
+    <header class="c-topnav --fixed" id="vue-app:topnav"></header>
+
+    <main class="u-mb1">
+      <header class="c-topnav --fixed" id="vue-app:topnav" data-v-app="">
+        <nav class="c-topnav__nav">
+          <div class="c-topnav__bar">
+            <!-- Logo/Home Link -->
+            <a class="c-topnav__home">
+              <svg viewBox="0 0 89 35" width="89" height="35" xmlns="http://www.w3.org/2000/svg">
+                <title>hazy</title>
+                <path d="M14.8 7.17h4.51v21.32h-4.5V11.74L4.5 13.17v15.32H0V0h4.5v8.62l10.3-1.45Zm12.68 0v4.57h11.43v1.95L24.34 15.6v12.9h19.07V7.17H27.48ZM38.91 18.2v5.84H28.85v-4.52L38.9 18.2Zm31.13 7.43V7.17h4.5v14.01h9.96V7.17H89v18.46H70.04ZM74.1 35 89 32.9v-4.41l-15.47 2.24.57 4.27ZM65.16 7.17h-16.4v4.57h10.88L47.5 24.04v4.45h17.66v-4.45H53.2l11.96-12.3V7.17Z"></path>
+              </svg>
+            </a>
+
+            <!-- CTA Buttons -->
+            <div class="c-topnav__ctas">
+              <a class="c-button --size:-1 --withiconright --purple" href="https://www.sas.com/en_us/software/data-maker.html#form">
+                Get in touch
+                <!-- Arrow SVG -->
+                <svg id="arrow" viewBox="0 0 24 24">
+                  <path d="M12 6
+                          l-1.06125 1.06125
+                          l4.18875 4.18875
+                          h-9.1275
+                          v1.5
+                          h9.1275
+                          l-4.18875 4.18875
+                          l1.06125 1.06125
+                          l6-6z" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </nav>
+      </header>
+
+      <!-- Promo Section (Commented Out) -->
+      <!-- <article class="c-promo">
+        <div class="o-container">
+          <div class="c-promo__text">
+            <a href="https://www.sas.com/en_us/news/press-releases/2024/november/hazy-syntheticdata.html" class="c-golink">
+              SAS acquires Hazy synthetic data software to boost generative AI portfolio
+              <svg>
+                <use xlink:href="/images/icons/system.svg#arrow"></use>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </article> -->
+
+      <section class="c-herosection" data-vh>
+        <div class="c-herosection__bg">
+          <!-- <div class="vue-app:background-video">
+            <background-video video-url="https://vimeo.com/792929525" :width="320" :height="240" />
+          </div>
+
+          <picture>
+            <source srcset="https://hazy.com/media/site/7ba80238f6-1674734379/hazy_white-320x.webp 320w,
+                          https://hazy.com/media/site/7ba80238f6-1674734379/hazy_white-640x.webp 640w,
+                          https://hazy.com/media/site/7ba80238f6-1674734379/hazy_white-1024x.webp 1024w,
+                          https://hazy.com/media/site/7ba80238f6-1674734379/hazy_white-1536x.webp 1536w,
+                          https://hazy.com/media/site/7ba80238f6-1674734379/hazy_white-2048x.webp 2048w"
+                    type="image/webp">
+            <img alt=""
+                 src="https://hazy.com/media/site/7ba80238f6-1674734379/hazy_white-320x.jpg"
+                 srcset="https://hazy.com/media/site/7ba80238f6-1674734379/hazy_white-320x.jpg 320w,
+                         https://hazy.com/media/site/7ba80238f6-1674734379/hazy_white-640x.jpg 640w,
+                         https://hazy.com/media/site/7ba80238f6-1674734379/hazy_white-1024x.jpg 1024w,
+                         https://hazy.com/media/site/7ba80238f6-1674734379/hazy_white-1536x.jpg 1536w,
+                         https://hazy.com/media/site/7ba80238f6-1674734379/hazy_white-2048x.jpg 2048w"
+                 width="1920"
+                 height="1440"
+                 loading="eager">
+          </picture> -->
+        </div>
+
+        <div class="c-herosection__backdrop"></div>
+
+        <div class="o-container">
+          <div class="c-herosection__panel o-blocks">
+            <h1 class="c-herosection__h1">
+              Hazy has joined forces with SAS
+            </h1>
+
+            <div class="c-herosection__description">
+              <p>Together, we're set to revolutionise the data landscape, helping businesses unlock faster, smarter, and more secure insights with synthetic data.</p>
+            </div>
+
+            <a href="https://www.sas.com/ko_kr/news/press-releases/2024/november/hazy-syntheticdata.html" class="c-golink">
+              Read the press release
+              <svg id="arrow" viewBox="0 0 24 24">
+                <path d="m12 6-1.06125 1.06125 4.18875 4.18875h-9.1275v1.5h9.1275l-4.18875 4.18875 1.06125 1.06125 6-6z"></path>
+              </svg>
+            </a>
+
+            <!-- <picture class="c-herosection__home-small-wave">
+              <source srcset="https://hazy.com/media/pages/home/108bbdffcf-1683735935/hazy_wavegraphic_1_onwhite_rgb-320x.webp 320w,
+                            https://hazy.com/media/pages/home/108bbdffcf-1683735935/hazy_wavegraphic_1_onwhite_rgb-640x.webp 640w,
+                            https://hazy.com/media/pages/home/108bbdffcf-1683735935/hazy_wavegraphic_1_onwhite_rgb-960x.webp 960w"
+                      type="image/webp">
+              <img alt=""
+                   src="https://hazy.com/media/pages/home/108bbdffcf-1683735935/hazy_wavegraphic_1_onwhite_rgb-320x.png"
+                   srcset="https://hazy.com/media/pages/home/108bbdffcf-1683735935/hazy_wavegraphic_1_onwhite_rgb-320x.png 320w,
+                           https://hazy.com/media/pages/home/108bbdffcf-1683735935/hazy_wavegraphic_1_onwhite_rgb-640x.png 640w,
+                           https://hazy.com/media/pages/home/108bbdffcf-1683735935/hazy_wavegraphic_1_onwhite_rgb-960x.png 960w"
+                   width="1920"
+                   height="1158"
+                   loading="eager">
+            </picture> -->
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

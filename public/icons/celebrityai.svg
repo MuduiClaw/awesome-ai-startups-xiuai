@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="200"
+   height="200"
+   viewBox="0 0 200 200"
+   role="img"
+   aria-label="CelebrityAI.Club Logo"
+   version="1.1"
+   id="svg4"
+   sodipodi:docname="logo.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview4"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1" />
+  <defs
+     id="defs2">
+    <!-- 品牌主渐变：紫 → 粉 -->
+    <linearGradient
+       id="mainGradient"
+       x1="0%"
+       y1="100%"
+       x2="100%"
+       y2="0%">
+      <stop
+         offset="0%"
+         stop-color="#7C3AED"
+         id="stop1" />
+      <stop
+         offset="100%"
+         stop-color="#EC4899"
+         id="stop2" />
+    </linearGradient>
+    <!-- 柔和投影 -->
+    <filter
+       id="shadow"
+       x="0"
+       y="0"
+       width="1"
+       height="1">
+      <feDropShadow
+         dx="0"
+         dy="4"
+         stdDeviation="10"
+         flood-color="#000000"
+         flood-opacity="0.18" />
+    </filter>
+  </defs>
+  <!-- 圆角矩形容器（便于做 App icon / favicon） -->
+  <rect
+     x="16"
+     y="16"
+     width="168"
+     height="168"
+     rx="36"
+     fill="url(#mainGradient)"
+     filter="url(#shadow)"
+     id="rect2" />
+  <!-- “C” 主体：用圆环描边并留缺口，读作 Celeb 的首字母 -->
+  <!-- 通过 stroke-dasharray 制造开口，stroke-linecap=round 强化“C”的形状识别度 -->
+  <g
+     transform="translate(100,100)"
+     id="g4">
+    <circle
+       r="56"
+       fill="none"
+       stroke="white"
+       stroke-width="18"
+       stroke-linecap="round"
+       stroke-dasharray="270 120"
+       transform="rotate(-20)"
+       opacity="0.98"
+       id="circle2" />
+    <!-- 播放三角（Video）放在“C”的内侧，突出产品属性 -->
+    <path
+       d="M-2 -18 L26 0 L-2 18 Z"
+       fill="#0B0B12"
+       opacity="0.9"
+       id="path2" />
+    <!-- 明星五角星（Celeb），安放在“C”开口外缘，形成记忆点 -->
+    <path
+       d="M-58 -6 l6.8 2.1 4.2-5.8 0.6 7.1 6.9 1.8-6.6 2.7 0.9 7-5.1-4.9-6.3 3.4 2.6-6.6-5.6-4.2 7.1-0.6z"
+       fill="#FFFFFF"
+       opacity="0.95"
+       id="path3" />
+    <!-- 微光点缀，营造星光效果 -->
+    <circle
+       cx="38"
+       cy="-30"
+       r="3.2"
+       fill="#FFFFFF"
+       opacity="0.9"
+       id="circle3" />
+    <circle
+       cx="-30"
+       cy="32"
+       r="2.6"
+       fill="#FFFFFF"
+       opacity="0.6"
+       id="circle4" />
+  </g>
+  <!-- 细线内圈，提升层次感（圆角矩形内边） -->
+  <rect
+     x="34"
+     y="34"
+     width="132"
+     height="132"
+     rx="28"
+     fill="none"
+     stroke="rgba(255,255,255,0.22)"
+     stroke-width="2"
+     id="rect4" />
+</svg>

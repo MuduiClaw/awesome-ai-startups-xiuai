@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Write2Learn - Efficient English Vocabulary Learning Tool</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #e7f8f0 25%, #f0f4f2 100%);
+      color: #333;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+    }
+    .container {
+      max-width: 900px;
+      width: 90%;
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      padding: 40px;
+      text-align: left;
+      margin-top: 20px;
+      position: relative;
+    }
+    h1 {
+      color: #333;
+      font-size: 2.5em;
+      margin-bottom: 0.5em;
+      background-color: #f0f4f2;
+      padding: 10px;
+      border-radius: 10px;
+    }
+    h2 {
+      color: #555;
+      font-size: 1.8em;
+      margin-top: 0;
+      background-color: #e7f8f0;
+      padding: 10px;
+      border-radius: 10px;
+    }
+    h3 {
+      color: #444;
+      font-size: 1.5em;
+      margin-top: 0;
+      margin-bottom: 0.5em;
+      background-color: #e0f7fa;
+      padding: 10px;
+      border-radius: 10px;
+    }
+    p {
+      font-size: 1.2em;
+      line-height: 1.8;
+      margin-bottom: 1em;
+    }
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 20px;
+      margin-top: 30px;
+    }
+    .feature {
+      background: #f9f9f9;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      flex: 1;
+      min-width: 250px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .feature:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 20px 0;
+    }
+    ul li {
+      font-size: 1.2em;
+      color: #555;
+      margin-bottom: 10px;
+      position: relative;
+      padding-left: 25px;
+    }
+    ul li::before {
+      content: '✔';
+      position: absolute;
+      left: 0;
+      color: #29abe0;
+      font-size: 1.5em;
+    }
+    .language-switcher {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: rgba(255, 255, 255, 0.8);
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      z-index: 999;
+    }
+    .language-switcher select {
+      padding: 5px 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    .canva-container {
+      position: relative;
+      width: 100%;
+      height: 0;
+      padding-top: 62.5000%;
+      padding-bottom: 0;
+      box-shadow: 0 2px 8px 0 rgba(63, 69, 81, 0.16);
+      margin-top: 1.6em;
+      margin-bottom: 0.9em;
+      overflow: hidden;
+      border-radius: 8px;
+      will-change: transform;
+    }
+    .canva-container iframe {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      border: none;
+      padding: 0;
+      margin: 0;
+    }
+    @media (max-width: 600px) {
+      .container {
+        padding: 20px;
+      }
+      h1 {
+        font-size: 2em;
+      }
+      h2 {
+        font-size: 1.5em;
+      }
+      h3 {
+        font-size: 1.2em;
+      }
+      p {
+        font-size: 1em;
+      }
+      .features {
+        flex-direction: column;
+        gap: 10px;
+      }
+      .feature {
+        min-width: 100%;
+      }
+      ul li {
+        font-size: 1em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="language-switcher">
+    <label for="language">Language: </label>
+    <select id="language">
+      <option value="en">English</option>
+      <option value="zh">中文</option>
+    </select>
+  </div>
+  <div class="container">
+    <div class="canva-container">
+      <iframe loading="lazy" src="https://www.canva.com/design/DAGLvJtRjwc/G8N631RVooPo2kWdLfMGPg/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen"></iframe>
+    </div>
+    <div id="content-en">
+      <h1>Write2Learn</h1>
+      <h2>Your Ultimate English Learning Companion!</h2>
+      <p>🌟 Write2Learn: Your Ultimate English Learning Companion! 🌟</p>
+      <h3>Dive into Real-life Contexts with Words 💬</h3>
+      <p>Understand how words are used in different situations through interactive dialogues.</p>
+      <h3>All-in-One Dictionary Integration 📚</h3>
+      <p>Access Collins and Cambridge dictionaries for word definitions, and think in English to understand words better.</p>
+      <h3>AI-Powered Text Analysis 🧠</h3>
+      <p>Analyze sentence structures, grammar, and tenses with AI. Never fear complex sentences again!</p>
+      <h3>Visual Sentence Diagrams 🖼️</h3>
+      <p>Visualize parts of speech, sentence structures, and grammar for a clear understanding of each sentence.</p>
+      <h3>Authoritative Dictionary Exercises ✍️</h3>
+      <p>Practice with authoritative dictionary examples and website sentences to improve your writing skills.</p>
+      <h3>On-the-Go Word Lookup and Fill-in-the-Blank Exercises 🔍</h3>
+      <p>Highlight words on any webpage to look them up or create fill-in-the-blank exercises. Chat with AI anytime!</p>
+      <h3>Track Your Learning Progress 📈</h3>
+      <p>Keep track of learned words and today's progress for a clear view of your learning journey.</p>
+      <h3>Customize Your AI Model 🛠️</h3>
+      <p>Choose and customize your preferred AI model for a tailored learning experience.</p>
+      <h3>Import, Export, and Clear Data 🔄</h3>
+      <p>Easily back up your data with import, export, and clear options.</p>
+      <h3>Custom Prompts for Quick Access ⚡</h3>
+      <p>Create and quickly access custom prompts for a more efficient learning process.</p>
+      <p>✨ Start your journey with Write2Learn today and master English effortlessly! ✨</p>
+    </div>
+    <div id="content-zh" style="display: none;">
+      <h1>Write2Learn</h1>
+      <h2>你的终极英语学习伴侣！</h2>
+      <p>🌟 Write2Learn：你的终极英语学习伴侣！🌟</p>
+      <h3>在情景对话上下文中了解单词 💬</h3>
+      <p>通过互动对话了解单词在不同情境中的使用方法。</p>
+      <h3>集合了柯林斯词典, 剑桥词典查词, 英英释义的方法 📚</h3>
+      <p>访问柯林斯和剑桥词典以获取单词定义，用英语思维更好地理解单词。</p>
+      <h3>AI文字分析英语句子结构,语法和英语时态 🧠</h3>
+      <p>使用AI分析句子结构、语法和时态，再也不怕复杂句子！</p>
+      <h3>AI图解句子单词词性,句子结构,语法和英语时态 🖼️
+
+</h3>
+      <p>可视化单词词性、句子结构和语法，清晰理解每个句子。</p>
+      <h3>权威词典例句练习, 网站句子练习 ✍️</h3>
+      <p>通过权威词典例句和网站句子练习提高写作技能。</p>
+      <h3>支持网页划词查询, 挖词填空练习 🔍</h3>
+      <p>在任何网页上高亮单词进行查询或创建挖词填空练习，随时与AI聊天！</p>
+      <h3>单词学习记录 📈</h3>
+      <p>记录已学单词和今日学习情况，一目了然地查看学习进展。</p>
+      <h3>支持自定义AI大模型 🛠️</h3>
+      <p>选择并自定义你喜欢的AI模型，打造个性化学习体验。</p>
+      <h3>支持导入数据, 导出数据和清除数据 🔄</h3>
+      <p>通过导入、导出和清除选项轻松备份数据。</p>
+      <h3>支持自定义提示词prompt ⚡</h3>
+      <p>创建并快速访问自定义提示词，提高学习效率。</p>
+      <p>✨ 今天就开始你的Write2Learn之旅，轻松掌握英语！✨</p>
+    </div>
+  </div>
+
+  <script>
+    const languageSwitcher = document.getElementById('language');
+    const contentEn = document.getElementById('content-en');
+    const contentZh = document.getElementById('content-zh');
+
+    languageSwitcher.addEventListener('change', (e) => {
+      if (e.target.value === 'en') {
+        contentEn.style.display = 'block';
+        contentZh.style.display = 'none';
+      } else if (e.target.value === 'zh') {
+        contentEn.style.display = 'none';
+        contentZh.style.display = 'block';
+      }
+    });
+
+    // Set default language
+    document.addEventListener('DOMContentLoaded', () => {
+      const userLang = navigator.language || navigator.userLanguage;
+      if (userLang.startsWith('zh')) {
+        languageSwitcher.value = 'zh';
+        contentEn.style.display = 'none';
+        contentZh.style.display = 'block';
+      } else {
+        languageSwitcher.value = 'en';
+        contentEn.style.display = 'block';
+        contentZh.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="icon" href="data:image/png;base64,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" />
+
+    <!-- Meta Description -->
+    <meta name="description" content="Discover apiversion.dev, the AI-powered platform that automates API and endpoint versioning, ensuring accurate and standardized version numbers. Sign up for our FREE plan today!">
+
+    <!-- Meta Keywords (Optional, but not as important as before) -->
+    <meta name="keywords" content="AI versioning, API automation, endpoint versioning, AI API platform">
+   
+    <!-- Title Tag -->
+    <title>AI-Powered API Versioning Platform | apiversion.dev</title>
+
+    <!-- Canonical Tag -->
+    <link rel="canonical" href="https://apiversion.dev/">
+
+    <!-- Open Graph Tags for Social Media Sharing -->
+    <meta property="og:title" content="AI-Powered API Versioning Platform">
+    <meta property="og:description" content="Discover apiversion.dev, the AI-powered platform that automates API and endpoint versioning.">
+    <meta property="og:image" content="URL_TO_IMAGE">
+    <meta property="og:url" content="https://apiversion.dev/">
+    <script async src="https://tally.so/widgets/embed.js"></script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-PHFKWFVQ');</script>
+  <!-- End Google Tag Manager -->
+  
+  <!-- Schema Markup for Structured Data -->
+  <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Website",
+        "name": "apiversion.dev",
+        "url": "https://apiversion.dev/",
+        "description": "Discover apiversion.dev, the AI-powered platform that automates API and endpoint versioning, ensuring accurate and standardized version numbers. Sign up for our FREE plan today!"
+    }
+  </script>
+  
+  
+  <script async src="https://tally.so/widgets/embed.js"></script>
+
+  <script>
+  
+  window.TallyConfig = {
+  
+    "formId": "me6gye",
+  
+    "popup": {
+  
+      "emoji": {
+  
+        "text": "👋",
+  
+        "animation": "wave"
+  
+      },
+  
+      "hideTitle": true,
+  
+      "alignLeft": true,
+  
+      "overlay": true,
+  
+      "layout": "modal",
+  
+      "autoClose": 0,
+  
+      "showOnce": true,
+  
+      "doNotShowAfterSubmit": true
+  
+    }
+  
+  };
+  
+  </script>
+  <!-- <script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script> -->
+  
+  <!-- Robots.txt -->
+    <meta name="robots" content="index, follow">
+
+  <!-- Link to Sitemap -->
+    <link rel="sitemap" type="application/xml" href="https://apiversion.dev/sitemap.xml">
+
+    <script type="module" crossorigin src="/assets/index-qBdcBCcn.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-OUKSwD2-.css">
+  </head>
+  <body class="font-inter antialiased bg-slate-900 text-slate-100 tracking-tight">
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PHFKWFVQ"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+    <!-- <iframe data-tally-src="https://tally.so/embed/me6gye?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="182" frameborder="0" marginheight="0" marginwidth="0" title="VersionAI"></iframe><script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script> -->
+    <!-- <iframe data-tally-src="https://tally.so/embed/me6gye?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="182" frameborder="0" marginheight="0" marginwidth="0" title="VersionAI"></iframe><script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script> -->
+    <div id="app"></div>
+  </body>
+</html>

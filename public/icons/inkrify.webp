@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Ink Drop Base -->
+  <path d="M256 96C256 96 150 256 150 352C150 422 197 448 256 448C315 448 362 422 362 352C362 256 256 96 256 96Z" fill="url(#inkGradient)">
+    <animate attributeName="d" 
+             dur="3s"
+             repeatCount="indefinite"
+             values="
+               M256 96C256 96 150 256 150 352C150 422 197 448 256 448C315 448 362 422 362 352C362 256 256 96 256 96Z;
+               M256 100C256 100 160 260 160 356C160 426 202 444 256 444C310 444 352 426 352 356C352 260 256 100 256 100Z;
+               M256 96C256 96 150 256 150 352C150 422 197 448 256 448C315 448 362 422 362 352C362 256 256 96 256 96Z"
+    />
+  </path>
+
+  <!-- Ink Ripples -->
+  <g opacity="0.7">
+    <circle cx="256" cy="352" r="40" stroke="url(#inkGradient)" stroke-width="4" fill="none">
+      <animate attributeName="r"
+               dur="2s"
+               repeatCount="indefinite"
+               values="40;60;40"/>
+      <animate attributeName="opacity"
+               dur="2s"
+               repeatCount="indefinite"
+               values="0.7;0;0.7"/>
+    </circle>
+    <circle cx="256" cy="352" r="60" stroke="url(#inkGradient)" stroke-width="3" fill="none">
+      <animate attributeName="r"
+               dur="2s"
+               begin="0.5s"
+               repeatCount="indefinite"
+               values="60;80;60"/>
+      <animate attributeName="opacity"
+               dur="2s"
+               begin="0.5s"
+               repeatCount="indefinite"
+               values="0.5;0;0.5"/>
+    </circle>
+  </g>
+
+  <!-- Ink Splatter Effects -->
+  <g opacity="0.8">
+    <circle cx="226" cy="312" r="8" fill="url(#inkGradient)">
+      <animate attributeName="r"
+               dur="1.5s"
+               repeatCount="indefinite"
+               values="8;6;8"/>
+    </circle>
+    <circle cx="286" cy="322" r="6" fill="url(#inkGradient)">
+      <animate attributeName="r"
+               dur="2s"
+               repeatCount="indefinite"
+               values="6;4;6"/>
+    </circle>
+    <circle cx="256" cy="292" r="5" fill="url(#inkGradient)">
+      <animate attributeName="r"
+               dur="1.8s"
+               repeatCount="indefinite"
+               values="5;3;5"/>
+    </circle>
+  </g>
+
+  <!-- Flowing Lines -->
+  <path d="M256 96C256 96 246 116 236 146" stroke="url(#inkGradient)" stroke-width="3" stroke-linecap="round">
+    <animate attributeName="d"
+             dur="2s"
+             repeatCount="indefinite"
+             values="
+               M256 96C256 96 246 116 236 146;
+               M256 96C256 96 250 120 240 150;
+               M256 96C256 96 246 116 236 146"
+    />
+  </path>
+  <path d="M256 96C256 96 266 116 276 146" stroke="url(#inkGradient)" stroke-width="3" stroke-linecap="round">
+    <animate attributeName="d"
+             dur="2s"
+             repeatCount="indefinite"
+             values="
+               M256 96C256 96 266 116 276 146;
+               M256 96C256 96 262 120 272 150;
+               M256 96C256 96 266 116 276 146"
+    />
+  </path>
+
+  <!-- Gradient Definitions -->
+  <defs>
+    <linearGradient id="inkGradient" x1="150" y1="96" x2="362" y2="448" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FF1F8F"/>
+      <stop offset="100%" stop-color="#FF8B3D"/>
+    </linearGradient>
+  </defs>
+</svg>
