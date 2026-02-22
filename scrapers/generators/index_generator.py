@@ -49,7 +49,7 @@ class IndexGenerator:
         }
 
         INDEX_FILE.write_text(
-            json.dumps(output, indent=2, ensure_ascii=False) + "\n",
+            json.dumps(output, indent=2, ensure_ascii=True) + "\n",
             encoding="utf-8",
         )
 
