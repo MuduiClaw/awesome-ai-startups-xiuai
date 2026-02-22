@@ -1,0 +1,7 @@
+# SQLite database — treat as binary to avoid line-ending issues and diff noise
+data/products.db binary
+
+# JSON data files — disable autocrlf to prevent Unicode corruption
+data/*.json binary
+data/**/*.json binary
+*.json -text
