@@ -171,6 +171,23 @@ class PlausibilityValidator:
     _MIN_FOUNDED_YEAR = 1900
     _MAX_FOUNDED_YEAR = 2035
 
+    # Garbage data filters (added to catch patterns found in manual audit)
+    _GARBLED_NAME = re.compile(r"\\\\|\\n")
+    _NUMERIC_ONLY_NAME = re.compile(r"^[\d,.\s]+$")
+    _PRICE_NAME = re.compile(r"\$|\d+/mo", re.IGNORECASE)
+    _BLACKLISTED_NAMES: frozenset[str] = frozenset(
+        {
+            "deals",
+            "new",
+            "launch / advertise",
+            "no pricing",
+        }
+    )
+    _TEMPLATE_DESC = re.compile(r"\bis an AI product\.\s*$")
+    _SEARCH_ENGINE_URL = re.compile(
+        r"bing\.com/search|google\.com/search", re.IGNORECASE
+    )
+
     def validate(self, product: ScrapedProduct) -> tuple[bool, list[str]]:
         """Validate a ScrapedProduct for plausibility.
 
@@ -216,5 +233,31 @@ class PlausibilityValidator:
             issues.append(
                 f"Company website '{product.company_website}' is not a valid URL"
             )
+
+        # --- Garbage data filters ---
+        name = product.name or ""
+
+        if self._GARBLED_NAME.search(name):
+            issues.append(f"Name contains escape artifacts: '{name}'")
+
+        if self._NUMERIC_ONLY_NAME.match(name.strip()):
+            issues.append(f"Name is numeric-only: '{name}'")
+
+        if self._PRICE_NAME.search(name):
+            issues.append(f"Name contains price text: '{name}'")
+
+        if name.strip().lower() in self._BLACKLISTED_NAMES:
+            issues.append(f"Name is a blacklisted navigation element: '{name}'")
+
+        desc = product.description or ""
+        if self._TEMPLATE_DESC.search(desc):
+            issues.append("Description is a template placeholder")
+
+        for url_field, label in [
+            (product.product_url, "Product URL"),
+            (product.company_website, "Company website"),
+        ]:
+            if url_field and self._SEARCH_ENGINE_URL.search(url_field):
+                issues.append(f"{label} is a search engine URL: '{url_field}'")
 
         return (len(issues) == 0, issues)
