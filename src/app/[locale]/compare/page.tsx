@@ -12,7 +12,7 @@ export default async function ComparePage({
   const { locale } = await params;
   const dict = await getDictionary(locale as Locale);
 
-  // Products are loaded client-side from /data/products-lite.json
+  // Products are searched client-side via /api/search
   return (
     <ComparePageClient
       locale={locale as Locale}

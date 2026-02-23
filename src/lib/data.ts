@@ -9,7 +9,7 @@ import type {
   TagsData,
 } from "./types";
 
-const DATA_DIR = path.join(process.cwd(), "..", "data");
+const DATA_DIR = path.join(process.cwd(), "data");
 const PRODUCTS_DIR = path.join(DATA_DIR, "products");
 const DB_PATH = path.join(DATA_DIR, "products.db");
 
@@ -300,23 +300,6 @@ export function getAllProducts(): ProductIndex {
   }
 
   _allProductsCache = result;
-
-  // Write lightweight static JSON for client-side lazy loading.
-  // This runs at build time and writes into public/ so it's served as a static file.
-  // In serverless runtime the filesystem is read-only, so we silently skip.
-  try {
-    const publicDataDir = path.join(process.cwd(), "public", "data");
-    if (!fs.existsSync(publicDataDir)) {
-      fs.mkdirSync(publicDataDir, { recursive: true });
-    }
-    const litePath = path.join(publicDataDir, "products-lite.json");
-    if (!fs.existsSync(litePath)) {
-      fs.writeFileSync(litePath, JSON.stringify(result.products));
-    }
-  } catch {
-    // Expected in serverless runtime — file was already written during build
-  }
-
   return result;
 }
 
@@ -391,6 +374,22 @@ export function getCategoryCounts(): Record<string, number> {
     counts[p.category] = (counts[p.category] || 0) + 1;
   }
   return counts;
+}
+
+/** Distinct country names, sorted alphabetically. */
+export function getCountries(): string[] {
+  const db = getDb();
+  if (db) {
+    const rows = db
+      .prepare(
+        "SELECT DISTINCT company_hq_country FROM products WHERE company_hq_country IS NOT NULL AND company_hq_country != '' ORDER BY company_hq_country",
+      )
+      .all() as { company_hq_country: string }[];
+    return rows.map((r) => r.company_hq_country);
+  }
+  // Fallback: compute from index
+  const { products } = getAllProducts();
+  return Array.from(new Set(products.map((p) => p.country).filter(Boolean))).sort();
 }
 
 export function getTags(): TagsData {

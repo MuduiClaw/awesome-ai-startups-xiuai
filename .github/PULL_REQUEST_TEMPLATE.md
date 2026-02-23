@@ -16,7 +16,7 @@
 - [ ] JSON files pass schema validation (`aiscrape validate`)
 - [ ] Slug matches filename for any new/renamed company files
 - [ ] `index.json` and `stats.json` regenerated if data changed (`aiscrape generate-stats`)
-- [ ] Website builds successfully (`cd website && npm run build`)
+- [ ] Website builds successfully (`npm run build`)
 - [ ] Tests pass (`pytest tests/`)
 
 ## Screenshots (if applicable)

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo, useEffect } from "react";
+import { useState, useEffect, useRef, useCallback, useMemo } from "react";
 import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
 import { formatCurrency, formatRound, localized } from "@/lib/utils";
@@ -12,53 +12,78 @@ interface ComparePageClientProps {
   dict: Dictionary;
 }
 
+interface SearchResponse {
+  results: ProductIndexEntry[];
+  total: number;
+}
+
 export function ComparePageClient({ locale, dict }: ComparePageClientProps) {
-  const [products, setProducts] = useState<ProductIndexEntry[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const [selectedSlugs, setSelectedSlugs] = useState<string[]>([]);
+  const [selected, setSelected] = useState<ProductIndexEntry[]>([]);
   const [searchTerm, setSearchTerm] = useState("");
+  const [searchResults, setSearchResults] = useState<ProductIndexEntry[]>([]);
+  const [isSearching, setIsSearching] = useState(false);
+  const abortRef = useRef<AbortController | null>(null);
 
   const t = dict.product;
   const c = dict.compare;
 
-  // Load products from static JSON
-  useEffect(() => {
-    fetch("/data/products-lite.json")
-      .then((res) => res.json())
-      .then((data: ProductIndexEntry[]) => {
-        setProducts(data);
-        setIsLoading(false);
-      })
-      .catch(() => setIsLoading(false));
-  }, []);
+  const selectedSlugs = useMemo(() => selected.map((p) => p.slug), [selected]);
 
-  const selected = useMemo(
-    () => products.filter((p) => selectedSlugs.includes(p.slug)),
-    [products, selectedSlugs]
+  // Use a ref so the effect callback always sees the latest slugs
+  // without needing selectedSlugs in the dependency array
+  const selectedSlugsRef = useRef(selectedSlugs);
+  selectedSlugsRef.current = selectedSlugs;
+
+  // Debounced search via API
+  useEffect(() => {
+    if (!searchTerm.trim()) {
+      setSearchResults([]);
+      return;
+    }
+
+    const timer = setTimeout(async () => {
+      abortRef.current?.abort();
+      const controller = new AbortController();
+      abortRef.current = controller;
+
+      setIsSearching(true);
+      try {
+        const params = new URLSearchParams({
+          q: searchTerm.trim(),
+          limit: "10",
+        });
+        const res = await fetch(`/api/search?${params}`, {
+          signal: controller.signal,
+        });
+        const data: SearchResponse = await res.json();
+        // Filter out already-selected products
+        setSearchResults(
+          data.results.filter((p) => !selectedSlugsRef.current.includes(p.slug)).slice(0, 5),
+        );
+      } catch (err) {
+        if (err instanceof DOMException && err.name === "AbortError") return;
+        setSearchResults([]);
+      } finally {
+        setIsSearching(false);
+      }
+    }, 300);
+
+    return () => clearTimeout(timer);
+  }, [searchTerm]);
+
+  const addProduct = useCallback(
+    (product: ProductIndexEntry) => {
+      if (selected.length < 3 && !selectedSlugs.includes(product.slug)) {
+        setSelected([...selected, product]);
+        setSearchTerm("");
+        setSearchResults([]);
+      }
+    },
+    [selected, selectedSlugs],
   );
 
-  const searchResults = useMemo(() => {
-    if (!searchTerm.trim()) return [];
-    const term = searchTerm.toLowerCase();
-    return products
-      .filter(
-        (p) =>
-          !selectedSlugs.includes(p.slug) &&
-          (p.name.toLowerCase().includes(term) ||
-            (p.name_zh && p.name_zh.includes(term)))
-      )
-      .slice(0, 5);
-  }, [products, searchTerm, selectedSlugs]);
-
-  const addProduct = (slug: string) => {
-    if (selectedSlugs.length < 3 && !selectedSlugs.includes(slug)) {
-      setSelectedSlugs([...selectedSlugs, slug]);
-      setSearchTerm("");
-    }
-  };
-
   const removeProduct = (slug: string) => {
-    setSelectedSlugs(selectedSlugs.filter((s) => s !== slug));
+    setSelected(selected.filter((s) => s.slug !== slug));
   };
 
   const compareFields = [
@@ -73,20 +98,11 @@ export function ComparePageClient({ locale, dict }: ComparePageClientProps) {
     { key: "open_source", label: t.open_source, render: (p: ProductIndexEntry) => p.open_source ? t.yes : t.no },
   ];
 
-  if (isLoading) {
-    return (
-      <div>
-        <h1 className="text-3xl font-bold mb-6">{c.title}</h1>
-        <p className="text-center text-muted-foreground py-12 animate-pulse">Loading...</p>
-      </div>
-    );
-  }
-
   return (
     <div>
       <h1 className="text-3xl font-bold mb-6">{c.title}</h1>
 
-      {selectedSlugs.length < 3 && (
+      {selected.length < 3 && (
         <div className="mb-6 relative">
           <input
             type="text"
@@ -100,12 +116,17 @@ export function ComparePageClient({ locale, dict }: ComparePageClientProps) {
               {searchResults.map((p) => (
                 <button
                   key={p.slug}
-                  onClick={() => addProduct(p.slug)}
+                  onClick={() => addProduct(p)}
                   className="block w-full text-left px-4 py-2 text-sm hover:bg-muted transition-colors"
                 >
                   {localized(p, locale, "name")}
                 </button>
               ))}
+            </div>
+          )}
+          {isSearching && searchTerm.trim() && searchResults.length === 0 && (
+            <div className="absolute top-full left-0 mt-1 w-full max-w-md bg-background border border-border rounded-lg shadow-lg z-10 p-3 text-sm text-muted-foreground animate-pulse">
+              Loading...
             </div>
           )}
         </div>

@@ -1,13 +1,1 @@
-{
-  "$schema": "https://openapi.vercel.sh/vercel.json",
-  "builds": [
-    {
-      "src": "website/package.json",
-      "use": "@vercel/next"
-    }
-  ],
-  "routes": [
-    { "src": "/(?!website)(.*)", "dest": "/website/$1", "check": true }
-  ],
-  "regions": ["hnd1"]
-}
+{ "regions": ["hnd1"] }

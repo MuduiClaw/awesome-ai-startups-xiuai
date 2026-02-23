@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo, useEffect, useCallback } from "react";
+import { useState, useMemo, useCallback } from "react";
 import { ProductCard } from "./ProductCard";
 import { Pagination } from "@/components/ui/Pagination";
 import { Button } from "@/components/ui/Button";
@@ -19,6 +19,13 @@ interface ProductGridProps {
 
 const ITEMS_PER_PAGE = 12;
 
+interface PageResponse {
+  total: number;
+  products: ProductIndexEntry[];
+  page: number;
+  totalPages: number;
+}
+
 export function ProductGrid({
   initialProducts,
   totalProducts,
@@ -27,83 +34,56 @@ export function ProductGrid({
   locale,
   dict,
 }: ProductGridProps) {
-  const [allProducts, setAllProducts] = useState<ProductIndexEntry[] | null>(null);
+  const [products, setProducts] = useState<ProductIndexEntry[]>(initialProducts);
   const [isLoading, setIsLoading] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [sortBy, setSortBy] = useState<"funding" | "name">("funding");
   const [currentPage, setCurrentPage] = useState(1);
+  const [totalFiltered, setTotalFiltered] = useState(totalProducts);
+  const totalPages = Math.ceil(totalFiltered / ITEMS_PER_PAGE);
 
-  // The working dataset: full dataset once loaded, otherwise initial page
-  const products = allProducts ?? initialProducts;
-  const isFullDataLoaded = allProducts !== null;
+  const fetchPage = useCallback(
+    async (page: number, category: string | null, sort: "funding" | "name") => {
+      setIsLoading(true);
+      try {
+        const params = new URLSearchParams({
+          page: String(page),
+          limit: String(ITEMS_PER_PAGE),
+        });
+        if (category) params.set("category", category);
+        if (sort === "name") params.set("sort", "name");
 
-  // Lazy-load the full dataset from the static JSON file
-  const loadFullData = useCallback(() => {
-    if (allProducts || isLoading) return;
-    setIsLoading(true);
-    fetch("/data/products-lite.json")
-      .then((res) => res.json())
-      .then((data: ProductIndexEntry[]) => {
-        setAllProducts(data);
+        const res = await fetch(`/api/products?${params}`);
+        const data: PageResponse = await res.json();
+        setProducts(data.products);
+        setTotalFiltered(data.total);
+      } finally {
         setIsLoading(false);
-      })
-      .catch(() => {
-        setIsLoading(false);
-      });
-  }, [allProducts, isLoading]);
-
-  // Start loading when user interacts (filter, sort, or page 2+)
-  useEffect(() => {
-    // Preload on idle after initial render
-    if (typeof window !== "undefined" && "requestIdleCallback" in window) {
-      const id = window.requestIdleCallback(() => loadFullData(), { timeout: 3000 });
-      return () => window.cancelIdleCallback(id);
-    } else {
-      const timer = setTimeout(loadFullData, 1500);
-      return () => clearTimeout(timer);
-    }
-  }, [loadFullData]);
+      }
+    },
+    [],
+  );
 
   const categoryMap = useMemo(
     () => new Map(categories.map((c) => [c.id, c])),
     [categories],
   );
 
-  const filtered = useMemo(() => {
-    let result = products;
-
-    if (selectedCategory) {
-      result = result.filter((p) => p.category === selectedCategory);
-    }
-
-    if (sortBy === "name") {
-      result = [...result].sort((a, b) => a.name.localeCompare(b.name));
-    }
-    // Default "funding" sort is already applied from the SQL query
-
-    return result;
-  }, [products, selectedCategory, sortBy]);
-
-  const totalPages = Math.ceil(filtered.length / ITEMS_PER_PAGE);
-  const paged = filtered.slice(
-    (currentPage - 1) * ITEMS_PER_PAGE,
-    currentPage * ITEMS_PER_PAGE
-  );
-
   const handleCategoryChange = (cat: string | null) => {
-    if (!isFullDataLoaded) loadFullData();
     setSelectedCategory(cat);
     setCurrentPage(1);
+    fetchPage(1, cat, sortBy);
   };
 
   const handleSortChange = (s: "funding" | "name") => {
-    if (!isFullDataLoaded && s === "name") loadFullData();
     setSortBy(s);
+    setCurrentPage(1);
+    fetchPage(1, selectedCategory, s);
   };
 
   const handlePageChange = (page: number) => {
-    if (!isFullDataLoaded) loadFullData();
     setCurrentPage(page);
+    fetchPage(page, selectedCategory, sortBy);
   };
 
   return (
@@ -155,11 +135,11 @@ export function ProductGrid({
       </div>
 
       {/* Grid */}
-      {paged.length === 0 ? (
+      {products.length === 0 ? (
         <p className="text-center text-muted-foreground py-12">{dict.home.no_results}</p>
       ) : (
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {paged.map((product) => {
+          {products.map((product) => {
             const cat = categoryMap.get(product.category);
             const catLabel = cat ? localized(cat, locale, "name") : undefined;
             return (
@@ -171,7 +151,7 @@ export function ProductGrid({
 
       <Pagination
         currentPage={currentPage}
-        totalPages={isFullDataLoaded ? totalPages : Math.ceil(totalProducts / ITEMS_PER_PAGE)}
+        totalPages={totalPages}
         onPageChange={handlePageChange}
       />
     </div>

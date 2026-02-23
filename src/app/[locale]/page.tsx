@@ -18,7 +18,7 @@ export default async function HomePage({
   const categories = getCategories();
   const categoryCounts = getCategoryCounts();
 
-  // Only embed the first page in HTML — the rest loads from /data/products-lite.json
+  // Only embed the first page in HTML — additional pages load via /api/products
   const initialProducts = products.slice(0, INITIAL_PAGE_SIZE);
 
   return (
