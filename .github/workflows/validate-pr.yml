@@ -33,12 +33,8 @@ jobs:
         run: |
           python -c "
           import json, glob, sys
-          valid = {
-            'ai-foundation-model', 'ai-application', 'ai-creative-media',
-            'ai-dev-platform', 'ai-infrastructure', 'ai-data-platform',
-            'ai-search-retrieval', 'ai-hardware', 'ai-security-governance',
-            'ai-science-research', 'ai-enterprise-vertical'
-          }
+          cats = json.load(open('data/categories.json'))
+          valid = {c['id'] for c in cats['categories']}
           errors = 0
           for f in glob.glob('data/products/*.json'):
             data = json.load(open(f))
@@ -48,7 +44,7 @@ jobs:
               errors += 1
           if errors:
             sys.exit(1)
-          print(f'All products have valid categories (11 values)')
+          print(f'All products have valid categories ({len(valid)} values)')
           "
 
       - name: Python lint
@@ -79,16 +75,13 @@ jobs:
         with:
           node-version: "20"
           cache: "npm"
-          cache-dependency-path: website/package-lock.json
+          cache-dependency-path: package-lock.json
 
       - name: Install dependencies
-        working-directory: website
         run: npm ci
 
       - name: Lint
-        working-directory: website
         run: npm run lint
 
       - name: Build
-        working-directory: website
         run: npm run build

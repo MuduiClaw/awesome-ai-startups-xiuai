@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Download product icons from CDN URLs to website/public/icons/.
+"""Download product icons from CDN URLs to public/icons/.
 
 Usage:
     python scripts/download_icons.py                    # Download all icons
@@ -21,7 +21,7 @@ from urllib.request import Request, urlopen
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = PROJECT_ROOT / "data" / "products"
-ICONS_DIR = PROJECT_ROOT / "website" / "public" / "icons"
+ICONS_DIR = PROJECT_ROOT / "public" / "icons"
 
 # Common image extensions to preserve; default to .png
 VALID_EXTS = {".png", ".jpg", ".jpeg", ".webp", ".svg", ".gif", ".ico"}
@@ -73,7 +73,7 @@ def collect_icons() -> list[tuple[str, str]]:
 
 def main() -> None:
     parser = argparse.ArgumentParser(
-        description="Download product icons to website/public/icons/"
+        description="Download product icons to public/icons/"
     )
     parser.add_argument(
         "--limit", type=int, default=0, help="Max icons to download (0=all)"

@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 AI Product Data — an open-source, Git-native data repository tracking AI startups worldwide. The project is **product-centric**: a company can have multiple AI products, and products are the core data unit.
 
-Three layers: JSON data files, Python scraper/CLI tooling, and a Next.js static website.
+Three layers: JSON data files, Python scraper/CLI tooling, and a Next.js website with API routes.
 
 GitHub: `diaodiaozhuye/awesome-ai-startups`
 
@@ -16,7 +16,9 @@ GitHub: `diaodiaozhuye/awesome-ai-startups`
 
 ```bash
 pip install -e ".[dev]"          # Install with dev dependencies (pytest, ruff, mypy)
-aiscrape validate                # Validate all company JSONs against schema
+aiscrape validate                # Validate all product JSONs against schema
+aiscrape init-db                 # Rebuild SQLite database from JSON files
+aiscrape init-db --verify        # Rebuild and verify round-trip fidelity
 aiscrape generate-stats          # Regenerate data/index.json and data/stats.json
 aiscrape show <slug>             # Display a single company's data
 aiscrape scrape --source github --dry-run   # Preview scraper output
@@ -35,9 +37,9 @@ mypy scrapers/ --ignore-missing-imports      # Type check
 ### Website (Next.js)
 
 ```bash
-cd website && npm install        # Install frontend dependencies
+npm install                      # Install frontend dependencies
 npm run dev                      # Dev server with hot reload
-npm run build                    # Static export to website/out/
+npm run build                    # Build (output in .next/)
 npm run lint                     # ESLint
 ```
 
@@ -52,7 +54,7 @@ Source Scrapers (scrapers/sources/)
   -> Deduplicator (scrapers/enrichment/deduplicator.py) -- match via domain, slug, name similarity
   -> Merger (scrapers/enrichment/merger.py)             -- non-destructive merge (never overwrites manual edits)
   -> SchemaValidator (scrapers/validation/)             -- JSON Schema check
-  -> Write to data/companies/<slug>.json
+  -> Write to data/products/<slug>.json
 ```
 
 New scrapers extend `BaseScraper` (scrapers/base.py) and register in `scrapers/sources/__init__.py`. The `ScrapedCompany` is a frozen dataclass -- only `name` and `source` are required; the enrichment pipeline handles the rest.
@@ -63,17 +65,37 @@ New scrapers extend `BaseScraper` (scrapers/base.py) and register in `scrapers/s
 
 ### Website
 
-Next.js App Router with static export (`output: "export"`, `trailingSlash: true` in next.config.ts). Deployed on Vercel. i18n via URL segments (`/en/`, `/zh/`). Client-side search powered by Fuse.js. Charts via Recharts. The website reads from `data/` at build time via `website/src/lib/data.ts`.
+Next.js App Router (`trailingSlash: true` in next.config.ts). Deployed on Vercel with auto-detection. The Next.js app lives at the repo root; `data/` is a sibling directory accessed at build time and via API routes.
 
-Key layout: `website/src/app/[locale]/` -- all pages are under the locale dynamic segment. Components are organized under `website/src/components/` by domain (company, search, analytics, layout, ui).
+**API routes** under `src/app/api/` provide server-side data access with ISR caching (1 hour):
+- `/api/products?page=1&limit=24&category=...&sort=name` — paginated product listing
+- `/api/products/[slug]` — single product detail
+- `/api/categories` — category list with counts
+- `/api/stats` — aggregate statistics
+- `/api/search?q=...&category=...&country=...` — server-side Fuse.js search
+
+i18n via URL segments (`/en/`, `/zh/`). Server-side search powered by Fuse.js. Charts via Recharts. The data layer reads from `data/` via `src/lib/data.ts`.
+
+Key layout: `src/app/[locale]/` -- all pages are under the locale dynamic segment. Components are organized under `src/components/` by domain (company, search, analytics, layout, ui).
+
+### SQLite Data Layer
+
+The website uses SQLite as its primary data source, with JSON file fallback:
+
+- `scrapers/db.py` — `ProductDB` class providing CRUD, FTS search, and aggregation queries
+- `data/schema/products.sql` — DDL with FTS5 virtual table and sync triggers
+- `src/lib/data.ts` — reads SQLite via `better-sqlite3` (lazy singleton), falls back to JSON if DB is missing
+- `aiscrape init-db` — rebuilds the database from `data/products/*.json` files
+
+The database (`data/products.db`) is **not committed to git** — it is rebuilt in CI (`validate-pr.yml` runs `aiscrape init-db` before the website build step). Developers should run `aiscrape init-db` locally after pulling data changes.
 
 ## Data Schema
 
-Company JSON files live in `data/companies/` and must conform to `data/schema/company.schema.json`.
+Product JSON files live in `data/products/` and must conform to `data/schema/product.schema.json`.
 
-Required fields: `slug`, `name`, `description` (min 10 chars), `website` (URI), `category` (enum), `founded_year`, `headquarters` (city + country).
+Required fields: `slug`, `name`, `product_url` (URI), `description`, `product_type`, `category` (enum), `status`.
 
-Valid categories (22): `ai-foundation-model`, `ai-dev-platform`, `ai-infrastructure`, `ai-data-platform`, `ai-search-retrieval`, `ai-hardware`, `ai-security-governance`, `ai-science-research`, `ai-image-design`, `ai-video-animation`, `ai-audio-music`, `ai-chatbot-agent`, `ai-writing-content`, `ai-productivity`, `ai-education`, `ai-marketing-commerce`, `ai-social-entertainment`, `ai-customer-service`, `ai-translation`, `ai-finance-legal`, `ai-hr-recruiting`, `ai-sales-crm`.
+Valid categories are defined in `data/categories.json` (currently 22). Use the canonical list from that file — do not hardcode category IDs.
 
 The slug must match the filename (without `.json`) and follow pattern `^[a-z0-9-]+$`.
 
@@ -83,8 +105,8 @@ The website supports English (`/en/`) and Chinese (`/zh/`). Follow these rules s
 
 - **Bilingual data fields**: Use `_zh` suffix convention for Chinese translations: `name_zh`, `description_zh`. These are optional -- the site falls back to the base English field when `_zh` is absent.
 - **Products are also bilingual**: Product objects support `name_zh` and `description_zh` in the schema.
-- **Use `localized()` utility** (`website/src/lib/utils.ts`) for all locale-aware field resolution. Do NOT inline `locale === "zh" && x.name_zh ? x.name_zh : x.name` -- use `localized(item, locale, "name")` instead.
-- **Dictionary typing**: Use `Dictionary` interface from `website/src/lib/dict.ts` for i18n dictionary props. Never use `dict: any`.
+- **Use `localized()` utility** (`src/lib/utils.ts`) for all locale-aware field resolution. Do NOT inline `locale === "zh" && x.name_zh ? x.name_zh : x.name` -- use `localized(item, locale, "name")` instead.
+- **Dictionary typing**: Use `Dictionary` interface from `src/lib/dict.ts` for i18n dictionary props. Never use `dict: any`.
 - **Category labels**: Always resolve category labels from `categories.json` using the locale, not raw category IDs. Pass `categoryLabel` prop through components.
 - **No hardcoded strings**: All user-visible text in components must come from `en.json`/`zh.json` dictionaries. Never hardcode English strings.
 - **Chinese company data**: For Chinese companies (headquarters.country === "China"), always provide `name_zh`, `description_zh`, and product-level `name_zh`/`description_zh`.
@@ -93,8 +115,8 @@ The website supports English (`/en/`) and Chinese (`/zh/`). Follow these rules s
 
 - **External links** (Visit Website button, social links): Open in **same tab** -- do NOT use `target="_blank"`. The user prefers in-tab navigation.
 - **Language switcher**: Segmented toggle control showing both `EN` and `中文` simultaneously, with active locale highlighted. Uses Next.js `<Link>` (not `<a>`) for client-side navigation.
-- **Static export routing**: `trailingSlash: true` is required in next.config.ts so Vercel serves `/zh/index.html` correctly. Without it, `/zh` returns 404.
-- **Slug validation**: `getCompanyBySlug()` in `lib/data.ts` validates slugs against `^[a-z0-9-]+$` to prevent path traversal. Maintain this check.
+- **Trailing slash routing**: `trailingSlash: true` is required in next.config.ts so Vercel serves `/zh/index.html` correctly. Without it, `/zh` returns 404.
+- **Slug validation**: `getProductBySlug()` in `lib/data.ts` validates slugs against `^[a-z0-9-]+$` to prevent path traversal. Maintain this check.
 
 ## Scraper Execution Rules
 
@@ -108,7 +130,7 @@ The website supports English (`/en/`) and Chinese (`/zh/`). Follow these rules s
 
 - **validate-pr.yml**: On PRs -- runs schema validation, ruff, mypy, website lint + build
 - **daily-scrape.yml**: Scheduled -- runs all scrapers and auto-commits updates
-- Deployment: Vercel (via `vercel.json`, `framework: null`, `outputDirectory: website/out`)
+- Deployment: Vercel (auto-detected Next.js at repo root, `vercel.json` only sets region)
 
 ## Code Conventions
 
