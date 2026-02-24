@@ -713,8 +713,9 @@ def _run_llm_phase(
     model: str = DEFAULT_MODEL,
     rate_limit_delay: float = DEFAULT_RATE_LIMIT_DELAY,
     backend: str = "api",
+    post_merge_hook: PostMergeHook = None,
 ) -> dict[str, int]:
-    """Generic batch processing loop shared by Phases 1-4.
+    """Generic batch processing loop shared by all LLM phases.
 
     Args:
         phase_key: Checkpoint key (e.g. "phase_1").
@@ -725,6 +726,7 @@ def _run_llm_phase(
         result_applier: Extracts ScrapedProduct kwargs from one LLM
             result item. Returns kwargs dict or None to skip.
         backend: "api" for Anthropic API, "cli" for Claude CLI.
+        post_merge_hook: Optional callback after merge_update for extra fields.
     """
     completed_slugs = set(load_checkpoint().get(phase_key, []) if resume else [])
     candidates = [
@@ -806,6 +808,10 @@ def _run_llm_phase(
                 scraped = ScrapedProduct(**kwargs)
                 merger.merge_update(slug, scraped)
                 stats["enriched"] += 1
+
+            # Post-merge hook for fields ScrapedProduct cannot carry
+            if post_merge_hook is not None:
+                post_merge_hook(slug, item, product)
 
             # Mark as completed even if no valid fields extracted,
             # to avoid retrying products the LLM cannot enrich.
@@ -1627,19 +1633,821 @@ def _apply_hiring(
 
 
 # ---------------------------------------------------------------------------
+# Phase 7: Deep enrichment (single-product, full context, T1 tier)
+# ---------------------------------------------------------------------------
+
+# Enum sets for Phase 7 validation (from product.schema.json)
+_DEEP_VALID_CATEGORIES = frozenset(
+    [
+        "ai-foundation-model",
+        "ai-dev-platform",
+        "ai-infrastructure",
+        "ai-data-platform",
+        "ai-search-retrieval",
+        "ai-hardware",
+        "ai-security-governance",
+        "ai-science-research",
+        "ai-image-design",
+        "ai-video-animation",
+        "ai-audio-music",
+        "ai-chatbot-agent",
+        "ai-writing-content",
+        "ai-productivity",
+        "ai-education",
+        "ai-marketing-commerce",
+        "ai-social-entertainment",
+        "ai-customer-service",
+        "ai-translation",
+        "ai-finance-legal",
+        "ai-hr-recruiting",
+        "ai-sales-crm",
+    ]
+)
+
+_DEEP_VALID_PRODUCT_TYPES = frozenset(
+    [
+        "llm",
+        "app",
+        "dev-tool",
+        "hardware",
+        "dataset",
+        "framework",
+        "api-service",
+        "other",
+    ]
+)
+
+_DEEP_VALID_STATUSES = frozenset(
+    [
+        "active",
+        "beta",
+        "alpha",
+        "announced",
+        "deprecated",
+        "discontinued",
+    ]
+)
+
+_DEEP_VALID_LAST_ROUNDS = frozenset(
+    [
+        "pre-seed",
+        "seed",
+        "series-a",
+        "series-b",
+        "series-c",
+        "series-d",
+        "series-e",
+        "series-f",
+        "growth",
+        "ipo",
+        "unknown",
+    ]
+)
+
+_DEEP_VALID_EMPLOYEE_RANGES = frozenset(
+    [
+        "1-10",
+        "11-50",
+        "51-200",
+        "201-500",
+        "501-1000",
+        "1001-5000",
+        "5001+",
+    ]
+)
+
+
+def _build_deep_enrichment_prompt(
+    batch: list[tuple[str, dict[str, Any]]],
+) -> str:
+    """Build a deep-enrichment prompt for a single product.
+
+    Sends the FULL product JSON and asks the LLM to verify, correct,
+    and fill all fields.  batch_size must be 1.
+    """
+    slug, product = batch[0]
+    # Strip meta/provenance/sources to reduce noise and tokens
+    context = {k: v for k, v in product.items() if k not in ("meta", "sources")}
+    product_json = json.dumps(context, indent=2, ensure_ascii=False)
+
+    product_url = product.get("product_url", "")
+    company_url = product.get("company", {}).get("website", "") or product.get(
+        "company", {}
+    ).get("url", "")
+    urls_to_visit = [u for u in {product_url, company_url} if u]
+
+    # --- Collect additional reference sources ---
+    social = product.get("company", {}).get("social", {})
+    company_name = product.get("company", {}).get("name", "")
+    product_type = product.get("product_type", "")
+    category = product.get("category", "")
+    is_open_source = product.get("open_source", False)
+
+    ref_sources: list[str] = []
+
+    # Crunchbase — funding, valuation, investors, employees, HQ
+    cb_url = social.get("crunchbase", "")
+    if cb_url:
+        ref_sources.append(
+            f"  - Crunchbase: {cb_url}  (funding, valuation, investors, employee count, HQ)"
+        )
+    elif company_name:
+        cb_slug = company_name.lower().replace(" ", "-").replace(".", "-")
+        ref_sources.append(
+            f"  - Crunchbase: https://www.crunchbase.com/organization/{cb_slug}"
+            "  (funding, valuation, investors, employee count, HQ)"
+        )
+
+    # GitHub — open source metadata, stars, contributors
+    gh_url = social.get("github", "") or product.get("repository_url", "")
+    if gh_url:
+        ref_sources.append(
+            f"  - GitHub: {gh_url}  (open source info, stars, contributors, tech stack)"
+        )
+    elif is_open_source and company_name:
+        ref_sources.append(
+            f'  - GitHub: try searching github.com for "{company_name}"'
+            "  (open source repos, tech stack)"
+        )
+
+    # LinkedIn — company HQ, employee count
+    li_url = social.get("linkedin", "")
+    if li_url:
+        ref_sources.append(
+            f"  - LinkedIn: {li_url}  (HQ location, employee count, key people)"
+        )
+
+    # LLM/model-specific sources (only for relevant product types)
+    is_model = product_type in ("llm", "framework") or category == "ai-foundation-model"
+
+    # HuggingFace
+    hf_url = product.get("huggingface_url", "")
+    if hf_url:
+        ref_sources.append(
+            f"  - HuggingFace: {hf_url}  (model metadata, downloads, architecture, license)"
+        )
+    elif is_model:
+        ref_sources.append(
+            f"  - HuggingFace: search https://huggingface.co/models for"
+            f' "{product.get("name", slug)}"  (model card, parameters, license)'
+        )
+
+    # OpenRouter (LLM pricing)
+    if is_model:
+        ref_sources.append(
+            "  - OpenRouter: https://openrouter.ai  (LLM pricing, context window, modalities)"
+        )
+
+    # Y Combinator
+    if company_name:
+        yc_slug = company_name.lower().replace(" ", "-")
+        ref_sources.append(
+            f"  - Y Combinator: https://www.ycombinator.com/companies/{yc_slug}"
+            "  (founding year, HQ, team size, batch)"
+        )
+
+    # TechCrunch (funding news)
+    if company_name:
+        ref_sources.append(
+            f'  - TechCrunch: search for "{company_name} funding" on techcrunch.com'
+            "  (funding rounds, amounts, dates)"
+        )
+
+    ref_instruction = ""
+    if ref_sources:
+        source_list = "\n".join(ref_sources)
+        ref_instruction = f"""
+ADDITIONAL REFERENCE SOURCES — CROSS-CHECK FOR RICHER DATA:
+After visiting the official website, you may also check these sources via WebFetch
+to fill gaps (especially funding, HQ, key people, benchmarks):
+{source_list}
+
+Priority order: Official website > Crunchbase/LinkedIn > GitHub/HuggingFace > others.
+Only use data you can verify. If a source is unreachable, skip it and move on.
+
+"""
+
+    visit_instruction = ""
+    if urls_to_visit:
+        url_list = "\n".join(f"  - {u}" for u in sorted(urls_to_visit))
+        visit_instruction = f"""
+IMPORTANT — VERIFY VIA OFFICIAL WEBSITE FIRST:
+Before answering, you MUST use your WebFetch tool to visit the product's official website to gather first-hand data:
+{url_list}
+Use the website content (landing page, about page, pricing page, footer, etc.)
+as the PRIMARY source of truth. Cross-reference it with what you already know.
+This is critical for verifying: company info, pricing, platforms, features,
+hiring status, social links, and app store availability.
+If the website is unreachable, fall back to your training data.
+
+COUNTRY INFERENCE — USE ALL AVAILABLE SIGNALS:
+Determining the company's country/headquarters is HIGH PRIORITY. Look for these clues:
+  - Phone numbers: country calling code (e.g. +1=US/CA, +44=UK, +86=CN, +34=ES, +49=DE, +81=JP, +91=IN, +972=IL, +33=FR)
+  - Physical address / "Contact Us" / footer
+  - Legal entity name (e.g. "GmbH"=Germany, "Ltd"=UK, "SAS"=France, "S.L."=Spain, "Inc"/"LLC"=US, "Pty Ltd"=AU, "B.V."=Netherlands)
+  - Domain TLD (e.g. .de=Germany, .jp=Japan, .cn=China, .co.uk=UK, .fr=France) — note: .com/.ai/.io are global, not indicative
+  - Privacy policy / Terms of Service (often mentions governing law jurisdiction)
+  - Currency displayed on pricing page (EUR, GBP, JPY, CNY, etc.)
+  - Team page (where founders/team are located)
+  - LinkedIn company page (headquarters field)
+  - Crunchbase profile
+Combine multiple signals for confidence. A phone number +34 with .ai domain = Spain, not ambiguous.
+
+"""
+
+    return f"""You are a data quality analyst for an AI product directory.
+Below is the FULL JSON record for the product "{slug}".
+
+CURRENT DATA:
+```json
+{product_json}
+```
+{visit_instruction}{ref_instruction}
+YOUR TASK: Analyze this product data and return a JSON object with ALL of the
+following fields. For each field:
+- VERIFY: If the existing value is correct, return the same value.
+- CORRECT: If the existing value is wrong, return the corrected value.
+- FILL: If the field is missing/null, provide the correct value.
+- Use null ONLY if you genuinely cannot determine the value.
+
+FIELDS TO RETURN:
+
+1. IDENTITY:
+   - slug: "{slug}" (do not change)
+   - name: product name (verify/correct)
+   - name_zh: Chinese product name
+   - description: factual product description (10-5000 chars)
+   - description_zh: Chinese description (10-200 chars, natural-sounding, not word-for-word)
+   - product_type: one of ["llm", "app", "dev-tool", "hardware", "dataset", "framework", "api-service", "other"]
+   - category: one of [
+       "ai-foundation-model", "ai-dev-platform", "ai-infrastructure",
+       "ai-data-platform", "ai-search-retrieval", "ai-hardware",
+       "ai-security-governance", "ai-science-research", "ai-image-design",
+       "ai-video-animation", "ai-audio-music", "ai-chatbot-agent",
+       "ai-writing-content", "ai-productivity", "ai-education",
+       "ai-marketing-commerce", "ai-social-entertainment", "ai-customer-service",
+       "ai-translation", "ai-finance-legal", "ai-hr-recruiting", "ai-sales-crm"
+     ]
+   - sub_category: specific sub-category in kebab-case
+   - status: one of ["active", "beta", "alpha", "announced", "deprecated", "discontinued"]
+   - release_date: ISO date (YYYY-MM-DD) when the product was first publicly released
+
+2. COMPANY:
+   - company_name: company/organization name
+   - company_name_zh: Chinese company name
+   - company_description: 1-2 sentence factual description of the COMPANY (50-200 chars)
+   - company_founded_year: integer (1900-2035)
+   - headquarters_city: city name (IMPORTANT: infer from website signals — see COUNTRY INFERENCE above)
+   - headquarters_country: full English country name (IMPORTANT: MUST attempt to determine — use phone codes, legal entity, TLD, address, privacy policy jurisdiction, team locations)
+   - headquarters_country_zh: Chinese country name (e.g. "美国", "中国", "西班牙", "德国", "以色列")
+   - headquarters_country_code: ISO alpha-2 code (e.g. "US", "CN", "AU", "ES", "DE", "IL")
+   - employee_count_range: one of ["1-10", "11-50", "51-200", "201-500", "501-1000", "1001-5000", "5001+"]
+
+3. FUNDING:
+   - funding_total_raised_usd: number (total funding in USD)
+   - funding_last_round: one of ["pre-seed", "seed", "series-a", "series-b", "series-c", "series-d", "series-e", "series-f", "growth", "ipo", "unknown"]
+   - funding_last_round_date: ISO date (YYYY-MM-DD)
+   - funding_valuation_usd: number (latest valuation in USD), null if unknown
+   - funding_investors: array of investor names (strings)
+
+4. SOCIAL & LINKS:
+   - social_linkedin: LinkedIn company page URL (full https:// URL)
+   - social_crunchbase: Crunchbase URL (full https:// URL)
+   - social_twitter: Twitter/X handle (e.g. "@company") or null
+   - social_github: GitHub organization URL (full https:// URL) or null
+
+5. KEY PEOPLE:
+   - key_people: array of objects with keys: name, title, is_founder (boolean)
+     Include CEO, CTO, founders. Max 5 people.
+
+6. TECH METADATA:
+   - modalities: array from ["text", "image", "audio", "video", "code", "multimodal", "3d"]
+   - supported_languages: array of human languages the product supports (e.g. ["English", "Chinese"])
+   - supported_languages_zh: Chinese translation of each language name, same order (e.g. ["英语", "中文"])
+   - platforms: array from ["web", "ios", "android", "desktop", "api", "cli", "self-hosted"]
+   - api_available: boolean
+   - open_source: boolean
+
+7. MARKET:
+   - target_audience: 2-4 audience types in lowercase (e.g. ["developers", "enterprises"])
+   - target_audience_zh: Chinese translation of each item in target_audience, same order (e.g. ["开发者", "企业"])
+   - use_cases: 2-5 specific use cases in kebab-case (e.g. ["code-generation", "image-editing"])
+   - use_cases_zh: Chinese translation of each item in use_cases, same order (e.g. ["代码生成", "图像编辑"])
+   - competitors: 2-5 competitor product names in kebab-case slug format (real products only)
+   - integrations: array of third-party products/services this integrates with
+
+8. APP STORE:
+   - app_store_google_play_url: Google Play Store URL (full https:// URL) or null
+   - app_store_apple_store_url: Apple App Store URL (full https:// URL) or null
+   - app_store_rating: number 0-5 (average rating across stores) or null
+   - app_store_downloads: string estimate (e.g. "1M+", "100K+", "10M+") or null
+
+9. PLATFORM AVAILABILITY (boolean for each):
+   - platform_ios: has a native iOS app?
+   - platform_android: has a native Android app?
+   - platform_mac: has a native macOS desktop app?
+   - platform_windows: has a native Windows desktop app?
+   - platform_linux: has a native Linux desktop app?
+   - platform_web: available as a web application?
+
+10. AI ORIGIN:
+   - ai_native_is_native: boolean — was this product built as an AI product from day one?
+     * true = the product was conceived and launched as an AI-first product
+     * false = the product existed before AI and added AI features later
+     Examples: ChatGPT → true (AI-native), Adobe Photoshop → false (added AI later),
+     Notion → false (added Notion AI later), Midjourney → true (AI-native)
+   - ai_native_ai_since: ISO date (YYYY-MM-DD) when AI was introduced (only if NOT native)
+   - ai_native_note: brief explanation (e.g. "Founded as AI medical scribe from day one"
+     or "Added AI writing assistant in 2023, originally a project management tool")
+   - ai_native_note_zh: Chinese translation of ai_native_note (natural-sounding, not word-for-word)
+
+11. HIRING:
+   - is_hiring: boolean
+   - tech_stack: array of 3-8 technologies (languages, frameworks, cloud, databases, AI/ML)
+   - careers_url: company careers page URL or null
+
+12. CONFIDENCE NOTES:
+   - confidence_notes: object mapping field names to brief justification strings.
+     REQUIRED for: any field you CORRECTED, any field with low confidence.
+     Example: {{"category": "Changed from ai-science-research to ai-productivity because..."}}
+
+RULES:
+- Return the FULL set of fields above, even if the value is unchanged.
+- For corrections, ALWAYS explain in confidence_notes why the existing value was wrong.
+- Do NOT hallucinate funding data or key people — use null if uncertain.
+- Competitors must be real, well-known AI products as kebab-case slugs.
+- For Chinese companies, always provide name_zh, description_zh, company_name_zh.
+- All URLs must be full https:// format.
+- For app store URLs, use the canonical format:
+  Google Play: https://play.google.com/store/apps/details?id=<package>
+  Apple Store: https://apps.apple.com/app/id<track_id>
+
+Return ONLY a JSON array with ONE object (wrapped in [ ]).
+Output ONLY the JSON array, no markdown, no explanation."""
+
+
+def _make_deep_enrichment_applier(
+    known_slugs: frozenset[str],
+) -> ResultApplier:
+    """Create Phase 7 result applier.  Uses T1_AUTHORITATIVE tier."""
+
+    def _apply(
+        item: dict[str, Any],
+        product: dict[str, Any],
+        _ctx: dict[str, Any],
+    ) -> dict[str, Any] | None:
+        kwargs: dict[str, Any] = {
+            "name": product.get("name", "Unknown"),
+            "source": "llm-deep-enrichment",
+            "source_tier": SourceTier.T1_AUTHORITATIVE,
+            "source_url": "",
+        }
+        extra: dict[str, str] = {}
+        has_new = False
+
+        # --- Identity / translation ---
+        for field, min_len in [
+            ("name_zh", 1),
+            ("company_name_zh", 1),
+            ("description_zh", 10),
+        ]:
+            val = item.get(field)
+            if isinstance(val, str) and len(val.strip()) >= min_len:
+                kwargs[field] = val.strip()
+                has_new = True
+
+        desc = item.get("description")
+        if isinstance(desc, str) and len(desc.strip()) >= 10:
+            kwargs["description"] = desc.strip()
+            has_new = True
+
+        pt = item.get("product_type")
+        if isinstance(pt, str) and pt.strip() in _DEEP_VALID_PRODUCT_TYPES:
+            kwargs["product_type"] = pt.strip()
+            has_new = True
+
+        cat = item.get("category")
+        if isinstance(cat, str) and cat.strip() in _DEEP_VALID_CATEGORIES:
+            kwargs["category"] = cat.strip()
+            has_new = True
+
+        sub = item.get("sub_category")
+        if isinstance(sub, str) and len(sub.strip()) >= 2:
+            kwargs["sub_category"] = sub.strip()
+            has_new = True
+
+        st = item.get("status")
+        if isinstance(st, str) and st.strip() in _DEEP_VALID_STATUSES:
+            kwargs["status"] = st.strip()
+            has_new = True
+
+        rd = item.get("release_date")
+        if isinstance(rd, str) and re.match(r"^\d{4}-\d{2}-\d{2}$", rd.strip()):
+            kwargs["release_date"] = rd.strip()
+            has_new = True
+
+        # --- Company ---
+        cn = item.get("company_name")
+        if isinstance(cn, str) and len(cn.strip()) >= 1:
+            kwargs["company_name"] = cn.strip()
+            has_new = True
+
+        cd = item.get("company_description")
+        if isinstance(cd, str) and len(cd.strip()) >= 10:
+            kwargs["company_description"] = cd.strip()
+            has_new = True
+
+        fy = item.get("company_founded_year")
+        if isinstance(fy, int) and 1900 <= fy <= 2035:
+            kwargs["company_founded_year"] = fy
+            has_new = True
+
+        skip_hq = {"unknown", "n/a", "na", "none", ""}
+        hq_country = item.get("headquarters_country")
+        if (
+            isinstance(hq_country, str)
+            and len(hq_country.strip()) >= 2
+            and hq_country.strip().lower() not in skip_hq
+        ):
+            kwargs["company_headquarters_country"] = hq_country.strip()
+            has_new = True
+            hq_code = item.get("headquarters_country_code")
+            if isinstance(hq_code, str) and len(hq_code.strip()) == 2:
+                kwargs["company_headquarters_country_code"] = hq_code.strip().upper()
+            elif hq_country.strip() in _COUNTRY_TO_CODE:
+                kwargs["company_headquarters_country_code"] = _COUNTRY_TO_CODE[
+                    hq_country.strip()
+                ]
+
+        hq_city = item.get("headquarters_city")
+        if (
+            isinstance(hq_city, str)
+            and len(hq_city.strip()) >= 2
+            and hq_city.strip().lower() not in skip_hq
+        ):
+            kwargs["company_headquarters_city"] = hq_city.strip()
+            has_new = True
+
+        ecr = item.get("employee_count_range")
+        if isinstance(ecr, str) and ecr.strip() in _DEEP_VALID_EMPLOYEE_RANGES:
+            kwargs["company_employee_count_range"] = ecr.strip()
+            has_new = True
+
+        # --- Funding (ScrapedProduct-compatible fields) ---
+        ft = item.get("funding_total_raised_usd")
+        if isinstance(ft, (int, float)) and ft >= 0:
+            kwargs["company_total_raised_usd"] = float(ft)
+            has_new = True
+
+        flr = item.get("funding_last_round")
+        if isinstance(flr, str) and flr.strip() in _DEEP_VALID_LAST_ROUNDS:
+            kwargs["company_last_round"] = flr.strip()
+            has_new = True
+
+        # --- Social links (via extra dict for merger) ---
+        sl = item.get("social_linkedin")
+        if isinstance(sl, str) and sl.strip().startswith("http"):
+            extra["linkedin_url"] = sl.strip()
+            has_new = True
+
+        sc = item.get("social_crunchbase")
+        if isinstance(sc, str) and sc.strip().startswith("http"):
+            extra["crunchbase_url"] = sc.strip()
+            has_new = True
+
+        st_tw = item.get("social_twitter")
+        if isinstance(st_tw, str) and len(st_tw.strip()) >= 1:
+            extra["twitter"] = st_tw.strip()
+            has_new = True
+
+        sg = item.get("social_github")
+        if isinstance(sg, str) and sg.strip().startswith("http"):
+            extra["github_url"] = sg.strip()
+            has_new = True
+
+        if extra:
+            kwargs["extra"] = extra
+
+        # --- Key people ---
+        kp = item.get("key_people")
+        if isinstance(kp, list):
+            clean_kp: list[dict[str, str | bool]] = []
+            for person in kp:
+                if isinstance(person, dict) and person.get("name"):
+                    entry: dict[str, str | bool] = {"name": str(person["name"])}
+                    if person.get("title"):
+                        entry["title"] = str(person["title"])
+                    if isinstance(person.get("is_founder"), bool):
+                        entry["is_founder"] = person["is_founder"]
+                    clean_kp.append(entry)
+            if clean_kp:
+                kwargs["key_people"] = tuple(clean_kp)
+                has_new = True
+
+        # --- Tech metadata ---
+        for field, valid_set in [
+            ("modalities", _VALID_MODALITIES),
+            ("platforms", _VALID_PLATFORMS),
+        ]:
+            val = item.get(field)
+            if isinstance(val, list):
+                clean = [
+                    v.strip().lower()
+                    for v in val
+                    if isinstance(v, str) and v.strip().lower() in valid_set
+                ]
+                if clean:
+                    kwargs[field] = tuple(clean)
+                    has_new = True
+
+        langs = item.get("supported_languages")
+        if isinstance(langs, list):
+            clean_langs = [
+                str(v).strip() for v in langs if isinstance(v, str) and v.strip()
+            ]
+            if clean_langs:
+                kwargs["supported_languages"] = tuple(clean_langs)
+                has_new = True
+
+        for bool_field in ("api_available", "open_source"):
+            val = item.get(bool_field)
+            if isinstance(val, bool):
+                kwargs[bool_field] = val
+                has_new = True
+
+        # --- Market ---
+        for field in ("target_audience", "use_cases"):
+            val = item.get(field)
+            if isinstance(val, list):
+                clean_market = [
+                    str(v).strip() for v in val if isinstance(v, str) and v.strip()
+                ]
+                if clean_market:
+                    kwargs[field] = tuple(clean_market)
+                    has_new = True
+
+        # Competitors (accept all valid slugs; post-merge hook skips unknown)
+        comps = item.get("competitors")
+        if isinstance(comps, list):
+            validated = [
+                str(v).strip().lower()
+                for v in comps
+                if isinstance(v, str)
+                and v.strip()
+                and re.match(r"^[a-z0-9-]+$", v.strip().lower())
+            ]
+            if validated:
+                kwargs["competitors"] = tuple(validated)
+                has_new = True
+
+        # --- Hiring ---
+        is_hiring = item.get("is_hiring")
+        if isinstance(is_hiring, bool):
+            kwargs["hiring_is_hiring"] = is_hiring
+            has_new = True
+
+        tech_stack = item.get("tech_stack")
+        if isinstance(tech_stack, list):
+            clean_ts = [
+                str(v).strip()
+                for v in tech_stack
+                if isinstance(v, str) and len(v.strip()) >= 1
+            ]
+            if clean_ts:
+                kwargs["hiring_tech_stack"] = tuple(clean_ts)
+                has_new = True
+
+        careers_url = item.get("careers_url")
+        if isinstance(careers_url, str) and careers_url.strip().startswith("http"):
+            kwargs["hiring_careers_url"] = careers_url.strip()
+            has_new = True
+
+        return kwargs if has_new else None
+
+    return _apply
+
+
+def _deep_enrichment_post_merge(
+    slug: str,
+    item: dict[str, Any],
+    _product: dict[str, Any],
+) -> None:
+    """Write fields that ScrapedProduct/Merger cannot handle directly.
+
+    Called after merge_update for Phase 7.  Writes funding details,
+    integrations, social link overrides, and provenance directly to disk.
+    """
+    filepath = PRODUCTS_DIR / f"{slug}.json"
+    if not filepath.exists():
+        return
+
+    data: dict[str, Any] = json.loads(filepath.read_text(encoding="utf-8"))
+    changed = False
+    today = time.strftime("%Y-%m-%d")
+
+    # --- Array field overrides (merger extends; Phase 7 T1 should REPLACE) ---
+    _REPLACE_ARRAY_FIELDS = (
+        "target_audience",
+        "use_cases",
+        "competitors",
+        "platforms",
+        "modalities",
+    )
+    for arr_field in _REPLACE_ARRAY_FIELDS:
+        llm_val = item.get(arr_field)
+        if isinstance(llm_val, list):
+            clean = [
+                str(v).strip() for v in llm_val if isinstance(v, str) and v.strip()
+            ]
+            if clean and clean != data.get(arr_field, []):
+                data[arr_field] = clean
+                changed = True
+                prov_key = arr_field
+                data.setdefault("meta", {}).setdefault("provenance", {})[prov_key] = {
+                    "source": "llm-deep-enrichment",
+                    "tier": 1,
+                    "confidence": 0.95,
+                    "updated_at": today,
+                }
+
+    # --- Chinese translation fields from LLM ---
+    _ZH_ARRAY_FIELDS = {
+        "target_audience_zh": "target_audience_zh",
+        "use_cases_zh": "use_cases_zh",
+        "supported_languages_zh": "supported_languages_zh",
+    }
+    for llm_key, json_key in _ZH_ARRAY_FIELDS.items():
+        val = item.get(llm_key)
+        if isinstance(val, list):
+            clean_zh = [str(v).strip() for v in val if isinstance(v, str) and v.strip()]
+            if clean_zh:
+                data[json_key] = clean_zh
+                changed = True
+
+    # headquarters_country_zh -> company.headquarters.country_zh
+    hq_country_zh = item.get("headquarters_country_zh")
+    if isinstance(hq_country_zh, str) and hq_country_zh.strip():
+        data.setdefault("company", {}).setdefault("headquarters", {})
+        data["company"]["headquarters"]["country_zh"] = hq_country_zh.strip()
+        changed = True
+
+    # --- Funding extras (not in ScrapedProduct) ---
+    fld = item.get("funding_last_round_date")
+    if isinstance(fld, str) and re.match(r"^\d{4}-\d{2}-\d{2}$", fld.strip()):
+        data.setdefault("company", {}).setdefault("funding", {})
+        data["company"]["funding"]["last_round_date"] = fld.strip()
+        changed = True
+
+    fv = item.get("funding_valuation_usd")
+    if isinstance(fv, (int, float)) and fv >= 0:
+        data.setdefault("company", {}).setdefault("funding", {})
+        data["company"]["funding"]["valuation_usd"] = float(fv)
+        changed = True
+
+    fi = item.get("funding_investors")
+    if isinstance(fi, list):
+        clean_inv = [str(v).strip() for v in fi if isinstance(v, str) and v.strip()]
+        if clean_inv:
+            data.setdefault("company", {}).setdefault("funding", {})
+            data["company"]["funding"]["investors"] = clean_inv
+            changed = True
+
+    # --- Integrations (not in ScrapedProduct) ---
+    integ = item.get("integrations")
+    if isinstance(integ, list):
+        clean_integ = [
+            str(v).strip() for v in integ if isinstance(v, str) and v.strip()
+        ]
+        if clean_integ:
+            data["integrations"] = clean_integ
+            changed = True
+
+    # --- Social link overrides (merger only fills empty; T1 should overwrite) ---
+    social_map = {
+        "social_linkedin": "linkedin",
+        "social_crunchbase": "crunchbase",
+        "social_twitter": "twitter",
+        "social_github": "github",
+    }
+    for llm_key, json_key in social_map.items():
+        val = item.get(llm_key)
+        if isinstance(val, str) and val.strip() and val.strip().lower() != "null":
+            data.setdefault("company", {}).setdefault("social", {})
+            data["company"]["social"][json_key] = val.strip()
+            changed = True
+
+    # --- App Store data ---
+    app_store_updates: dict[str, Any] = {}
+    gp_url = item.get("app_store_google_play_url")
+    if isinstance(gp_url, str) and gp_url.strip().startswith("http"):
+        app_store_updates["google_play_url"] = gp_url.strip()
+    as_url = item.get("app_store_apple_store_url")
+    if isinstance(as_url, str) and as_url.strip().startswith("http"):
+        app_store_updates["apple_store_url"] = as_url.strip()
+    as_rating = item.get("app_store_rating")
+    if isinstance(as_rating, (int, float)) and 0 <= as_rating <= 5:
+        app_store_updates["rating"] = round(float(as_rating), 1)
+    as_downloads = item.get("app_store_downloads")
+    if isinstance(as_downloads, str) and as_downloads.strip():
+        app_store_updates["downloads"] = as_downloads.strip()
+    if app_store_updates:
+        existing_app = data.get("app_store", {})
+        existing_app.update(app_store_updates)
+        data["app_store"] = existing_app
+        changed = True
+
+    # --- Platform availability ---
+    platform_avail: dict[str, bool] = {}
+    for plat_key in ("ios", "android", "mac", "windows", "linux", "web"):
+        val = item.get(f"platform_{plat_key}")
+        if isinstance(val, bool):
+            platform_avail[plat_key] = val
+    if platform_avail:
+        existing_pa = data.get("platform_availability", {})
+        existing_pa.update(platform_avail)
+        data["platform_availability"] = existing_pa
+        changed = True
+
+    # --- AI native/origin ---
+    ai_native_obj: dict[str, Any] = {}
+    ai_is_native = item.get("ai_native_is_native")
+    if isinstance(ai_is_native, bool):
+        ai_native_obj["is_native"] = ai_is_native
+    ai_since = item.get("ai_native_ai_since")
+    if isinstance(ai_since, str) and re.match(r"^\d{4}-\d{2}-\d{2}$", ai_since.strip()):
+        ai_native_obj["ai_since"] = ai_since.strip()
+    ai_note = item.get("ai_native_note")
+    if isinstance(ai_note, str) and len(ai_note.strip()) >= 5:
+        ai_native_obj["note"] = ai_note.strip()
+    ai_note_zh = item.get("ai_native_note_zh")
+    if isinstance(ai_note_zh, str) and len(ai_note_zh.strip()) >= 2:
+        ai_native_obj["note_zh"] = ai_note_zh.strip()
+    if ai_native_obj:
+        existing_ain = data.get("ai_native", {})
+        existing_ain.update(ai_native_obj)
+        data["ai_native"] = existing_ain
+        changed = True
+
+    # --- Update provenance for post-merge fields ---
+    if changed:
+        prov = data.setdefault("meta", {}).setdefault("provenance", {})
+        post_merge_fields = []
+        if data.get("company", {}).get("funding", {}).get("last_round_date"):
+            post_merge_fields.append("company.funding.last_round_date")
+        if data.get("company", {}).get("funding", {}).get("valuation_usd"):
+            post_merge_fields.append("company.funding.valuation_usd")
+        if data.get("company", {}).get("funding", {}).get("investors"):
+            post_merge_fields.append("company.funding.investors")
+        if data.get("integrations"):
+            post_merge_fields.append("integrations")
+        for k in ("linkedin", "crunchbase", "twitter", "github"):
+            if data.get("company", {}).get("social", {}).get(k):
+                post_merge_fields.append(f"company.social.{k}")
+        if data.get("app_store"):
+            post_merge_fields.append("app_store")
+        if data.get("platform_availability"):
+            post_merge_fields.append("platform_availability")
+        if data.get("ai_native"):
+            post_merge_fields.append("ai_native")
+        for fp in post_merge_fields:
+            prov[fp] = {
+                "source": "llm-deep-enrichment",
+                "tier": 1,
+                "confidence": 0.95,
+                "updated_at": today,
+            }
+
+        data["meta"]["last_updated"] = today
+
+        filepath.write_text(
+            json.dumps(data, indent=2, ensure_ascii=False) + "\n",
+            encoding="utf-8",
+        )
+
+    # --- Log confidence notes ---
+    notes = item.get("confidence_notes")
+    if isinstance(notes, dict) and notes:
+        for field, note in notes.items():
+            logger.info("  [%s] confidence: %s = %s", slug, field, note)
+
+
+# ---------------------------------------------------------------------------
 # Phase callbacks registry (for reuse across generate/apply/run modes)
 # ---------------------------------------------------------------------------
 
-# Tuple: (candidate_filter, prompt_builder, result_applier, default_batch_size)
-PhaseCallbacks = tuple[CandidateFilter, PromptBuilder, ResultApplier, int]
+# Tuple: (candidate_filter, prompt_builder, result_applier, default_batch_size, post_merge_hook)
+PostMergeHook = Callable[[str, dict[str, Any], dict[str, Any]], None] | None
+PhaseCallbacks = tuple[
+    CandidateFilter, PromptBuilder, ResultApplier, int, PostMergeHook
+]
 
 
 def _get_phase_callbacks(
     phase: int,
     products: ProductList,
 ) -> PhaseCallbacks:
-    """Return (candidate_filter, prompt_builder, result_applier, default_batch_size)
-    for the given LLM phase.
+    """Return (candidate_filter, prompt_builder, result_applier, default_batch_size,
+    post_merge_hook) for the given LLM phase.
     """
     if phase == 1:
         return (
@@ -1647,6 +2455,7 @@ def _get_phase_callbacks(
             _build_translation_prompt,
             _apply_translation,
             20,
+            None,
         )
     if phase == 2:
         return (
@@ -1658,6 +2467,7 @@ def _get_phase_callbacks(
             _build_seo_prompt,
             _apply_seo,
             20,
+            None,
         )
     if phase == 3:
         return (
@@ -1670,6 +2480,7 @@ def _get_phase_callbacks(
             _build_tech_prompt,
             _apply_tech,
             30,
+            None,
         )
     if phase == 4:
         known_slugs = frozenset(s for s, _ in products)
@@ -1680,6 +2491,7 @@ def _get_phase_callbacks(
             _build_desc_prompt,
             _make_desc_applier(known_slugs),
             10,
+            None,
         )
     if phase == 5:
         # Combined: any product missing ANY enrichable field (incl. hiring)
@@ -1704,6 +2516,7 @@ def _get_phase_callbacks(
             _build_combined_prompt,
             _make_combined_applier(known_slugs),
             50,
+            None,
         )
     if phase == 6:
         # Hiring & tech stack: any product missing hiring data
@@ -1715,6 +2528,26 @@ def _get_phase_callbacks(
             _build_hiring_prompt,
             _apply_hiring,
             60,
+            None,
+        )
+    if phase == 7:
+        # Deep enrichment: one product at a time, full JSON context, T1 tier
+        known_slugs = frozenset(s for s, _ in products)
+        return (
+            lambda _s, p: (
+                not p.get("company", {}).get("funding", {}).get("total_raised_usd")
+                or not p.get("key_people")
+                or not p.get("company", {}).get("social")
+                or not p.get("company", {}).get("headquarters", {}).get("country")
+                or not p.get("supported_languages")
+                or not p.get("integrations")
+                or not p.get("release_date")
+                or not p.get("company", {}).get("founded_year")
+            ),
+            _build_deep_enrichment_prompt,
+            _make_deep_enrichment_applier(known_slugs),
+            1,
+            _deep_enrichment_post_merge,
         )
     raise ValueError(f"No LLM callbacks for phase {phase}")
 
@@ -1731,18 +2564,22 @@ def generate_phase_prompts(
     batch_size: int | None = None,
     limit: int | None = None,
     resume: bool = False,
+    shards: int = 1,
 ) -> dict[str, int]:
-    """Generate prompt files + runner script for a phase.
+    """Generate prompt files + runner script(s) for a phase.
 
     Creates:
       data/.enrichment_prompts/phase_N/batch_NNN.prompt.txt
       data/.enrichment_prompts/phase_N/batch_NNN.slugs.json
-      data/.enrichment_prompts/phase_N/run_all.sh
+      data/.enrichment_prompts/phase_N/run_all.sh          (shards=1)
+      data/.enrichment_prompts/phase_N/run_shard_K.sh      (shards>1)
     """
     phase_key = f"phase_{phase}"
-    candidate_filter, prompt_builder, _applier, default_bs = _get_phase_callbacks(
-        phase,
-        products,
+    candidate_filter, prompt_builder, _applier, default_bs, _hook = (
+        _get_phase_callbacks(
+            phase,
+            products,
+        )
     )
     bs = batch_size or default_bs
 
@@ -1792,14 +2629,24 @@ def generate_phase_prompts(
         )
         stats["batches"] += 1
 
-    # Generate runner script
-    run_script = phase_prompts_dir / "run_all.sh"
-    # Use POSIX paths in the script for cross-platform compatibility
+    # Generate runner script(s)
     prompts_posix = phase_prompts_dir.as_posix()
     responses_posix = (RESPONSES_DIR / phase_key).as_posix()
-    run_script.write_text(
-        f"""#!/bin/bash
-# Auto-generated runner for phase {phase} enrichment prompts.
+    cli_model = "haiku"
+    cli_sleep = 2 if phase == 7 else 1
+    # Phase 7 needs WebFetch to visit product websites for verification
+    cli_tools = '--allowedTools "WebFetch"' if phase == 7 else ""
+    total_batches = stats["batches"]
+
+    def _write_runner(
+        script_path: Path,
+        batch_filter: str,
+        label: str,
+    ) -> None:
+        """Write a single runner shell script."""
+        script_path.write_text(
+            f"""#!/bin/bash
+# Auto-generated runner for phase {phase} — {label}
 # Review prompts in {prompts_posix}/ before running.
 
 PROMPTS_DIR="{prompts_posix}"
@@ -1809,35 +2656,113 @@ mkdir -p "$RESPONSES_DIR"
 # Allow running inside a Claude Code session (unset nesting guard)
 unset CLAUDECODE 2>/dev/null
 
-for f in "$PROMPTS_DIR"/batch_*.prompt.txt; do
+processed=0
+skipped=0
+errors=0
+
+for f in {batch_filter}; do
+    [ -f "$f" ] || continue
     batch=$(basename "$f" .prompt.txt)
     resp="$RESPONSES_DIR/${{batch}}.response.txt"
     if [ -f "$resp" ]; then
-        echo "Skip $batch (response exists)"
+        skipped=$((skipped + 1))
         continue
     fi
-    echo "Processing $batch..."
-    claude -p --model haiku < "$f" > "$resp"
+    processed=$((processed + 1))
+    echo "[{label}] $batch ($processed processed, $skipped skipped, $errors errors)"
+    claude -p --model {cli_model} {cli_tools} < "$f" > "$resp"
     if [ $? -ne 0 ]; then
         echo "ERROR: $batch failed, removing partial response"
         rm -f "$resp"
+        errors=$((errors + 1))
     fi
-    sleep 1
+    sleep {cli_sleep}
 done
 
 echo ""
-echo "Done! Apply responses with:"
+echo "[{label}] Done! processed=$processed skipped=$skipped errors=$errors"
+echo "Apply responses with:"
 echo "  python scripts/batch_enrich.py --phase {phase} --apply-responses"
 """,
-        encoding="utf-8",
-    )
+            encoding="utf-8",
+        )
 
-    logger.info(
-        "Generated %d prompt files in %s",
-        stats["batches"],
-        phase_prompts_dir,
-    )
-    logger.info("Run:  bash %s", run_script)
+    if shards <= 1:
+        # Single runner: process all batches
+        run_script = phase_prompts_dir / "run_all.sh"
+        _write_runner(
+            run_script,
+            '"$PROMPTS_DIR"/batch_*.prompt.txt',
+            "all",
+        )
+        logger.info(
+            "Generated %d prompt files in %s",
+            total_batches,
+            phase_prompts_dir,
+        )
+        logger.info("Run:  bash %s", run_script)
+    else:
+        # Sharded runners: split batches across N scripts
+        # Each shard picks batches where (batch_idx % shards == shard_id)
+        # This uses modular arithmetic so all scripts can run in parallel
+        # and adding --resume or re-running is safe (response-exists skip)
+        shard_scripts: list[Path] = []
+        for shard_id in range(shards):
+            shard_batches = [
+                i for i in range(1, total_batches + 1) if (i - 1) % shards == shard_id
+            ]
+            if not shard_batches:
+                continue
+            # Build glob pattern for this shard's batch files
+            # e.g. for batches [1,6,11,...] with format batch_001, batch_006, ...
+            file_list = " ".join(
+                f'"$PROMPTS_DIR"/batch_{b:03d}.prompt.txt' for b in shard_batches
+            )
+            script_path = phase_prompts_dir / f"run_shard_{shard_id + 1}.sh"
+            _write_runner(
+                script_path,
+                file_list,
+                f"shard {shard_id + 1}/{shards}",
+            )
+            shard_scripts.append(script_path)
+
+        # Also generate a convenience script that launches all shards
+        launcher = phase_prompts_dir / "run_all_shards.sh"
+        shard_cmds = "\n".join(f'bash "{s.as_posix()}" &' for s in shard_scripts)
+        launcher.write_text(
+            f"""#!/bin/bash
+# Launch all {shards} shards in parallel.
+# Each shard processes a disjoint subset of batches.
+# Safe to re-run: completed batches are auto-skipped.
+
+{shard_cmds}
+
+echo "Launched {len(shard_scripts)} shards in background."
+echo "Monitor with: tail -f /dev/null  (Ctrl+C to detach)"
+echo "Or check progress: ls {responses_posix}/ | wc -l"
+wait
+echo ""
+echo "All shards complete! Apply with:"
+echo "  python scripts/batch_enrich.py --phase {phase} --apply-responses"
+""",
+            encoding="utf-8",
+        )
+
+        logger.info(
+            "Generated %d prompt files, split into %d shards",
+            total_batches,
+            len(shard_scripts),
+        )
+        for s in shard_scripts:
+            batches_in_shard = sum(
+                1
+                for i in range(1, total_batches + 1)
+                if (i - 1) % shards == shard_scripts.index(s)
+            )
+            logger.info("  %s (%d batches)", s.name, batches_in_shard)
+        logger.info("Run all:  bash %s", launcher)
+        logger.info("Or individually:  bash %s", shard_scripts[0])
+
     return stats
 
 
@@ -1862,7 +2787,9 @@ def apply_phase_responses(
     Applies via phase-specific result_applier + TieredMerger.
     """
     phase_key = f"phase_{phase}"
-    _filter, _builder, result_applier, _bs = _get_phase_callbacks(phase, products)
+    _filter, _builder, result_applier, _bs, post_merge_hook = _get_phase_callbacks(
+        phase, products
+    )
 
     phase_prompts_dir = PROMPTS_DIR / phase_key
     phase_responses_dir = RESPONSES_DIR / phase_key
@@ -1943,6 +2870,10 @@ def apply_phase_responses(
                 )
                 stats["enriched"] += 1
 
+            # Post-merge hook for fields ScrapedProduct cannot carry
+            if post_merge_hook is not None and not dry_run:
+                post_merge_hook(slug, item, product)
+
             completed_slugs.add(slug)
             stats["processed"] += 1
 
@@ -1984,13 +2915,14 @@ Default mode (no --phase): Ask local Claude for ALL fields in one prompt.
 Optional --phase for specific use cases:
   0  Rule-based enrichment only (free, no LLM)
   1-4  Individual field groups (for API backend)
+  7  Deep enrichment (1 product/prompt, full JSON context, T1 tier)
         """,
     )
     parser.add_argument(
         "--phase",
         type=int,
         default=None,
-        choices=[0, 1, 2, 3, 4, 5, 6],
+        choices=[0, 1, 2, 3, 4, 5, 6, 7],
         help="Override: run a specific phase (default: combined all-in-one)",
     )
     parser.add_argument(
@@ -2037,12 +2969,18 @@ Optional --phase for specific use cases:
     parser.add_argument(
         "--generate-prompts",
         action="store_true",
-        help="Generate prompt files only (phases 1-4)",
+        help="Generate prompt files only (phases 1-7)",
     )
     parser.add_argument(
         "--apply-responses",
         action="store_true",
-        help="Apply saved response files (phases 1-4)",
+        help="Apply saved response files (phases 1-7)",
+    )
+    parser.add_argument(
+        "--shards",
+        type=int,
+        default=1,
+        help="Split runner into N parallel scripts (e.g. --shards 5)",
     )
     parser.add_argument(
         "--verbose",
@@ -2088,6 +3026,7 @@ Optional --phase for specific use cases:
             batch_size=args.batch_size,
             limit=args.limit,
             resume=args.resume,
+            shards=args.shards,
         )
     elif args.apply_responses:
         stats = apply_phase_responses(
@@ -2106,9 +3045,10 @@ Optional --phase for specific use cases:
     else:
         # LLM execution mode (API or CLI backend)
         cb = _get_phase_callbacks(phase, products)
+        _phase_labels = {5: "combined", 7: "deep"}
         stats = _run_llm_phase(
             f"phase_{phase}",
-            f"{phase} (combined)" if phase == 5 else str(phase),
+            f"{phase} ({_phase_labels.get(phase, str(phase))})",
             products,
             *cb[:3],
             batch_size=args.batch_size or cb[3],
@@ -2118,10 +3058,11 @@ Optional --phase for specific use cases:
             model=args.model,
             rate_limit_delay=args.rate_limit_delay,
             backend=args.backend,
+            post_merge_hook=cb[4],
         )
 
     logger.info("=" * 60)
-    logger.info("Done! %s", f"(phase {phase})" if phase != 5 else "(all fields)")
+    logger.info("Done! %s", f"(phase {phase})")
     for key, value in stats.items():
         logger.info("  %s: %d", key, value)
     logger.info("=" * 60)
