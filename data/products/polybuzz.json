@@ -8,7 +8,7 @@
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-20",
+    "last_updated": "2026-02-24",
     "provenance": {
       "name": {
         "source": "toolify",
@@ -47,10 +47,10 @@
         "updated_at": "2026-02-16"
       },
       "company.name": {
-        "source": "toolify",
+        "source": "google_play",
         "tier": 2,
-        "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "confidence": 0.85,
+        "updated_at": "2026-02-24"
       },
       "company.url": {
         "source": "toolify",
@@ -93,6 +93,42 @@
         "tier": 2,
         "confidence": 0.75,
         "updated_at": "2026-02-16"
+      },
+      "app_store.google_play_url": {
+        "source": "google_play",
+        "tier": 2,
+        "confidence": 0.85,
+        "updated_at": "2026-02-24"
+      },
+      "app_store.apple_store_url": {
+        "source": "app_store",
+        "tier": 2,
+        "confidence": 0.85,
+        "updated_at": "2026-02-24"
+      },
+      "app_store.rating": {
+        "source": "google_play",
+        "tier": 2,
+        "confidence": 0.85,
+        "updated_at": "2026-02-24"
+      },
+      "app_store.downloads": {
+        "source": "google_play",
+        "tier": 2,
+        "confidence": 0.85,
+        "updated_at": "2026-02-24"
+      },
+      "release_date": {
+        "source": "app_store",
+        "tier": 2,
+        "confidence": 0.85,
+        "updated_at": "2026-02-24"
+      },
+      "supported_languages": {
+        "source": "app_store",
+        "tier": 2,
+        "confidence": 0.85,
+        "updated_at": "2026-02-24"
       },
       "platforms": {
         "source": "llm-batch-combined",
@@ -191,15 +227,25 @@
       "url": "https://www.toolify.ai/tool/polybuzz",
       "source_name": "toolify",
       "scraped_at": "2026-02-16"
+    },
+    {
+      "url": "https://play.google.com/store/apps/details?id=ai.socialapps.speakmaster",
+      "source_name": "google_play",
+      "scraped_at": "2026-02-16"
+    },
+    {
+      "url": "https://apps.apple.com/us/app/polybuzz-chat-with-characters/id6449190344?uo=4",
+      "source_name": "app_store",
+      "scraped_at": "2026-02-16"
     }
   ],
   "company": {
-    "name": "PolyBuzz",
+    "name": "CLOUD WHALE INTERACTIVE TECHNOLOGY LLC.",
     "url": "https://www.polybuzz.ai",
     "website": "https://www.polybuzz.ai",
-    "name_zh": "PolyBuzz",
-    "description": "Free platform for creating, customizing, and interacting with AI characters for entertainment and social purposes.",
-    "employee_count_range": "1-10"
+    "name_zh": "云鲸互动科技",
+    "description": "Mobile entertainment company building AI chatbot platforms with character creation, voice interaction, and avatar generation.",
+    "employee_count_range": "11-50"
   },
   "icon_url": "https://cdn-images.toolify.ai/website-logos/20250411/1744350577_28304151_22619.webp",
   "sub_category": "ai chatbot",
@@ -269,7 +315,42 @@
     "image"
   ],
   "competitors": [
-    "character-ai",
+    "character-ai-chat-talk-text",
     "replika"
-  ]
+  ],
+  "release_date": "2023-05-23",
+  "supported_languages": [
+    "AR",
+    "CA",
+    "CS",
+    "DA",
+    "NL",
+    "EN",
+    "FI",
+    "FR",
+    "DE",
+    "HU",
+    "ID",
+    "IT",
+    "JA",
+    "KO",
+    "MS",
+    "FA",
+    "PL",
+    "PT",
+    "RO",
+    "RU",
+    "ZH",
+    "SK",
+    "ES",
+    "TH",
+    "TR",
+    "VI"
+  ],
+  "app_store": {
+    "google_play_url": "https://play.google.com/store/apps/details?id=ai.socialapps.speakmaster",
+    "apple_store_url": "https://apps.apple.com/app/id6449190344",
+    "rating": 4.4,
+    "downloads": "10,000,000+"
+  }
 }

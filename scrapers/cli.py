@@ -656,5 +656,266 @@ def export_json(output_dir: str | None) -> None:
     click.echo(f"Exported {len(slugs)} products to {out_path}")
 
 
+@cli.command("dedup-audit")
+@click.option("--min-count", default=2, help="Minimum products per domain to report")
+@click.option(
+    "--format",
+    "output_format",
+    type=click.Choice(["text", "json"]),
+    default="text",
+    help="Output format",
+)
+@click.option("--output", "output_file", default=None, help="Write report to FILE")
+def dedup_audit(min_count: int, output_format: str, output_file: str | None) -> None:
+    """Audit existing products for domain-based duplicates."""
+    from scrapers.enrichment.dedup_auditor import DedupAuditor
+
+    db = _open_db()
+    auditor = DedupAuditor(db=db)
+    click.echo(f"Scanning for duplicates (min_count={min_count})...")
+    groups = auditor.audit(min_count=min_count)
+
+    if not groups:
+        click.echo("No duplicate groups found.")
+        return
+
+    # Build report data
+    report: list[dict[str, Any]] = []
+    for g in groups:
+        entry: dict[str, Any] = {
+            "root_domain": g.root_domain,
+            "classification": g.classification,
+            "target_slug": g.target_slug,
+            "source_slugs": list(g.source_slugs),
+            "reason": g.reason,
+            "count": len(g.products),
+        }
+        report.append(entry)
+
+    if output_format == "json":
+        json_str = json.dumps(report, indent=2, ensure_ascii=False)
+        if output_file:
+            from pathlib import Path
+
+            Path(output_file).write_text(json_str + "\n", encoding="utf-8")
+            click.echo(f"Wrote {len(report)} groups to {output_file}")
+        else:
+            click.echo(json_str)
+    else:
+        # Text format
+        merge_count = sum(1 for g in groups if g.classification == "merge")
+        skip_count = sum(1 for g in groups if g.classification.startswith("skip"))
+        review_count = sum(1 for g in groups if g.classification == "review")
+
+        click.echo(f"\nFound {len(groups)} duplicate groups:")
+        click.echo(
+            f"  merge: {merge_count}  |  skip: {skip_count}  |  review: {review_count}"
+        )
+        click.echo("")
+
+        for g in groups:
+            icon = {
+                "merge": "M",
+                "skip_store": "S",
+                "skip_legitimate": "L",
+                "review": "?",
+            }.get(g.classification, "?")
+            slugs = ", ".join(g.source_slugs[:5])
+            if len(g.source_slugs) > 5:
+                slugs += f" (+{len(g.source_slugs) - 5} more)"
+            click.echo(
+                f"  [{icon}] {g.root_domain} ({len(g.products)}): "
+                f"keep={g.target_slug}, remove=[{slugs}]"
+            )
+            click.echo(f"      {g.reason}")
+
+        if output_file:
+            json_str = json.dumps(report, indent=2, ensure_ascii=False)
+            from pathlib import Path
+
+            Path(output_file).write_text(json_str + "\n", encoding="utf-8")
+            click.echo(f"\nWrote JSON report to {output_file}")
+
+
+@cli.command("dedup-merge")
+@click.argument("target_slug")
+@click.argument("source_slugs", nargs=-1, required=True)
+@click.option("--dry-run", is_flag=True, help="Preview merge without writing")
+@click.option("--no-delete", is_flag=True, help="Merge but don't delete source files")
+def dedup_merge(
+    target_slug: str,
+    source_slugs: tuple[str, ...],
+    dry_run: bool,
+    no_delete: bool,
+) -> None:
+    """Merge SOURCE_SLUGS into TARGET_SLUG and optionally delete sources."""
+    from scrapers.enrichment.dedup_auditor import dict_to_scraped_product
+    from scrapers.enrichment.merger import TieredMerger
+    from scrapers.utils import validate_slug
+    from scrapers.validation import ProductSchemaValidator
+
+    # Validate slugs
+    try:
+        target_slug = validate_slug(target_slug)
+    except ValueError:
+        click.echo(f"Invalid target slug: {target_slug}")
+        sys.exit(1)
+
+    target_path = PRODUCTS_DIR / f"{target_slug}.json"
+    if not target_path.exists():
+        click.echo(f"Target product not found: {target_slug}")
+        sys.exit(1)
+
+    # Load target
+    target_data = json.loads(target_path.read_text(encoding="utf-8"))
+    click.echo(f"Target: {target_slug} ({target_data.get('name', '?')})")
+
+    # Load and validate sources
+    source_products: list[tuple[str, dict[str, Any]]] = []
+    for slug in source_slugs:
+        try:
+            slug = validate_slug(slug)
+        except ValueError:
+            click.echo(f"Invalid source slug: {slug}")
+            sys.exit(1)
+
+        source_path = PRODUCTS_DIR / f"{slug}.json"
+        if not source_path.exists():
+            click.echo(f"Source product not found: {slug}")
+            sys.exit(1)
+
+        data = json.loads(source_path.read_text(encoding="utf-8"))
+        source_products.append((slug, data))
+        click.echo(f"  Source: {slug} ({data.get('name', '?')})")
+
+    if dry_run:
+        click.echo("\n[DRY RUN] Would merge the above sources into target.")
+        click.echo(f"[DRY RUN] Would {'keep' if no_delete else 'delete'} source files.")
+        return
+
+    # Merge each source into target
+    db = _open_db()
+    merger = TieredMerger(db=db)
+    for slug, data in source_products:
+        scraped = dict_to_scraped_product(data)
+        merger.merge_update(target_slug, scraped)
+        click.echo(f"  Merged: {slug} -> {target_slug}")
+
+    # Validate result
+    schema_validator = ProductSchemaValidator()
+    merged_data = json.loads(target_path.read_text(encoding="utf-8"))
+    result = schema_validator.validate_product_dict(merged_data, target_slug)
+    if not result.valid:
+        click.echo(f"WARNING: Merged product has schema errors: {result.errors}")
+    else:
+        click.echo("  Schema validation: OK")
+
+    # Delete source files
+    if not no_delete:
+        for slug, _ in source_products:
+            source_path = PRODUCTS_DIR / f"{slug}.json"
+            if source_path.exists():
+                source_path.unlink()
+                click.echo(f"  Deleted: {source_path.name}")
+            # Delete from DB if available
+            if db is not None:
+                db.delete(slug)
+
+    click.echo("\nDone!")
+
+
+@cli.command("dedup-apply")
+@click.argument("report_file")
+@click.option("--dry-run", is_flag=True, help="Preview actions without writing")
+@click.option(
+    "--classifications",
+    default="merge",
+    help="Comma-separated classifications to process (default: merge)",
+)
+def dedup_apply(report_file: str, dry_run: bool, classifications: str) -> None:
+    """Batch-apply dedup operations from a JSON audit report."""
+    from pathlib import Path
+
+    from scrapers.enrichment.dedup_auditor import dict_to_scraped_product
+    from scrapers.enrichment.merger import TieredMerger
+    from scrapers.utils import validate_slug
+
+    report_path = Path(report_file)
+    if not report_path.exists():
+        click.echo(f"Report file not found: {report_file}")
+        sys.exit(1)
+
+    report: list[dict[str, Any]] = json.loads(report_path.read_text(encoding="utf-8"))
+    allowed = {c.strip() for c in classifications.split(",")}
+    click.echo(f"Loaded {len(report)} groups, processing classifications: {allowed}")
+
+    db = _open_db()
+    merger = TieredMerger(db=db)
+    processed = 0
+    skipped = 0
+
+    for entry in report:
+        classification = entry.get("classification", "")
+        if classification not in allowed:
+            skipped += 1
+            continue
+
+        target_slug = entry.get("target_slug", "")
+        source_slugs = entry.get("source_slugs", [])
+
+        if not target_slug or not source_slugs:
+            skipped += 1
+            continue
+
+        try:
+            target_slug = validate_slug(target_slug)
+        except ValueError:
+            click.echo(f"  SKIP invalid target slug: {target_slug}")
+            skipped += 1
+            continue
+
+        target_path = PRODUCTS_DIR / f"{target_slug}.json"
+        if not target_path.exists():
+            click.echo(f"  SKIP missing target: {target_slug}")
+            skipped += 1
+            continue
+
+        if dry_run:
+            click.echo(
+                f"  [{classification}] Would merge {len(source_slugs)} "
+                f"source(s) into {target_slug}"
+            )
+            processed += 1
+            continue
+
+        # Merge each source
+        for slug in source_slugs:
+            try:
+                slug = validate_slug(slug)
+            except ValueError:
+                click.echo(f"    SKIP invalid source slug: {slug}")
+                continue
+
+            source_path = PRODUCTS_DIR / f"{slug}.json"
+            if not source_path.exists():
+                click.echo(f"    SKIP missing source: {slug}")
+                continue
+
+            data = json.loads(source_path.read_text(encoding="utf-8"))
+            scraped = dict_to_scraped_product(data)
+            merger.merge_update(target_slug, scraped)
+
+            # Delete source
+            source_path.unlink()
+            if db is not None:
+                db.delete(slug)
+            click.echo(f"    Merged + deleted: {slug} -> {target_slug}")
+
+        processed += 1
+
+    action = "Would process" if dry_run else "Processed"
+    click.echo(f"\n{action} {processed} groups, skipped {skipped}")
+
+
 if __name__ == "__main__":
     cli()

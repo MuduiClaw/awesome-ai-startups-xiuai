@@ -8,7 +8,7 @@
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-20",
+    "last_updated": "2026-02-24",
     "provenance": {
       "name": {
         "source": "theresanaiforthat",
@@ -77,10 +77,10 @@
         "updated_at": "2026-02-16"
       },
       "use_cases": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "sub_category": {
         "source": "toolify",
@@ -101,10 +101,10 @@
         "updated_at": "2026-02-16"
       },
       "keywords": {
-        "source": "toolify",
+        "source": "dedup-merge",
         "tier": 2,
         "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "updated_at": "2026-02-24"
       },
       "platforms": {
         "source": "rule-based-enrichment",
@@ -119,58 +119,58 @@
         "updated_at": "2026-02-20"
       },
       "name_zh": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "description_zh": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "company.name_zh": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "company.description": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "company.employee_count_range": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "open_source": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "api_available": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "hiring.is_hiring": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "hiring.careers_url": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "modalities": {
         "source": "llm-batch-combined",
@@ -196,14 +196,19 @@
       "url": "https://www.toolify.ai/tool/tattoo-ai-design",
       "source_name": "toolify",
       "scraped_at": "2026-02-16"
+    },
+    {
+      "url": "https://tattooai.design/ai-tattoo-try-on",
+      "source_name": "dedup-merge",
+      "scraped_at": "2026-02-24"
     }
   ],
   "company": {
     "name": "Tattoo AI Design",
     "url": "https://www.tattooai.design",
     "website": "https://www.tattooai.design",
-    "name_zh": "Tattoo AI Design",
-    "description": "AI-powered tool for generating unique and customized tattoo designs from text descriptions",
+    "name_zh": "Tattoo AI Design | Try On",
+    "description": "Virtual tattoo try-on application allowing users to preview designs before commitment",
     "employee_count_range": "1-10"
   },
   "icon_url": "https://media.theresanaiforthat.com/icons/tattoo-ai-design.svg?height=207",
@@ -219,7 +224,9 @@
     "Tattoos",
     "design-generation",
     "image-creation",
-    "tattoo-planning"
+    "tattoo-planning",
+    "virtual-try-on",
+    "design-preview"
   ],
   "sub_category": "ai tattoo generator",
   "pricing": {
@@ -232,7 +239,14 @@
     "AI art",
     "Custom tattoo",
     "Online tattoo design",
-    "Text to tattoo"
+    "Text to tattoo",
+    "Tattoo AI Design | Try On",
+    "ai image design",
+    "Tattoos",
+    "virtually",
+    "getting",
+    "inked",
+    "app"
   ],
   "platforms": [
     "web"
@@ -245,14 +259,14 @@
     "individuals",
     "artists"
   ],
-  "name_zh": "纹身AI设计",
-  "description_zh": "用AI生成独特的纹身设计",
+  "name_zh": "纹身AI设计试穿",
+  "description_zh": "虚拟试穿纹身设计的应用",
   "open_source": false,
   "api_available": false,
   "hiring": {
     "is_hiring": false,
     "careers_url": "",
-    "last_checked": "2026-02-20"
+    "last_checked": "2026-02-24"
   },
   "modalities": [
     "image",

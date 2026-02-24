@@ -8,7 +8,7 @@
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-20",
+    "last_updated": "2026-02-24",
     "provenance": {
       "name": {
         "source": "toolify",
@@ -83,10 +83,10 @@
         "updated_at": "2026-02-16"
       },
       "keywords": {
-        "source": "toolify",
+        "source": "dedup-merge",
         "tier": 2,
         "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "updated_at": "2026-02-24"
       },
       "pricing": {
         "source": "toolify",
@@ -107,64 +107,64 @@
         "updated_at": "2026-02-20"
       },
       "use_cases": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "name_zh": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "description_zh": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "company.name_zh": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "company.description": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "company.employee_count_range": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "open_source": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "api_available": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "hiring.is_hiring": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "hiring.careers_url": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "modalities": {
         "source": "llm-batch-combined",
@@ -173,10 +173,22 @@
         "updated_at": "2026-02-20"
       },
       "competitors": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
+      },
+      "pricing.model": {
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
+      },
+      "pricing.has_free_tier": {
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       }
     }
   },
@@ -185,14 +197,19 @@
       "url": "https://www.toolify.ai/tool/image-prompt",
       "source_name": "toolify",
       "scraped_at": "2026-02-16"
+    },
+    {
+      "url": "https://imageprompt.org/image-to-prompt",
+      "source_name": "dedup-merge",
+      "scraped_at": "2026-02-24"
     }
   ],
   "company": {
     "name": "Image Prompt",
     "url": "https://imageprompt.org",
     "website": "https://imageprompt.org",
-    "name_zh": "Image Prompt",
-    "description": "Platform for creating and optimizing prompts for AI image generation.",
+    "name_zh": "Image to Prompt",
+    "description": "Platform for generating and enhancing image and video prompts.",
     "employee_count_range": "1-10"
   },
   "icon_url": "https://cdn-images.toolify.ai/website-logos/20250411/1744350469_38415552_22000.webp",
@@ -215,7 +232,20 @@
     "Stable Diffusion",
     "AI tools",
     "Image analysis",
-    "Video Prompt"
+    "Video Prompt",
+    "AI Image Prompt",
+    "Image to Prompt",
+    "AI Image Generator",
+    "Text to Image",
+    "Prompt Generator",
+    "AI Art",
+    "Flux",
+    "AI Describe Image",
+    "Video Prompt Generator",
+    "Image to Video Prompt",
+    "Batch Processing",
+    "AI Tools",
+    "Creative AI"
   ],
   "pricing": {
     "model": "freemium",
@@ -237,16 +267,21 @@
     "text-generation",
     "prompt-optimization",
     "ai-art-generation",
-    "creative-writing"
+    "creative-writing",
+    "image-generation",
+    "image-editing",
+    "graphic-design",
+    "prompt-generation",
+    "image-description"
   ],
-  "name_zh": "Image Prompt",
-  "description_zh": "AI驱动平台，用于创建和优化AI艺术生成的图像提示词。",
+  "name_zh": "Image to Prompt",
+  "description_zh": "AI工具，用于生成和增强图像及视频的提示词。",
   "open_source": false,
   "api_available": false,
   "hiring": {
     "is_hiring": false,
     "careers_url": "",
-    "last_checked": "2026-02-20"
+    "last_checked": "2026-02-24"
   },
   "modalities": [
     "text",
@@ -254,6 +289,7 @@
   ],
   "competitors": [
     "prompt-hunt",
-    "promptbase"
+    "promptbase",
+    "clip-interrogator"
   ]
 }

@@ -8,7 +8,7 @@ from typing import Any
 
 from scrapers.base import ScrapedProduct
 from scrapers.config import PRODUCTS_DIR
-from scrapers.utils import extract_domain, slugify
+from scrapers.utils import slugify
 
 try:
     from Levenshtein import ratio as lev_ratio
@@ -57,6 +57,9 @@ class Deduplicator:
 
     def _load_existing(self) -> None:
         """Load domains and names from existing product JSON files."""
+        from scrapers.utils import extract_domain, extract_root_domain
+        from scrapers.utils.domains import is_skip_domain
+
         if not PRODUCTS_DIR.exists():
             return
 
@@ -73,20 +76,25 @@ class Deduplicator:
                 if name_zh:
                     self._existing_names_zh[name_zh] = slug
 
-                # Match on product_url domain
+                # Match on product_url root domain (skip store/aggregator domains)
                 product_url = data.get("product_url", "")
                 if product_url:
-                    domain = extract_domain(product_url)
-                    if domain:
-                        self._existing_domains[domain] = slug
+                    # Check original domain against skip list, index by root domain
+                    orig_domain = extract_domain(product_url)
+                    if orig_domain and not is_skip_domain(orig_domain):
+                        root = extract_root_domain(product_url)
+                        if root:
+                            self._existing_domains[root] = slug
 
-                # Also match on company.website domain
+                # Also match on company.website root domain
                 company = data.get("company", {})
                 company_website = company.get("website", "") if company else ""
                 if company_website:
-                    domain = extract_domain(company_website)
-                    if domain:
-                        self._existing_domains[domain] = slug
+                    orig_domain = extract_domain(company_website)
+                    if orig_domain and not is_skip_domain(orig_domain):
+                        root = extract_root_domain(company_website)
+                        if root:
+                            self._existing_domains[root] = slug
             except (json.JSONDecodeError, KeyError):
                 continue
 
@@ -106,17 +114,24 @@ class Deduplicator:
 
     def _find_existing(self, product: ScrapedProduct) -> str | None:
         """Check if a scraped product matches any existing entry."""
-        # 1. Match by product_url domain
-        if product.product_url:
-            domain = extract_domain(product.product_url)
-            if domain and domain in self._existing_domains:
-                return self._existing_domains[domain]
+        from scrapers.utils import extract_domain, extract_root_domain
+        from scrapers.utils.domains import is_skip_domain
 
-        # 2. Match by company_website domain
+        # 1. Match by product_url root domain (skip store/aggregator domains)
+        if product.product_url:
+            orig = extract_domain(product.product_url)
+            if orig and not is_skip_domain(orig):
+                root = extract_root_domain(product.product_url)
+                if root and root in self._existing_domains:
+                    return self._existing_domains[root]
+
+        # 2. Match by company_website root domain
         if product.company_website:
-            domain = extract_domain(product.company_website)
-            if domain and domain in self._existing_domains:
-                return self._existing_domains[domain]
+            orig = extract_domain(product.company_website)
+            if orig and not is_skip_domain(orig):
+                root = extract_root_domain(product.company_website)
+                if root and root in self._existing_domains:
+                    return self._existing_domains[root]
 
         # 3. Match by exact name
         name_lower = product.name.lower()

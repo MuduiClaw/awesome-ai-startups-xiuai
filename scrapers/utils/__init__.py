@@ -157,3 +157,77 @@ def extract_domain(url: str) -> str:
     if domain.startswith("www."):
         domain = domain[4:]
     return domain.lower()
+
+
+# Two-part TLDs where the "registrable domain" is three labels deep.
+_TWO_PART_TLDS: frozenset[str] = frozenset(
+    {
+        "co.uk",
+        "org.uk",
+        "ac.uk",
+        "com.au",
+        "net.au",
+        "org.au",
+        "co.nz",
+        "co.jp",
+        "or.jp",
+        "ne.jp",
+        "co.kr",
+        "or.kr",
+        "com.cn",
+        "net.cn",
+        "org.cn",
+        "com.tw",
+        "org.tw",
+        "com.hk",
+        "com.sg",
+        "com.br",
+        "com.mx",
+        "co.in",
+        "com.ar",
+        "co.za",
+        "co.il",
+        "com.tr",
+        "co.id",
+        "com.my",
+        "co.th",
+        "com.vn",
+        "com.ph",
+    }
+)
+
+
+def extract_root_domain(url: str) -> str:
+    """Extract the registrable (root) domain from a URL.
+
+    Strips subdomains beyond the registrable part, handling two-part
+    TLDs like ``.co.uk`` and ``.com.cn`` without requiring ``tldextract``.
+
+    >>> extract_root_domain("https://app.polybuzz.ai/chat")
+    'polybuzz.ai'
+    >>> extract_root_domain("https://www.bbc.co.uk/news")
+    'bbc.co.uk'
+    >>> extract_root_domain("https://openai.com")
+    'openai.com'
+    """
+    domain = extract_domain(url)
+    if not domain:
+        return ""
+
+    # Strip port if present
+    domain = domain.split(":")[0]
+
+    parts = domain.split(".")
+    if len(parts) <= 2:
+        return domain
+
+    # Check if the last two parts form a known two-part TLD
+    two_part = f"{parts[-2]}.{parts[-1]}"
+    if two_part in _TWO_PART_TLDS:
+        # Registrable domain is three labels: e.g. bbc.co.uk
+        if len(parts) >= 3:
+            return f"{parts[-3]}.{two_part}"
+        return domain
+
+    # Standard TLD: registrable domain is the last two labels
+    return f"{parts[-2]}.{parts[-1]}"

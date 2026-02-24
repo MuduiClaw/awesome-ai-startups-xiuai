@@ -8,7 +8,7 @@
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-20",
+    "last_updated": "2026-02-24",
     "provenance": {
       "name": {
         "source": "aibot",
@@ -101,76 +101,76 @@
         "updated_at": "2026-02-16"
       },
       "keywords": {
-        "source": "toolify",
+        "source": "dedup-merge",
         "tier": 2,
         "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "updated_at": "2026-02-24"
       },
       "platforms": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "target_audience": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "use_cases": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "name_zh": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "company.name_zh": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "company.description": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "company.employee_count_range": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "open_source": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "api_available": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "hiring.is_hiring": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "hiring.careers_url": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "modalities": {
         "source": "llm-batch-combined",
@@ -179,16 +179,16 @@
         "updated_at": "2026-02-20"
       },
       "competitors": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "hiring.tech_stack": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       }
     }
   },
@@ -202,6 +202,11 @@
       "url": "https://www.toolify.ai/tool/warp-ai",
       "source_name": "toolify",
       "scraped_at": "2026-02-16"
+    },
+    {
+      "url": "https://www.warp.dev/code",
+      "source_name": "dedup-merge",
+      "scraped_at": "2026-02-24"
     }
   ],
   "description_zh": "21世纪的终端工具（内置AI命令搜索）",
@@ -210,7 +215,7 @@
     "url": "https://warp.dev",
     "website": "https://warp.dev",
     "name_zh": "Warp",
-    "description": "Modern terminal tool with built-in AI command search and automation",
+    "description": "Warp's AI programming tool for code assistance and generation",
     "employee_count_range": "1-10"
   },
   "icon_url": "https://ai-bot.cn/wp-content/uploads/2025/09/Warp-Code-logo.png",
@@ -237,19 +242,29 @@
     "Knowledge sharing",
     "AI tools",
     "Modern UX",
-    "Warp Drive"
+    "Warp Drive",
+    "Warp Code",
+    "ai chatbot agent",
+    "ai programming tools",
+    "Warp",
+    "AI",
+    "推出的",
+    "编程工具",
+    "other"
   ],
   "platforms": [
     "web",
     "desktop",
-    "cli"
+    "cli",
+    "api"
   ],
   "target_audience": [
     "developers",
     "enterprises",
     "general-users",
     "devops",
-    "system-administrators"
+    "system-administrators",
+    "programmers"
   ],
   "use_cases": [
     "code-generation",
@@ -257,26 +272,35 @@
     "developer-productivity",
     "command-search",
     "terminal-automation",
-    "development"
+    "development",
+    "ai-chat",
+    "virtual-assistant",
+    "task-automation",
+    "programming-assistance",
+    "debugging"
   ],
-  "name_zh": "Warp终端",
+  "name_zh": "Warp代码",
   "open_source": false,
-  "api_available": false,
+  "api_available": true,
   "hiring": {
     "is_hiring": true,
     "careers_url": "",
     "tech_stack": [
       "Rust",
       "Python",
-      "Swift"
+      "Swift",
+      "React"
     ],
-    "last_checked": "2026-02-20"
+    "last_checked": "2026-02-24"
   },
   "modalities": [
     "code",
     "text"
   ],
   "competitors": [
-    "hyper"
+    "hyper",
+    "github-copilot",
+    "tabnine",
+    "codeium"
   ]
 }

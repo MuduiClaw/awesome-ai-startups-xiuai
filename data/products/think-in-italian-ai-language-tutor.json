@@ -8,7 +8,7 @@
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-20",
+    "last_updated": "2026-02-24",
     "provenance": {
       "name": {
         "source": "toolify",
@@ -83,10 +83,10 @@
         "updated_at": "2026-02-16"
       },
       "keywords": {
-        "source": "toolify",
+        "source": "dedup-merge",
         "tier": 2,
         "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "updated_at": "2026-02-24"
       },
       "pricing": {
         "source": "toolify",
@@ -107,64 +107,76 @@
         "updated_at": "2026-02-20"
       },
       "use_cases": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "name_zh": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "description_zh": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "company.name_zh": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "company.description": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "company.employee_count_range": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "open_source": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "hiring.is_hiring": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "hiring.careers_url": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "modalities": {
         "source": "llm-batch-combined",
         "tier": 3,
         "confidence": 0.5,
         "updated_at": "2026-02-20"
+      },
+      "pricing.model": {
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
+      },
+      "pricing.has_free_tier": {
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       }
     }
   },
@@ -173,14 +185,19 @@
       "url": "https://www.toolify.ai/tool/think-in-italian-ai-language-tutor",
       "source_name": "toolify",
       "scraped_at": "2026-02-16"
+    },
+    {
+      "url": "https://www.thinkinitalian.com",
+      "source_name": "dedup-merge",
+      "scraped_at": "2026-02-24"
     }
   ],
   "company": {
     "name": "Think in Italian AI Language Tutor",
     "url": "https://www.thinkinitalian.com/?ref=affiliate@toolify.ai",
     "website": "https://www.thinkinitalian.com/?ref=affiliate@toolify.ai",
-    "name_zh": "意大利语思考AI导师",
-    "description": "AI language tutor for mastering Italian conversations with personalized lessons and instant feedback.",
+    "name_zh": "意大利语学习AI导师",
+    "description": "Online platform for learning Italian through audio courses, readings, and AI tutor interaction.",
     "employee_count_range": "1-10"
   },
   "icon_url": "https://cdn-images.toolify.ai/website-logos/20250410/1744258315_24717963_12435.webp",
@@ -200,7 +217,14 @@
     "Audio lessons",
     "Personalized learning",
     "Speech recognition",
-    "Conversational AI"
+    "Conversational AI",
+    "Audio courses",
+    "Online education",
+    "AI tutor",
+    "Grammar",
+    "Vocabulary",
+    "Pronunciation",
+    "Conversation practice"
   ],
   "pricing": {
     "model": "free-trial",
@@ -220,15 +244,16 @@
     "conversational-ai",
     "language-learning",
     "conversation-practice",
-    "tutoring"
+    "tutoring",
+    "audio-learning"
   ],
-  "name_zh": "意大利语思考AI导师",
-  "description_zh": "个性化意大利语学习平台，提供课程和即时反馈。",
+  "name_zh": "意大利语学习AI导师",
+  "description_zh": "通过音频课程和AI导师学习意大利语的在线平台。",
   "open_source": false,
   "hiring": {
     "is_hiring": false,
     "careers_url": "",
-    "last_checked": "2026-02-20"
+    "last_checked": "2026-02-24"
   },
   "modalities": [
     "text",

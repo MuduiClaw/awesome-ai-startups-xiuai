@@ -8,7 +8,7 @@
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-20",
+    "last_updated": "2026-02-24",
     "provenance": {
       "name": {
         "source": "aibot",
@@ -77,10 +77,10 @@
         "updated_at": "2026-02-16"
       },
       "tags": {
-        "source": "toolify",
+        "source": "dedup-merge",
         "tier": 2,
         "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "updated_at": "2026-02-24"
       },
       "sub_category": {
         "source": "toolify",
@@ -107,16 +107,16 @@
         "updated_at": "2026-02-16"
       },
       "keywords": {
-        "source": "toolify",
+        "source": "dedup-merge",
         "tier": 2,
         "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "updated_at": "2026-02-24"
       },
       "open_source": {
-        "source": "rule-based-enrichment",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-17"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "platforms": {
         "source": "rule-based-enrichment",
@@ -125,52 +125,52 @@
         "updated_at": "2026-02-17"
       },
       "target_audience": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "use_cases": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "company.name_zh": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "company.description": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "company.employee_count_range": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "api_available": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "hiring.is_hiring": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "hiring.careers_url": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "modalities": {
         "source": "llm-batch-combined",
@@ -185,10 +185,10 @@
         "updated_at": "2026-02-20"
       },
       "hiring.tech_stack": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       }
     }
   },
@@ -202,6 +202,11 @@
       "url": "https://www.toolify.ai/tool/mindspore-cn",
       "source_name": "toolify",
       "scraped_at": "2026-02-16"
+    },
+    {
+      "url": "https://www.mindspore.cn",
+      "source_name": "dedup-merge",
+      "scraped_at": "2026-02-24"
     }
   ],
   "name_zh": "昇思MindSpore",
@@ -211,7 +216,7 @@
     "url": "https://mindspore.cn",
     "website": "https://mindspore.cn",
     "name_zh": "华为",
-    "description": "Huawei's open-source AI deep learning framework.",
+    "description": "Huawei's open-source deep learning framework for edge, cloud, and enterprise applications.",
     "employee_count_range": "1001-5000"
   },
   "icon_url": "https://ai-bot.cn/wp-content/uploads/2023/04/mindspore-icon.png",
@@ -220,7 +225,8 @@
     "AI Developer Tools",
     "Open Source AI Models",
     "Large Language Models (LLMs)",
-    "AI Research Tool"
+    "AI Research Tool",
+    "AI开发者社区"
   ],
   "sub_category": "ai developer tools",
   "pricing": {
@@ -242,7 +248,22 @@
     "AI4S",
     "MindSpore Lite",
     "MindSpore AKG",
-    "ModelArts"
+    "ModelArts",
+    "昇思MindSpore AI框架",
+    "ai dev platform",
+    "developer community",
+    "AI开发者社区",
+    "MindSpore",
+    "AI",
+    "昇思",
+    "是由华为自研的一种适用于端边云场景的新型开源深度学习训练",
+    "推理框架",
+    "提供了友好的设计和高效的执行",
+    "旨在提升数据科学家和算法工程师的开发体验",
+    "并为",
+    "处理器提供原生支持",
+    "以及软硬件协同优化",
+    "other"
   ],
   "open_source": true,
   "platforms": [
@@ -253,7 +274,9 @@
     "students",
     "educators",
     "researchers",
-    "ai-engineers"
+    "ai-engineers",
+    "enterprises",
+    "data-scientists"
   ],
   "use_cases": [
     "online-learning",
@@ -261,7 +284,10 @@
     "study-assistance",
     "deep-learning",
     "model-training",
-    "ai-development"
+    "ai-development",
+    "code-generation",
+    "app-development",
+    "api-integration"
   ],
   "api_available": true,
   "hiring": {
@@ -270,9 +296,10 @@
     "tech_stack": [
       "C++",
       "Python",
-      "CUDA"
+      "CUDA",
+      "Huawei Ascend"
     ],
-    "last_checked": "2026-02-20"
+    "last_checked": "2026-02-24"
   },
   "modalities": [
     "code"

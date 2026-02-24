@@ -8,7 +8,7 @@
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-20",
+    "last_updated": "2026-02-24",
     "provenance": {
       "name": {
         "source": "aibot",
@@ -101,10 +101,10 @@
         "updated_at": "2026-02-16"
       },
       "keywords": {
-        "source": "toolify",
+        "source": "dedup-merge",
         "tier": 2,
         "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "updated_at": "2026-02-24"
       },
       "platforms": {
         "source": "rule-based-enrichment",
@@ -113,16 +113,16 @@
         "updated_at": "2026-02-17"
       },
       "target_audience": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "use_cases": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "hiring.careers_url": {
         "source": "ainav",
@@ -131,46 +131,46 @@
         "updated_at": "2026-02-18"
       },
       "name_zh": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "company.name_zh": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "company.description": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "company.employee_count_range": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "open_source": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "api_available": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "hiring.is_hiring": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "modalities": {
         "source": "llm-batch-combined",
@@ -207,6 +207,11 @@
       "url": "https://www.ainav.cn",
       "source_name": "ainav",
       "scraped_at": "2026-02-18"
+    },
+    {
+      "url": "http://www.cliclic.ai",
+      "source_name": "dedup-merge",
+      "scraped_at": "2026-02-24"
     }
   ],
   "description_zh": "创客贴推出的AI商品图生成和编辑工具",
@@ -214,8 +219,8 @@
     "name": "Cliclic AI",
     "url": "https://cliclic.ai",
     "website": "https://www.cliclic.ai",
-    "name_zh": "Cliclic AI",
-    "description": "AI product image generation and editing tool for e-commerce sellers and merchants.",
+    "name_zh": "Cliclic AI 商品背景图编辑器",
+    "description": "AI-powered product background image editor by Chuangke, serving global e-commerce sellers.",
     "employee_count_range": "11-50"
   },
   "icon_url": "https://ai-bot.cn/wp-content/uploads/2024/05/cliclic-ai-icon.png",
@@ -239,7 +244,17 @@
     "E-commerce photography",
     "Marketing visuals",
     "Scene creation",
-    "Custom sizes"
+    "Custom sizes",
+    "Cliclic AI 商品背景图编辑器",
+    "ai image design",
+    "image editing",
+    "AI图片处理",
+    "Cliclic",
+    "AI",
+    "创客贴创建的",
+    "商品背景图编辑器功能",
+    "上线国内与海外",
+    "other"
   ],
   "platforms": [
     "web"
@@ -249,7 +264,8 @@
     "content-creators",
     "marketers",
     "e-commerce",
-    "merchants"
+    "merchants",
+    "product-photographers"
   ],
   "use_cases": [
     "photo-editing",
@@ -257,7 +273,11 @@
     "product-image-generation",
     "ecommerce-content",
     "image-editing",
-    "marketing"
+    "marketing",
+    "image-generation",
+    "graphic-design",
+    "product-background-generation",
+    "e-commerce-content"
   ],
   "hiring": {
     "careers_url": "",
@@ -268,9 +288,9 @@
       "Python",
       "Alibaba Cloud"
     ],
-    "last_checked": "2026-02-20"
+    "last_checked": "2026-02-24"
   },
-  "name_zh": "Cliclic AI",
+  "name_zh": "Cliclic AI 商品背景图编辑器",
   "open_source": false,
   "api_available": false,
   "modalities": [

@@ -8,7 +8,7 @@
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-20",
+    "last_updated": "2026-02-24",
     "provenance": {
       "name": {
         "source": "aibot",
@@ -77,10 +77,10 @@
         "updated_at": "2026-02-16"
       },
       "tags": {
-        "source": "toolify",
+        "source": "dedup-merge",
         "tier": 2,
         "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "updated_at": "2026-02-24"
       },
       "company.website": {
         "source": "toolify",
@@ -101,10 +101,10 @@
         "updated_at": "2026-02-16"
       },
       "keywords": {
-        "source": "toolify",
+        "source": "dedup-merge",
         "tier": 2,
         "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "updated_at": "2026-02-24"
       },
       "platforms": {
         "source": "rule-based-enrichment",
@@ -113,64 +113,64 @@
         "updated_at": "2026-02-17"
       },
       "target_audience": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "use_cases": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "name_zh": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "company.name_zh": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "company.description": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "company.employee_count_range": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "open_source": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "api_available": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "hiring.is_hiring": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "hiring.careers_url": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "modalities": {
         "source": "llm-batch-combined",
@@ -185,10 +185,10 @@
         "updated_at": "2026-02-20"
       },
       "hiring.tech_stack": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       }
     }
   },
@@ -202,6 +202,11 @@
       "url": "https://www.toolify.ai/tool/adminer-pro",
       "source_name": "toolify",
       "scraped_at": "2026-02-16"
+    },
+    {
+      "url": "https://www.aminer.cn",
+      "source_name": "dedup-merge",
+      "scraped_at": "2026-02-24"
     }
   ],
   "description_zh": "智谱AI推出的大模型学术平台",
@@ -210,7 +215,7 @@
     "url": "https://aminer.cn",
     "website": "https://adminer.pro",
     "name_zh": "智谱清言",
-    "description": "AMiner is a Chinese AI-powered academic search and analysis platform by Zhipu AI.",
+    "description": "AMiner is Zhipu AI's comprehensive academic intelligence platform with 300M papers and 2B relationship graphs.",
     "employee_count_range": "51-200"
   },
   "icon_url": "https://ai-bot.cn/wp-content/uploads/2024/07/aminer-logo.png",
@@ -219,7 +224,8 @@
     "ai-search-engines",
     "AI Research Tool",
     "AI Advertising",
-    "AI Ad Generator"
+    "AI Ad Generator",
+    "AI搜索引擎"
   ],
   "pricing": {
     "model": "free-trial",
@@ -235,7 +241,26 @@
     "Info products",
     "Marketing",
     "AI",
-    "Product Sourcing"
+    "Product Sourcing",
+    "AMiner学术搜索",
+    "ai search retrieval",
+    "ai search",
+    "AI搜索引擎",
+    "AMiner",
+    "是一款由数据和知识驱动的",
+    "科研智能体平台",
+    "整合了超过",
+    "亿篇学术论文",
+    "亿个关系图谱",
+    "致力于帮助用户跨越信息鸿沟",
+    "轻松理解科学",
+    "无论您是追踪前沿动态",
+    "深度研读文献",
+    "还是进行课题调研",
+    "都能作为您的智能科研助手",
+    "让复杂的科学探索变得高效",
+    "精准且富有洞见",
+    "other"
   ],
   "platforms": [
     "web"
@@ -245,7 +270,8 @@
     "researchers",
     "enterprises",
     "academics",
-    "students"
+    "students",
+    "scientists"
   ],
   "use_cases": [
     "semantic-search",
@@ -254,21 +280,26 @@
     "academic-search",
     "research-discovery",
     "paper-analysis",
-    "citation-tracking"
+    "citation-tracking",
+    "academic-research",
+    "paper-discovery",
+    "knowledge-graph-exploration",
+    "research-analysis"
   ],
-  "name_zh": "AMiner",
+  "name_zh": "AMiner学术搜索",
   "open_source": false,
   "api_available": true,
   "hiring": {
     "is_hiring": true,
-    "careers_url": "https://www.zhipuai.cn/careers",
+    "careers_url": "",
     "tech_stack": [
       "Python",
       "React",
       "Java",
-      "Elasticsearch"
+      "Elasticsearch",
+      "Neo4j"
     ],
-    "last_checked": "2026-02-20"
+    "last_checked": "2026-02-24"
   },
   "modalities": [
     "text"

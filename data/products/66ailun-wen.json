@@ -8,7 +8,7 @@
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-20",
+    "last_updated": "2026-02-24",
     "provenance": {
       "name": {
         "source": "aibot",
@@ -77,16 +77,16 @@
         "updated_at": "2026-02-16"
       },
       "tags": {
-        "source": "aibot",
+        "source": "dedup-merge",
         "tier": 2,
         "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "updated_at": "2026-02-24"
       },
       "keywords": {
-        "source": "rule-based-enrichment",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-17"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "platforms": {
         "source": "rule-based-enrichment",
@@ -95,22 +95,22 @@
         "updated_at": "2026-02-17"
       },
       "target_audience": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "use_cases": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "sub_category": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "company.name_zh": {
         "source": "llm-batch-combined",
@@ -149,10 +149,10 @@
         "updated_at": "2026-02-20"
       },
       "hiring.careers_url": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "modalities": {
         "source": "llm-batch-combined",
@@ -179,6 +179,11 @@
       "url": "https://ai-bot.cn/favorites/ai-writing-tools/",
       "source_name": "aibot",
       "scraped_at": "2026-02-16"
+    },
+    {
+      "url": "https://aigc.66paper.cn/AI_A2E1C09",
+      "source_name": "dedup-merge",
+      "scraped_at": "2026-02-24"
     }
   ],
   "name_zh": "66AI论文",
@@ -192,7 +197,8 @@
   },
   "icon_url": "https://ai-bot.cn/wp-content/uploads/2024/08/66aipaper-website.png",
   "tags": [
-    "ai-writing-tools"
+    "ai-writing-tools",
+    "ai-content-detection-and-optimization-tools"
   ],
   "keywords": [
     "66AI论文",
@@ -204,7 +210,14 @@
     "低查重",
     "率的",
     "论文写作工具",
-    "other"
+    "other",
+    "66降AI率",
+    "ai security governance",
+    "ai content detection",
+    "ai content detection and optimization tools",
+    "智能降",
+    "率工具",
+    "适配知网最新检测"
   ],
   "platforms": [
     "web"
@@ -215,7 +228,10 @@
     "writers",
     "students",
     "researchers",
-    "academics"
+    "academics",
+    "security-professionals",
+    "enterprises",
+    "compliance-teams"
   ],
   "use_cases": [
     "content-writing",
@@ -223,9 +239,12 @@
     "text-generation",
     "academic-writing",
     "paper-generation",
-    "research-support"
+    "research-support",
+    "threat-detection",
+    "compliance-monitoring",
+    "data-protection"
   ],
-  "sub_category": "academic-tool",
+  "sub_category": "ai-content-detection",
   "open_source": false,
   "api_available": false,
   "hiring": {

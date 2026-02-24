@@ -8,7 +8,7 @@
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-20",
+    "last_updated": "2026-02-24",
     "provenance": {
       "name": {
         "source": "aibot",
@@ -71,16 +71,16 @@
         "updated_at": "2026-02-16"
       },
       "tags": {
-        "source": "aibot",
+        "source": "dedup-merge",
         "tier": 2,
         "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "updated_at": "2026-02-24"
       },
       "keywords": {
-        "source": "rule-based-enrichment",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-17"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "platforms": {
         "source": "rule-based-enrichment",
@@ -89,70 +89,70 @@
         "updated_at": "2026-02-17"
       },
       "target_audience": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "use_cases": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "name_zh": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "sub_category": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "company.name_zh": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "company.description": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "company.employee_count_range": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "open_source": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "api_available": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "hiring.is_hiring": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "hiring.careers_url": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "modalities": {
         "source": "llm-batch-combined",
@@ -161,10 +161,10 @@
         "updated_at": "2026-02-20"
       },
       "competitors": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "hiring.tech_stack": {
         "source": "llm-batch-combined",
@@ -179,6 +179,16 @@
       "url": "https://ai-bot.cn/favorites/ai-video-tools/",
       "source_name": "aibot",
       "scraped_at": "2026-02-16"
+    },
+    {
+      "url": "https://www.liblib.art/image-model?sourceid=004810",
+      "source_name": "dedup-merge",
+      "scraped_at": "2026-02-24"
+    },
+    {
+      "url": "https://www.liblib.art/workflows?sourceid=004810",
+      "source_name": "dedup-merge",
+      "scraped_at": "2026-02-24"
     }
   ],
   "description_zh": "一站式 AI 内容创作生成平台",
@@ -186,12 +196,14 @@
     "name": "LiblibAI",
     "url": "https://liblib.art",
     "name_zh": "LiblibAI",
-    "description": "Chinese AI content creation platform offering comprehensive tools for video and image generation.",
+    "description": "LiblibAI's e-commerce marketing solution for automated product photography and catalog generation.",
     "employee_count_range": "11-50"
   },
   "icon_url": "https://ai-bot.cn/wp-content/uploads/2025/10/liblib.art-logo.png",
   "tags": [
-    "ai-video-tools"
+    "ai-video-tools",
+    "ai-product-photo-generators",
+    "ai-image-enhancers"
   ],
   "keywords": [
     "LiblibAI",
@@ -200,7 +212,20 @@
     "AI",
     "一站式",
     "内容创作生成平台",
-    "other"
+    "other",
+    "LiblibAI电商营销",
+    "ai image design",
+    "image generation",
+    "ai product photo generators",
+    "LoRA",
+    "电商营销场景模型工具",
+    "丰富的",
+    "模型",
+    "LibLibAI高清修复",
+    "ai image enhancers",
+    "LibLibAI",
+    "product",
+    "高清修复工作流"
   ],
   "platforms": [
     "web"
@@ -210,17 +235,30 @@
     "video-editors",
     "marketers",
     "creators",
-    "content-producers"
+    "content-producers",
+    "designers",
+    "e-commerce-sellers",
+    "businesses",
+    "photographers",
+    "archivists"
   ],
   "use_cases": [
     "video-generation",
     "video-editing",
     "animation",
     "image-generation",
-    "content-creation"
+    "content-creation",
+    "image-editing",
+    "graphic-design",
+    "product-photo-generation",
+    "marketing-asset-creation",
+    "catalog-generation",
+    "photo-restoration",
+    "image-repair",
+    "old-photo-enhancement"
   ],
-  "name_zh": "LiblibAI",
-  "sub_category": "content-creation",
+  "name_zh": "LiblibAI电商营销",
+  "sub_category": "image-generation",
   "open_source": false,
   "api_available": true,
   "hiring": {
@@ -232,7 +270,7 @@
       "React",
       "Alibaba Cloud"
     ],
-    "last_checked": "2026-02-20"
+    "last_checked": "2026-02-24"
   },
   "modalities": [
     "video",
@@ -240,6 +278,7 @@
     "text"
   ],
   "competitors": [
-    "descript"
+    "descript",
+    "upscayl"
   ]
 }

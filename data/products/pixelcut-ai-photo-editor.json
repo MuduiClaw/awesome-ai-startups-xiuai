@@ -8,7 +8,7 @@
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-20",
+    "last_updated": "2026-02-24",
     "provenance": {
       "name": {
         "source": "app_store",
@@ -71,10 +71,10 @@
         "updated_at": "2026-02-16"
       },
       "tags": {
-        "source": "toolify",
+        "source": "dedup-merge",
         "tier": 2,
         "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "updated_at": "2026-02-24"
       },
       "supported_languages": {
         "source": "app_store",
@@ -131,76 +131,76 @@
         "updated_at": "2026-02-16"
       },
       "keywords": {
-        "source": "toolify",
+        "source": "dedup-merge",
         "tier": 2,
         "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "updated_at": "2026-02-24"
       },
       "target_audience": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "use_cases": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "name_zh": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "description_zh": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "company.name_zh": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "company.description": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "company.employee_count_range": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "open_source": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "api_available": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "hiring.is_hiring": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "hiring.careers_url": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "modalities": {
         "source": "llm-batch-combined",
@@ -232,15 +232,20 @@
       "url": "https://www.toolify.ai/tool/pixelart-ai-photo-editor",
       "source_name": "toolify",
       "scraped_at": "2026-02-16"
+    },
+    {
+      "url": "https://www.pixelcut.ai",
+      "source_name": "dedup-merge",
+      "scraped_at": "2026-02-24"
     }
   ],
   "company": {
     "name": "Pixelcut Inc.",
     "url": "https://pixelcut.ai",
     "website": "https://pixelcut.ai",
-    "name_zh": "Pixelcut Inc.",
-    "description": "Popular AI photo editor with 70M+ users offering background removal and enhancement tools.",
-    "employee_count_range": "51-200"
+    "name_zh": "Pixelcut.ai",
+    "description": "AI tool for removing and replacing product image backgrounds.",
+    "employee_count_range": "1-10"
   },
   "icon_url": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/a1/35/33/a1353355-3435-6d40-4739-57fd3df6f10f/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
   "tags": [
@@ -249,7 +254,11 @@
     "AI Art Generator",
     "AI Writing Assistants",
     "AI Photo Editor",
-    "Object Remover AI"
+    "Object Remover AI",
+    "ai-image-background-removers",
+    "AI Image Upscaler",
+    "AI Image Generator",
+    "AI Background Generator"
   ],
   "supported_languages": [
     "NL",
@@ -294,36 +303,50 @@
     "Batch editing",
     "E-commerce",
     "Social media",
-    "PNG maker"
+    "PNG maker",
+    "AI photo editor",
+    "Background remover",
+    "Image upscaler",
+    "Magic eraser",
+    "Product photography",
+    "Template design",
+    "AI Image Generation",
+    "Virtual Studio",
+    "AI Background Generator",
+    "AI Logo Generator",
+    "AI Mockup Generator"
   ],
   "target_audience": [
     "designers",
     "content-creators",
     "marketers",
     "photographers",
-    "social-media-managers"
+    "social-media-managers",
+    "ecommerce-sellers",
+    "product-photographers"
   ],
   "use_cases": [
     "photo-editing",
     "image-manipulation",
     "background-removal",
     "image-editing",
-    "content-creation"
+    "content-creation",
+    "product-photography"
   ],
-  "name_zh": "Pixelcut AI图片编辑器",
-  "description_zh": "拥有7000万用户的AI图像编辑平台，支持背景移除和魔术擦除。",
+  "name_zh": "Pixelcut.ai",
+  "description_zh": "AI产品背景移除和替换",
   "open_source": false,
   "api_available": false,
   "hiring": {
-    "is_hiring": true,
-    "careers_url": "https://pixelcut.com/careers",
+    "is_hiring": false,
+    "careers_url": "",
     "tech_stack": [
       "React",
       "Node.js",
       "TensorFlow",
       "Mobile SDK"
     ],
-    "last_checked": "2026-02-20"
+    "last_checked": "2026-02-24"
   },
   "modalities": [
     "image"

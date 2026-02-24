@@ -8,7 +8,7 @@
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-20",
+    "last_updated": "2026-02-24",
     "provenance": {
       "name": {
         "source": "aibot",
@@ -77,10 +77,10 @@
         "updated_at": "2026-02-16"
       },
       "tags": {
-        "source": "toolify",
+        "source": "dedup-merge",
         "tier": 2,
         "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "updated_at": "2026-02-24"
       },
       "company.website": {
         "source": "toolify",
@@ -101,10 +101,10 @@
         "updated_at": "2026-02-16"
       },
       "keywords": {
-        "source": "toolify",
+        "source": "dedup-merge",
         "tier": 2,
         "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "updated_at": "2026-02-24"
       },
       "platforms": {
         "source": "llm-batch-combined",
@@ -113,64 +113,64 @@
         "updated_at": "2026-02-20"
       },
       "target_audience": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "use_cases": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "name_zh": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "company.name_zh": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "company.description": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "company.employee_count_range": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "open_source": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "api_available": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "hiring.is_hiring": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "hiring.careers_url": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "modalities": {
         "source": "llm-batch-combined",
@@ -196,6 +196,11 @@
       "url": "https://www.toolify.ai/tool/pebblely",
       "source_name": "toolify",
       "scraped_at": "2026-02-16"
+    },
+    {
+      "url": "https://fashion.pebblely.com",
+      "source_name": "dedup-merge",
+      "scraped_at": "2026-02-24"
     }
   ],
   "description_zh": "AI产品图精美背景添加",
@@ -203,8 +208,8 @@
     "name": "Pebblely",
     "url": "https://pebblely.com",
     "website": "https://pebblely.com",
-    "name_zh": "鹅卵石",
-    "description": "Pebblely provides AI-powered product photo enhancement with background generation and removal.",
+    "name_zh": "鹅卵石时尚",
+    "description": "Pebblely Fashion generates realistic model photos from flatlay product images using AI technology.",
     "employee_count_range": "1-10"
   },
   "icon_url": "https://ai-bot.cn/wp-content/uploads/2023/03/pebblely-icon.png",
@@ -214,7 +219,9 @@
     "AI Product Photography",
     "AI Background Generator",
     "AI Background Remover",
-    "AI Image Generator"
+    "AI Image Generator",
+    "AI Photography",
+    "AI API"
   ],
   "pricing": {
     "model": "freemium",
@@ -227,7 +234,12 @@
     "Image editing",
     "Marketing assets",
     "Product photos",
-    "AI design tool"
+    "AI design tool",
+    "Product photo generation",
+    "Flatlay to model",
+    "E-commerce photography",
+    "AI fashion",
+    "Model photo generation"
   ],
   "platforms": [
     "web",
@@ -239,16 +251,22 @@
     "marketers",
     "ecommerce",
     "product-teams",
-    "product-photographers"
+    "product-photographers",
+    "photographers",
+    "fashion-brands"
   ],
   "use_cases": [
     "background-removal",
     "image-editing",
     "product-photography",
     "background-generation",
-    "image-enhancement"
+    "image-enhancement",
+    "api-integration",
+    "model-access",
+    "model-generation",
+    "fashion-imaging"
   ],
-  "name_zh": "鹅卵石",
+  "name_zh": "鹅卵石时尚",
   "open_source": false,
   "api_available": true,
   "hiring": {
@@ -260,7 +278,7 @@
       "React",
       "AWS"
     ],
-    "last_checked": "2026-02-20"
+    "last_checked": "2026-02-24"
   },
   "modalities": [
     "image"

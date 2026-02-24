@@ -8,7 +8,7 @@
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-20",
+    "last_updated": "2026-02-24",
     "provenance": {
       "name": {
         "source": "ainav",
@@ -83,16 +83,16 @@
         "updated_at": "2026-02-16"
       },
       "tags": {
-        "source": "ainav",
+        "source": "dedup-merge",
         "tier": 2,
         "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "updated_at": "2026-02-24"
       },
       "keywords": {
-        "source": "rule-based-enrichment",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-17"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "platforms": {
         "source": "llm-batch-combined",
@@ -101,64 +101,64 @@
         "updated_at": "2026-02-20"
       },
       "target_audience": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "use_cases": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "company.name_zh": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "company.description": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "company.employee_count_range": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "open_source": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "api_available": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "hiring.is_hiring": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "hiring.careers_url": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "modalities": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "competitors": {
         "source": "llm-batch-combined",
@@ -167,10 +167,16 @@
         "updated_at": "2026-02-20"
       },
       "hiring.tech_stack": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
+      },
+      "company.website": {
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       }
     }
   },
@@ -179,6 +185,11 @@
       "url": "https://www.ainav.cn",
       "source_name": "ainav",
       "scraped_at": "2026-02-16"
+    },
+    {
+      "url": "https://cloud.siliconflow.cn/i/SjhsJgfH",
+      "source_name": "dedup-merge",
+      "scraped_at": "2026-02-24"
     }
   ],
   "name_zh": "SiliconCloud 硅基流动",
@@ -186,14 +197,21 @@
   "company": {
     "name": "SiliconCloud 硅基流动",
     "url": "https://cloud.siliconflow.cn",
-    "name_zh": "硅基流动",
-    "description": "Chinese AI infrastructure platform providing API access to multiple open-source LLMs.",
-    "employee_count_range": "11-50"
+    "name_zh": "硅基流",
+    "description": "Chinese generative AI infrastructure and inference platform.",
+    "employee_count_range": "11-50",
+    "website": "https://www.siliconflow.com"
   },
   "icon_url": "https://www.ainav.cn/wp-content/uploads/2024/06/95c61-cloud.siliconflow.cn.png",
   "sub_category": "developer-community",
   "tags": [
-    "AI开发者社区"
+    "AI开发者社区",
+    "ai-frameworks",
+    "AI inference",
+    "ai inference",
+    "AI Developer Tools",
+    "AI API",
+    "AI Models"
   ],
   "keywords": [
     "SiliconCloud 硅基流动",
@@ -208,7 +226,17 @@
     "提供了多种顶尖开源大模型的",
     "服务",
     "邀请码",
-    "other"
+    "other",
+    "SiliconFlow",
+    "ai chatbot agent",
+    "ai developer tools",
+    "ai frameworks",
+    "AI inference",
+    "AI API",
+    "AI Models",
+    "AI",
+    "生成式",
+    "计算基础设施平台"
   ],
   "platforms": [
     "web",
@@ -218,7 +246,8 @@
     "developers",
     "enterprises",
     "data-scientists",
-    "ai-researchers"
+    "ai-researchers",
+    "general-users"
   ],
   "use_cases": [
     "code-generation",
@@ -227,7 +256,12 @@
     "api-access",
     "model-integration",
     "llm-services",
-    "ai-development"
+    "ai-development",
+    "AI inference",
+    "ai-infrastructure",
+    "model-deployment",
+    "inference-api",
+    "model-hosting"
   ],
   "open_source": false,
   "api_available": true,
@@ -237,13 +271,16 @@
     "tech_stack": [
       "Python",
       "API",
-      "LLM Infrastructure"
+      "LLM Infrastructure",
+      "CUDA",
+      "Docker"
     ],
-    "last_checked": "2026-02-20"
+    "last_checked": "2026-02-24"
   },
   "modalities": [
     "text",
-    "multimodal"
+    "multimodal",
+    "image"
   ],
   "competitors": [
     "together-ai"

@@ -8,7 +8,7 @@
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-20",
+    "last_updated": "2026-02-24",
     "provenance": {
       "name": {
         "source": "aibot",
@@ -83,16 +83,16 @@
         "updated_at": "2026-02-16"
       },
       "tags": {
-        "source": "aibot",
+        "source": "dedup-merge",
         "tier": 2,
         "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "updated_at": "2026-02-24"
       },
       "keywords": {
-        "source": "rule-based-enrichment",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-17"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "platforms": {
         "source": "rule-based-enrichment",
@@ -101,58 +101,58 @@
         "updated_at": "2026-02-17"
       },
       "target_audience": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "use_cases": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "company.name_zh": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "company.description": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "company.employee_count_range": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "open_source": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "api_available": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "hiring.is_hiring": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "hiring.careers_url": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "modalities": {
         "source": "llm-batch-combined",
@@ -161,10 +161,10 @@
         "updated_at": "2026-02-20"
       },
       "hiring.tech_stack": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       }
     }
   },
@@ -173,6 +173,16 @@
       "url": "https://ai-bot.cn/favorites/ai-search-engines/",
       "source_name": "aibot",
       "scraped_at": "2026-02-16"
+    },
+    {
+      "url": "https://n.cn",
+      "source_name": "dedup-merge",
+      "scraped_at": "2026-02-24"
+    },
+    {
+      "url": "https://bot.n.cn",
+      "source_name": "dedup-merge",
+      "scraped_at": "2026-02-24"
     }
   ],
   "name_zh": "纳米AI",
@@ -180,14 +190,16 @@
   "company": {
     "name": "纳米AI",
     "url": "https://n.cn",
-    "name_zh": "纳米AI",
-    "description": "Next-generation AI search platform by 360 offering advanced search and information retrieval capabilities.",
+    "name_zh": "纳米AI搜索",
+    "description": "Generative AI search product from 360 Group providing intelligent search and content synthesis.",
     "employee_count_range": "51-200"
   },
   "icon_url": "https://ai-bot.cn/wp-content/uploads/2025/09/n.AI-logo.png",
   "sub_category": "ai-search",
   "tags": [
-    "ai-search-engines"
+    "ai-search-engines",
+    "AI搜索引擎",
+    "AI对话聊天"
   ],
   "keywords": [
     "纳米AI",
@@ -197,7 +209,20 @@
     "AI",
     "推出的新一代超级",
     "搜索工具",
-    "other"
+    "other",
+    "纳米AI搜索",
+    "AI搜索引擎",
+    "集团推出的名为",
+    "纳米搜索",
+    "的全新生成式",
+    "搜索产品",
+    "纳米AI助手",
+    "ai chatbot agent",
+    "chatbot",
+    "AI对话聊天",
+    "纳米",
+    "助手是一个一站体验国内领先大模型的",
+    "平台"
   ],
   "platforms": [
     "web"
@@ -207,27 +232,41 @@
     "researchers",
     "enterprises",
     "chinese-users",
-    "searchers"
+    "searchers",
+    "general-users",
+    "ai-enthusiasts"
   ],
   "use_cases": [
     "semantic-search",
     "information-retrieval",
     "data-extraction",
     "ai-search",
-    "content-discovery"
+    "content-discovery",
+    "generative-search",
+    "ai-chat",
+    "virtual-assistant",
+    "task-automation",
+    "ai-chatting",
+    "model-comparison",
+    "ai-experimentation"
   ],
   "open_source": false,
   "api_available": false,
   "hiring": {
     "is_hiring": true,
-    "careers_url": "https://360.cn/careers",
+    "careers_url": "",
     "tech_stack": [
       "Python",
       "C++",
       "TensorFlow",
-      "Ray"
+      "Ray",
+      "CUDA",
+      "Kubernetes",
+      "FastAPI",
+      "React",
+      "Docker"
     ],
-    "last_checked": "2026-02-20"
+    "last_checked": "2026-02-24"
   },
   "modalities": [
     "text"

@@ -8,7 +8,7 @@
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-20",
+    "last_updated": "2026-02-24",
     "provenance": {
       "name": {
         "source": "app_store",
@@ -71,10 +71,10 @@
         "updated_at": "2026-02-16"
       },
       "tags": {
-        "source": "toolify",
+        "source": "dedup-merge",
         "tier": 2,
         "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "updated_at": "2026-02-24"
       },
       "supported_languages": {
         "source": "app_store",
@@ -137,22 +137,22 @@
         "updated_at": "2026-02-16"
       },
       "keywords": {
-        "source": "toolify",
+        "source": "dedup-merge",
         "tier": 2,
         "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "updated_at": "2026-02-24"
       },
       "target_audience": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "use_cases": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "hiring.careers_url": {
         "source": "ainav",
@@ -161,46 +161,46 @@
         "updated_at": "2026-02-18"
       },
       "name_zh": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "company.name_zh": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "company.description": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "company.employee_count_range": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "open_source": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "api_available": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "hiring.is_hiring": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "modalities": {
         "source": "llm-batch-combined",
@@ -215,10 +215,10 @@
         "updated_at": "2026-02-20"
       },
       "hiring.tech_stack": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       }
     }
   },
@@ -242,14 +242,19 @@
       "url": "https://www.toolify.ai/tool/perplexity-ai",
       "source_name": "toolify",
       "scraped_at": "2026-02-16"
+    },
+    {
+      "url": "https://comet.perplexity.ai",
+      "source_name": "dedup-merge",
+      "scraped_at": "2026-02-24"
     }
   ],
   "company": {
     "name": "Perplexity AI, Inc.",
     "url": "https://www.perplexity.ai/iphone",
     "website": "https://www.perplexity.ai/iphone",
-    "name_zh": "Perplexity AI公司",
-    "description": "Perplexity is an AI search engine providing accurate, cited answers powered by leading AI models from OpenAI and Anthropic.",
+    "name_zh": "Perplexity Comet",
+    "description": "Perplexity Comet is an AI-enhanced browser designed for research, summarization, and productive web exploration.",
     "employee_count_range": "11-50"
   },
   "icon_url": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/8e/9d/8b/8e9d8bb3-985a-7cbe-ae26-b4f9e665d3eb/AppIcon-0-0-1x_U007epad-0-0-0-1-0-0-85-220-0.png/512x512bb.jpg",
@@ -261,7 +266,10 @@
     "AI Answer",
     "AI Copilot",
     "Large Language Models (LLMs)",
-    "AI Research Tool"
+    "AI Research Tool",
+    "AI Browsers",
+    "AI Assistant",
+    "AI Summarizer"
   ],
   "supported_languages": [
     "SQ",
@@ -335,7 +343,18 @@
     "Question answering",
     "Large language models",
     "Twitter data analysis",
-    "SQL translation"
+    "SQL translation",
+    "AI Browser",
+    "Productivity Tool",
+    "Smart Browser",
+    "AI Assistant",
+    "Research Tool",
+    "Information Management",
+    "Web Browser",
+    "Perplexity AI",
+    "Task Automation",
+    "Digital Organization",
+    "Curiosity"
   ],
   "target_audience": [
     "translators",
@@ -343,7 +362,10 @@
     "global-teams",
     "students",
     "researchers",
-    "professionals"
+    "professionals",
+    "designers",
+    "marketers",
+    "knowledge-workers"
   ],
   "use_cases": [
     "text-translation",
@@ -351,7 +373,11 @@
     "localization",
     "information-search",
     "research",
-    "question-answering"
+    "question-answering",
+    "text-summarization",
+    "document-analysis",
+    "web-browsing",
+    "productivity"
   ],
   "hiring": {
     "careers_url": "",
@@ -360,13 +386,15 @@
       "React",
       "Python",
       "OpenAI API",
-      "Anthropic API"
+      "Anthropic API",
+      "Chromium",
+      "Node.js"
     ],
-    "last_checked": "2026-02-20"
+    "last_checked": "2026-02-24"
   },
-  "name_zh": "Perplexity - AI搜索与聊天",
+  "name_zh": "Perplexity Comet",
   "open_source": false,
-  "api_available": true,
+  "api_available": false,
   "modalities": [
     "text"
   ],

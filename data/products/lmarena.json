@@ -8,7 +8,7 @@
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-20",
+    "last_updated": "2026-02-24",
     "provenance": {
       "name": {
         "source": "aibot",
@@ -71,10 +71,10 @@
         "updated_at": "2026-02-16"
       },
       "tags": {
-        "source": "toolify",
+        "source": "dedup-merge",
         "tier": 2,
         "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "updated_at": "2026-02-24"
       },
       "sub_category": {
         "source": "toolify",
@@ -101,10 +101,10 @@
         "updated_at": "2026-02-16"
       },
       "keywords": {
-        "source": "toolify",
+        "source": "dedup-merge",
         "tier": 2,
         "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "updated_at": "2026-02-24"
       },
       "platforms": {
         "source": "rule-based-enrichment",
@@ -113,64 +113,64 @@
         "updated_at": "2026-02-17"
       },
       "target_audience": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "use_cases": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "name_zh": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "company.name_zh": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "company.description": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "company.employee_count_range": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "open_source": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "api_available": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "hiring.is_hiring": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "hiring.careers_url": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "modalities": {
         "source": "llm-batch-combined",
@@ -179,10 +179,10 @@
         "updated_at": "2026-02-20"
       },
       "competitors": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "hiring.tech_stack": {
         "source": "llm-batch-combined",
@@ -207,6 +207,11 @@
       "url": "https://www.toolify.ai/tool/marenda",
       "source_name": "toolify",
       "scraped_at": "2026-02-16"
+    },
+    {
+      "url": "https://beta.lmarena.ai",
+      "source_name": "dedup-merge",
+      "scraped_at": "2026-02-24"
     }
   ],
   "description_zh": "AI模型评估平台",
@@ -214,9 +219,9 @@
     "name": "LMArena",
     "url": "https://lmarena.ai",
     "website": "https://llmarena.ai",
-    "name_zh": "LMArena",
-    "description": "AI model benchmarking and evaluation platform",
-    "employee_count_range": "1-10"
+    "name_zh": "lmarena.ai",
+    "description": "AI model evaluation platform developed by UC Berkeley for comparative LLM assessment",
+    "employee_count_range": "11-50"
   },
   "icon_url": "https://ai-bot.cn/wp-content/uploads/2025/07/LMArena-website.png",
   "tags": [
@@ -227,7 +232,8 @@
     "AI Cooking Assistant",
     "AI Shopping Assistant",
     "AI Assistant",
-    "AI Recipe"
+    "AI Recipe",
+    "AI模型评测"
   ],
   "sub_category": "ai models",
   "pricing": {
@@ -254,7 +260,19 @@
     "Food waste reduction",
     "AI-driven",
     "Dine-at-home",
-    "Recipe inspiration"
+    "Recipe inspiration",
+    "lmarena.ai",
+    "ai chatbot agent",
+    "AI模型评测",
+    "lmarena",
+    "ai",
+    "SkyLab",
+    "LMSYS",
+    "评测竞技场排行榜",
+    "是一个由加州大学伯克利分校",
+    "的研究人员开发的评测平台",
+    "用于通过人类偏好评估人工智能",
+    "other"
   ],
   "platforms": [
     "web"
@@ -264,7 +282,9 @@
     "content-creators",
     "podcasters",
     "researchers",
-    "developers"
+    "developers",
+    "enterprises",
+    "general-users"
   ],
   "use_cases": [
     "music-generation",
@@ -272,11 +292,17 @@
     "voice-synthesis",
     "model-benchmarking",
     "model-comparison",
-    "evaluation"
+    "evaluation",
+    "ai-chat",
+    "virtual-assistant",
+    "task-automation",
+    "model-evaluation",
+    "benchmarking",
+    "ai-comparison"
   ],
-  "name_zh": "LMArena",
+  "name_zh": "lmarena.ai",
   "open_source": false,
-  "api_available": false,
+  "api_available": true,
   "hiring": {
     "is_hiring": false,
     "careers_url": "",
@@ -284,12 +310,13 @@
       "Python",
       "React"
     ],
-    "last_checked": "2026-02-20"
+    "last_checked": "2026-02-24"
   },
   "modalities": [
     "text"
   ],
   "competitors": [
-    "opencompass"
+    "opencompass",
+    "chatbot-arena"
   ]
 }

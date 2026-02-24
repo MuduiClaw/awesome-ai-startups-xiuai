@@ -8,7 +8,7 @@
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-20",
+    "last_updated": "2026-02-24",
     "provenance": {
       "name": {
         "source": "ainav",
@@ -83,16 +83,16 @@
         "updated_at": "2026-02-16"
       },
       "tags": {
-        "source": "aibot",
+        "source": "dedup-merge",
         "tier": 2,
         "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "updated_at": "2026-02-24"
       },
       "keywords": {
-        "source": "rule-based-enrichment",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-17"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "platforms": {
         "source": "llm-batch-combined",
@@ -101,16 +101,16 @@
         "updated_at": "2026-02-20"
       },
       "target_audience": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "use_cases": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "hiring.careers_url": {
         "source": "ainav",
@@ -119,58 +119,76 @@
         "updated_at": "2026-02-18"
       },
       "company.name_zh": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "company.description": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "company.employee_count_range": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "open_source": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "api_available": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "hiring.is_hiring": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "modalities": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "competitors": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "hiring.tech_stack": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
+      },
+      "company.website": {
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
+      },
+      "pricing.model": {
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
+      },
+      "pricing.has_free_tier": {
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       }
     }
   },
@@ -184,6 +202,16 @@
       "url": "https://ai-bot.cn/favorites/ai-chatbots/",
       "source_name": "aibot",
       "scraped_at": "2026-02-16"
+    },
+    {
+      "url": "https://www.minimaxi.com/audio",
+      "source_name": "dedup-merge",
+      "scraped_at": "2026-02-24"
+    },
+    {
+      "url": "https://www.minimaxi.com/",
+      "source_name": "dedup-merge",
+      "scraped_at": "2026-02-24"
     }
   ],
   "name_zh": "MiniMax AI智能助手",
@@ -193,13 +221,21 @@
     "url": "https://chat.minimaxi.com",
     "name_zh": "MiniMax",
     "description": "MiniMax is a Chinese AI company developing multimodal foundation models and AI services.",
-    "employee_count_range": "11-50"
+    "employee_count_range": "11-50",
+    "website": "https://www.minimaxi.com"
   },
   "icon_url": "https://www.ainav.cn/wp-content/uploads/2025/06/1749801414-a8aeeba889701183f484b62151b7c1af_favicon_v.png",
   "sub_category": "chatbot",
   "tags": [
     "AI对话聊天",
-    "ai-chatbots"
+    "ai-chatbots",
+    "AI音频工具",
+    "AI开发者社区",
+    "Large Language Models (LLMs)",
+    "AI API",
+    "AI Video Generator",
+    "AI Voice Generator",
+    "AI Image Generator"
   ],
   "keywords": [
     "MiniMax AI智能助手",
@@ -211,7 +247,31 @@
     "AI",
     "旗下的",
     "智能聊天助手",
-    "other"
+    "other",
+    "MiniMax 语音",
+    "ai audio music",
+    "audio speech",
+    "AI音频工具",
+    "Minimax",
+    "Audio",
+    "是一个",
+    "音频工具",
+    "可以将文字转换为富有情感的语音",
+    "或根据文本提示创作音乐",
+    "它还提供自定义音色设计",
+    "人声提取和多种模型参数调节功能",
+    "满足多样化的音频创作需求",
+    "Artificial Intelligence",
+    "Large Language Model",
+    "Multimodal AI",
+    "API",
+    "Text Generation",
+    "Video Generation",
+    "Speech Generation",
+    "Music Generation",
+    "Image Generation",
+    "Natural Language Processing",
+    "Machine Learning"
   ],
   "platforms": [
     "web",
@@ -221,7 +281,11 @@
     "developers",
     "enterprises",
     "general-users",
-    "users"
+    "users",
+    "musicians",
+    "content-creators",
+    "podcasters",
+    "data-scientists"
   ],
   "use_cases": [
     "ai-chat",
@@ -229,7 +293,16 @@
     "task-automation",
     "conversational-ai",
     "text-generation",
-    "content-creation"
+    "content-creation",
+    "music-generation",
+    "audio-editing",
+    "voice-synthesis",
+    "audio-processing",
+    "api-integration",
+    "model-access",
+    "api-access",
+    "model-deployment",
+    "ai-integration"
   ],
   "hiring": {
     "careers_url": "",
@@ -237,18 +310,28 @@
     "tech_stack": [
       "Python",
       "PyTorch",
-      "CUDA"
+      "CUDA",
+      "Cloud Infrastructure"
     ],
-    "last_checked": "2026-02-20"
+    "last_checked": "2026-02-24"
   },
   "open_source": false,
   "api_available": true,
   "modalities": [
     "text",
-    "multimodal"
+    "multimodal",
+    "audio",
+    "image",
+    "video"
   ],
   "competitors": [
     "chatgpt",
-    "gemini"
-  ]
+    "gemini",
+    "elevenlabs-ai-voice-generator",
+    "soundraw"
+  ],
+  "pricing": {
+    "model": "enterprise",
+    "has_free_tier": false
+  }
 }

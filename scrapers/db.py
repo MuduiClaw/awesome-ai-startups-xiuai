@@ -349,8 +349,11 @@ class ProductDB:
     def get_dedup_index(self) -> dict[str, Any]:
         """Load deduplication data: domains, names, name_zh for all products.
 
+        Uses root-domain extraction and skips store/aggregator domains
+        to avoid false-positive matches on shared mega-domains.
+
         Returns a dict with keys:
-            domains: dict[str, str]  (domain -> slug)
+            domains: dict[str, str]  (root domain -> slug)
             names: dict[str, str]    (lowercase name -> slug)
             names_zh: dict[str, str] (name_zh -> slug)
         """
@@ -358,7 +361,8 @@ class ProductDB:
             "SELECT slug, name, name_zh, product_url, company_website " "FROM products"
         ).fetchall()
 
-        from scrapers.utils import extract_domain
+        from scrapers.utils import extract_domain, extract_root_domain
+        from scrapers.utils.domains import is_skip_domain
 
         domains: dict[str, str] = {}
         names: dict[str, str] = {}
@@ -376,13 +380,17 @@ class ProductDB:
             if name_zh:
                 names_zh[name_zh] = slug
             if product_url:
-                domain = extract_domain(product_url)
-                if domain:
-                    domains[domain] = slug
+                orig = extract_domain(product_url)
+                if orig and not is_skip_domain(orig):
+                    root = extract_root_domain(product_url)
+                    if root:
+                        domains[root] = slug
             if company_website:
-                domain = extract_domain(company_website)
-                if domain:
-                    domains[domain] = slug
+                orig = extract_domain(company_website)
+                if orig and not is_skip_domain(orig):
+                    root = extract_root_domain(company_website)
+                    if root:
+                        domains[root] = slug
 
         return {"domains": domains, "names": names, "names_zh": names_zh}
 

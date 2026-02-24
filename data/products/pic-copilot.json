@@ -8,7 +8,7 @@
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-20",
+    "last_updated": "2026-02-24",
     "provenance": {
       "name": {
         "source": "ainav",
@@ -77,10 +77,10 @@
         "updated_at": "2026-02-16"
       },
       "tags": {
-        "source": "toolify",
+        "source": "dedup-merge",
         "tier": 2,
         "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "updated_at": "2026-02-24"
       },
       "company.website": {
         "source": "toolify",
@@ -101,10 +101,10 @@
         "updated_at": "2026-02-16"
       },
       "keywords": {
-        "source": "toolify",
+        "source": "dedup-merge",
         "tier": 2,
         "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "updated_at": "2026-02-24"
       },
       "platforms": {
         "source": "llm-batch-combined",
@@ -113,16 +113,16 @@
         "updated_at": "2026-02-20"
       },
       "target_audience": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "use_cases": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "hiring.careers_url": {
         "source": "ainav",
@@ -131,46 +131,46 @@
         "updated_at": "2026-02-18"
       },
       "name_zh": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "company.name_zh": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "company.description": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "company.employee_count_range": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "open_source": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "api_available": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "hiring.is_hiring": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "modalities": {
         "source": "llm-batch-combined",
@@ -212,6 +212,11 @@
       "url": "https://www.toolify.ai/tool/pic-copilot",
       "source_name": "toolify",
       "scraped_at": "2026-02-16"
+    },
+    {
+      "url": "https://www.piccopilot.com/create",
+      "source_name": "dedup-merge",
+      "scraped_at": "2026-02-24"
     }
   ],
   "description_zh": "Pic Copilot围绕以“AI营销图生成”为主要功能，贯彻“够精准”，“够专业”，“灵活高效”三大产品宗旨。主创团队深耕电商营销视觉领域，依托海量商品信息数据库，训练出了能凸显商品独特竞争力的图像模型，致力于助力跨境和海外商家电商销量增长。",
@@ -220,7 +225,7 @@
     "url": "https://piccopilot.com",
     "website": "https://build.withpi.ai",
     "name_zh": "Pic Copilot",
-    "description": "AI marketing image generation platform for ecommerce sales growth.",
+    "description": "AI background removal tool with batch processing capabilities.",
     "employee_count_range": "11-50"
   },
   "icon_url": "https://www.ainav.cn/wp-content/uploads/2024/04/c0662-www.piccopilot.com.png",
@@ -235,7 +240,8 @@
     "AI Models",
     "AI Background Generator",
     "AI Background Remover",
-    "Fashion AI"
+    "Fashion AI",
+    "ai-image-background-removers"
   ],
   "pricing": {
     "model": "freemium",
@@ -268,7 +274,15 @@
     "Marketing",
     "AI Dubbing",
     "AI Avatars",
-    "Image Upscaler"
+    "Image Upscaler",
+    "Pic Copilot AI抠图",
+    "ai image design",
+    "ai image background removers",
+    "Copilot",
+    "推出的",
+    "抠图工具",
+    "支持批量抠图",
+    "other"
   ],
   "platforms": [
     "web",
@@ -280,7 +294,8 @@
     "content-creators",
     "marketers",
     "ecommerce-sellers",
-    "cross-border-merchants"
+    "cross-border-merchants",
+    "photographers"
   ],
   "use_cases": [
     "background-removal",
@@ -289,7 +304,10 @@
     "autonomous-agents",
     "marketing-image-generation",
     "product-photography",
-    "sales-optimization"
+    "sales-optimization",
+    "image-generation",
+    "graphic-design",
+    "batch-processing"
   ],
   "hiring": {
     "careers_url": "",
@@ -301,9 +319,9 @@
       "Alibaba-Cloud",
       "PostgreSQL"
     ],
-    "last_checked": "2026-02-20"
+    "last_checked": "2026-02-24"
   },
-  "name_zh": "Pic Copilot",
+  "name_zh": "Pic Copilot AI抠图",
   "open_source": false,
   "api_available": true,
   "modalities": [

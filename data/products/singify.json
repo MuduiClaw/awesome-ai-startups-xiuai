@@ -8,7 +8,7 @@
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-20",
+    "last_updated": "2026-02-24",
     "provenance": {
       "name": {
         "source": "theresanaiforthat",
@@ -71,16 +71,16 @@
         "updated_at": "2026-02-16"
       },
       "tags": {
-        "source": "toolify",
+        "source": "dedup-merge",
         "tier": 2,
         "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "updated_at": "2026-02-24"
       },
       "use_cases": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "sub_category": {
         "source": "toolify",
@@ -101,10 +101,10 @@
         "updated_at": "2026-02-16"
       },
       "keywords": {
-        "source": "toolify",
+        "source": "dedup-merge",
         "tier": 2,
         "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "updated_at": "2026-02-24"
       },
       "platforms": {
         "source": "llm-batch-combined",
@@ -113,52 +113,52 @@
         "updated_at": "2026-02-20"
       },
       "target_audience": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "name_zh": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "description_zh": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "company.name_zh": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "company.description": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "company.employee_count_range": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "open_source": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "api_available": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "hiring.is_hiring": {
         "source": "llm-batch-combined",
@@ -167,10 +167,10 @@
         "updated_at": "2026-02-20"
       },
       "hiring.careers_url": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "modalities": {
         "source": "llm-batch-combined",
@@ -179,10 +179,10 @@
         "updated_at": "2026-02-20"
       },
       "hiring.tech_stack": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       }
     }
   },
@@ -201,14 +201,19 @@
       "url": "https://www.toolify.ai/tool/signify",
       "source_name": "toolify",
       "scraped_at": "2026-02-16"
+    },
+    {
+      "url": "https://singify.co/vocal-remover",
+      "source_name": "dedup-merge",
+      "scraped_at": "2026-02-24"
     }
   ],
   "company": {
     "name": "Singify",
     "url": "https://singify.co",
     "website": "https://singify.co",
-    "name_zh": "Singify",
-    "description": "Music creation platform enabling users to create, cover, and share original songs",
+    "name_zh": "Singify AI",
+    "description": "AI audio tool that instantly separates vocal and instrumental tracks from any song",
     "employee_count_range": "1-10"
   },
   "icon_url": "https://media.theresanaiforthat.com/icons/singify.svg?height=207",
@@ -223,13 +228,20 @@
     "AI Agent",
     "AI Healthcare",
     "AI Legal Assistant",
-    "AI Checker"
+    "AI Checker",
+    "Vocal removal",
+    "vocal removal",
+    "AI Audio Splitter"
   ],
   "use_cases": [
     "Music",
     "music-generation",
     "cover-creation",
-    "song-creation"
+    "song-creation",
+    "Vocal removal",
+    "vocal-removal",
+    "karaoke-creation",
+    "music-editing"
   ],
   "sub_category": "ai song generator",
   "pricing": {
@@ -258,7 +270,8 @@
     "Supplier verification",
     "Audit trail",
     "Traceability matrix",
-    "Global regulatory intelligence"
+    "Global regulatory intelligence",
+    "Effortlessly splits any song into distinct tracks and removes vocals from any song"
   ],
   "platforms": [
     "web",
@@ -270,10 +283,12 @@
     "content-creators",
     "podcasters",
     "singers",
-    "music-creators"
+    "music-creators",
+    "producers",
+    "audio-enthusiasts"
   ],
-  "name_zh": "Singify",
-  "description_zh": "音乐创作和翻唱平台，支持创建、翻唱和分享音乐作品",
+  "name_zh": "Singify AI 人声移除工具",
+  "description_zh": "即时将任何歌曲分离为人声和伴奏",
   "open_source": false,
   "api_available": true,
   "hiring": {
@@ -282,9 +297,11 @@
     "tech_stack": [
       "React",
       "Node.js",
-      "Python"
+      "Python",
+      "PyTorch",
+      "Web Audio API"
     ],
-    "last_checked": "2026-02-20"
+    "last_checked": "2026-02-24"
   },
   "modalities": [
     "audio"

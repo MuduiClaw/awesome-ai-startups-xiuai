@@ -8,7 +8,7 @@
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-20",
+    "last_updated": "2026-02-24",
     "provenance": {
       "name": {
         "source": "ainav",
@@ -77,10 +77,10 @@
         "updated_at": "2026-02-16"
       },
       "tags": {
-        "source": "toolify",
+        "source": "dedup-merge",
         "tier": 2,
         "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "updated_at": "2026-02-24"
       },
       "company.website": {
         "source": "toolify",
@@ -101,76 +101,76 @@
         "updated_at": "2026-02-16"
       },
       "keywords": {
-        "source": "toolify",
+        "source": "dedup-merge",
         "tier": 2,
         "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "updated_at": "2026-02-24"
       },
       "api_available": {
-        "source": "rule-based-enrichment",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-17"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "platforms": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "target_audience": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "use_cases": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "name_zh": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "company.name_zh": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "company.description": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "company.employee_count_range": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "open_source": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "hiring.is_hiring": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "hiring.careers_url": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "modalities": {
         "source": "llm-batch-combined",
@@ -227,6 +227,11 @@
       "url": "https://www.toolify.ai/tool/sune-ai",
       "source_name": "toolify",
       "scraped_at": "2026-02-16"
+    },
+    {
+      "url": "https://www.suno.ai/",
+      "source_name": "dedup-merge",
+      "scraped_at": "2026-02-24"
     }
   ],
   "description_zh": "Suno AI是一款生成式音频AI工具，由音乐和人工智能领域的专家开发。",
@@ -234,8 +239,8 @@
     "name": "Suno AI",
     "url": "https://suno.ai",
     "website": "https://sudoapp.dev",
-    "name_zh": "Suno AI",
-    "description": "Generative AI platform for audio and music creation by experts in music and AI",
+    "name_zh": "Suno",
+    "description": "Leading AI music creation platform using advanced generative models",
     "employee_count_range": "11-50"
   },
   "icon_url": "https://www.ainav.cn/wp-content/uploads/2024/04/2b174-www.suno.ai.png",
@@ -258,7 +263,8 @@
     "AI Productivity Tools",
     "AI Workflow",
     "AI Knowledge Management",
-    "AI Agent"
+    "AI Agent",
+    "ai-audio-tools"
   ],
   "pricing": {
     "model": "free-trial",
@@ -322,19 +328,29 @@
     "Integration",
     "AI agents",
     "Productivity",
-    "Workspace"
+    "Workspace",
+    "Suno",
+    "ai audio music",
+    "ai audio tools",
+    "AI",
+    "高质量的",
+    "音乐创作平台",
+    "other"
   ],
   "api_available": true,
   "platforms": [
     "api",
-    "web"
+    "web",
+    "ios",
+    "android"
   ],
   "target_audience": [
     "developers",
     "musicians",
     "content-creators",
     "podcasters",
-    "producers"
+    "producers",
+    "creators"
   ],
   "use_cases": [
     "task-automation",
@@ -343,19 +359,22 @@
     "process-optimization",
     "api-integration",
     "music-generation",
-    "audio-generation"
+    "audio-generation",
+    "audio-editing",
+    "voice-synthesis",
+    "song-creation"
   ],
-  "name_zh": "Suno AI",
+  "name_zh": "Suno",
   "open_source": false,
   "hiring": {
     "is_hiring": true,
-    "careers_url": "https://www.suno.com/careers",
+    "careers_url": "",
     "tech_stack": [
       "Python",
       "PyTorch",
       "React"
     ],
-    "last_checked": "2026-02-20"
+    "last_checked": "2026-02-24"
   },
   "modalities": [
     "text",

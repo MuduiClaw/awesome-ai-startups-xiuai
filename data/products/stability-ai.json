@@ -8,7 +8,7 @@
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-20",
+    "last_updated": "2026-02-24",
     "provenance": {
       "name": {
         "source": "ainav",
@@ -77,10 +77,10 @@
         "updated_at": "2026-02-16"
       },
       "tags": {
-        "source": "toolify",
+        "source": "dedup-merge",
         "tier": 2,
         "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "updated_at": "2026-02-24"
       },
       "company.website": {
         "source": "toolify",
@@ -101,10 +101,10 @@
         "updated_at": "2026-02-16"
       },
       "keywords": {
-        "source": "toolify",
+        "source": "dedup-merge",
         "tier": 2,
         "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "updated_at": "2026-02-24"
       },
       "platforms": {
         "source": "llm-batch-combined",
@@ -113,64 +113,64 @@
         "updated_at": "2026-02-20"
       },
       "target_audience": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "use_cases": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "name_zh": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "company.name_zh": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "company.description": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "company.employee_count_range": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "open_source": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "api_available": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "hiring.is_hiring": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "hiring.careers_url": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "modalities": {
         "source": "llm-batch-combined",
@@ -179,10 +179,16 @@
         "updated_at": "2026-02-20"
       },
       "hiring.tech_stack": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
+      },
+      "competitors": {
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       }
     }
   },
@@ -196,6 +202,11 @@
       "url": "https://www.toolify.ai/tool/stable-diffusion",
       "source_name": "toolify",
       "scraped_at": "2026-02-16"
+    },
+    {
+      "url": "https://research.stability.ai/chat",
+      "source_name": "dedup-merge",
+      "scraped_at": "2026-02-24"
     }
   ],
   "description_zh": "Stability AI 是一家总部位于英国伦敦的全球化AI研究型企业，其研发人员来自世界各地。他们正在为图像、语言、音频、视频、3D和生物学开发前沿开放人工智能模型。Stability AI致力于在AI生态系统中推进开源，其成果包括Stable Diffusion等AI模型",
@@ -204,7 +215,7 @@
     "url": "https://stability.ai",
     "website": "https://stability.ai",
     "name_zh": "Stability AI",
-    "description": "Global AI research company developing open-source generative models across multiple modalities.",
+    "description": "Free AI chat platform by Stability AI for general conversation and information queries.",
     "employee_count_range": "51-200"
   },
   "icon_url": "https://www.ainav.cn/wp-content/uploads/2024/02/c484f-stability.ai.png",
@@ -215,7 +226,8 @@
     "AI Image Generator",
     "AI Video Generator",
     "AI Music Generator",
-    "AI 3D Model Generator"
+    "AI 3D Model Generator",
+    "ai-chatbots"
   ],
   "pricing": {
     "model": "freemium",
@@ -234,7 +246,13 @@
     "Stable Diffusion",
     "API",
     "Cloud Computing",
-    "Self-Hosting"
+    "Self-Hosting",
+    "Stable Chat",
+    "ai chatbot agent",
+    "ai chatbots",
+    "Stability",
+    "最新推出的免费聊天对话网站",
+    "other"
   ],
   "platforms": [
     "web",
@@ -245,18 +263,25 @@
     "developers",
     "enterprises",
     "data-scientists",
-    "researchers"
+    "researchers",
+    "general-users",
+    "students"
   ],
   "use_cases": [
     "music-generation",
     "music-composition",
     "model-development",
     "open-source-ai",
-    "generative-ai"
+    "generative-ai",
+    "ai-chat",
+    "virtual-assistant",
+    "task-automation",
+    "conversation",
+    "information-retrieval"
   ],
-  "name_zh": "Stability AI",
-  "open_source": true,
-  "api_available": true,
+  "name_zh": "Stable Chat",
+  "open_source": false,
+  "api_available": false,
   "hiring": {
     "is_hiring": true,
     "careers_url": "https://stability.ai/careers",
@@ -264,9 +289,11 @@
       "Python",
       "PyTorch",
       "CUDA",
-      "AWS"
+      "AWS",
+      "React",
+      "Node.js"
     ],
-    "last_checked": "2026-02-20"
+    "last_checked": "2026-02-24"
   },
   "modalities": [
     "text",
@@ -275,5 +302,9 @@
     "video",
     "3d",
     "multimodal"
+  ],
+  "competitors": [
+    "chatgpt",
+    "gemini"
   ]
 }

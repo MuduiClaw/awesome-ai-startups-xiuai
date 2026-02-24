@@ -8,7 +8,7 @@
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-20",
+    "last_updated": "2026-02-24",
     "provenance": {
       "name": {
         "source": "ainav",
@@ -77,10 +77,10 @@
         "updated_at": "2026-02-16"
       },
       "tags": {
-        "source": "toolify",
+        "source": "dedup-merge",
         "tier": 2,
         "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "updated_at": "2026-02-24"
       },
       "company.website": {
         "source": "toolify",
@@ -101,10 +101,10 @@
         "updated_at": "2026-02-16"
       },
       "keywords": {
-        "source": "toolify",
+        "source": "dedup-merge",
         "tier": 2,
         "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "updated_at": "2026-02-24"
       },
       "platforms": {
         "source": "llm-batch-combined",
@@ -119,10 +119,10 @@
         "updated_at": "2026-02-20"
       },
       "use_cases": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "hiring.careers_url": {
         "source": "ainav",
@@ -131,46 +131,46 @@
         "updated_at": "2026-02-18"
       },
       "name_zh": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "company.name_zh": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "company.description": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "company.employee_count_range": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "open_source": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "api_available": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "hiring.is_hiring": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "modalities": {
         "source": "llm-batch-combined",
@@ -185,10 +185,10 @@
         "updated_at": "2026-02-20"
       },
       "hiring.tech_stack": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       }
     }
   },
@@ -202,6 +202,11 @@
       "url": "https://www.toolify.ai/tool/recraft-image-model",
       "source_name": "toolify",
       "scraped_at": "2026-02-16"
+    },
+    {
+      "url": "https://www.recraft.ai/",
+      "source_name": "dedup-merge",
+      "scraped_at": "2026-02-24"
     }
   ],
   "description_zh": "英国人工智能初创公司Recraft AI推出的最新图像生成模型Recraft V3,而且排行位列第一，超过之前火爆的Flux 1.1 [pro]模型",
@@ -210,7 +215,7 @@
     "url": "https://recraft.ai",
     "website": "https://www.recraft.ai",
     "name_zh": "Recraft AI公司",
-    "description": "Advanced image generation model from UK-based AI startup Recraft.",
+    "description": "AI-powered design tool for creating high-quality vector art, icons, and 3D imagery.",
     "employee_count_range": "11-50"
   },
   "icon_url": "https://www.ainav.cn/wp-content/uploads/2024/11/1730468123-79c72c1637e503bd9f630897cf7eec7c_66f2c145708321e532690bc1_5BLogo20sign5D.png",
@@ -221,7 +226,8 @@
     "AI Image Generator",
     "AI Vector Graphics",
     "AI Photo Editor",
-    "AI Mockup Generator"
+    "AI Mockup Generator",
+    "ai-design-tools"
   ],
   "pricing": {
     "model": "freemium",
@@ -239,7 +245,17 @@
     "Background remover",
     "AI eraser",
     "Team collaboration",
-    "Brand consistency"
+    "Brand consistency",
+    "Recraft AI",
+    "ai image design",
+    "ai design tools",
+    "AI",
+    "免费无限",
+    "画板",
+    "生成高质量矢量艺术画",
+    "图标",
+    "图片和插画",
+    "other"
   ],
   "platforms": [
     "web",
@@ -257,7 +273,12 @@
     "image-manipulation",
     "image-generation",
     "graphic-design",
-    "vector-art"
+    "vector-art",
+    "image-editing",
+    "vector-art-generation",
+    "icon-design",
+    "3d-image-generation",
+    "illustration-creation"
   ],
   "hiring": {
     "careers_url": "",
@@ -265,13 +286,17 @@
     "tech_stack": [
       "PyTorch",
       "CUDA",
-      "FastAPI"
+      "FastAPI",
+      "React",
+      "Python",
+      "TensorFlow",
+      "WebGL"
     ],
-    "last_checked": "2026-02-20"
+    "last_checked": "2026-02-24"
   },
-  "name_zh": "Recraft V3",
+  "name_zh": "Recraft AI",
   "open_source": false,
-  "api_available": true,
+  "api_available": false,
   "modalities": [
     "image",
     "text"

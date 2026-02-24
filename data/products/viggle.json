@@ -8,7 +8,7 @@
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-20",
+    "last_updated": "2026-02-24",
     "provenance": {
       "name": {
         "source": "aibot",
@@ -101,10 +101,10 @@
         "updated_at": "2026-02-16"
       },
       "keywords": {
-        "source": "toolify",
+        "source": "dedup-merge",
         "tier": 2,
         "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "updated_at": "2026-02-24"
       },
       "platforms": {
         "source": "rule-based-enrichment",
@@ -113,16 +113,16 @@
         "updated_at": "2026-02-17"
       },
       "target_audience": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "use_cases": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "hiring.careers_url": {
         "source": "ainav",
@@ -131,46 +131,46 @@
         "updated_at": "2026-02-18"
       },
       "name_zh": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "company.name_zh": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "company.description": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "company.employee_count_range": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "open_source": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "api_available": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "hiring.is_hiring": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "modalities": {
         "source": "llm-batch-combined",
@@ -200,6 +200,11 @@
       "url": "https://www.ainav.cn",
       "source_name": "ainav",
       "scraped_at": "2026-02-18"
+    },
+    {
+      "url": "https://viggle.ai/",
+      "source_name": "dedup-merge",
+      "scraped_at": "2026-02-24"
     }
   ],
   "description_zh": "AI生成可控的角色动态视频的工具",
@@ -208,7 +213,7 @@
     "url": "https://viggle.ai",
     "website": "https://viggleai.io",
     "name_zh": "Viggle",
-    "description": "AI tool for generating controllable character animation videos with various effects",
+    "description": "Free AI tool based on JST-1 model for generating character animation videos from text and images",
     "employee_count_range": "1-10"
   },
   "icon_url": "https://ai-bot.cn/wp-content/uploads/2024/04/viggle-ai-icon.png",
@@ -243,7 +248,22 @@
     "Animation",
     "VFX",
     "AI tool",
-    "Video editing"
+    "Video editing",
+    "Viggle AI 角色动态视频生成",
+    "ai video animation",
+    "video generation",
+    "AI视频工具",
+    "Viggle",
+    "AI",
+    "JST-1",
+    "Discord",
+    "是基于",
+    "模型的免费公测工具",
+    "能依文本或素材生成角色动态视频",
+    "有多种功能",
+    "可在",
+    "使用",
+    "other"
   ],
   "platforms": [
     "web"
@@ -253,21 +273,23 @@
     "video-editors",
     "marketers",
     "animators",
-    "designers"
+    "designers",
+    "video-producers"
   ],
   "use_cases": [
     "video-generation",
     "video-editing",
     "animation",
     "character-animation",
-    "motion-control"
+    "motion-control",
+    "content-creation"
   ],
   "hiring": {
     "careers_url": "",
     "is_hiring": false,
-    "last_checked": "2026-02-20"
+    "last_checked": "2026-02-24"
   },
-  "name_zh": "Viggle",
+  "name_zh": "Viggle AI 角色动态视频生成",
   "open_source": false,
   "api_available": false,
   "modalities": [

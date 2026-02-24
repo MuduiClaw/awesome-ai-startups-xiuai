@@ -8,7 +8,7 @@
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-20",
+    "last_updated": "2026-02-24",
     "provenance": {
       "name": {
         "source": "toolify",
@@ -77,16 +77,16 @@
         "updated_at": "2026-02-16"
       },
       "tags": {
-        "source": "toolify",
+        "source": "dedup-merge",
         "tier": 2,
         "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "updated_at": "2026-02-24"
       },
       "keywords": {
-        "source": "toolify",
+        "source": "dedup-merge",
         "tier": 2,
         "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "updated_at": "2026-02-24"
       },
       "pricing": {
         "source": "toolify",
@@ -107,64 +107,64 @@
         "updated_at": "2026-02-20"
       },
       "use_cases": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "name_zh": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "description_zh": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "company.name_zh": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "company.description": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "company.employee_count_range": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "open_source": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "api_available": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "hiring.is_hiring": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "hiring.careers_url": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "modalities": {
         "source": "llm-batch-combined",
@@ -173,16 +173,28 @@
         "updated_at": "2026-02-20"
       },
       "competitors": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "hiring.tech_stack": {
         "source": "llm-batch-combined",
         "tier": 3,
         "confidence": 0.5,
         "updated_at": "2026-02-20"
+      },
+      "pricing.model": {
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
+      },
+      "pricing.has_free_tier": {
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       }
     }
   },
@@ -191,14 +203,19 @@
       "url": "https://www.toolify.ai/tool/video-tap",
       "source_name": "toolify",
       "scraped_at": "2026-02-16"
+    },
+    {
+      "url": "https://videotap.com",
+      "source_name": "dedup-merge",
+      "scraped_at": "2026-02-24"
     }
   ],
   "company": {
     "name": "Video Tap",
     "url": "https://videotap.com/?via=toolify",
     "website": "https://videotap.com/?via=toolify",
-    "name_zh": "Video Tap",
-    "description": "AI platform for repurposing videos into multiple content formats for social media distribution",
+    "name_zh": "VideoTap",
+    "description": "AI platform transforming videos into various marketing formats with scheduling capabilities.",
     "employee_count_range": "1-10"
   },
   "icon_url": "https://cdn-images.toolify.ai/website-logos/20250410/1744265408_85971039_3940.webp",
@@ -208,7 +225,9 @@
     "AI Short Video Generator",
     "AI Blog Generator",
     "AI Video Summarizer",
-    "AI Social Media Post Generator"
+    "AI Social Media Post Generator",
+    "Long Video To Short Video AI",
+    "AI Marketing"
   ],
   "keywords": [
     "AI content generation",
@@ -219,7 +238,13 @@
     "Video transcription",
     "Video summarization",
     "YouTube SEO",
-    "Content automation"
+    "Content automation",
+    "Video marketing",
+    "Transcription",
+    "Content creation",
+    "Video editing",
+    "Automation",
+    "Multilingual content"
   ],
   "pricing": {
     "model": "freemium",
@@ -242,14 +267,16 @@
     "content-repurposing",
     "short-video-generation",
     "blog-generation",
-    "social-media-content"
+    "social-media-content",
+    "video-transformation",
+    "marketing-automation"
   ],
-  "name_zh": "Video Tap",
-  "description_zh": "AI内容转化平台，将视频转化为多种内容格式用于社交媒体",
+  "name_zh": "VideoTap",
+  "description_zh": "AI平台将视频转换为多种营销内容并安排发布。",
   "open_source": false,
   "api_available": true,
   "hiring": {
-    "is_hiring": true,
+    "is_hiring": false,
     "careers_url": "",
     "tech_stack": [
       "React",
@@ -258,7 +285,7 @@
       "OpenAI",
       "AWS"
     ],
-    "last_checked": "2026-02-20"
+    "last_checked": "2026-02-24"
   },
   "modalities": [
     "video",
@@ -267,6 +294,7 @@
   "competitors": [
     "opus-clip",
     "kapwing",
-    "descript"
+    "descript",
+    "synthesia"
   ]
 }

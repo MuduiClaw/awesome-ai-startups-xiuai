@@ -12,6 +12,7 @@ from dataclasses import dataclass
 from typing import Any
 
 from scrapers.config import PRODUCTS_DIR
+from scrapers.utils.domains import AGGREGATOR_DOMAINS as _AGGREGATOR_DOMAINS
 
 try:
     from Levenshtein import ratio as lev_ratio
@@ -29,22 +30,6 @@ logger = logging.getLogger(__name__)
 
 # Similarity threshold for near-duplicate descriptions
 DESCRIPTION_SIMILARITY_THRESHOLD = 0.90
-
-# Aggregator/directory domains that should never be a product_url
-_AGGREGATOR_DOMAINS: frozenset[str] = frozenset(
-    {
-        "ai-bot.cn",
-        "ainav.cn",
-        "theresanaiforthat.com",
-        "toolify.ai",
-        "futurepedia.io",
-        "alternativeto.net",
-        "producthunt.com",
-        "crunchbase.com",
-        "pitchbook.com",
-        "ycombinator.com",
-    }
-)
 
 # Fields that trigger hard rejection on collision
 _CROSS_VALIDATED_FIELDS: frozenset[str] = frozenset(

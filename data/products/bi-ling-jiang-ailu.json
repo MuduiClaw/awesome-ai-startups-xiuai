@@ -8,7 +8,7 @@
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-20",
+    "last_updated": "2026-02-24",
     "provenance": {
       "name": {
         "source": "aibot",
@@ -107,10 +107,10 @@
         "updated_at": "2026-02-16"
       },
       "keywords": {
-        "source": "toolify",
+        "source": "dedup-merge",
         "tier": 2,
         "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "updated_at": "2026-02-24"
       },
       "platforms": {
         "source": "rule-based-enrichment",
@@ -119,16 +119,16 @@
         "updated_at": "2026-02-17"
       },
       "target_audience": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "use_cases": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "hiring.careers_url": {
         "source": "ainav",
@@ -137,40 +137,40 @@
         "updated_at": "2026-02-18"
       },
       "company.name_zh": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "company.description": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "company.employee_count_range": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "open_source": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "api_available": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "hiring.is_hiring": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "modalities": {
         "source": "llm-batch-combined",
@@ -185,10 +185,10 @@
         "updated_at": "2026-02-20"
       },
       "hiring.tech_stack": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       }
     }
   },
@@ -217,6 +217,11 @@
       "url": "https://www.toolify.ai/tool/ibiling-cn",
       "source_name": "toolify",
       "scraped_at": "2026-02-16"
+    },
+    {
+      "url": "https://ibiling.cn/novel-workbench/",
+      "source_name": "dedup-merge",
+      "scraped_at": "2026-02-24"
     }
   ],
   "name_zh": "笔灵降AI率",
@@ -225,8 +230,8 @@
     "name": "笔灵降AI率",
     "url": "https://ibiling.cn",
     "website": "https://ibiling.cn",
-    "name_zh": "笔灵降AI率",
-    "description": "Tool for reducing AI detection traces in generated content with real-time rule adaptation.",
+    "name_zh": "笔灵AI小说",
+    "description": "Platform for web novel creation with story outline generation, plot tools, and writing resources.",
     "employee_count_range": "1-10"
   },
   "icon_url": "https://ai-bot.cn/wp-content/uploads/2025/11/ibiling.paper-pass-logo.png",
@@ -256,7 +261,17 @@
     "AI Detection Reduction",
     "Content Creation",
     "Academic Writing",
-    "Commercial Writing"
+    "Commercial Writing",
+    "笔灵AI小说",
+    "ai chatbot agent",
+    "text generation",
+    "AI文本工具",
+    "汇集爆款小说拆解",
+    "小说大纲一键生成",
+    "小说生成器",
+    "总结网文大神写作公式",
+    "精选小说资料库",
+    "other"
   ],
   "platforms": [
     "web"
@@ -268,7 +283,11 @@
     "content-creators",
     "writers",
     "students",
-    "marketing-professionals"
+    "marketing-professionals",
+    "developers",
+    "general-users",
+    "novelists",
+    "web-fiction-authors"
   ],
   "use_cases": [
     "threat-detection",
@@ -277,16 +296,26 @@
     "ai-detection-evasion",
     "content-humanization",
     "rule-compliance",
-    "text-optimization"
+    "text-optimization",
+    "ai-chat",
+    "virtual-assistant",
+    "task-automation",
+    "novel-writing",
+    "story-outline-generation",
+    "plot-development",
+    "creative-writing"
   ],
   "hiring": {
     "careers_url": "",
     "is_hiring": false,
     "tech_stack": [
       "Python",
-      "NLP"
+      "NLP",
+      "React",
+      "Node.js",
+      "MongoDB"
     ],
-    "last_checked": "2026-02-20"
+    "last_checked": "2026-02-24"
   },
   "open_source": false,
   "api_available": false,

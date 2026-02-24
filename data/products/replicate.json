@@ -8,7 +8,7 @@
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-20",
+    "last_updated": "2026-02-24",
     "provenance": {
       "name": {
         "source": "ainav",
@@ -71,10 +71,10 @@
         "updated_at": "2026-02-16"
       },
       "tags": {
-        "source": "toolify",
+        "source": "dedup-merge",
         "tier": 2,
         "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "updated_at": "2026-02-24"
       },
       "sub_category": {
         "source": "toolify",
@@ -101,22 +101,22 @@
         "updated_at": "2026-02-16"
       },
       "keywords": {
-        "source": "toolify",
+        "source": "dedup-merge",
         "tier": 2,
         "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "updated_at": "2026-02-24"
       },
       "open_source": {
-        "source": "rule-based-enrichment",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-17"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "api_available": {
-        "source": "rule-based-enrichment",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-17"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "platforms": {
         "source": "llm-batch-combined",
@@ -125,52 +125,52 @@
         "updated_at": "2026-02-20"
       },
       "target_audience": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "use_cases": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "name_zh": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "company.name_zh": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "company.description": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "company.employee_count_range": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "hiring.is_hiring": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "hiring.careers_url": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "modalities": {
         "source": "llm-batch-combined",
@@ -212,6 +212,11 @@
       "url": "https://www.toolify.ai/tool/replicate-ai",
       "source_name": "toolify",
       "scraped_at": "2026-02-16"
+    },
+    {
+      "url": "https://replicate.com/explore",
+      "source_name": "dedup-merge",
+      "scraped_at": "2026-02-24"
     }
   ],
   "description_zh": "在这个网站内，可以直接去体验部署好的开源模型，精彩程度也不亚于那些经常被报道的站点。如果是开发者，那么也可以用它来发布自己的模型。",
@@ -220,7 +225,7 @@
     "url": "https://replicate.com",
     "website": "https://www.runreplicate.com",
     "name_zh": "Replicate",
-    "description": "Replicate is a platform for running and deploying open-source AI models via API.",
+    "description": "Replicate explore is a collection of open-source AI models for various media types.",
     "employee_count_range": "11-50"
   },
   "icon_url": "https://www.ainav.cn/wp-content/uploads/2023/12/bae24141978b1ebc90b47bf83f0a761b_favicon.d1ca9a93.ico",
@@ -232,7 +237,8 @@
     "AI API",
     "AI Workflow",
     "AI Developer Tools",
-    "Open Source AI Models"
+    "Open Source AI Models",
+    "其他AI工具"
   ],
   "sub_category": "ai image generator",
   "pricing": {
@@ -256,7 +262,19 @@
     "Image generation",
     "Video generation",
     "Text generation",
-    "Open-source models"
+    "Open-source models",
+    "Replicate explore",
+    "ai chatbot agent",
+    "其他AI工具",
+    "replicate",
+    "explore",
+    "ai",
+    "网站下的",
+    "栏目",
+    "集成了各种音视频图像文本的",
+    "模型",
+    "都可以在线一键使用",
+    "other"
   ],
   "open_source": true,
   "api_available": true,
@@ -270,7 +288,9 @@
     "students",
     "educators",
     "researchers",
-    "ml-engineers"
+    "ml-engineers",
+    "enterprises",
+    "general-users"
   ],
   "use_cases": [
     "workflow-automation",
@@ -278,9 +298,14 @@
     "api-integration",
     "model-access",
     "model-hosting",
-    "api-deployment"
+    "api-deployment",
+    "ai-chat",
+    "virtual-assistant",
+    "task-automation",
+    "model-exploration",
+    "ai-experimentation"
   ],
-  "name_zh": "Replicate",
+  "name_zh": "Replicate explore",
   "hiring": {
     "is_hiring": true,
     "careers_url": "https://replicate.com/careers",
@@ -291,7 +316,7 @@
       "Kubernetes",
       "REST-API"
     ],
-    "last_checked": "2026-02-20"
+    "last_checked": "2026-02-24"
   },
   "modalities": [
     "text",

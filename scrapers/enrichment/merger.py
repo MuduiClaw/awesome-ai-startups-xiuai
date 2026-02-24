@@ -57,42 +57,23 @@ _ARRAY_FIELDS: frozenset[str] = frozenset(
     }
 )
 
-# Domains that are app-store pages, not real product sites.
-_APP_STORE_DOMAINS: frozenset[str] = frozenset(
-    {"play.google.com", "apps.apple.com", "itunes.apple.com"}
-)
-
-# Aggregator / search domains -- never a real product homepage.
-_AGGREGATOR_DOMAINS: frozenset[str] = frozenset(
-    {
-        "producthunt.com",
-        "toolify.ai",
-        "theresanaiforthat.com",
-        "ai-bot.cn",
-        "ainav.cn",
-        "bing.com",
-        "google.com",
-        "www.bing.com",
-        "www.google.com",
-    }
-)
-
-
-def _is_aggregator_domain(domain: str) -> bool:
-    """Return True if *domain* belongs to an aggregator or search engine."""
-    return domain in _AGGREGATOR_DOMAINS or domain in _APP_STORE_DOMAINS
-
 
 def _url_quality_score(url: str) -> int:
     """Rate URL quality: higher = better.  Direct product URLs > app stores > aggregators."""
     from scrapers.utils import extract_domain
+    from scrapers.utils.domains import (
+        AGGREGATOR_DOMAINS as _AGG,
+    )
+    from scrapers.utils.domains import (
+        APP_STORE_DOMAINS as _APP,
+    )
 
     domain = extract_domain(url)
     if not domain:
         return -1
-    if domain in _AGGREGATOR_DOMAINS:
+    if domain in _AGG:
         return 0
-    if domain in _APP_STORE_DOMAINS:
+    if domain in _APP:
         return 1
     return 2  # Direct product URL
 
@@ -656,9 +637,10 @@ class TieredMerger:
         # Derive homepage from product URL domain.
         if scraped.product_url:
             from scrapers.utils import extract_domain
+            from scrapers.utils.domains import is_skip_domain as _is_skip
 
             domain = extract_domain(scraped.product_url)
-            if domain and not _is_aggregator_domain(domain):
+            if domain and not _is_skip(domain):
                 return f"https://{domain}"
             # Last resort: use product_url itself (e.g. app store page).
             return scraped.product_url

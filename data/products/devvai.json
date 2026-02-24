@@ -8,7 +8,7 @@
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-20",
+    "last_updated": "2026-02-24",
     "provenance": {
       "name": {
         "source": "ainav",
@@ -77,10 +77,10 @@
         "updated_at": "2026-02-16"
       },
       "tags": {
-        "source": "toolify",
+        "source": "dedup-merge",
         "tier": 2,
         "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "updated_at": "2026-02-24"
       },
       "company.website": {
         "source": "toolify",
@@ -101,10 +101,10 @@
         "updated_at": "2026-02-16"
       },
       "keywords": {
-        "source": "toolify",
+        "source": "dedup-merge",
         "tier": 2,
         "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "updated_at": "2026-02-24"
       },
       "platforms": {
         "source": "llm-batch-combined",
@@ -119,10 +119,10 @@
         "updated_at": "2026-02-20"
       },
       "use_cases": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "hiring.careers_url": {
         "source": "ainav",
@@ -131,40 +131,40 @@
         "updated_at": "2026-02-18"
       },
       "name_zh": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "company.name_zh": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "company.description": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "company.employee_count_range": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "open_source": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "api_available": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "modalities": {
         "source": "llm-batch-combined",
@@ -179,10 +179,10 @@
         "updated_at": "2026-02-20"
       },
       "hiring.tech_stack": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       }
     }
   },
@@ -201,6 +201,11 @@
       "url": "https://www.toolify.ai/tool/evov-ai",
       "source_name": "toolify",
       "scraped_at": "2026-02-16"
+    },
+    {
+      "url": "https://devv.ai/zh",
+      "source_name": "dedup-merge",
+      "scraped_at": "2026-02-24"
     }
   ],
   "description_zh": "devv.ai 是一款面向程序员且最懂程序员的新一代 AI 搜索引擎",
@@ -208,8 +213,8 @@
     "name": "Devv.ai",
     "url": "https://devv.ai",
     "website": "https://devv.ai",
-    "name_zh": "Devv.ai",
-    "description": "Devv.ai is an AI search engine built specifically for developers to find code, documentation, and technical solutions.",
+    "name_zh": "Devv",
+    "description": "Devv is an AI-powered search engine designed specifically for developers and programmers.",
     "employee_count_range": "11-50"
   },
   "icon_url": "https://www.ainav.cn/wp-content/uploads/2024/01/ae8ea107c7194ac4ddd59483b2fb240e_favicon-light.png",
@@ -225,7 +230,11 @@
     "AI Marketing",
     "AI Social Media",
     "AI Video Generator",
-    "AI Instagram"
+    "AI Instagram",
+    "ai-search-engines",
+    "AI Resume Builder",
+    "AI Description Generator",
+    "AI Summarizer"
   ],
   "pricing": {
     "model": "freemium",
@@ -249,7 +258,12 @@
     "Content creation",
     "AI strategist",
     "Marketing automation",
-    "Video analytics"
+    "Video analytics",
+    "CV generator",
+    "Resume builder",
+    "GitHub CV",
+    "AI CV",
+    "Software developer CV"
   ],
   "platforms": [
     "web",
@@ -269,7 +283,13 @@
     "conversational-ai",
     "code-search",
     "documentation-retrieval",
-    "problem-solving"
+    "problem-solving",
+    "resume-creation",
+    "career-assistance",
+    "text-summarization",
+    "document-analysis",
+    "api-documentation",
+    "technical-reference"
   ],
   "hiring": {
     "careers_url": "",
@@ -277,13 +297,14 @@
       "Python",
       "React",
       "Elasticsearch",
-      "OpenAI API"
+      "OpenAI API",
+      "Node.js"
     ],
-    "last_checked": "2026-02-20"
+    "last_checked": "2026-02-24"
   },
-  "name_zh": "Devv.ai",
+  "name_zh": "Devv",
   "open_source": false,
-  "api_available": true,
+  "api_available": false,
   "modalities": [
     "text"
   ],

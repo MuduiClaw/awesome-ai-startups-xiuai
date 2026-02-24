@@ -8,7 +8,7 @@
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-20",
+    "last_updated": "2026-02-24",
     "provenance": {
       "name": {
         "source": "ainav",
@@ -71,16 +71,16 @@
         "updated_at": "2026-02-16"
       },
       "tags": {
-        "source": "ainav",
+        "source": "dedup-merge",
         "tier": 2,
         "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "updated_at": "2026-02-24"
       },
       "keywords": {
-        "source": "rule-based-enrichment",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-17"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "platforms": {
         "source": "rule-based-enrichment",
@@ -89,76 +89,76 @@
         "updated_at": "2026-02-17"
       },
       "target_audience": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "use_cases": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "name_zh": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "sub_category": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "company.name_zh": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "company.description": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "company.employee_count_range": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "open_source": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "api_available": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "hiring.is_hiring": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "hiring.careers_url": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "modalities": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "competitors": {
         "source": "llm-batch-combined",
@@ -167,10 +167,10 @@
         "updated_at": "2026-02-20"
       },
       "hiring.tech_stack": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       }
     }
   },
@@ -179,6 +179,11 @@
       "url": "https://www.ainav.cn",
       "source_name": "ainav",
       "scraped_at": "2026-02-16"
+    },
+    {
+      "url": "https://www.kaggle.com",
+      "source_name": "dedup-merge",
+      "scraped_at": "2026-02-24"
     }
   ],
   "description_zh": "Kaggle Kernels是一个能在浏览器中运行Jupyter Notebooks的免费平台。",
@@ -186,12 +191,14 @@
     "name": "Kaggle Kernels",
     "url": "https://kaggle.com",
     "name_zh": "Kaggle",
-    "description": "Kaggle's free cloud computing environment for data science and ML projects.",
+    "description": "Leading machine learning and data science community with competitions and datasets.",
     "employee_count_range": "51-200"
   },
   "icon_url": "https://www.ainav.cn/wp-content/uploads/2025/02/1739466290-favicon.ico",
   "tags": [
-    "AI算力平台"
+    "AI算力平台",
+    "websites-to-learn-ai",
+    "AI竞赛"
   ],
   "keywords": [
     "Kaggle Kernels",
@@ -203,7 +210,15 @@
     "Notebooks",
     "是一个能在浏览器中运行",
     "的免费平台",
-    "other"
+    "other",
+    "ai chatbot agent",
+    "websites to learn ai",
+    "机器学习和数据科学社区",
+    "Kaggle竞赛平台",
+    "AI竞赛",
+    "是一个数据建模和数据分析竞赛平台",
+    "企业和研究者可在其上发布数据",
+    "统计学者和数据挖掘专家可在其上进行竞赛以产生最好的模型"
   ],
   "platforms": [
     "web"
@@ -215,7 +230,11 @@
     "data-scientists",
     "researchers",
     "students",
-    "ml-engineers"
+    "ml-engineers",
+    "developers",
+    "enterprises",
+    "general-users",
+    "competitors"
   ],
   "use_cases": [
     "content-writing",
@@ -224,10 +243,21 @@
     "data-analysis",
     "machine-learning-experiments",
     "notebook-sharing",
-    "collaborative-coding"
+    "collaborative-coding",
+    "ai-chat",
+    "virtual-assistant",
+    "task-automation",
+    "machine-learning-competitions",
+    "dataset-sharing",
+    "data-science-learning",
+    "model-benchmarking",
+    "data-science-competitions",
+    "model-development",
+    "skill-validation",
+    "prize-competitions"
   ],
-  "name_zh": "Kaggle Kernels",
-  "sub_category": "computing-platform",
+  "name_zh": "Kaggle",
+  "sub_category": "ml-community",
   "open_source": false,
   "api_available": true,
   "hiring": {
@@ -237,12 +267,17 @@
       "Python",
       "Jupyter",
       "Docker",
-      "Kubernetes"
+      "Kubernetes",
+      "R",
+      "SQL",
+      "TensorFlow",
+      "Scikit-learn"
     ],
-    "last_checked": "2026-02-20"
+    "last_checked": "2026-02-24"
   },
   "modalities": [
-    "code"
+    "code",
+    "text"
   ],
   "competitors": [
     "google-colab"

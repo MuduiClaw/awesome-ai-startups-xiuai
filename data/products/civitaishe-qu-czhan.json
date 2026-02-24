@@ -8,7 +8,7 @@
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-20",
+    "last_updated": "2026-02-24",
     "provenance": {
       "name": {
         "source": "ainav",
@@ -83,10 +83,10 @@
         "updated_at": "2026-02-16"
       },
       "tags": {
-        "source": "toolify",
+        "source": "dedup-merge",
         "tier": 2,
         "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "updated_at": "2026-02-24"
       },
       "company.website": {
         "source": "toolify",
@@ -107,16 +107,16 @@
         "updated_at": "2026-02-16"
       },
       "keywords": {
-        "source": "toolify",
+        "source": "dedup-merge",
         "tier": 2,
         "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "updated_at": "2026-02-24"
       },
       "open_source": {
-        "source": "rule-based-enrichment",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-17"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "platforms": {
         "source": "rule-based-enrichment",
@@ -125,16 +125,16 @@
         "updated_at": "2026-02-17"
       },
       "target_audience": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "use_cases": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "hiring.careers_url": {
         "source": "ainav",
@@ -143,34 +143,34 @@
         "updated_at": "2026-02-18"
       },
       "company.name_zh": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "company.description": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "company.employee_count_range": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "api_available": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "hiring.is_hiring": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "modalities": {
         "source": "llm-batch-combined",
@@ -196,6 +196,11 @@
       "url": "https://www.toolify.ai/tool/civitai",
       "source_name": "toolify",
       "scraped_at": "2026-02-16"
+    },
+    {
+      "url": "https://civitai.com",
+      "source_name": "dedup-merge",
+      "scraped_at": "2026-02-24"
     }
   ],
   "name_zh": "Civitai社区 – C站",
@@ -205,7 +210,7 @@
     "url": "https://civitai.com",
     "website": "https://civitai.com",
     "name_zh": "Civitai",
-    "description": "Civitai C站是专注于AI艺术创作模型分享的中文社区平台。",
+    "description": "Civitai是一个用于AI艺术创作者分享和发现AI艺术模型的社区平台。",
     "employee_count_range": "11-50"
   },
   "icon_url": "https://www.ainav.cn/wp-content/uploads/2023/12/5739b-civitai.com.png",
@@ -214,7 +219,8 @@
     "AI绘画工具",
     "AI Models",
     "AI Art Generator",
-    "Open Source AI Models"
+    "Open Source AI Models",
+    "ai-image-generators"
   ],
   "pricing": {
     "model": "freemium",
@@ -228,7 +234,14 @@
     "Embeddings",
     "Community",
     "AI model",
-    "Image generation"
+    "Image generation",
+    "Civitai",
+    "ai image design",
+    "ai image generators",
+    "AI",
+    "免费的",
+    "图像绘画作品和模型分享平台和社区",
+    "other"
   ],
   "open_source": true,
   "platforms": [
@@ -240,7 +253,8 @@
     "marketers",
     "ai-artists",
     "digital-creators",
-    "chinese-users"
+    "chinese-users",
+    "community"
   ],
   "use_cases": [
     "image-generation",
@@ -248,7 +262,9 @@
     "graphic-design",
     "model-sharing",
     "ai-art-generation",
-    "community"
+    "community",
+    "artwork-sharing",
+    "ai-art-creation"
   ],
   "hiring": {
     "careers_url": "",
@@ -258,7 +274,7 @@
       "Node.js",
       "MongoDB"
     ],
-    "last_checked": "2026-02-20"
+    "last_checked": "2026-02-24"
   },
   "api_available": true,
   "modalities": [

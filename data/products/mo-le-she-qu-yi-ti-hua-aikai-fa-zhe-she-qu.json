@@ -8,7 +8,7 @@
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-20",
+    "last_updated": "2026-02-24",
     "provenance": {
       "name": {
         "source": "ainav",
@@ -83,16 +83,16 @@
         "updated_at": "2026-02-16"
       },
       "tags": {
-        "source": "ainav",
+        "source": "dedup-merge",
         "tier": 2,
         "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "updated_at": "2026-02-24"
       },
       "keywords": {
-        "source": "rule-based-enrichment",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-17"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "platforms": {
         "source": "rule-based-enrichment",
@@ -101,58 +101,58 @@
         "updated_at": "2026-02-17"
       },
       "target_audience": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "use_cases": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "company.name_zh": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "company.description": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "company.employee_count_range": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "open_source": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "api_available": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "hiring.is_hiring": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "hiring.careers_url": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "modalities": {
         "source": "llm-batch-combined",
@@ -161,10 +161,10 @@
         "updated_at": "2026-02-20"
       },
       "hiring.tech_stack": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       }
     }
   },
@@ -173,6 +173,11 @@
       "url": "https://www.ainav.cn",
       "source_name": "ainav",
       "scraped_at": "2026-02-16"
+    },
+    {
+      "url": "https://modelers.cn/",
+      "source_name": "dedup-merge",
+      "scraped_at": "2026-02-24"
     }
   ],
   "name_zh": "魔乐社区- 一体化AI开发者社区",
@@ -180,14 +185,15 @@
   "company": {
     "name": "魔乐社区- 一体化AI开发者社区",
     "url": "https://modelers.cn",
-    "name_zh": "魔乐社区",
-    "description": "Mole Community is an integrated AI developer platform with models, datasets, and tools.",
-    "employee_count_range": "11-50"
+    "name_zh": "中国电信天翼云",
+    "description": "China Telecom's Tianyi Cloud AI community provides development platform and resources.",
+    "employee_count_range": "51-200"
   },
   "icon_url": "https://www.ainav.cn/wp-content/uploads/2025/01/1736267591-favicon.ico",
   "sub_category": "developer-community",
   "tags": [
-    "AI开发者社区"
+    "AI开发者社区",
+    "ai-frameworks"
   ],
   "keywords": [
     "魔乐社区- 一体化AI开发者社区",
@@ -206,7 +212,11 @@
     "视觉",
     "音频等领域",
     "致力于打造开放共享的人工智能生态社区",
-    "other"
+    "other",
+    "魔乐社区",
+    "ai chatbot agent",
+    "ai frameworks",
+    "中国电信天翼云推出的人工智能社区"
   ],
   "platforms": [
     "web"
@@ -217,7 +227,9 @@
     "data-scientists",
     "ml-developers",
     "ai-engineers",
-    "researchers"
+    "researchers",
+    "general-users",
+    "ai-companies"
   ],
   "use_cases": [
     "code-generation",
@@ -225,19 +237,26 @@
     "api-integration",
     "ai-development",
     "model-training",
-    "community-collaboration"
+    "community-collaboration",
+    "ai-chat",
+    "virtual-assistant",
+    "task-automation",
+    "cloud-computing",
+    "model-deployment"
   ],
-  "open_source": true,
+  "open_source": false,
   "api_available": true,
   "hiring": {
-    "is_hiring": false,
-    "careers_url": "",
+    "is_hiring": true,
+    "careers_url": "https://www.ctyun.cn/careers",
     "tech_stack": [
       "Python",
       "PyTorch",
-      "Cloud Infrastructure"
+      "Cloud Infrastructure",
+      "Kubernetes",
+      "Cloud Services"
     ],
-    "last_checked": "2026-02-20"
+    "last_checked": "2026-02-24"
   },
   "modalities": [
     "text",

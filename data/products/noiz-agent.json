@@ -8,7 +8,7 @@
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-20",
+    "last_updated": "2026-02-24",
     "provenance": {
       "name": {
         "source": "toolify",
@@ -77,16 +77,16 @@
         "updated_at": "2026-02-16"
       },
       "tags": {
-        "source": "toolify",
+        "source": "dedup-merge",
         "tier": 2,
         "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "updated_at": "2026-02-24"
       },
       "keywords": {
-        "source": "toolify",
+        "source": "dedup-merge",
         "tier": 2,
         "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "updated_at": "2026-02-24"
       },
       "platforms": {
         "source": "llm-batch-combined",
@@ -95,70 +95,70 @@
         "updated_at": "2026-02-20"
       },
       "target_audience": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "use_cases": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "name_zh": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "description_zh": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "company.name_zh": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "company.description": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "company.employee_count_range": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "open_source": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "api_available": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "hiring.is_hiring": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "hiring.careers_url": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       },
       "modalities": {
         "source": "llm-batch-combined",
@@ -173,10 +173,22 @@
         "updated_at": "2026-02-20"
       },
       "hiring.tech_stack": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
+      },
+      "pricing.model": {
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
+      },
+      "pricing.has_free_tier": {
+        "source": "dedup-merge",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-24"
       }
     }
   },
@@ -185,15 +197,20 @@
       "url": "https://www.toolify.ai/tool/noiz-agent",
       "source_name": "toolify",
       "scraped_at": "2026-02-16"
+    },
+    {
+      "url": "https://noiz.ai",
+      "source_name": "dedup-merge",
+      "scraped_at": "2026-02-24"
     }
   ],
   "company": {
     "name": "Noiz Agent",
     "url": "https://agent.noiz.ai",
     "website": "https://agent.noiz.ai",
-    "name_zh": "Noiz Agent",
-    "description": "Noiz Agent is an all-in-one AI audio studio providing dubbing, voice editing, and audio enhancement capabilities.",
-    "employee_count_range": "11-50"
+    "name_zh": "Noiz AI",
+    "description": "Noiz AI is an AI dubbing and voice generation tool supporting text-to-speech and voice cloning features.",
+    "employee_count_range": "1-10"
   },
   "icon_url": "https://cdn-images.toolify.ai/website-logos/20251204/1764838331_78710869_28759.webp",
   "sub_category": "ai agent",
@@ -202,7 +219,17 @@
     "AI Audio Editing",
     "AI Audio Enhancer",
     "AI Text-to-Speech",
-    "AI Voice Assistants"
+    "AI Voice Assistants",
+    "ai-audio-tools",
+    "AI Voice Cloning",
+    "AI Voice Generator",
+    "AI Dubbing",
+    "AI Speech Synthesis",
+    "AI Video Generator",
+    "Script To Video AI Generator",
+    "Text to Video",
+    "AI Animated Video",
+    "Image to Video"
   ],
   "keywords": [
     "voice generator",
@@ -211,7 +238,27 @@
     "audio",
     "voice",
     "audiobook",
-    "creator tools"
+    "creator tools",
+    "AI Text to Speech",
+    "Voice Cloning",
+    "Emotional TTS",
+    "Voice Synthesis",
+    "Multilingual Dubbing",
+    "AI Video Translation",
+    "Audio Production",
+    "API",
+    "AI video generator",
+    "Text-to-video",
+    "Video creation",
+    "AI writing",
+    "Multimedia",
+    "Content creation",
+    "Language support",
+    "Video editing",
+    "Story generation",
+    "AI tools",
+    "Image-to-video",
+    "Artificial intelligence"
   ],
   "platforms": [
     "web",
@@ -223,7 +270,11 @@
     "general-users",
     "content-creators",
     "video-producers",
-    "podcasters"
+    "podcasters",
+    "translators",
+    "global-teams",
+    "video-creators",
+    "content-producers"
   ],
   "use_cases": [
     "voice-assistant",
@@ -233,10 +284,13 @@
     "autonomous-agents",
     "audio-dubbing",
     "voice-editing",
-    "audio-enhancement"
+    "audio-enhancement",
+    "dubbing",
+    "voice-cloning",
+    "text-to-speech"
   ],
-  "name_zh": "Noiz Agent",
-  "description_zh": "全功能AI音频工作室，支持配音、音频编辑和声音增强。",
+  "name_zh": "Noiz AI",
+  "description_zh": "AI配音工具，支持文本转语音和声音克隆",
   "open_source": false,
   "api_available": true,
   "hiring": {
@@ -246,14 +300,19 @@
       "Python",
       "React",
       "TensorFlow",
-      "AWS"
+      "AWS",
+      "Node.js"
     ],
-    "last_checked": "2026-02-20"
+    "last_checked": "2026-02-24"
   },
   "modalities": [
     "audio"
   ],
   "competitors": [
     "descript"
-  ]
+  ],
+  "pricing": {
+    "model": "paid",
+    "has_free_tier": false
+  }
 }
