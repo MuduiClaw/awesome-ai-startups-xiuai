@@ -2983,6 +2983,12 @@ Optional --phase for specific use cases:
         help="Split runner into N parallel scripts (e.g. --shards 5)",
     )
     parser.add_argument(
+        "--shard",
+        type=str,
+        default=None,
+        help="Run a specific shard partition (e.g. --shard 1/10 for first of 10)",
+    )
+    parser.add_argument(
         "--verbose",
         "-v",
         action="store_true",
@@ -3014,9 +3020,36 @@ Optional --phase for specific use cases:
     if phase == 0 and args.backend == "cli":
         parser.error("--phase 0 is rule-based only, no LLM backend needed")
 
+    # Parse --shard N/M
+    shard_index: int | None = None
+    shard_total: int | None = None
+    if args.shard:
+        try:
+            parts = args.shard.split("/")
+            shard_index, shard_total = int(parts[0]), int(parts[1])
+            if shard_index < 1 or shard_index > shard_total:
+                raise ValueError
+        except (ValueError, IndexError):
+            parser.error(
+                f"Invalid --shard format: '{args.shard}'. Use N/M (e.g. 1/10)"
+            )
+
     logger.info("Loading products from %s ...", PRODUCTS_DIR)
     products = load_all_products()
     logger.info("Loaded %d products", len(products))
+
+    # Apply shard partitioning: deterministic split by sorted slug
+    if shard_index is not None and shard_total is not None:
+        products.sort(key=lambda sp: sp[0])
+        total = len(products)
+        chunk_size = (total + shard_total - 1) // shard_total
+        start = (shard_index - 1) * chunk_size
+        end = min(start + chunk_size, total)
+        products = products[start:end]
+        logger.info(
+            "Shard %d/%d: products[%d:%d] (%d products)",
+            shard_index, shard_total, start, end, len(products),
+        )
 
     # Route to the appropriate mode
     if args.generate_prompts:
@@ -3046,8 +3079,12 @@ Optional --phase for specific use cases:
         # LLM execution mode (API or CLI backend)
         cb = _get_phase_callbacks(phase, products)
         _phase_labels = {5: "combined", 7: "deep"}
+        # Shard-specific checkpoint key to avoid conflicts across terminals
+        phase_key = f"phase_{phase}"
+        if shard_index is not None and shard_total is not None:
+            phase_key = f"phase_{phase}_shard_{shard_index}_of_{shard_total}"
         stats = _run_llm_phase(
-            f"phase_{phase}",
+            phase_key,
             f"{phase} ({_phase_labels.get(phase, str(phase))})",
             products,
             *cb[:3],

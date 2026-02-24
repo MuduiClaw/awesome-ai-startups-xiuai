@@ -1,0 +1,78 @@
+name: Daily Health Check
+
+on:
+  schedule:
+    - cron: "0 8 * * *" # 08:00 UTC daily
+  workflow_dispatch: # Allow manual trigger
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-health-check
+  cancel-in-progress: false
+
+jobs:
+  health-check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: pip install -e ".[appstores,firecrawl]"
+
+      - name: URL liveness check
+        run: python scripts/health_check.py --check url --limit 500
+
+      - name: App store data refresh
+        run: python scripts/health_check.py --check appstore --limit 100
+
+      - name: Crunchbase funding refresh
+        if: env.FIRECRAWL_API_KEY != ''
+        env:
+          FIRECRAWL_API_KEY: ${{ secrets.FIRECRAWL_API_KEY }}
+        run: python scripts/health_check.py --check crunchbase --limit 100
+
+      - name: Hiring URL check
+        run: python scripts/health_check.py --check hiring --limit 200
+
+      - name: Status inference
+        run: python scripts/health_check.py --check status
+
+      - name: Rebuild SQLite database
+        run: |
+          pip install -e "."
+          aiscrape init-db
+
+      - name: Generate stats and index
+        run: aiscrape generate-stats
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/
+          if git diff --staged --quiet; then
+            echo "No health check changes to commit"
+          else
+            git commit -m "chore: daily health check $(date -u +%Y-%m-%d)"
+            git pull --rebase origin main || {
+              echo "Rebase conflict detected, resolving..."
+              git rebase --abort
+              git stash
+              git pull origin main
+              git stash pop
+              git add data/
+              git commit -m "chore: daily health check $(date -u +%Y-%m-%d)"
+            }
+            git push
+          fi
