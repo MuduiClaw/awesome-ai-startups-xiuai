@@ -8,7 +8,7 @@
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-20",
+    "last_updated": "2026-02-25",
     "provenance": {
       "name": {
         "source": "app_store",
@@ -179,10 +179,10 @@
         "updated_at": "2026-02-20"
       },
       "hiring.careers_url": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "google_play",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-25"
       },
       "modalities": {
         "source": "llm-batch-combined",
@@ -201,6 +201,18 @@
         "tier": 3,
         "confidence": 0.5,
         "updated_at": "2026-02-20"
+      },
+      "pricing.model": {
+        "source": "google_play",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-25"
+      },
+      "pricing.has_free_tier": {
+        "source": "google_play",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-25"
       }
     }
   },
@@ -209,6 +221,16 @@
       "url": "https://apps.apple.com/us/app/deepseek-ai-assistant/id6737597349?uo=4",
       "source_name": "app_store",
       "scraped_at": "2026-02-16"
+    },
+    {
+      "url": "https://play.google.com/store/apps/details?id=com.deepseek.chat",
+      "source_name": "google_play",
+      "scraped_at": "2026-02-25"
+    },
+    {
+      "url": "https://play.google.com/store/apps/details?id=com.swift.chatbot.ai.assistant",
+      "source_name": "google_play",
+      "scraped_at": "2026-02-25"
     }
   ],
   "company": {
@@ -307,7 +329,9 @@
   "release_date": "2025-01-10",
   "app_store": {
     "apple_store_url": "https://apps.apple.com/app/id6737597349",
-    "rating": 4.0
+    "rating": 4.0,
+    "google_play_url": "https://play.google.com/store/apps/details?id=com.swift.chatbot.ai.assistant",
+    "downloads": "500,000+"
   },
   "keywords": [
     "DeepSeek - AI Assistant",
