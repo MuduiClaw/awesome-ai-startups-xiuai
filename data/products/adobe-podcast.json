@@ -8,7 +8,7 @@
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-20",
+    "last_updated": "2026-02-26",
     "provenance": {
       "name": {
         "source": "aibot",
@@ -71,10 +71,10 @@
         "updated_at": "2026-02-16"
       },
       "tags": {
-        "source": "toolify",
+        "source": "app_store",
         "tier": 2,
         "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "updated_at": "2026-02-26"
       },
       "sub_category": {
         "source": "toolify",
@@ -107,10 +107,10 @@
         "updated_at": "2026-02-16"
       },
       "platforms": {
-        "source": "rule-based-enrichment",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-17"
+        "source": "app_store",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-26"
       },
       "target_audience": {
         "source": "llm-batch-combined",
@@ -167,10 +167,10 @@
         "updated_at": "2026-02-20"
       },
       "hiring.careers_url": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "app_store",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-26"
       },
       "modalities": {
         "source": "llm-batch-combined",
@@ -189,6 +189,18 @@
         "tier": 3,
         "confidence": 0.5,
         "updated_at": "2026-02-20"
+      },
+      "release_date": {
+        "source": "app_store",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-26"
+      },
+      "supported_languages": {
+        "source": "app_store",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-26"
       }
     }
   },
@@ -202,6 +214,11 @@
       "url": "https://www.toolify.ai/tool/adobe-podcast",
       "source_name": "toolify",
       "scraped_at": "2026-02-16"
+    },
+    {
+      "url": "https://apps.apple.com/us/app/lightroom-ai-photo-editor/id878783582?uo=4",
+      "source_name": "app_store",
+      "scraped_at": "2026-02-26"
     }
   ],
   "description_zh": "Adobe推出的在线AI音频录制和编辑工具",
@@ -220,7 +237,8 @@
     "AI Audio Editing",
     "AI Recording",
     "AI Transcription",
-    "AI Audio Enhancer"
+    "AI Audio Enhancer",
+    "Photo & Video"
   ],
   "sub_category": "ai podcast",
   "pricing": {
@@ -239,7 +257,8 @@
     "Transcription"
   ],
   "platforms": [
-    "web"
+    "web",
+    "ios"
   ],
   "target_audience": [
     "general-users",
@@ -262,7 +281,7 @@
   "api_available": false,
   "hiring": {
     "is_hiring": true,
-    "careers_url": "https://adobe.com/careers",
+    "careers_url": "",
     "tech_stack": [
       "React",
       "WebAudio API",
@@ -276,5 +295,33 @@
   ],
   "competitors": [
     "descript"
-  ]
+  ],
+  "release_date": "2014-06-22",
+  "supported_languages": [
+    "NL",
+    "EN",
+    "FR",
+    "DE",
+    "HI",
+    "ID",
+    "IT",
+    "JA",
+    "KO",
+    "MS",
+    "NB",
+    "PL",
+    "PT",
+    "RU",
+    "ZH",
+    "ES",
+    "SV",
+    "TH",
+    "TR",
+    "UK",
+    "VI"
+  ],
+  "app_store": {
+    "apple_store_url": "https://apps.apple.com/app/id878783582",
+    "rating": 4.8
+  }
 }

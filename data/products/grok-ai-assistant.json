@@ -8,7 +8,7 @@
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-20",
+    "last_updated": "2026-02-26",
     "provenance": {
       "name": {
         "source": "toolify",
@@ -77,10 +77,10 @@
         "updated_at": "2026-02-16"
       },
       "tags": {
-        "source": "ainav",
+        "source": "app_store",
         "tier": 2,
         "confidence": 0.75,
-        "updated_at": "2026-02-18"
+        "updated_at": "2026-02-26"
       },
       "keywords": {
         "source": "toolify",
@@ -89,10 +89,10 @@
         "updated_at": "2026-02-16"
       },
       "platforms": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "app_store",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-26"
       },
       "target_audience": {
         "source": "llm-batch-combined",
@@ -177,6 +177,30 @@
         "tier": 3,
         "confidence": 0.5,
         "updated_at": "2026-02-20"
+      },
+      "pricing.model": {
+        "source": "app_store",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-26"
+      },
+      "pricing.has_free_tier": {
+        "source": "app_store",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-26"
+      },
+      "release_date": {
+        "source": "app_store",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-26"
+      },
+      "supported_languages": {
+        "source": "app_store",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-26"
       }
     }
   },
@@ -190,6 +214,11 @@
       "url": "https://www.ainav.cn",
       "source_name": "ainav",
       "scraped_at": "2026-02-18"
+    },
+    {
+      "url": "https://apps.apple.com/us/app/grok/id6670324846?uo=4",
+      "source_name": "app_store",
+      "scraped_at": "2026-02-26"
     }
   ],
   "company": {
@@ -206,7 +235,8 @@
     "AI Chatbot",
     "Large Language Models (LLMs)",
     "AI Assistant",
-    "AI对话聊天"
+    "AI对话聊天",
+    "Productivity"
   ],
   "keywords": [
     "AI assistant",
@@ -219,7 +249,8 @@
   ],
   "platforms": [
     "web",
-    "api"
+    "api",
+    "ios"
   ],
   "target_audience": [
     "developers",
@@ -256,5 +287,53 @@
     "chatgpt",
     "gemini",
     "copilot"
-  ]
+  ],
+  "pricing": {
+    "model": "free",
+    "has_free_tier": true
+  },
+  "release_date": "2025-01-08",
+  "supported_languages": [
+    "AR",
+    "BN",
+    "BG",
+    "HR",
+    "CS",
+    "DA",
+    "NL",
+    "EN",
+    "FI",
+    "FR",
+    "DE",
+    "EL",
+    "HE",
+    "HI",
+    "HU",
+    "ID",
+    "IT",
+    "JA",
+    "KO",
+    "MS",
+    "MR",
+    "NB",
+    "FA",
+    "PL",
+    "PT",
+    "RO",
+    "RU",
+    "ZH",
+    "ES",
+    "SV",
+    "TA",
+    "TE",
+    "TH",
+    "TR",
+    "UK",
+    "UR",
+    "VI"
+  ],
+  "app_store": {
+    "apple_store_url": "https://apps.apple.com/app/id6670324846",
+    "rating": 4.9
+  }
 }

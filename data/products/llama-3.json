@@ -8,7 +8,7 @@
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-20",
+    "last_updated": "2026-02-26",
     "provenance": {
       "name": {
         "source": "ainav",
@@ -71,10 +71,10 @@
         "updated_at": "2026-02-16"
       },
       "tags": {
-        "source": "toolify",
+        "source": "app_store",
         "tier": 2,
         "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "updated_at": "2026-02-26"
       },
       "sub_category": {
         "source": "toolify",
@@ -113,10 +113,10 @@
         "updated_at": "2026-02-17"
       },
       "platforms": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "app_store",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-26"
       },
       "target_audience": {
         "source": "llm-batch-combined",
@@ -167,10 +167,10 @@
         "updated_at": "2026-02-20"
       },
       "hiring.careers_url": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "app_store",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-26"
       },
       "modalities": {
         "source": "llm-batch-combined",
@@ -183,6 +183,18 @@
         "tier": 3,
         "confidence": 0.5,
         "updated_at": "2026-02-20"
+      },
+      "release_date": {
+        "source": "app_store",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-26"
+      },
+      "supported_languages": {
+        "source": "app_store",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-26"
       }
     }
   },
@@ -201,6 +213,11 @@
       "url": "https://www.toolify.ai/tool/llama-3",
       "source_name": "toolify",
       "scraped_at": "2026-02-16"
+    },
+    {
+      "url": "https://apps.apple.com/us/app/meta-ai-vibes-ai-glasses/id1558240027?uo=4",
+      "source_name": "app_store",
+      "scraped_at": "2026-02-26"
     }
   ],
   "description_zh": "Llama 3是Meta公司最新推出的...",
@@ -220,7 +237,8 @@
     "Large Language Models (LLMs)",
     "Open Source AI Models",
     "AI Assistant",
-    "AI Code Generator"
+    "AI Code Generator",
+    "Photo & Video"
   ],
   "sub_category": "ai chatbot",
   "pricing": {
@@ -242,7 +260,8 @@
     "web",
     "api",
     "self-hosted",
-    "cli"
+    "cli",
+    "ios"
   ],
   "target_audience": [
     "developers",
@@ -265,7 +284,7 @@
   "api_available": true,
   "hiring": {
     "is_hiring": true,
-    "careers_url": "https://www.meta.com/careers/",
+    "careers_url": "",
     "tech_stack": [
       "PyTorch",
       "CUDA",
@@ -276,5 +295,44 @@
   },
   "modalities": [
     "text"
-  ]
+  ],
+  "release_date": "2021-09-09",
+  "supported_languages": [
+    "AR",
+    "BG",
+    "HR",
+    "CS",
+    "DA",
+    "NL",
+    "EN",
+    "FI",
+    "FR",
+    "DE",
+    "EL",
+    "HE",
+    "HI",
+    "HU",
+    "ID",
+    "IT",
+    "JA",
+    "KO",
+    "MS",
+    "NB",
+    "PL",
+    "PT",
+    "RO",
+    "ZH",
+    "SK",
+    "ES",
+    "SV",
+    "TL",
+    "TH",
+    "TR",
+    "UR",
+    "VI"
+  ],
+  "app_store": {
+    "apple_store_url": "https://apps.apple.com/app/id1558240027",
+    "rating": 4.7
+  }
 }

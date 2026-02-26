@@ -8,7 +8,7 @@
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-20",
+    "last_updated": "2026-02-26",
     "provenance": {
       "name": {
         "source": "toolify",
@@ -77,10 +77,10 @@
         "updated_at": "2026-02-16"
       },
       "tags": {
-        "source": "toolify",
+        "source": "google_play",
         "tier": 2,
         "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "updated_at": "2026-02-26"
       },
       "keywords": {
         "source": "toolify",
@@ -101,10 +101,10 @@
         "updated_at": "2026-02-17"
       },
       "platforms": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "google_play",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-26"
       },
       "target_audience": {
         "source": "llm-batch-combined",
@@ -155,10 +155,10 @@
         "updated_at": "2026-02-20"
       },
       "hiring.careers_url": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "google_play",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-26"
       },
       "modalities": {
         "source": "llm-batch-combined",
@@ -177,6 +177,18 @@
         "tier": 3,
         "confidence": 0.5,
         "updated_at": "2026-02-20"
+      },
+      "pricing.model": {
+        "source": "google_play",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-26"
+      },
+      "pricing.has_free_tier": {
+        "source": "google_play",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-26"
       }
     }
   },
@@ -185,6 +197,11 @@
       "url": "https://www.toolify.ai/tool/venice-ai",
       "source_name": "toolify",
       "scraped_at": "2026-02-16"
+    },
+    {
+      "url": "https://play.google.com/store/apps/details?id=com.ai.venice",
+      "source_name": "google_play",
+      "scraped_at": "2026-02-26"
     }
   ],
   "company": {
@@ -202,7 +219,8 @@
     "AI Text Generator",
     "AI Image Generator",
     "AI Code Generator",
-    "AI Character"
+    "AI Character",
+    "Productivity"
   ],
   "keywords": [
     "Private AI",
@@ -216,13 +234,14 @@
     "AI API"
   ],
   "pricing": {
-    "model": "freemium",
+    "model": "free",
     "has_free_tier": true
   },
   "open_source": true,
   "platforms": [
     "web",
-    "api"
+    "api",
+    "android"
   ],
   "target_audience": [
     "developers",
@@ -255,5 +274,10 @@
   ],
   "competitors": [
     "ollama"
-  ]
+  ],
+  "app_store": {
+    "google_play_url": "https://play.google.com/store/apps/details?id=com.ai.venice",
+    "rating": 2.9,
+    "downloads": "100,000+"
+  }
 }
