@@ -8,7 +8,7 @@
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-20",
+    "last_updated": "2026-03-01",
     "provenance": {
       "name": {
         "source": "toolify",
@@ -77,10 +77,10 @@
         "updated_at": "2026-02-16"
       },
       "tags": {
-        "source": "toolify",
+        "source": "google_play",
         "tier": 2,
         "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "updated_at": "2026-03-01"
       },
       "keywords": {
         "source": "toolify",
@@ -95,10 +95,10 @@
         "updated_at": "2026-02-16"
       },
       "platforms": {
-        "source": "rule-based-enrichment",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-17"
+        "source": "google_play",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-03-01"
       },
       "target_audience": {
         "source": "llm-batch-combined",
@@ -161,10 +161,10 @@
         "updated_at": "2026-02-20"
       },
       "hiring.careers_url": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "google_play",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-03-01"
       },
       "modalities": {
         "source": "llm-batch-combined",
@@ -177,6 +177,18 @@
         "tier": 3,
         "confidence": 0.5,
         "updated_at": "2026-02-20"
+      },
+      "pricing.model": {
+        "source": "google_play",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-03-01"
+      },
+      "pricing.has_free_tier": {
+        "source": "google_play",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-03-01"
       }
     }
   },
@@ -185,6 +197,11 @@
       "url": "https://www.toolify.ai/tool/1min-ai",
       "source_name": "toolify",
       "scraped_at": "2026-02-16"
+    },
+    {
+      "url": "https://play.google.com/store/apps/details?id=ai.ai1min.application",
+      "source_name": "google_play",
+      "scraped_at": "2026-03-01"
     }
   ],
   "company": {
@@ -202,7 +219,8 @@
     "AI Writing Assistants",
     "AI Image Generator",
     "AI Chatbot",
-    "AI Video Generator"
+    "AI Video Generator",
+    "Tools"
   ],
   "keywords": [
     "AI app",
@@ -217,11 +235,12 @@
     "Audio translation"
   ],
   "pricing": {
-    "model": "freemium",
+    "model": "free",
     "has_free_tier": true
   },
   "platforms": [
-    "web"
+    "web",
+    "android"
   ],
   "target_audience": [
     "professionals",
@@ -257,5 +276,10 @@
     "image",
     "audio",
     "video"
-  ]
+  ],
+  "app_store": {
+    "google_play_url": "https://play.google.com/store/apps/details?id=ai.ai1min.application",
+    "rating": 4.5,
+    "downloads": "10,000+"
+  }
 }
