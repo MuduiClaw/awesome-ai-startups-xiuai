@@ -8,7 +8,7 @@
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-20",
+    "last_updated": "2026-03-01",
     "provenance": {
       "name": {
         "source": "ainav",
@@ -113,10 +113,10 @@
         "updated_at": "2026-02-16"
       },
       "platforms": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "google_play",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-25"
       },
       "keywords": {
         "source": "toolify",
@@ -218,6 +218,11 @@
       "url": "https://www.toolify.ai/tool/googlegemini-co",
       "source_name": "toolify",
       "scraped_at": "2026-02-16"
+    },
+    {
+      "url": "https://play.google.com/store/apps/details?id=com.google.android.apps.bard",
+      "source_name": "google_play",
+      "scraped_at": "2026-02-25"
     }
   ],
   "description_zh": "Gemini AI是由Google DeepMind发布的一款多模态人工智能模型",
@@ -320,11 +325,14 @@
   ],
   "platforms": [
     "ios",
-    "api"
+    "api",
+    "android"
   ],
   "app_store": {
     "apple_store_url": "https://apps.apple.com/app/id6477489729",
-    "rating": 4.7
+    "rating": 4.6,
+    "google_play_url": "https://play.google.com/store/apps/details?id=com.google.android.apps.bard",
+    "downloads": "1,000,000,000+"
   },
   "keywords": [
     "AI assistant",

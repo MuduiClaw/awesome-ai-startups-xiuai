@@ -8,7 +8,7 @@
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-20",
+    "last_updated": "2026-03-01",
     "provenance": {
       "name": {
         "source": "app_store",
@@ -71,10 +71,10 @@
         "updated_at": "2026-02-16"
       },
       "tags": {
-        "source": "app_store",
+        "source": "google_play",
         "tier": 2,
         "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "updated_at": "2026-02-25"
       },
       "supported_languages": {
         "source": "app_store",
@@ -197,10 +197,10 @@
         "updated_at": "2026-02-20"
       },
       "hiring.careers_url": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "google_play",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-25"
       },
       "modalities": {
         "source": "llm-batch-combined",
@@ -227,6 +227,11 @@
       "url": "https://apps.apple.com/us/app/linky-ai-chat-play-connect/id6450916631?uo=4",
       "source_name": "app_store",
       "scraped_at": "2026-02-16"
+    },
+    {
+      "url": "https://play.google.com/store/apps/details?id=com.aigc.ushow.ichat",
+      "source_name": "google_play",
+      "scraped_at": "2026-02-25"
     }
   ],
   "company": {
@@ -239,7 +244,8 @@
   },
   "icon_url": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/8c/23/e9/8c23e919-2c9e-d3b8-4c50-5322f9057630/AppIcon-1x_U007emarketing-0-8-0-85-220-0.png/512x512bb.jpg",
   "tags": [
-    "Social Networking"
+    "Social Networking",
+    "Social"
   ],
   "supported_languages": [
     "AR",
@@ -265,7 +271,9 @@
   "release_date": "2023-07-18",
   "app_store": {
     "apple_store_url": "https://apps.apple.com/app/id6450916631",
-    "rating": 4.4
+    "rating": 4.4,
+    "google_play_url": "https://play.google.com/store/apps/details?id=com.aigc.ushow.ichat",
+    "downloads": "10,000,000+"
   },
   "keywords": [
     "Linky AI: Chat, Play, Connect",
@@ -314,7 +322,7 @@
   "api_available": false,
   "hiring": {
     "is_hiring": true,
-    "careers_url": "https://skyworkai.com/careers",
+    "careers_url": "",
     "tech_stack": [
       "React",
       "Node.js",

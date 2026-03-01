@@ -8,7 +8,7 @@
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-20",
+    "last_updated": "2026-03-01",
     "provenance": {
       "name": {
         "source": "app_store",
@@ -71,22 +71,22 @@
         "updated_at": "2026-02-16"
       },
       "tags": {
-        "source": "toolify",
+        "source": "google_play",
         "tier": 2,
         "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "updated_at": "2026-02-25"
       },
       "supported_languages": {
         "source": "app_store",
         "tier": 2,
         "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "updated_at": "2026-02-25"
       },
       "platforms": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "google_play",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-25"
       },
       "pricing": {
         "source": "app_store",
@@ -197,10 +197,10 @@
         "updated_at": "2026-02-20"
       },
       "hiring.careers_url": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "google_play",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-02-25"
       },
       "modalities": {
         "source": "llm-batch-combined",
@@ -231,6 +231,11 @@
       "url": "https://www.toolify.ai/tool/meta-segment-anything-model-2",
       "source_name": "toolify",
       "scraped_at": "2026-02-16"
+    },
+    {
+      "url": "https://play.google.com/store/apps/details?id=com.facebook.stella",
+      "source_name": "google_play",
+      "scraped_at": "2026-02-25"
     }
   ],
   "company": {
@@ -247,7 +252,8 @@
     "AI大模型",
     "AI Image Segmentation",
     "Open Source AI Models",
-    "AI Models"
+    "AI Models",
+    "Social"
   ],
   "supported_languages": [
     "AR",
@@ -281,11 +287,13 @@
     "TH",
     "ZH",
     "TR",
-    "VI"
+    "VI",
+    "UR"
   ],
   "platforms": [
     "ios",
-    "web"
+    "web",
+    "android"
   ],
   "pricing": {
     "model": "free",
@@ -294,7 +302,9 @@
   "release_date": "2021-09-09",
   "app_store": {
     "apple_store_url": "https://apps.apple.com/app/id1558240027",
-    "rating": 4.7
+    "rating": 4.6,
+    "google_play_url": "https://play.google.com/store/apps/details?id=com.facebook.stella",
+    "downloads": "10,000,000+"
   },
   "description_zh": "Llama 2 是由 Meta 公司研发的先进的开源大型语言模型。这个模型在设计和性能上都进行了重大的升级，使其成为当前领先的语言处理工具。",
   "sub_category": "ai image segmentation",
@@ -329,7 +339,7 @@
   "api_available": false,
   "hiring": {
     "is_hiring": true,
-    "careers_url": "https://www.metacareers.com",
+    "careers_url": "",
     "tech_stack": [
       "PyTorch",
       "C++",
