@@ -51,7 +51,7 @@ logger = logging.getLogger("batch_enrich")
 CHECKPOINT_FILE = PRODUCTS_DIR.parent / ".enrichment_checkpoint.json"
 PROMPTS_DIR = PRODUCTS_DIR.parent / ".enrichment_prompts"
 RESPONSES_DIR = PRODUCTS_DIR.parent / ".enrichment_responses"
-DEFAULT_MODEL = "claude-haiku-4-5-20251001"
+DEFAULT_MODEL = "claude-sonnet-4-5-20250929"
 DEFAULT_RATE_LIMIT_DELAY = 1.0  # seconds between API calls
 CLI_RATE_LIMIT_DELAY = 0.5  # seconds between CLI calls (subscription-based)
 
@@ -566,16 +566,36 @@ class BatchLLMClient:
             logger.error("API error (final): %s: %s", err, exc)
 
 
+class QuotaExhaustedError(RuntimeError):
+    """Raised when the Claude CLI indicates subscription quota is exhausted."""
+
+
+# Patterns that signal quota / rate-limit exhaustion (case-insensitive)
+_QUOTA_ERROR_PATTERNS = re.compile(
+    r"rate.limit|overloaded|quota|usage.limit|429|529|credit|billing"
+    r"|too many|capacity|throttl",
+    re.IGNORECASE,
+)
+
+
 class CLILLMClient:
     """Use Claude CLI (claude -p) for enrichment instead of the API.
 
     Requires the ``claude`` CLI to be installed and authenticated.
     Uses the user's subscription — no ANTHROPIC_API_KEY needed.
+
+    Detects subscription quota exhaustion and automatically pauses
+    with exponential backoff, probing periodically until quota restores.
     """
+
+    QUOTA_INITIAL_BACKOFF = 60    # first quota-wait: 60s
+    QUOTA_MAX_BACKOFF = 900       # cap at 15 minutes between probes
+    QUOTA_MAX_TOTAL_WAIT = 7200   # give up after 2 hours
 
     def __init__(self, rate_limit_delay: float = CLI_RATE_LIMIT_DELAY) -> None:
         self.rate_limit_delay = rate_limit_delay
         self._verified = False
+        self._total_quota_wait = 0  # cumulative wait across the session
 
     def _verify_cli(self) -> None:
         """Check that the claude CLI is available on PATH."""
@@ -589,32 +609,99 @@ class CLILLMClient:
             )
         self._verified = True
 
-    def call(self, prompt: str, max_tokens: int = 8192) -> str:
-        """Call Claude via the CLI and return the text response."""
+    @staticmethod
+    def _is_quota_error(stderr: str) -> bool:
+        """Check if stderr text indicates a quota / rate-limit error."""
+        return bool(_QUOTA_ERROR_PATTERNS.search(stderr))
+
+    def _run_cli(self, prompt: str) -> tuple[str, str, int]:
+        """Run claude CLI and return (stdout, stderr, returncode)."""
         self._verify_cli()
         import subprocess as _sp
 
-        # Strip CLAUDECODE env var to allow running inside a Claude Code session
         env = {k: v for k, v in os.environ.items() if k != "CLAUDECODE"}
+        env["PYTHONUTF8"] = "1"
         result = _sp.run(
             [
                 "claude",
                 "-p",
                 "--model",
-                "haiku",
+                "sonnet",
+                "--allowedTools",
+                "WebFetch",
             ],
             input=prompt,
             capture_output=True,
-            text=True,
+            encoding="utf-8",
+            errors="replace",
             timeout=600,
             env=env,
         )
-        if result.returncode != 0:
+        return result.stdout, result.stderr, result.returncode
+
+    def call(self, prompt: str, max_tokens: int = 8192) -> str:
+        """Call Claude via the CLI and return the text response.
+
+        Raises QuotaExhaustedError for quota/rate-limit errors,
+        RuntimeError for other CLI errors.
+        """
+        stdout, stderr, returncode = self._run_cli(prompt)
+        if returncode != 0:
+            if self._is_quota_error(stderr):
+                raise QuotaExhaustedError(
+                    f"Quota/rate-limit hit (exit {returncode}): "
+                    f"{stderr[:500]}"
+                )
             raise RuntimeError(
-                f"Claude CLI error (exit {result.returncode}): "
-                f"{result.stderr[:500]}"
+                f"Claude CLI error (exit {returncode}): "
+                f"{stderr[:500]}"
             )
-        return result.stdout
+        return stdout
+
+    def _wait_for_quota(self) -> bool:
+        """Block until quota is restored or max wait is exceeded.
+
+        Uses exponential backoff with lightweight probe calls.
+        Returns True if quota restored, False if timed out.
+        """
+        backoff = self.QUOTA_INITIAL_BACKOFF
+        logger.warning(
+            "QUOTA EXHAUSTED — entering auto-wait mode "
+            "(probe every %ds–%ds, max total %ds)",
+            backoff,
+            self.QUOTA_MAX_BACKOFF,
+            self.QUOTA_MAX_TOTAL_WAIT,
+        )
+
+        while self._total_quota_wait < self.QUOTA_MAX_TOTAL_WAIT:
+            logger.info(
+                "[quota-wait] Sleeping %ds (total waited: %ds / %ds)...",
+                backoff,
+                self._total_quota_wait,
+                self.QUOTA_MAX_TOTAL_WAIT,
+            )
+            time.sleep(backoff)
+            self._total_quota_wait += backoff
+
+            # Probe: lightweight test call
+            logger.info("[quota-wait] Probing quota with test call...")
+            _stdout, stderr, returncode = self._run_cli("Reply with exactly: OK")
+            if returncode == 0:
+                logger.info("[quota-wait] Quota restored! Resuming.")
+                return True
+
+            if self._is_quota_error(stderr):
+                logger.info("[quota-wait] Still rate-limited. Increasing backoff.")
+            else:
+                logger.info("[quota-wait] Probe failed (non-quota). Will retry.")
+
+            backoff = min(backoff * 2, self.QUOTA_MAX_BACKOFF)
+
+        logger.error(
+            "[quota-wait] Exceeded max wait (%ds). Giving up.",
+            self.QUOTA_MAX_TOTAL_WAIT,
+        )
+        return False
 
     def call_with_retry(
         self,
@@ -622,12 +709,37 @@ class CLILLMClient:
         max_tokens: int = 8192,
         max_retries: int = 3,
     ) -> str | None:
-        """Call with exponential backoff on transient errors."""
+        """Call with exponential backoff on transient errors.
+
+        Quota/rate-limit errors trigger an extended wait-and-probe loop
+        instead of burning through retries immediately.
+        """
         for attempt in range(max_retries):
             try:
                 result = self.call(prompt, max_tokens)
                 time.sleep(self.rate_limit_delay)
                 return result
+            except QuotaExhaustedError as exc:
+                logger.warning(
+                    "CLI quota error (%d/%d): %s",
+                    attempt + 1,
+                    max_retries,
+                    exc,
+                )
+                # Wait for quota to restore, then retry the SAME attempt
+                if self._wait_for_quota():
+                    # Quota restored — retry without consuming an attempt
+                    try:
+                        result = self.call(prompt, max_tokens)
+                        time.sleep(self.rate_limit_delay)
+                        return result
+                    except (QuotaExhaustedError, RuntimeError, OSError) as retry_exc:
+                        logger.warning(
+                            "Post-quota retry failed: %s", retry_exc
+                        )
+                else:
+                    logger.error("Quota not restored after extended wait.")
+                    return None
             except (TimeoutError, OSError, RuntimeError) as exc:
                 err = type(exc).__name__
                 if attempt < max_retries - 1:
@@ -655,13 +767,20 @@ def _parse_json_array(response: str) -> list[dict[str, Any]] | None:
     """Parse a JSON array from LLM response, stripping markdown fences.
 
     Returns None if parsing fails or result is not a list.
+    Handles responses with preamble text before ```json fences.
     """
     text = response.strip()
-    if text.startswith("```"):
+
+    # Extract content from markdown code fences (works even with preamble text)
+    fence_match = re.search(r"```(?:json)?\s*\n([\s\S]*?)```", text)
+    if fence_match:
+        text = fence_match.group(1).strip()
+    elif text.startswith("```"):
         lines = text.split("\n")
         text = "\n".join(lines[1:])
         if text.rstrip().endswith("```"):
             text = text.rstrip()[:-3]
+
     try:
         result = json.loads(text)
         if isinstance(result, list):
@@ -2584,33 +2703,68 @@ def generate_phase_prompts(
     bs = batch_size or default_bs
 
     completed_slugs = set(load_checkpoint().get(phase_key, []) if resume else [])
-    candidates = [
-        (s, p)
-        for s, p in products
-        if s not in completed_slugs and candidate_filter(s, p)
-    ]
-    if limit:
-        candidates = candidates[:limit]
 
     phase_prompts_dir = PROMPTS_DIR / phase_key
     phase_prompts_dir.mkdir(parents=True, exist_ok=True)
 
-    num_batches = (len(candidates) + bs - 1) // bs if candidates else 0
-    stats: dict[str, int] = {"candidates": len(candidates), "batches": 0}
+    # ── Stable numbering: preserve existing prompt files, only append new ──
+    # Read existing slugs.json files to find which slugs already have prompts
+    existing_slug_set: set[str] = set()
+    max_existing_idx = 0
+    for sf in phase_prompts_dir.glob("batch_*.slugs.json"):
+        try:
+            manifest = json.loads(sf.read_text(encoding="utf-8"))
+            for s in manifest.get("slugs", []):
+                existing_slug_set.add(s)
+            # Extract batch index from filename (batch_001 -> 1)
+            idx_str = sf.stem.replace(".slugs", "").replace("batch_", "")
+            idx = int(idx_str)
+            if idx > max_existing_idx:
+                max_existing_idx = idx
+        except (json.JSONDecodeError, ValueError, OSError):
+            pass
+
+    if existing_slug_set:
+        logger.info(
+            "Found %d existing prompt files (max batch_%03d), preserving them",
+            len(existing_slug_set),
+            max_existing_idx,
+        )
+
+    # Build candidate list: exclude completed AND already-prompted slugs
+    candidates = [
+        (s, p)
+        for s, p in products
+        if s not in completed_slugs
+        and s not in existing_slug_set
+        and candidate_filter(s, p)
+    ]
+    if limit:
+        candidates = candidates[:limit]
+
+    # Count total prompts = existing (preserved) + new (to generate)
+    num_new = (len(candidates) + bs - 1) // bs if candidates else 0
+    stats: dict[str, int] = {
+        "candidates": len(candidates),
+        "batches": 0,
+        "preserved": len(existing_slug_set),
+    }
 
     logger.info(
-        "Generating %d prompt files for %d candidates (batch_size=%d)",
-        num_batches,
+        "Generating %d NEW prompt files for %d candidates "
+        "(batch_size=%d, preserved=%d existing)",
+        num_new,
         len(candidates),
         bs,
+        len(existing_slug_set),
     )
 
-    for batch_idx, batch_start in enumerate(
-        range(0, len(candidates), bs),
-        start=1,
-    ):
+    # New batches start after the highest existing index
+    next_idx = max_existing_idx + 1
+
+    for batch_start in range(0, len(candidates), bs):
         batch = candidates[batch_start : batch_start + bs]
-        batch_name = f"batch_{batch_idx:03d}"
+        batch_name = f"batch_{next_idx:03d}"
 
         # Write prompt file
         prompt = prompt_builder(batch)
@@ -2628,26 +2782,34 @@ def generate_phase_prompts(
             encoding="utf-8",
         )
         stats["batches"] += 1
+        next_idx += 1
 
     # Generate runner script(s)
     prompts_posix = phase_prompts_dir.as_posix()
     responses_posix = (RESPONSES_DIR / phase_key).as_posix()
-    cli_model = "haiku"
+    cli_model = "sonnet"
     cli_sleep = 2 if phase == 7 else 1
     # Phase 7 needs WebFetch to visit product websites for verification
     cli_tools = '--allowedTools "WebFetch"' if phase == 7 else ""
-    total_batches = stats["batches"]
+    # Total = preserved + newly generated (runner script iterates all batch_*.prompt.txt)
+    total_batches = stats["preserved"] + stats["batches"]
 
     def _write_runner(
         script_path: Path,
         batch_filter: str,
         label: str,
     ) -> None:
-        """Write a single runner shell script."""
+        """Write a single runner shell script with quota-aware backoff."""
         script_path.write_text(
             f"""#!/bin/bash
 # Auto-generated runner for phase {phase} — {label}
 # Review prompts in {prompts_posix}/ before running.
+#
+# Features:
+#   - Detects subscription quota / rate-limit errors
+#   - Pauses automatically when quota is exhausted
+#   - Probes periodically until quota is restored, then resumes
+#   - Safe to Ctrl+C and re-run (completed batches are auto-skipped)
 
 PROMPTS_DIR="{prompts_posix}"
 RESPONSES_DIR="{responses_posix}"
@@ -2656,10 +2818,80 @@ mkdir -p "$RESPONSES_DIR"
 # Allow running inside a Claude Code session (unset nesting guard)
 unset CLAUDECODE 2>/dev/null
 
+# --- Quota / rate-limit settings ---
+CLI_TIMEOUT=300           # kill claude -p after 5 minutes (prevents infinite hang)
+PROBE_TIMEOUT=60          # kill quota probe after 60 seconds
+INITIAL_BACKOFF=60        # first quota-wait: 60s
+MAX_BACKOFF=900           # cap at 15 minutes between probes
+MAX_TOTAL_WAIT=7200       # give up after 2 hours of total waiting
+CONSECUTIVE_ERR_THRESHOLD=3  # enter quota-wait mode after N consecutive errors
+
 processed=0
 skipped=0
 errors=0
+consecutive_errors=0
+total_wait_time=0
 
+# ── is_quota_error: check if stderr contains quota / rate-limit signals ──
+is_quota_error() {{
+    local stderr_file="$1"
+    # Match common Claude CLI / Anthropic API quota error patterns
+    grep -qiE "rate.limit|overloaded|quota|usage.limit|429|529|credit|billing|too many|capacity|throttl" "$stderr_file" 2>/dev/null
+}}
+
+# ── wait_for_quota: exponential backoff with probe until quota restores ──
+wait_for_quota() {{
+    local backoff=$INITIAL_BACKOFF
+    echo ""
+    echo "╔══════════════════════════════════════════════════════════════╗"
+    echo "║  QUOTA EXHAUSTED — entering auto-wait mode                 ║"
+    echo "║  Will probe every ${{backoff}}s–${{MAX_BACKOFF}}s until quota restores      ║"
+    echo "║  Max total wait: ${{MAX_TOTAL_WAIT}}s ($((MAX_TOTAL_WAIT/60)) min)                               ║"
+    echo "║  Press Ctrl+C to abort; re-run is safe (skips completed)   ║"
+    echo "╚══════════════════════════════════════════════════════════════╝"
+    echo ""
+
+    while [ $total_wait_time -lt $MAX_TOTAL_WAIT ]; do
+        echo "[quota-wait] Sleeping ${{backoff}}s (total waited: ${{total_wait_time}}s / ${{MAX_TOTAL_WAIT}}s)..."
+        sleep $backoff
+        total_wait_time=$((total_wait_time + backoff))
+
+        # Probe: lightweight test call to check if quota is restored
+        echo "[quota-wait] Probing quota with test call..."
+        local probe_err
+        probe_err=$(mktemp)
+        echo "Reply with exactly: OK" | timeout $PROBE_TIMEOUT claude -p --model {cli_model} > /dev/null 2>"$probe_err"
+        local probe_rc=$?
+
+        if [ $probe_rc -eq 0 ]; then
+            echo "[quota-wait] ✓ Quota restored! Resuming processing..."
+            rm -f "$probe_err"
+            consecutive_errors=0
+            echo ""
+            return 0
+        fi
+
+        if is_quota_error "$probe_err"; then
+            echo "[quota-wait] ✗ Still rate-limited. Increasing backoff..."
+        else
+            echo "[quota-wait] ✗ Probe failed (non-quota error). Will retry..."
+        fi
+        rm -f "$probe_err"
+
+        # Exponential backoff: double each time, capped at MAX_BACKOFF
+        backoff=$((backoff * 2))
+        if [ $backoff -gt $MAX_BACKOFF ]; then
+            backoff=$MAX_BACKOFF
+        fi
+    done
+
+    echo ""
+    echo "[quota-wait] ✗ Exceeded max wait time (${{MAX_TOTAL_WAIT}}s). Stopping."
+    echo "[quota-wait]   Re-run this script later — completed batches will be skipped."
+    return 1
+}}
+
+# ── Main processing loop ──
 for f in {batch_filter}; do
     [ -f "$f" ] || continue
     batch=$(basename "$f" .prompt.txt)
@@ -2670,17 +2902,71 @@ for f in {batch_filter}; do
     fi
     processed=$((processed + 1))
     echo "[{label}] $batch ($processed processed, $skipped skipped, $errors errors)"
-    claude -p --model {cli_model} {cli_tools} < "$f" > "$resp"
-    if [ $? -ne 0 ]; then
-        echo "ERROR: $batch failed, removing partial response"
+
+    # Run Claude CLI, capturing stderr for error classification
+    stderr_tmp=$(mktemp)
+    claude -p --model {cli_model} {cli_tools} < "$f" > "$resp" 2>"$stderr_tmp"
+    exit_code=$?
+
+    if [ $exit_code -ne 0 ]; then
+        echo "ERROR: $batch failed (exit $exit_code)"
+        # Show first line of stderr for diagnostics
+        head -2 "$stderr_tmp" 2>/dev/null | sed 's/^/  stderr: /'
         rm -f "$resp"
         errors=$((errors + 1))
+        consecutive_errors=$((consecutive_errors + 1))
+
+        if is_quota_error "$stderr_tmp"; then
+            echo "[{label}] Detected quota/rate-limit error."
+            rm -f "$stderr_tmp"
+            # Enter quota-wait immediately on quota errors
+            if ! wait_for_quota; then
+                echo "[{label}] Aborting due to prolonged quota exhaustion."
+                break
+            fi
+            # Retry the SAME batch after quota restores
+            processed=$((processed - 1))
+            errors=$((errors - 1))
+            consecutive_errors=0
+
+            # Re-run this batch
+            echo "[{label}] Retrying $batch after quota restore..."
+            stderr_tmp=$(mktemp)
+            claude -p --model {cli_model} {cli_tools} < "$f" > "$resp" 2>"$stderr_tmp"
+            exit_code=$?
+            if [ $exit_code -ne 0 ]; then
+                echo "ERROR: $batch retry also failed (exit $exit_code)"
+                rm -f "$resp"
+                errors=$((errors + 1))
+                consecutive_errors=$((consecutive_errors + 1))
+            else
+                consecutive_errors=0
+            fi
+            rm -f "$stderr_tmp"
+        else
+            rm -f "$stderr_tmp"
+            # Non-quota error: use consecutive error threshold for protection
+            if [ $consecutive_errors -ge $CONSECUTIVE_ERR_THRESHOLD ]; then
+                echo "[{label}] $consecutive_errors consecutive non-quota errors."
+                if ! wait_for_quota; then
+                    echo "[{label}] Aborting due to persistent errors."
+                    break
+                fi
+            fi
+        fi
+    else
+        consecutive_errors=0
+        rm -f "$stderr_tmp"
     fi
     sleep {cli_sleep}
 done
 
 echo ""
-echo "[{label}] Done! processed=$processed skipped=$skipped errors=$errors"
+echo "╔══════════════════════════════════════════════════════════════╗"
+echo "║  [{label}] Complete!                                           ║"
+echo "║  processed=$processed  skipped=$skipped  errors=$errors                       ║"
+echo "╚══════════════════════════════════════════════════════════════╝"
+echo ""
 echo "Apply responses with:"
 echo "  python scripts/batch_enrich.py --phase {phase} --apply-responses"
 """,
@@ -2840,14 +3126,22 @@ def apply_phase_responses(
             logger.warning("Failed to parse response for %s", batch_name)
             continue
 
-        # Build slug->product map for this batch
+        # Match by slug from response JSON (authoritative), not from slugs manifest.
+        # This handles cases where prompts were regenerated after responses were
+        # collected, causing slugs.json to diverge from response content.
         batch_slugs = set(slugs)
         for item in parsed:
             if not isinstance(item, dict):
                 continue
             slug = item.get("slug", "")
-            if slug not in batch_slugs or slug not in product_map:
+            if not slug or slug not in product_map:
                 continue
+            if slug not in batch_slugs:
+                logger.debug(
+                    "Batch %s: response slug '%s' not in manifest "
+                    "(prompt regenerated?), applying anyway",
+                    batch_name, slug,
+                )
             if slug in completed_slugs:
                 continue
 

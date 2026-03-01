@@ -48,7 +48,7 @@ JOB_SCRAPER_MAX_JOBS_PER_KEYWORD = 50
 
 # LLM enrichment settings
 LLM_DAILY_BUDGET = 55  # max LLM calls per day
-LLM_DEFAULT_MODEL = "claude-haiku-4-5-20251001"
+LLM_DEFAULT_MODEL = "claude-sonnet-4-5-20250929"
 LLM_MONTHLY_BUDGET_USD = 5.0
 
 # User agent for HTTP requests

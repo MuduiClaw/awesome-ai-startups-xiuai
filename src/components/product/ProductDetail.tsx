@@ -3,8 +3,8 @@ import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
 import { FundingBadge } from "./FundingBadge";
 import { ProductIcon } from "./ProductIcon";
-import { formatCurrency, formatPricingModel, formatSlug, formatNumber, localized } from "@/lib/utils";
-import type { ProductDetail as ProductDetailType, Locale } from "@/lib/types";
+import { formatCurrency, formatPricingModel, formatSlug, formatSlugLocalized, formatNumber, localized, localizeCountry } from "@/lib/utils";
+import type { ProductDetail as ProductDetailType, Locale, PlatformAvailability } from "@/lib/types";
 import type { Dictionary } from "@/lib/dict";
 
 interface ProductDetailProps {
@@ -15,24 +15,37 @@ interface ProductDetailProps {
 }
 
 // ─── Modality & Platform display maps ────────────────────────────────
-const modalityDisplay: Record<string, { icon: string; label: string }> = {
-  text: { icon: "\u2328\uFE0F", label: "Text" },
-  image: { icon: "\uD83D\uDDBC\uFE0F", label: "Image" },
-  audio: { icon: "\uD83C\uDFB5", label: "Audio" },
-  video: { icon: "\uD83C\uDFA5", label: "Video" },
-  code: { icon: "\uD83D\uDCBB", label: "Code" },
-  "3d": { icon: "\uD83D\uDCBF", label: "3D" },
-  multimodal: { icon: "\u2726", label: "Multimodal" },
+const modalityDisplay: Record<string, { icon: string; en: string; zh: string }> = {
+  text: { icon: "\u2328\uFE0F", en: "Text", zh: "文本" },
+  image: { icon: "\uD83D\uDDBC\uFE0F", en: "Image", zh: "图像" },
+  audio: { icon: "\uD83C\uDFB5", en: "Audio", zh: "音频" },
+  video: { icon: "\uD83C\uDFA5", en: "Video", zh: "视频" },
+  code: { icon: "\uD83D\uDCBB", en: "Code", zh: "代码" },
+  "3d": { icon: "\uD83D\uDCBF", en: "3D", zh: "3D" },
+  multimodal: { icon: "\u2726", en: "Multimodal", zh: "多模态" },
 };
 
-const platformDisplay: Record<string, { icon: string; label: string }> = {
-  web: { icon: "\uD83C\uDF10", label: "Web" },
-  ios: { icon: "\uD83C\uDF4E", label: "iOS" },
-  android: { icon: "\uD83E\uDD16", label: "Android" },
-  desktop: { icon: "\uD83D\uDDA5\uFE0F", label: "Desktop" },
-  mobile: { icon: "\uD83D\uDCF1", label: "Mobile" },
-  "self-hosted": { icon: "\uD83D\uDD27", label: "Self-Hosted" },
-  api: { icon: "\u2699\uFE0F", label: "API" },
+const platformDisplay: Record<string, { icon: string; en: string; zh: string }> = {
+  web: { icon: "\uD83C\uDF10", en: "Web", zh: "网页端" },
+  ios: { icon: "\uD83C\uDF4E", en: "iOS", zh: "iOS" },
+  android: { icon: "\uD83E\uDD16", en: "Android", zh: "安卓" },
+  desktop: { icon: "\uD83D\uDDA5\uFE0F", en: "Desktop", zh: "桌面端" },
+  mobile: { icon: "\uD83D\uDCF1", en: "Mobile", zh: "移动端" },
+  "self-hosted": { icon: "\uD83D\uDD27", en: "Self-Hosted", zh: "自部署" },
+  api: { icon: "\u2699\uFE0F", en: "API", zh: "API" },
+};
+
+const languageZhMap: Record<string, string> = {
+  "English": "英语", "Chinese": "中文", "Spanish": "西班牙语",
+  "French": "法语", "German": "德语", "Japanese": "日语",
+  "Korean": "韩语", "Portuguese": "葡萄牙语", "Russian": "俄语",
+  "Italian": "意大利语", "Dutch": "荷兰语", "Arabic": "阿拉伯语",
+  "Hindi": "印地语", "Turkish": "土耳其语", "Polish": "波兰语",
+  "Swedish": "瑞典语", "Thai": "泰语", "Vietnamese": "越南语",
+  "Indonesian": "印尼语", "Malay": "马来语", "Czech": "捷克语",
+  "Romanian": "罗马尼亚语", "Danish": "丹麦语", "Finnish": "芬兰语",
+  "Norwegian": "挪威语", "Hebrew": "希伯来语", "Ukrainian": "乌克兰语",
+  "Hungarian": "匈牙利语", "Greek": "希腊语", "Bengali": "孟加拉语",
 };
 
 const pricingVariant: Record<string, "success" | "info" | "warning" | "purple" | "default"> = {
@@ -126,14 +139,14 @@ export function ProductDetail({ product, locale, dict, categoryLabel }: ProductD
           {categoryLabel || product.category.replace(/-/g, " ")}
         </Badge>
         {product.sub_category && (
-          <Badge variant="outline">{formatSlug(product.sub_category)}</Badge>
+          <Badge variant="outline">{formatSlugLocalized(product.sub_category, locale)}</Badge>
         )}
         {product.product_type && product.product_type !== "other" && (
-          <Badge>{formatSlug(product.product_type)}</Badge>
+          <Badge>{formatSlugLocalized(product.product_type, locale)}</Badge>
         )}
         {product.pricing?.model && (
           <Badge variant={pricingVariant[product.pricing.model] || "default"}>
-            {formatPricingModel(product.pricing.model)}
+            {formatPricingModel(product.pricing.model, locale)}
           </Badge>
         )}
         {product.pricing?.has_free_tier && (
@@ -161,7 +174,7 @@ export function ProductDetail({ product, locale, dict, categoryLabel }: ProductD
                       key={m}
                       className="inline-flex items-center gap-1 rounded-full bg-muted px-2.5 py-1 text-xs"
                     >
-                      {d?.icon || ""} {d?.label || formatSlug(m)}
+                      {d?.icon || ""} {d ? d[locale] : formatSlugLocalized(m, locale)}
                     </span>
                   );
                 })}
@@ -179,7 +192,7 @@ export function ProductDetail({ product, locale, dict, categoryLabel }: ProductD
                       key={p}
                       className="inline-flex items-center gap-1 rounded-full bg-muted px-2.5 py-1 text-xs"
                     >
-                      {d?.icon || ""} {d?.label || formatSlug(p)}
+                      {d?.icon || ""} {d ? d[locale] : formatSlugLocalized(p, locale)}
                     </span>
                   );
                 })}
@@ -197,7 +210,7 @@ export function ProductDetail({ product, locale, dict, categoryLabel }: ProductD
           <dl className="space-y-3 text-sm">
             {product.product_type && (
               <InfoRow label={t.product_type}>
-                {formatSlug(product.product_type)}
+                {formatSlugLocalized(product.product_type, locale)}
               </InfoRow>
             )}
             {product.status && (
@@ -212,7 +225,9 @@ export function ProductDetail({ product, locale, dict, categoryLabel }: ProductD
               <InfoRow label={t.headquarters}>
                 {company.headquarters.city}
                 {company.headquarters.state && `, ${company.headquarters.state}`}
-                , {company.headquarters.country}
+                , {locale === "zh"
+                    ? (company.headquarters.country_zh || localizeCountry(company.headquarters.country, locale))
+                    : company.headquarters.country}
               </InfoRow>
             )}
             {company?.employee_count_range && (
@@ -319,8 +334,12 @@ export function ProductDetail({ product, locale, dict, categoryLabel }: ProductD
                 <div>
                   <h3 className="text-sm text-muted-foreground mb-2">{t.target_audience}</h3>
                   <div className="flex flex-wrap gap-1.5">
-                    {product.target_audience.map((a) => (
-                      <Badge key={a} variant="purple">{formatSlug(a)}</Badge>
+                    {product.target_audience.map((a, i) => (
+                      <Badge key={a} variant="purple">
+                        {locale === "zh" && product.target_audience_zh?.[i]
+                          ? product.target_audience_zh[i]
+                          : formatSlugLocalized(a, locale)}
+                      </Badge>
                     ))}
                   </div>
                 </div>
@@ -329,8 +348,12 @@ export function ProductDetail({ product, locale, dict, categoryLabel }: ProductD
                 <div>
                   <h3 className="text-sm text-muted-foreground mb-2">{t.use_cases}</h3>
                   <div className="flex flex-wrap gap-1.5">
-                    {product.use_cases.slice(0, 12).map((uc) => (
-                      <Badge key={uc}>{formatSlug(uc)}</Badge>
+                    {product.use_cases.slice(0, 12).map((uc, i) => (
+                      <Badge key={uc}>
+                        {locale === "zh" && product.use_cases_zh?.[i]
+                          ? product.use_cases_zh[i]
+                          : formatSlugLocalized(uc, locale)}
+                      </Badge>
                     ))}
                     {product.use_cases.length > 12 && (
                       <Badge variant="outline">+{product.use_cases.length - 12}</Badge>
@@ -352,7 +375,7 @@ export function ProductDetail({ product, locale, dict, categoryLabel }: ProductD
                   href={`/${locale}/products/${comp}`}
                   className="inline-flex items-center rounded-lg border border-border px-3 py-1.5 text-sm hover:bg-muted transition-colors"
                 >
-                  {formatSlug(comp)}
+                  {formatSlugLocalized(comp, locale)}
                 </Link>
               ))}
             </div>
@@ -482,6 +505,51 @@ export function ProductDetail({ product, locale, dict, categoryLabel }: ProductD
           </Section>
         )}
 
+        {/* Platform Availability Card */}
+        {product.platform_availability && Object.values(product.platform_availability).some((v) => v != null) && (
+          <Section title={t.platform_availability}>
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 text-sm">
+              {(["web", "ios", "android", "mac", "windows", "linux"] as (keyof PlatformAvailability)[]).map((plat) => {
+                const val = product.platform_availability?.[plat];
+                if (val == null) return null;
+                const icons: Record<string, string> = { web: "\uD83C\uDF10", ios: "\uD83C\uDF4E", android: "\uD83E\uDD16", mac: "\uD83D\uDDA5\uFE0F", windows: "\uD83E\uDE9F", linux: "\uD83D\uDC27" };
+                const labels: Record<string, Record<string, string>> = {
+                  en: { web: "Web", ios: "iOS", android: "Android", mac: "macOS", windows: "Windows", linux: "Linux" },
+                  zh: { web: "网页端", ios: "iOS", android: "安卓", mac: "macOS", windows: "Windows", linux: "Linux" },
+                };
+                return (
+                  <div key={plat} className="flex items-center gap-2">
+                    <span>{icons[plat]}</span>
+                    <span>{labels[locale][plat]}</span>
+                    <span className={val ? "text-green-600" : "text-gray-400"}>{val ? "\u2713" : "\u2717"}</span>
+                  </div>
+                );
+              })}
+            </div>
+          </Section>
+        )}
+
+        {/* AI Origin Card */}
+        {product.ai_native && product.ai_native.is_native != null && (
+          <Section title={t.ai_origin}>
+            <div className="space-y-2 text-sm">
+              <div className="flex items-center gap-2">
+                <Badge variant={product.ai_native.is_native ? "success" : "info"}>
+                  {product.ai_native.is_native ? t.ai_native : t.ai_added_later}
+                </Badge>
+                {product.ai_native.ai_since && (
+                  <span className="text-muted-foreground">{t.ai_since}: {product.ai_native.ai_since}</span>
+                )}
+              </div>
+              {product.ai_native.note && (
+                <p className="text-muted-foreground">
+                  {locale === "zh" && product.ai_native.note_zh ? product.ai_native.note_zh : product.ai_native.note}
+                </p>
+              )}
+            </div>
+          </Section>
+        )}
+
         {/* Social Links Card */}
         {company?.social && (
           <Section title={t.social}>
@@ -518,8 +586,12 @@ export function ProductDetail({ product, locale, dict, categoryLabel }: ProductD
         {product.supported_languages && product.supported_languages.length > 0 && (
           <Section title={t.supported_languages}>
             <div className="flex flex-wrap gap-1.5">
-              {product.supported_languages.slice(0, 30).map((lang) => (
-                <Badge key={lang} variant="outline">{lang}</Badge>
+              {product.supported_languages.slice(0, 30).map((lang, i) => (
+                <Badge key={lang} variant="outline">
+                  {locale === "zh"
+                    ? (product.supported_languages_zh?.[i] || languageZhMap[lang] || lang)
+                    : lang}
+                </Badge>
               ))}
               {product.supported_languages.length > 30 && (
                 <Badge variant="outline">+{product.supported_languages.length - 30}</Badge>

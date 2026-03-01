@@ -2,6 +2,7 @@ export interface Headquarters {
   city: string;
   state?: string;
   country: string;
+  country_zh?: string;
   country_code?: string;
 }
 
@@ -35,6 +36,22 @@ export interface AppStore {
   rating?: number;
   downloads?: string;
   last_updated?: string;
+}
+
+export interface PlatformAvailability {
+  ios?: boolean;
+  android?: boolean;
+  mac?: boolean;
+  windows?: boolean;
+  linux?: boolean;
+  web?: boolean;
+}
+
+export interface AiNative {
+  is_native?: boolean;
+  ai_since?: string;
+  note?: string;
+  note_zh?: string;
 }
 
 export interface Pricing {
@@ -104,18 +121,23 @@ export interface ProductDetail {
   modalities?: string[];
   platforms?: string[];
   target_audience?: string[];
+  target_audience_zh?: string[];
   use_cases?: string[];
+  use_cases_zh?: string[];
   competitors?: string[];
   based_on?: string[];
   used_by?: string[];
   hiring?: Hiring;
   app_store?: AppStore;
+  platform_availability?: PlatformAvailability;
+  ai_native?: AiNative;
   api_available?: boolean;
   api_docs_url?: string;
   architecture?: string;
   parameter_count?: string;
   context_window?: number;
   supported_languages?: string[];
+  supported_languages_zh?: string[];
   release_date?: string;
   github_stars?: number;
 }

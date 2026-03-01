@@ -61,7 +61,7 @@ export function ProductCard({ product, locale, categoryLabel }: ProductCardProps
                   variant={pricingVariant[product.pricing_model] || "default"}
                   className="shrink-0 text-[10px]"
                 >
-                  {formatPricingModel(product.pricing_model)}
+                  {formatPricingModel(product.pricing_model, locale)}
                 </Badge>
               )}
             </div>

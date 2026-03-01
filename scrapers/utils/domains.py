@@ -35,8 +35,18 @@ AGGREGATOR_DOMAINS: frozenset[str] = frozenset(
     }
 )
 
+# Hosting / hub platforms — many independent products share the same domain.
+PLATFORM_DOMAINS: frozenset[str] = frozenset(
+    {
+        "huggingface.co",
+        "github.com",
+        "gitlab.com",
+        "replicate.com",
+    }
+)
+
 # Union: domains that should be skipped during domain-based deduplication.
-SKIP_DOMAINS: frozenset[str] = APP_STORE_DOMAINS | AGGREGATOR_DOMAINS
+SKIP_DOMAINS: frozenset[str] = APP_STORE_DOMAINS | AGGREGATOR_DOMAINS | PLATFORM_DOMAINS
 
 
 def is_skip_domain(domain: str) -> bool:

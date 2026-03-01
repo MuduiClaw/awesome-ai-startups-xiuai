@@ -48,6 +48,7 @@ _SCALAR_MAP: dict[str, str] = {
     "company.founded_year": "company_founded_year",
     "company.headquarters.city": "company_hq_city",
     "company.headquarters.country": "company_hq_country",
+    "company.headquarters.country_zh": "company_hq_country_zh",
     "company.headquarters.country_code": "company_hq_country_code",
     "company.employee_count_range": "company_employee_count_range",
     "company.funding.total_raised_usd": "funding_total_raised_usd",
@@ -82,13 +83,18 @@ _JSON_MAP: dict[str, str] = {
     "supported_languages": "supported_languages_json",
     "platforms": "platforms_json",
     "target_audience": "target_audience_json",
+    "target_audience_zh": "target_audience_zh_json",
     "use_cases": "use_cases_json",
+    "use_cases_zh": "use_cases_zh_json",
+    "supported_languages_zh": "supported_languages_zh_json",
     "competitors": "competitors_json",
     "based_on": "based_on_json",
     "used_by": "used_by_json",
     "sources": "sources_json",
     "hiring": "hiring_json",
     "app_store": "app_store_json",
+    "platform_availability": "platform_availability_json",
+    "ai_native": "ai_native_json",
 }
 
 # Nested JSON fields stored separately
@@ -194,12 +200,13 @@ class ProductDB:
                 row[col] = json.dumps(value, ensure_ascii=False)
             else:
                 # Use default from schema (empty array or object)
-                row[col] = (
-                    "[]"
-                    if col.endswith("_json")
-                    and col not in ("hiring_json", "app_store_json")
-                    else "{}"
-                )
+                _OBJECT_JSON_COLS = {
+                    "hiring_json",
+                    "app_store_json",
+                    "platform_availability_json",
+                    "ai_native_json",
+                }
+                row[col] = "{}" if col in _OBJECT_JSON_COLS else "[]"
 
         # Nested JSON fields
         for json_path, col in _NESTED_JSON_MAP.items():

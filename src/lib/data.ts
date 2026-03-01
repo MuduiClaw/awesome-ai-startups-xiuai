@@ -133,6 +133,7 @@ interface RawProductRow {
   company_founded_year: number | null;
   company_hq_city: string | null;
   company_hq_country: string | null;
+  company_hq_country_zh: string | null;
   company_hq_country_code: string | null;
   company_employee_count_range: string | null;
   funding_total_raised_usd: number | null;
@@ -154,12 +155,17 @@ interface RawProductRow {
   modalities_json: string | null;
   platforms_json: string | null;
   target_audience_json: string | null;
+  target_audience_zh_json: string | null;
   use_cases_json: string | null;
+  use_cases_zh_json: string | null;
+  supported_languages_zh_json: string | null;
   competitors_json: string | null;
   based_on_json: string | null;
   used_by_json: string | null;
   hiring_json: string | null;
   app_store_json: string | null;
+  platform_availability_json: string | null;
+  ai_native_json: string | null;
   api_available: number | null;
   api_docs_url: string | null;
   architecture: string | null;
@@ -206,6 +212,7 @@ function rowToProductDetail(row: RawProductRow): ProductDetail {
           ? {
               city: row.company_hq_city ?? "",
               country: row.company_hq_country ?? "",
+              country_zh: row.company_hq_country_zh ?? undefined,
               country_code: row.company_hq_country_code ?? undefined,
             }
           : undefined,
@@ -241,12 +248,16 @@ function rowToProductDetail(row: RawProductRow): ProductDetail {
     modalities: row.modalities_json ? safeParse(row.modalities_json, []) : undefined,
     platforms: row.platforms_json ? safeParse(row.platforms_json, []) : undefined,
     target_audience: row.target_audience_json ? safeParse(row.target_audience_json, []) : undefined,
+    target_audience_zh: row.target_audience_zh_json ? safeParse(row.target_audience_zh_json, []) : undefined,
     use_cases: row.use_cases_json ? safeParse(row.use_cases_json, []) : undefined,
+    use_cases_zh: row.use_cases_zh_json ? safeParse(row.use_cases_zh_json, []) : undefined,
     competitors: row.competitors_json ? safeParse(row.competitors_json, []) : undefined,
     based_on: row.based_on_json ? safeParse(row.based_on_json, []) : undefined,
     used_by: row.used_by_json ? safeParse(row.used_by_json, []) : undefined,
     hiring: row.hiring_json ? safeParse(row.hiring_json, {}) : undefined,
     app_store: row.app_store_json ? safeParse(row.app_store_json, {}) : undefined,
+    platform_availability: row.platform_availability_json ? safeParse(row.platform_availability_json, {}) : undefined,
+    ai_native: row.ai_native_json ? safeParse(row.ai_native_json, {}) : undefined,
     api_available: row.api_available != null ? Boolean(row.api_available) : undefined,
     api_docs_url: row.api_docs_url ?? undefined,
     architecture: row.architecture ?? undefined,
@@ -254,6 +265,9 @@ function rowToProductDetail(row: RawProductRow): ProductDetail {
     context_window: row.context_window ?? undefined,
     supported_languages: row.supported_languages_json
       ? safeParse(row.supported_languages_json, [])
+      : undefined,
+    supported_languages_zh: row.supported_languages_zh_json
+      ? safeParse(row.supported_languages_zh_json, [])
       : undefined,
     release_date: row.release_date ?? undefined,
     github_stars: row.github_stars ?? undefined,

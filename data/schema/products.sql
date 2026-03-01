@@ -27,6 +27,7 @@ CREATE TABLE IF NOT EXISTS products (
     company_founded_year INTEGER,
     company_hq_city   TEXT,
     company_hq_country TEXT,
+    company_hq_country_zh TEXT,
     company_hq_country_code TEXT,
     company_employee_count_range TEXT,
 
@@ -67,7 +68,10 @@ CREATE TABLE IF NOT EXISTS products (
     supported_languages_json TEXT DEFAULT '[]',
     platforms_json    TEXT DEFAULT '[]',
     target_audience_json TEXT DEFAULT '[]',
+    target_audience_zh_json TEXT DEFAULT '[]',
     use_cases_json    TEXT DEFAULT '[]',
+    use_cases_zh_json TEXT DEFAULT '[]',
+    supported_languages_zh_json TEXT DEFAULT '[]',
     competitors_json  TEXT DEFAULT '[]',
     based_on_json     TEXT DEFAULT '[]',
     used_by_json      TEXT DEFAULT '[]',
@@ -76,6 +80,8 @@ CREATE TABLE IF NOT EXISTS products (
     hiring_json       TEXT DEFAULT '{}',
     social_json       TEXT DEFAULT '{}',
     app_store_json    TEXT DEFAULT '{}',
+    platform_availability_json TEXT DEFAULT '{}',
+    ai_native_json    TEXT DEFAULT '{}',
     funding_investors_json TEXT DEFAULT '[]'
 );
 

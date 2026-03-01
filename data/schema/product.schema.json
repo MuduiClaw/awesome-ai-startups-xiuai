@@ -126,6 +126,7 @@
             "city": { "type": "string" },
             "state": { "type": "string" },
             "country": { "type": "string" },
+            "country_zh": { "type": "string" },
             "country_code": {
               "type": "string",
               "pattern": "^[A-Z]{2}$"
@@ -213,6 +214,10 @@
       "type": "array",
       "items": { "type": "string" }
     },
+    "supported_languages_zh": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
     "training_data_cutoff": {
       "type": "string",
       "format": "date"
@@ -220,6 +225,43 @@
     "platforms": {
       "type": "array",
       "items": { "type": "string" }
+    },
+    "platform_availability": {
+      "type": "object",
+      "description": "Granular platform availability flags",
+      "additionalProperties": false,
+      "properties": {
+        "ios": { "type": "boolean" },
+        "android": { "type": "boolean" },
+        "mac": { "type": "boolean" },
+        "windows": { "type": "boolean" },
+        "linux": { "type": "boolean" },
+        "web": { "type": "boolean" }
+      }
+    },
+    "ai_native": {
+      "type": "object",
+      "description": "Whether the product was AI-first from inception or added AI later",
+      "additionalProperties": false,
+      "properties": {
+        "is_native": {
+          "type": "boolean",
+          "description": "true = AI-native from founding; false = added AI later"
+        },
+        "ai_since": {
+          "type": "string",
+          "format": "date",
+          "description": "Approximate date AI features were introduced (if not native)"
+        },
+        "note": {
+          "type": "string",
+          "description": "Brief explanation of AI origin"
+        },
+        "note_zh": {
+          "type": "string",
+          "description": "Chinese translation of AI origin note"
+        }
+      }
     },
     "deployment_options": {
       "type": "array",
@@ -286,7 +328,15 @@
       "type": "array",
       "items": { "type": "string" }
     },
+    "target_audience_zh": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
     "use_cases": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "use_cases_zh": {
       "type": "array",
       "items": { "type": "string" }
     },

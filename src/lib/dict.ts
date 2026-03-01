@@ -60,6 +60,11 @@ export interface ProductDict {
   sub_category: string;
   app_store: string;
   rating: string;
+  platform_availability: string;
+  ai_origin: string;
+  ai_native: string;
+  ai_added_later: string;
+  ai_since: string;
   free: string;
   freemium: string;
   paid: string;
