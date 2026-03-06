@@ -8,7 +8,7 @@
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-03-05",
+    "last_updated": "2026-03-06",
     "provenance": {
       "name": {
         "source": "app_store",
@@ -83,10 +83,10 @@
         "updated_at": "2026-03-03"
       },
       "platforms": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "google_play",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-03-06"
       },
       "pricing": {
         "source": "app_store",
@@ -232,6 +232,11 @@
       "url": "https://www.toolify.ai/tool/datacamp-com",
       "source_name": "toolify",
       "scraped_at": "2026-02-16"
+    },
+    {
+      "url": "https://play.google.com/store/apps/details?id=com.datacamp",
+      "source_name": "google_play",
+      "scraped_at": "2026-03-06"
     }
   ],
   "company": {
@@ -267,7 +272,8 @@
   ],
   "platforms": [
     "ios",
-    "web"
+    "web",
+    "android"
   ],
   "pricing": {
     "model": "free",
@@ -276,7 +282,9 @@
   "release_date": "2017-10-18",
   "app_store": {
     "apple_store_url": "https://apps.apple.com/app/id1263413087",
-    "rating": 4.8
+    "rating": 4.8,
+    "google_play_url": "https://play.google.com/store/apps/details?id=com.datacamp",
+    "downloads": "1,000,000+"
   },
   "sub_category": "ai course",
   "keywords": [
