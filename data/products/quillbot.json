@@ -8,7 +8,7 @@
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-20",
+    "last_updated": "2026-03-12",
     "provenance": {
       "name": {
         "source": "aibot",
@@ -71,10 +71,10 @@
         "updated_at": "2026-02-16"
       },
       "tags": {
-        "source": "toolify",
+        "source": "app_store",
         "tier": 2,
         "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "updated_at": "2026-03-12"
       },
       "sub_category": {
         "source": "toolify",
@@ -167,10 +167,10 @@
         "updated_at": "2026-02-20"
       },
       "hiring.careers_url": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "app_store",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-03-12"
       },
       "modalities": {
         "source": "llm-batch-combined",
@@ -189,6 +189,18 @@
         "tier": 3,
         "confidence": 0.5,
         "updated_at": "2026-02-20"
+      },
+      "release_date": {
+        "source": "app_store",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-03-12"
+      },
+      "supported_languages": {
+        "source": "app_store",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-03-12"
       }
     }
   },
@@ -207,6 +219,11 @@
       "url": "https://www.toolify.ai/tool/quillbot-paraphraser",
       "source_name": "toolify",
       "scraped_at": "2026-02-16"
+    },
+    {
+      "url": "https://apps.apple.com/us/app/quillbot-ai-writing-keyboard/id6463116243?uo=4",
+      "source_name": "app_store",
+      "scraped_at": "2026-03-12"
     }
   ],
   "description_zh": "AI英/德语写作润色和改进工具",
@@ -227,7 +244,8 @@
     "AI Paraphraser",
     "AI Essay Writer",
     "AI Writing",
-    "Humanizer AI"
+    "Humanizer AI",
+    "Productivity"
   ],
   "sub_category": "ai homework helper",
   "pricing": {
@@ -282,7 +300,7 @@
   "api_available": true,
   "hiring": {
     "is_hiring": true,
-    "careers_url": "https://www.quillbot.com/careers",
+    "careers_url": "",
     "tech_stack": [
       "JavaScript",
       "React",
@@ -296,5 +314,13 @@
   ],
   "competitors": [
     "prowritingaid"
-  ]
+  ],
+  "release_date": "2023-10-21",
+  "supported_languages": [
+    "EN"
+  ],
+  "app_store": {
+    "apple_store_url": "https://apps.apple.com/app/id6463116243",
+    "rating": 4.7
+  }
 }

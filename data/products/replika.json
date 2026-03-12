@@ -8,7 +8,7 @@
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-20",
+    "last_updated": "2026-03-12",
     "provenance": {
       "name": {
         "source": "toolify",
@@ -77,10 +77,10 @@
         "updated_at": "2026-02-16"
       },
       "tags": {
-        "source": "toolify",
+        "source": "app_store",
         "tier": 2,
         "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "updated_at": "2026-03-12"
       },
       "keywords": {
         "source": "toolify",
@@ -161,10 +161,10 @@
         "updated_at": "2026-02-20"
       },
       "hiring.careers_url": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "app_store",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-03-12"
       },
       "modalities": {
         "source": "llm-batch-combined",
@@ -177,6 +177,30 @@
         "tier": 3,
         "confidence": 0.5,
         "updated_at": "2026-02-20"
+      },
+      "pricing.model": {
+        "source": "app_store",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-03-12"
+      },
+      "pricing.has_free_tier": {
+        "source": "app_store",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-03-12"
+      },
+      "release_date": {
+        "source": "app_store",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-03-12"
+      },
+      "supported_languages": {
+        "source": "app_store",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-03-12"
       }
     }
   },
@@ -185,6 +209,11 @@
       "url": "https://www.toolify.ai/tool/replika",
       "source_name": "toolify",
       "scraped_at": "2026-02-16"
+    },
+    {
+      "url": "https://apps.apple.com/us/app/replika-ai-friend/id1158555867?uo=4",
+      "source_name": "app_store",
+      "scraped_at": "2026-03-12"
     }
   ],
   "company": {
@@ -202,7 +231,8 @@
     "AI Mental Health",
     "AI Therapist",
     "AI Coaching",
-    "AI Girlfriend"
+    "AI Girlfriend",
+    "Health & Fitness"
   ],
   "keywords": [
     "AI companion",
@@ -216,7 +246,7 @@
     "Video calls"
   ],
   "pricing": {
-    "model": "freemium",
+    "model": "free",
     "has_free_tier": true
   },
   "api_available": true,
@@ -252,5 +282,17 @@
   },
   "modalities": [
     "text"
-  ]
+  ],
+  "release_date": "2017-03-13",
+  "supported_languages": [
+    "EN",
+    "FR",
+    "DE",
+    "PT",
+    "ES"
+  ],
+  "app_store": {
+    "apple_store_url": "https://apps.apple.com/app/id1158555867",
+    "rating": 4.4
+  }
 }
