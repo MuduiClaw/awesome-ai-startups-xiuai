@@ -8,7 +8,7 @@
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-20",
+    "last_updated": "2026-03-15",
     "provenance": {
       "name": {
         "source": "toolify",
@@ -77,10 +77,10 @@
         "updated_at": "2026-02-16"
       },
       "tags": {
-        "source": "toolify",
+        "source": "google_play",
         "tier": 2,
         "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "updated_at": "2026-03-15"
       },
       "keywords": {
         "source": "toolify",
@@ -161,10 +161,10 @@
         "updated_at": "2026-02-20"
       },
       "hiring.careers_url": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "google_play",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-03-15"
       },
       "modalities": {
         "source": "llm-batch-combined",
@@ -183,6 +183,18 @@
         "tier": 3,
         "confidence": 0.5,
         "updated_at": "2026-02-20"
+      },
+      "pricing.model": {
+        "source": "google_play",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-03-15"
+      },
+      "pricing.has_free_tier": {
+        "source": "google_play",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-03-15"
       }
     }
   },
@@ -191,6 +203,11 @@
       "url": "https://www.toolify.ai/tool/pocket-ai",
       "source_name": "toolify",
       "scraped_at": "2026-02-16"
+    },
+    {
+      "url": "https://play.google.com/store/apps/details?id=com.pocketpalai",
+      "source_name": "google_play",
+      "scraped_at": "2026-03-15"
     }
   ],
   "company": {
@@ -205,7 +222,8 @@
   "sub_category": "ai assistant",
   "tags": [
     "AI Assistant",
-    "AI Productivity Tools"
+    "AI Productivity Tools",
+    "Productivity"
   ],
   "keywords": [
     "AI assistant",
@@ -263,5 +281,10 @@
   ],
   "competitors": [
     "chatgpt"
-  ]
+  ],
+  "app_store": {
+    "google_play_url": "https://play.google.com/store/apps/details?id=com.pocketpalai",
+    "rating": 3.9,
+    "downloads": "500,000+"
+  }
 }
