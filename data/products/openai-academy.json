@@ -8,7 +8,7 @@
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-20",
+    "last_updated": "2026-03-28",
     "provenance": {
       "name": {
         "source": "aibot",
@@ -65,10 +65,10 @@
         "updated_at": "2026-02-16"
       },
       "tags": {
-        "source": "toolify",
+        "source": "app_store",
         "tier": 2,
         "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "updated_at": "2026-03-28"
       },
       "product_url": {
         "source": "toolify",
@@ -107,10 +107,10 @@
         "updated_at": "2026-02-16"
       },
       "platforms": {
-        "source": "rule-based-enrichment",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-17"
+        "source": "app_store",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-03-28"
       },
       "target_audience": {
         "source": "llm-batch-combined",
@@ -167,10 +167,10 @@
         "updated_at": "2026-02-20"
       },
       "hiring.careers_url": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "app_store",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-03-28"
       },
       "modalities": {
         "source": "llm-batch-combined",
@@ -183,6 +183,18 @@
         "tier": 3,
         "confidence": 0.5,
         "updated_at": "2026-02-20"
+      },
+      "release_date": {
+        "source": "app_store",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-03-28"
+      },
+      "supported_languages": {
+        "source": "app_store",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-03-28"
       }
     }
   },
@@ -196,6 +208,11 @@
       "url": "https://www.toolify.ai/tool/openai-academy",
       "source_name": "toolify",
       "scraped_at": "2026-02-16"
+    },
+    {
+      "url": "https://apps.apple.com/us/app/chatgpt/id6448311069?uo=4",
+      "source_name": "app_store",
+      "scraped_at": "2026-03-28"
     }
   ],
   "description_zh": "OpenAI 推出的免费 AI 学习平台",
@@ -212,7 +229,8 @@
     "websites-to-learn-ai",
     "AI Course",
     "AI Tutorial",
-    "AI Chatbot"
+    "AI Chatbot",
+    "Productivity"
   ],
   "sub_category": "ai course",
   "pricing": {
@@ -231,7 +249,8 @@
     "AI literacy"
   ],
   "platforms": [
-    "web"
+    "web",
+    "ios"
   ],
   "target_audience": [
     "students",
@@ -253,7 +272,7 @@
   "api_available": false,
   "hiring": {
     "is_hiring": true,
-    "careers_url": "https://openai.com/careers",
+    "careers_url": "",
     "tech_stack": [
       "React",
       "Next.js",
@@ -264,5 +283,71 @@
   "modalities": [
     "text",
     "video"
-  ]
+  ],
+  "release_date": "2023-05-18",
+  "supported_languages": [
+    "SQ",
+    "AM",
+    "AR",
+    "HY",
+    "BN",
+    "BS",
+    "BG",
+    "MY",
+    "CA",
+    "HR",
+    "CS",
+    "DA",
+    "NL",
+    "EN",
+    "ET",
+    "FI",
+    "FR",
+    "KA",
+    "DE",
+    "EL",
+    "GU",
+    "HI",
+    "HU",
+    "IS",
+    "ID",
+    "IT",
+    "JA",
+    "KN",
+    "KK",
+    "KO",
+    "LV",
+    "LT",
+    "MK",
+    "MS",
+    "ML",
+    "MR",
+    "MN",
+    "NB",
+    "PL",
+    "PT",
+    "PA",
+    "RO",
+    "RU",
+    "SR",
+    "ZH",
+    "SK",
+    "SL",
+    "SO",
+    "ES",
+    "SW",
+    "SV",
+    "TL",
+    "TA",
+    "TE",
+    "TH",
+    "TR",
+    "UK",
+    "UR",
+    "VI"
+  ],
+  "app_store": {
+    "apple_store_url": "https://apps.apple.com/app/id6448311069",
+    "rating": 4.8
+  }
 }
