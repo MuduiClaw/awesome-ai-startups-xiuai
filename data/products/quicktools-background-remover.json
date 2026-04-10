@@ -8,7 +8,7 @@
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-20",
+    "last_updated": "2026-04-10",
     "provenance": {
       "name": {
         "source": "aibot",
@@ -71,10 +71,10 @@
         "updated_at": "2026-02-16"
       },
       "tags": {
-        "source": "aibot",
+        "source": "app_store",
         "tier": 2,
         "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "updated_at": "2026-04-10"
       },
       "keywords": {
         "source": "rule-based-enrichment",
@@ -83,10 +83,10 @@
         "updated_at": "2026-02-17"
       },
       "platforms": {
-        "source": "rule-based-enrichment",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-17"
+        "source": "app_store",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-04-10"
       },
       "target_audience": {
         "source": "llm-batch-combined",
@@ -149,10 +149,10 @@
         "updated_at": "2026-02-20"
       },
       "hiring.careers_url": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "app_store",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-04-10"
       },
       "modalities": {
         "source": "llm-batch-combined",
@@ -165,6 +165,36 @@
         "tier": 3,
         "confidence": 0.5,
         "updated_at": "2026-02-20"
+      },
+      "company.website": {
+        "source": "app_store",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-04-10"
+      },
+      "pricing.model": {
+        "source": "app_store",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-04-10"
+      },
+      "pricing.has_free_tier": {
+        "source": "app_store",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-04-10"
+      },
+      "release_date": {
+        "source": "app_store",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-04-10"
+      },
+      "supported_languages": {
+        "source": "app_store",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-04-10"
       }
     }
   },
@@ -173,6 +203,11 @@
       "url": "https://ai-bot.cn/favorites/ai-image-background-removers/",
       "source_name": "aibot",
       "scraped_at": "2026-02-16"
+    },
+    {
+      "url": "https://apps.apple.com/us/app/picsart-ai-photo-editor-video/id587366035?uo=4",
+      "source_name": "app_store",
+      "scraped_at": "2026-04-10"
     }
   ],
   "description_zh": "Picsart旗下的Quicktools推出的图片背景移除工具",
@@ -181,11 +216,13 @@
     "url": "https://tools.picsart.com",
     "name_zh": "Picsart快速工具",
     "description": "Quicktools Background Remover removes backgrounds from images easily.",
-    "employee_count_range": "51-200"
+    "employee_count_range": "51-200",
+    "website": "https://picsart.com"
   },
   "icon_url": "https://ai-bot.cn/wp-content/uploads/2023/03/picsart-quicktools-icon.png",
   "tags": [
-    "ai-image-background-removers"
+    "ai-image-background-removers",
+    "Photo & Video"
   ],
   "keywords": [
     "Quicktools Background Remover",
@@ -198,7 +235,8 @@
     "other"
   ],
   "platforms": [
-    "web"
+    "web",
+    "ios"
   ],
   "target_audience": [
     "designers",
@@ -219,7 +257,7 @@
   "api_available": false,
   "hiring": {
     "is_hiring": true,
-    "careers_url": "https://www.picsart.com/careers",
+    "careers_url": "",
     "tech_stack": [
       "React",
       "PyTorch"
@@ -228,5 +266,43 @@
   },
   "modalities": [
     "image"
-  ]
+  ],
+  "pricing": {
+    "model": "free",
+    "has_free_tier": true
+  },
+  "release_date": "2013-01-02",
+  "supported_languages": [
+    "AR",
+    "HY",
+    "BN",
+    "HR",
+    "CS",
+    "EN",
+    "FR",
+    "DE",
+    "EL",
+    "HI",
+    "HU",
+    "ID",
+    "IT",
+    "JA",
+    "KO",
+    "MK",
+    "FA",
+    "PL",
+    "PT",
+    "RU",
+    "SR",
+    "ZH",
+    "SK",
+    "ES",
+    "TH",
+    "TR",
+    "VI"
+  ],
+  "app_store": {
+    "apple_store_url": "https://apps.apple.com/app/id587366035",
+    "rating": 4.7
+  }
 }
