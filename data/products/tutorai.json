@@ -8,7 +8,7 @@
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-20",
+    "last_updated": "2026-04-13",
     "provenance": {
       "name": {
         "source": "toolify",
@@ -77,10 +77,10 @@
         "updated_at": "2026-02-16"
       },
       "tags": {
-        "source": "toolify",
+        "source": "google_play",
         "tier": 2,
         "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "updated_at": "2026-04-13"
       },
       "keywords": {
         "source": "toolify",
@@ -95,10 +95,10 @@
         "updated_at": "2026-02-16"
       },
       "platforms": {
-        "source": "rule-based-enrichment",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-17"
+        "source": "google_play",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-04-13"
       },
       "target_audience": {
         "source": "llm-batch-combined",
@@ -149,10 +149,10 @@
         "updated_at": "2026-02-20"
       },
       "hiring.careers_url": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "google_play",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-04-13"
       },
       "modalities": {
         "source": "llm-batch-combined",
@@ -165,6 +165,18 @@
         "tier": 3,
         "confidence": 0.5,
         "updated_at": "2026-02-20"
+      },
+      "pricing.model": {
+        "source": "google_play",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-04-13"
+      },
+      "pricing.has_free_tier": {
+        "source": "google_play",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-04-13"
       }
     }
   },
@@ -173,6 +185,11 @@
       "url": "https://www.toolify.ai/tool/tutorai",
       "source_name": "toolify",
       "scraped_at": "2026-02-16"
+    },
+    {
+      "url": "https://play.google.com/store/apps/details?id=com.pbs.tutorai",
+      "source_name": "google_play",
+      "scraped_at": "2026-04-13"
     }
   ],
   "company": {
@@ -189,7 +206,8 @@
     "AI Homework Helper",
     "AI Course",
     "AI Language Learning",
-    "AI Answer"
+    "AI Answer",
+    "Education"
   ],
   "keywords": [
     "AI tutor",
@@ -201,11 +219,12 @@
     "Homework help"
   ],
   "pricing": {
-    "model": "freemium",
+    "model": "free",
     "has_free_tier": true
   },
   "platforms": [
-    "web"
+    "web",
+    "android"
   ],
   "target_audience": [
     "researchers",
@@ -236,5 +255,9 @@
   ],
   "competitors": [
     "coursera-grow-your-career"
-  ]
+  ],
+  "app_store": {
+    "google_play_url": "https://play.google.com/store/apps/details?id=com.pbs.tutorai",
+    "downloads": "1,000+"
+  }
 }
