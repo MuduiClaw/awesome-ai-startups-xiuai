@@ -8,7 +8,7 @@
   "status": "deprecated",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-04-22T09:25:23Z",
+    "last_updated": "2026-04-23",
     "provenance": {
       "name": {
         "source": "aibot",
@@ -71,10 +71,10 @@
         "updated_at": "2026-02-16"
       },
       "tags": {
-        "source": "aibot",
+        "source": "app_store",
         "tier": 2,
         "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "updated_at": "2026-04-23"
       },
       "keywords": {
         "source": "rule-based-enrichment",
@@ -83,10 +83,10 @@
         "updated_at": "2026-02-17"
       },
       "platforms": {
-        "source": "rule-based-enrichment",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-17"
+        "source": "app_store",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-04-23"
       },
       "target_audience": {
         "source": "llm-batch-combined",
@@ -149,10 +149,10 @@
         "updated_at": "2026-02-20"
       },
       "hiring.careers_url": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "app_store",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-04-23"
       },
       "modalities": {
         "source": "llm-batch-combined",
@@ -171,17 +171,52 @@
         "tier": 3,
         "confidence": 0.5,
         "updated_at": "2026-02-20"
+      },
+      "company.website": {
+        "source": "app_store",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-04-23"
+      },
+      "pricing.model": {
+        "source": "app_store",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-04-23"
+      },
+      "pricing.has_free_tier": {
+        "source": "app_store",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-04-23"
+      },
+      "release_date": {
+        "source": "app_store",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-04-23"
+      },
+      "supported_languages": {
+        "source": "app_store",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-04-23"
       }
     },
-    "url_consecutive_failures": 56,
+    "url_consecutive_failures": 57,
     "url_status": 0,
-    "url_last_checked": "2026-04-22T09:25:23Z"
+    "url_last_checked": "2026-04-23T09:32:15Z"
   },
   "sources": [
     {
       "url": "https://ai-bot.cn/favorites/ai-image-background-removers/",
       "source_name": "aibot",
       "scraped_at": "2026-02-16"
+    },
+    {
+      "url": "https://apps.apple.com/us/app/lightroom-ai-photo-editor/id878783582?uo=4",
+      "source_name": "app_store",
+      "scraped_at": "2026-04-23"
     }
   ],
   "description_zh": "Adobe Express的图片背景移除工具",
@@ -190,11 +225,13 @@
     "url": "https://adobe.com",
     "name_zh": "Adobe",
     "description": "Adobe's AI-powered background removal tool integrated into Adobe Express.",
-    "employee_count_range": "1001-5000"
+    "employee_count_range": "1001-5000",
+    "website": "https://www.adobe.com/products/photoshop-lightroom.html"
   },
   "icon_url": "https://ai-bot.cn/wp-content/uploads/2023/03/adobe-express-icon.png",
   "tags": [
-    "ai-image-background-removers"
+    "ai-image-background-removers",
+    "Photo & Video"
   ],
   "keywords": [
     "Adobe Image Background Remover",
@@ -206,7 +243,8 @@
     "other"
   ],
   "platforms": [
-    "web"
+    "web",
+    "ios"
   ],
   "target_audience": [
     "designers",
@@ -228,7 +266,7 @@
   "api_available": false,
   "hiring": {
     "is_hiring": true,
-    "careers_url": "https://adobe.com/careers",
+    "careers_url": "",
     "tech_stack": [
       "React",
       "WebGL",
@@ -242,5 +280,37 @@
   ],
   "competitors": [
     "pixlr"
-  ]
+  ],
+  "pricing": {
+    "model": "free",
+    "has_free_tier": true
+  },
+  "release_date": "2014-06-22",
+  "supported_languages": [
+    "NL",
+    "EN",
+    "FR",
+    "DE",
+    "HI",
+    "ID",
+    "IT",
+    "JA",
+    "KO",
+    "MS",
+    "NB",
+    "PL",
+    "PT",
+    "RU",
+    "ZH",
+    "ES",
+    "SV",
+    "TH",
+    "TR",
+    "UK",
+    "VI"
+  ],
+  "app_store": {
+    "apple_store_url": "https://apps.apple.com/app/id878783582",
+    "rating": 4.8
+  }
 }
