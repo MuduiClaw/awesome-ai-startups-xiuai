@@ -8,7 +8,7 @@
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-20",
+    "last_updated": "2026-05-09",
     "provenance": {
       "name": {
         "source": "app_store",
@@ -71,10 +71,10 @@
         "updated_at": "2026-02-16"
       },
       "tags": {
-        "source": "app_store",
+        "source": "google_play",
         "tier": 2,
         "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "updated_at": "2026-05-09"
       },
       "supported_languages": {
         "source": "app_store",
@@ -197,10 +197,10 @@
         "updated_at": "2026-02-20"
       },
       "hiring.careers_url": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "google_play",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-05-09"
       },
       "modalities": {
         "source": "llm-batch-combined",
@@ -226,6 +226,11 @@
       "url": "https://apps.apple.com/us/app/microsoft-bing-search/id345323231?uo=4",
       "source_name": "app_store",
       "scraped_at": "2026-02-16"
+    },
+    {
+      "url": "https://play.google.com/store/apps/details?id=com.microsoft.emmx",
+      "source_name": "google_play",
+      "scraped_at": "2026-05-09"
     }
   ],
   "company": {
@@ -239,7 +244,8 @@
   "icon_url": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/82/ea/c6/82eac686-2693-c61c-1c4e-8d588f134a24/AppIcon-0-0-1x_U007epad-0-0-0-1-0-0-0-85-220.png/512x512bb.jpg",
   "tags": [
     "Utilities",
-    "Productivity"
+    "Productivity",
+    "Communication"
   ],
   "supported_languages": [
     "AR",
@@ -300,7 +306,9 @@
   "release_date": "2017-11-30",
   "app_store": {
     "apple_store_url": "https://apps.apple.com/app/id345323231",
-    "rating": 4.7
+    "rating": 4.7,
+    "google_play_url": "https://play.google.com/store/apps/details?id=com.microsoft.emmx",
+    "downloads": "100,000,000+"
   },
   "keywords": [
     "Microsoft Edge: AI Browser",
@@ -349,7 +357,7 @@
   "api_available": false,
   "hiring": {
     "is_hiring": true,
-    "careers_url": "https://microsoft.com/careers",
+    "careers_url": "",
     "tech_stack": [
       "C++",
       "JavaScript",
