@@ -8,7 +8,7 @@
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-20",
+    "last_updated": "2026-05-23",
     "provenance": {
       "name": {
         "source": "aibot",
@@ -77,10 +77,10 @@
         "updated_at": "2026-02-16"
       },
       "tags": {
-        "source": "toolify",
+        "source": "google_play",
         "tier": 2,
         "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "updated_at": "2026-05-23"
       },
       "sub_category": {
         "source": "toolify",
@@ -101,10 +101,10 @@
         "updated_at": "2026-02-16"
       },
       "platforms": {
-        "source": "rule-based-enrichment",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-17"
+        "source": "google_play",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-05-23"
       },
       "target_audience": {
         "source": "llm-batch-combined",
@@ -155,10 +155,10 @@
         "updated_at": "2026-02-20"
       },
       "hiring.careers_url": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "google_play",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-05-23"
       },
       "modalities": {
         "source": "llm-batch-combined",
@@ -177,6 +177,18 @@
         "tier": 3,
         "confidence": 0.5,
         "updated_at": "2026-02-20"
+      },
+      "pricing.model": {
+        "source": "google_play",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-05-23"
+      },
+      "pricing.has_free_tier": {
+        "source": "google_play",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-05-23"
       }
     }
   },
@@ -190,6 +202,11 @@
       "url": "https://www.toolify.ai/tool/meta-ai",
       "source_name": "toolify",
       "scraped_at": "2026-02-16"
+    },
+    {
+      "url": "https://play.google.com/store/apps/details?id=com.facebook.stella",
+      "source_name": "google_play",
+      "scraped_at": "2026-05-23"
     }
   ],
   "name_zh": "Meta AI助手",
@@ -207,7 +224,8 @@
     "ai-chatbots",
     "AI Assistant",
     "AI Image Generator",
-    "AI Chatbot"
+    "AI Chatbot",
+    "Productivity"
   ],
   "sub_category": "ai assistant",
   "keywords": [
@@ -220,7 +238,8 @@
     "Personal AI"
   ],
   "platforms": [
-    "web"
+    "web",
+    "android"
   ],
   "target_audience": [
     "developers",
@@ -239,7 +258,7 @@
   "api_available": false,
   "hiring": {
     "is_hiring": true,
-    "careers_url": "https://www.metacareers.com",
+    "careers_url": "",
     "tech_stack": [
       "PyTorch",
       "Python",
@@ -253,5 +272,14 @@
   ],
   "competitors": [
     "chatgpt"
-  ]
+  ],
+  "pricing": {
+    "model": "free",
+    "has_free_tier": true
+  },
+  "app_store": {
+    "google_play_url": "https://play.google.com/store/apps/details?id=com.facebook.stella",
+    "rating": 4.6,
+    "downloads": "50,000,000+"
+  }
 }
