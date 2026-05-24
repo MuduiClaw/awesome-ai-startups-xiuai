@@ -8,7 +8,7 @@
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-20",
+    "last_updated": "2026-05-24",
     "provenance": {
       "name": {
         "source": "app_store",
@@ -71,10 +71,10 @@
         "updated_at": "2026-02-16"
       },
       "tags": {
-        "source": "app_store",
+        "source": "google_play",
         "tier": 2,
         "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "updated_at": "2026-05-24"
       },
       "supported_languages": {
         "source": "app_store",
@@ -197,10 +197,10 @@
         "updated_at": "2026-02-20"
       },
       "hiring.careers_url": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "google_play",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-05-24"
       },
       "modalities": {
         "source": "llm-batch-combined",
@@ -227,6 +227,11 @@
       "url": "https://apps.apple.com/us/app/airbrush-face-photo-editor/id998411110?uo=4",
       "source_name": "app_store",
       "scraped_at": "2026-02-16"
+    },
+    {
+      "url": "https://play.google.com/store/apps/details?id=com.magicv.airbrush",
+      "source_name": "google_play",
+      "scraped_at": "2026-05-24"
     }
   ],
   "company": {
@@ -239,7 +244,8 @@
   },
   "icon_url": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/f9/c3/cb/f9c3cb09-dda8-d014-e4a3-96689d5ec704/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/512x512bb.jpg",
   "tags": [
-    "Photo & Video"
+    "Photo & Video",
+    "Photography"
   ],
   "supported_languages": [
     "AR",
@@ -263,7 +269,9 @@
   "release_date": "2015-10-08",
   "app_store": {
     "apple_store_url": "https://apps.apple.com/app/id998411110",
-    "rating": 4.8
+    "rating": 4.1,
+    "google_play_url": "https://play.google.com/store/apps/details?id=com.magicv.airbrush",
+    "downloads": "50,000,000+"
   },
   "keywords": [
     "Airbrush: Face Photo Editor",
@@ -312,7 +320,7 @@
   "api_available": false,
   "hiring": {
     "is_hiring": true,
-    "careers_url": "https://pixocial.com/careers",
+    "careers_url": "",
     "tech_stack": [
       "Swift",
       "Kotlin",
