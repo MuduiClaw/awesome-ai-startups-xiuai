@@ -8,7 +8,7 @@
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-20",
+    "last_updated": "2026-06-28",
     "provenance": {
       "name": {
         "source": "aibot",
@@ -71,10 +71,10 @@
         "updated_at": "2026-02-16"
       },
       "tags": {
-        "source": "aibot",
+        "source": "app_store",
         "tier": 2,
         "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "updated_at": "2026-06-28"
       },
       "keywords": {
         "source": "rule-based-enrichment",
@@ -83,10 +83,10 @@
         "updated_at": "2026-02-17"
       },
       "platforms": {
-        "source": "rule-based-enrichment",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-17"
+        "source": "app_store",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-06-28"
       },
       "target_audience": {
         "source": "llm-batch-combined",
@@ -149,10 +149,10 @@
         "updated_at": "2026-02-20"
       },
       "hiring.careers_url": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "app_store",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-06-28"
       },
       "modalities": {
         "source": "llm-batch-combined",
@@ -171,6 +171,36 @@
         "tier": 3,
         "confidence": 0.5,
         "updated_at": "2026-02-20"
+      },
+      "company.website": {
+        "source": "app_store",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-06-28"
+      },
+      "pricing.model": {
+        "source": "app_store",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-06-28"
+      },
+      "pricing.has_free_tier": {
+        "source": "app_store",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-06-28"
+      },
+      "release_date": {
+        "source": "app_store",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-06-28"
+      },
+      "supported_languages": {
+        "source": "app_store",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-06-28"
       }
     }
   },
@@ -179,6 +209,11 @@
       "url": "https://ai-bot.cn/favorites/ai-chatbots/",
       "source_name": "aibot",
       "scraped_at": "2026-02-16"
+    },
+    {
+      "url": "https://apps.apple.com/us/app/vibe-by-mistral-ex-le-chat/id6740410176?uo=4",
+      "source_name": "app_store",
+      "scraped_at": "2026-06-28"
     }
   ],
   "description_zh": "Mistral推出的AI对话聊天助手",
@@ -187,11 +222,13 @@
     "url": "https://chat.mistral.ai",
     "name_zh": "Mistral AI",
     "description": "Le Chat is a conversational AI assistant developed by Mistral AI.",
-    "employee_count_range": "11-50"
+    "employee_count_range": "11-50",
+    "website": "https://mistral.ai"
   },
   "icon_url": "https://ai-bot.cn/wp-content/uploads/2025/07/Le-Chat-logo1.png",
   "tags": [
-    "ai-chatbots"
+    "ai-chatbots",
+    "Productivity"
   ],
   "keywords": [
     "Le Chat",
@@ -204,7 +241,8 @@
     "other"
   ],
   "platforms": [
-    "web"
+    "web",
+    "ios"
   ],
   "target_audience": [
     "developers",
@@ -226,7 +264,7 @@
   "api_available": true,
   "hiring": {
     "is_hiring": true,
-    "careers_url": "https://mistral.ai/careers",
+    "careers_url": "",
     "tech_stack": [
       "Python",
       "React",
@@ -241,5 +279,25 @@
   "competitors": [
     "chatgpt",
     "gemini"
-  ]
+  ],
+  "pricing": {
+    "model": "free",
+    "has_free_tier": true
+  },
+  "release_date": "2025-02-05",
+  "supported_languages": [
+    "NL",
+    "EN",
+    "FR",
+    "DE",
+    "IT",
+    "PL",
+    "PT",
+    "ES",
+    "UK"
+  ],
+  "app_store": {
+    "apple_store_url": "https://apps.apple.com/app/id6740410176",
+    "rating": 4.8
+  }
 }
