@@ -8,7 +8,7 @@
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-20",
+    "last_updated": "2026-07-07",
     "provenance": {
       "name": {
         "source": "toolify",
@@ -77,10 +77,10 @@
         "updated_at": "2026-02-16"
       },
       "tags": {
-        "source": "toolify",
+        "source": "google_play",
         "tier": 2,
         "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "updated_at": "2026-07-07"
       },
       "keywords": {
         "source": "toolify",
@@ -95,10 +95,10 @@
         "updated_at": "2026-02-16"
       },
       "platforms": {
-        "source": "rule-based-enrichment",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-17"
+        "source": "google_play",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-07-07"
       },
       "target_audience": {
         "source": "llm-batch-combined",
@@ -161,10 +161,10 @@
         "updated_at": "2026-02-20"
       },
       "hiring.careers_url": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "google_play",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-07-07"
       },
       "modalities": {
         "source": "llm-batch-combined",
@@ -177,6 +177,18 @@
         "tier": 3,
         "confidence": 0.5,
         "updated_at": "2026-02-20"
+      },
+      "pricing.model": {
+        "source": "google_play",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-07-07"
+      },
+      "pricing.has_free_tier": {
+        "source": "google_play",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-07-07"
       }
     }
   },
@@ -185,6 +197,11 @@
       "url": "https://www.toolify.ai/tool/ai-essay-writer",
       "source_name": "toolify",
       "scraped_at": "2026-02-16"
+    },
+    {
+      "url": "https://play.google.com/store/apps/details?id=com.editpad.essay_writer_app",
+      "source_name": "google_play",
+      "scraped_at": "2026-07-07"
     }
   ],
   "company": {
@@ -202,7 +219,8 @@
     "AI Homework Helper",
     "Undetectable AI",
     "Humanizer AI",
-    "AI Bypasser"
+    "AI Bypasser",
+    "Productivity"
   ],
   "keywords": [
     "AI essay writer",
@@ -217,11 +235,12 @@
     "Paraphrasing tool"
   ],
   "pricing": {
-    "model": "paid",
-    "has_free_tier": false
+    "model": "free",
+    "has_free_tier": true
   },
   "platforms": [
-    "web"
+    "web",
+    "android"
   ],
   "target_audience": [
     "content-creators",
@@ -254,5 +273,10 @@
   },
   "modalities": [
     "text"
-  ]
+  ],
+  "app_store": {
+    "google_play_url": "https://play.google.com/store/apps/details?id=com.editpad.essay_writer_app",
+    "rating": 4.8,
+    "downloads": "500,000+"
+  }
 }
