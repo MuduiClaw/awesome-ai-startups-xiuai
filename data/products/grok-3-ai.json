@@ -8,7 +8,7 @@
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-20",
+    "last_updated": "2026-07-08",
     "provenance": {
       "name": {
         "source": "toolify",
@@ -77,10 +77,10 @@
         "updated_at": "2026-02-16"
       },
       "tags": {
-        "source": "toolify",
+        "source": "google_play",
         "tier": 2,
         "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "updated_at": "2026-07-08"
       },
       "keywords": {
         "source": "toolify",
@@ -95,10 +95,10 @@
         "updated_at": "2026-02-17"
       },
       "platforms": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "google_play",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-07-08"
       },
       "target_audience": {
         "source": "llm-batch-combined",
@@ -155,10 +155,10 @@
         "updated_at": "2026-02-20"
       },
       "hiring.careers_url": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "google_play",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-07-08"
       },
       "modalities": {
         "source": "llm-batch-combined",
@@ -171,6 +171,18 @@
         "tier": 3,
         "confidence": 0.5,
         "updated_at": "2026-02-20"
+      },
+      "pricing.model": {
+        "source": "google_play",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-07-08"
+      },
+      "pricing.has_free_tier": {
+        "source": "google_play",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-07-08"
       }
     }
   },
@@ -179,6 +191,11 @@
       "url": "https://www.toolify.ai/tool/grok-3-ai",
       "source_name": "toolify",
       "scraped_at": "2026-02-16"
+    },
+    {
+      "url": "https://play.google.com/store/apps/details?id=ai.x.grok",
+      "source_name": "google_play",
+      "scraped_at": "2026-07-08"
     }
   ],
   "company": {
@@ -195,7 +212,8 @@
     "AI Developer Tools",
     "AI App Builder",
     "AI Models",
-    "AI API"
+    "AI API",
+    "Productivity"
   ],
   "keywords": [
     "AI SaaS",
@@ -213,7 +231,8 @@
   "api_available": true,
   "platforms": [
     "api",
-    "web"
+    "web",
+    "android"
   ],
   "target_audience": [
     "developers",
@@ -246,5 +265,14 @@
   },
   "modalities": [
     "code"
-  ]
+  ],
+  "pricing": {
+    "model": "free",
+    "has_free_tier": true
+  },
+  "app_store": {
+    "google_play_url": "https://play.google.com/store/apps/details?id=ai.x.grok",
+    "rating": 4.8,
+    "downloads": "100,000,000+"
+  }
 }
