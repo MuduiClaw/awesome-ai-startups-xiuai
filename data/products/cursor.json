@@ -8,7 +8,7 @@
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-20",
+    "last_updated": "2026-07-24",
     "provenance": {
       "name": {
         "source": "ainav",
@@ -77,10 +77,10 @@
         "updated_at": "2026-02-16"
       },
       "tags": {
-        "source": "toolify",
+        "source": "app_store",
         "tier": 2,
         "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "updated_at": "2026-07-24"
       },
       "company.website": {
         "source": "toolify",
@@ -107,10 +107,10 @@
         "updated_at": "2026-02-16"
       },
       "platforms": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "app_store",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-07-24"
       },
       "target_audience": {
         "source": "llm-batch-combined",
@@ -167,10 +167,10 @@
         "updated_at": "2026-02-20"
       },
       "hiring.careers_url": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "app_store",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-07-24"
       },
       "modalities": {
         "source": "llm-batch-combined",
@@ -183,6 +183,18 @@
         "tier": 3,
         "confidence": 0.5,
         "updated_at": "2026-02-20"
+      },
+      "release_date": {
+        "source": "app_store",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-07-24"
+      },
+      "supported_languages": {
+        "source": "app_store",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-07-24"
       }
     }
   },
@@ -206,6 +218,11 @@
       "url": "https://www.toolify.ai/tool/cursor",
       "source_name": "toolify",
       "scraped_at": "2026-02-16"
+    },
+    {
+      "url": "https://apps.apple.com/us/app/cursor/id6767085653?uo=4",
+      "source_name": "app_store",
+      "scraped_at": "2026-07-24"
     }
   ],
   "description_zh": "使用Cursor可以毫不费力地重构、理解和编写代码。",
@@ -230,7 +247,8 @@
     "AI Code Assistant",
     "AI Copilot",
     "AI Developer Tools",
-    "AI Chatbot"
+    "AI Chatbot",
+    "Developer Tools"
   ],
   "pricing": {
     "model": "free-trial",
@@ -259,7 +277,8 @@
   ],
   "platforms": [
     "web",
-    "desktop"
+    "desktop",
+    "ios"
   ],
   "target_audience": [
     "developers",
@@ -282,7 +301,7 @@
   "api_available": false,
   "hiring": {
     "is_hiring": true,
-    "careers_url": "https://cursor.com/careers",
+    "careers_url": "",
     "tech_stack": [
       "Electron",
       "TypeScript",
@@ -294,5 +313,13 @@
   "modalities": [
     "code",
     "text"
-  ]
+  ],
+  "release_date": "2026-06-28",
+  "supported_languages": [
+    "EN"
+  ],
+  "app_store": {
+    "apple_store_url": "https://apps.apple.com/app/id6767085653",
+    "rating": 4.5
+  }
 }
