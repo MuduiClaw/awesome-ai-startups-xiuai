@@ -8,7 +8,7 @@
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-20",
+    "last_updated": "2026-08-02",
     "provenance": {
       "name": {
         "source": "ainav",
@@ -77,10 +77,10 @@
         "updated_at": "2026-02-16"
       },
       "tags": {
-        "source": "ainav",
+        "source": "app_store",
         "tier": 2,
         "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "updated_at": "2026-08-02"
       },
       "keywords": {
         "source": "rule-based-enrichment",
@@ -89,10 +89,10 @@
         "updated_at": "2026-02-17"
       },
       "platforms": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "app_store",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-08-02"
       },
       "target_audience": {
         "source": "llm-batch-combined",
@@ -113,10 +113,10 @@
         "updated_at": "2026-02-20"
       },
       "company.name_zh": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "app_store",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-08-02"
       },
       "company.description": {
         "source": "llm-batch-combined",
@@ -149,10 +149,10 @@
         "updated_at": "2026-02-20"
       },
       "hiring.careers_url": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "app_store",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-08-02"
       },
       "modalities": {
         "source": "llm-batch-combined",
@@ -165,6 +165,36 @@
         "tier": 3,
         "confidence": 0.5,
         "updated_at": "2026-02-20"
+      },
+      "company.website": {
+        "source": "app_store",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-08-02"
+      },
+      "pricing.model": {
+        "source": "app_store",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-08-02"
+      },
+      "pricing.has_free_tier": {
+        "source": "app_store",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-08-02"
+      },
+      "release_date": {
+        "source": "app_store",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-08-02"
+      },
+      "supported_languages": {
+        "source": "app_store",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-08-02"
       }
     }
   },
@@ -173,6 +203,11 @@
       "url": "https://www.ainav.cn",
       "source_name": "ainav",
       "scraped_at": "2026-02-16"
+    },
+    {
+      "url": "https://apps.apple.com/us/app/cc-pocket-ai-code-remote/id6778773969?uo=4",
+      "source_name": "app_store",
+      "scraped_at": "2026-08-02"
     }
   ],
   "name_zh": "MiniGPT-v2多模态",
@@ -180,13 +215,15 @@
   "company": {
     "name": "MiniGPT-v2多模态",
     "url": "https://minigpt-v2.github.io",
-    "name_zh": "MiniGPT-v2多模态",
+    "name_zh": "大鹏 李",
     "description": "Open-source multimodal AI model supporting text and image understanding.",
-    "employee_count_range": "11-50"
+    "employee_count_range": "11-50",
+    "website": "https://heypandax.github.io/cc-pocket"
   },
   "icon_url": "https://www.ainav.cn/wp-content/uploads/2023/10/1fcfd-minigpt-v2.github.io.png",
   "tags": [
-    "AI大模型"
+    "AI大模型",
+    "Utilities"
   ],
   "keywords": [
     "MiniGPT-v2多模态",
@@ -199,7 +236,8 @@
   ],
   "platforms": [
     "web",
-    "api"
+    "api",
+    "ios"
   ],
   "target_audience": [
     "developers",
@@ -222,7 +260,7 @@
   "api_available": true,
   "hiring": {
     "is_hiring": true,
-    "careers_url": "https://minigptv2.com/careers",
+    "careers_url": "",
     "tech_stack": [
       "Python",
       "PyTorch",
@@ -235,5 +273,18 @@
     "text",
     "image",
     "multimodal"
-  ]
+  ],
+  "pricing": {
+    "model": "free",
+    "has_free_tier": true
+  },
+  "release_date": "2026-06-18",
+  "supported_languages": [
+    "EN",
+    "ZH"
+  ],
+  "app_store": {
+    "apple_store_url": "https://apps.apple.com/app/id6778773969",
+    "rating": 0.0
+  }
 }
