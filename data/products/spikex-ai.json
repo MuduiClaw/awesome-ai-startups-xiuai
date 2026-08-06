@@ -8,7 +8,7 @@
   "status": "active",
   "meta": {
     "added_date": "2026-02-16",
-    "last_updated": "2026-02-20",
+    "last_updated": "2026-08-06",
     "provenance": {
       "name": {
         "source": "toolify",
@@ -77,10 +77,10 @@
         "updated_at": "2026-02-16"
       },
       "tags": {
-        "source": "toolify",
+        "source": "app_store",
         "tier": 2,
         "confidence": 0.75,
-        "updated_at": "2026-02-16"
+        "updated_at": "2026-08-06"
       },
       "keywords": {
         "source": "toolify",
@@ -95,10 +95,10 @@
         "updated_at": "2026-02-16"
       },
       "platforms": {
-        "source": "rule-based-enrichment",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-17"
+        "source": "app_store",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-08-06"
       },
       "target_audience": {
         "source": "llm-batch-combined",
@@ -161,10 +161,10 @@
         "updated_at": "2026-02-20"
       },
       "hiring.careers_url": {
-        "source": "llm-batch-combined",
-        "tier": 3,
-        "confidence": 0.5,
-        "updated_at": "2026-02-20"
+        "source": "app_store",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-08-06"
       },
       "modalities": {
         "source": "llm-batch-combined",
@@ -177,6 +177,30 @@
         "tier": 3,
         "confidence": 0.5,
         "updated_at": "2026-02-20"
+      },
+      "pricing.model": {
+        "source": "app_store",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-08-06"
+      },
+      "pricing.has_free_tier": {
+        "source": "app_store",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-08-06"
+      },
+      "release_date": {
+        "source": "app_store",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-08-06"
+      },
+      "supported_languages": {
+        "source": "app_store",
+        "tier": 2,
+        "confidence": 0.75,
+        "updated_at": "2026-08-06"
       }
     }
   },
@@ -185,6 +209,11 @@
       "url": "https://www.toolify.ai/tool/spikex-ai",
       "source_name": "toolify",
       "scraped_at": "2026-02-16"
+    },
+    {
+      "url": "https://apps.apple.com/us/app/spike-ai/id6749781844?uo=4",
+      "source_name": "app_store",
+      "scraped_at": "2026-08-06"
     }
   ],
   "company": {
@@ -202,7 +231,8 @@
     "AI Video Generator",
     "AI Script Writing",
     "AI Youtube Video Maker",
-    "AI Tiktok Video Generator"
+    "AI Tiktok Video Generator",
+    "Utilities"
   ],
   "keywords": [
     "AI video generator",
@@ -215,11 +245,12 @@
     "Video creation"
   ],
   "pricing": {
-    "model": "paid",
-    "has_free_tier": false
+    "model": "free",
+    "has_free_tier": true
   },
   "platforms": [
-    "web"
+    "web",
+    "ios"
   ],
   "target_audience": [
     "content-creators",
@@ -253,5 +284,13 @@
     "descript",
     "visla",
     "pictory"
-  ]
+  ],
+  "release_date": "2025-08-14",
+  "supported_languages": [
+    "EN"
+  ],
+  "app_store": {
+    "apple_store_url": "https://apps.apple.com/app/id6749781844",
+    "rating": 3.5
+  }
 }
